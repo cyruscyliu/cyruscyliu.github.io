@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2020-11-30-wllvm-clang-qemu-x86_64.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="clang-wllvm-passes-qemu-for-x8664">Clang, wllvm, passes, QEMU for x86_64</h1>
+<p>In order to run LLVM passes on QEMU, I need to build QEMU with Clang.
+One option is to run the passes during the compilation, the other is to
+generate an LLVM bitcode file and apply <code>opt</code>. The bitcode file can be
+extracted by <code>wllvm</code>.  Because I'm gonna conduct static analysis for
+seaking vulnerabilities rather than code optimization, I choose <code>wllvm</code>
+and apply <code>opt</code> on my extracted bitcode file.</p>
+<h2 id="build-qemu-with-clang">Build QEMU with Clang</h2>
+<p>Even though unsmoothy on the internet[^1][^2][^3],
+I just made it on QEMU 4.0.0 with clang-3.8.</p>
+<pre class="hljs"><code><div>$ clang --version
+clang version 3.8.0-2ubuntu4 (tags/RELEASE_380/final)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+
+$ <span class="hljs-built_in">cd</span> qemu-4.0.0
+$ ./configure --target-list=x86_64-softmmu --cc=clang
+$ make
+</div></code></pre>
+<p>Nothing bad happened.</p>
+<h2 id="build-qemu-with-wllvm-4">Build QEMU with wllvm [^4]</h2>
+<pre class="hljs"><code><div>$ pip install wllvm
+
+$ export LLVM_COMPILER=clang
+$ # if no clang/clang++ executables
+$ # export LLVM_CC_NAME=clang-7
+$ # export LLVM_CXX_NAME=clang++-7
+$ cd qemu-4.0.0
+$ ./configure --target-list=x86_64-softmmu --cc=wllvm
+$ make
+$ extract-bc x86_64-softmmu/qemu-system-x86_64
+$ # You will find the bitcode file x86_64-softmmu/qemu-system-x86_64.bc
+</div></code></pre>
+<p>I met one kind of warnings <code>WARNING:Did not recognize the compiler flag &quot;-mcx16&quot;</code>, but it seemed harmless. I will update more if any flaw caused
+by this warning. I met another error <code>objcopy: src/xxx: failed to find link section for section xx</code>.  Please update your objcopy to 2.31 or
+upper.</p>
+<h2 id="run-llvm-passes-with-opt">Run LLVM passes with opt</h2>
+<p>First trial of a builin pass.</p>
+<pre class="hljs"><code><div>$ opt -<span class="hljs-built_in">print</span>-function qemu-system-x86_64.bc -o /dev/null 2&gt;&amp;1 &gt; output.txt
+</div></code></pre>
+<p>What I want is quite simple: print function names and check arguments,
+which reminds me of the first <code>HelloWorld</code> pass in
+<a href="https://github.com/banach-space/llvm-tutor">llvm-tutor</a>.  I found
+<code>llvm-tutor</code> used <code>LLVM 11</code>, updating so quickly, such that I made a
+docker image to compile the pass. BTW, it's OK to use <code>opt-11</code> in the
+docker image and no need to recompile QEMU.</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Dockerfile</span>
+<span class="hljs-keyword">FROM</span> ubuntu:<span class="hljs-number">18.04</span>
+
+<span class="hljs-comment"># Uncomment this and update the sources list if you have network problems</span>
+<span class="hljs-comment"># COPY sources.list /etc/apt/sources.list</span>
+<span class="hljs-keyword">RUN</span><span class="bash"> apt-get update; apt-get install -y build-essential cmake vim</span>
+
+<span class="hljs-keyword">WORKDIR</span><span class="bash"> /root</span>
+
+<span class="hljs-keyword">RUN</span><span class="bash"> apt-get install -y sudo wget software-properties-common</span>
+<span class="hljs-keyword">RUN</span><span class="bash"> wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -; \
+sudo apt-add-repository <span class="hljs-string">"deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main"</span>; \
+sudo apt-get update; \
+sudo apt-get install -y llvm-11 llvm-11-dev clang-11 llvm-11-tools</span>
+</div></code></pre>
+<p>Then, build the docker.</p>
+<pre class="hljs"><code><div>$ docker build . -t qemu-spa:latest
+</div></code></pre>
+<p>Next, compile the <code>HelloWorld</code> pass.</p>
+<pre class="hljs"><code><div>$ git <span class="hljs-built_in">clone</span> https://github.com/banach-space/llvm-tutor.git
+$ ls
+Dockerfile  build  llvm-tutor  qemu-4.0.0  qemu-4.0.0.tar.xz  sources.list
+$ docker run \
+    -v /path/to/llvm-tutor:/root/llvm-tutor \
+    -v /path/to/build:/root/build \
+    -it qemu-spa:latest /bin/bash
+<span class="hljs-comment"># In the docker image</span>
+$ llvm-config-11 --prefix
+/usr/lib/llvm-11
+$ <span class="hljs-built_in">export</span> LLVM_DIR=/usr/lib/llvm-11
+<span class="hljs-comment"># Change CMAKE requirements to 3.10.2</span>
+<span class="hljs-comment"># in /root/llvm-tutor/HelloWorld/CMakeLists.txt</span>
+$ <span class="hljs-built_in">cd</span> build
+$ cmake -DLT_LLVM_INSTALL_DIR=<span class="hljs-variable">$LLVM_DIR</span> /root/llvm-tutor/HelloWorld/
+$ make
+</div></code></pre>
+<p>Finally, run the pass with opt</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># cp qemu-system-x86_64.bc to build</span>
+<span class="hljs-comment"># In the docker image</span>
+$ <span class="hljs-built_in">cd</span> build &amp;&amp; ls
+CMakeCache.txt  CMakeFiles  Makefile  cmake_install.cmake  libHelloWorld.so  qemu-system-x86_64.bc
+$ opt-11 \
+    -load-pass-plugin ./libHelloWorld.so -passes=hello-world -<span class="hljs-built_in">disable</span>-output \
+    qemu-system-x86_64.bc
+<span class="hljs-comment"># Expected output</span>
+... too many
+(llvm-tutor) Hello from: lockcnt_wake
+(llvm-tutor)   number of arguments: 1
+(llvm-tutor) Hello from: qemu_lockcnt_dec
+(llvm-tutor)   number of arguments: 1
+(llvm-tutor) Hello from: qemu_lockcnt_dec_and_lock
+(llvm-tutor)   number of arguments: 1
+(llvm-tutor) Hello from: qemu_lockcnt_dec_if_lock
+(llvm-tutor)   number of arguments: 1
+(llvm-tutor) Hello from: qemu_lockcnt_lock
+(llvm-tutor)   number of arguments: 1
+(llvm-tutor) Hello from: qemu_lockcnt_inc_and_unlock
+(llvm-tutor)   number of arguments: 1
+(llvm-tutor) Hello from: qemu_lockcnt_unlock
+(llvm-tutor)   number of arguments: 1
+(llvm-tutor) Hello from: qemu_lockcnt_count
+(llvm-tutor)   number of arguments: 1
+</div></code></pre>
+<h2 id="reference">Reference</h2>
+<p>[^1]: <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1565766">Red Hat Bugzilla – Bug 1565766 - qemu failing to build with clang; __atomic_fetch_or_4</a> <br>
+[^2]: <a href="https://lists.freebsd.org/pipermail/freebsd-emulation/2012-June/009859.html">Building QEMU with clang</a> <br>
+[^3]: <a href="https://lists.nongnu.org/archive/html/qemu-devel/2011-12/msg02909.html">Use Clang to compile Qemu</a> <br>
+[^4]: <a href="https://kangliuga.github.io/SE4VM/dev-harness.html">SE4VM Detecting Virtualization Bugs in Virtual Machine Platforms: Dev-Harness</a>.</p>
+
+</body>
+</html>
