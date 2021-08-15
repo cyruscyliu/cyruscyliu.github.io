@@ -3,11 +3,12 @@
 ## Introduction
 
 Hi, my name is Qiang Liu. I am currently a Ph.D. student at the College
-of Computer Science of Zhejiang University (ZJU), Hangzhou, China. My
-research interests include system and software security. I am currently
-working on embedded system emulators, hypervisor fuzzers. When I am
-free, I am enthusiastic about badminton. It is welcome to contact me by
-email at qiangliu@zju.edu.cn.
+of Computer Science of Zhejiang University (ZJU), Hangzhou, China. I'm
+now visiting HEXHIVE at École polytechnique fédérale de Lausanne (EPFL),
+Lausanne, Switzerland. My research interests include system and software
+security. I currently focus on hypervisor fuzzing. When I am free, I am
+enthusiastic about badminton. It is welcome to contact me by email at
+cyruscyliu@gmail.com or qiangliu@zju.edu.cn or qiang.liu@epfl.ch.
 
 [CV](./Qiang_s_CV.pdf)
 [Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
@@ -21,7 +22,35 @@ Linux Kernels through Model-Guided Kernel Execution" got accepted at
 @ASE_conf 2021! #ASE2021 @zhclhy @JMuhui
 @yajinzhou.](https://twitter.com/qiangliu717/status/1413674256152637441?s=20)
 
-## Projects, Publications and Real Impact
+## Projects, Publications, and Real Impact
+
+### 0x02 Embedded System Rehosting
+
+This project tries to rehost embedded Linux kernels for routers,
+cameras, and other high-end devices. Then, we can dynamically analyze
+bugs or vulnerabilities, detect bugs or vulnerabilities, make honey
+pots, detect and inspect malware. I lead this project now. A relative
+research paper is [FirmGuide (ASE'21) (1st co-authors)](#tobeprinted).
+
+### 0x01 Android Authentication
+
+This project tries to evaluate existing and propose new implicit
+continuous authentication approaches. The implicit continuous
+authentication can be a sector authentication factor for the
+fingerprint. I joined this project as an intern and then proposed this
+project to be my final project. Relative research papers are [RiskCog
+(TMC'20)](https://ieeexplore.ieee.org/abstract/document/8611185),
+[ESPIALCOG (TMC'20)(5th
+author)](https://ieeexplore.ieee.org/abstract/document/9151330), [One
+Cycle Attack (TIFS'20) (3rd
+author)](https://ieeexplore.ieee.org/abstract/document/9167280).
+
+### 0x00 Network Protocol Fuzzing (Archived)
+
+This project tries to fuzz network protocols, especially router
+protocols. I joined this project as an intern and wrote several Peach
+Pits by 1) learning the grammar of Peach Pit, 2) understanding specific
+network protocols via their specifications. 
 
 ## Blogs
 

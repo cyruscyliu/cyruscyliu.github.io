@@ -227,17 +227,17 @@ pre code {
 </style>
 
 <style>
-/* a11y-light theme */
-/* Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css */
-/* @author: ericwbailey */
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
 
-/* Comment */
+/* Tomorrow Comment */
 .hljs-comment,
 .hljs-quote {
-  color: #696969;
+	color: #8e908c;
 }
 
-/* Red */
+/* Tomorrow Red */
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag,
@@ -246,10 +246,10 @@ pre code {
 .hljs-selector-class,
 .hljs-regexp,
 .hljs-deletion {
-  color: #d91e18;
+	color: #c82829;
 }
 
-/* Orange */
+/* Tomorrow Orange */
 .hljs-number,
 .hljs-built_in,
 .hljs-builtin-name,
@@ -258,75 +258,48 @@ pre code {
 .hljs-params,
 .hljs-meta,
 .hljs-link {
-  color: #aa5d00;
+	color: #f5871f;
 }
 
-/* Yellow */
+/* Tomorrow Yellow */
 .hljs-attribute {
-  color: #aa5d00;
+	color: #eab700;
 }
 
-/* Green */
+/* Tomorrow Green */
 .hljs-string,
 .hljs-symbol,
 .hljs-bullet,
 .hljs-addition {
-  color: #008000;
+	color: #718c00;
 }
 
-/* Blue */
+/* Tomorrow Blue */
 .hljs-title,
 .hljs-section {
-  color: #007faa;
+	color: #4271ae;
 }
 
-/* Purple */
+/* Tomorrow Purple */
 .hljs-keyword,
 .hljs-selector-tag {
-  color: #7928a1;
+	color: #8959a8;
 }
 
 .hljs {
-  display: block;
-  overflow-x: auto;
-  background: #fefefe;
-  color: #545454;
-  padding: 0.5em;
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
 }
 
 .hljs-emphasis {
-  font-style: italic;
+	font-style: italic;
 }
 
 .hljs-strong {
-  font-weight: bold;
+	font-weight: bold;
 }
-
-@media screen and (-ms-high-contrast: active) {
-  .hljs-addition,
-  .hljs-attribute,
-  .hljs-built_in,
-  .hljs-builtin-name,
-  .hljs-bullet,
-  .hljs-comment,
-  .hljs-link,
-  .hljs-literal,
-  .hljs-meta,
-  .hljs-number,
-  .hljs-params,
-  .hljs-string,
-  .hljs-symbol,
-  .hljs-type,
-  .hljs-quote {
-        color: highlight;
-    }
-
-    .hljs-keyword,
-    .hljs-selector-tag {
-        font-weight: bold;
-    }
-}
-
 </style>
 
 <style>
@@ -380,7 +353,7 @@ code {
 }
 
 </style>
-
+<link rel="stylesheet" href="file:///home/liuqiang/Desktop/cyruscyliu.github.io/styles/light-default.css" type="text/css">
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </head>
 <body>
@@ -395,11 +368,12 @@ code {
 <h1 id="qiang-lius-homepage">Qiang Liu's Homepage</h1>
 <h2 id="introduction">Introduction</h2>
 <p>Hi, my name is Qiang Liu. I am currently a Ph.D. student at the College
-of Computer Science of Zhejiang University (ZJU), Hangzhou, China. My
-research interests include system and software security. I am currently
-working on embedded system emulators, hypervisor fuzzers. When I am
-free, I am enthusiastic about badminton. It is welcome to contact me by
-email at qiangliu@zju.edu.cn.</p>
+of Computer Science of Zhejiang University (ZJU), Hangzhou, China. I'm
+now visiting HEXHIVE at École polytechnique fédérale de Lausanne (EPFL),
+Lausanne, Switzerland. My research interests include system and software
+security. I currently focus on hypervisor fuzzing. When I am free, I am
+enthusiastic about badminton. It is welcome to contact me by email at
+cyruscyliu@gmail.com or qiangliu@zju.edu.cn or qiang.liu@epfl.ch.</p>
 <p><a href="./Qiang_s_CV.pdf">CV</a>
 <a href="https://scholar.google.com/citations?user=fa1uB2sAAAAJ&amp;hl=en">Google Scholar</a>
 <a href="https://github.com/cyruscyliu">GitHub</a>
@@ -409,7 +383,29 @@ email at qiangliu@zju.edu.cn.</p>
 Linux Kernels through Model-Guided Kernel Execution&quot; got accepted at
 @ASE_conf 2021! #ASE2021 @zhclhy @JMuhui
 @yajinzhou.</a></p>
-<h2 id="projects-publications-and-real-impact">Projects, Publications and Real Impact</h2>
+<h2 id="projects-publications-and-real-impact">Projects, Publications, and Real Impact</h2>
+<h3 id="0x02-embedded-system-rehosting">0x02 Embedded System Rehosting</h3>
+<p>This project tries to rehost embedded Linux kernels for routers,
+cameras, and other high-end devices. Then, we can dynamically analyze
+bugs or vulnerabilities, detect bugs or vulnerabilities, make honey
+pots, detect and inspect malware. I lead this project now. A relative
+research paper is <a href="#tobeprinted">FirmGuide (ASE'21) (1st co-authors)</a>.</p>
+<h3 id="0x01-android-authentication">0x01 Android Authentication</h3>
+<p>This project tries to evaluate existing and propose new implicit
+continuous authentication approaches. The implicit continuous
+authentication can be a sector authentication factor for the
+fingerprint. I joined this project as an intern and then proposed this
+project to be my final project. Relative research papers are <a href="https://ieeexplore.ieee.org/abstract/document/8611185">RiskCog
+(TMC'20)</a>,
+<a href="https://ieeexplore.ieee.org/abstract/document/9151330">ESPIALCOG (TMC'20)(5th
+author)</a>, <a href="https://ieeexplore.ieee.org/abstract/document/9167280">One
+Cycle Attack (TIFS'20) (3rd
+author)</a>.</p>
+<h3 id="0x00-network-protocol-fuzzing-archived">0x00 Network Protocol Fuzzing (Archived)</h3>
+<p>This project tries to fuzz network protocols, especially router
+protocols. I joined this project as an intern and wrote several Peach
+Pits by 1) learning the grammar of Peach Pit, 2) understanding specific
+network protocols via their specifications.</p>
 <h2 id="blogs">Blogs</h2>
 <ul>
 <li><a href="./posts/2020-11-30-wllvm-clang-qemu-x86_64.html">2020-11-30 Clang, wllvm, passes, QEMU for x86_64</a></li>
