@@ -56,3 +56,27 @@ network protocols via their specifications.
 
 + [2020-11-30 Clang, wllvm, passes, QEMU for x86_64](./posts/2020-11-30-wllvm-clang-qemu-x86_64.html)
 + [2020-11-18 Buildroot, QEMU and Linux kernel for x86_64](./posts/2020-11-18-buildroot-qemu-x86_64.html)
+
+
+### Summary after CCS 2019 (London)
+
+* 0x0d [Summary of CCS'19 (London)](./posts/2019-11-23-CCS-London-Summary.html)
+
+### Blogs when living Hangzhou in 2018
+
+* 0x0c [在杭州的100天-第二十七天](./posts/2018-04-07-在杭州的100天-第二十七天.html)
+* 0x0b [在杭州的100天-第十天](./posts/2018-03-28-在杭州的100天-第十天.html)
+* 0x0a [在杭州的100天-第九天](./posts/2018-03-11-在杭州的100天-第九天.html)
+* 0x09 [在杭州的100天-第三天](./posts/2018-03-10-在杭州的100天-第三天.html)
+* 0x08 [在杭州的100天-第二天](./posts/2018-03-08-在杭州的100天-第二天.html)
+* 0x07 [在杭州的100天-第一天](./posts/2018-03-08-在杭州的100天-第一天.html)
+
+### Blogs when visiting ANU in early 2018
+
+* 0x06 [ANU暑期学校-尾声](./posts/2018-02-07-ANU暑期学校-尾声.html)
+* 0x05 [ANU暑期学校-生活和工作](./posts/2018-02-07-ANU暑期学校-生活和工作.html)
+* 0x04 [ANU暑期学校-惊奇](./posts/2018-01-21-ANU暑期学校-惊奇.html)
+* 0x03 [ANU暑期学校-我的矛盾](./posts/2018-02-01-ANU暑期学校-我的矛盾.html)
+* 0x02 [ANU暑期学校-我的矛盾（提纲）](./posts/2018-01-19-ANU暑期学校-我的矛盾（提纲）.html)
+* 0x01 [ANU暑期学校-绽放](./posts/2018-01-24-ANU暑期学校-绽放.html)
+* 0x00 [ANU暑期学校-无题](./posts/2018-01-23-ANU暑期学校-无题.html)
