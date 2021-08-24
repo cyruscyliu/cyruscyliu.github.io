@@ -54,6 +54,9 @@ network protocols via their specifications.
 
 ## Blogs
 
+Please raise [issues](https://github.com/cyruscyliu/cyruscyliu.github.io/issues)
+if any questions or comments.
+
 + [Display in QEMU](./posts/2021-08-18-Display-in-QEMU.html)
 + [2020-11-30 Clang, wllvm, passes, QEMU for x86_64](./posts/2020-11-30-wllvm-clang-qemu-x86_64.html)
 + [2020-11-18 Buildroot, QEMU and Linux kernel for x86_64](./posts/2020-11-18-buildroot-qemu-x86_64.html)
