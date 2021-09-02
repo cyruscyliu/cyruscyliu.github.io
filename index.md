@@ -30,7 +30,7 @@ This project tries to rehost embedded Linux kernels for routers,
 cameras, and other high-end devices. Then, we can dynamically analyze
 bugs or vulnerabilities, detect bugs or vulnerabilities, make honey
 pots, detect and inspect malware. I lead this project now. A relative
-research paper is [FirmGuide (ASE'21) (1st co-authors)](#tobeprinted).
+research paper is [FirmGuide (ASE'21) (1st co-authors)](./papers/firmguide-ase21.pdf).
 
 ### 0x01 Android Authentication
 
@@ -39,11 +39,11 @@ continuous authentication approaches. The implicit continuous
 authentication can be a sector authentication factor for the
 fingerprint. I joined this project as an intern and then proposed this
 project to be my final project. Relative research papers are [RiskCog
-(TMC'20)](https://ieeexplore.ieee.org/abstract/document/8611185),
+(TMC'20)](./papers/riskcog-tmc20.pdf),
 [ESPIALCOG (TMC'20)(5th
-author)](https://ieeexplore.ieee.org/abstract/document/9151330), [One
+author)](./papers/espialcog-tmc20.pdf), [One
 Cycle Attack (TIFS'20) (3rd
-author)](https://ieeexplore.ieee.org/abstract/document/9167280).
+author)](./papers/one-cycle-attack-tifs20.pdf).
 
 ### 0x00 Network Protocol Fuzzing (Archived)
 
