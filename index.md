@@ -64,6 +64,7 @@ if any questions or comments.
 
 ### Summary when visiting EPFL in 2021
 
+* 0x10 [A Summary of Questions in Research](posts/2021-09-07-Research-Philosophy.html)
 * 0x0f [Skills and Collaboration for Research Project Code](posts/2021-09-03-Summary-Research-SE.html)
 * 0x0e [Principles of Research Presentation](posts/2021-08-27-Principle-of-Presentation.html)
 
