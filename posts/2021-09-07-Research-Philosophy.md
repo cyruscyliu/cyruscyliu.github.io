@@ -98,3 +98,8 @@ that have more. Here are some tips from past research activities.
 ### Well-write our paper rather than a sloppy one
 - Write our paper in advance and get feedback on structure from others
 - Keep learning to write a paper and revise, revise, and revise.
+
+Here are some concrete tips.
+- Always use docker containers. It takes time for the first time but saves you
+from deployment on other machines with different versions of operating systems,
+i.e., varient libraries.

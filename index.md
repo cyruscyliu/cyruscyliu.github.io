@@ -30,7 +30,7 @@ This project tries to rehost embedded Linux kernels for routers,
 cameras, and other high-end devices. Then, we can dynamically analyze
 bugs or vulnerabilities, detect bugs or vulnerabilities, make honey
 pots, detect and inspect malware. I lead this project now. A relative
-research paper is [FirmGuide (ASE'21) (1st co-authors)](./papers/firmguide-ase21.pdf).
+research paper is [FirmGuide (ASE'21) (1st co-authors) (82/440=18.6%)](./papers/firmguide-ase21.pdf).
 
 ### 0x01 Android Authentication
 
