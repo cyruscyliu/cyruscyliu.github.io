@@ -17,6 +17,9 @@ cyruscyliu@gmail.com or qiangliu@zju.edu.cn or qiang.liu@epfl.ch.
 
 ## News
 
+Our Paper "ECMO: Peripheral Transplantation to Rehost Embedded Linux Kernels"
+got accepted at CCS'21!
+
 [Our Paper "FirmGuide: Boosting the Capability of Rehosting Embedded
 Linux Kernels through Model-Guided Kernel Execution" got accepted at
 @ASE_conf 2021! #ASE2021 @zhclhy @JMuhui
@@ -26,11 +29,13 @@ Linux Kernels through Model-Guided Kernel Execution" got accepted at
 
 ### 0x02 Embedded System Rehosting
 
-This project tries to rehost embedded Linux kernels for routers,
-cameras, and other high-end devices. Then, we can dynamically analyze
-bugs or vulnerabilities, detect bugs or vulnerabilities, make honey
-pots, detect and inspect malware. I lead this project now. A relative
-research paper is [FirmGuide (ASE'21) (1st co-authors) (82/440=18.6%)](./papers/firmguide-ase21.pdf).
+This project tries to rehost embedded Linux kernels for routers, cameras, and
+other high-end devices. Then, we can dynamically analyze bugs or
+vulnerabilities, detect bugs or vulnerabilities, make honey pots, detect and
+inspect malware. I lead this project now. A relative research paper is
+[FirmGuide (ASE'21) (1st co-authors)
+(82/440=18.6%)](./papers/firmguide-ase21.pdf), [ECMO (CCS'21), 4th
+author](./#tobeprinted).
 
 ### 0x01 Android Authentication
 
