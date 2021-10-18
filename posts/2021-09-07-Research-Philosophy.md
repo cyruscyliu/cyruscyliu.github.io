@@ -84,6 +84,7 @@ activities to evaluate our ideas quickly.
 - **Always consider what you are doing to be some paragraph in the paper and never do it twice.**
 - **Think and ask ourselves about what is the fastest way to do this and then do it.**
 - **Spend 30 seconds more to save us from a 30 mins disaster.**
+- Spend less than one day on a project you are not the first author.
 - Have a rest in the evening or on weekends if we can focus more on weekdays.
 
 ### Know what you are going to do
@@ -93,12 +94,21 @@ activities to evaluate our ideas quickly.
 - **Implement a prototype and write evaluation scripts (implementation, evaluation)**
 - **Write our paper in advance and get feedback from others**.
 
+### Reviews papers
+- Always run their systems
+- Survey all related work you might use
+
+## Some tips about parallel tasks
+- Always be clear about the shared things: data, and storage
+- Be more automatic
+
 ## How to sell your idea
 
 ### Write a good paper
-- Keep learning to write a paper.
-- Unity, Support, and Coherent.
-- Revise, revise, and revise.
+- Keep learning to write a paper
+- Reader-centric writing
+- Unity, Support, and Coherent
+- Revise, revise, and revise: practical abstraction
 
 ### Advertise
 - Homepage
