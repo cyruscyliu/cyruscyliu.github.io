@@ -99,8 +99,10 @@ activities to evaluate our ideas quickly.
 - Survey all related work you might use
 
 ## Some tips about parallel tasks
+- Be busy when it is busy and have fun when it is not busy
+- Create a task, think about the solutions, importantly, think about why your results are not correct
+- Write your task down before you start and close it after you finish it
 - Always be clear about the shared things: data, and storage
-- Be more automatic
 
 ## How to sell your idea
 
