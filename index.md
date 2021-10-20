@@ -39,15 +39,13 @@ author](./#tobeprinted).
 
 ### 0x01 Android Authentication
 
-This project tries to evaluate existing and propose new implicit
-continuous authentication approaches. The implicit continuous
-authentication can be a sector authentication factor for the
-fingerprint. I joined this project as an intern and then proposed this
-project to be my final project. Relative research papers are [RiskCog
-(TMC'20)](./papers/riskcog-tmc20.pdf),
-[ESPIALCOG (TMC'20)(5th
-author)](./papers/espialcog-tmc20.pdf), [One
-Cycle Attack (TIFS'20) (3rd
+This project tries to evaluate existing and propose new implicit continuous
+authentication approaches. The implicit continuous authentication can be a
+second authentication factor for fingerprint and face identification. I joined
+this project as an intern and then proposed this project to be my final project
+for my Bachelor's degree. Relative research papers are [RiskCog
+(TMC'20)](./papers/riskcog-tmc20.pdf), [ESPIALCOG (TMC'20)(5th
+author)](./papers/espialcog-tmc20.pdf), and [One Cycle Attack (TIFS'20) (3rd
 author)](./papers/one-cycle-attack-tifs20.pdf).
 
 ### 0x00 Network Protocol Fuzzing (Archived)
