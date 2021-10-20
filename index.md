@@ -17,8 +17,9 @@ cyruscyliu@gmail.com or qiangliu@zju.edu.cn or qiang.liu@epfl.ch.
 
 ## News
 
-Our Paper "ECMO: Peripheral Transplantation to Rehost Embedded Linux Kernels"
-got accepted at CCS'21!
+[Our Paper "ECMO: Peripheral Transplantation to Rehost Embedded Linux Kernels"
+got accepted at
+CCS'21!](https://twitter.com/qiangliu717/status/1440590703067758592)
 
 [Our Paper "FirmGuide: Boosting the Capability of Rehosting Embedded
 Linux Kernels through Model-Guided Kernel Execution" got accepted at
