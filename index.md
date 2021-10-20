@@ -34,8 +34,8 @@ other high-end devices. Then, we can dynamically analyze bugs or
 vulnerabilities, detect bugs or vulnerabilities, make honey pots, detect and
 inspect malware. I lead this project now. A relative research paper is
 [FirmGuide (ASE'21) (1st co-authors)
-(82/440=18.6%)](./papers/firmguide-ase21.pdf), [ECMO (CCS'21), 4th
-author](./#tobeprinted).
+(82/440=18.6%)](./papers/firmguide-ase21.pdf), and [ECMO (CCS'21), 4th
+author](./papers/ecmo-ccs21.pdf).
 
 ### 0x01 Android Authentication
 
