@@ -32,10 +32,9 @@ Linux Kernels through Model-Guided Kernel Execution" got accepted at
 This project tries to rehost embedded Linux kernels for routers, cameras, and
 other high-end devices. Then, we can dynamically analyze bugs or
 vulnerabilities, detect bugs or vulnerabilities, make honey pots, detect and
-inspect malware. Cen Zhang and I lead this project now. A relative research
-paper is [FirmGuide (ASE'21) (co-first-authors)
-(82/440=18.6%)](./papers/firmguide-ase21.pdf), and [ECMO (CCS'21), 4th
-author](./papers/ecmo-ccs21.pdf).
+inspect malware. A relative research paper is [FirmGuide (ASE'21)
+(co-first-authors) (82/440=18.6%)](./papers/firmguide-ase21.pdf), and [ECMO
+(CCS'21), 4th author](./papers/ecmo-ccs21.pdf).
 
 ### 0x01 Android Authentication
 
