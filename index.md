@@ -6,9 +6,10 @@ Hi, my name is Qiang Liu. I am currently a Ph.D. student at the College
 of Computer Science of Zhejiang University (ZJU), Hangzhou, China. I'm
 now visiting HEXHIVE at École polytechnique fédérale de Lausanne (EPFL),
 Lausanne, Switzerland. My research interests include system and software
-security. I currently focus on hypervisor fuzzing. When I am free, I am
-enthusiastic about badminton. It is welcome to contact me by email at
-cyruscyliu@gmail.com or qiangliu@zju.edu.cn or qiang.liu@epfl.ch.
+security. I currently focus on hypervisor fuzzing. When I am free, I like
+talking, reading, and learning new skills. On weekends, I will play badminton,
+do outdoor activities or play CTF. It is welcome to contact me by email at
+cyruscyliu@gmail.com.
 
 [CV](./Qiang_s_CV.pdf)
 [Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
