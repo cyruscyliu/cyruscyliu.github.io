@@ -370,7 +370,7 @@ code {
 terminologies, a generic model fuzzer with different design choices, and some
 discussion about the future work. This text is mainly based on one survey[^1]
 and take some content from another review article[^2].</p>
-<h2 id="text-25-min-3000-words-and-slides">Text (25 min: ~3000 words) and <a href="./2021-10-22-fuzzing-presentation.pdf">Slides</a></h2>
+<h2 id="text-25-min-2800-words-and-slides">Text (25 min: ~2800 words) and <a href="./2021-10-22-fuzzing-presentation.pdf">Slides</a></h2>
 <p>Hello every. I'm going to present some slides on fuzzing, or fuzz testing, based
 on one survey paper (reading its name on Slide~1) that was accepted by TSE'19
 and one review article (reading its name on Slide~1) written by Patrice
@@ -601,6 +601,15 @@ in the minset or mark them in-favorable. (130/2817, 1 min)</p>
 fuzzer, and design decision in each stage. Hopefully, it can bring more
 uniformity, particularly in the terminology and presentation of fuzzing
 algorithms. (30/2854, 30 s)</p>
+<h2 id="some-selected-comments">Some selected comments</h2>
+<ol>
+<li>CFI here is shitty for fuzzing, which should not be listed here.</li>
+<li>The initial set is under-valued. In this presentation, the initial set is
+part of the configuration. However, when we provide a good set of initial seeds,
+the fuzzer can only focus on exploitability.</li>
+<li>Pay attention to what are the problems in this field, what are solved, and
+what are not solved.</li>
+</ol>
 
 </body>
 </html>

@@ -5,7 +5,7 @@ terminologies, a generic model fuzzer with different design choices, and some
 discussion about the future work. This text is mainly based on one survey[^1]
 and take some content from another review article[^2].
 
-## Text (25 min: ~3000 words) and [Slides](./2021-10-22-fuzzing-presentation.pdf)
+## Text (25 min: ~2800 words) and [Slides](./2021-10-22-fuzzing-presentation.pdf)
 
 Hello every. I'm going to present some slides on fuzzing, or fuzz testing, based
 on one survey paper (reading its name on Slide~1) that was accepted by TSE'19
@@ -252,3 +252,12 @@ All in all, the survey paper introduced rich taxonomy, a general-purpose model
 fuzzer, and design decision in each stage. Hopefully, it can bring more
 uniformity, particularly in the terminology and presentation of fuzzing
 algorithms. (30/2854, 30 s)
+
+## Some selected comments
+
+1. CFI here is shitty for fuzzing, which should not be listed here.
+2. The initial set is under-valued. In this presentation, the initial set is
+part of the configuration. However, when we provide a good set of initial seeds,
+the fuzzer can only focus on exploitability.
+3. Pay attention to what are the problems in this field, what are solved, and
+what are not solved.
