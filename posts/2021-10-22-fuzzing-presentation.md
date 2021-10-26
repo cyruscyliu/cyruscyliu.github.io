@@ -261,3 +261,6 @@ part of the configuration. However, when we provide a good set of initial seeds,
 the fuzzer can only focus on exploitability.
 3. Pay attention to what are the problems in this field, what are solved, and
 what are not solved.
+4. Do you think this paper is useful for terminology uniformity? Answer: Yes,
+but I do not think we have the agreement in practice. Scholars create their own
+terminologies all the time.
