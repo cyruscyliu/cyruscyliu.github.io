@@ -108,9 +108,9 @@ activities to evaluate our ideas quickly.
 
 ### Write a good paper
 - Keep learning to write a paper
-- Reader-centric writing
+- Reader-centered writing
 - Unity, Support, and Coherent
-- Revise, revise, and revise: practical abstraction
+- Revise context and sentences, and do editing
 
 ### Advertise
 - Homepage
