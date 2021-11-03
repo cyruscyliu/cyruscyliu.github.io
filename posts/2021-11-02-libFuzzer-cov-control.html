@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2021-11-02-libFuzzer-cov-control.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="https://cyruscyliu.github.io/styles/light-default.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="coverage-control-in-libfuzzer">Coverage Control in libFuzzer</h1>
+<p>This article reveals how to control the coverage collection in libFuzzer.</p>
+<h2 id="how-to-use-libfuzzer">How to use libFuzzer?</h2>
+<p>To use libFuzzer, it is necessary to develop a fuzz target. Please refer to
+<a href="https://llvm.org/docs/LibFuzzer.html#id14">this</a> and
+<a href="https://llvm.org/docs/LibFuzzer.html#id23">this</a> to check how to develop a fuzz
+target and how to compile it with Clang.</p>
+<h2 id="how-to-compiler-llvm-project">How to compiler LLVM project?</h2>
+<p>Download llvm-project and compile like below. Please also refer to
+<a href="https://llvm.org/docs/GettingStarted.html">this</a> and
+<a href="https://clang.llvm.org/get_started.html">this</a>.</p>
+<pre class="hljs"><code><div>git <span class="hljs-built_in">clone</span> https://github.com/llvm/llvm-project.git --depth=1
+mkdir build; <span class="hljs-built_in">cd</span> build
+cmake -G Ninja -DLLVM_USE_LINKER=gold -DLLVM_ENABLE_PROJECTS=<span class="hljs-string">"clang;compiler-rt"</span> -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_OPTIMIZED_TABLEGEN=ON ../llvm/
+ninja clang compiler-rt
+<span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PWD</span>/bin:<span class="hljs-variable">$PATH</span>
+</div></code></pre>
+<h2 id="details-beneath--fsanitizefuzzer">Details beneath <code>-fsanitize=fuzzer</code></h2>
+<p>As we all know, when compiling a program, a compiler will automatically expand
+its compiler flags. If <code>-v</code> is enable, the compiler will show all flags.
+Considering a very simple example: <code>clang -o foo -fsanitize=fuzzer foo.c</code>, the
+full flags related to <code>-fsanitize</code> are in the following.</p>
+<pre class="hljs"><code><div># SIMPLIFIED
+&quot;$LLVM/bin/clang-13&quot; -cc1 \
+   -triple x86_64-unknown-linux-gnu \
+   -emit-obj \
+   -target-cpu x86-64 -v \
+   -fsanitize-coverage-type=1 -fsanitize-coverage-type=3 \
+   -fsanitize-coverage-indirect-calls \
+   -fsanitize-coverage-trace-cmp \
+   -fsanitize-coverage-inline-8bit-counters \
+   -fsanitize-coverage-pc-table \
+   -fsanitize-coverage-stack-depth \
+   -fsanitize-coverage-trace-state \
+   -fsanitize=fuzzer,fuzzer-no-link \
+   -o /tmp/main-d501e8.o -x c main.c
+# SIMPLIFIED
+&quot;/usr/local/bin/ld&quot; -z relro \
+   --hash-style=gnu --eh-frame-hdr \
+    -m elf_x86_64 \
+    -dynamic-linker /lib64/ld-linux-x86-64.so.2 \
+    -o main \
+    $LLVM/lib/clang/13.0.0/lib/linux/libclang_rt.fuzzer-x86_64.a \
+    $LLVM/lib/clang/13.0.0/lib/linux/libclang_rt.fuzzer_interceptors-x86_64.a \
+    $LLVM/lib/clang/13.0.0/lib/linux/libclang_rt.ubsan_standalone-x86_64.a \
+    --dynamic-list=$LLVM/lib/clang/13.0.0/lib/linux/libclang_rt.ubsan_standalone-x86_64.a.syms \
+    /tmp/main-d501e8.o
+</div></code></pre>
+<p>It's <code>SanitizerArgs()</code> that parses SanCov and sanitizers flags. The path to it
+is in the following.</p>
+<pre class="hljs"><code><div> [#0] clang::driver::SanitizerArgs::SanitizerArgs()
+ [#1] clang::driver::ToolChain::getSanitizerArgs() const()
+ [#2] clang::driver::toolchains::Linux::isPIEDefault() const()
+ [#3] clang::driver::tools::ParsePICArgs()
+ [#4] clang::driver::tools::Clang::ConstructJob()
+ [#5] clang::driver::Driver::BuildJobsForActionNoCache()
+ [#6] clang::driver::Driver::BuildJobsForAction()
+ [#7] clang::driver::Driver::BuildJobsForActionNoCache()
+ [#8] clang::driver::Driver::BuildJobsForAction()
+ [#9] clang::driver::Driver::BuildJobs()
+[#10] clang::driver::Driver::BuildCompilation()
+[#11] main()
+</div></code></pre>
+<p>In <code>SanitizerArgs()</code>, <code>parseArgValues</code> will parse six sanitizer related flags.
+<code>parseArgValues</code> will invoke <code>parseSanitizerValue</code> defined in
+<code>clang/lib/Basic/Sanitizers.cpp</code> to parse sanitizers defined
+<code>clang/include/clang/Basic/Sanitizers.def</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// clang/include/clang/Basic/Sanitizers.def</span>
+<span class="hljs-comment">// libFuzzer</span>
+SANITIZER(<span class="hljs-string">"fuzzer"</span>, Fuzzer)
+
+<span class="hljs-comment">// libFuzzer-required instrumentation, no linking.</span>
+SANITIZER(<span class="hljs-string">"fuzzer-no-link"</span>, FuzzerNoLink)
+</div></code></pre>
+<p>In <code>SanitizerArgs()</code>, <code>parseCoverageFeatures</code> will parse two flags:
+<code>-fsanitize-coverage=&lt;value&gt;</code> and <code>-fno-sanitize-coverage=&lt;value&gt;</code> to control
+what kind of coverage information for sanitizers. Try <code>clang --help | grep coverage</code> to see more related flags.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">parseCoverageFeatures</span><span class="hljs-params">(<span class="hljs-keyword">const</span> Driver &amp;D, <span class="hljs-keyword">const</span> llvm::opt::Arg *A)</span> </span>{
+  assert(A-&gt;getOption().matches(options::OPT_fsanitize_coverage) ||
+         A-&gt;getOption().matches(options::OPT_fno_sanitize_coverage));
+  <span class="hljs-keyword">int</span> Features = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, n = A-&gt;getNumValues(); i != n; ++i) {
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *Value = A-&gt;getValue(i);
+    <span class="hljs-keyword">int</span> F = llvm::StringSwitch&lt;<span class="hljs-keyword">int</span>&gt;(Value)
+                .Case(<span class="hljs-string">"func"</span>, CoverageFunc)
+                .Case(<span class="hljs-string">"bb"</span>, CoverageBB)
+                .Case(<span class="hljs-string">"edge"</span>, CoverageEdge)
+                .Case(<span class="hljs-string">"indirect-calls"</span>, CoverageIndirCall)
+                .Case(<span class="hljs-string">"trace-bb"</span>, CoverageTraceBB)
+                .Case(<span class="hljs-string">"trace-cmp"</span>, CoverageTraceCmp)
+                .Case(<span class="hljs-string">"trace-div"</span>, CoverageTraceDiv)
+                .Case(<span class="hljs-string">"trace-gep"</span>, CoverageTraceGep)
+                .Case(<span class="hljs-string">"8bit-counters"</span>, Coverage8bitCounters)
+                .Case(<span class="hljs-string">"trace-pc"</span>, CoverageTracePC)
+                .Case(<span class="hljs-string">"trace-pc-guard"</span>, CoverageTracePCGuard)
+                .Case(<span class="hljs-string">"no-prune"</span>, CoverageNoPrune)
+                .Case(<span class="hljs-string">"inline-8bit-counters"</span>, CoverageInline8bitCounters)
+                .Case(<span class="hljs-string">"inline-bool-flag"</span>, CoverageInlineBoolFlag)
+                .Case(<span class="hljs-string">"pc-table"</span>, CoveragePCTable)
+                .Case(<span class="hljs-string">"stack-depth"</span>, CoverageStackDepth)
+                .Default(<span class="hljs-number">0</span>);
+    <span class="hljs-keyword">if</span> (F == <span class="hljs-number">0</span>)
+      D.Diag(clang::diag::err_drv_unsupported_option_argument)
+          &lt;&lt; A-&gt;getOption().getName() &lt;&lt; Value;
+    Features |= F;
+  }
+  <span class="hljs-keyword">return</span> Features;
+}
+</div></code></pre>
+<p><code>parseCoverageFeatures</code> clearly show what kind of coverage we can control. In
+the following are several tips to enable and disable these coverage flags.</p>
+<ul>
+<li><code>func</code>, <code>bb</code>, and <code>edge</code> are mutually exclusive</li>
+<li><code>trace-bb</code> is deprecated, use <code>trace-pc-guard</code> instead</li>
+<li><code>8bit-counter</code> is deprecated, use <code>trace-pc-guard</code> instead</li>
+<li>if use one of <code>func</code>, <code>bb</code>, and <code>edge</code>, <code>trace-pc-guard</code> or <code>trace-pc</code> must be enabled</li>
+<li>if one of <code>trace-pc</code>, <code>trace-pc-guard</code>, <code>inline-8bit-counter</code>, and <code>inline-bool-flag</code>
+is enabled without any <code>func</code>, <code>bb</code>, or <code>edge</code>, then <code>edge</code> is added by default</li>
+<li><code>stack-depth</code> needs <code>func</code></li>
+</ul>
+<p>Returning from <code>SanitizerArgs()</code>,  <code>ConstructJob</code> will invoke <code>addArgs</code> to
+append flags to the command line <code>clang -o foo -fsanitize=fuzzer foo.c</code>.</p>
+<pre class="hljs"><code><div>[#0] 0x55555a470fa2 → clang::driver::SanitizerArgs::addArgs()
+[#1] 0x55555a3c6572 → clang::driver::tools::Clang::ConstructJob()
+[#2] 0x55555a345a9a → clang::driver::Driver::BuildJobsForActionNoCache()
+[#3] 0x55555a343f99 → clang::driver::Driver::BuildJobsForAction()
+[#4] 0x55555a344bad → clang::driver::Driver::BuildJobsForActionNoCache()
+[#5] 0x55555a343f99 → clang::driver::Driver::BuildJobsForAction()
+[#6] 0x55555a34280e → clang::driver::Driver::BuildJobs()
+[#7] 0x55555a3345c4 → clang::driver::Driver::BuildCompilation()
+</div></code></pre>
+<p><code>addArgs</code> will add corresponding flags according to the table below.</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">std</span>::pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *&gt; CoverageFlags[] = {
+    <span class="hljs-built_in">std</span>::make_pair(CoverageFunc, <span class="hljs-string">"-fsanitize-coverage-type=1"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageBB, <span class="hljs-string">"-fsanitize-coverage-type=2"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageEdge, <span class="hljs-string">"-fsanitize-coverage-type=3"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageIndirCall, <span class="hljs-string">"-fsanitize-coverage-indirect-calls"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageTraceBB, <span class="hljs-string">"-fsanitize-coverage-trace-bb"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageTraceCmp, <span class="hljs-string">"-fsanitize-coverage-trace-cmp"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageTraceDiv, <span class="hljs-string">"-fsanitize-coverage-trace-div"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageTraceGep, <span class="hljs-string">"-fsanitize-coverage-trace-gep"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(Coverage8bitCounters, <span class="hljs-string">"-fsanitize-coverage-8bit-counters"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageTracePC, <span class="hljs-string">"-fsanitize-coverage-trace-pc"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageTracePCGuard,
+                    <span class="hljs-string">"-fsanitize-coverage-trace-pc-guard"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageInline8bitCounters,
+                    <span class="hljs-string">"-fsanitize-coverage-inline-8bit-counters"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageInlineBoolFlag,
+                    <span class="hljs-string">"-fsanitize-coverage-inline-bool-flag"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoveragePCTable, <span class="hljs-string">"-fsanitize-coverage-pc-table"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageNoPrune, <span class="hljs-string">"-fsanitize-coverage-no-prune"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageStackDepth, <span class="hljs-string">"-fsanitize-coverage-stack-depth"</span>),
+    <span class="hljs-built_in">std</span>::make_pair(CoverageTraceState, <span class="hljs-string">"-fsanitize-coverage-trace-state"</span>)};
+</div></code></pre>
+<p>Returning from <code>Clang::contructJob</code>, <code>addSanitizerRuntimes</code> will expland linker
+flags.</p>
+<pre class="hljs"><code><div>[#0] 0x55555a3dcbe2 → clang::driver::tools::addSanitizerRuntimes()
+[#1] 0x55555a40cac0 → clang::driver::tools::gnutools::Linker::ConstructJob()
+[#2] 0x55555a345a9a → clang::driver::Driver::BuildJobsForActionNoCache()
+[#3] 0x55555a343f99 → clang::driver::Driver::BuildJobsForAction()
+[#4] 0x55555a34280e → clang::driver::Driver::BuildJobs()
+[#5] 0x55555a3345c4 → clang::driver::Driver::BuildCompilation()
+[#6] 0x555557ddf8f7 → main()
+</div></code></pre>
+<p>In <code>addSanitizerRuntimes</code>, <code>collectSanitizerRuntimes</code> will collect libraries for
+sanitizers.</p>
+<ul>
+<li>Use <code>-shared-libsan</code> (by default) or <code>-static-libsan</code> to collect dynamic or static libraries</li>
+<li>use <code>-fsanitize-link-runtime&quot;</code> (by default) or <code>-fno-sanitize-link-runtime</code> to switch on or off linking</li>
+</ul>
+<p>To use ASAN, assign <code>-fsanitize=address</code>. If only <code>-fsanitize=fuzzer</code>, then
+UBSAN will be enabled.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">SanitizerArgs::needsUbsanRt</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{
+  <span class="hljs-comment">// All of these include ubsan.</span>
+  <span class="hljs-keyword">if</span> (needsAsanRt() || needsMsanRt() || needsHwasanRt() || needsTsanRt() ||
+      needsDfsanRt() || needsLsanRt() || needsCfiDiagRt() ||
+      (needsScudoRt() &amp;&amp; !requiresMinimalRuntime()))
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+
+  <span class="hljs-keyword">return</span> (Sanitizers.Mask &amp; NeedsUbsanRt &amp; ~TrapSanitizers.Mask) ||
+         CoverageFeatures;
+}
+</div></code></pre>
+<p>Shortly, if no other sanitizers is enabled, and if any coverage is enabled,
+UBSAN will be enabled.</p>
+<p>After <code>collectSanitizerRuntimes</code>, <code>addSanitizerRuntimes</code> will update runtimes regarding to <code>-fsanitizer=fuzzer</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">SanitizerArgs::needsFuzzerInterceptors</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{
+  <span class="hljs-keyword">return</span> needsFuzzer() &amp;&amp; !needsAsanRt() &amp;&amp; !needsTsanRt() &amp;&amp; !needsMsanRt();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">tools::addSanitizerRuntimes</span><span class="hljs-params">(...)</span> </span>{
+  ...
+    addSanitizerRuntime(TC, Args, CmdArgs, <span class="hljs-string">"fuzzer"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>);
+    <span class="hljs-keyword">if</span> (SanArgs.needsFuzzerInterceptors())
+        addSanitizerRuntime(TC, Args, CmdArgs, <span class="hljs-string">"fuzzer_interceptors"</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>);
+}
+</div></code></pre>
+<p>BTW, <code>fuzz_interceptors</code> will be appended if no ASAN, TSAN, MSAN runtime is
+enabled.</p>
+<p>Finally, to narrow down the coverage collection, we can construct a command in
+the following.</p>
+<pre class="hljs"><code><div>clang -o foo -fsanitize=fuzzer \
+    -fsanitize-coverage=bb,trace-pc \
+    -fno-sanitize-coverage=indirect-calls,trace-cmp,inline-8bit-counters,stack-depth,pc-table \
+    foo.c
+</div></code></pre>
+<p>In this way, only <code>bb</code> and <code>trace-pc</code> are enabled.</p>
+<h2 id="details-of-different-instrumentations">Details of different instrumentations</h2>
+<p>The module pass <code>SanitizerCoverage</code>
+(llvm/lib/Transforms/Instrumentation/SanitizerCoverage.cpp) will instrument
+coverage flag to each module.</p>
+<p>In the first state, <code>SanitizerCoverage</code> will construct the IR of stubs to be
+instrumented. A classic pattern is in the following.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> SanCovTracePCIndirName[] = <span class="hljs-string">"__sanitizer_cov_trace_pc_indir"</span>;
+SanCovTracePCIndir = M.getOrInsertFunction(SanCovTracePCIndirName, VoidTy, IntptrTy);
+</div></code></pre>
+<p>In the second state, <code>SanitizerCoverage</code> will traverse all IR code and do
+instrumentation at the proper position.</p>
+<pre class="hljs"><code><div>IRB.CreateCall(SanCovTracePCIndir, IRB.CreatePointerCast(Callee, IntptrTy));
+</div></code></pre>
+<p>The overall flow of <code>SanitizerCoverage</code> is in the following.</p>
+<pre class="hljs"><code><div>instrumentModule
+    - stage 1
+    - for (auto &amp;F : M) { instrumentFunction(F); }
+instrumentFunction
+    - split edges if edge coverage[^1]
+    - for (auto &amp;BB: F) { BlocksToInstrument.push_back(&amp;BB); }
+    - stage 2
+</div></code></pre>
+<p>The key function in stage 2 is <code>InjectCoverage</code>.</p>
+<p><code>InjectCoverage</code> first create FunctionGuardArray and FunctionPCsArray in
+<code>CreateFunctionLocalArrays</code>, then invoke <code>InjectCoverageAtBlock</code> to handle each
+basic blocks. <code>InjectCoverageAtBlock</code> will instrument <code>SanCovTracePC</code>,
+<code>SanCovTracePCGuard</code> for each basic block.</p>
+<p>[^1]: <a href="https://clang.llvm.org/docs/SanitizerCoverage.html#edge-coverage">Clang edge-coverage</a></p>
+
+</body>
+</html>
