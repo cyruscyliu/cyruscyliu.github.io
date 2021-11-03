@@ -264,3 +264,6 @@ what are not solved.
 4. Do you think this paper is useful for terminology uniformity? Answer: Yes,
 but I do not think we have the agreement in practice. Scholars create their own
 terminologies all the time.
+
+[^1]: [The Art, Science, and Engineering of Fuzzing: A Survey](https://arxiv.org/pdf/1812.00140.pdf) \
+[^2]: [Fuzzing: Hack, Art, and Science](https://wcventure.github.io/FuzzingPaper/Paper/CACM20_Fuzzing.pdf)
