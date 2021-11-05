@@ -685,9 +685,7 @@ whose size is the number of the basic blocks. This array is associated with
 module.</p>
 <p>[NOT SURE] In the end, after linking, there will be one <code>sancov_guards</code> and one
 <code>sancov.module_ctor_trace_pc_guard</code>.</p>
-<h3 id="sanitizercov8bitcountersinit">__sanitizer_cov_8bit_counters_init</h3>
-<p>The inline 8bit counters will be at the entry of each basic block after
-<code>__sanitizer_cov_trace_pc_guard</code>.</p>
+<h3 id="sanitizercov8bipctableentryidxpcguard">__sanitizer_cov_8biPCTableEntryIdxpc_guard`.</h3>
 <p>Each function would have a function 8bit counter array <code>int8_t Function8BitArray[]</code> whose size is the number of the basic blocks. This array is
 associated with <code>sancov_cntrs</code> section. If a basic block is visited, then the
 corresponding byte in the array will be increased by 1.</p>
@@ -862,7 +860,220 @@ information flows to <code>ModulePCTable</code> in libFuzzer.</p>
 </tr>
 </tbody>
 </table>
-<p>edge-coverage](https://clang.llvm.org/docs/SanitizerCoverage.html#edge-coverage)</p>
+<h2 id="details-of-coverage-collection-algorithm-and-implementation">Details of coverage collection algorithm and implementation</h2>
+<p>Recalling that several stubs are instrumented to the target program. The implementation of these stubs are implemented in libFuzzer by default or can be replaced by developers. Most of them are defined in compiler-rt/lib/fuzzer/FuzzerTracePC.cpp. After testing an input, these stubs will update corresponding information. LibFuzzer will then calculate the coverage with the information. A detailed flow is in the following.</p>
+<pre class="hljs"><code><div>ExecuteCallback
+    - TPC.ResetMaps();
+    - CB(DataCopy, Size);
+TPC.CollectFeatures();
+<span class="hljs-keyword">if</span> (NumNewFeatures || ForceAddToCorpus) {
+  TPC.UpdateObservedPCs();
+}
+</div></code></pre>
+<h3 id="resetmaps">ResetMaps</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">template</span> &lt;<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Callback</span>&gt;
+<span class="hljs-title">void</span> <span class="hljs-title">IterateCounterRegions</span>(<span class="hljs-title">Callback</span> <span class="hljs-title">CB</span>) {</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">size_t</span> m = <span class="hljs-number">0</span>; m &lt; NumModules; m++)
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">size_t</span> r = <span class="hljs-number">0</span>; r &lt; Modules[m].NumRegions; r++)
+      CB(Modules[m].Regions[r]);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">TracePC::ClearInlineCounters</span><span class="hljs-params">()</span> </span>{
+  IterateCounterRegions([](<span class="hljs-keyword">const</span> Module::Region &amp;R){
+    <span class="hljs-keyword">if</span> (R.Enabled)
+      <span class="hljs-built_in">memset</span>(R.Start, <span class="hljs-number">0</span>, R.Stop - R.Start);
+  });
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ResetMaps</span><span class="hljs-params">()</span> </span>{
+  ValueProfileMap.Reset();
+  ClearExtraCounters();
+  ClearInlineCounters();
+}
+</div></code></pre>
+<p>TPC.ResetMaps reset 1) ValueProfileMap, a bit map for data flow value, 2)
+ExtraCounters, 3) InlineCouters, the area for <code>inline-8bit-counters</code>.</p>
+<h3 id="collectfeatures">CollectFeatures</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">size_t</span> NumUpdatesBefore = Corpus.NumFeatureUpdates();
+TPC.CollectFeatures([&amp;](<span class="hljs-keyword">size_t</span> Feature) {
+  <span class="hljs-keyword">if</span> (Corpus.AddFeature(Feature, Size, Options.Shrink))
+    <span class="hljs-comment">// *</span>
+});
+</div></code></pre>
+<p><code>TPC.CollectFeatures</code> accepts a HandleFeature function pointer.  In the
+HandleFeature, it accepts a Feature that is calculated from all the coverage
+information (Information Sink), and then adds the feature to the corpus.</p>
+<p>In <code>TPC.CollectFeatures</code>, it maps the information sinks to features like below.</p>
+<pre class="hljs"><code><div>// Modules (Inlint8BitCounters)
+FirstFeature=0
+                         feature
+      0    8    w/o counters  w/ counters
+      +----+
+BB00  +d'02+    +0            +(0*8 + log(2))
+      +----+
+BB01  +d'80+    +1            +(1*8 + log(80))
+      +----+
+FirstFeature += NumOfBits(Modules)
+// ExtracCounters
+      0    8    w/o counters  w/ counters
+      +----+
+CNT0  +d'02+    +0            +(0*8 + log(2))
+      +----+
+CNT1  +d'80+    +1            +(1*8 + log(80))
+      +----+
+FirstFeature += NumOfBits(ExtraCounters)
+// ValueProfileMap
+      0    8
+      +----+
+VPM0  +d'02+    +6 (b'00000010)
+      +----+
+VPM8  +d'82+    +8/+14 (b'10000010)
+      +----+
+FirstFeature += NumOfBits(ValueProfileMap)
+// StackDepth
+                + StackDepthStepFunction(MaxStackOffset / 8)
+</div></code></pre>
+<p>In general, we map coverage information to a linear feature from zero. For the
+<code>Modules</code>, libFuzzer checks each byte that records how many times a basic block is
+visited. If without counters, the feature is the start feature plus the index of
+the bytes. For BB01, if the index is 1, then the feature is 1. If with counter,
+it will take d'80 into consideration. The feature is 0 plus log(80). The
+logarithmic function guarantees the feature will not overflow 8 bits. In the
+end, the start of the new features will be updated by adding the bit number of
+modules. <code>ExtraCounters</code> works similarly. For the ValueProfileMap, each non-zero
+bit is a new feature. For the stack depth, it leverages a hash function
+StackDepthStepFunction.</p>
+<h3 id="updateobservedpcs">UpdateObservedPCs</h3>
+<p>If any new features, libFuzzer will update observed PCs.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (<span class="hljs-keyword">size_t</span> i = <span class="hljs-number">0</span>; i &lt; NumModules; i++) {
+  <span class="hljs-keyword">auto</span> &amp;M = Modules[i];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">size_t</span> r = <span class="hljs-number">0</span>; r &lt; M.NumRegions; r++) {
+    <span class="hljs-keyword">auto</span> &amp;R = M.Regions[r];
+    <span class="hljs-keyword">if</span> (!R.Enabled) <span class="hljs-keyword">continue</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint8_t</span> *P = R.Start; P &lt; R.Stop; P++)
+      <span class="hljs-keyword">if</span> (*P) <span class="hljs-comment">// if this basic block is visited</span>
+        <span class="hljs-comment">// then get the PC of the visited the basic block</span>
+        <span class="hljs-comment">// then invoke Observe</span>
+        Observe(&amp;ModulePCTable[i].Start[M.Idx(P)]);
+  }
+}
+</div></code></pre>
+<p>First, if a basic block is visited, libFuzzer will get the PC of the visited the
+basic in the PCTable, and invoke <code>Observe</code>.</p>
+<pre class="hljs"><code><div>Vector&lt;<span class="hljs-keyword">uintptr_t</span>&gt; CoveredFuncs;
+<span class="hljs-keyword">auto</span> ObservePC = [&amp;](<span class="hljs-keyword">const</span> PCTableEntry *TE) {
+  <span class="hljs-keyword">if</span> (ObservedPCs.insert(TE).second &amp;&amp; DoPrintNewPCs) {
+    PrintPC(<span class="hljs-string">"\tNEW_PC: %p %F %L"</span>, <span class="hljs-string">"\tNEW_PC: %p"</span>,
+            GetNextInstructionPc(TE-&gt;PC));
+    Printf(<span class="hljs-string">"\n"</span>);
+  }
+};
+
+<span class="hljs-keyword">auto</span> Observe = [&amp;](<span class="hljs-keyword">const</span> PCTableEntry *TE) {
+  <span class="hljs-keyword">if</span> (PcIsFuncEntry(TE))
+    <span class="hljs-keyword">if</span> (++ObservedFuncs[TE-&gt;PC] == <span class="hljs-number">1</span> &amp;&amp; NumPrintNewFuncs)
+      CoveredFuncs.push_back(TE-&gt;PC);
+  ObservePC(TE);
+};
+</div></code></pre>
+<p>If the basic block is the entry, then update <code>ObservedFunc</code>. Otherwise, invoke
+<code>ObservePC</code> to update <code>ObservedPCs</code>.</p>
+<h2 id="libfuzzer-intercepts">libFuzzer intercepts</h2>
+<p>LibFuzzer will intercepts <code>memcmp</code>, <code>strncmp</code>, <code>strcmp</code>, <code>strncasecmp</code>,
+<code>strcasecmp</code>, <code>strstr</code>, <code>strcasestr</code>, and <code>memmem</code> functions if no ASAN, TSAN,
+MSAN runtime is enabled. It is not easy to disable this behavior.</p>
+<p>A typical flow for each above function is in the following.</p>
+<pre class="hljs"><code><div>    RunningUserCallback = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">int</span> Res = CB(DataCopy, Size);
+    RunningUserCallback = <span class="hljs-literal">false</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">memcmp</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span> *s1, <span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span> *s2, <span class="hljs-keyword">size_t</span> n)</span> </span>{
+  <span class="hljs-keyword">if</span> (!FuzzerInited)
+    <span class="hljs-keyword">return</span> internal_memcmp(s1, s2, n);
+  <span class="hljs-keyword">int</span> result = REAL(<span class="hljs-built_in">memcmp</span>)(s1, s2, n);
+  __sanitizer_weak_hook_memcmp(GET_CALLER_PC(), s1, s2, n, result);
+  <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-keyword">void</span> __sanitizer_weak_hook_memcmp(<span class="hljs-keyword">void</span> *caller_pc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span> *s1,
+                                  <span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span> *s2, <span class="hljs-keyword">size_t</span> n, <span class="hljs-keyword">int</span> result) {
+  <span class="hljs-keyword">if</span> (!fuzzer::RunningUserCallback) <span class="hljs-keyword">return</span>;
+  <span class="hljs-keyword">if</span> (result == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;  <span class="hljs-comment">// No reason to mutate.</span>
+  <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span>;  <span class="hljs-comment">// Not interesting.</span>
+  fuzzer::TPC.AddValueForMemcmp(caller_pc, s1, s2, n, <span class="hljs-comment">/*StopAtZero*/</span><span class="hljs-literal">false</span>);
+}
+</div></code></pre>
+<p>Here is a summary of where the collected information will flow.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Function</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">Information Sink</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">memcmp</td>
+<td style="text-align:center">AddValueForMemcmp</td>
+<td style="text-align:center">ValueProfileMap</td>
+</tr>
+<tr>
+<td style="text-align:center">strnmp</td>
+<td style="text-align:center">AddValueForMemcmp</td>
+<td style="text-align:center">ValueProfileMap</td>
+</tr>
+<tr>
+<td style="text-align:center">strcmp</td>
+<td style="text-align:center">AddValueForMemcmp</td>
+<td style="text-align:center">ValueProfileMap</td>
+</tr>
+<tr>
+<td style="text-align:center">strncasecmp</td>
+<td style="text-align:center">AddValueForMemcmp</td>
+<td style="text-align:center">ValueProfileMap</td>
+</tr>
+<tr>
+<td style="text-align:center">strcasecmp</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">AddValueForMemcmp</td>
+</tr>
+<tr>
+<td style="text-align:center">strstr</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">MMT(Mutation Only)</td>
+</tr>
+<tr>
+<td style="text-align:center">strcasestr</td>
+<td style="text-align:center">MMT(Mutation Only)</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">memmem</td>
+<td style="text-align:center">MMT(Mutation Only)</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>To disable them, we could 1) use <code>-use_value_profile=0</code> when fuzzing to avoid
+update coverage information from ValueProfileMap, 2) comment these
+<code>__sanitizer_weak_hook_xxx</code> to reduce the overhead. Luckily,
+<code>-use_value_profile=0</code> is the default option of libFuzzer.</p>
+<h2 id="conclusion">Conclusion</h2>
+<ol>
+<li>
+<p>For the basic block coverage, SanCov maintains an array that records how many
+times a basic block is visited, and the libFuzzer will collect that information
+and calculate features.</p>
+</li>
+<li>
+<p>To disable fancy features, just do as below.</p>
+</li>
+</ol>
+<pre class="hljs"><code><div>clang -o foo -fsanitize=fuzzer \
+    -fno-sanitize-coverage=indirect-calls,trace-cmp,stack-depth,pc-table \
+    foo.c
+</div></code></pre>
 
 </body>
 </html>

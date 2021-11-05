@@ -389,10 +389,7 @@ module.
 [NOT SURE] In the end, after linking, there will be one `sancov_guards` and one
 `sancov.module_ctor_trace_pc_guard`.
 
-### __sanitizer_cov_8bit_counters_init
-
-The inline 8bit counters will be at the entry of each basic block after
-`__sanitizer_cov_trace_pc_guard`.
+### __sanitizer_cov_8biPCTableEntryIdxpc_guard`.
 
 Each function would have a function 8bit counter array `int8_t
 Function8BitArray[]` whose size is the number of the basic blocks. This array is
@@ -521,5 +518,208 @@ void __sanitizer_cov_pcs_init(const uintptr_t *pcs_beg,
 |inline-8bit-guard,pc-table|__sanitizer_cov_pcs_init|ModulePCTable|
 |inline-bool-flag,pc-table|__sanitizer_cov_pcs_init|ModulePCTable|
 
-[^1]: [Clang
-edge-coverage](https://clang.llvm.org/docs/SanitizerCoverage.html#edge-coverage)
+[^1]: [Clangedge-coverage](https://clang.llvm.org/docs/SanitizerCoverage.html#edge-coverage)
+
+## Details of coverage collection algorithm and implementation
+
+Recalling that several stubs are instrumented to the target program. The implementation of these stubs are implemented in libFuzzer by default or can be replaced by developers. Most of them are defined in compiler-rt/lib/fuzzer/FuzzerTracePC.cpp. After testing an input, these stubs will update corresponding information. LibFuzzer will then calculate the coverage with the information. A detailed flow is in the following.
+
+``` c++
+ExecuteCallback
+    - TPC.ResetMaps();
+    - CB(DataCopy, Size);
+TPC.CollectFeatures();
+if (NumNewFeatures || ForceAddToCorpus) {
+  TPC.UpdateObservedPCs();
+}
+```
+
+### ResetMaps
+
+``` c++
+template <class Callback>
+void IterateCounterRegions(Callback CB) {
+  for (size_t m = 0; m < NumModules; m++)
+    for (size_t r = 0; r < Modules[m].NumRegions; r++)
+      CB(Modules[m].Regions[r]);
+}
+
+void TracePC::ClearInlineCounters() {
+  IterateCounterRegions([](const Module::Region &R){
+    if (R.Enabled)
+      memset(R.Start, 0, R.Stop - R.Start);
+  });
+}
+
+void ResetMaps() {
+  ValueProfileMap.Reset();
+  ClearExtraCounters();
+  ClearInlineCounters();
+}
+```
+
+TPC.ResetMaps reset 1) ValueProfileMap, a bit map for data flow value, 2)
+ExtraCounters, 3) InlineCouters, the area for `inline-8bit-counters`.
+
+### CollectFeatures
+
+``` c++
+size_t NumUpdatesBefore = Corpus.NumFeatureUpdates();
+TPC.CollectFeatures([&](size_t Feature) {
+  if (Corpus.AddFeature(Feature, Size, Options.Shrink))
+    // *
+});
+```
+
+`TPC.CollectFeatures` accepts a HandleFeature function pointer.  In the
+HandleFeature, it accepts a Feature that is calculated from all the coverage
+information (Information Sink), and then adds the feature to the corpus.
+
+In `TPC.CollectFeatures`, it maps the information sinks to features like below.
+
+``` txt
+// Modules (Inlint8BitCounters)
+FirstFeature=0
+                         feature
+      0    8    w/o counters  w/ counters
+      +----+
+BB00  +d'02+    +0            +(0*8 + log(2))
+      +----+
+BB01  +d'80+    +1            +(1*8 + log(80))
+      +----+
+FirstFeature += NumOfBits(Modules)
+// ExtracCounters
+      0    8    w/o counters  w/ counters
+      +----+
+CNT0  +d'02+    +0            +(0*8 + log(2))
+      +----+
+CNT1  +d'80+    +1            +(1*8 + log(80))
+      +----+
+FirstFeature += NumOfBits(ExtraCounters)
+// ValueProfileMap
+      0    8
+      +----+
+VPM0  +d'02+    +6 (b'00000010)
+      +----+
+VPM8  +d'82+    +8/+14 (b'10000010)
+      +----+
+FirstFeature += NumOfBits(ValueProfileMap)
+// StackDepth
+                + StackDepthStepFunction(MaxStackOffset / 8)
+```
+
+In general, we map coverage information to a linear feature from zero. For the
+`Modules`, libFuzzer checks each byte that records how many times a basic block is
+visited. If without counters, the feature is the start feature plus the index of
+the bytes. For BB01, if the index is 1, then the feature is 1. If with counter,
+it will take d'80 into consideration. The feature is 0 plus log(80). The
+logarithmic function guarantees the feature will not overflow 8 bits. In the
+end, the start of the new features will be updated by adding the bit number of
+modules. `ExtraCounters` works similarly. For the ValueProfileMap, each non-zero
+bit is a new feature. For the stack depth, it leverages a hash function
+StackDepthStepFunction.
+
+### UpdateObservedPCs
+
+If any new features, libFuzzer will update observed PCs.
+
+``` c++
+for (size_t i = 0; i < NumModules; i++) {
+  auto &M = Modules[i];
+  for (size_t r = 0; r < M.NumRegions; r++) {
+    auto &R = M.Regions[r];
+    if (!R.Enabled) continue;
+    for (uint8_t *P = R.Start; P < R.Stop; P++)
+      if (*P) // if this basic block is visited
+        // then get the PC of the visited the basic block
+        // then invoke Observe
+        Observe(&ModulePCTable[i].Start[M.Idx(P)]);
+  }
+}
+```
+
+First, if a basic block is visited, libFuzzer will get the PC of the visited the
+basic in the PCTable, and invoke `Observe`.
+
+``` c++
+Vector<uintptr_t> CoveredFuncs;
+auto ObservePC = [&](const PCTableEntry *TE) {
+  if (ObservedPCs.insert(TE).second && DoPrintNewPCs) {
+    PrintPC("\tNEW_PC: %p %F %L", "\tNEW_PC: %p",
+            GetNextInstructionPc(TE->PC));
+    Printf("\n");
+  }
+};
+
+auto Observe = [&](const PCTableEntry *TE) {
+  if (PcIsFuncEntry(TE))
+    if (++ObservedFuncs[TE->PC] == 1 && NumPrintNewFuncs)
+      CoveredFuncs.push_back(TE->PC);
+  ObservePC(TE);
+};
+```
+
+If the basic block is the entry, then update `ObservedFunc`. Otherwise, invoke
+`ObservePC` to update `ObservedPCs`.
+
+## libFuzzer intercepts
+
+LibFuzzer will intercepts `memcmp`, `strncmp`, `strcmp`, `strncasecmp`,
+`strcasecmp`, `strstr`, `strcasestr`, and `memmem` functions if no ASAN, TSAN,
+MSAN runtime is enabled. It is not easy to disable this behavior.
+
+A typical flow for each above function is in the following.
+
+``` c++
+    RunningUserCallback = true;
+    int Res = CB(DataCopy, Size);
+    RunningUserCallback = false;
+
+int memcmp(const void *s1, const void *s2, size_t n) {
+  if (!FuzzerInited)
+    return internal_memcmp(s1, s2, n);
+  int result = REAL(memcmp)(s1, s2, n);
+  __sanitizer_weak_hook_memcmp(GET_CALLER_PC(), s1, s2, n, result);
+  return result;
+}
+
+void __sanitizer_weak_hook_memcmp(void *caller_pc, const void *s1,
+                                  const void *s2, size_t n, int result) {
+  if (!fuzzer::RunningUserCallback) return;
+  if (result == 0) return;  // No reason to mutate.
+  if (n <= 1) return;  // Not interesting.
+  fuzzer::TPC.AddValueForMemcmp(caller_pc, s1, s2, n, /*StopAtZero*/false);
+}
+```
+
+Here is a summary of where the collected information will flow.
+
+|Function||Information Sink|
+|:---:|:---:|:---:|
+|memcmp|AddValueForMemcmp|ValueProfileMap|
+|strnmp|AddValueForMemcmp|ValueProfileMap|
+|strcmp|AddValueForMemcmp|ValueProfileMap|
+|strncasecmp|AddValueForMemcmp|ValueProfileMap|
+|strcasecmp||AddValueForMemcmp|ValueProfileMap|
+|strstr||MMT(Mutation Only)|
+|strcasestr|MMT(Mutation Only)|
+|memmem|MMT(Mutation Only)|
+
+To disable them, we could 1) use `-use_value_profile=0` when fuzzing to avoid
+update coverage information from ValueProfileMap, 2) comment these
+`__sanitizer_weak_hook_xxx` to reduce the overhead. Luckily,
+`-use_value_profile=0` is the default option of libFuzzer.
+
+## Conclusion
+
+1. For the basic block coverage, SanCov maintains an array that records how many
+times a basic block is visited, and the libFuzzer will collect that information
+and calculate features.
+
+2. To disable fancy features, just do as below.
+
+``` bash
+clang -o foo -fsanitize=fuzzer \
+    -fno-sanitize-coverage=indirect-calls,trace-cmp,stack-depth,pc-table \
+    foo.c
+```
