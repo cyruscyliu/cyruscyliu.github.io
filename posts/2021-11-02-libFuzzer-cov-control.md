@@ -702,8 +702,8 @@ Here is a summary of where the collected information will flow.
 |strncasecmp|AddValueForMemcmp|ValueProfileMap|
 |strcasecmp||AddValueForMemcmp|ValueProfileMap|
 |strstr||MMT(Mutation Only)|
-|strcasestr|MMT(Mutation Only)|
-|memmem|MMT(Mutation Only)|
+|strcasestr||MMT(Mutation Only)|
+|memmem||MMT(Mutation Only)|
 
 To disable them, we could 1) use `-use_value_profile=0` when fuzzing to avoid
 update coverage information from ValueProfileMap, 2) comment these
