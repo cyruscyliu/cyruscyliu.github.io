@@ -178,7 +178,7 @@ std::pair<int, const char *> CoverageFlags[] = {
     std::make_pair(CoverageTraceState, "-fsanitize-coverage-trace-state")};
 ```
 
-Returning from `Clang::contructJob`, `addSanitizerRuntimes` will expland linker
+Returning from `Clang::contructJob`, `addSanitizerRuntimes` will expand linker
 flags.
 
 ``` txt
@@ -238,14 +238,13 @@ the following.
 
 ``` bash
 clang -o foo -fsanitize=fuzzer \
-    -fsanitize-coverage=bb,trace-pc \
-    -fno-sanitize-coverage=indirect-calls,trace-cmp,inline-8bit-counters,stack-depth,pc-table \
+    -fno-sanitize-coverage=indirect-calls,trace-cmp,stack-depth,pc-table \
     foo.c
 ```
 
-In this way, only `bb` and `trace-pc` are enabled.
+In this way, only `edge` and `inline-8bit-counters` are enabled.
 
-## Details of different instrumentations
+## Flow of instrumentations
 
 The module pass `SanitizerCoverage`
 (llvm/lib/Transforms/Instrumentation/SanitizerCoverage.cpp) will instrument
@@ -274,15 +273,253 @@ instrumentModule
     - for (auto &F : M) { instrumentFunction(F); }
 instrumentFunction
     - split edges if edge coverage[^1]
-    - for (auto &BB: F) { BlocksToInstrument.push_back(&BB); }
+    - for (auto &BB : F) {
+        BlocksToInstrument.push_back(&BB);
+        for (auto &Inst: BB) { /* simplified */
+          if (IndirectCalls && xxx) IndirCalls.push_back(&Inst)
+          if (TraceCmp && xxx) CmpTraceTargets.push_back(&Inst)
+          if (TraceCmp && xxx) SwitchTraceTargets.push_back(&Inst)
+          if (TraceDiv && xxx) DivTraceTargets.push_back(BO)
+          if (TraceGep && xxx) GepTraceTargets.push_back(BO)
+          if (TraceStackDepth && xxx) IsLeafFunc = false;
+        }
+      }
     - stage 2
+        InjectCoverage(F, BlocksToInstrument, IsLeafFunc);
+        InjectCoverageForIndirectCalls(F, IndirCalls);
+        InjectTraceForCmp(F, CmpTraceTargets);
+        InjectTraceForSwitch(F, SwitchTraceTargets);
+        InjectTraceForDiv(F, DivTraceTargets);
+        InjectTraceForGep(F, GepTraceTargets);
 ```
 
 The key function in stage 2 is `InjectCoverage`.
 
-`InjectCoverage` first create FunctionGuardArray and FunctionPCsArray in
-`CreateFunctionLocalArrays`, then invoke `InjectCoverageAtBlock` to handle each
-basic blocks. `InjectCoverageAtBlock` will instrument `SanCovTracePC`,
-`SanCovTracePCGuard` for each basic block.
+`InjectCoverage` first create FunctionGuardArray, Function8bitCounterArray,
+FunctionBoolArray, or FunctionPCsArray in `CreateFunctionLocalArrays`, then
+invoke `InjectCoverageAtBlock` to handle each basic blocks.
+`InjectCoverageAtBlock` will instrument `SanCovTracePC`, `SanCovTracePCGuard`,
+`Inline8BitCounters`, or `InlineBoolFlag`, or update the lowest stack frame, for
+each basic block.
 
-[^1]: [Clang edge-coverage](https://clang.llvm.org/docs/SanitizerCoverage.html#edge-coverage)
+## Details of stubs
+
+Please also refer to [this](https://clang.llvm.org/docs/SanitizerCoverage.html).
+
+### __sanitizer_cov_indir_call
+
+This will be in front of an indirect call. It requires at least one of
+`trace-pc`, `trace-pc-guard`, `inline-8bit-counters`, and `inline-bool-flag`.
+It accepts one parameter, the callee address. The address of the caller is
+passed implicitly via caller PC. Importantly, if the callee is inline assembly,
+the indirect call will not be instrumented. Its implementation in libFuzzer is
+in the following. In the end, new information will be updated into the value
+profile.
+
+``` c++
+#define GET_CALLER_PC() __builtin_return_address(0)
+
+void TracePC::HandleCallerCallee(uintptr_t Caller, uintptr_t Callee) {
+  const uintptr_t kBits = 12;
+  const uintptr_t kMask = (1 << kBits) - 1;
+  uintptr_t Idx = (Caller & kMask) | ((Callee & kMask) << kBits);
+  ValueProfileMap.AddValueModPrime(Idx);
+}
+
+void __sanitizer_cov_trace_pc_indir(uintptr_t Callee) {
+  uintptr_t PC = reinterpret_cast<uintptr_t>(GET_CALLER_PC());
+  fuzzer::TPC.HandleCallerCallee(PC, Callee);
+}
+```
+
+### __sanitizer_cov_trace_[const_]cmp[1|2|4|8]
+
+These will be in front of a cmp instruction with const operand or not. They
+accept both operands to be compared. The address of the caller is passed
+implicitly via caller PC. One of its implementation in libFuzzer is in the
+following. In the end, new information will be updated into the value profile.
+
+``` c++
+#define GET_CALLER_PC() __builtin_return_address(0)
+
+template <class T>
+void TracePC::HandleCmp(uintptr_t PC, T Arg1, T Arg2) {
+  uint64_t ArgXor = Arg1 ^ Arg2;
+  if (sizeof(T) == 4)
+      TORC4.Insert(ArgXor, Arg1, Arg2);
+  else if (sizeof(T) == 8)
+      TORC8.Insert(ArgXor, Arg1, Arg2);
+  uint64_t HammingDistance = Popcountll(ArgXor);  // [0,64]
+  uint64_t AbsoluteDistance = (Arg1 == Arg2 ? 0 : Clzll(Arg1 - Arg2) + 1);
+  ValueProfileMap.AddValue(PC * 128 + HammingDistance);
+  ValueProfileMap.AddValue(PC * 128 + 64 + AbsoluteDistance);
+}
+
+void __sanitizer_cov_trace_cmp1(uint8_t Arg1, uint8_t Arg2) {
+  uintptr_t PC = reinterpret_cast<uintptr_t>(GET_CALLER_PC());
+  fuzzer::TPC.HandleCmp(PC, Arg1, Arg2);
+}
+```
+
+Similarly stubs are `__sanitizer_cov_trace_switch`,
+`__sanitizer_cov_trace_div[4|8]`, and `__sanitizer_cov_trace_gep`.  They all
+invoke HandleCmp at the end to update new information into the value profile.
+
+### __sanitizer_cov_trace_pc
+
+This will be at the entry of each basic block. The address of the caller is
+passed implicitly via caller PC. This is deprecated.
+
+### __sanitizer_cov_trace_pc_guard[_init]
+
+`__sanitizer_cov_trace_pc_guard` will be at the entry of each basic block after
+`__sanitier_cov_trace_pc`. The address of the caller is passed implicitly via
+caller PC. They are deprecated.
+
+Each function would have a function guard array `int32_t FunctionGuardArray[]`
+whose size is the number of the basic blocks. This array is associated with
+`sancov_guards` section. `__sanitizer_cov_trace_pc_guard` accepts
+`FunctionGuardArray[IdxofBB]` as the guard.
+
+If any function guard array, SanCov will create a section named
+`sancov.module_ctor_trace_pc_guard` to invoke
+`__sanitizer_cov_trace_pc_guard_init` to initialize `sancov_guards` for each
+module.
+
+[NOT SURE] In the end, after linking, there will be one `sancov_guards` and one
+`sancov.module_ctor_trace_pc_guard`.
+
+### __sanitizer_cov_8bit_counters_init
+
+The inline 8bit counters will be at the entry of each basic block after
+`__sanitizer_cov_trace_pc_guard`.
+
+Each function would have a function 8bit counter array `int8_t
+Function8BitArray[]` whose size is the number of the basic blocks. This array is
+associated with `sancov_cntrs` section. If a basic block is visited, then the
+corresponding byte in the array will be increased by 1.
+
+If any function 8bit array, SanCov will create a section named
+`sancov.module_ctor_8bit_counters` to invoke
+`__sanitizer_cov_8bit_counters_init` to initialize `sancov_cntrs` for each
+module.
+
+[NOT SURE] In the end, after linking, there will be one `sancov_cntrs` and one
+`sancov.module_ctor_8bit_counters`.
+
+`__sanitizer_cov_8bit_counters_init` is defined in the following. It shows the
+counter information flows to `Modules` in the libFuzzer. In short, `Modules`
+records the start and the stop address of the `sancov_cntrs` divided by page
+(`Region`).
+
+``` c++
+void TracePC::HandleInline8bitCountersInit(uint8_t *Start, uint8_t *Stop) {
+  if (Start == Stop) return;
+  if (NumModules &&
+      Modules[NumModules - 1].Start() == Start)
+    return;
+  assert(NumModules <
+         sizeof(Modules) / sizeof(Modules[0]));
+  auto &M = Modules[NumModules++];
+  uint8_t *AlignedStart = RoundUpByPage(Start);
+  uint8_t *AlignedStop  = RoundDownByPage(Stop);
+  size_t NumFullPages = AlignedStop > AlignedStart ?
+                        (AlignedStop - AlignedStart) / PageSize() : 0;
+  bool NeedFirst = Start < AlignedStart || !NumFullPages;
+  bool NeedLast  = Stop > AlignedStop && AlignedStop >= AlignedStart;
+  M.NumRegions = NumFullPages + NeedFirst + NeedLast;;
+  assert(M.NumRegions > 0);
+  M.Regions = new Module::Region[M.NumRegions];
+  assert(M.Regions);
+  size_t R = 0;
+  if (NeedFirst)
+    M.Regions[R++] = {Start, std::min(Stop, AlignedStart), true, false};
+  for (uint8_t *P = AlignedStart; P < AlignedStop; P += PageSize())
+    M.Regions[R++] = {P, P + PageSize(), true, true};
+  if (NeedLast)
+    M.Regions[R++] = {AlignedStop, Stop, true, false};
+  assert(R == M.NumRegions);
+  assert(M.Size() == (size_t)(Stop - Start));
+  assert(M.Stop() == Stop);
+  assert(M.Start() == Start);
+  NumInline8bitCounters += M.Size();
+}
+
+void __sanitizer_cov_8bit_counters_init(uint8_t *Start, uint8_t *Stop) {
+  fuzzer::TPC.HandleInline8bitCountersInit(Start, Stop);
+}
+```
+
+### __sanitizer_cov_bool_flag_init
+
+The inline bool flag will be at the entry of each basic block after the inline
+8bit counters.
+
+Each function would have a function 1 bit array `int1_t FunctionBoolArray[]`
+whose size is the number of the basic blocks. This array is associated with
+`sancov_bools` section. If a basic block is visited, then the corresponding bit
+in the array will be true.
+
+If any function bool array, SanCov will create a section named
+`sancov.module_ctor_bool_flag` to invoke `__sanitizer_cov_bool_flag_init` to
+initilize `sancov_bools` for each module.
+
+[NOT SURE] In the end, after linking, there will be one `sancov_bools` and one
+`sancov.module_ctor_bool_flag`.
+
+`__sanitizer_cov_bool_flag_init` is not defined in the libFuzzer.
+
+### __sanitizer_cov_pcs_init
+
+For each function, SanCov creates a PC array associated with `sancov_pcs` to
+store `{PC, PCFlags}` pairs. PC is the address of the corresponding basic block,
+and a PCFlags describes the basic block is the function entry block (1) or not
+(0).
+
+If one of the `trace-pc-guard`, `inline-8bit-counters`, and `inline-bool-flag`,
+and any function PC array, SanCov will invoke `__sanitizer_cov_pcs_init` to
+initilize `sancov_pcs` for each module in one of the section: `sancov.xxx`.
+
+[NOT SURE] In the end, after linking, there will be one `sancov_pcs`.
+
+`__sanitizer_cov_pcs_init` is defined in the following. In short, the
+information flows to `ModulePCTable` in libFuzzer.
+
+``` c++
+void TracePC::HandlePCsInit(const uintptr_t *Start, const uintptr_t *Stop) {
+  const PCTableEntry *B = reinterpret_cast<const PCTableEntry *>(Start);
+  const PCTableEntry *E = reinterpret_cast<const PCTableEntry *>(Stop);
+  if (NumPCTables && ModulePCTable[NumPCTables - 1].Start == B) return;
+  assert(NumPCTables < sizeof(ModulePCTable) / sizeof(ModulePCTable[0]));
+  ModulePCTable[NumPCTables++] = {B, E};
+  NumPCsInPCTables += E - B;
+}
+
+void __sanitizer_cov_pcs_init(const uintptr_t *pcs_beg,
+                              const uintptr_t *pcs_end) {
+  fuzzer::TPC.HandlePCsInit(pcs_beg, pcs_end);
+}
+```
+
+### A brief list of (flag, stubs, and information sink in libFuzzer)
+
+|Flag|Stubs|Information Sink|
+|:---:|:---:|:---:|
+|trace-pc,indirect-calls|__sanitizer_cov_trace_pc_indirect|ValueProfileMap|
+|trace-pc-guard,indirect-calls|__sanitizer_cov_trace_pc_indirect|ValueProfileMap|
+|inline-8bit-counters,indirect-calls|__sanitizer_cov_trace_pc_indirect|ValueProfileMap|
+|inline-bool-flag,indirect-calls|__sanitizer_cov_trace_pc_indirect|ValueProfileMap|
+|trace-cmp|__sanitizer_cov_trace\_[const\_]cmp[1\|2\|4\|8]|ValuleProfileMap|
+|trace-switch|__sanitizer_cov_trace_switch|ValuleProfileMap|
+|trace-div|__sanitizer_cov_trace_div[4\|8]|ValuleProfileMap|
+|trace-gep|__sanitizer_cov_trace_gep|ValuleProfileMap|
+|trace-pc|__sanitizer_cov_trace_pc|deprecated|
+|trace-pc-guard|__sanitizer_cov_trace_pc_guard[\_init]|deprecated|
+|inline-8bit-counters|__sanitizer_cov_8bit_counters_init|Modules|
+|inline-bool-flag|__sanitizer_cov_bool_flag_init|not supported|
+|trace-pc-guard,pc-table|__sanitizer_cov_pcs_init|ModulePCTable|
+|inline-8bit-guard,pc-table|__sanitizer_cov_pcs_init|ModulePCTable|
+|inline-bool-flag,pc-table|__sanitizer_cov_pcs_init|ModulePCTable|
+
+[^1]: [Clang
+edge-coverage](https://clang.llvm.org/docs/SanitizerCoverage.html#edge-coverage)
