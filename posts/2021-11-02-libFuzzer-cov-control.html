@@ -1071,6 +1071,7 @@ and calculate features.</p>
 </li>
 </ol>
 <pre class="hljs"><code><div>clang -o foo -fsanitize=fuzzer \
+    -fsanitize-coverage=bb \
     -fno-sanitize-coverage=indirect-calls,trace-cmp,stack-depth,pc-table \
     foo.c
 </div></code></pre>

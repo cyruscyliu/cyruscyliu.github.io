@@ -720,6 +720,7 @@ and calculate features.
 
 ``` bash
 clang -o foo -fsanitize=fuzzer \
+    -fsanitize-coverage=bb \
     -fno-sanitize-coverage=indirect-calls,trace-cmp,stack-depth,pc-table \
     foo.c
 ```
