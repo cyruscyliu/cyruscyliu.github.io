@@ -8,7 +8,7 @@ up with that idea. Second, even though some PC members can check all interesting
 papers submitted to a conference, there is about half a year or one-year delay.
 How can we fill the gap? No, we cannot unless we are connecting or collaborating
 with these scholars. Another source of research ideas is practical requirements
-from users. This source is so so inefficient unless we are connecting or
+from users. This source is so inefficient unless we are connecting or
 collaborating with industry people. **Practical ideas come from our research
 activities, and we should be curious about everything in our research activities
 all the time.** To make it more clear, we can put it in this way. We can study
@@ -60,8 +60,10 @@ there.**
 
 The second question is whether a problem is solvable. We have to seek help from
 the computation theory and estimate what the best we can do. **We should
-carefully take reasonable assumptions and think of several different
+carefully take reasonable assumptions and think of several
 solutions.**
+
+The second question is whether your solutions are applicable to other scenarios.
 
 ## How to evaluate your ideas
 Remember that not all ideas can be accepted by top-tier conferences. One is the
@@ -94,7 +96,7 @@ activities to evaluate our ideas quickly.
 - **Implement a prototype and write evaluation scripts (implementation, evaluation)**
 - **Write our paper in advance and get feedback from others**.
 
-### Reviews papers
+### Review papers
 - Always run their systems
 - Survey all related work you might use
 
@@ -102,7 +104,7 @@ activities to evaluate our ideas quickly.
 - Be busy when it is busy and have fun when it is not busy
 - Create a task, think about the solutions, importantly, think about why your results are not correct
 - Write your task down before you start and close it after you finish it
-- Always be clear about the shared things: data, and storage
+- Be Always clear about the shared things: data, and storage
 
 ## How to sell your idea
 
