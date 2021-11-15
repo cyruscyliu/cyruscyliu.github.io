@@ -69,13 +69,13 @@ it first issues an MMIO read. In the peripheral model, we monitor this MMIO
 read. Give a concrete irq, we do mask a specific bit in the variable mask, and
 then issue an MMIO write. The peripheral model can detect this MMIO read and
 write sequence. The peripheral model can infer the specific interrupt request
-number and then mask it. Similarly, the callback function handle_irq_callback
-reads the current pending interrupt sources. After monitoring it, the peripheral
-model will check the current state machine and return the number of the pending
-interrupt. The example shows that the MMIO read and write sequences from the
-Linux kernel can be recognized to drive the state machine of our emulated
-peripherals, which is the core idea of how the model-guided kernel execution
-works.
+number by the write value and then mask it. Similarly, the callback function
+handle_irq_callback reads the current pending interrupt sources. After
+monitoring it, the peripheral model will check the current state machine and
+return the number of the pending interrupt. The example shows that the MMIO read
+and write sequences from the Linux kernel can be recognized to drive the state
+machine of our emulated peripherals, which is the core idea of how the
+model-guided kernel execution works.
 
 How to construct the peripheral model? In the above row, we first manually
 analyze the Linux kernel subsystems and construct the model template manually.
@@ -114,7 +114,8 @@ Our experiences show that these peripheral models can support the basic
 functionality of a rehosted embedded Linux kernel. In the second table, we list
 the number of Type-II peripherals and the number of initialized values we should
 handle to avoid being stuck when the Linux kernel is booting. In general,
-because the number of initial values is limited, they are easier to handle.
+because the number of initial values is limited, they are easier to handle with
+the symbolic execution.
 
 The second question is what embedded Linux kernel we can rehost. In the
 figure, we list the number of unpacked firmware, the number of extracted
