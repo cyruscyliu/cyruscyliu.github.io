@@ -690,6 +690,10 @@ init_pci
 	if (pde != NULL) {
 		pci_emul_init(ctx, pde, i, si-&gt;si_param); // invoke -&gt;init
 </div></code></pre>
+<h2 id="extend-btest-like-qtest-to-bhyve">Extend BTest (like QTest) to BHyve</h2>
+<p>The basic idea of BTest is to implement the same primitives as QTest. We can
+leverage PCI interfaces to implemented it because we are doing in-memory fuzzing
+rather than doing traps.</p>
 <p>[^1]: <a href="https://bhyve.org/">Homepage of Bhyve</a> <br>
 [^2]: <a href="https://en.wikipedia.org/wiki/Bhyve">Wikipedia of Bhyve</a> <br>
 [^3]: <a href="https://wiki.freebsd.org/bhyve">Q&amp;A of Byyve</a> <br>
