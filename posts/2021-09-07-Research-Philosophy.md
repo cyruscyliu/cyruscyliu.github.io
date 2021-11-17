@@ -63,7 +63,12 @@ the computation theory and estimate what the best we can do. **We should
 carefully take reasonable assumptions and think of several
 solutions.**
 
-The second question is whether your solutions are applicable to other scenarios.
+The third question is whether your solutions are applicable to other scenarios.
+
+Other tricks are in the following.
++ Please pay attention to how many papers and how many efforts exist. You may
+want to be at the beginning (0-2 papers) or not later than the peak (it
+depends.) of the publication wave related to your problems.
 
 ## How to evaluate your ideas
 Remember that not all ideas can be accepted by top-tier conferences. One is the
