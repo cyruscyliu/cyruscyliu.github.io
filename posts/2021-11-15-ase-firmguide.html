@@ -369,29 +369,29 @@ code {
 <p>This is the speech text of FirmGuide for ASE'21.</p>
 <h2 id="text-15-mins-1500-words-and-slides">Text (15 mins, ~1500 words) and <a href="./2021-11-15-ase-firmguide.pdf">Slides</a></h2>
 <p>Hello, everyone. My name is Liu Qiang from Zhejiang University. I'm going to
-introduce one of our works on firmware rehosting: FirmGuide. This is joint work
-with Cen Zhang, the other co-first author, and other authors from Zhejiang
-University, Nanyang Technological University, and The Hong Kong Polytechnic
-University.</p>
+introduce one of our works on firmware rehosting: FirmGuide. This is a joint
+work with Zhang Cheng, the other co-first author, and other authors from
+Zhejiang University, Nanyang Technological University, and The Hong Kong
+Polytechnic University.</p>
 <p>Now high-end embedded devices like routers and IP cameras use the Linux kernel.
-We want to dynamically understand or discover the bugs or vulnerabilities in the
+We want to dynamically understand and discover the bugs or vulnerabilities in the
 context of embedded systems. However, it is not easy and scalable due to the
 hardware requirements. The goal of this paper is then to rehost the embedded
 Linux kernels with the best effort.</p>
-<p>The rehosting has three challenges. First, a System on Chip has numerous
-peripherals. Based on the observation that whether a peripheral is necessary to
-the Linux kernel core functionality, we classify peripherals into two types.
-Type-I peripheral, such as processors, memory, interrupt controllers, timers,
-and UART, is critical to memory management, scheduling, and user-kernel
-interactions. We have to design high-fidelity virtual device models for them.
-Others are type-II peripherals that are not necessary to be high fidelity. We
-use dummy device models with proper initialized values to pass some checks to
-avoid being stuck when the Linux kernel is booting. This classification saves
-the time to model every type of peripherals, which is a complicated problem that
-may take years. The minimum best effort, i.e., focusing on Type-I peripherals,
-is the first step to start the dynamic analysis of the embedded Linux kernel.
-Next, we are going to discuss two other challenges when modeling the Type-I
-peripherals.</p>
+<p>The rehosting has three challenges. First, a System on Chip or an SoC has
+numerous peripherals. Based on the observation that whether a peripheral is
+necessary to the Linux kernel core functionalities, we classify peripherals into
+two types. Type-I peripherals, such as memory, interrupt
+controllers, timers, and UART, are critical to memory management, scheduling, and
+user-kernel interactions. We have to design high-fidelity models
+for them. Others are type-II peripherals that are not necessary to be high
+fidelity. We use dummy device models with proper initialized values to pass some
+checks to avoid being stuck when the Linux kernel is booting. This
+classification saves the time to model every type of peripherals, which is a
+complicated problem that may take years. The minimum best effort, i.e., focusing
+on Type-I peripherals, is the first step to start the dynamic analysis of the
+embedded Linux kernels. Next, we are going to discuss two other challenges when
+modeling the Type-I peripherals.</p>
 <p>The second challenge is that even one type of peripherals, e.g., interrupt
 controllers, have different models. Do we need to model each interrupt
 controller? The answer is no. Based on our observation, the driver of an
