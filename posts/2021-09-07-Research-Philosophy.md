@@ -95,7 +95,7 @@ activities to evaluate our ideas quickly.
 - Have a rest in the evening or on weekends if we can focus more on weekdays.
 
 ### Know what you are going to do
-- **Review papers and run their systems (related work)**
+- **Review papers, run their systems, and write the summary (related work)**
 - **Identify challenges and evaluate solutions in theory (challenges, insights, solutions)**
 - **Design system and evaluate design choices in theory (background, system design)**
 - **Implement a prototype and write evaluation scripts (implementation, evaluation)**
