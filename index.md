@@ -58,6 +58,7 @@ network protocols via their specifications.
 Please raise [issues](https://github.com/cyruscyliu/cyruscyliu.github.io/issues)
 if any questions or comments.
 
++ [2021-12-13 A brief summary of CS-725](posts/2021-12-13-Summary-of-CS725.html)
 + [2021-11-03 Coverage Control in libFuzzer](./posts/2021-11-02-libFuzzer-cov-control.html)
 + [2021-11-18 ASE'21 - FirmGuide](./posts/2021-11-15-ase-firmguide.html)
 + [2021-10-27 Introduction to Bhyve](./posts/2021-10-27-introduction-to-bhyve.html)
