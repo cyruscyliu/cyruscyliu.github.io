@@ -17,7 +17,7 @@ and clarify the motivation to study it. **Of course, do not forget our
 connection with the academic and industrial community in which inevitable
 benefits will come as well.**
 
-## How to define problems
+## How to define a problem
 Before going further, I’d like to discuss the types of knowledge. One type of
 knowledge looks forward, and the other focuses on backward. Classifying research
 ideas in computer science bridges computer science to other disciplines. Physics
@@ -77,39 +77,35 @@ literature review and distinguish our idea from others’. Because of the time
 budget, we cannot make our idea superior to others in every aspect, and thus we
 can choose the core metrics. The core metrics evolve among the development of
 the whole community. Some technology becomes mature such that some metrics are
-easier to achieve. Such easier metrics are not core metrics but the metrics you
+easier to achieve. Such easier metrics are not the core metrics but that you
 have to include. Consider all techniques you can use to be superior.
 
-OK. Let us evaluate our ideas. To save time, we are not supposed to make many
-mistakes. Nowadays, the computer science research community is competitive
-because not only most of the problems are easier to solve but also more and more
-people join us. When reviewers judge a manuscript, they pick up your mistakes
-and reject the papers that have more. Here are some tips from past research
-activities to evaluate our ideas quickly.
+OK. Let's do it! To save time, we are not supposed to make many mistakes.
+Nowadays, the computer science research community is competitive because not
+only most of the problems are easier to solve but also more and more people join
+us. When reviewers scan a manuscript, they pick up your mistakes and reject the
+papers that have more. Here are some tips from past research activities to
+evaluate our ideas quickly.
 
 ### Budge your time
 - **Always consider what you are doing to be some paragraph in the paper and never do it twice.**
 - **Think and ask ourselves about what is the fastest way to do this and then do it.**
 - **Spend 30 seconds more to save us from a 30 mins disaster.**
 - Spend less than one day on a project you are not the first author.
-- Have a rest in the evening or on weekends if we can focus more on weekdays.
+- Take holidays every four or five months: e.g., Chinese Spring Festivals, Labor Days, and National Holidays. 
 
 ### Know what you are going to do
 - **Review papers, run their systems, and write the summary (related work)**
 - **Identify challenges and evaluate solutions in theory (challenges, insights, solutions)**
 - **Design system and evaluate design choices in theory (background, system design)**
-- **Implement a prototype and write evaluation scripts (implementation, evaluation)**
+- **Implement a generic prototype and write evaluation scripts (implementation, evaluation)**
 - **Write our paper in advance and get feedback from others**.
-
-### Review papers
-- Always run their systems
-- Survey all related work you might use
 
 ## Some tips about parallel tasks
 - Be busy when it is busy and have fun when it is not busy
 - Create a task, think about the solutions, importantly, think about why your results are not correct
-- Write your task down before you start and close it after you finish it
-- Be Always clear about the shared things: data, and storage
+- Write your task down before you start and close it after you finish it (**I'm using Marp (Markdown Slides).**)
+- Do not delete any data if you are definitely sure. Just buy more storage!
 
 ## How to sell your idea
 
@@ -125,3 +121,20 @@ activities to evaluate our ideas quickly.
 - Group
 - Main conference session
 - Poster session
+
+## How to solve a problem (WIP)
+
+This section is new and inspired by some social science displines. In general,
+we will define a problem as a computation problem in computer science. In
+practice, we will use possible threat models, system primitives, existing tools,
+and existing algorithms. Besides, we think about decidability, time, and storage
+complexity. However, we can do more than that. 
+
+### Classification
+
+Classification is the first naive and powerful tool we are supposed to use. In
+fact, we use this tool implicitly every day. When we are talking about fuzzers,
+we will split them into black-box, white-box, and grey-box fuzzers. If someone
+asks you what is this, why is this, and how is this, probably the first answer
+is to ask what categories are of "this". If someone asks you what your favorite
+food is, you may ask: what categories of food you are asking?
