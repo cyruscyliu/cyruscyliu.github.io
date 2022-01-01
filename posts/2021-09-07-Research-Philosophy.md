@@ -21,12 +21,12 @@ benefits will come as well.**
 Before going further, I’d like to discuss the types of knowledge. One type of
 knowledge looks forward, and the other focuses on backward. Classifying research
 ideas in computer science bridges computer science to other disciplines. Physics
-looks forward, and history looks backward. We should also think in this way
+looks forward, and history looks backwards. We should also think in this way
 during our research activities. Designing a system looks forward while reviewing
-literature looks backward. Learning the history of all science helps to improve
+literature looks backwards. Learning the history of all science helps to improve
 our research quality of ideas, evaluation, and writing. **Here, we have the
 first category you should judge for a thing to be studied: looking forward or
-looking backward.**
+looking backwards.**
 
 A thing is an object to be studied. During our activities, we always do
 something. We should be curious about a thing since it would be our research
@@ -34,15 +34,15 @@ object. An object can be a thing in the real world, for example, a piece of
 software; an object can be a process of humans, for example, developing a piece
 of software. We can see similarities and differences between them.
 Interestingly, if we focus on a thing itself, the research problems would look
-forward; if we focus on a human process, the research problems look backward.
+forward; if we focus on a human process, the research problems look backwards.
 **Here, we have the second category: a thing or a human process.**
 
-Define a looking-forward problem starting from its nature while define a
-looking-backward problem starting from history. To make our research more
+Define a looking-forward problem starting from its nature while defining a
+looking-backwards problem starting from history. To make our research more
 scientific, we should avoid some construction problems that usually make
 computer science (and technology) to computer engineering in which all
 scientific parts hide. For a looking-forward problem, we have to define what to
-predict, and for a looking-backward problem, we should define what to summarize.
+predict, and for a looking-backwards problem, we should define what to summarize.
 **Here, we have the third category: nature and history.**
 
 BTW, check [this
@@ -80,7 +80,7 @@ the whole community. Some technology becomes mature such that some metrics are
 easier to achieve. Such easier metrics are not the core metrics but that you
 have to include. Consider all techniques you can use to be superior.
 
-OK. Let's do it! To save time, we are not supposed to make many mistakes.
+OK. Let us do it! To save time, we are not supposed to make many mistakes.
 Nowadays, the computer science research community is competitive because not
 only most of the problems are easier to solve but also more and more people join
 us. When reviewers scan a manuscript, they pick up your mistakes and reject the
@@ -91,6 +91,7 @@ evaluate our ideas quickly.
 - **Always consider what you are doing to be some paragraph in the paper and never do it twice.**
 - **Think and ask ourselves about what is the fastest way to do this and then do it.**
 - **Spend 30 seconds more to save us from a 30 mins disaster.**
+- It's the context switch that wastes a lot of time.
 - Spend less than one day on a project you are not the first author.
 - Take holidays every four or five months: e.g., Chinese Spring Festivals, Labor Days, and National Holidays. 
 
@@ -104,8 +105,9 @@ evaluate our ideas quickly.
 ## Some tips about parallel tasks
 - Be busy when it is busy and have fun when it is not busy
 - Create a task, think about the solutions, importantly, think about why your results are not correct
-- Write your task down before you start and close it after you finish it (**I'm using Marp (Markdown Slides).**)
+- Write your task down before you start and close it after you finish it (**I am using Marp (Markdown Slides).**)
 - Do not delete any data if you are definitely sure. Just buy more storage!
+- Utilize all hardware resources you have.
 
 ## How to sell your idea
 
@@ -124,7 +126,7 @@ evaluate our ideas quickly.
 
 ## How to solve a problem (WIP)
 
-This section is new and inspired by some social science displines. In general,
+This section is new and inspired by some social science disciplines. In general,
 we will define a problem as a computation problem in computer science. In
 practice, we will use possible threat models, system primitives, existing tools,
 and existing algorithms. Besides, we think about decidability, time, and storage
@@ -136,5 +138,5 @@ Classification is the first naive and powerful tool we are supposed to use. In
 fact, we use this tool implicitly every day. When we are talking about fuzzers,
 we will split them into black-box, white-box, and grey-box fuzzers. If someone
 asks you what is this, why is this, and how is this, probably the first answer
-is to ask what categories are of "this". If someone asks you what your favorite
+is to ask what categories are of "this". If someone asks you what your favourite
 food is, you may ask: what categories of food you are asking?
