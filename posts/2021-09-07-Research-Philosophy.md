@@ -89,10 +89,10 @@ papers that have more. Here are some tips from past research activities to
 evaluate our ideas quickly.
 
 ### Budge our time
-- **Tell ourselves the DDL is two weeks in advance**
-- **Always consider what we are doing to be some paragraph in the paper and never do it twice.**
-- **Think and ask ourselves about what is the fastest way to do this and then do it.**
-- **Spend 30 seconds more to save us from a 30 mins disaster.**
+- **Tell ourselves the DDL is truly two weeks in advance.**
+- Always consider what we are doing to be some paragraph in the paper and never do it twice.
+- Think and ask ourselves about what is the fastest way to do this and then do it.
+- Spend 30 seconds more to save us from a 30 mins disaster.
 - It is the context switch that wastes a lot of time.
 - Spend less than one day on a project we are not the first author.
 - Take holidays every four or five months: e.g., Chinese Spring Festivals, Labor Days, and National Holidays. 
@@ -104,12 +104,24 @@ evaluate our ideas quickly.
 - **Implement a generic prototype and write evaluation scripts (implementation, evaluation)**
 - **Write our paper in advance and get feedback from others**.
 
+### Set up servers
+- What architectures should you use? How many servers do you have?
+- If you are in the `sudo` group?
+- **Save runtime/intermediate data on SSD and save results on HDD.**
+- If there is no storage? Buy more!
+- If you disabled the hyper-threading?
+
+### Write evaluation scripts
+- **All in Docker container.**
+- **Make it parallel.**
+- **Diversity first, then quantity.**
+
 ## Some tips about parallel tasks
 - Be busy when it is busy and have fun when it is not busy
 - Create a task, think about the solutions, importantly, think about why our results are not correct
 - Write our task down before we start and close it after we finish it (**I am using Marp (Markdown Slides).**)
 - Do not delete any data if we are definitely sure. Just buy more storage!
-- Utilize all hardware resources we have.
+- Utilize all hardware resources we have. Do not make them free.
 
 ## How to sell our idea
 
