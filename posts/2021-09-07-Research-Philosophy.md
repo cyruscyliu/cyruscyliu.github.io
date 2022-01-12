@@ -114,6 +114,7 @@ evaluate our ideas quickly.
 ### Write evaluation scripts
 - **All in Docker container.**
 - **Make it parallel.**
+- **Quick results first, middle-long results for writing, then long time evaluation for submission.**
 - **Diversity first, then quantity.**
 
 ## Some tips about parallel tasks
