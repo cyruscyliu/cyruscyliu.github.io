@@ -132,6 +132,34 @@ evaluate our ideas quickly.
 - Unity, Support, and Coherent
 - Revise context and sentences, and do editing
 
+### A detailed analysis
+
+1. What we cannot control
+    - How many papers were submitted to a conference and the target acceptance rate.
+    - Which reviewers would revise our paper, and how well they know about what we are doing.
+2. What we can control
+    - Importance/Novelty/Superior
+    - Reasonable techniques and good enough implementation
+    - Clear writing
+    - Handle small flaws
+3. Clear writing
+    - Each paragraph has its goal. Make sure the topic sentence highlight the goal.
+    - A strong argument includes 1) point, 2) theoretical argument (papers), 3) factual argument (data).
+        - Be confident but do not overclaim.
+        - Be critical but be not rude.
+    - Keep in mind that reviewers do not join our group meetings, so do not expect too much!
+    - Keep a common storyline and make one sentence unique meaning.
+4. Storyline
+    - Importance, limitations of existing work, new theory and new techniques, evaluation
+5. Title: Summary of our work; Be attractive; No details
+6. Abstract: 2-minute storyline; Use hypernyms; No technical details; 
+7. Introduction: 10-minute storyline; Show rationals; No concrete details; 
+8. Backgroud: Big background; Terminologies; Motivating Example
+9. System, Implementation, and Evaluation: Problems -> Approaches -> Why -> How well
+10. Related work: Introduce related works and Highlight the difference
+11. Discussion: Answer reviewers' questions and hint the future work
+12. Conclusion: Summarize and extract new knowledge
+
 ### Advertise
 - Homepage
 - Twitteriture
