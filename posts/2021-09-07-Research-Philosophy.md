@@ -122,9 +122,14 @@ evaluate our ideas quickly.
 - Create a task, think about the solutions, importantly, think about why our results are not correct
 - Write our task down before we start and close it after we finish it (**I am using Marp (Markdown Slides).**)
 - Do not delete any data if we are definitely sure. Just buy more storage!
-- Utilize all hardware resources we have. Do not make them free.
+- Utilize all hardware resources we have. Do not make them have a rest.
 
 ## How to sell our idea
+
+### Some techniques
+- Tell a logical and clear story.
+- Minimize disadvantages.
+- If existing metrics cannot show better results, define a new one.
 
 ### Write a good paper
 - Keep learning to write a paper
