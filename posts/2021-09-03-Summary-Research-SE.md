@@ -1,19 +1,19 @@
 # Programming Skills for Research
 
-We always would like to see solid implementation along with a novel idea. To be
-good at solid coding, we need specific skills and efficient collaboration
-because of the time budget. Usually, we want to finish most of the research
-projects within half a year or one year to cover three or four deadlines of
-top-tier conferences.
+We would like to see solid implementation along with a novel idea. To be good at
+solid coding, we need specific skills and efficient collaboration because of the
+time budget. Usually, we want to finish most of the research projects within
+half a year or one year to cover three or four deadlines of top-tier
+conferences.
 
 I group the following programming skills into four levels regarding my personal
 experiences. At level 1, attend basic courses in computer science to get
 familiar with theories and design decisions in computing systems. At level 2,
 train ourselves about how to involve, develop, and maintain an open-source
 project. At level 3, develop our coding style for research projects and make our
-research reproducible, inspiring, and influential. At level 4, try existing
-techniques, learn their design decisions, implementation, and maybe join their
-community by sending patches.
+research reproducible, inspiring, and influential. At level 4, try existing open
+source projects (maybe join their community by sending patches) and learn
+advanced algorithms.
 
 ## Level 1
 
@@ -76,5 +76,8 @@ Here is a summary of selected projects.
 + Message Queue: Kafka
 + Container: Docker
 
+At the same time, learn more advanced algorithms from papers or graduate
+courses.
+
 **Summary** Develop quick and dirty code and improve your skills by learning
-existing projects.
+existing projects. Keep learning!
