@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <script>
+	// Hack for scrolling window when linking to anchor tag with fixed nav header
+        var shiftWindow = function() { scrollBy(0, -75) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2020-11-18-buildroot-qemu-x86_64/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Buildroot, QEMU and Linux kernel for x86_64 - Qiang Liu's Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../js/base.js"></script> 
+    </head>
+
+    <body class="">
+
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+	<div class="container">
+	<a class="navbar-brand" href="../..">Qiang Liu's Homepage</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse">
+          <!-- Main navigation -->
+          <nav class="nav">
+            <ul class="navbar-nav">
+              <li >
+                <a class="nav-link" href="../..">Qiang Liu's Homepage</a>
+              </li>
+              <li class="nav-item dropdown active">
+                <a href="#" role="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="nav-dropdown-Posts">Posts <b class="caret"></b></a>
+                <div class="dropdown-menu" aria-labelledby="nav-dropdown-Posts">
+                  
+<a href="../2018-01-19-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E6%88%91%E7%9A%84%E7%9F%9B%E7%9B%BE%EF%BC%88%E6%8F%90%E7%BA%B2%EF%BC%89/" class="dropdown-item">ANU暑期学校-我的矛盾（提纲）</a>
+                  
+<a href="../2018-01-21-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E6%83%8A%E5%A5%87/" class="dropdown-item">ANU暑期学校-惊奇</a>
+                  
+<a href="../2018-01-23-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E6%97%A0%E9%A2%98/" class="dropdown-item">ANU暑期学校-无题</a>
+                  
+<a href="../2018-01-24-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E7%BB%BD%E6%94%BE/" class="dropdown-item">ANU暑期学校-绽放</a>
+                  
+<a href="../2018-02-01-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E6%88%91%E7%9A%84%E7%9F%9B%E7%9B%BE/" class="dropdown-item">ANU暑期学校-我的矛盾</a>
+                  
+<a href="../2018-02-07-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E5%B0%BE%E5%A3%B0/" class="dropdown-item">ANU暑期学校-尾声</a>
+                  
+<a href="../2018-02-07-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E7%94%9F%E6%B4%BB%E5%92%8C%E5%B7%A5%E4%BD%9C/" class="dropdown-item">ANU暑期学校-生活和工作</a>
+                  
+<a href="../2018-03-08-%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%84100%E5%A4%A9-%E7%AC%AC%E4%B8%80%E5%A4%A9/" class="dropdown-item">在杭州的100天-第一天</a>
+                  
+<a href="../2018-03-08-%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%84100%E5%A4%A9-%E7%AC%AC%E4%BA%8C%E5%A4%A9/" class="dropdown-item">在杭州的100天-第二天</a>
+                  
+<a href="../2018-03-10-%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%84100%E5%A4%A9-%E7%AC%AC%E4%B8%89%E5%A4%A9/" class="dropdown-item">在杭州的100天-第三天</a>
+                  
+<a href="../2018-03-11-%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%84100%E5%A4%A9-%E7%AC%AC%E4%B9%9D%E5%A4%A9/" class="dropdown-item">在杭州的100天-第九天</a>
+                  
+<a href="../2018-03-28-%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%84100%E5%A4%A9-%E7%AC%AC%E5%8D%81%E5%A4%A9/" class="dropdown-item">在杭州的100天-第十天</a>
+                  
+<a href="../2018-04-07-%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%84100%E5%A4%A9-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E5%A4%A9/" class="dropdown-item">在杭州的100天-第二十七天</a>
+                  
+<a href="../2019-11-23-CCS-London-Summary/" class="dropdown-item">Summary of CCS'19 (London)</a>
+                  
+<a href="./" class="dropdown-item active">Buildroot, QEMU and Linux kernel for x86_64</a>
+                  
+<a href="../2020-11-30-wllvm-clang-qemu-x86_64/" class="dropdown-item">Clang, wllvm, passes, QEMU for x86_64</a>
+                  
+<a href="../2021-08-18-Display-in-QEMU/" class="dropdown-item">Display in QEMU</a>
+                  
+<a href="../2021-08-27-Principle-of-Presentation/" class="dropdown-item">Principles of Research Presentation</a>
+                  
+<a href="../2021-09-03-Summary-Research-SE/" class="dropdown-item">Programming Skills for Research</a>
+                  
+<a href="../2021-09-07-Research-Philosophy/" class="dropdown-item">How to Do [System|Software] (Security) Research</a>
+                  
+<a href="../2021-10-22-fuzzing-presentation/" class="dropdown-item">CS-725 Presentation - Fuzz Testing</a>
+                  
+<a href="../2021-10-27-introduction-to-bhyve/" class="dropdown-item">Introduction to Bhyve</a>
+                  
+<a href="../2021-11-02-libFuzzer-cov-control/" class="dropdown-item">Coverage Control in libFuzzer</a>
+                  
+<a href="../2021-11-15-ase-firmguide/" class="dropdown-item">ASE'21 - FirmGuide</a>
+                  
+<a href="../2021-12-13-Summary-of-CS725/" class="dropdown-item">A brief summary of CS-725</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+
+          <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+		<i class="fa fa-search"></i> Search
+              </a>
+            </li>
+          </ul>
+	</div>
+	</div>
+      </nav><div id="content" class="container">
+        
+      <div class="row">
+        <div class="col-md-9" role="main">
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    
+    
+    <li class="breadcrumb-item">Posts</li>
+    
+    
+    <li class="breadcrumb-item active" aria-current="page">Buildroot, QEMU and Linux kernel for x86_64</li>
+  </ol>
+</nav>
+
+
+<h1 id="buildroot-qemu-and-linux-kernel-for-x86_64">Buildroot, QEMU and Linux kernel for x86_64</h1>
+<p>Usually, we need a dynamic analysis platform for a Linux kernel for
+x86_64. The direct idea is to run a Linux kernel on QEMU. In this post,
+I will introduce how to quickly build such a platform with Buildroot.</p>
+<h2 id="download-buildroot">Download Buildroot</h2>
+<p>Please go <a href="https://buildroot.org/download.html">here</a> to download the
+latest Buildroot package and decompress it.</p>
+<h2 id="optional-prepare-kernel-module">[Optional] Prepare Kernel Module</h2>
+<p>Usually, we write a Linux kernel module to test some features.
+Leveraging Buildroot, it is quite easy to achieve that. Please refer to
+<a href="https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-driver-module-as-a-buildroot-package">this
+post</a>
+as the original post. I fixed two typos only. Skip this section if you
+don't need a kernel module.</p>
+<ol>
+<li>
+<p>Create several files like this.</p>
+<p>``` txt
+kernel_module/
+├── Config.in
+├── Makefile
+├── external.desc
+├── external.mk
+└── hello.c</p>
+<p>0 directories, 5 file
+```</p>
+</li>
+<li>
+<p>Config.in
+    Note that each line should start with a tab.</p>
+<p><code>txt
+config BR2_PACKAGE_KERNEL_MODULE
+    bool "kernel_module"
+    depends on BR2_LINUX_KERNEL
+    help
+    Linux Kernel Module Cheat.</code></p>
+</li>
+<li>
+<p>Makefile</p>
+<p>``` Makefile
+obj-m += $(addsuffix .o, $(notdir $(basename $(wildcard $(BR2_EXTERNAL_KERNEL_MODULES_PATH)/*.c))))
+ccflags-y := -DDEBUG -g -std=gnu99 -Wno-declaration-after-statement</p>
+<p>.PHONY: all clean</p>
+<p>all:
+    $(MAKE) -C '$(LINUX_DIR)' M='$(PWD)' modules</p>
+<p>clean:
+    $(MAKE) -C '$(LINUX_DIR)' M='$(PWD)' clean
+```</p>
+</li>
+<li>
+<p>external.desc</p>
+<p>Please look at <a href="https://buildroot.org/downloads/manual/manual.html#outside-br-custom">this</a> for more information.</p>
+<p><code>txt
+name: KERNEL_MODULES</code></p>
+</li>
+<li>
+<p>external.mk</p>
+<p>``` Makefile</p>
+<h6 id="_1"></h6>
+<h1 id="_2"></h1>
+<h1 id="kernel_module">kernel_module</h1>
+<h1 id="_3"></h1>
+<h6 id="_4"></h6>
+<p>KERNEL_MODULE_VERSION = 1.0
+KERNEL_MODULE_SITE = $(BR2_EXTERNAL_KERNEL_MODULES_PATH)
+KERNEL_MODULE_SITE_METHOD = local
+KERNEL_MODULE_LINUX_LICENSE = GPL-2.0
+KERNEL_MODULE_LINUX_LICENSE_FILES = COPYING</p>
+<p>$(eval $(kernel-module))
+$(eval $(generic-package))
+```</p>
+</li>
+<li>
+<p>hello.c</p>
+<p>``` c</p>
+<h1 id="include">include <linux/module.h></h1>
+<h1 id="include_1">include <linux/kernel.h></h1>
+<p>MODULE_LICENSE("GPL");</p>
+<p>static int myinit(void)
+{
+    printk(KERN_INFO "hello init\n");
+    return 0;
+}</p>
+<p>static void myexit(void)
+{
+    printk(KERN_INFO "hello exit\n");
+}</p>
+<p>module_init(myinit)
+module_exit(myexit)
+```</p>
+</li>
+</ol>
+<p>The change is from <code>BR2_EXTERNAL_KERNEL_MODULE_PATH</code> to
+<code>BR2_EXTERNAL_KERNEL_MODULES_PATH</code>.</p>
+<h2 id="compile-buildroot">Compile Buildroot</h2>
+<p>The several components are arranged like below.</p>
+<pre><code class="language-txt">.
+├── buildroot-2020.02.8
+└── kernel_module
+</code></pre>
+<ol>
+<li>
+<p>Go to <code>buildroot</code></p>
+</li>
+<li>
+<p>If no kernel module, just <code>make qemu_x86_64_defconfig</code>, otherwise,
+<code>make BR2_EXTERNAL="$(pwd)/../kernel_module" qemu_x86_64_defconfig</code></p>
+</li>
+<li>
+<p>Before going on, we should update the C libary and the tty target by
+<code>make menuconfig</code>.</p>
+<ul>
+<li><code>Toolchain</code> -&gt; <code>C library</code> -&gt; <code>glibc</code></li>
+<li><code>System Configuration</code> -&gt; <code>Run a getty (login prompt) after boot</code>
+-&gt; <code>TTY port</code> -&gt; <code>ttyS0</code></li>
+</ul>
+<p>[Optional] We can enable <code>lspci -v</code> to show more information on PCI
+devices.</p>
+<ul>
+<li>
+<p><code>Target Packages</code> -&gt; <code>Hardware Handling</code> -&gt; <code>pciutils</code></p>
+</li>
+<li>
+<p>If any kernel module, <code>echo 'BR2_PACKAGE_KERNEL_MODULE=y' &gt;&gt;
+.config</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>make</code> with <code>-jN</code> to accelerate your compilation.</p>
+</li>
+</ol>
+<h2 id="launch-all-of-them">Launch all of them</h2>
+<pre><code class="language-bash">qemu-system-x86_64 \
+    -M pc \
+    -kernel ./output/images/bzImage \
+    -drive file=./output/images/rootfs.ext2,if=virtio,format=raw \
+    -append &quot;root=/dev/vda console=ttyS0&quot; \
+    -net nic,model=virtio -net user \
+    -nographic
+</code></pre>
+<p>If there exists a Linux kernel module, please do as follow.</p>
+<pre><code class="language-bash">$ modprobe hello
+hello: loading out-of-tree module taints kernel.
+hello init
+$ desg
+...
+hello: loading out-of-tree module taints kernel.
+hello init
+</code></pre>
+<h2 id="reference">Reference</h2>
+<p><a href="https://jgsun.github.io/2020/05/28/qemu-x86-64/">buildroot编译运行QEMU
+X86_64</a> <a href="https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-driver-module-as-a-buildroot-package">How to add a
+linux kernel driver module as a buildroot
+package</a>
+\
+[^cve-2020-14364]: An out-of-bounds read/write access flaw was found in
+the USB emulator of the QEMU in versions before 5.2.0. This issue occurs
+while processing USB packets from a guest when USBDevice <code>setup_len</code>
+exceeds its <code>data_buf[4096]</code> in the <code>do_token_in</code>, <code>do_token_out</code>
+routines. This flaw allows a guest user to <em>crash the QEMU process,
+resulting in a denial of service, or the potential execution of
+arbitrary code with the privileges of the QEMU process on the host</em>.</p>
+
+<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+  <li class="last-updated-holder displayDate loading">
+    <span class="last-updated-text">Last updated:</span>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date"></time>
+  </li>
+<!--
+  <li class="readingTime">
+    2 minutes to read
+  </li>
+-->
+  <li class="contributors-holder">
+    <span class="contributors-text">Contributors</span>
+    <ul class="contributors" data-bi-name="contributors"></ul>
+  </li>
+</ul>
+</div>
+        <div class="col-md-3"><div class="navbar-light navbar-expand-md hidden-print sticky-top sticky-offset" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    <div id="toc-collapse" class="navbar-collapse collapse card">
+        <ul class="nav flex-column bs-sidenav">
+            <li class="nav-item main"><a class="nav-link" href="#buildroot-qemu-and-linux-kernel-for-x86_64">Buildroot, QEMU and Linux kernel for x86_64</a></li>
+                <li class="nav-item">
+                    <a href="#download-buildroot" class="nav-link">Download Buildroot</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#optional-prepare-kernel-module" class="nav-link">[Optional] Prepare Kernel Module</a>
+                </li>
+            <li class="nav-item main"><a class="nav-link" href="#_2"></a></li>
+            <li class="nav-item main"><a class="nav-link" href="#kernel_module">kernel_module</a></li>
+            <li class="nav-item main"><a class="nav-link" href="#_3"></a></li>
+                <li class="nav-item">
+                    <a href="#_4" class="nav-link"></a>
+                </li>
+            <li class="nav-item main"><a class="nav-link" href="#include">include </a></li>
+            <li class="nav-item main"><a class="nav-link" href="#include_1">include </a></li>
+                <li class="nav-item">
+                    <a href="#compile-buildroot" class="nav-link">Compile Buildroot</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#launch-all-of-them" class="nav-link">Launch all of them</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reference" class="nav-link">Reference</a>
+                </li>
+        </ul>
+    </div>
+</div></div>
+      </div>
+      </div>
+
+      <footer class="col-md-12">
+	<hr>
+	<div class="container">
+	</div>
+      </footer>
+      <script>
+	var base_url = "../..",
+            shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+      </script>
+      <script src="../../js/base.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+      <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="h4 modal-title">Keyboard Shortcuts</p>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
