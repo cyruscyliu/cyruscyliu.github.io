@@ -1,0 +1,5 @@
+theme:
+    name: bootstrap4
+docs_dir: homepage
+site_name: Qiang Liu's Homepage
+site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
