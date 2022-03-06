@@ -18,94 +18,94 @@ post](https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-dri
 as the original post. I fixed two typos only. Skip this section if you
 don't need a kernel module.
 
-1. Create several files like this.
+### Create several files like this
 
-    ``` txt
-    kernel_module/
-    ├── Config.in
-    ├── Makefile
-    ├── external.desc
-    ├── external.mk
-    └── hello.c
+``` txt
+kernel_module/
+├── Config.in
+├── Makefile
+├── external.desc
+├── external.mk
+└── hello.c
 
-    0 directories, 5 file
-    ```
+0 directories, 5 file
+```
 
-2. Config.in
-    Note that each line should start with a tab.
+### Config.in
+Note that each line should start with a tab.
 
-    ``` txt
-    config BR2_PACKAGE_KERNEL_MODULE
-        bool "kernel_module"
-        depends on BR2_LINUX_KERNEL
-        help
-        Linux Kernel Module Cheat.
-    ```
+``` bash
+config BR2_PACKAGE_KERNEL_MODULE
+    bool "kernel_module"
+    depends on BR2_LINUX_KERNEL
+    help
+    Linux Kernel Module Cheat.
+```
 
-3. Makefile
+### Makefile
 
-    ``` Makefile
-    obj-m += $(addsuffix .o, $(notdir $(basename $(wildcard $(BR2_EXTERNAL_KERNEL_MODULES_PATH)/*.c))))
-    ccflags-y := -DDEBUG -g -std=gnu99 -Wno-declaration-after-statement
+``` Makefile
+obj-m += $(addsuffix .o, $(notdir $(basename $(wildcard $(BR2_EXTERNAL_KERNEL_MODULES_PATH)/*.c))))
+ccflags-y := -DDEBUG -g -std=gnu99 -Wno-declaration-after-statement
 
-    .PHONY: all clean
+.PHONY: all clean
 
-    all:
-        $(MAKE) -C '$(LINUX_DIR)' M='$(PWD)' modules
+all:
+    $(MAKE) -C '$(LINUX_DIR)' M='$(PWD)' modules
 
-    clean:
-        $(MAKE) -C '$(LINUX_DIR)' M='$(PWD)' clean
-    ```
+clean:
+    $(MAKE) -C '$(LINUX_DIR)' M='$(PWD)' clean
+```
 
-4. external.desc
+### external.desc
 
-    Please look at [this](https://buildroot.org/downloads/manual/manual.html#outside-br-custom) for more information.
+Please look at [this](https://buildroot.org/downloads/manual/manual.html#outside-br-custom) for more information.
 
-    ``` txt
-    name: KERNEL_MODULES
-    ```
+```
+name: KERNEL_MODULES
+```
 
-5. external.mk
+### external.mk
 
-    ``` Makefile
-    ################################################################################
-    #
-    # kernel_module
-    #
-    ################################################################################
+``` Makefile
+################################################################################
+#
+# kernel_module
+#
+################################################################################
 
-    KERNEL_MODULE_VERSION = 1.0
-    KERNEL_MODULE_SITE = $(BR2_EXTERNAL_KERNEL_MODULES_PATH)
-    KERNEL_MODULE_SITE_METHOD = local
-    KERNEL_MODULE_LINUX_LICENSE = GPL-2.0
-    KERNEL_MODULE_LINUX_LICENSE_FILES = COPYING
+KERNEL_MODULE_VERSION = 1.0
+KERNEL_MODULE_SITE = $(BR2_EXTERNAL_KERNEL_MODULES_PATH)
+KERNEL_MODULE_SITE_METHOD = local
+KERNEL_MODULE_LINUX_LICENSE = GPL-2.0
+KERNEL_MODULE_LINUX_LICENSE_FILES = COPYING
 
-    $(eval $(kernel-module))
-    $(eval $(generic-package))
-    ```
+$(eval $(kernel-module))
+$(eval $(generic-package))
+```
 
-6. hello.c
+### hello.c
 
-    ``` c
-    #include <linux/module.h>
-    #include <linux/kernel.h>
+``` c
+#include <linux/module.h>
+#include <linux/kernel.h>
 
-    MODULE_LICENSE("GPL");
+MODULE_LICENSE("GPL");
 
-    static int myinit(void)
-    {
-        printk(KERN_INFO "hello init\n");
-        return 0;
-    }
+static int myinit(void)
+{
+    printk(KERN_INFO "hello init\n");
+    return 0;
+}
 
-    static void myexit(void)
-    {
-        printk(KERN_INFO "hello exit\n");
-    }
+static void myexit(void)
+{
+    printk(KERN_INFO "hello exit\n");
+}
 
-    module_init(myinit)
-    module_exit(myexit)
-    ```
+module_init(myinit)
+module_exit(myexit)
+```
 
 The change is from `BR2_EXTERNAL_KERNEL_MODULE_PATH` to
 `BR2_EXTERNAL_KERNEL_MODULES_PATH`.
@@ -172,8 +172,8 @@ hello init
 X86_64](https://jgsun.github.io/2020/05/28/qemu-x86-64/) [How to add a
 linux kernel driver module as a buildroot
 package](https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-driver-module-as-a-buildroot-package)
-\
-[^cve-2020-14364]: An out-of-bounds read/write access flaw was found in
+
+[cve-2020-14364]: An out-of-bounds read/write access flaw was found in
 the USB emulator of the QEMU in versions before 5.2.0. This issue occurs
 while processing USB packets from a guest when USBDevice `setup_len`
 exceeds its `data_buf[4096]` in the `do_token_in`, `do_token_out`

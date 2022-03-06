@@ -139,7 +139,7 @@ $ opt-11 \
 
 ## Reference
 
-[^1]: [Red Hat Bugzilla – Bug 1565766 - qemu failing to build with clang; __atomic_fetch_or_4](https://bugzilla.redhat.com/show_bug.cgi?id=1565766) \
-[^2]: [Building QEMU with clang](https://lists.freebsd.org/pipermail/freebsd-emulation/2012-June/009859.html) \
-[^3]: [Use Clang to compile Qemu](https://lists.nongnu.org/archive/html/qemu-devel/2011-12/msg02909.html) \
+[^1]: [Red Hat Bugzilla – Bug 1565766 - qemu failing to build with clang; __atomic_fetch_or_4](https://bugzilla.redhat.com/show_bug.cgi?id=1565766)  
+[^2]: [Building QEMU with clang](https://lists.freebsd.org/pipermail/freebsd-emulation/2012-June/009859.html)  
+[^3]: [Use Clang to compile Qemu](https://lists.nongnu.org/archive/html/qemu-devel/2011-12/msg02909.html)  
 [^4]: [SE4VM Detecting Virtualization Bugs in Virtual Machine Platforms: Dev-Harness](https://kangliuga.github.io/SE4VM/dev-harness.html).
