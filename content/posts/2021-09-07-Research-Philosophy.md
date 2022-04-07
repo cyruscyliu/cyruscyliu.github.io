@@ -45,7 +45,7 @@ backwards.
 **Define a looking-forward problem starting from its nature while defining a
 looking-backwards problem starting from history**. To make our research more
 scientific, we should avoid some construction problems that usually make
-computer science (and technology) to computer engineering in which all
+computer science (and technology) into computer engineering in which all
 scientific parts hide. For a looking-forward problem, we have to define what to
 predict, and for a looking-backwards problem, we should define what to
 summarize.
@@ -54,21 +54,20 @@ BTW, check [this
 article](https://medium.com/digital-diplomacy/how-to-look-for-ideas-in-computer-science-research-7a3fa6f4696f)
 to learn the patterns of research and other tips.
 
-## How to evaluate the problems
-
 Now, we have two simple problems: what to predict and what to summarize. We have
 to introduce more principles to evaluate our problems because not all problems
 are worthy of study.
 
-The first question is whether a problem is generic. **We have to check whether
-this problem has many instances in the real world, such that the real impact is
-there.**
+The first question is whether a problem is generic (or important). **We have to
+check whether this problem has many instances in the real world, such that the
+real impact is there.**
 
 The second question is whether a problem is solvable. We have to seek help from
 the computation theory and estimate what the best we can do. **We should
 carefully take reasonable assumptions and think of several solutions.**
 
-The third question is whether our solutions apply to other scenarios.
+The second question is whether existing solutions have solved the problem
+already. **We should tell a clear and convincing story.**
 
 Other tricks are in the following.
 
@@ -87,12 +86,17 @@ the whole community. Some technology becomes mature such that some metrics are
 easier to achieve. Such easier metrics are not the core metrics, but that we
 have to include. Consider all techniques we can use to be superior and tell why.
 
-OK. Let us do it! To save time, we are not supposed to make many mistakes.
-Nowadays, the computer science research community is competitive because not
-only most of the problems are easier to solve but also more and more people join
-us. When reviewers scan a manuscript, they pick up our mistakes and reject the
-papers that have more. Here are some tips from past research activities to
-evaluate our ideas quickly.
+Besides, it's better to have the following achievements.
+
++ Our solutions apply to other scenarios.
++ Our tools can solve real-world problems and have good usability.
+
+OK. Let us do it! We have to be quick, and we are not supposed to make many
+mistakes. Nowadays, the computer science research community is competitive
+because not only most of the problems are easier to solve but also more and more
+people join us. When reviewers scan a manuscript, they pick up our mistakes and
+reject the papers that have more. Here are some tips from past research
+activities to evaluate our ideas quickly.
 
 ### Budge our time
 
@@ -146,11 +150,11 @@ evaluate our ideas quickly.
 - Revise context and sentences, and do editing
 - Minimize disadvantages.
 
-### A detailed analysis in the story level
+### A detailed analysis at the story level
 
 1. What we cannot control
     - How many papers were submitted to a conference and the target acceptance rate.
-    - Which reviewers would revise our paper, and how well they know about what we are doing.
+    - Which reviewers would revise our paper, and how they know about what we are doing.
 2. What we can control
     - Importance/Novelty/Superior
     - Reasonable techniques and good enough implementation
@@ -198,6 +202,6 @@ complexity. However, we can do more than that.
 Classification is the first naive and powerful tool we are supposed to use. In
 fact, we use this tool implicitly every day. When we are talking about fuzzers,
 we will split them into black-box, white-box, and grey-box fuzzers. If someone
-asks we what is this, why is this, and how is this, probably the first answer
-is to ask what categories are of "this". If someone asks we what our favourite
-food is, we may ask: what categories of food we are asking?
+asks us what is this, why is this, and how is this, probably the first answer is
+to ask what categories are of "this". If someone asks us what our favourite food
+is, we may ask: what categories of food we are asking?
