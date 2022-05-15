@@ -18,44 +18,18 @@ so inefficient unless we are connecting or collaborating with industry people.
 activities, and we should be curious and critical thinkers about everything in
 our research activities all the time.** To make it more clear, we can put it
 this way. Whenever we study, or find or hear of a thing, we should show our
-interests and clarify the motivation behind it by asking **why**.
+interests: What security problems are there? What benefits will you gain?
 
 Of course, do not forget our connection with the academic and industrial
 community.
-
-## How to define a problem
-
-**Look forward or look backwards** Before going further, I would like to discuss
-*the types of knowledge. One type
-of knowledge looks forward, and the other focus backwards. Classifying research
-ideas in computer science bridges computer science to other disciplines. Physics
-looks forward, and history looks backwards. We should also think in this way
-during our research activities. Designing a system looks forward while reviewing
-literature looks backwards. Learning the history of all science helps to improve
-our research quality of ideas, evaluation, and writing.
-
-**A thing or a human process** A thing is an object to be studied. We should be
-*curious about anything since it would be our research
-object. An object can be a thing in the real world, for example, a piece of
-software; an object can be a process of humans, for example, developing a piece
-of software. Interestingly, if we focus on a thing itself, the research problems
-would look forward; if we focus on a human process, the research problems look
-backwards.
-
-**Define a looking-forward problem starting from its nature while defining a
-looking-backwards problem starting from history**. To make our research more
-scientific, we should avoid some construction problems that usually make
-computer science (and technology) into computer engineering in which all
-scientific parts hide. For a looking-forward problem, we have to define what to
-predict, and for a looking-backwards problem, we should define what to
-summarize.
 
 BTW, check [this
 article](https://medium.com/digital-diplomacy/how-to-look-for-ideas-in-computer-science-research-7a3fa6f4696f)
 to learn the patterns of research and other tips.
 
-Now, we have two simple problems: what to predict and what to summarize. We have
-to introduce more principles to evaluate our problems because not all problems
+## How to evaluate a problem
+
+We introduce more principles to evaluate our problems because not all problems
 are worthy of study.
 
 The first question is whether a problem is generic (or important). **We have to
@@ -66,16 +40,13 @@ The second question is whether a problem is solvable. We have to seek help from
 the computation theory and estimate what the best we can do. **We should
 carefully take reasonable assumptions and think of several solutions.**
 
-The second question is whether existing solutions have solved the problem
-already. **We should tell a clear and convincing story.**
+The third question is whether existing solutions have solved the problem
+already. **We should tell a clear and convincing story.** Please pay attention
+to how many papers and how many efforts exist. You may want to be at the
+beginning (0-2 papers) or not later than the peak (it depends on the publication
+wave related to our problems).
 
-Other tricks are in the following.
-
-+ Please pay attention to how many papers and how many efforts exist. You may
-want to be at the beginning (0-2 papers) or not later than the peak (it depends
-on the publication wave related to our problems).
-
-## How to evaluate the ideas
+## How to evaluate our ideas
 
 Remember that not all ideas can be accepted by top-tier conferences. One is the
 **novelty**, and the other is **superiority**. To be novel, we have to do a
@@ -89,7 +60,7 @@ have to include. Consider all techniques we can use to be superior and tell why.
 Besides, it's better to have the following achievements.
 
 + Our solutions apply to other scenarios.
-+ Our tools can solve real-world problems and have good usability.
++ Our tools have good usability.
 
 OK. Let us do it! We have to be quick, and we are not supposed to make many
 mistakes. Nowadays, the computer science research community is competitive
@@ -184,18 +155,16 @@ factual argument (data).
 ## Advertise
 
 - Homepage
-- Twitteriture
-- Group
+- Twitter
 - Main conference session
 - Poster session
+- Inter/Intra-Group
 
 ## How to solve a problem (WIP)
 
-This section is new and inspired by some social science disciplines. In general,
-we will define a problem as a computation problem in computer science. In
-practice, we will use possible threat models, system primitives, existing tools,
-and existing algorithms. Besides, we think about decidability, time, and storage
-complexity. However, we can do more than that.
+In general, we will define a problem as a computation problem in computer
+science. The tools we have are threat models, system primitives, etc. For
+algorithms, we think about decidability, time, and storage complexity.
 
 ### Classification
 
