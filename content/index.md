@@ -22,9 +22,9 @@ Linux Kernels through Model-Guided Kernel Execution" got accepted at
 @ASE_conf 2021! #ASE2021 @zhclhy @JMuhui
 @yajinzhou.](https://twitter.com/qiangliu717/status/1413674256152637441?s=20)
 
-## Projects, Publications, and Real Impact
+## Projects
 
-### 0x02 Embedded System Rehosting
+0x02 Embedded System Rehosting
 
 This project tries to rehost embedded Linux kernels for routers, cameras, and
 other high-end devices. Then, we can dynamically analyze bugs or
@@ -65,7 +65,7 @@ build a general emulator that supports all kinds of machines. The basic idea of
 ECMO is to transplant the peripherals by support ones into the target Linux
 kernel, hence solve the problem of peripheral variety. (Maintainer)
 
-### 0x01 Android Authentication
+0x01 Android Authentication
 
 This project tries to evaluate existing and propose new implicit continuous
 authentication approaches. The implicit continuous authentication can be a
@@ -76,18 +76,19 @@ for my Bachelor's degree. Relative research papers are [RiskCog
 author)](./papers/espialcog-tmc20.pdf), and [One Cycle Attack (TIFS'20) (3rd
 author)](./papers/one-cycle-attack-tifs20.pdf).
 
-### 0x00 Network Protocol Fuzzing (Archived)
+0x00 Network Protocol Fuzzing (Archived)
 
-This project tries to fuzz network protocols, especially router
-protocols. I joined this project as an intern and wrote several Peach
-Pits by 1) learning the grammar of Peach Pit, 2) understanding specific
-network protocols via their specifications.
+This project tries to fuzz network protocols, especially router protocols. I
+joined this project as an intern and wrote several Peach Pits by 1) learning the
+grammar of Peach Pit, 2) understanding specific network protocols via their
+specifications, 3) collaborating with others to deploy our Peach Pits.
 
 ## Posts
 
 Please raise [issues](https://github.com/cyruscyliu/cyruscyliu.github.io/issues)
 if any questions or comments.
 
++ [2021-05-17 A layered experiment environment](posts/2022-05-17-vm-docker-pythonenv.md)
 + [2021-12-13 A brief summary of CS-725](posts/2021-12-13-Summary-of-CS725.md)
 + [2021-11-03 Coverage Control in libFuzzer](./posts/2021-11-02-libFuzzer-cov-control.md)
 + [2021-11-18 ASE'21 - FirmGuide](./posts/2021-11-15-ase-firmguide.md)
@@ -97,18 +98,17 @@ if any questions or comments.
 + [2020-11-30 Clang, wllvm, passes, QEMU for x86_64](./posts/2020-11-30-wllvm-clang-qemu-x86_64.md)
 + [2020-11-18 Buildroot, QEMU and Linux kernel for x86_64](./posts/2020-11-18-buildroot-qemu-x86_64.md)
 
-
-### Summary when visiting EPFL in 2021
+Switzerland EPFL 2021
 
 * 0x10 [How to Do [System|Software] (Security) Research](posts/2021-09-07-Research-Philosophy.md)
 * 0x0f [Programming Skills for Research](posts/2021-09-03-Summary-Research-SE.md)
 * 0x0e [Principles of Research Presentation](posts/2021-08-27-Principle-of-Presentation.md)
 
-### Summary after CCS 2019 (London)
+London CCS 2019
 
 * 0x0d [Summary of CCS'19 (London)](./posts/2019-11-23-CCS-London-Summary.md)
 
-### Blogs when living Hangzhou in 2018
+Hangzhou ZJU 2018
 
 * 0x0c [在杭州的100天-第二十七天](./posts/2018-04-07-在杭州的100天-第二十七天.md)
 * 0x0b [在杭州的100天-第十天](./posts/2018-03-28-在杭州的100天-第十天.md)
@@ -117,7 +117,7 @@ if any questions or comments.
 * 0x08 [在杭州的100天-第二天](./posts/2018-03-08-在杭州的100天-第二天.md)
 * 0x07 [在杭州的100天-第一天](./posts/2018-03-08-在杭州的100天-第一天.md)
 
-### Blogs when visiting ANU in early 2018
+Australia ANU early 2018
 
 * 0x06 [ANU暑期学校-尾声](./posts/2018-02-07-ANU暑期学校-尾声.md)
 * 0x05 [ANU暑期学校-生活和工作](./posts/2018-02-07-ANU暑期学校-生活和工作.md)
