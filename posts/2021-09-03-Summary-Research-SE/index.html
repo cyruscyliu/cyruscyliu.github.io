@@ -14,7 +14,7 @@
         
         <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2021-09-03-Summary-Research-SE/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Programming Skills for Research - Qiang Liu's Homepage</title>
+        <title>Code Skills for Research - Qiang Liu's Homepage</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="../../css/font-awesome.min.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -63,28 +63,60 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     
-    <li class="breadcrumb-item active" aria-current="page">Programming Skills for Research</li>
+    <li class="breadcrumb-item active" aria-current="page">Code Skills for Research</li>
   </ol>
 </nav>
 
 
-<h1 id="programming-skills-for-research">Programming Skills for Research</h1>
-<p>We'd like to see a novel idea along with solid implementation. To achieve this,
-we need specific skills and efficient collaboration due to the time budget (6-12
-months/person).</p>
-<h2 id="specific-skills">Specific skills</h2>
-<p>Based on my personal experience, I think the programming skills can be grouped
-into four levels.</p>
+<h1 id="code-skills-for-research">Code Skills for Research</h1>
+<p>We'd like to see a novel idea along with cost-effective implementation. This
+means we should follow an enough and quick coding philosophy. Besides, I
+introduce instructions to learn to code at the end of this article.</p>
+<h2 id="enough-and-quick">Enough and quick</h2>
+<p>System research takes time. We need to understand how an unfamiliar system work,
+try it, re-understand, re-try, and so on. Usually, we need to interact with
+hardware, which sounds hard and is tough.</p>
+<p>We need to be enough and quick. We want to develop a tool or something similar
+that has enough functionality and finish it in time. In this way, we can pass
+the artifact evaluation, and beat other quick and dirty projects.</p>
+<p>I have proposed several strategies to achieve this.</p>
+<h3 id="enough-functionality">Enough functionality</h3>
+<p>Think about the least set of functionalities we want and list there. This
+includes not only the core functionalities but also the functionalities to make
+sure this tool is easy to use, debug, and evaluate.</p>
+<h3 id="quick-development">Quick development</h3>
+<ul>
+<li>
+<p>First, we need to control lines of code (LoC) a student contribute. We want a
+student to code for around two months. If the code space seems larger, we should
+invite more students to join us. As we split tasks into a group of students,
+each one should share any tricks and tweaks used in the implementation.</p>
+</li>
+<li>
+<p>Second, we need to control the number of bugs. The trick is to build the
+smallest SDK with limited but enough unit tests. We then build upper
+applications where the changes should usually happen. Keep in mind to move
+commonly used code in the applications to the SDK and don't code too much in
+rapid changing applications.</p>
+</li>
+<li>
+<p>Third, we need to follow a fixed coding routine and update it as time goes. 
+For example, we should have a meeting at the beginning, onboard the new member,
+create <code>project-xxx</code> to hold all code related to the same project, create
+<code>evaluation</code> for evaluation, and so on.</p>
+</li>
+</ul>
+<h2 id="train-ourselves-in-coding">Train ourselves in coding</h2>
+<p>Based on my personal experience, the coding skills have three levels.</p>
 <ul>
 <li>Level 1, knowledge in computer science courses</li>
 <li>Level 2, project management</li>
-<li>Level 3, the coding style for research projects</li>
-<li>Level 4, new techniques and vision</li>
+<li>Level 3, new techniques and vision</li>
 </ul>
 <h3 id="level-1">Level 1</h3>
 <p>Be familiar with theories and design decisions in computing systems.</p>
 <p>Students who major in computer science and technology (in general) have to take
-the following sources.</p>
+the following courses. Videos are available on the internet.</p>
 <ul>
 <li>Programming Language</li>
 <li>Data Structure and Algorithm</li>
@@ -93,17 +125,22 @@ the following sources.</p>
 <li>Operating System</li>
 <li>Database</li>
 </ul>
-<p>For students who are from other disciplines, you are encouraged to train
-yourself in the courses above. You can find videos on the internet.</p>
 <p>To go future, a student can choose the following sources.</p>
 <ul>
 <li>Advanced Algorithm</li>
 <li>Computation Theory</li>
 <li>Compiler</li>
 <li>Information Security</li>
+<li>Distributed Systems</li>
+</ul>
+<p>Some mathematics are also recommended.</p>
+<ul>
+<li>Probability</li>
+<li>Graph Theory</li>
+<li>Game Theory</li>
 </ul>
 <h3 id="level-2">Level 2</h3>
-<p>Be familiar with the problem management process.</p>
+<p>Be familiar with the project management process.</p>
 <p>We must develop a project, so we have to know each step of the project
 management.</p>
 <ul>
@@ -116,28 +153,14 @@ management.</p>
 <li>README and Documentation</li>
 <li>Version Control: Pull, Commit, Push or Pull Request</li>
 <li>Testing and Automation</li>
+<li>Refactoring and Design Pattern</li>
 <li>Debug and Patch</li>
 </ul>
 </li>
 <li>Discussion: Issue, Mailing-list, and Forum</li>
-<li>Package Manager: npm, pip</li>
+<li>Package Manager: npm, pip, snap, apt</li>
 </ul>
 <h3 id="level-3">Level 3</h3>
-<p>Be familiar with the standard of research code.</p>
-<p>Recently, authors of a paper are required to submit an artifact to allow
-reviewers to reproduce the evaluation of the study. This motivates reproducible
-research but requires quality and usable research code.</p>
-<h4 id="quality">Quality</h4>
-<p>First, we need to control the number of bugs. The trick is to build the smallest
-SDK with limited but enough unit tests. We then build upper applications where
-the changes should usually happen. Keep in mind to move commonly used code in
-the applications to the SDK and don't code too much in rapid changing
-applications.</p>
-<h4 id="usability">Usability</h4>
-<p>Second, we need to ease the evaluation and deployment of the system for the
-study. Create <code>evaluation</code> and <code>project-xxx</code> at the same time with the same
-Docker container.</p>
-<h3 id="level-4">Level 4</h3>
 <p>Be curious and a critical thinker.</p>
 <p>IT technologies evolve so fast, and we are supposed to make progress at the same
 time.</p>
@@ -151,7 +174,7 @@ choices, their pros/cons, and how to set up a minimum web quickly.</p>
 <li>Memory consumption</li>
 <li>Disk consumption</li>
 </ul>
-<p>Going further, we can follow a list in the following.</p>
+<p>Going further, we can follow a list to learn their code spaces.</p>
 <ul>
 <li>User Application: QT, Android</li>
 <li>Web Server: Flask, Django</li>
@@ -160,18 +183,6 @@ choices, their pros/cons, and how to set up a minimum web quickly.</p>
 <li>Operating System: Linux Kernel</li>
 <li>Virtualization: QEMU</li>
 </ul>
-<h2 id="collaboration">Collaboration</h2>
-<p>TBD</p>
-<h2 id="time-budget">Time Budget</h2>
-<p>I found it is risky to miss the submission DDL due to "incomplete coding". The
-reasons may be 1) too many and too few requirements, 2) refactoring, 3) dirty
-code for a key requirement.</p>
-<h3 id="too-many-and-too-few-requirements">Too many and too few requirements</h3>
-<p>Think about the evaluation for the study and how you will sell your work.</p>
-<h3 id="refactoring">Refactoring</h3>
-<p>Design careful and don't refactor your code dramatically.</p>
-<h3 id="dirty-code-for-a-key-requirement">Dirty code for a key requirement</h3>
-<p>This part is tricky. Maybe we should code from the most difficult part.</p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
@@ -198,15 +209,12 @@ code for a key requirement.</p>
 
     <div id="toc-collapse" class="navbar-collapse collapse card">
         <ul class="nav flex-column bs-sidenav">
-            <li class="nav-item main"><a class="nav-link" href="#programming-skills-for-research">Programming Skills for Research</a></li>
+            <li class="nav-item main"><a class="nav-link" href="#code-skills-for-research">Code Skills for Research</a></li>
                 <li class="nav-item">
-                    <a href="#specific-skills" class="nav-link">Specific skills</a>
+                    <a href="#enough-and-quick" class="nav-link">Enough and quick</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#collaboration" class="nav-link">Collaboration</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#time-budget" class="nav-link">Time Budget</a>
+                    <a href="#train-ourselves-in-coding" class="nav-link">Train ourselves in coding</a>
                 </li>
         </ul>
     </div>
