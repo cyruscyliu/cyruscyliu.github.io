@@ -102,7 +102,7 @@ if any questions or comments.
 Switzerland EPFL 2021
 
 * 0x10 [How to Do [System|Software] (Security) Research](posts/2021-09-07-Research-Philosophy.md)
-* 0x0f [Programming Skills for Research](posts/2021-09-03-Summary-Research-SE.md)
+* 0x0f [Coding Skills for Research](posts/2021-09-03-Summary-Research-SE.md)
 * 0x0e [Principles of Research Presentation](posts/2021-08-27-Principle-of-Presentation.md)
 
 London CCS 2019
