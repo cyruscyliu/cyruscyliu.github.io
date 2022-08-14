@@ -13,6 +13,8 @@ cyruscyliu@gmail.com.
 
 ## News
 
+Glad to join the Program Committee within the ASE'22 Artifact Evaluation track! 
+
 [Our Paper "ECMO: Peripheral Transplantation to Rehost Embedded Linux Kernels"
 got accepted at
 CCS'21!](https://twitter.com/qiangliu717/status/1440590703067758592)
