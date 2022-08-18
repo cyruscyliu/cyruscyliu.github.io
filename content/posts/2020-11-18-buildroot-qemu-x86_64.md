@@ -168,9 +168,9 @@ hello init
 
 ## Reference
 
-[buildroot编译运行QEMU
-X86_64](https://jgsun.github.io/2020/05/28/qemu-x86-64/) [How to add a
-linux kernel driver module as a buildroot
+[buildroot编译运行QEMU X86_64](https://jgsun.github.io/2020/05/28/qemu-x86-64/) 
+
+[How to add a linux kernel driver module as a buildroot
 package](https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-driver-module-as-a-buildroot-package)
 
 [cve-2020-14364]: An out-of-bounds read/write access flaw was found in
