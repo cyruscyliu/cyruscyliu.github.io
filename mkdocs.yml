@@ -1,7 +1,10 @@
 theme:
-    name: bootstrap4
+    name: material
 docs_dir: content
 site_name: Qiang Liu's Homepage
 site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
 nav:
     - Home: 'index.md'
+plugins:
+  - search
+  - git-revision-date-localized
