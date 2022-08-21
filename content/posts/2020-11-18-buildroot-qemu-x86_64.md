@@ -1,144 +1,52 @@
 # Buildroot, QEMU and Linux kernel for x86_64
 
-Usually, we need a dynamic analysis platform for a Linux kernel for
-x86_64. The direct idea is to run a Linux kernel on QEMU. In this post,
-I will introduce how to quickly build such a platform with Buildroot.
+How to build a minimum Linux kernel with customized rootfs and run it with QEMU?
 
 ## Download Buildroot
 
-Please go [here](https://buildroot.org/download.html) to download the
-latest Buildroot package and decompress it.
+Please go [here](https://buildroot.org/download.html) to download the latest
+Buildroot package and decompress it.
 
-## [Optional] Prepare Kernel Module
+## Add new external packages (user-space program and kernel module) (optional)
 
-Usually, we write a Linux kernel module to test some features.
-Leveraging Buildroot, it is quite easy to achieve that. Please refer to
-[this
-post](https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-driver-module-as-a-buildroot-package)
-as the original post. I fixed two typos only. Skip this section if you
-don't need a kernel module.
+We want to write an external user space program or install an external kernel
+module to test some features, e.g., to reproducing a bug. I refer to
+[this](https://buildroot.org/downloads/manual/manual.html#adding-packages) and
+[this]
+(https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-driver-module-as-a-buildroot-package)
+and summarize here.
 
-### Create several files like this
-
-``` txt
-kernel_module/
-├── Config.in
-├── Makefile
-├── external.desc
-├── external.mk
-└── hello.c
-
-0 directories, 5 file
-```
-
-### Config.in
-Note that each line should start with a tab.
-
-``` bash
-config BR2_PACKAGE_KERNEL_MODULE
-    bool "kernel_module"
-    depends on BR2_LINUX_KERNEL
-    help
-    Linux Kernel Module Cheat.
-```
-
-### Makefile
-
-``` Makefile
-obj-m += $(addsuffix .o, $(notdir $(basename $(wildcard $(BR2_EXTERNAL_KERNEL_MODULES_PATH)/*.c))))
-ccflags-y := -DDEBUG -g -std=gnu99 -Wno-declaration-after-statement
-
-.PHONY: all clean
-
-all:
-    $(MAKE) -C '$(LINUX_DIR)' M='$(PWD)' modules
-
-clean:
-    $(MAKE) -C '$(LINUX_DIR)' M='$(PWD)' clean
-```
-
-### external.desc
-
-Please look at [this](https://buildroot.org/downloads/manual/manual.html#outside-br-custom) for more information.
-
-```
-name: KERNEL_MODULES
-```
-
-### external.mk
-
-``` Makefile
-################################################################################
-#
-# kernel_module
-#
-################################################################################
-
-KERNEL_MODULE_VERSION = 1.0
-KERNEL_MODULE_SITE = $(BR2_EXTERNAL_KERNEL_MODULES_PATH)
-KERNEL_MODULE_SITE_METHOD = local
-KERNEL_MODULE_LINUX_LICENSE = GPL-2.0
-KERNEL_MODULE_LINUX_LICENSE_FILES = COPYING
-
-$(eval $(kernel-module))
-$(eval $(generic-package))
-```
-
-### hello.c
-
-``` c
-#include <linux/module.h>
-#include <linux/kernel.h>
-
-MODULE_LICENSE("GPL");
-
-static int myinit(void)
-{
-    printk(KERN_INFO "hello init\n");
-    return 0;
-}
-
-static void myexit(void)
-{
-    printk(KERN_INFO "hello exit\n");
-}
-
-module_init(myinit)
-module_exit(myexit)
-```
-
-The change is from `BR2_EXTERNAL_KERNEL_MODULE_PATH` to
-`BR2_EXTERNAL_KERNEL_MODULES_PATH`.
+Please `git clone https://github.com/cyruscyliu/buildroot-external-packages.git`.
 
 ## Compile Buildroot
 
-The several components are arranged like below.
+The directory layout is like below.
 
 ``` txt
 .
-├── buildroot-2020.02.8
-└── kernel_module
+├── buildroot-2022.02.4
+└── buildroot-external-packages
 ```
 
 1. Go to `buildroot`
 
-2. If no kernel module, just `make qemu_x86_64_defconfig`, otherwise,
-`make BR2_EXTERNAL="$(pwd)/../kernel_module" qemu_x86_64_defconfig`
+2. If no external packages, just `make qemu_x86_64_defconfig`, otherwise, `make
+BR2_EXTERNAL="$(pwd)/../buildroot-external-packages" qemu_x86_64_defconfig`
 
-3. Before going on, we should update the C libary and the tty target by
-`make menuconfig`.
+3. Before going on, we should update the C library and the TTY target by `make
+menuconfig`.
 
     + `Toolchain` -> `C library` -> `glibc`
     + `System Configuration` -> `Run a getty (login prompt) after boot`
     -> `TTY port` -> `ttyS0`
 
-    [Optional] We can enable `lspci -v` to show more information on PCI
-    devices.
+    We can optionally enable `lspci -v` to show more information on PCI devices.
 
     + `Target Packages` -> `Hardware Handling` -> `pciutils`
 
-    + If any kernel module, `echo 'BR2_PACKAGE_KERNEL_MODULE=y' >>
-    .config`
+    We can optionally enable the external packages.
+
+    + `External options` -> check what you want
 
 3. `make` with `-jN` to accelerate your compilation.
 
@@ -154,7 +62,7 @@ qemu-system-x86_64 \
     -nographic
 ```
 
-If there exists a Linux kernel module, please do as follow.
+If the external packages exist, please do as follows.
 
 ``` bash
 $ modprobe hello
@@ -164,6 +72,8 @@ $ desg
 ...
 hello: loading out-of-tree module taints kernel.
 hello init
+$ userspace_program 
+Hello World!
 ```
 
 ## Reference
