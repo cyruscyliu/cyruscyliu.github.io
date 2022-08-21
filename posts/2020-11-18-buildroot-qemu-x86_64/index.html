@@ -222,57 +222,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional-prepare-kernel-module" class="md-nav__link">
-    [Optional] Prepare Kernel Module
+  <a href="#add-new-external-packages-user-space-program-and-kernel-module-optional" class="md-nav__link">
+    Add new external packages (user-space program and kernel module) (optional)
   </a>
-  
-    <nav class="md-nav" aria-label="[Optional] Prepare Kernel Module">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-several-files-like-this" class="md-nav__link">
-    Create several files like this
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configin" class="md-nav__link">
-    Config.in
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#makefile" class="md-nav__link">
-    Makefile
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#externaldesc" class="md-nav__link">
-    external.desc
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#externalmk" class="md-nav__link">
-    external.mk
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#helloc" class="md-nav__link">
-    hello.c
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -312,123 +264,47 @@
 
 
 <h1 id="buildroot-qemu-and-linux-kernel-for-x86_64">Buildroot, QEMU and Linux kernel for x86_64</h1>
-<p>Usually, we need a dynamic analysis platform for a Linux kernel for
-x86_64. The direct idea is to run a Linux kernel on QEMU. In this post,
-I will introduce how to quickly build such a platform with Buildroot.</p>
+<p>How to build a minimum Linux kernel with customized rootfs and run it with QEMU?</p>
 <h2 id="download-buildroot">Download Buildroot</h2>
-<p>Please go <a href="https://buildroot.org/download.html">here</a> to download the
-latest Buildroot package and decompress it.</p>
-<h2 id="optional-prepare-kernel-module">[Optional] Prepare Kernel Module</h2>
-<p>Usually, we write a Linux kernel module to test some features.
-Leveraging Buildroot, it is quite easy to achieve that. Please refer to
-<a href="https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-driver-module-as-a-buildroot-package">this
-post</a>
-as the original post. I fixed two typos only. Skip this section if you
-don't need a kernel module.</p>
-<h3 id="create-several-files-like-this">Create several files like this</h3>
-<pre><code class="language-txt">kernel_module/
-├── Config.in
-├── Makefile
-├── external.desc
-├── external.mk
-└── hello.c
-
-0 directories, 5 file
-</code></pre>
-<h3 id="configin">Config.in</h3>
-<p>Note that each line should start with a tab.</p>
-<pre><code class="language-bash">config BR2_PACKAGE_KERNEL_MODULE
-    bool &quot;kernel_module&quot;
-    depends on BR2_LINUX_KERNEL
-    help
-    Linux Kernel Module Cheat.
-</code></pre>
-<h3 id="makefile">Makefile</h3>
-<pre><code class="language-Makefile">obj-m += $(addsuffix .o, $(notdir $(basename $(wildcard $(BR2_EXTERNAL_KERNEL_MODULES_PATH)/*.c))))
-ccflags-y := -DDEBUG -g -std=gnu99 -Wno-declaration-after-statement
-
-.PHONY: all clean
-
-all:
-    $(MAKE) -C '$(LINUX_DIR)' M='$(PWD)' modules
-
-clean:
-    $(MAKE) -C '$(LINUX_DIR)' M='$(PWD)' clean
-</code></pre>
-<h3 id="externaldesc">external.desc</h3>
-<p>Please look at <a href="https://buildroot.org/downloads/manual/manual.html#outside-br-custom">this</a> for more information.</p>
-<pre><code>name: KERNEL_MODULES
-</code></pre>
-<h3 id="externalmk">external.mk</h3>
-<pre><code class="language-Makefile">################################################################################
-#
-# kernel_module
-#
-################################################################################
-
-KERNEL_MODULE_VERSION = 1.0
-KERNEL_MODULE_SITE = $(BR2_EXTERNAL_KERNEL_MODULES_PATH)
-KERNEL_MODULE_SITE_METHOD = local
-KERNEL_MODULE_LINUX_LICENSE = GPL-2.0
-KERNEL_MODULE_LINUX_LICENSE_FILES = COPYING
-
-$(eval $(kernel-module))
-$(eval $(generic-package))
-</code></pre>
-<h3 id="helloc">hello.c</h3>
-<pre><code class="language-c">#include &lt;linux/module.h&gt;
-#include &lt;linux/kernel.h&gt;
-
-MODULE_LICENSE(&quot;GPL&quot;);
-
-static int myinit(void)
-{
-    printk(KERN_INFO &quot;hello init\n&quot;);
-    return 0;
-}
-
-static void myexit(void)
-{
-    printk(KERN_INFO &quot;hello exit\n&quot;);
-}
-
-module_init(myinit)
-module_exit(myexit)
-</code></pre>
-<p>The change is from <code>BR2_EXTERNAL_KERNEL_MODULE_PATH</code> to
-<code>BR2_EXTERNAL_KERNEL_MODULES_PATH</code>.</p>
+<p>Please go <a href="https://buildroot.org/download.html">here</a> to download the latest
+Buildroot package and decompress it.</p>
+<h2 id="add-new-external-packages-user-space-program-and-kernel-module-optional">Add new external packages (user-space program and kernel module) (optional)</h2>
+<p>We want to write an external user space program or install an external kernel
+module to test some features, e.g., to reproducing a bug. I refer to
+<a href="https://buildroot.org/downloads/manual/manual.html#adding-packages">this</a> and
+[this]
+(https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-driver-module-as-a-buildroot-package)
+and summarize here.</p>
+<p>Please <code>git clone https://github.com/cyruscyliu/buildroot-external-packages.git</code>.</p>
 <h2 id="compile-buildroot">Compile Buildroot</h2>
-<p>The several components are arranged like below.</p>
+<p>The directory layout is like below.</p>
 <pre><code class="language-txt">.
-├── buildroot-2020.02.8
-└── kernel_module
+├── buildroot-2022.02.4
+└── buildroot-external-packages
 </code></pre>
 <ol>
 <li>
 <p>Go to <code>buildroot</code></p>
 </li>
 <li>
-<p>If no kernel module, just <code>make qemu_x86_64_defconfig</code>, otherwise,
-<code>make BR2_EXTERNAL="$(pwd)/../kernel_module" qemu_x86_64_defconfig</code></p>
+<p>If no external packages, just <code>make qemu_x86_64_defconfig</code>, otherwise, <code>make
+BR2_EXTERNAL="$(pwd)/../buildroot-external-packages" qemu_x86_64_defconfig</code></p>
 </li>
 <li>
-<p>Before going on, we should update the C libary and the tty target by
-<code>make menuconfig</code>.</p>
+<p>Before going on, we should update the C library and the TTY target by <code>make
+menuconfig</code>.</p>
 <ul>
 <li><code>Toolchain</code> -&gt; <code>C library</code> -&gt; <code>glibc</code></li>
 <li><code>System Configuration</code> -&gt; <code>Run a getty (login prompt) after boot</code>
 -&gt; <code>TTY port</code> -&gt; <code>ttyS0</code></li>
 </ul>
-<p>[Optional] We can enable <code>lspci -v</code> to show more information on PCI
-devices.</p>
+<p>We can optionally enable <code>lspci -v</code> to show more information on PCI devices.</p>
 <ul>
-<li>
-<p><code>Target Packages</code> -&gt; <code>Hardware Handling</code> -&gt; <code>pciutils</code></p>
-</li>
-<li>
-<p>If any kernel module, <code>echo 'BR2_PACKAGE_KERNEL_MODULE=y' &gt;&gt;
-.config</code></p>
-</li>
+<li><code>Target Packages</code> -&gt; <code>Hardware Handling</code> -&gt; <code>pciutils</code></li>
+</ul>
+<p>We can optionally enable the external packages.</p>
+<ul>
+<li><code>External options</code> -&gt; check what you want</li>
 </ul>
 </li>
 <li>
@@ -444,7 +320,7 @@ devices.</p>
     -net nic,model=virtio -net user \
     -nographic
 </code></pre>
-<p>If there exists a Linux kernel module, please do as follow.</p>
+<p>If the external packages exist, please do as follows.</p>
 <pre><code class="language-bash">$ modprobe hello
 hello: loading out-of-tree module taints kernel.
 hello init
@@ -452,6 +328,8 @@ $ desg
 ...
 hello: loading out-of-tree module taints kernel.
 hello init
+$ userspace_program 
+Hello World!
 </code></pre>
 <h2 id="reference">Reference</h2>
 <p><a href="https://jgsun.github.io/2020/05/28/qemu-x86-64/">buildroot编译运行QEMU X86_64</a> </p>
@@ -470,7 +348,7 @@ arbitrary code with the privileges of the QEMU process on the host</em>.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 21, 2022</span>
       
     
   </small>
