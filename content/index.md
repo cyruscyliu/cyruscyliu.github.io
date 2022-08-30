@@ -101,6 +101,10 @@ if any questions or comments.
 + [2020-11-30 Clang, wllvm, passes, QEMU for x86_64](./posts/2020-11-30-wllvm-clang-qemu-x86_64.md)
 + [2020-11-18 Buildroot, QEMU and Linux kernel for x86_64](./posts/2020-11-18-buildroot-qemu-x86_64.md)
 
+Hangzhou ZJU 2022
+
+* 0x11 [Technology Transfer and Practices Under Control](posts/2022-08-30-technology-transfer.md)
+
 Switzerland EPFL 2021
 
 * 0x10 [How to Do [System|Software] (Security) Research](posts/2021-09-07-Research-Philosophy.md)
