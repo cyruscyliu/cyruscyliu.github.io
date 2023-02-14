@@ -1,10 +1,18 @@
 ## Introduction
 
-Hi, my name is Qiang Liu. I am currently a PhD candidate at the College of
-Computer Science and Technology of Zhejiang University (ZJU), Hangzhou, China. I
-visited HEXHIVE at EPFL from 2021.08 to 2022.03. My research interests include
-system and software security. It is welcome to contact me by email at
-cyruscyliu@gmail.com.
+Hi, my name is Qiang Liu, living in Hangzhou, coming from a northern village
+([Jiayin](https://en.wikipedia.org/wiki/Jiayin_County)) in China. I am currently
+a PhD candidate at Zhejiang University (ZJU). My research focuses on system and
+software security. I have broad interests in attacks and defenses cover
+different areas, namely trusted computation, virtualization operating systems,
+and user-space applications. Feel free to contact me via this long term email
+address: cyruscyliu@gmail.com.
+
+Before going to ZJU, I got my bachelor at Beijing Institute of Technology (BIT).
+During my PhD, I visited HEXHIVE at EPFL from 2021.08 to 2022.03, and I will
+visit HEXHIVE again in Mar. 2023. I am going to graduate in Sept. 2023!
+
+Besides research, I'm also interested in badminton and road trips.
 
 [CV](./Qiang_s_CV.pdf)
 [Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
