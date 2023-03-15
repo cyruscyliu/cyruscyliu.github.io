@@ -36,7 +36,7 @@ vagrant init generic/ubuntu1804
 vagrant up --provider=libvirt
 vagrant ssh
 vagrant status
-vagrant destroy
+vagrant halt
 ```
 
 Please look at `Vagrantfile` for more configuration.
