@@ -23,7 +23,10 @@ Besides research, I'm also interested in badminton and road trips.
 
 ## News
 
-Glad to join the Program Committee within the ASE'22 Artifact Evaluation track! 
+[Our paper "ViDeZZo: Dependency-aware Virtual Device Fuzzing" got accepted at
+IEEESP 2023!](https://twitter.com/gannimo/status/1644323216020701186)
+
+Glad to join the Program Committee within the ASE'22 Artifact Evaluation track!
 
 [Our Paper "ECMO: Peripheral Transplantation to Rehost Embedded Linux Kernels"
 got accepted at
