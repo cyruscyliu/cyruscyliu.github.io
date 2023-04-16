@@ -4,8 +4,8 @@ Hi, my name is Qiang Liu, living in Lausanne (Switzerland), coming from a
 northern village ([Jiayin](https://en.wikipedia.org/wiki/Jiayin_County)) in
 China. My research focuses on system and software security. I have broad
 interests in attacks and defenses cover different areas, namely trusted
-computation, virtualization operating systems, and user-space applications. Feel
-free to contact me via this long term email address: cyruscyliu@gmail.com.
+computation, virtualization, operating systems, and user-space applications.
+Feel free to contact me via this long term email address: cyruscyliu@gmail.com.
 
 Before going to ZJU, I got my bachelor at Beijing Institute of Technology (BIT).
 During my PhD, I visited HEXHIVE at EPFL from 2021.08 to 2022.03.
@@ -14,7 +14,8 @@ In 2023/02, I came to HEXHIVE again to do collaborative research. At the same
 time, I am writing my Ph.D. thesis and plan to graduate in 2023/09 from Zhejiang
 University (ZJU).
 
-Besides research, I'm also interested in badminton and road trips.
+Besides research, I'm also interested in badminton, hiking, biking and road
+trips.
 
 [CV](./Qiang_s_CV.pdf)
 [Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
@@ -38,6 +39,25 @@ Linux Kernels through Model-Guided Kernel Execution" got accepted at
 @yajinzhou.](https://twitter.com/qiangliu717/status/1413674256152637441?s=20)
 
 ## Projects
+
+0x03 Hypervisor (Virtual Devices) Fuzzing
+
+This project tries to discover vulnerabilities in virtual devices and fix them
+as early as possible. This has very much benefit for cloud providers and users.
+Relative research paper is [ViDeZZo (1st author)](./papers/videzzo-sp23.pdf).
+
+We open source the following projects.
+
++ [ViDeZZo](https://github.com/HexHive/videzzo) can fuzz QEMU/VirtualBox virtual
+devices in a scalable and efficient way. (Author and Maintainer)
+
++ [ViDeZZo LLVM Project](https://github.com/cyruscyliu/videzzo-llvm-project),
+forked from LLVM Project 13, contains the compiler/libFuzzer we use to compile
+QEMU/VirtualBox virtual devices. (Author and Maintainer)
+
++ [buildroot-external-packages](https://github.com/cyruscyliu/buildroot-external-packages)
+provides a template for your own userspace programs and kernel modules into a
+Buildroot kernel. I've been using this a lot to reproduce QEMU bugs. (Author and Maintainer)
 
 0x02 Embedded System Rehosting
 
@@ -80,7 +100,7 @@ build a general emulator that supports all kinds of machines. The basic idea of
 ECMO is to transplant the peripherals by support ones into the target Linux
 kernel, hence solve the problem of peripheral variety. (Maintainer)
 
-0x01 Android Authentication
+0x01 Android Authentication (Archived)
 
 This project tries to evaluate existing and propose new implicit continuous
 authentication approaches. The implicit continuous authentication can be a
@@ -88,8 +108,9 @@ second authentication factor for fingerprint and face identification. I joined
 this project as an intern and then proposed this project to be my final project
 for my Bachelor's degree. Relative research papers are [RiskCog
 (TMC'20)](./papers/riskcog-tmc20.pdf), [ESPIALCOG (TMC'20)(5th
-author)](./papers/espialcog-tmc20.pdf), and [One Cycle Attack (TIFS'20) (3rd
-author)](./papers/one-cycle-attack-tifs20.pdf).
+author)](./papers/espialcog-tmc20.pdf), [One Cycle Attack (TIFS'20) (3rd
+author)](./papers/one-cycle-attack-tifs20.pdf), and [TRAPCOG (TMC'23) (3rd
+author)](./papers/trapcog-tmc23.pdf).
 
 0x00 Network Protocol Fuzzing (Archived)
 
