@@ -325,14 +325,15 @@
 northern village (<a href="https://en.wikipedia.org/wiki/Jiayin_County">Jiayin</a>) in
 China. My research focuses on system and software security. I have broad
 interests in attacks and defenses cover different areas, namely trusted
-computation, virtualization operating systems, and user-space applications. Feel
-free to contact me via this long term email address: cyruscyliu@gmail.com.</p>
+computation, virtualization, operating systems, and user-space applications.
+Feel free to contact me via this long term email address: cyruscyliu@gmail.com.</p>
 <p>Before going to ZJU, I got my bachelor at Beijing Institute of Technology (BIT).
 During my PhD, I visited HEXHIVE at EPFL from 2021.08 to 2022.03.</p>
 <p>In 2023/02, I came to HEXHIVE again to do collaborative research. At the same
 time, I am writing my Ph.D. thesis and plan to graduate in 2023/09 from Zhejiang
 University (ZJU).</p>
-<p>Besides research, I'm also interested in badminton and road trips.</p>
+<p>Besides research, I'm also interested in badminton, hiking, biking and road
+trips.</p>
 <p><a href="Qiang_s_CV.pdf">CV</a>
 <a href="https://scholar.google.com/citations?user=fa1uB2sAAAAJ&amp;hl=en">Google Scholar</a>
 <a href="https://github.com/cyruscyliu">GitHub</a>
@@ -349,6 +350,27 @@ Linux Kernels through Model-Guided Kernel Execution" got accepted at
 @ASE_conf 2021! #ASE2021 @zhclhy @JMuhui
 @yajinzhou.</a></p>
 <h2 id="projects">Projects</h2>
+<p>0x03 Hypervisor (Virtual Devices) Fuzzing</p>
+<p>This project tries to discover vulnerabilities in virtual devices and fix them
+as early as possible. This has very much benefit for cloud providers and users.
+Relative research paper is <a href="papers/videzzo-sp23.pdf">ViDeZZo (1st author)</a>.</p>
+<p>We open source the following projects.</p>
+<ul>
+<li>
+<p><a href="https://github.com/HexHive/videzzo">ViDeZZo</a> can fuzz QEMU/VirtualBox virtual
+devices in a scalable and efficient way. (Author and Maintainer)</p>
+</li>
+<li>
+<p><a href="https://github.com/cyruscyliu/videzzo-llvm-project">ViDeZZo LLVM Project</a>,
+forked from LLVM Project 13, contains the compiler/libFuzzer we use to compile
+QEMU/VirtualBox virtual devices. (Author and Maintainer)</p>
+</li>
+<li>
+<p><a href="https://github.com/cyruscyliu/buildroot-external-packages">buildroot-external-packages</a>
+provides a template for your own userspace programs and kernel modules into a
+Buildroot kernel. I've been using this a lot to reproduce QEMU bugs. (Author and Maintainer)</p>
+</li>
+</ul>
 <p>0x02 Embedded System Rehosting</p>
 <p>This project tries to rehost embedded Linux kernels for routers, cameras, and
 other high-end devices. Then, we can dynamically analyze bugs or
@@ -394,14 +416,15 @@ ECMO is to transplant the peripherals by support ones into the target Linux
 kernel, hence solve the problem of peripheral variety. (Maintainer)</p>
 </li>
 </ul>
-<p>0x01 Android Authentication</p>
+<p>0x01 Android Authentication (Archived)</p>
 <p>This project tries to evaluate existing and propose new implicit continuous
 authentication approaches. The implicit continuous authentication can be a
 second authentication factor for fingerprint and face identification. I joined
 this project as an intern and then proposed this project to be my final project
 for my Bachelor's degree. Relative research papers are <a href="papers/riskcog-tmc20.pdf">RiskCog
 (TMC'20)</a>, <a href="papers/espialcog-tmc20.pdf">ESPIALCOG (TMC'20)(5th
-author)</a>, and <a href="papers/one-cycle-attack-tifs20.pdf">One Cycle Attack (TIFS'20) (3rd
+author)</a>, <a href="papers/one-cycle-attack-tifs20.pdf">One Cycle Attack (TIFS'20) (3rd
+author)</a>, and <a href="papers/trapcog-tmc23.pdf">TRAPCOG (TMC'23) (3rd
 author)</a>.</p>
 <p>0x00 Network Protocol Fuzzing (Archived)</p>
 <p>This project tries to fuzz network protocols, especially router protocols. I
@@ -457,7 +480,7 @@ if any questions or comments.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 16, 2023</span>
       
     
   </small>
