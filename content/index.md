@@ -124,11 +124,13 @@ specifications, 3) collaborating with others to deploy our Peach Pits.
 Please raise [issues](https://github.com/cyruscyliu/cyruscyliu.github.io/issues)
 if any questions or comments.
 
-Generic discussion to be finished
+Generic discussion
 
-* [Technology Transfer and Practices Under Control](posts/2022-08-30-technology-transfer.md)
-* [How to Do [System|Software] (Security) Research](posts/2021-09-07-Research-Philosophy.md)
-* [Principles of Research Presentation](posts/2021-08-27-Principle-of-Presentation.md)
++ [Knowledge for [System|Software] (Security) Research](posts/2021-09-03-knowledge-for-research.md)
++ [Coding for [System|Software] (Security) Research](posts/2021-09-03-Summary-Research-SE.md)
++ [How to Do [System|Software] (Security) Research](posts/2021-09-07-Research-Philosophy.md)
++ [Principles of Research Presentation](posts/2021-08-27-Principle-of-Presentation.md)
++ [Technology Transfer and Practices Under Control](posts/2022-08-30-technology-transfer.md)
 
 Random notes
 
@@ -139,7 +141,6 @@ Random notes
 + [2021-11-18 ASE'21 - FirmGuide](./posts/2021-11-15-ase-firmguide.md)
 + [2021-10-27 Introduction to Bhyve](./posts/2021-10-27-introduction-to-bhyve.md)
 + [2021-10-24 CS-725 Presentation - Fuzz Testing](./posts/2021-10-22-fuzzing-presentation.md)
-+ [2021-09-03 Coding Skills for Research](posts/2021-09-03-Summary-Research-SE.md)
 + [2021-08-18 Display in QEMU](./posts/2021-08-18-Display-in-QEMU.md)
 + [2020-11-30 Clang, wllvm, passes, QEMU for x86_64](./posts/2020-11-30-wllvm-clang-qemu-x86_64.md)
 + [2020-11-18 Buildroot, QEMU and Linux kernel for x86_64](./posts/2020-11-18-buildroot-qemu-x86_64.md)

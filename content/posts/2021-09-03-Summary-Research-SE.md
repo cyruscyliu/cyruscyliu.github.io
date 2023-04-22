@@ -42,41 +42,12 @@ create `project-xxx` to hold all code related to the same project, create
 
 ## Train ourselves in coding
 
-Based on my personal experience, the coding skills have three levels.
+Based on my personal experience, the coding skills have two levels.
 
-+ Level 1, knowledge in computer science courses
-+ Level 2, project management
-+ Level 3, new techniques and vision
++ Level 1, project management
++ Level 2, new techniques and vision
 
 ### Level 1
-
-Be familiar with theories and design decisions in computing systems.
-
-Students who major in computer science and technology (in general) have to take
-the following courses. Videos are available on the internet.
-
-+ Programming Language
-+ Data Structure and Algorithm
-+ Architecture and Computation System
-+ Network
-+ Operating System
-+ Database
-
-To go future, a student can choose the following sources.
-
-+ Advanced Algorithm
-+ Computation Theory
-+ Compiler
-+ Information Security
-+ Distributed Systems
-
-Some mathematics are also recommended.
-
-+ Probability
-+ Graph Theory
-+ Game Theory
-
-### Level 2
 
 Be familiar with the project management process.
 
@@ -97,7 +68,7 @@ management.
 + Discussion: Issue, Mailing-list, and Forum
 + Package Manager: npm, pip, snap, apt
 
-### Level 3
+### Level 2
 
 Be curious and a critical thinker.
 
