@@ -7,7 +7,8 @@ For each course, if not pointed out, we can find videos for it on the internet.
 
 ## Programming Language and Tooling
 
-+ Be familiar with C, Python, some basic C++ and some basic bash.
++ Be familiar with C and Python.
++ Learn basic C++ and basic bash.
 + Learn Java for object-oriented programming.
 + Learn how to develop Dockerfile to make your artifact deployable everywhere.
 + Learn how to develop Json/Yaml to make your configs universal.
@@ -19,6 +20,23 @@ and uninstall these compilers, and how to debug any warnings and errors.
 
 + [Optional] Considering the memory safety issues of C/C++, learn memory safe
 programming language, e.g., Rust.
+
+## (Linux) utilities
+
++ ls/mv/pwd/cat/echo/mkdir/rm/touch
++ cd/pushd/popd
++ cp/rsync
++ vim
++ git
++ sudo/chmod/chown
++ ps/kill/pkill
++ find/grep
++ tree/htop/df/du/timeout/watch/locate/head/tail/diff/ping/history/man
++ tar/zip
++ ssh/scp/rsync
++ screen
++ apt-get/apt-cache
++ source/bash
 
 ## Data Structure and Algorithm
 
