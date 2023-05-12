@@ -42,6 +42,25 @@ How long are you going to give the presentation?
 1. [Susan McConnell (Stanford): Designing effective scientific presentations](https://www.youtube.com/watch?v=Hp7Id3Yb9XQ)
     - We are good listeners and let's transfer the knowledge to make slides
 
+### Consider the attention curve
++ https://ethos3.com/hacking-the-audience-attention-curve/
++ split the talk into parts and summary the key message for each part
++ highlight the key messages with both text and the soundtrack, which will increase the attention
++ write down the key messages first and fill up the rest of space
+
+### A simple style
+
++ one font (Calibri)
++ large font size (24, 28, 36, 52) and less text
++ sentence in one line
++ built-in list
++ box for the key summary
++ backup slides
+
+### Animation
++ too much text and show them one by one
+
 ## Rehearsal and dry-run
 
 1. Talk to others and ask feedback.
+2. Give a high level overview of your answer in the beginning and then give the remaining details of your answer.
