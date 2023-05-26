@@ -1,7 +1,7 @@
 # Principles of Research Presentation
 
 To convey information and request feedback, you need to give presentations.
-Duration can vary from 15 minutes to 1 hour. Here are some principles that you
+Duration can vary from 1 minutes to 1 hour. Here are some principles that you
 should keep in mind and practice.
 
 ## Be aware of your purpose
