@@ -1,26 +1,36 @@
-# Code Skills for Research
+# Coding for Research
 
-We'd like to see a novel idea along with cost-effective implementation. This
-means we should follow an enough and quick coding philosophy. Besides, I
-introduce instructions to learn to code at the end of this article.
+Solid implementation in limited time makes us competitive in research.
 
-## Enough and quick
+- Artifact evaluation is introduced to overcome the "reproducibility issue".
+- The security community is third times than five years ago.
 
-System research takes time. We need to understand how an unfamiliar system work,
-try it, re-understand, re-try, and so on. Usually, we need to interact with
-hardware, which sounds hard and is tough.
+System research needs solid implementation. To pass the artifact evaluation, we
+would better spend more time to improve the usability. Quick and dirty
+implementation saves time but has lower usability and thus the time is not saved
+at al.  Why not considered the usability in the beginning of the development? We
+are also encouraged to open source our tools, which requires a higher quality
+implementatio with lower number of flaws in our tools.
 
-We need to be enough and quick. We want to develop a tool or something similar
-that has enough functionality and finish it in time. In this way, we can pass
-the artifact evaluation, and beat other quick and dirty projects.
+System research takes time. We need to understand how an unfamiliar system
+software or hardware work, try it, re-understand, re-try, and so on. In half of
+your time, we are compiling things and during the rest of time, we are making
+mistakes.
 
-I have proposed several strategies to achieve this.
+However, as the community has grown so much, we want to get our ideas
+implemented as soon as possible. I propose a two-step model. First, we build our
+toolbox and implement our idea in a quick and dirty way. This step is for senior
+students or junior professors to make sure our ideas work. Second, we take a
+enough and quick coding philosophy that indicates us to develop an algorithm or
+tool with enough functionality and low complexity. In this way, we can pass the
+artifact evaluation without overengineering, open source our tool directly, and
+save time. This step is for everyone who is doing the project.
 
 ### Enough functionality
 
-Think about the least set of functionalities we want and list there. This
-includes not only the core functionalities but also the functionalities to make
-sure this tool is easy to use, debug, and evaluate.
+Think about the least set of functionalities we want and list there, including
+not only the core functionalities but also the functionalities to make sure this
+tool is easy to use, debug, and evaluate.
 
 ### Quick development
 
@@ -35,7 +45,7 @@ applications where the changes should usually happen. Keep in mind to move
 commonly used code in the applications to the SDK and don't code too much in
 rapid changing applications.
 
-+ Third, we need to follow a fixed coding routine and update it as time goes. 
++ Third, we need to follow a fixed coding routine and update it as time goes.
 For example, we should have a meeting at the beginning, onboard the new member,
 create `project-xxx` to hold all code related to the same project, create
 `evaluation` for evaluation, and so on.
