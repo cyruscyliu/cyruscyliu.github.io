@@ -82,20 +82,21 @@ too much in rapidly changing applications.
 
 ### Train ourselves the basics
 
-First, we should always practise the data structure and algorithm and seize one
-or two programming languages. C/C++ serve for low-level software development.
-Go is better for async jobs and Rust is memory-safety.
+First, we should review the data structure and algorithm once a year. It's not
+necessary to remember the implementation of each algorithm, like the quick sort.
+Instead, it's important for us to understand how to design new algorithm and how
+to optimize it.
 
-Then, we can start to learn existing wheels and their details. For instance, we
-can learn how Flask and Django web servers work. We would know their design
-choices, their pros/cons, and how to implement a minimum web server quickly.
+Then, we should learn existing system software/hardware such that we can quickly
+rewrite part of it to validate our ideas. It rarely happens but sometimes what
+we want is not implemented by anyone else. Our knowledge will help us quickly
+create a wheel.
 
-+ User Application: QT, Android
-+ Web Server: Flask, Django
-+ Message Queue: Kafka
-+ Container: Docker
++ Fuzzer: AFL++/libFuzzer/Syzkaller
++ Symbolic execution: KLEE
++ Compiler: LLVM
 + Operating System: Linux Kernel
-+ Virtualization: QEMU
++ Virtualization: QEMU/VirtualBox
 
 Meanwhile, think about some metrics.
 
@@ -104,5 +105,7 @@ Meanwhile, think about some metrics.
 + Memory consumption
 + Disk consumption
 
-
 ### Make progress as technologies evolve so fast
+
+Solve CTF challenges. I feel some CTF challenges are close to the recent
+technologies, e.g., recent attacks, exploitation, and popular software.
