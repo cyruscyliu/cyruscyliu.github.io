@@ -405,19 +405,20 @@ too much in rapidly changing applications.</p>
 <h4 id="be-more-automatic">Be more automatic</h4>
 <h2 id="training-of-coding">Training of coding</h2>
 <h3 id="train-ourselves-the-basics">Train ourselves the basics</h3>
-<p>First, we should always practise the data structure and algorithm and seize one
-or two programming languages. C/C++ serve for low-level software development.
-Go is better for async jobs and Rust is memory-safety.</p>
-<p>Then, we can start to learn existing wheels and their details. For instance, we
-can learn how Flask and Django web servers work. We would know their design
-choices, their pros/cons, and how to implement a minimum web server quickly.</p>
+<p>First, we should review the data structure and algorithm once a year. It's not
+necessary to remember the implementation of each algorithm, like the quick sort.
+Instead, it's important for us to understand how to design new algorithm and how
+to optimize it.</p>
+<p>Then, we should learn existing system software/hardware such that we can quickly
+rewrite part of it to validate our ideas. It rarely happens but sometimes what
+we want is not implemented by anyone else. Our knowledge will help us quickly
+create a wheel.</p>
 <ul>
-<li>User Application: QT, Android</li>
-<li>Web Server: Flask, Django</li>
-<li>Message Queue: Kafka</li>
-<li>Container: Docker</li>
+<li>Fuzzer: AFL++/libFuzzer/Syzkaller</li>
+<li>Symbolic execution: KLEE</li>
+<li>Compiler: LLVM</li>
 <li>Operating System: Linux Kernel</li>
-<li>Virtualization: QEMU</li>
+<li>Virtualization: QEMU/VirtualBox</li>
 </ul>
 <p>Meanwhile, think about some metrics.</p>
 <ul>
@@ -427,13 +428,15 @@ choices, their pros/cons, and how to implement a minimum web server quickly.</p>
 <li>Disk consumption</li>
 </ul>
 <h3 id="make-progress-as-technologies-evolve-so-fast">Make progress as technologies evolve so fast</h3>
+<p>Solve CTF challenges. I feel some CTF challenges are close to the recent
+technologies, e.g., recent attacks, exploitation, and popular software.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 26, 2023</span>
       
     
   </small>
