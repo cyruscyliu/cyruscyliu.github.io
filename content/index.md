@@ -134,6 +134,7 @@ Generic discussion
 
 Random notes
 
++ [2023-08-15 Don't waste time](posts/2023-08-15-dont-waste-time.md)
 + [2023-05-26 Slides for ViDeZZo at Oakland](posts/2023-05-26-hexhive-videzzo-sp.pdf)
 + [2022-06-22 Windows, Windows Subsystem Linux (WSL), VirtualBox Ubuntu, Native Ubuntu](posts/2022-06-22-wsl-vm-native-machine.md)
 + [2022-05-17 A layered experiment environment](posts/2022-05-17-vm-docker-pythonenv.md)
