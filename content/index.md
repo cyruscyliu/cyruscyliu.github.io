@@ -134,7 +134,9 @@ Generic discussion
 
 Random notes
 
-+ [2023-05-26 Slides for ViDeZZo at Oakland](posts/2023-05-26-hexhive-videzzo-sp.pdf)
++ [2023-08-15 Don't waste time](posts/2023-08-15-dont-waste-time.md)
++ [2023-07-26 Slides for ViDeZZo at SSLab (1 hour)](posts/Talk-SSLab-20230726.public.pdf)
++ [2023-05-26 Slides for ViDeZZo at Oakland (15 minutes)](posts/2023-05-26-hexhive-videzzo-sp.pdf)
 + [2022-06-22 Windows, Windows Subsystem Linux (WSL), VirtualBox Ubuntu, Native Ubuntu](posts/2022-06-22-wsl-vm-native-machine.md)
 + [2022-05-17 A layered experiment environment](posts/2022-05-17-vm-docker-pythonenv.md)
 + [2021-12-13 A brief summary of CS-725](posts/2021-12-13-Summary-of-CS725.md)
