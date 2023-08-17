@@ -134,6 +134,7 @@ Generic discussion
 
 Random notes
 
++ [2023-09-08 Crisis Before Getting a Ph.D.](posts/2023-09-08-crisis-before-getting-a-phd.md)
 + [2023-08-15 Don't waste time](posts/2023-08-15-dont-waste-time.md)
 + [2023-07-26 Slides for ViDeZZo at SSLab (1 hour)](posts/Talk-SSLab-20230726.public.pdf)
 + [2023-05-26 Slides for ViDeZZo at Oakland (15 minutes)](posts/2023-05-26-hexhive-videzzo-sp.pdf)
@@ -148,18 +149,12 @@ Random notes
 + [2020-11-30 Clang, wllvm, passes, QEMU for x86_64](./posts/2020-11-30-wllvm-clang-qemu-x86_64.md)
 + [2020-11-18 Buildroot, QEMU and Linux kernel for x86_64](./posts/2020-11-18-buildroot-qemu-x86_64.md)
 + [2019-11-23 Summary of CCS'19 (London)](./posts/2019-11-23-CCS-London-Summary.md)
-
-Hangzhou ZJU 2018
-
 + [2018-04-07 在杭州的100天-第二十七天](./posts/2018-04-07-在杭州的100天-第二十七天.md)
 + [2018-03-28 在杭州的100天-第十天](./posts/2018-03-28-在杭州的100天-第十天.md)
 + [2018-03-11 在杭州的100天-第九天](./posts/2018-03-11-在杭州的100天-第九天.md)
 + [2018-03-08 在杭州的100天-第三天](./posts/2018-03-10-在杭州的100天-第三天.md)
 + [2018-03-08 在杭州的100天-第二天](./posts/2018-03-08-在杭州的100天-第二天.md)
 + [2018-03-08 在杭州的100天-第一天](./posts/2018-03-08-在杭州的100天-第一天.md)
-
-Australia ANU early 2018
-
 + [2018-02-07 ANU暑期学校-尾声](./posts/2018-02-07-ANU暑期学校-尾声.md)
 + [2018-02-07 ANU暑期学校-生活和工作](./posts/2018-02-07-ANU暑期学校-生活和工作.md)
 + [2018-02-01 ANU暑期学校-我的矛盾](./posts/2018-02-01-ANU暑期学校-我的矛盾.md)
