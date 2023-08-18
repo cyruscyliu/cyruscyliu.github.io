@@ -134,7 +134,7 @@ Generic discussion
 
 Random notes
 
-+ [2023-09-08 Crisis Before Getting a Ph.D.](posts/2023-09-08-crisis-before-getting-a-phd.md)
++ [2023-09-08 Crisis before getting a Ph.D.](posts/2023-09-08-crisis-before-getting-a-phd.md)
 + [2023-08-15 Don't waste time](posts/2023-08-15-dont-waste-time.md)
 + [2023-07-26 Slides for ViDeZZo at SSLab (1 hour)](posts/Talk-SSLab-20230726.public.pdf)
 + [2023-05-26 Slides for ViDeZZo at Oakland (15 minutes)](posts/2023-05-26-hexhive-videzzo-sp.pdf)
