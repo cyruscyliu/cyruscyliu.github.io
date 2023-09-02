@@ -1,21 +1,13 @@
 ## Introduction
 
-Hi, my name is Qiang Liu, living in Lausanne (Switzerland), coming from a
-northern village ([Jiayin](https://en.wikipedia.org/wiki/Jiayin_County)) in
-China. My research focuses on system and software security. I have broad
-interests in attacks and defenses cover different areas, namely trusted
-computation, virtualization, operating systems, and user-space applications.
-Feel free to contact me via this long term email address: cyruscyliu@gmail.com.
-
-Before going to ZJU, I got my bachelor at Beijing Institute of Technology (BIT).
-During my PhD, I visited HEXHIVE at EPFL from 2021.08 to 2022.03.
-
-In 2023/02, I came to HEXHIVE again to do collaborative research. At the same
-time, I am writing my Ph.D. thesis and plan to graduate in 2023/09 from Zhejiang
-University (ZJU).
-
-Besides research, I'm also interested in badminton, hiking, biking and road
-trips.
+Hi, my name is Qiang Liu, currently a Post.Doc. at EPFL. I got my Ph.D. at
+Zhejiang University (ZJU) in 2023. Before going to ZJU, I got my bachelor at
+Beijing Institute of Technology (BIT). My research focuses on system and
+software security. I have broad interests in attacks and defenses cover
+different areas, namely trusted computation, virtualization, operating systems,
+and user-space applications. Besides research, I'm also interested in badminton,
+hiking, biking and road trips. Feel free to contact me via this long term email
+address: cyruscyliu@gmail.com.
 
 [CV](./Qiang_s_CV.pdf)
 [Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
