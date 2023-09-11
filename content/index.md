@@ -1,13 +1,12 @@
 ## Introduction
 
-Hi, my name is Qiang Liu, currently a Post.Doc. at EPFL. I got my Ph.D. at
-Zhejiang University (ZJU) in 2023. Before going to ZJU, I got my bachelor at
-Beijing Institute of Technology (BIT). My research focuses on system and
+Hi, my name is Qiang Liu, currently a Post.Doc. at EPFL. I obtained my Ph.D. at
+Zhejiang University (ZJU) in 2023. Before going to ZJU, I obtained my bachelor
+at Beijing Institute of Technology (BIT). My research focuses on system and
 software security. I have broad interests in attacks and defenses cover
-different areas, namely trusted computation, virtualization, operating systems,
-and user-space applications. Besides research, I'm also interested in badminton,
-hiking, biking and road trips. Feel free to contact me via this long term email
-address: cyruscyliu@gmail.com.
+different areas, namely virtualization and operating systems. Besides research,
+I'm also interested in badminton, biking and road trips. Feel free to contact me
+via this long term email address: cyruscyliu@gmail.com.
 
 [CV](./Qiang_s_CV.pdf)
 [Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
