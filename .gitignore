@@ -1,2 +1,4 @@
 .vscode
 site
+cv-llt.*
+!cv-llt.tex
