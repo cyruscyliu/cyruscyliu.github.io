@@ -5,6 +5,7 @@ site_name: Qiang Liu's Homepage
 site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
 nav:
     - Home: 'index.md'
+    - Posts: 'posts.md'
 plugins:
   - search
   - git-revision-date-localized
