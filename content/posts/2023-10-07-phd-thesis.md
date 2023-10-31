@@ -47,7 +47,7 @@ and high-security VEE to analyze and mine vulnerabilities for Linux-based IoT
 devices, which helps with the further development and application of Linux IoT
 device security research.
 
-Please download my thesis in Chinese [here](../papers/zjuthesis-20231007.pdf).
+Please download [my thesis](../papers/zjuthesis-20231007.pdf) and [slides](../posts/PhD-Defense.pdf).
 
 To whom it may concern, if you feel that Chapter 3/4 are not easy to follow,
 since they are translated from two individual papers
