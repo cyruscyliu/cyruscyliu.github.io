@@ -571,9 +571,32 @@ TPC.CollectFeatures([&](size_t Feature) {
 });
 ```
 
-`TPC.CollectFeatures` accepts a HandleFeature function pointer.  In the
+`TPC.CollectFeatures` accepts a HandleFeature function pointer. In the
 HandleFeature, it accepts a Feature that is calculated from all the coverage
 information (Information Sink), and then adds the feature to the corpus.
+
+AddFeature is part of the HandleFeature function to log features. libFuzzer will
+map a feature to the size of the corresponding input.  If the size is zero, the
+feature is not visited.
+
+``` c++
+bool AddFeature(size_t Idx, uint32_t NewSize, bool Shrink) {
+  Idx = Idx % kFeatureSetSize;
+  uint32_t OldSize = GetFeature(Idx);
+  if (OldSize == 0 || (Shrink && OldSize > NewSize)) {
+    if (OldSize > 0) {
+      // ...
+    } else {
+      NumAddedFeatures++;
+      // ...
+    }
+    NumUpdatedFeatures++;
+    InputSizesPerFeature[Idx] = NewSize;
+    return true;
+  }
+  return false;
+}
+```
 
 In `TPC.CollectFeatures`, it maps the information sinks to features like below.
 
