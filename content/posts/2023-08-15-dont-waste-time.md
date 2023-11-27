@@ -1,4 +1,4 @@
-# Tips to save time
+# Pitfalls, Tweaks, Tricks in Research and Development
 
 Waste less time = Gain more time!
 
@@ -14,3 +14,4 @@ Waste less time = Gain more time!
 ## Other pitfalls
 
 - Sogoupinyin doesn't work on Ubuntu
+- `ssh -X` forwards X11 back to your desktop (qemu `gtk initialization failed`)

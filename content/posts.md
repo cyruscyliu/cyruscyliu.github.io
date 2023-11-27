@@ -8,7 +8,7 @@ Pinned
 + [How to Do [System|Software] (Security) Research](posts/2021-09-07-Research-Philosophy.md)
 + [Principles of Research Presentation](posts/2021-08-27-Principle-of-Presentation.md)
 + [Technology Transfer and Practices Under Control](posts/2022-08-30-technology-transfer.md)
-+ [Don't waste time](posts/2023-08-15-dont-waste-time.md)
++ [Pitfalls/Tweaks/Tricks in R&D](posts/2023-08-15-dont-waste-time.md)
 + [Daily Reading and Literature Review/Related Work](posts/2023-10-11-literature-review.md)
 
 Random notes
