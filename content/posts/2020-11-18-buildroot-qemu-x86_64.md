@@ -9,14 +9,14 @@ Buildroot package and decompress it.
 
 ## Add new external packages (user-space program and kernel module) (optional)
 
-We want to write an external user space program or install an external kernel
-module to test some features, e.g., to reproducing a bug. I refer to
+To write an external user space program or install an external kernel module to
+validate your idea, e.g., to reproducing a bug, I refer to
 [this](https://buildroot.org/downloads/manual/manual.html#adding-packages) and
-[this]
-(https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-driver-module-as-a-buildroot-package)
-and summarize here.
+[this](https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-driver-module-as-a-buildroot-package).
 
-Please `git clone https://github.com/cyruscyliu/buildroot-external-packages.git`.
+I have created a repo with support of the external user space program and kernel
+module. Please `git clone
+https://github.com/cyruscyliu/buildroot-external-packages.git`.
 
 ## Compile Buildroot
 
@@ -31,7 +31,8 @@ The directory layout is like below.
 1. Go to `buildroot`
 
 2. If no external packages, just `make qemu_x86_64_defconfig`, otherwise, `make
-BR2_EXTERNAL="$(pwd)/../buildroot-external-packages" qemu_x86_64_defconfig`
+BR2_EXTERNAL="$(pwd)/../buildroot-external-packages" qemu_x86_64_defconfig`. If there is an old config,
+`make oldconfig` or `make BR2_EXTERNAL="$(pwd)/../buildroot-external-packages" oldconfig`.
 
 3. Before going on, we should update the C library and the TTY target by `make
 menuconfig`.
@@ -58,7 +59,8 @@ qemu-system-x86_64 \
     -kernel ./output/images/bzImage \
     -drive file=./output/images/rootfs.ext2,if=virtio,format=raw \
     -append "root=/dev/vda console=ttyS0" \
-    -net nic,model=virtio -net user \
+    -net user,hostfwd=tcp:127.0.0.1:3333-:22 \
+    -net nic,model=virtio \
     -nographic
 ```
 
@@ -75,18 +77,3 @@ hello init
 $ userspace_program 
 Hello World!
 ```
-
-## Reference
-
-[buildroot编译运行QEMU X86_64](https://jgsun.github.io/2020/05/28/qemu-x86-64/) 
-
-[How to add a linux kernel driver module as a buildroot
-package](https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-driver-module-as-a-buildroot-package)
-
-[cve-2020-14364]: An out-of-bounds read/write access flaw was found in
-the USB emulator of the QEMU in versions before 5.2.0. This issue occurs
-while processing USB packets from a guest when USBDevice `setup_len`
-exceeds its `data_buf[4096]` in the `do_token_in`, `do_token_out`
-routines. This flaw allows a guest user to *crash the QEMU process,
-resulting in a denial of service, or the potential execution of
-arbitrary code with the privileges of the QEMU process on the host*.
