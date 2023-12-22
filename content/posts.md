@@ -25,7 +25,7 @@ Random notes
 + [2021-10-27 Introduction to Bhyve](posts/2021-10-27-introduction-to-bhyve.md)
 + [2021-10-24 CS-725 Presentation - Fuzz Testing](posts/2021-10-22-fuzzing-presentation.md)
 + [2021-08-18 Display in QEMU](posts/2021-08-18-Display-in-QEMU.md)
-+ [2020-11-30 Clang, wllvm, passes, QEMU for x86_64](posts/2020-11-30-wllvm-clang-qemu-x86_64.md)
++ [2020-11-30 Clang, wllvm, passes, QEMU/Linux kernel for x86_64](posts/2020-11-30-wllvm-clang-qemu-x86_64.md)
 + [2020-11-18 Buildroot, QEMU and Linux kernel for x86_64](posts/2020-11-18-buildroot-qemu-x86_64.md)
 + [2019-11-23 Summary of CCS'19 (London)](posts/2019-11-23-CCS-London-Summary.md)
 + [2018-04-07 在杭州的100天-第二十七天](posts/2018-04-07-在杭州的100天-第二十七天.md)

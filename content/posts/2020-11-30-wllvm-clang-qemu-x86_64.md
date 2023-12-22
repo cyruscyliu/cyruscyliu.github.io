@@ -1,145 +1,110 @@
-# Clang, wllvm, passes, QEMU for x86_64
+# Clang, wllvm, passes, QEMU/Linux kernel for x86_64
 
-In order to run LLVM passes on QEMU, I need to build QEMU with Clang.
-One option is to run the passes during the compilation, the other is to
-generate an LLVM bitcode file and apply `opt`. The bitcode file can be
-extracted by `wllvm`.  Because I'm gonna conduct static analysis for
-seaking vulnerabilities rather than code optimization, I choose `wllvm`
-and apply `opt` on my extracted bitcode file.
+Building QEMU/Linux kernel with Clang enables running LLVM passes on these code
+and performing static analysis. One option is to run the passes during the
+compilation, the other is to run the passes (opt) on an generated LLVM bitcode
+file (wllvm).
+
+This blog is planning to show both, but with limited time bugdet, I will first
+explain how to run the passes on the generated bitcode files.
 
 ## Build QEMU with Clang
 
-Even though unsmoothy on the internet[^1][^2][^3],
-I just made it on QEMU 4.0.0 with clang-3.8.
-
 ``` bash
 $ clang --version
-clang version 3.8.0-2ubuntu4 (tags/RELEASE_380/final)
+Ubuntu clang version 14.0.0-1ubuntu1.1
 Target: x86_64-pc-linux-gnu
 Thread model: posix
 InstalledDir: /usr/bin
 
-$ cd qemu-4.0.0
+$ cd qemu
+$ cat VERSION
+8.2.50
 $ ./configure --target-list=x86_64-softmmu --cc=clang
 $ make
 ```
 
-Nothing bad happened.
+## Build Linux kernel with Clang
 
-## Build QEMU with wllvm [^4]
+[Offical Documentation](https://docs.kernel.org/kbuild/llvm.html)
+
+## Build QEMU with wllvm
 
 ```
 $ pip install wllvm
 
 $ export LLVM_COMPILER=clang
-$ # if no clang/clang++ executables
-$ # export LLVM_CC_NAME=clang-7
-$ # export LLVM_CXX_NAME=clang++-7
+$ # if no clang/clang++/llvm-link/llvm-ar executables
+$ # export LLVM_CC_NAME=clang-14
+$ # export LLVM_CXX_NAME=clang++-14
+$ # export LLVM_LINK_NAME=llvm-link-14
+$ # export LLVM_AR_NAME=llvm-ar-14
 $ cd qemu-4.0.0
 $ ./configure --target-list=x86_64-softmmu --cc=wllvm
 $ make
-$ extract-bc x86_64-softmmu/qemu-system-x86_64
-$ # You will find the bitcode file x86_64-softmmu/qemu-system-x86_64.bc
+$ extract-bc build/qemu-system-x86_64
+$ # You will find the bitcode file build/qemu-system-x86_64.bc
 ```
 
 I met one kind of warnings `WARNING:Did not recognize the compiler flag
-"-mcx16"`, but it seemed harmless. I will update more if any flaw caused
-by this warning. I met another error `objcopy: src/xxx: failed to find
-link section for section xx`.  Please update your objcopy to 2.31 or
-upper.
+"-mcx16"`, but it seemed harmless. I will update more if any flaw caused by this
+warning. I met another error `objcopy: src/xxx: failed to find link section for
+section xx`.  Please update your objcopy to 2.31 or upper.
 
+## Build Linux kernel with wllvm
+
+``` bash
+#!/bin/bash -x
+
+# python3 -m pip install wllvm
+# assume clang/llvm 14
+
+LINUX_TAG=$1
+
+if ! test -d linux-$LINUX_TAG ; then
+    git clone --depth 1 --branch v$LINUX_TAG \
+        git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git \
+        linux-$LINUX_TAG
+fi
+
+export LLVM_COMPILER=clang
+export LLVM_CC_NAME=clang-14
+export LLVM_CXX_NAME=clang-14
+export LLVM_LINK_NAME=llvm-link-14
+export LLVM_AR_NAME=llvm-ar-14
+
+pushd linux-$LINUX_TAG
+make HOSTCC=wllvm CC=wllvm x86_64_defconfig
+make HOSTCC=wllvm CC=wllvm -j20
+extract-bc vmlinux
+popd
+```
 ## Run LLVM passes with opt
 
-First trial of a builin pass.
+First, try a builtin pass on `PLACEHOLDER.bc` (either vmlinux.bc or
+qemu-system-x86_64.bc). LLVM has a new pass manager but the documentation of opt
+is outdated. Please check
+[this](https://llvm.org/docs/NewPassManager.html#invoking-opt) for more
+information.
 
 ``` bash
-$ opt -print-function qemu-system-x86_64.bc -o /dev/null 2>&1 > output.txt
+opt-14 -passes='instcount' PLACEHOLDER.bc -o /dev/null 2>&1 -debug-pass-manager
 ```
 
-What I want is quite simple: print function names and check arguments,
-which reminds me of the first `HelloWorld` pass in
-[llvm-tutor](https://github.com/banach-space/llvm-tutor).  I found
-`llvm-tutor` used `LLVM 11`, updating so quickly, such that I made a
-docker image to compile the pass. BTW, it's OK to use `opt-11` in the
-docker image and no need to recompile QEMU.
+Second, develop your own LLVM pass and load it with opt.
 
-``` Dockerfile
-# Dockerfile
-FROM ubuntu:18.04
-
-# Uncomment this and update the sources list if you have network problems
-# COPY sources.list /etc/apt/sources.list
-RUN apt-get update; apt-get install -y build-essential cmake vim
-
-WORKDIR /root
-
-RUN apt-get install -y sudo wget software-properties-common
-RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -; \
-sudo apt-add-repository "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main"; \
-sudo apt-get update; \
-sudo apt-get install -y llvm-11 llvm-11-dev clang-11 llvm-11-tools
-```
-
-Then, build the docker.
+I usually use [llvm-tutor](https://github.com/banach-space/llvm-tutor) to
+quickly develop external LLVM passes.
 
 ``` bash
-$ docker build . -t qemu-spa:latest
-```
-
-Next, compile the `HelloWorld` pass.
-
-``` bash
-$ git clone https://github.com/banach-space/llvm-tutor.git
-$ ls
-Dockerfile  build  llvm-tutor  qemu-4.0.0  qemu-4.0.0.tar.xz  sources.list
-$ docker run \
-    -v /path/to/llvm-tutor:/root/llvm-tutor \
-    -v /path/to/build:/root/build \
-    -it qemu-spa:latest /bin/bash
-# In the docker image
-$ llvm-config-11 --prefix
-/usr/lib/llvm-11
-$ export LLVM_DIR=/usr/lib/llvm-11
-# Change CMAKE requirements to 3.10.2
-# in /root/llvm-tutor/HelloWorld/CMakeLists.txt
+$ # install llvm-17
+$ export LLVM_DIR=/usr/lib/llvm-17
+$ mkdir build
 $ cd build
-$ cmake -DLT_LLVM_INSTALL_DIR=$LLVM_DIR /root/llvm-tutor/HelloWorld/
+$ cmake -DLT_LLVM_INSTALL_DIR=$LLVM_DIR /path/to/llvm-tutor/HelloWorld/
 $ make
-```
-
-Finally, run the pass with opt
-
-``` bash
-# cp qemu-system-x86_64.bc to build
-# In the docker image
-$ cd build && ls
-CMakeCache.txt  CMakeFiles  Makefile  cmake_install.cmake  libHelloWorld.so  qemu-system-x86_64.bc
-$ opt-11 \
+$ # run this LLVM pass
+$ $LLVM_DIR/bin/opt \
     -load-pass-plugin ./libHelloWorld.so -passes=hello-world -disable-output \
-    qemu-system-x86_64.bc
-# Expected output
-... too many
-(llvm-tutor) Hello from: lockcnt_wake
-(llvm-tutor)   number of arguments: 1
-(llvm-tutor) Hello from: qemu_lockcnt_dec
-(llvm-tutor)   number of arguments: 1
-(llvm-tutor) Hello from: qemu_lockcnt_dec_and_lock
-(llvm-tutor)   number of arguments: 1
-(llvm-tutor) Hello from: qemu_lockcnt_dec_if_lock
-(llvm-tutor)   number of arguments: 1
-(llvm-tutor) Hello from: qemu_lockcnt_lock
-(llvm-tutor)   number of arguments: 1
-(llvm-tutor) Hello from: qemu_lockcnt_inc_and_unlock
-(llvm-tutor)   number of arguments: 1
-(llvm-tutor) Hello from: qemu_lockcnt_unlock
-(llvm-tutor)   number of arguments: 1
-(llvm-tutor) Hello from: qemu_lockcnt_count
-(llvm-tutor)   number of arguments: 1
+    PLACEHOLDER.bc
 ```
-
-## Reference
-
-[^1]: [Red Hat Bugzilla – Bug 1565766 - qemu failing to build with clang; __atomic_fetch_or_4](https://bugzilla.redhat.com/show_bug.cgi?id=1565766)  
-[^2]: [Building QEMU with clang](https://lists.freebsd.org/pipermail/freebsd-emulation/2012-June/009859.html)  
-[^3]: [Use Clang to compile Qemu](https://lists.nongnu.org/archive/html/qemu-devel/2011-12/msg02909.html)  
-[^4]: [SE4VM Detecting Virtualization Bugs in Virtual Machine Platforms: Dev-Harness](https://kangliuga.github.io/SE4VM/dev-harness.html).
