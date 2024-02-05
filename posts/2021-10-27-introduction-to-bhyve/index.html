@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
       
       
 
@@ -53,6 +53,9 @@
   
     <body dir="ltr">
   
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -102,9 +105,6 @@
         </div>
       </div>
     </div>
-    
-    
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -187,7 +187,6 @@
   
   
   
-  
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
         
@@ -204,7 +203,6 @@
     
       
       
-  
   
   
   
@@ -250,54 +248,42 @@
       
         <li class="md-nav__item">
   <a href="#what-is-bhyve123" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is Bhyve?[^1][^2][^3]
-    </span>
+    What is Bhyve?[^1][^2][^3]
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#components5" class="md-nav__link">
-    <span class="md-ellipsis">
-      Components[^5]
-    </span>
+    Components[^5]
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#dismistafication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dismistafication
-    </span>
+    Dismistafication
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#vmx-vmcs-maintenace-instructions" class="md-nav__link">
-    <span class="md-ellipsis">
-      VMX (VMCS-maintenace) instructions
-    </span>
+    VMX (VMCS-maintenace) instructions
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#some-data-structs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Some data structs
-    </span>
+    Some data structs
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#bhyve-vmexit-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      BHyve VMExit code
-    </span>
+    BHyve VMExit code
   </a>
   
     <nav class="md-nav" aria-label="BHyve VMExit code">
@@ -305,9 +291,7 @@
         
           <li class="md-nav__item">
   <a href="#example-vmexit_inout" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: vmexit_inout
-    </span>
+    Example: vmexit_inout
   </a>
   
 </li>
@@ -319,18 +303,14 @@
       
         <li class="md-nav__item">
   <a href="#some-data-structs_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Some data structs
-    </span>
+    Some data structs
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#virtual-devices-dummy-means-very-low-fidelity-old-bhyve" class="md-nav__link">
-    <span class="md-ellipsis">
-      Virtual devices (dummy means very low fidelity) (Old BHyve)
-    </span>
+    Virtual devices (dummy means very low fidelity) (Old BHyve)
   </a>
   
     <nav class="md-nav" aria-label="Virtual devices (dummy means very low fidelity) (Old BHyve)">
@@ -338,9 +318,7 @@
         
           <li class="md-nav__item">
   <a href="#virtual-device-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Virtual device initialization
-    </span>
+    Virtual device initialization
   </a>
   
 </li>
@@ -352,9 +330,7 @@
       
         <li class="md-nav__item">
   <a href="#extend-btest-like-qtest-to-bhyve" class="md-nav__link">
-    <span class="md-ellipsis">
-      Extend BTest (like QTest) to BHyve
-    </span>
+    Extend BTest (like QTest) to BHyve
   </a>
   
 </li>
@@ -395,30 +371,30 @@ Illumos-based distributions</a>.</li>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">component</th>
-<th style="text-align: center;">functionality</th>
+<th align="center">component</th>
+<th align="center">functionality</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">vmm.ko</td>
-<td style="text-align: center;">VT-x, local APCI, VT-d for PCI pass-thru, guest phymem mgmt, user-space cdev-interface</td>
+<td align="center">vmm.ko</td>
+<td align="center">VT-x, local APCI, VT-d for PCI pass-thru, guest phymem mgmt, user-space cdev-interface</td>
 </tr>
 <tr>
-<td style="text-align: center;">bhyveload</td>
-<td style="text-align: center;">user-space bootloader, userboot lib + bhyve API, creates VM, lays out kernel + metadata, sets up initial VM register state</td>
+<td align="center">bhyveload</td>
+<td align="center">user-space bootloader, userboot lib + bhyve API, creates VM, lays out kernel + metadata, sets up initial VM register state</td>
 </tr>
 <tr>
-<td style="text-align: center;">bhyve</td>
-<td style="text-align: center;">user-space run loop, PCI bus/device emulation, device backends, threads for vCPU, i/o devs, kqueue loop</td>
+<td align="center">bhyve</td>
+<td align="center">user-space run loop, PCI bus/device emulation, device backends, threads for vCPU, i/o devs, kqueue loop</td>
 </tr>
 <tr>
-<td style="text-align: center;">bhyvectl</td>
-<td style="text-align: center;">dump/modify VM state, dump VM stats, delete VMs</td>
+<td align="center">bhyvectl</td>
+<td align="center">dump/modify VM state, dump VM stats, delete VMs</td>
 </tr>
 <tr>
-<td style="text-align: center;">libvmmapi</td>
-<td style="text-align: center;">userland API</td>
+<td align="center">libvmmapi</td>
+<td align="center">userland API</td>
 </tr>
 </tbody>
 </table>
@@ -465,54 +441,54 @@ struct vm_exit vmexit[VM_MAXCPU];
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">code</th>
-<th style="text-align: center;">handler</th>
-<th style="text-align: center;">description</th>
-<th style="text-align: center;">next</th>
+<th align="center">code</th>
+<th align="center">handler</th>
+<th align="center">description</th>
+<th align="center">next</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_INOUT</td>
-<td style="text-align: center;">vmexit_inout</td>
-<td style="text-align: center;">in and out instructions</td>
-<td style="text-align: center;">VMEXIT_CONTINUE or VMEXIT_ABORT</td>
+<td align="center">VM_EXITCODE_INOUT</td>
+<td align="center">vmexit_inout</td>
+<td align="center">in and out instructions</td>
+<td align="center">VMEXIT_CONTINUE or VMEXIT_ABORT</td>
 </tr>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_VMX</td>
-<td style="text-align: center;">vmexit_vmx</td>
-<td style="text-align: center;">vm exit</td>
-<td style="text-align: center;">VMEXIT_ABORT</td>
+<td align="center">VM_EXITCODE_VMX</td>
+<td align="center">vmexit_vmx</td>
+<td align="center">vm exit</td>
+<td align="center">VMEXIT_ABORT</td>
 </tr>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_BOGUS</td>
-<td style="text-align: center;">vmexit_bogus</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">VMEXIT_RESTART or VMEXIT_SWITCH</td>
+<td align="center">VM_EXITCODE_BOGUS</td>
+<td align="center">vmexit_bogus</td>
+<td align="center"></td>
+<td align="center">VMEXIT_RESTART or VMEXIT_SWITCH</td>
 </tr>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_RDMSR</td>
-<td style="text-align: center;">vmexit_rdmsr</td>
-<td style="text-align: center;">Local APIC</td>
-<td style="text-align: center;">VMEXIT_ABORT</td>
+<td align="center">VM_EXITCODE_RDMSR</td>
+<td align="center">vmexit_rdmsr</td>
+<td align="center">Local APIC</td>
+<td align="center">VMEXIT_ABORT</td>
 </tr>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_WRMSR</td>
-<td style="text-align: center;">vmexit_wrmsr -&gt; emulate_wrmsr</td>
-<td style="text-align: center;">Local APIC</td>
-<td style="text-align: center;">VMEXIT_CONTINUE or VMEXIT_SWITCH</td>
+<td align="center">VM_EXITCODE_WRMSR</td>
+<td align="center">vmexit_wrmsr -&gt; emulate_wrmsr</td>
+<td align="center">Local APIC</td>
+<td align="center">VMEXIT_CONTINUE or VMEXIT_SWITCH</td>
 </tr>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_MTRAP</td>
-<td style="text-align: center;">vmexit_mtrap</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">VMEXIT_RESTART</td>
+<td align="center">VM_EXITCODE_MTRAP</td>
+<td align="center">vmexit_mtrap</td>
+<td align="center"></td>
+<td align="center">VMEXIT_RESTART</td>
 </tr>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_PAGING</td>
-<td style="text-align: center;">vmexit_paging -&gt; emulate_instruction</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">VMEXIT_CONTINUE or VMEXIT_ABORT</td>
+<td align="center">VM_EXITCODE_PAGING</td>
+<td align="center">vmexit_paging -&gt; emulate_instruction</td>
+<td align="center"></td>
+<td align="center">VMEXIT_CONTINUE or VMEXIT_ABORT</td>
 </tr>
 </tbody>
 </table>
@@ -595,81 +571,81 @@ PCI_EMUL_SET(pci_xxx);
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">peripheral</th>
-<th style="text-align: center;">file</th>
-<th style="text-align: center;">description</th>
+<th align="center">peripheral</th>
+<th align="center">file</th>
+<th align="center">description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">atpic</td>
-<td style="text-align: center;">usr.sbin/bhyve/atpic.c</td>
-<td style="text-align: center;">dummy</td>
+<td align="center">atpic</td>
+<td align="center">usr.sbin/bhyve/atpic.c</td>
+<td align="center">dummy</td>
 </tr>
 <tr>
-<td style="text-align: center;">console</td>
-<td style="text-align: center;">usr.sbin/bhyve/consport.c</td>
-<td style="text-align: center;">ttyread|ttywrite</td>
+<td align="center">console</td>
+<td align="center">usr.sbin/bhyve/consport.c</td>
+<td align="center">ttyread|ttywrite</td>
 </tr>
 <tr>
-<td style="text-align: center;">gdbport</td>
-<td style="text-align: center;">usr.sbin/bhyve/dbgport.c</td>
-<td style="text-align: center;">bind, listen, accept, read|write</td>
+<td align="center">gdbport</td>
+<td align="center">usr.sbin/bhyve/dbgport.c</td>
+<td align="center">bind, listen, accept, read|write</td>
 </tr>
 <tr>
-<td style="text-align: center;">elcr</td>
-<td style="text-align: center;">usr.sbin/bhyve/dbgport.c</td>
-<td style="text-align: center;">dummy</td>
+<td align="center">elcr</td>
+<td align="center">usr.sbin/bhyve/dbgport.c</td>
+<td align="center">dummy</td>
 </tr>
 <tr>
-<td style="text-align: center;">pit 8254</td>
-<td style="text-align: center;">usr.sbin/bhyve/pit_8254.c</td>
-<td style="text-align: center;">pit_8254_handler</td>
+<td align="center">pit 8254</td>
+<td align="center">usr.sbin/bhyve/pit_8254.c</td>
+<td align="center">pit_8254_handler</td>
 </tr>
 <tr>
-<td style="text-align: center;">post</td>
-<td style="text-align: center;">usr.sbin/bhyve/post.c</td>
-<td style="text-align: center;">dummy</td>
+<td align="center">post</td>
+<td align="center">usr.sbin/bhyve/post.c</td>
+<td align="center">dummy</td>
 </tr>
 <tr>
-<td style="text-align: center;">rtc</td>
-<td style="text-align: center;">usr.sbin/bhyve/rtc.c</td>
-<td style="text-align: center;">rtc_addr_handler|rtc_data_handler</td>
+<td align="center">rtc</td>
+<td align="center">usr.sbin/bhyve/rtc.c</td>
+<td align="center">rtc_addr_handler|rtc_data_handler</td>
 </tr>
 <tr>
-<td style="text-align: center;">uart</td>
-<td style="text-align: center;">usr.sbin/bhyve/uart.c</td>
-<td style="text-align: center;">dummy</td>
+<td align="center">uart</td>
+<td align="center">usr.sbin/bhyve/uart.c</td>
+<td align="center">dummy</td>
 </tr>
 <tr>
-<td style="text-align: center;">pci-dummy</td>
-<td style="text-align: center;">usr.sbin/bhyve/pci_emul.c</td>
-<td style="text-align: center;">pci_emul_dinit|pci_emul_diow|pci_emul_dior</td>
+<td align="center">pci-dummy</td>
+<td align="center">usr.sbin/bhyve/pci_emul.c</td>
+<td align="center">pci_emul_dinit|pci_emul_diow|pci_emul_dior</td>
 </tr>
 <tr>
-<td style="text-align: center;">pci-hostbridge</td>
-<td style="text-align: center;">usr.sbin/bhyve/pci_hostbridge.c</td>
-<td style="text-align: center;">pci_hostbridge_init</td>
+<td align="center">pci-hostbridge</td>
+<td align="center">usr.sbin/bhyve/pci_hostbridge.c</td>
+<td align="center">pci_hostbridge_init</td>
 </tr>
 <tr>
-<td style="text-align: center;">pci-passthru</td>
-<td style="text-align: center;">usr.sbin/bhyve/pci_passthru.c</td>
-<td style="text-align: center;">/dev/pci, /dev/io</td>
+<td align="center">pci-passthru</td>
+<td align="center">usr.sbin/bhyve/pci_passthru.c</td>
+<td align="center">/dev/pci, /dev/io</td>
 </tr>
 <tr>
-<td style="text-align: center;">pci-uart</td>
-<td style="text-align: center;">usr.sbin/bhyve/pci_uart.c</td>
-<td style="text-align: center;">pci_uart_init|pci_uart_write|pci_uart_read</td>
+<td align="center">pci-uart</td>
+<td align="center">usr.sbin/bhyve/pci_uart.c</td>
+<td align="center">pci_uart_init|pci_uart_write|pci_uart_read</td>
 </tr>
 <tr>
-<td style="text-align: center;">pci-virtio-blk</td>
-<td style="text-align: center;">usr.sbin/bhyve/pci_virtio_block.c</td>
-<td style="text-align: center;">pci_vtblk_init|pci_vtblk_write|pci_vtblk_read</td>
+<td align="center">pci-virtio-blk</td>
+<td align="center">usr.sbin/bhyve/pci_virtio_block.c</td>
+<td align="center">pci_vtblk_init|pci_vtblk_write|pci_vtblk_read</td>
 </tr>
 <tr>
-<td style="text-align: center;">pci-virtio-net</td>
-<td style="text-align: center;">usr.sbin/bhyve/pci_virtio_net.c</td>
-<td style="text-align: center;">pci_vtnet_init|pci_vtnet_write|pci_vtnet_read</td>
+<td align="center">pci-virtio-net</td>
+<td align="center">usr.sbin/bhyve/pci_virtio_net.c</td>
+<td align="center">pci_vtnet_init|pci_vtnet_write|pci_vtnet_read</td>
 </tr>
 </tbody>
 </table>
@@ -709,33 +685,16 @@ rather than doing traps.</p>
 [^4]: <a href="https://www.vpsee.com/2015/06/mac-os-x-hypervisor-xhyve-based-on-bhyve/">xhyve</a> \
 [^5]: <a href="https://people.freebsd.org/~grehan/talks/eurobsdcon_2013_bhyve.pdf">Extending bhyve beyond FreeBD guests</a></p>
 
-
-
-
-
-
-
-  
+  <hr>
+<div class="md-source-file">
+  <small>
     
-  
-  
-
-
-  <aside class="md-source-file">
-    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 6, 2022</span>
       
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 6, 2022</span>
-  </span>
-
     
-    
-    
-    
-  </aside>
+  </small>
+</div>
 
 
 
@@ -746,7 +705,6 @@ rather than doing traps.</p>
             </div>
           
           
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -778,7 +736,7 @@ rather than doing traps.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
     
   </body>
