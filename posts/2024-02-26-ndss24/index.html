@@ -1,0 +1,796 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2024-02-26-ndss24/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Notes for NDSS'24 - Qiang Liu's Homepage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#notes-for-ndss24" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Qiang Liu&#39;s Homepage" class="md-header__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Qiang Liu's Homepage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Notes for NDSS'24
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Qiang Liu&#39;s Homepage" class="md-nav__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Qiang Liu's Homepage
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Posts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#session-1a-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session 1A: Firmware
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-2a-fuzz-all-the-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session 2A: Fuzz-all-the-things
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-4a-leaks-side-channel-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session 4A: Leaks (Side-Channel Attacks)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-5a-trusted-execution-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session 5A: Trusted Execution Environments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-6b-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session 6B: Exploitation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-9a-fuzz-more-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session 9A: Fuzz-more-things!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-11b-reverse-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session 11B: Reverse Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-12b-application-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session 12B: Application Security
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="notes-for-ndss24">Notes for NDSS'24</h1>
+<p>Interested topics<br />
+- Session 1A: Firmware<br />
+- Session 2A: Fuzz-all-the-things!<br />
+- Session 4A: Leaks!<br />
+- Session 5A: Trusted Execution Environments<br />
+- Session 6B: Exploitation<br />
+- Session 9A: Fuzz-more-things!<br />
+- Session 11B: Reverse Engineering<br />
+- Session 12B: Application Security  </p>
+<p>Somewhat interested topics (Web/Network, Architecture, Mobile, IoT/Sensors, Antomotive)<br />
+- Session 2B: Tor and Mixed Networks<br />
+- Session 3A: Routing<br />
+- Session 3B: Android and Deserialization<br />
+- Session 6A: Network Protocols<br />
+- Session 6C: Architecture and Cybercrime<br />
+- Session 8A: Mobile Ecosystem<br />
+- Session 8B: Acoustic Sensor Security<br />
+- Session 9C: Occlusion and Vision<br />
+- Session 10A: Internet-of-Everything<br />
+- Session 11A: Visual Sensor Security<br />
+- Session 12A: Network Security<br />
+- Session 12C: Automotive Sensor Security<br />
+- Session 13A: Web Security  </p>
+<p>Uninterested topics (Cyrptography, Machine Learning/LLM, Blockchain, Human Factors, Usable Security)<br />
+- Session 1B: Censorship<br />
+- Session 1C: Applied Cryptography<br />
+- Session 2C: Resource PKI<br />
+- Session 3C: Federated Learning<br />
+- Session 4B: ML Security (1)<br />
+- Session 4C: Secrecy and Anonymity<br />
+- Session 5B: ML Attacks (1)<br />
+- Session 5C: Future Cryptography<br />
+- Session 7A: Blockchain Protocols<br />
+- Session 7B: ML Security (2)<br />
+- Session 7C: Human Factors<br />
+- Session 8C: Smart Contracts<br />
+- Session 9B: ML Security (3)<br />
+- Session 10B: Usable Security<br />
+- Session 10C: Membership Inference<br />
+- Session 11C: Prompt Engineering<br />
+- Session 13B: ML Attacks (2)<br />
+- Session 13C: ML Privacy  </p>
+<h2 id="session-1a-firmware">Session 1A: Firmware</h2>
+<ul>
+<li>
+<p>Decentralized Information-Flow Control for ROS2</p>
+<ul>
+<li>We present Picaros, a decentralized information-flow control (DIFC) system
+    tailored for ROS2.</li>
+<li><a href="https://www.ndss-symposium.org/ndss-paper/decentralized-information-flow-control-for-ros2/">paper</a></li>
+</ul>
+</li>
+<li>
+<p>Facilitating Non-Intrusive In-Vivo Firmware Testing with Stateless Instrumentation</p>
+<ul>
+<li>Firmware fuzzing.</li>
+<li>We develop a decoupled firmware testing framework named IPEA, which shifts
+    the overhead of resource-intensive analysis tasks from the
+    microcontroller to the workstation.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-116-paper.pdf">paper</a></li>
+<li>Comments: requires source-code.</li>
+</ul>
+</li>
+<li>
+<p>LDR: Secure and Efficient Linux Driver Runtime for Embedded TEE Systems</p>
+<ul>
+<li>Zhen Ling</li>
+<li>Sandboxing Linux kernel drivers.</li>
+<li>In this paper, we propose a TEE driver execution environment—Linux driver
+    runtime (LDR). The LDR reuses the existing TEE OS library functions
+    whenever possible and redirects the kernel subsystem function calls to
+    the Linux kernel in the normal world.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-9-paper.pdf">paper</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="session-2a-fuzz-all-the-things">Session 2A: Fuzz-all-the-things</h2>
+<ul>
+<li>
+<p>REQSMINER: Automated Discovery of CDN Forwarding Request Inconsistencies and DoS Attacks with Grammar-based Fuzzing</p>
+<ul>
+<li>Haixin Duan and <a href="https://www.jianjunchen.com/">Jianjun Chen</a></li>
+<li>Network security.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-31-paper.pdf">paper</a></li>
+</ul>
+</li>
+<li>
+<p>Large Language Model guided Protocol Fuzzing</p>
+<ul>
+<li>Marcel Bohme and Abhik Roychoudhury</li>
+<li>Protocol fuzzing.</li>
+<li>We have developed an LLM-guided protocol implementation fuzzing engine.
+    Our protocol fuzzer CHATAFL constructs grammars for each message type in
+    a protocol, and then mutates messages or predicts the next messages in a
+    message sequence via interactions with LLMs.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-556-paper.pdf">paper</a></li>
+<li>Comments: Compares to AFLNet, NSFuzz aganist targets in ProFuzzBench.
+    CHATAFL covers 47.60% and 42.69% more state transitions, 29.55% and 25.75%
+    more states, but only 5.81% and 6.74% more code, respectively. Apart from
+    enhanced coverage, CHATAFL discovered nine distinct and previously unknown
+    vulnerabilities on the latest ProFuzzBench targets.</li>
+<li>Comments: No new insight is proposed but the usage of LLM.</li>
+<li>Comments: LLM stops us from thinking deeply.</li>
+</ul>
+</li>
+<li>
+<p>SHAPFUZZ: Efficient Fuzzing via Shapley-Guided Byte Selection</p>
+<ul>
+<li><a href="https://www.sigs.tsinghua.edu.cn/xx_en/main.htm">Xiao Xi</a></li>
+<li>New approach to prioritize input bytes during fuzzing.</li>
+<li>Some byte positions contribute more than others and this property often
+    holds across different seeds. We propose a novel solution, called
+    SHAPFUZZ, to guide byte selection and mutation in fuzzing processes.
+    Specifically, SHAPFUZZ updates Shapley values (importance) of bytes when
+    each input is tested during fuzzing with a low overhead. It utilizes
+    contextual multiarmed bandit algorithm to make a trade off between
+    mutating high Shapley value bytes and low-frequently chosen bytes.</li>
+</ul>
+</li>
+</ul>
+<h2 id="session-4a-leaks-side-channel-attacks">Session 4A: Leaks (Side-Channel Attacks)</h2>
+<ul>
+<li>
+<p>Acoustic Keystroke Leakage on Smart Televisions</p>
+<ul>
+<li>This work develops and demonstrates a new side-channel attack that exposes
+    keystrokes from the audio of two popular Smart TVs: Apple and Samsung.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-72-paper.pdf">paper</a></li>
+</ul>
+</li>
+<li>
+<p>IdleLeak: Exploiting Idle State Side Effects for Information Leakage </p>
+<ul>
+<li><a href="https://gruss.cc/">Daniel Gruss</a></li>
+<li>Specifically, we exploit the processor idle state C0.2 to monitor system
+    activity and for novel means of data exfiltration, and the idle state
+    C0.1 to monitor system activity on logical sibling cores. </li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-78-paper.pdf">paper</a></li>
+</ul>
+</li>
+<li>
+<p>TEE-SHirT: Scalable Leakage-Free Cache Hierarchies for TEEs</p>
+<ul>
+<li><a href="https://www.cs.binghamton.edu/~davidl/">Yu David Liu</a></li>
+<li>Efficient and correct partitioning requires careful design. Towards this
+    goal, TEE-SHirT makes three contributions: 1) we demonstrate how the
+    hardware structures used for holding cache partitioning metadata can be
+    effectively virtualized to avoid flushing of cache partition content on
+    context switches and system calls; 2) we show how to support
+    multi-threaded enclaves in TEESHirT, addressing the issues of coherency
+    and consistency that arise with both intra-core and inter-core data
+    sharing; 3) we develop a formal security model for TEE-SHirT to
+    rigorously reason about the security of our design.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-390-paper.pdf">paper</a></li>
+</ul>
+</li>
+<li>
+<p>Exploiting Sequence Number Leakage: TCP Hijacking in NAT-Enabled Wi-Fi Networks</p>
+<ul>
+<li>Network security.</li>
+<li>In this paper, we uncover a new side-channel vulnerability in the widely
+    used NAT port preservation strategy and an insufficient reverse path
+    validation strategy of Wi-Fi routers, which allows an off-path attacker
+    to infer if there is one victim client in the same network communicating
+    with another host on the Internet using TCP.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-419-paper.pdf">paper</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="session-5a-trusted-execution-environments">Session 5A: Trusted Execution Environments</h2>
+<ul>
+<li>
+<p>SENSE: Enhancing Microarchitectural Awareness for TEEs via Subscription-Based Notification</p>
+<ul>
+<li>We propose SENSE, a solution that actively exposes underlying
+    microarchitectural information to userspace TEEs. SENSE enables
+    userspace software in TEEs to subscribe to fine-grained
+    microarchitectural events and utilize the events as a means to
+    contextualize the ongoing microarchitectural states. We initially
+    demonstrate SENSE’s capability by applying it to defeat the
+    state-of-the-art cache-based side-channel attacks. </li>
+<li><a href="https://www.ndss-symposium.org/ndss-program/symposium-2024/">paper</a></li>
+</ul>
+</li>
+<li>
+<p>EnclaveFuzz: Finding Vulnerabilities in SGX Applications</p>
+<ul>
+<li>Chao Zhang</li>
+<li>Vulnerability detection of TEE.</li>
+<li>In this paper, we propose EnclaveFuzz, a multi-dimension structure-aware
+    fuzzing framework that analyzes enclave sources to extract input
+    structures and correlations, then generates fuzz harnesses that can
+    produce valid inputs to pass sanity checks.  To conduct
+    multi-dimensional fuzzing, EnclaveFuzz creates data for all three input
+    dimensions of an enclave, including both parameters and return values
+    that enter an enclave, as well as direct untrusted memory access from
+    within an enclave. To detect more types of vulnerabilities, we design a
+    new sanitizer to detect both SGX-specific vulnerabilities and typical
+    memory corruption vulnerabilities. Lastly, we provide a custom SDK to
+    accelerate the fuzzing process and execute the enclave without the need
+    for special hardware.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-819-paper.pdf">paper</a></li>
+</ul>
+</li>
+<li>
+<p>Faults in Our Bus: Novel Bus Fault Attack to Break ARM TrustZone</p>
+<ul>
+<li><a href="https://sites.google.com/view/debdeepmukhopadhyay/home">Debdeep Mukhopadhyay</a></li>
+<li>Fault injection.</li>
+<li>In this work, we present the first practical implications of targeting an
+    orthogonal aspect of SoC’s architecture: the system bus. We inject
+    electromagnetic pulses onto the system bus during the execution of
+    instructions involving processor-memory interaction. We show how address
+    bus faults compromise software implementations of masked implementations
+    of ciphers, illustrated using implementations of state-of-theart
+    post-quantum cryptography (PQC) schemes, leaking entire secret keys with
+    a single fault. We also demonstrate that data bus faults can be
+    controlled and exploited to launch Differential Fault Analysis (DFA)
+    attacks on table-based implementation of the Advanced Encryption
+    Standard (AES).  Furthermore, we demonstrate that the impact of such bus
+    faults can be farreaching and mislead the security guarantees of the
+    popular and widely used ARM TrustZone.</li>
+</ul>
+</li>
+</ul>
+<h2 id="session-6b-exploitation">Session 6B: Exploitation</h2>
+<ul>
+<li>
+<p>UntrustIDE: Exploiting Weaknesses in VS Code Extensions</p>
+<ul>
+<li>SoK of VS code extensions.</li>
+<li>This paper seeks to systematically understand the landscape of
+    vulnerabilities in VS Code’s extension marketplace. We identify a set of
+    four sources of untrusted input and three code targets that can be used
+    for code injection and file integrity attacks and use them to design
+    taint analysis rules in CodeQL. We then perform an ecosystemlevel
+    analysis of the VS Code extension marketplace, studying 25,402
+    extensions that contain code. Our results show that while
+    vulnerabilities are not pervasive, they exist and impact millions of
+    users. Specifically, we find 21 extensions with verified proof of
+    concept exploits of code injection attacks impacting a total of over 6
+    million installations.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-73-paper.pdf">paper</a></li>
+</ul>
+</li>
+<li>
+<p>SyzBridge: Bridging the Gap in Exploitability Assessment of Linux Kernel Bugs in the Linux Ecosystem</p>
+<ul>
+<li>Zhiyun Qian</li>
+<li>Post-fuzzing and vulnerability assessment.</li>
+<li>We developed SyzBridge, a fully automated system that adapts upstream PoCs
+    to downstream kernels. </li>
+<li><a href="https://www.ndss-symposium.org/ndss-paper/syzbridge-bridging-the-gap-in-exploitability-assessment-of-linux-kernel-bugs-in-the-linux-ecosystem/">paper</a></li>
+</ul>
+</li>
+<li>
+<p>File Hijacking Vulnerability: The Elephant in the Room</p>
+<ul>
+<li>SoK and detection of file hijacking vulnerabilities.</li>
+<li>We developed a dynamic analysis tool, JERRY, which effectively detects
+    FHVulns at runtime by simulating hijacking actions during program
+    execution.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-38-paper.pdf">paper</a></li>
+</ul>
+</li>
+<li>
+<p>Phoenix: Surviving Unpatched Vulnerabilities via Accurate and Efficient Filtering of Syscall Sequences</p>
+<ul>
+<li>Provanence.</li>
+<li>We propose Phoenix, a solution for preventing exploits of unpatched
+    vulnerabilities by accurately and efficiently filtering sequences of
+    system calls identified through provenance analysis.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-582-paper.pdf">paper</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="session-9a-fuzz-more-things">Session 9A: Fuzz-more-things!</h2>
+<ul>
+<li>
+<p>DeepGo: Predictive Directed Greybox Fuzzing</p>
+<ul>
+<li>NUDT</li>
+<li>AI for fuzzing.</li>
+<li>In this paper, we propose DeepGo, a predictive directed greybox fuzzer
+    that can combine historical and predicted information to steer DGF to
+    reach the target site via an optimal pat</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-514-paper.pdf">paper</a></li>
+</ul>
+</li>
+<li>
+<p>MOCK: Optimizing Kernel Fuzzing Mutation with Context-aware Dependency</p>
+<ul>
+<li>Shouling Ji</li>
+<li>AI for kernel fuzzing.</li>
+<li>In this paper, we present a practical and effective kernel
+    fuzzing framework, called MOCK, which is capable of learning the
+    contextual dependencies in syscall sequences and then generating
+    context-aware syscall sequences</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-131-paper.pdf">paper</a></li>
+</ul>
+</li>
+<li>
+<p>Predictive Context-sensitive Fuzzing</p>
+<ul>
+<li>VUSec</li>
+<li>In this paper, we show that a much more effective approach
+    to context-sensitive fuzzing is possible. First, we propose function
+    cloning as a backward-compatible instrumentation primitive to enable
+    precise (i.e., collision-free) context-sensitive coverage tracking.
+    Then, to tame the state explosion problem, we argue to account for
+    contextual information only when a fuzzer explores contexts selected as
+    promising. We propose a prediction scheme to identify one pool of such
+    contexts: we analyze the data-flow diversity of the incoming argument
+    values at call sites, exposing to the fuzzer a contextually refined
+    clone of the callee if the latter sees incoming abstract objects that
+    its uses at other sites do not.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/ndss2024_f113_paper.pdf">paper</a></li>
+<li>Comments: calling-context -&gt; hash -&gt; collision -&gt; function cloning (For
+    instance, if contextual information is represented only by the caller of a
+    function, the analysis may produce separate results for the unique clones of
+    the callee devised for each possible caller.)</li>
+</ul>
+</li>
+</ul>
+<h2 id="session-11b-reverse-engineering">Session 11B: Reverse Engineering</h2>
+<ul>
+<li>
+<p>SIGMADIFF: Semantics-Aware Deep Graph Matching for Pseudocode Diffing</p>
+<ul>
+<li>Heng Yin</li>
+<li>AI for diffing.</li>
+<li>To address the limitations, in this paper, we propose a semantics-aware,
+    deep neural network-based model called SIGMADIFF for pseudocode diffing.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-208-paper.pdf">paper</a></li>
+</ul>
+</li>
+<li>
+<p>DeGPT: Optimizing Decompiler Output with LLM</p>
+<ul>
+<li>Kai Chen</li>
+<li>AI for decompilation.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-401-paper.pdf">paper</a></li>
+</ul>
+</li>
+<li>
+<p>DYNPRE: Protocol Reverse Engineering via Dynamic Inference</p>
+<ul>
+<li>Yu Jiang</li>
+<li>Protocol/model inference.</li>
+<li>This paper introduces DYNPRE, a protocol reverse engineering tool that
+    exploits the interactive capabilities of protocol servers to obtain more
+    semantic information and additional traffic for dynamic inference. This
+    paper presents DYNPRE, a network trace based protocol reverse
+    engineering tool that introduces dynamic inference for more accurate
+    analysis. Unlike traditional methods that require high-quality static
+    network traces for comprehensive statistical analysis, DYNPRE
+    establishes active communication with the server using carefully
+    constructed probe messages to extract insightful information and acquire
+    additional samples as needed, making it well-suited for input traces
+    with limited information.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-83-paper.pdf">paper</a></li>
+</ul>
+</li>
+<li>
+<p>Gradient Shaping: Enhancing Backdoor Attack Against Reverse Engineering</p>
+<ul>
+<li>AI model reverse engineering.</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-450-paper.pdf">paper</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="session-12b-application-security">Session 12B: Application Security</h2>
+<ul>
+<li>Efficient Use-After-Free Prevention with Opportunistic Page-Level Sweeping<ul>
+<li>UNIST</li>
+<li>Introduction of new allocator against UAF</li>
+<li>This study proposes HUSHVAC, an allocator that performs delayed reuse in such
+  a way that the distribution of heap chunks becomes more friendly to such
+  workloads. A</li>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2024-804-paper.pdf">paper</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

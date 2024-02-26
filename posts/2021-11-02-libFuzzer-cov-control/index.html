@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
       
       
 
@@ -53,9 +53,6 @@
   
     <body dir="ltr">
   
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -105,6 +102,9 @@
         </div>
       </div>
     </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -187,6 +187,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
         
@@ -203,6 +204,7 @@
     
       
       
+  
   
   
   
@@ -248,35 +250,45 @@
       
         <li class="md-nav__item">
   <a href="#how-to-use-libfuzzer" class="md-nav__link">
-    How to use libFuzzer?
+    <span class="md-ellipsis">
+      How to use libFuzzer?
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#how-to-compiler-llvm-project" class="md-nav__link">
-    How to compiler LLVM project?
+    <span class="md-ellipsis">
+      How to compiler LLVM project?
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#details-beneath-fsanitizefuzzer" class="md-nav__link">
-    Details beneath -fsanitize=fuzzer
+    <span class="md-ellipsis">
+      Details beneath -fsanitize=fuzzer
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#flow-of-instrumentations" class="md-nav__link">
-    Flow of instrumentations
+    <span class="md-ellipsis">
+      Flow of instrumentations
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#details-of-stubs" class="md-nav__link">
-    Details of stubs
+    <span class="md-ellipsis">
+      Details of stubs
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Details of stubs">
@@ -284,56 +296,72 @@
         
           <li class="md-nav__item">
   <a href="#__sanitizer_cov_indir_call" class="md-nav__link">
-    __sanitizer_cov_indir_call
+    <span class="md-ellipsis">
+      __sanitizer_cov_indir_call
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#__sanitizer_cov_trace_const_cmp1248" class="md-nav__link">
-    __sanitizer_cov_trace_[const_]cmp[1|2|4|8]
+    <span class="md-ellipsis">
+      __sanitizer_cov_trace_[const_]cmp[1|2|4|8]
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#__sanitizer_cov_trace_pc" class="md-nav__link">
-    __sanitizer_cov_trace_pc
+    <span class="md-ellipsis">
+      __sanitizer_cov_trace_pc
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#__sanitizer_cov_trace_pc_guard_init" class="md-nav__link">
-    __sanitizer_cov_trace_pc_guard[_init]
+    <span class="md-ellipsis">
+      __sanitizer_cov_trace_pc_guard[_init]
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#__sanitizer_cov_8bipctableentryidxpc_guard" class="md-nav__link">
-    __sanitizer_cov_8biPCTableEntryIdxpc_guard`.
+    <span class="md-ellipsis">
+      __sanitizer_cov_8biPCTableEntryIdxpc_guard`.
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#__sanitizer_cov_bool_flag_init" class="md-nav__link">
-    __sanitizer_cov_bool_flag_init
+    <span class="md-ellipsis">
+      __sanitizer_cov_bool_flag_init
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#__sanitizer_cov_pcs_init" class="md-nav__link">
-    __sanitizer_cov_pcs_init
+    <span class="md-ellipsis">
+      __sanitizer_cov_pcs_init
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#a-brief-list-of-flag-stubs-and-information-sink-in-libfuzzer" class="md-nav__link">
-    A brief list of (flag, stubs, and information sink in libFuzzer)
+    <span class="md-ellipsis">
+      A brief list of (flag, stubs, and information sink in libFuzzer)
+    </span>
   </a>
   
 </li>
@@ -345,7 +373,9 @@
       
         <li class="md-nav__item">
   <a href="#details-of-coverage-collection-algorithm-and-implementation" class="md-nav__link">
-    Details of coverage collection algorithm and implementation
+    <span class="md-ellipsis">
+      Details of coverage collection algorithm and implementation
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Details of coverage collection algorithm and implementation">
@@ -353,21 +383,27 @@
         
           <li class="md-nav__item">
   <a href="#resetmaps" class="md-nav__link">
-    ResetMaps
+    <span class="md-ellipsis">
+      ResetMaps
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#collectfeatures" class="md-nav__link">
-    CollectFeatures
+    <span class="md-ellipsis">
+      CollectFeatures
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#updateobservedpcs" class="md-nav__link">
-    UpdateObservedPCs
+    <span class="md-ellipsis">
+      UpdateObservedPCs
+    </span>
   </a>
   
 </li>
@@ -379,14 +415,18 @@
       
         <li class="md-nav__item">
   <a href="#libfuzzer-intercepts" class="md-nav__link">
-    libFuzzer intercepts
+    <span class="md-ellipsis">
+      libFuzzer intercepts
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
-    Conclusion
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
   </a>
   
 </li>
@@ -816,86 +856,86 @@ void __sanitizer_cov_pcs_init(const uintptr_t *pcs_beg,
 <table>
 <thead>
 <tr>
-<th align="center">Flag</th>
-<th align="center">Stubs</th>
-<th align="center">Information Sink</th>
+<th style="text-align: center;">Flag</th>
+<th style="text-align: center;">Stubs</th>
+<th style="text-align: center;">Information Sink</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">trace-pc,indirect-calls</td>
-<td align="center">__sanitizer_cov_trace_pc_indirect</td>
-<td align="center">ValueProfileMap</td>
+<td style="text-align: center;">trace-pc,indirect-calls</td>
+<td style="text-align: center;">__sanitizer_cov_trace_pc_indirect</td>
+<td style="text-align: center;">ValueProfileMap</td>
 </tr>
 <tr>
-<td align="center">trace-pc-guard,indirect-calls</td>
-<td align="center">__sanitizer_cov_trace_pc_indirect</td>
-<td align="center">ValueProfileMap</td>
+<td style="text-align: center;">trace-pc-guard,indirect-calls</td>
+<td style="text-align: center;">__sanitizer_cov_trace_pc_indirect</td>
+<td style="text-align: center;">ValueProfileMap</td>
 </tr>
 <tr>
-<td align="center">inline-8bit-counters,indirect-calls</td>
-<td align="center">__sanitizer_cov_trace_pc_indirect</td>
-<td align="center">ValueProfileMap</td>
+<td style="text-align: center;">inline-8bit-counters,indirect-calls</td>
+<td style="text-align: center;">__sanitizer_cov_trace_pc_indirect</td>
+<td style="text-align: center;">ValueProfileMap</td>
 </tr>
 <tr>
-<td align="center">inline-bool-flag,indirect-calls</td>
-<td align="center">__sanitizer_cov_trace_pc_indirect</td>
-<td align="center">ValueProfileMap</td>
+<td style="text-align: center;">inline-bool-flag,indirect-calls</td>
+<td style="text-align: center;">__sanitizer_cov_trace_pc_indirect</td>
+<td style="text-align: center;">ValueProfileMap</td>
 </tr>
 <tr>
-<td align="center">trace-cmp</td>
-<td align="center">__sanitizer_cov_trace_[const_]cmp[1|2|4|8]</td>
-<td align="center">ValuleProfileMap</td>
+<td style="text-align: center;">trace-cmp</td>
+<td style="text-align: center;">__sanitizer_cov_trace_[const_]cmp[1|2|4|8]</td>
+<td style="text-align: center;">ValuleProfileMap</td>
 </tr>
 <tr>
-<td align="center">trace-switch</td>
-<td align="center">__sanitizer_cov_trace_switch</td>
-<td align="center">ValuleProfileMap</td>
+<td style="text-align: center;">trace-switch</td>
+<td style="text-align: center;">__sanitizer_cov_trace_switch</td>
+<td style="text-align: center;">ValuleProfileMap</td>
 </tr>
 <tr>
-<td align="center">trace-div</td>
-<td align="center">__sanitizer_cov_trace_div[4|8]</td>
-<td align="center">ValuleProfileMap</td>
+<td style="text-align: center;">trace-div</td>
+<td style="text-align: center;">__sanitizer_cov_trace_div[4|8]</td>
+<td style="text-align: center;">ValuleProfileMap</td>
 </tr>
 <tr>
-<td align="center">trace-gep</td>
-<td align="center">__sanitizer_cov_trace_gep</td>
-<td align="center">ValuleProfileMap</td>
+<td style="text-align: center;">trace-gep</td>
+<td style="text-align: center;">__sanitizer_cov_trace_gep</td>
+<td style="text-align: center;">ValuleProfileMap</td>
 </tr>
 <tr>
-<td align="center">trace-pc</td>
-<td align="center">__sanitizer_cov_trace_pc</td>
-<td align="center">deprecated</td>
+<td style="text-align: center;">trace-pc</td>
+<td style="text-align: center;">__sanitizer_cov_trace_pc</td>
+<td style="text-align: center;">deprecated</td>
 </tr>
 <tr>
-<td align="center">trace-pc-guard</td>
-<td align="center">__sanitizer_cov_trace_pc_guard[_init]</td>
-<td align="center">deprecated</td>
+<td style="text-align: center;">trace-pc-guard</td>
+<td style="text-align: center;">__sanitizer_cov_trace_pc_guard[_init]</td>
+<td style="text-align: center;">deprecated</td>
 </tr>
 <tr>
-<td align="center">inline-8bit-counters</td>
-<td align="center">__sanitizer_cov_8bit_counters_init</td>
-<td align="center">Modules</td>
+<td style="text-align: center;">inline-8bit-counters</td>
+<td style="text-align: center;">__sanitizer_cov_8bit_counters_init</td>
+<td style="text-align: center;">Modules</td>
 </tr>
 <tr>
-<td align="center">inline-bool-flag</td>
-<td align="center">__sanitizer_cov_bool_flag_init</td>
-<td align="center">not supported</td>
+<td style="text-align: center;">inline-bool-flag</td>
+<td style="text-align: center;">__sanitizer_cov_bool_flag_init</td>
+<td style="text-align: center;">not supported</td>
 </tr>
 <tr>
-<td align="center">trace-pc-guard,pc-table</td>
-<td align="center">__sanitizer_cov_pcs_init</td>
-<td align="center">ModulePCTable</td>
+<td style="text-align: center;">trace-pc-guard,pc-table</td>
+<td style="text-align: center;">__sanitizer_cov_pcs_init</td>
+<td style="text-align: center;">ModulePCTable</td>
 </tr>
 <tr>
-<td align="center">inline-8bit-guard,pc-table</td>
-<td align="center">__sanitizer_cov_pcs_init</td>
-<td align="center">ModulePCTable</td>
+<td style="text-align: center;">inline-8bit-guard,pc-table</td>
+<td style="text-align: center;">__sanitizer_cov_pcs_init</td>
+<td style="text-align: center;">ModulePCTable</td>
 </tr>
 <tr>
-<td align="center">inline-bool-flag,pc-table</td>
-<td align="center">__sanitizer_cov_pcs_init</td>
-<td align="center">ModulePCTable</td>
+<td style="text-align: center;">inline-bool-flag,pc-table</td>
+<td style="text-align: center;">__sanitizer_cov_pcs_init</td>
+<td style="text-align: center;">ModulePCTable</td>
 </tr>
 </tbody>
 </table>
@@ -1066,51 +1106,51 @@ void __sanitizer_weak_hook_memcmp(void *caller_pc, const void *s1,
 <table>
 <thead>
 <tr>
-<th align="center">Function</th>
-<th align="center"></th>
-<th align="center">Information Sink</th>
+<th style="text-align: center;">Function</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Information Sink</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">memcmp</td>
-<td align="center">AddValueForMemcmp</td>
-<td align="center">ValueProfileMap</td>
+<td style="text-align: center;">memcmp</td>
+<td style="text-align: center;">AddValueForMemcmp</td>
+<td style="text-align: center;">ValueProfileMap</td>
 </tr>
 <tr>
-<td align="center">strnmp</td>
-<td align="center">AddValueForMemcmp</td>
-<td align="center">ValueProfileMap</td>
+<td style="text-align: center;">strnmp</td>
+<td style="text-align: center;">AddValueForMemcmp</td>
+<td style="text-align: center;">ValueProfileMap</td>
 </tr>
 <tr>
-<td align="center">strcmp</td>
-<td align="center">AddValueForMemcmp</td>
-<td align="center">ValueProfileMap</td>
+<td style="text-align: center;">strcmp</td>
+<td style="text-align: center;">AddValueForMemcmp</td>
+<td style="text-align: center;">ValueProfileMap</td>
 </tr>
 <tr>
-<td align="center">strncasecmp</td>
-<td align="center">AddValueForMemcmp</td>
-<td align="center">ValueProfileMap</td>
+<td style="text-align: center;">strncasecmp</td>
+<td style="text-align: center;">AddValueForMemcmp</td>
+<td style="text-align: center;">ValueProfileMap</td>
 </tr>
 <tr>
-<td align="center">strcasecmp</td>
-<td align="center"></td>
-<td align="center">AddValueForMemcmp</td>
+<td style="text-align: center;">strcasecmp</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">AddValueForMemcmp</td>
 </tr>
 <tr>
-<td align="center">strstr</td>
-<td align="center"></td>
-<td align="center">MMT(Mutation Only)</td>
+<td style="text-align: center;">strstr</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">MMT(Mutation Only)</td>
 </tr>
 <tr>
-<td align="center">strcasestr</td>
-<td align="center"></td>
-<td align="center">MMT(Mutation Only)</td>
+<td style="text-align: center;">strcasestr</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">MMT(Mutation Only)</td>
 </tr>
 <tr>
-<td align="center">memmem</td>
-<td align="center"></td>
-<td align="center">MMT(Mutation Only)</td>
+<td style="text-align: center;">memmem</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">MMT(Mutation Only)</td>
 </tr>
 </tbody>
 </table>
@@ -1135,16 +1175,33 @@ and calculate features.</p>
     foo.c
 </code></pre>
 
-  <hr>
-<div class="md-source-file">
-  <small>
+
+
+
+
+
+
+  
     
-      Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 9, 2023</span>
+  
+  
+
+
+  <aside class="md-source-file">
+    
       
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 9, 2023</span>
+  </span>
+
     
-  </small>
-</div>
+    
+    
+    
+  </aside>
 
 
 
@@ -1155,6 +1212,7 @@ and calculate features.</p>
             </div>
           
           
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -1186,7 +1244,7 @@ and calculate features.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
     
   </body>
