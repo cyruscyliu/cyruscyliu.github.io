@@ -16,3 +16,4 @@ Waste less time = Gain more time!
 - Sogoupinyin doesn't work on Ubuntu
 - `ssh -X` forwards X11 back to your desktop (qemu `gtk initialization failed`)
 - Don't use `git submodules`
+- Run [shellchecker](https://github.com/koalaman/shellcheck) before running any bash/sh script
