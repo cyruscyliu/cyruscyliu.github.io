@@ -3,9 +3,9 @@ if any questions or comments.
 
 Pinned
 
-+ [Knowledge for [System|Software] (Security) Research](posts/2021-09-03-knowledge-for-research.md)
-+ [Coding for [System|Software] (Security) Research](posts/2021-09-03-Summary-Research-SE.md)
-+ [How to Do [System|Software] (Security) Research](posts/2021-09-07-Research-Philosophy.md)
++ [Knowledge for System Security Research](posts/2021-09-03-knowledge-for-research.md)
++ [Coding for System Security Research](posts/2021-09-03-Summary-Research-SE.md)
++ [How to Do System Security Research](posts/2021-09-07-Research-Philosophy.md)
 + [Principles of Research Presentation](posts/2021-08-27-Principle-of-Presentation.md)
 + [Technology Transfer and Practices Under Control](posts/2022-08-30-technology-transfer.md)
 + [Pitfalls/Tweaks/Tricks in R&D](posts/2023-08-15-dont-waste-time.md)
