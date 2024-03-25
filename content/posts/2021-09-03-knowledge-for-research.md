@@ -47,53 +47,70 @@ programming language, e.g., Rust.
 + apt-get/apt-cache
 + source/bash/hash/ldconfig/update-grub
 
-## Data Structure and Algorithm
++PRBLM: Necessarily know what problem is going to address  
+-PRBLM: Not necessarily know what problem is going to address  
++IMPL: Necessarily know how to implement it  
+-IMPL: Not necessarily know how to implement it
 
-KPRBLM: Necessarily know what problem is going to address  
-NKPRBLM: Not mecessarily know what problem is going to address  
-KIMPL: Necessarily know how to implement it  
-NKIMPL: Not necessarily know how to implement it
+## Data Structure and Algorithm
 
 Textbook: [Introduction to Algorithms (4th)](https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf)
 
-+ Sorting algorithms (NKPRBLM, NKIMPL)
++ Sorting algorithms (-PRBLM, -IMPL)
+
     + Insertion sort, Merge sort, Heapsort, Quick sort, Counting sort, Radix sort, Bucket sort
 
-+ Dynamic sets (KPRBLM, NKIMPL)
-    + Operations: Search, Insert, Delete, Minimum, Maximum, Successor, Predecessor
-    + Data structures: Array (Fast lookup), Stack, Matrices, Queue, Linked List
-    (Fast addition/removal), Rooted tree, Hash table, Binary search tree (Binary
-    tree, Left <= Right, Fast lookup/addition/removal), Red-black tree (Every
-    node in a red-black tree is either red or black, the children of a red node
-    are both black, and every simple path from a node to a descendant leaf
-    contains the same number of black nodes. Red-black trees are one of many
-    search-tree schemes that are ``balanced'' in order to guarantee that basic
-    dynamic-set operations take O(lgn) time in the worst case.
-    [Rbtress in Linux kernel](https://docs.kernel.org/core-api/rbtree.html):
-    Red-black trees are a type of self-balancing binary search tree, used for
-    storing sortable key/value data pairs. This differs from radix trees (which
-    are used to efficiently store sparse arrays and thus use long integer
-    indexes to insert/access/delete nodes) and hash tables (which are not kept
-    sorted to be easily traversed in order, and must be tuned for a specific
-    size and hash function where rbtrees scale gracefully storing arbitrary
-    keys). Red-black trees are similar to AVL trees, but provide faster
-    real-time bounded worst case performance for insertion and deletion (at most
-    two rotations and three rotations, respectively, to balance the tree), with
-    slightly slower (but still O(log n)) lookup time. Red-black trees are
-    similar to AVL trees, but provide faster real-time bounded worst case
-    performance for insertion and deletion (at most two rotations and three
-    rotations, respectively, to balance the tree), with slightly slower (but
-    still O(log n)) lookup time.)
++ Dynamic sets (+PRBLM, -IMPL)
 
-+ Graph algorithm (KPRBLM, NKIMPL)
+    + Operations: Search, Insert, Delete, Minimum, Maximum, Successor,
+    Predecessor
+
+    + Data structures: Array (Fast lookup), Stack, Matrices, Queue, Linked List
+    (Fast addition/removal), Rooted tree, Hash table
+
+    + Data structure: Binary search tree (Binary tree, Left <= Right, Fast
+    lookup/addition/removal)
+
+        + Red-black tree
+
+            + Every node in a red-black tree is either red or black, the
+            children of a red node are both black, and every simple path from a
+            node to a descendant leaf contains the same number of black nodes.
+            Red-black trees are one of many search-tree schemes that are
+            ``balanced'' in order to guarantee that basic dynamic-set operations
+            take O(lgn) time in the worst case.
+
+            + [Rbtress in Linux
+            kernel](https://docs.kernel.org/core-api/rbtree.html): Red-black
+            trees are a type of self-balancing binary search tree, used for
+            storing sortable key/value data pairs. This differs from radix trees
+            (which are used to efficiently store sparse arrays and thus use long
+            integer indexes to insert/access/delete nodes) and hash tables
+            (which are not kept sorted to be easily traversed in order, and must
+            be tuned for a specific size and hash function where rbtrees scale
+            gracefully storing arbitrary keys). Red-black trees are similar to
+            AVL trees, but provide faster real-time bounded worst case
+            performance for insertion and deletion (at most two rotations and
+            three rotations, respectively, to balance the tree), with slightly
+            slower (but still O(log n)) lookup time.
+
+        + AVL tree
+
+            + An AVL tree is a binary search tree that is height balanced: for
+            each node x, the heights of the left and right subtrees of x differ
+            by at most 1.
+
++ Graph algorithm (+PRBLM, -IMPL)
     + Search, Topological sort, Strong connected components, Minimum spanning
     tree, Shortest paths, Maximum flow, Matching in bipartitie graphs
 
-+ Advanced data structures (NKPRBLM, NKIMPL)
++ Advanced data structures (-PRBLM, -IMPL)
     + Augmented red-black tree, B-trees, data structures for disjointed sets
 
 + Algorithm design and analysis
-    + Simulation, Divide and conquer, Dynamic programming, Greedy algorithms, Amortized analysis
+    + Simulation, Recursive algorithms, Enumeration, Iterative algorithm, Divide
+    and conquer, Dynamic programming, Greedy algorithms, Amortized analysis,
+    Data structure augment
 
 + Automata, regular expression, context-free grammar, temporal and spatial complexity, the halting problem over Turing machines
 
