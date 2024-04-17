@@ -116,6 +116,30 @@ Textbook: [Introduction to Algorithms (4th)](https://dl.ebooksworld.ir/books/Int
 
 ## Architecture and Computation System
 
++ x86 shits
+    + segments
+        + segment selector: cs/ds/ss, es/fs/gs, indexing segment descriptor
+        + segment descriptor/cache segment descriptor: base, limit
+        + segment descriptor table
+            + gdt: all processes can access this
+            + ldt: a system can have one or multiple ldts; a process can
+            exclusively use an LDT or use the ldt shared by multiple processes
+            + To quickly access GDT and LDT, gdtr and ldtr are leveraged
+        + To demystify
+            + gdt: array, gdtr stores where the gdt is
+            + ldt: array, ldtr stores where the ldt for the current process is
+    + logical address must exist (since x86 cannot disable segments)
+        + inside the program, a pointer stores the offset to a segment
+        + iirc, ldt is not enabled, gdt is transparent
+    + logical address -> linear address -> physical address
+        + logical address -> segment selector -> gdt/ldt -> linear address
+        + w/o paging, linear address = physical address
+        + w/ paging, linear address (virtual address) -> page table -> physical address
+    + four modes
+        + Real mode: linear address = physical address, 1MB
+        + Protect mode: the commonly used mode
+        + Virtual 8086 mode, provide a real mode on the protect mode (for compatibility)
+
 + Be familiar with x86/x86, arm/aarch64, and riscv assembly.
 + Learn ISA extension for security (PAC).
 + Learn processor design and pipelines.
@@ -135,8 +159,84 @@ Textbook: [Introduction to Algorithms (4th)](https://dl.ebooksworld.ir/books/Int
 
 ## Virtualization
 
-+ Learn CPU virtualization.
-+ Learn virtual devices.
+VMX = Virtual Machine Extension
+
+### Intel VT-x
+
++ Trap-and-emulation requires all sensitive instructions to be privilege instructions
++ Challenges
+    + Not all sensitive instructions are privilege instructions
+    + Cannot trigger an exception to be compatible with existing software
++ Add one more mode
+    + VMX Root Operation: when the VMM is running, compatible to existing software
+    + VMX Non-Root Operation: when the guest is running
+        + All sensitive instructions are re-designed
+    + VMM Operations are orthogonal to Ring 0 and 3
++ Specifically
+    + vmxon -> VMX Root Operation -> vmlaunch/vmresume -> VM-Entry -> VMX
+    Non-Root Operation -> Some sensitive instructions/MMIO/EPT Violation ->
+    VM-Exit -> VMX Root Operation -> vmxoff
+
+    + VM-Exit
+        + sysenter won't introduce a VM-Exit, even it is a sensitive instruction
+        + cpuid must introduce a VM-Exit
+        + The behaviors of some sensitive instructions are controlled by VMCS
+
+    + VMCS (Virtual-Machine Control Structure)
+        + VMCS is stored in memory, different from the guest memory
+        + VMCS and a physical CPU are 1-1 mapping
+            + vmptrld addr_of_vmcs/vmcleaer
+            + VMCS migration may be not implemented
+        + VMCS includes
+            + Guest-state area - registers
+                + VM-Exit -> save, VM-Entry -> restore
+                + Including LDTR
+            + Host-state area
+                + VM-Exit -> restore
+                + Not including LDTR, CS:RIP is where the VM-Exit is handled
+            + VM-Entry control field
+                + VMM can inject event (exception/external interrupts/NMI)
+                into the guest vCPU, say when a DMA operation is completed.
+            + VM-Execution control field
+                + External-interrupt/Exception bitmap -> VM-Exit?
+                + HLT/INVLPG/WBINVD/RDPMC/RDTSC/... -> VM-Exit?
+                + Unconditional I/O exiting/Use I/O bigmaps/Use MSR bitmaps -> VM-Exit?
+            + VM-Exit control field (seems not interesting)
+            + VM-Exit information field
+                + Exit reason
+                + Exit qualification
+                + VM-Exit interrupt information/interrupt error code for
+                external interrupts/exceptions, and NMI
+                + Guest linear address/instruction length/instruction
+                information for the sensitive instruction that triggers the VM-Exit
+
+        + vmread/vmwrite to configure VMCS
+    + VT-x requires that the paging must be enabled in Non-Root operation
+
+### EPT
+
++ GVA -> GPA -> HPA
++ Challenges
+    + Shadow page table is very complicated and expensive
++ Add one more hardware: EPT
++ Specifically, given a GVA, 5 queries in total
+    + Guest CR3 (GPA) -> EPT TLB -> EPT page table (EPT MMU) -> HPA or EPT Violation (1)
+    + GVA + L4 GHA -> L3 GPA or page fault (no VM-Exit) -> HPA or EPT Violation (2)
+    + GVA + L3 GHA -> L2 GPA or page fault (no VM-Exit) -> HPA or EPT Violation (3)
+    + GVA + L2 GHA -> L1 GPA or page fault (no VM-Exit) -> HPA or EPT Violation (4)
+    + GVA + L1 GHA -> GPA or page fault (no VM-Exit) -> HPA or EPT Violation (5)
++ Specifically
+    + EPT is configured (enabling and address) in VMCS's VM-Execution control field
++ EPT Violation happens when
+    + GPA's address is large
+    + Guest is reading a not readable page
+    + Guest is writing a not writable page
+    + Guest is executing a not executable page
+
+### Nested Virtualization
+
+[Slide 1](https://www.linux-kvm.org/images/3/33/02x03-NestedVirtualization.pdf)
+[Paper 1](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Ben-Yehuda.pdf)
 
 ## Computer Networking
 
