@@ -18,7 +18,7 @@
     
     
       
-        <title>Coding for [System|Software] (Security) Research - Qiang Liu's Homepage</title>
+        <title>Coding for System Security Research - Qiang Liu's Homepage</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#coding-for-systemsoftware-security-research" class="md-skip">
+        <a href="#coding-for-system-security-research" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Coding for [System|Software] (Security) Research
+              Coding for System Security Research
             
           </span>
         </div>
@@ -249,15 +249,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#toolbox" class="md-nav__link">
-    <span class="md-ellipsis">
-      Toolbox
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#enough-functionality" class="md-nav__link">
     <span class="md-ellipsis">
       Enough functionality
@@ -381,15 +372,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#make-progress-as-technologies-evolve-so-fast" class="md-nav__link">
-    <span class="md-ellipsis">
-      Make progress as technologies evolve so fast
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -410,7 +392,7 @@
                   
 
 
-<h1 id="coding-for-systemsoftware-security-research">Coding for [System|Software] (Security) Research</h1>
+<h1 id="coding-for-system-security-research">Coding for System Security Research</h1>
 <p>Solid implementation in limited time makes us competitive in research.</p>
 <ul>
 <li>Artifact evaluation is introduced to overcome the "reproducibility issue".</li>
@@ -433,51 +415,42 @@ students or junior professors to make sure their ideas work. Second, we follow
 an enough and quick coding philosophy, that is to say, to develop a tool with
 enough functionality quickly. In this way, we can pass the artifact evaluation
 without overengineering, open source our tool directly, and save time.</p>
-<h3 id="toolbox">Toolbox</h3>
-<ul>
-<li>Fuzzing</li>
-<li>Static program anlysis</li>
-<li>Symbolic execution</li>
-</ul>
-<h3 id="enough-functionality">Enough functionality</h3>
+<h2 id="enough-functionality">Enough functionality</h2>
 <p>Think about the least set of functionalities, including not only the core
 functionalities but also the functionalities to make sure this tool easy to use,
 debug, and evaluate.</p>
-<h3 id="quick-development">Quick development</h3>
+<h2 id="quick-development">Quick development</h2>
 <p>Software engineering has many best practices to save time.</p>
-<h4 id="design-architecture-then-select-framework">Design architecture then select framework</h4>
-<p>The design and the implementation are different. Usually the design shows how to
-address a problem and we need to choose the most proper way to implement our
-design.</p>
-<h4 id="control-time-and-risk">Control time and risk</h4>
-<p>We should avoid overengineering. Young developers are likely overengineering
-because they want to apply as many tricks as possible they know and they forget
-the time limit. Design pattern is what we can try but to address some issues
-rather than to show off. If we try to avoid overengineering and the
-implementation still seems complex, we should invite more collaborators. For any
-other uncertain staff, make backup plans.</p>
-<h4 id="add-readme">Add README</h4>
-<h4 id="use-a-version-control-tool">Use a version control tool</h4>
+<h3 id="design-architecture-then-select-framework">Design architecture then select framework</h3>
+<p>Design and implementation are different. Usually the design shows how to address
+a problem and we need to choose the most proper way to implement our design.</p>
+<h3 id="control-time-and-risk">Control time and risk</h3>
+<p>Avoid overengineering. Be aware that you/someone else is maintaining your
+project later. Use simple techniques and don't show off. Design pattern is what
+we can try but to address some issues that really exist. For any other uncertain
+staff, make backup plans.</p>
+<h3 id="add-readme">Add README</h3>
+<h3 id="use-a-version-control-tool">Use a version control tool</h3>
 <p>Use git or any other tools. Don't copy and paste or use suffix like xxx-v1.0.</p>
-<h4 id="follow-reasonable-patching-process">Follow reasonable patching process</h4>
-<h4 id="use-issuemailinglistforum-to-discuss">Use issue/mailinglist/forum to discuss</h4>
-<h4 id="follow-the-same-code-style-in-one-project">Follow the same code style in one project</h4>
-<h4 id="add-unit-tests-and-enable-debugging">Add unit tests and enable debugging</h4>
+<h3 id="follow-reasonable-patching-process">Follow reasonable patching process</h3>
+<h3 id="use-issuemailinglistforum-to-discuss">Use issue/mailinglist/forum to discuss</h3>
+<h3 id="follow-the-same-code-style-in-one-project">Follow the same code style in one project</h3>
+<h3 id="add-unit-tests-and-enable-debugging">Add unit tests and enable debugging</h3>
 <p>This can avoid buggy implementation. Try to build the smallest SDK with limited
 but enough unit tests. Then build upper applications that are not stable. Keep
 in mind to move commonly used code in the applications to the SDK and don't code
 too much in rapidly changing applications.</p>
-<h4 id="be-more-automatic">Be more automatic</h4>
+<h3 id="be-more-automatic">Be more automatic</h3>
 <h2 id="training-of-coding">Training of coding</h2>
 <h3 id="train-ourselves-the-basics">Train ourselves the basics</h3>
-<p>First, we should review the data structure and algorithm once a year. It's not
-necessary to remember the implementation of each algorithm, like the quick sort.
-Instead, it's important for us to understand how to design new algorithm and how
-to optimize it.</p>
-<p>Then, we should learn existing system software/hardware such that we can quickly
-rewrite part of it to validate our ideas. It rarely happens but sometimes what
-we want is not implemented by anyone else. Our knowledge will help us quickly
-create a wheel.</p>
+<p>First, we should review the data structure and algorithm regularly. It's not
+necessary to remember the implementation of each algorithm. Instead, it's
+important for us to understand how to design new algorithm, how to optimize it,
+and how to apply it to address real world problems.</p>
+<p>Second, we should learn existing system software/hardware such that we can
+quickly rewrite part of it to validate our ideas. It rarely happens but
+sometimes what we want is not implemented by anyone else. Our knowledge will
+help us quickly create such a tool.</p>
 <ul>
 <li>Fuzzer: AFL++/libFuzzer/Syzkaller</li>
 <li>Symbolic execution: KLEE</li>
@@ -492,9 +465,6 @@ create a wheel.</p>
 <li>Memory consumption</li>
 <li>Disk consumption</li>
 </ul>
-<h3 id="make-progress-as-technologies-evolve-so-fast">Make progress as technologies evolve so fast</h3>
-<p>Solve CTF challenges. I feel some CTF challenges are close to the recent
-technologies, e.g., recent attacks, exploitation, and popular software.</p>
 
 
 
@@ -515,7 +485,7 @@ technologies, e.g., recent attacks, exploitation, and popular software.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 26, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 24, 2024</span>
   </span>
 
     

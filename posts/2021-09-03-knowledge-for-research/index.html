@@ -18,7 +18,7 @@
     
     
       
-        <title>Knowledge for [System|Software] Security Research - Qiang Liu's Homepage</title>
+        <title>Knowledge for System Security Research - Qiang Liu's Homepage</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#knowledge-for-systemsoftware-security-research" class="md-skip">
+        <a href="#knowledge-for-system-security-research" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Knowledge for [System|Software] Security Research
+              Knowledge for System Security Research
             
           </span>
         </div>
@@ -285,18 +285,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#network" class="md-nav__link">
+  <a href="#operating-system" class="md-nav__link">
     <span class="md-ellipsis">
-      Network
+      Operating System
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#operating-system" class="md-nav__link">
+  <a href="#virtualization" class="md-nav__link">
     <span class="md-ellipsis">
-      Operating System
+      Virtualization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intel-vt-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intel VT-x
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ept" class="md-nav__link">
+    <span class="md-ellipsis">
+      EPT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-virtualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested Virtualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computer-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Networking
     </span>
   </a>
   
@@ -321,9 +363,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#information-security" class="md-nav__link">
+  <a href="#software-security" class="md-nav__link">
     <span class="md-ellipsis">
-      Information Security
+      Software Security
     </span>
   </a>
   
@@ -380,26 +422,39 @@
                   
 
 
-<h1 id="knowledge-for-systemsoftware-security-research">Knowledge for [System|Software] Security Research</h1>
-<p>In this post, I plan to update a list time by time about what we should know for
-our research based on my experience.</p>
-<p>For each course, if not pointed out, we can find videos for it on the internet.</p>
+<h1 id="knowledge-for-system-security-research">Knowledge for System Security Research</h1>
+<p>In this post, I am maintainling a list of what we should know for system
+security research based on my experience.</p>
 <h2 id="programming-language-and-tooling">Programming Language and Tooling</h2>
 <ul>
-<li>Be familiar with C and Python.</li>
-<li>Learn basic C++ and basic bash.</li>
-<li>Learn Java for object-oriented programming.</li>
-<li>Learn how to develop Dockerfile to make your artifact deployable everywhere.</li>
+<li>
+<p>Be familiar with C and Python. Don't use many advanced features of Python in
+one project, which otherwise introduces difficulty for code reviewers.</p>
+</li>
+<li>
+<p>Learn basic C++ and basic bash. Enable linters, e.g., shellcheck, to remove
+stupid bugs and enable ChatGPT for functionality you do not remember.</p>
+</li>
+<li>
+<p>Learn Java for object-oriented programming. I suggest that even developing in
+Python/C++, apply the best practice of OOP in Java that is simple and mostly
+efficient.</p>
+</li>
+<li>
+<p>Learn how to develop Dockerfile to make your artifact deployable everywhere.
+Learn Docker's entrypoint/arguments/environment variables/volumns/capabilities
+and run your program in the Docker container all the time.</p>
+</li>
 <li>
 <p>Learn how to develop Json/Yaml to make your configs universal.</p>
 </li>
 <li>
-<p>To compile C/C++, learn how to use gcc/g++/clang/clang++, how to install
-and uninstall these compilers, and how to debug any warnings and errors.</p>
+<p>To compile C/C++, learn how to use gcc/g++/clang/clang++, how to install and
+uninstall these compilers, and how to debug any warnings and errors. Learn
+update-alternatives to have multiple versions of the tooling.</p>
 </li>
-<li>Learn what is cross compilation and how to use relative compilers.</li>
 <li>
-<p>Learn everything about Python pip.</p>
+<p>Learn what is cross compilation and how to use relative compilers.</p>
 </li>
 <li>
 <p>[Optional] Considering the memory safety issues of C/C++, learn memory safe
@@ -421,29 +476,296 @@ programming language, e.g., Rust.</p>
 <li>ssh/scp/rsync</li>
 <li>screen</li>
 <li>apt-get/apt-cache</li>
-<li>source/bash</li>
+<li>source/bash/hash/ldconfig/update-grub</li>
 </ul>
+<p>+PRBLM: Necessarily know what problem is going to address<br />
+-PRBLM: Not necessarily know what problem is going to address<br />
++IMPL: Necessarily know how to implement it<br />
+-IMPL: Not necessarily know how to implement it</p>
 <h2 id="data-structure-and-algorithm">Data Structure and Algorithm</h2>
+<p>Textbook: <a href="https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf">Introduction to Algorithms (4th)</a></p>
 <ul>
-<li>Be familiar with Stack, Queue, Tree, and Graph.</li>
-<li>Learn HashMap and Bitmap.</li>
-<li>Learn automata and context-free grammar.</li>
-<li>Learn temporal and spatial complexity.</li>
-<li>Learn the halting problem over Turing machines.</li>
+<li>
+<p>Sorting algorithms (-PRBLM, -IMPL)</p>
+<ul>
+<li>Insertion sort, Merge sort, Heapsort, Quick sort, Counting sort, Radix sort, Bucket sort</li>
+</ul>
+</li>
+<li>
+<p>Dynamic sets (+PRBLM, -IMPL)</p>
+<ul>
+<li>
+<p>Operations: Search, Insert, Delete, Minimum, Maximum, Successor,
+Predecessor</p>
+</li>
+<li>
+<p>Data structures: Array (Fast lookup), Stack, Matrices, Queue, Linked List
+(Fast addition/removal), Rooted tree, Hash table</p>
+</li>
+<li>
+<p>Data structure: Binary search tree (Binary tree, Left &lt;= Right, Fast
+lookup/addition/removal)</p>
+<ul>
+<li>
+<p>Red-black tree</p>
+<ul>
+<li>
+<p>Every node in a red-black tree is either red or black, the
+children of a red node are both black, and every simple path from a
+node to a descendant leaf contains the same number of black nodes.
+Red-black trees are one of many search-tree schemes that are
+``balanced'' in order to guarantee that basic dynamic-set operations
+take O(lgn) time in the worst case.</p>
+</li>
+<li>
+<p><a href="https://docs.kernel.org/core-api/rbtree.html">Rbtress in Linux
+kernel</a>: Red-black
+trees are a type of self-balancing binary search tree, used for
+storing sortable key/value data pairs. This differs from radix trees
+(which are used to efficiently store sparse arrays and thus use long
+integer indexes to insert/access/delete nodes) and hash tables
+(which are not kept sorted to be easily traversed in order, and must
+be tuned for a specific size and hash function where rbtrees scale
+gracefully storing arbitrary keys). Red-black trees are similar to
+AVL trees, but provide faster real-time bounded worst case
+performance for insertion and deletion (at most two rotations and
+three rotations, respectively, to balance the tree), with slightly
+slower (but still O(log n)) lookup time.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>AVL tree</p>
+<ul>
+<li>An AVL tree is a binary search tree that is height balanced: for
+each node x, the heights of the left and right subtrees of x differ
+by at most 1.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Graph algorithm (+PRBLM, -IMPL)</p>
+<ul>
+<li>Search, Topological sort, Strong connected components, Minimum spanning
+tree, Shortest paths, Maximum flow, Matching in bipartitie graphs</li>
+</ul>
+</li>
+<li>
+<p>Advanced data structures (-PRBLM, -IMPL)</p>
+<ul>
+<li>Augmented red-black tree, B-trees, data structures for disjointed sets</li>
+</ul>
+</li>
+<li>
+<p>Algorithm design and analysis</p>
+<ul>
+<li>Simulation, Recursive algorithms, Enumeration, Iterative algorithm, Divide
+and conquer, Dynamic programming, Greedy algorithms, Amortized analysis,
+Data structure augment</li>
+</ul>
+</li>
+<li>
+<p>Automata, regular expression, context-free grammar, temporal and spatial complexity, the halting problem over Turing machines</p>
+</li>
 </ul>
 <h2 id="architecture-and-computation-system">Architecture and Computation System</h2>
 <ul>
-<li>Be familiar with x86/x86, arm/aarch64, and riscv assembly.</li>
+<li>
+<p>x86 shits</p>
+<ul>
+<li>segments<ul>
+<li>segment selector: cs/ds/ss, es/fs/gs, indexing segment descriptor</li>
+<li>segment descriptor/cache segment descriptor: base, limit</li>
+<li>segment descriptor table<ul>
+<li>gdt: all processes can access this</li>
+<li>ldt: a system can have one or multiple ldts; a process can
+exclusively use an LDT or use the ldt shared by multiple processes</li>
+<li>To quickly access GDT and LDT, gdtr and ldtr are leveraged</li>
+</ul>
+</li>
+<li>To demystify<ul>
+<li>gdt: array, gdtr stores where the gdt is</li>
+<li>ldt: array, ldtr stores where the ldt for the current process is</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>logical address must exist (since x86 cannot disable segments)<ul>
+<li>inside the program, a pointer stores the offset to a segment</li>
+<li>iirc, ldt is not enabled, gdt is transparent</li>
+</ul>
+</li>
+<li>logical address -&gt; linear address -&gt; physical address<ul>
+<li>logical address -&gt; segment selector -&gt; gdt/ldt -&gt; linear address</li>
+<li>w/o paging, linear address = physical address</li>
+<li>w/ paging, linear address (virtual address) -&gt; page table -&gt; physical address</li>
+</ul>
+</li>
+<li>four modes<ul>
+<li>Real mode: linear address = physical address, 1MB</li>
+<li>Protect mode: the commonly used mode</li>
+<li>Virtual 8086 mode, provide a real mode on the protect mode (for compatibility)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Be familiar with x86/x86, arm/aarch64, and riscv assembly.</p>
+</li>
+<li>Learn ISA extension for security (PAC).</li>
 <li>Learn processor design and pipelines.</li>
 <li>Learn cache and cache coherence.</li>
 <li>Learn magnetic storage and solid-state drive (SSD).</li>
-<li>Learn PCI and USB.</li>
+<li>Learn PCI/USB/Wi-Fi/BE/BLE/BaseBand controllers.</li>
+<li>Learn hardware for virtualization (VT-x/VT-d/EPT/SMMU/IOMMU).</li>
+<li>Learn hardware for security (SGX/TrustZone/TDX/SEV/Realm/HSM/TPM).</li>
 </ul>
-<h2 id="network">Network</h2>
 <h2 id="operating-system">Operating System</h2>
+<ul>
+<li>Learn process management.</li>
+<li>Learn memory management.</li>
+<li>Learn file and filesystems</li>
+<li>Learn access control.</li>
+<li>Learn hardening techniques.</li>
+</ul>
+<h2 id="virtualization">Virtualization</h2>
+<p>VMX = Virtual Machine Extension</p>
+<h3 id="intel-vt-x">Intel VT-x</h3>
+<ul>
+<li>Trap-and-emulation requires all sensitive instructions to be privilege instructions</li>
+<li>Challenges<ul>
+<li>Not all sensitive instructions are privilege instructions</li>
+<li>Cannot trigger an exception to be compatible with existing software</li>
+</ul>
+</li>
+<li>Add one more mode<ul>
+<li>VMX Root Operation: when the VMM is running, compatible to existing software</li>
+<li>VMX Non-Root Operation: when the guest is running<ul>
+<li>All sensitive instructions are re-designed</li>
+</ul>
+</li>
+<li>VMM Operations are orthogonal to Ring 0 and 3</li>
+</ul>
+</li>
+<li>
+<p>Specifically</p>
+<ul>
+<li>
+<p>vmxon -&gt; VMX Root Operation -&gt; vmlaunch/vmresume -&gt; VM-Entry -&gt; VMX
+Non-Root Operation -&gt; Some sensitive instructions/MMIO/EPT Violation -&gt;
+VM-Exit -&gt; VMX Root Operation -&gt; vmxoff</p>
+</li>
+<li>
+<p>VM-Exit</p>
+<ul>
+<li>sysenter won't introduce a VM-Exit, even it is a sensitive instruction</li>
+<li>cpuid must introduce a VM-Exit</li>
+<li>The behaviors of some sensitive instructions are controlled by VMCS</li>
+</ul>
+</li>
+<li>
+<p>VMCS (Virtual-Machine Control Structure)</p>
+<ul>
+<li>VMCS is stored in memory, different from the guest memory</li>
+<li>VMCS and a physical CPU are 1-1 mapping<ul>
+<li>vmptrld addr_of_vmcs/vmcleaer</li>
+<li>VMCS migration may be not implemented</li>
+</ul>
+</li>
+<li>
+<p>VMCS includes</p>
+<ul>
+<li>Guest-state area - registers<ul>
+<li>VM-Exit -&gt; save, VM-Entry -&gt; restore</li>
+<li>Including LDTR</li>
+</ul>
+</li>
+<li>Host-state area<ul>
+<li>VM-Exit -&gt; restore</li>
+<li>Not including LDTR, CS:RIP is where the VM-Exit is handled</li>
+</ul>
+</li>
+<li>VM-Entry control field<ul>
+<li>VMM can inject event (exception/external interrupts/NMI)
+into the guest vCPU, say when a DMA operation is completed.</li>
+</ul>
+</li>
+<li>VM-Execution control field<ul>
+<li>External-interrupt/Exception bitmap -&gt; VM-Exit?</li>
+<li>HLT/INVLPG/WBINVD/RDPMC/RDTSC/... -&gt; VM-Exit?</li>
+<li>Unconditional I/O exiting/Use I/O bigmaps/Use MSR bitmaps -&gt; VM-Exit?</li>
+</ul>
+</li>
+<li>VM-Exit control field (seems not interesting)</li>
+<li>VM-Exit information field<ul>
+<li>Exit reason</li>
+<li>Exit qualification</li>
+<li>VM-Exit interrupt information/interrupt error code for
+external interrupts/exceptions, and NMI</li>
+<li>Guest linear address/instruction length/instruction
+information for the sensitive instruction that triggers the VM-Exit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>vmread/vmwrite to configure VMCS</p>
+<ul>
+<li>VT-x requires that the paging must be enabled in Non-Root operation</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ept">EPT</h3>
+<ul>
+<li>GVA -&gt; GPA -&gt; HPA</li>
+<li>Challenges<ul>
+<li>Shadow page table is very complicated and expensive</li>
+</ul>
+</li>
+<li>Add one more hardware: EPT</li>
+<li>Specifically, given a GVA, 5 queries in total<ul>
+<li>Guest CR3 (GPA) -&gt; EPT TLB -&gt; EPT page table (EPT MMU) -&gt; HPA or EPT Violation (1)</li>
+<li>GVA + L4 GHA -&gt; L3 GPA or page fault (no VM-Exit) -&gt; HPA or EPT Violation (2)</li>
+<li>GVA + L3 GHA -&gt; L2 GPA or page fault (no VM-Exit) -&gt; HPA or EPT Violation (3)</li>
+<li>GVA + L2 GHA -&gt; L1 GPA or page fault (no VM-Exit) -&gt; HPA or EPT Violation (4)</li>
+<li>GVA + L1 GHA -&gt; GPA or page fault (no VM-Exit) -&gt; HPA or EPT Violation (5)</li>
+</ul>
+</li>
+<li>Specifically<ul>
+<li>EPT is configured (enabling and address) in VMCS's VM-Execution control field</li>
+</ul>
+</li>
+<li>EPT Violation happens when<ul>
+<li>GPA's address is large</li>
+<li>Guest is reading a not readable page</li>
+<li>Guest is writing a not writable page</li>
+<li>Guest is executing a not executable page</li>
+</ul>
+</li>
+</ul>
+<h3 id="nested-virtualization">Nested Virtualization</h3>
+<p><a href="https://www.linux-kvm.org/images/3/33/02x03-NestedVirtualization.pdf">Slide 1</a>
+<a href="https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Ben-Yehuda.pdf">Paper 1</a></p>
+<h2 id="computer-networking">Computer Networking</h2>
+<ul>
+<li>Learn TCP/UDP programming.</li>
+</ul>
 <h2 id="database">Database</h2>
+<ul>
+<li>Learn SQL</li>
+</ul>
 <h2 id="compiler">Compiler</h2>
-<h2 id="information-security">Information Security</h2>
+<ul>
+<li>LLVM IR and passes</li>
+</ul>
+<h2 id="software-security">Software Security</h2>
 <h2 id="distributed-systems">Distributed Systems</h2>
 <h2 id="probability">Probability</h2>
 <h2 id="graph-theory">Graph Theory</h2>
@@ -468,7 +790,7 @@ programming language, e.g., Rust.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 22, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 17, 2024</span>
   </span>
 
     
