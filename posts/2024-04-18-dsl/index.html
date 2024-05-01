@@ -8,23 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/">
-      
-      
-        <link rel="prev" href="..">
+        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2024-04-18-dsl/">
       
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
-        <title>Posts - Qiang Liu's Homepage</title>
+        <title>Python Garbage Collector - Qiang Liu's Homepage</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
       
       
 
@@ -43,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -61,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#python-garbage-collector" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -73,7 +76,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Qiang Liu&#39;s Homepage" class="md-header__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
+    <a href="../.." title="Qiang Liu&#39;s Homepage" class="md-header__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -93,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Posts
+              Python Garbage Collector
             
           </span>
         </div>
@@ -168,7 +171,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Qiang Liu&#39;s Homepage" class="md-nav__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
+    <a href="../.." title="Qiang Liu&#39;s Homepage" class="md-nav__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -186,7 +189,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -203,17 +206,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -222,7 +218,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -244,6 +239,25 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -258,60 +272,13 @@
                   
 
 
-  <h1>Posts</h1>
-
-<p>Please raise <a href="https://github.com/cyruscyliu/cyruscyliu.github.io/issues">issues</a>
-if any questions or comments.</p>
-<p>Pinned</p>
+<h1 id="python-garbage-collector">Python Garbage Collector</h1>
 <ul>
-<li><a href="2021-09-03-knowledge-for-research/">Knowledge for System Security Research</a></li>
-<li><a href="2021-09-03-Summary-Research-SE/">Coding for System Security Research</a></li>
-<li><a href="2021-09-07-Research-Philosophy/">How to Do System Security Research</a></li>
-<li><a href="2021-08-27-Principle-of-Presentation/">Principles of Research Presentation</a></li>
-<li><a href="2022-08-30-technology-transfer/">Technology Transfer and Practices Under Control</a></li>
-<li><a href="2023-08-15-dont-waste-time/">Pitfalls/Tweaks/Tricks in R&amp;D</a></li>
-<li><a href="2023-10-11-literature-review/">Daily Reading and Literature Review/Related Work</a></li>
+<li>Terms: memory pool, reference counting, mark and sweep, generations</li>
+<li>Tricks to save memory: use local variables, use generators, don't introduce
+cyclic reference, call gc.collect() to do mark and sweep</li>
 </ul>
-<p>Reading</p>
-<ul>
-<li><a href="posts/2024-04-18-python-gc.md">2024-04-18 Python Garbage Collector</a></li>
-<li><a href="2024-04-17-dsl/">2024-04-17 Introduction to Domain Specific Language</a></li>
-<li><a href="2024-02-26-ndss24/">2024-02-26 Notes for NDSS'24</a></li>
-<li><a href="2022-06-22-wsl-vm-native-machine/">2022-06-22 Windows, Windows Subsystem Linux (WSL), VirtualBox Ubuntu, Native Ubuntu</a></li>
-<li><a href="2022-05-17-vm-docker-pythonenv/">2022-05-17 A layered experiment environment</a></li>
-<li><a href="2021-11-02-libFuzzer-cov-control/">2021-11-03 Coverage Control in libFuzzer</a></li>
-<li><a href="2021-10-27-introduction-to-bhyve/">2021-10-27 Introduction to Bhyve</a></li>
-<li><a href="2021-08-18-Display-in-QEMU/">2021-08-18 Display in QEMU</a></li>
-<li><a href="2020-11-30-wllvm-clang-qemu-x86_64/">2020-11-30 Clang, wllvm, passes, QEMU/Linux kernel for x86_64</a></li>
-<li><a href="2020-11-18-buildroot-qemu-x86_64/">2020-11-18 Buildroot, QEMU and Linux kernel for x86_64</a></li>
-</ul>
-<p>Talks</p>
-<ul>
-<li><a href="2023-10-07-phd-thesis/">2023-10-07 PhD Thesis</a> and <a href="PhD-Defense.pdf">Slides</a></li>
-<li><a href="Talk-SSLab-20230726.public.pdf">2023-07-26 Slides for ViDeZZo at SSLab (1 hour)</a></li>
-<li><a href="2023-05-26-hexhive-videzzo-sp.pdf">2023-05-26 Slides for ViDeZZo at Oakland (15 minutes)</a></li>
-<li><a href="2021-12-13-Summary-of-CS725/">2021-12-13 A brief summary of CS-725</a></li>
-<li><a href="2021-11-15-ase-firmguide/">2021-11-18 ASE'21 - FirmGuide</a></li>
-<li><a href="2021-10-22-fuzzing-presentation/">2021-10-24 CS-725 Presentation - Fuzz Testing</a></li>
-</ul>
-<p>Random notes</p>
-<ul>
-<li><a href="2023-09-08-crisis-before-getting-a-phd/">2023-09-08 Crisis before getting a Ph.D.</a></li>
-<li><a href="2019-11-23-CCS-London-Summary/">2019-11-23 Summary of CCS'19 (London)</a></li>
-<li><a href="2018-04-07-%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%84100%E5%A4%A9-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E5%A4%A9/">2018-04-07 在杭州的100天-第二十七天</a></li>
-<li><a href="2018-03-28-%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%84100%E5%A4%A9-%E7%AC%AC%E5%8D%81%E5%A4%A9/">2018-03-28 在杭州的100天-第十天</a></li>
-<li><a href="2018-03-11-%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%84100%E5%A4%A9-%E7%AC%AC%E4%B9%9D%E5%A4%A9/">2018-03-11 在杭州的100天-第九天</a></li>
-<li><a href="2018-03-10-%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%84100%E5%A4%A9-%E7%AC%AC%E4%B8%89%E5%A4%A9/">2018-03-08 在杭州的100天-第三天</a></li>
-<li><a href="2018-03-08-%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%84100%E5%A4%A9-%E7%AC%AC%E4%BA%8C%E5%A4%A9/">2018-03-08 在杭州的100天-第二天</a></li>
-<li><a href="2018-03-08-%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%84100%E5%A4%A9-%E7%AC%AC%E4%B8%80%E5%A4%A9/">2018-03-08 在杭州的100天-第一天</a></li>
-<li><a href="2018-02-07-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E5%B0%BE%E5%A3%B0/">2018-02-07 ANU暑期学校-尾声</a></li>
-<li><a href="2018-02-07-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E7%94%9F%E6%B4%BB%E5%92%8C%E5%B7%A5%E4%BD%9C/">2018-02-07 ANU暑期学校-生活和工作</a></li>
-<li><a href="2018-02-01-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E6%88%91%E7%9A%84%E7%9F%9B%E7%9B%BE/">2018-02-01 ANU暑期学校-我的矛盾</a></li>
-<li><a href="2018-01-21-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E6%83%8A%E5%A5%87/">2018-01-21 ANU暑期学校-惊奇</a></li>
-<li><a href="2018-01-19-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E6%88%91%E7%9A%84%E7%9F%9B%E7%9B%BE%EF%BC%88%E6%8F%90%E7%BA%B2%EF%BC%89/">2018-01-19 ANU暑期学校-我的矛盾（提纲）</a></li>
-<li><a href="2018-01-24-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E7%BB%BD%E6%94%BE/">2018-01-24 ANU暑期学校-绽放</a></li>
-<li><a href="2018-01-23-ANU%E6%9A%91%E6%9C%9F%E5%AD%A6%E6%A0%A1-%E6%97%A0%E9%A2%98/">2018-01-23 ANU暑期学校-无题</a></li>
-</ul>
+<h2 id="reference">Reference</h2>
 
 
 
@@ -332,7 +299,7 @@ if any questions or comments.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 17, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 1, 2024</span>
   </span>
 
     
@@ -379,10 +346,10 @@ if any questions or comments.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
     
   </body>

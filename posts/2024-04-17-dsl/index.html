@@ -18,7 +18,7 @@
     
     
       
-        <title>2024 04 17 dsl - Qiang Liu's Homepage</title>
+        <title>Introduction to Domain-Specific Language - Qiang Liu's Homepage</title>
       
     
     
@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduction-to-domain-specific-language" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -91,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2024 04 17 dsl
+              Introduction to Domain-Specific Language
             
           </span>
         </div>
@@ -234,6 +239,34 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#domain-specific-modeling-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain-specific modeling languages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specification-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specification Language
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -248,9 +281,78 @@
                   
 
 
-  <h1>2024 04 17 dsl</h1>
-
-
+<h1 id="introduction-to-domain-specific-language">Introduction to Domain-Specific Language</h1>
+<ul>
+<li>Term: Domain-specific lauguage v.s. General-purpose language</li>
+<li>Examples: widely used for common domains: HTML for web pages, used by
+one or a few pieces of software, such as MUSH for multiplayer online games</li>
+<li>Classification: domain-specific markup languages (Latex/XML/HTML/Markdown),
+domain-specific modeling languages (specification languages) (flowchart/UML),
+domain specific programming languages</li>
+<li>Term: Language-oriented programming and language workbench</li>
+</ul>
+<h2 id="domain-specific-modeling-languages">Domain-specific modeling languages</h2>
+<ul>
+<li>Keywords: rules to express data, information or knowledge or systems</li>
+<li>Classification: graphical or textual</li>
+<li>Classification: executable (model interpreter or code generator) or non-executable</li>
+</ul>
+<p>List of graphical types (from wikipedia)</p>
+<ul>
+<li>Behavior Trees: to express what the stakeholder needs</li>
+<li>Business Process Modeling Notation (BPMN, and the XML form BPML): to express what the business process will look like</li>
+<li>C-K theory: to express innovative design</li>
+<li>DRAKON: to express an algorithm or a stepwise process, and a family of programming languages</li>
+<li>EXPRESS and EXPRESS-G: to express data objects and relationships among data objects</li>
+<li>Extended Enterprise Modeling Language (EEML): to express the business process across a number of layers</li>
+<li>Flowchart: to express an algorithm or a stepwise process</li>
+<li>Fundamental Modeling Concepts (FMC): modeling language for software-intensive systems.</li>
+<li>IDEF is a family of modeling languages, which include IDEF0 for functional
+modeling, IDEF1X for information modeling, IDEF3 for business process modeling,
+IDEF4 for Object-Oriented Design and IDEF5 for modeling ontologies.</li>
+<li>Jackson Structured Programming (JSP): to express structured programming</li>
+<li>LePUS3: to model large object-oriented (Java, C++, C#) programs and design patterns</li>
+<li>Lifecycle Modeling Language: to express the full system lifecycle</li>
+<li>Object-Role Modeling (ORM): to express concepts</li>
+<li>Petri nets: to formally express the logical interactions among parts or of the
+flow of activities in complex systems</li>
+<li>Southbeach Notation is a visual modeling language used to describe situations
+in terms of agents that are considered useful or harmful from the modeler's
+perspective. The notation shows how the agents interact with each other and
+whether this interaction improves or worsens the situation. (?)</li>
+<li>Specification and Description Language (SDL) is a specification language
+targeted at the unambiguous specification and description of the behavior of
+reactive and distributed systems.</li>
+<li>SysML is a Domain-Specific Modeling language for systems engineering that is
+defined as a UML profile (customization).</li>
+<li>Unified Modeling Language (UML) is a general-purpose modeling language that is
+an industry standard for specifying software-intensive systems.</li>
+<li>Service-oriented modeling framework (SOMF) is a holistic language for
+designing enterprise and application level architecture models in the space of
+enterprise architecture, virtualization, service-oriented architecture (SOA),
+cloud computing, and more.</li>
+<li>Architecture description language (ADL): to express the system architecture of a system</li>
+<li>Architecture Analysis &amp; Design Language (AADL): to express the system architecture of a system</li>
+<li>EAST-ADL is a Domain-Specific Modeling language dedicated to automotive system design.</li>
+<li>Energy Systems Language (ESL), a language that aims to model ecological energetics &amp; global economics.</li>
+<li>IEC 61499 defines Domain-Specific Modeling language dedicated to distribute industrial process measurement and control systems.</li>
+</ul>
+<p>List of textual types (from wikipedia)</p>
+<ul>
+<li>Gellish: to express facts or make statements, queries and answers</li>
+</ul>
+<h2 id="specification-language">Specification Language</h2>
+<ul>
+<li>An important use of specification languages is enabling the creation of proofs
+of program correctness. Not interested in this.</li>
+</ul>
+<p>My gole is to find a proper domain-specific language to describe the behavior of
+devices (or peripherals). Well, one interesting thing is the lifecycle modeling
+language (specified <a href="https://www.lifecyclemodeling.org/specification">here</a>). It
+defines "Entity", "Relationship", "Attribute", and "Attribute on Relationship".
+They have equivalent English language elements: noun, verb, adjective and
+adverb. This is good but too general. In the end, I choose to use the finite
+state machine.</p>
 
 
 
@@ -271,7 +373,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 17, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 1, 2024</span>
   </span>
 
     
