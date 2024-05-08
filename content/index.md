@@ -33,9 +33,11 @@ Linux Kernels through Model-Guided Kernel Execution" got accepted at
 
 0x03 Hypervisor (Virtual Devices) Fuzzing
 
-This project tries to discover vulnerabilities in virtual devices and fix them
-as early as possible. This has very much benefit for cloud providers and users.
-Relative research paper is [ViDeZZo (1st author)](./papers/videzzo-sp23.pdf).
+This project tries to discover vulnerabilities in both open-source and
+closed-source virtual devices and fix them as early as possible. This has very
+much benefit for cloud providers and users.  Relative research paper is [ViDeZZo
+(1st author)](./papers/videzzo-sp23.pdf) and [HyperPill (2nd
+author)](./papers/hyperpill-sec24.pdf).
 
 We open source the following projects.
 
