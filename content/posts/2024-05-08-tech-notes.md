@@ -42,3 +42,13 @@ Syzkaller](https://www.cyberark.com/resources/threat-research-blog/your-nvme-had
     to longjmp function.
 
 + [SoK: On the Analysis of Web Browser Security](https://arxiv.org/pdf/2112.15561)
+
++ Some staff related to KVM: Linux Kernel's KVM for x86_64 includes kvm.o,
+kvm_intel.o, and kvm_amd.o.
+
++ Ways to pass data from Linux Kernel to user space: procfs (maps kernel
+variable to usespace, mostly readonly), sysctl (/proc/sys, readable/writeable),
+sysfs (/sys, driver-specific), netlink (socket, net-tools->procfs deprecated,
+iproute2->netlink, sota), uio (map physical address and interrupts), ioctl,
+[mmap](https://stackoverflow.com/questions/10760479/how-to-mmap-a-linux-kernel-buffer-to-user-space),
+debugfs (very easy to use and very recommanded).

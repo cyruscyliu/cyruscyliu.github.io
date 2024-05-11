@@ -18,9 +18,8 @@ operating systems, browsers, and protocols. We have published a few papers at
 the top-tier security conferences like IEEE S&P, Usenix Security, and CCS. To
 engage the community, we always open-source our tools and evaluation scripts.
 
-Besides research, I'm also interested in badminton, biking and road trips.
-
-Feel free to contact me via this long term email address:
+Besides research, I'm also interested in badminton, hiking, biking and road
+trips. Feel free to contact me via this long term email address:
 <cyruscyliu@gmail.com>.
 
 [CV](./Qiang_s_CV.pdf)
