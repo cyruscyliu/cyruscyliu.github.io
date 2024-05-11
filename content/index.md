@@ -1,42 +1,45 @@
-## Introduction
+Hi, I am Qiang Liu, currently a Post.Doc. at EPFL, collaborating with the
+talented people at [HexHive](https://hexhive.epfl.ch/) under the guidance by
+[Prof. Mathias Payer](https://nebelwelt.net/). I obtained my Ph.D. in
+cybersecurity at Zhejiang University (ZJU) in 2023, advised by [Prof. Yajin
+Zhou](https://yajin.org/). Prior to ZJU, I earned my bachelor at Beijing
+Institute of Technology (BIT).
 
-Hi, my name is Qiang Liu, currently a Post.Doc. at EPFL. I obtained my Ph.D. at
-Zhejiang University (ZJU) in 2023. Before going to ZJU, I obtained my bachelor
-at Beijing Institute of Technology (BIT). My research focuses on system and
-software security. I have broad interests in attacks and defenses cover
-different areas, namely virtualization and operating systems. Besides research,
-I'm also interested in badminton, biking and road trips. Feel free to contact me
-via this long term email address: cyruscyliu@gmail.com.
+I'm always thinking outside the box when it comes to cybersecurity's
+cat-and-mouse game. It started with CTP competitions, where I learned to break
+systems and work with teams. Over the years, collaborating with experts, I've
+developed new approaches to protect systems from attacks. Along the way, I've
+also gotten better at managing multiple projects smoothly and keeping the team
+engaged.
+
+Specifically, my research focuses on system and software security. I have broad
+interests in attacks and defenses cover different areas, namely virtualization,
+operating systems, browsers, and protocols. We have published a few papers at
+the top-tier security conferences like IEEE S&P, Usenix Security, and CCS. To
+engage the community, we always open-source our tools and evaluation scripts.
+
+Besides research, I'm also interested in badminton, biking and road trips.
+
+Feel free to contact me via this long term email address:
+<cyruscyliu@gmail.com>.
 
 [CV](./Qiang_s_CV.pdf)
 [Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
 [GitHub](https://github.com/cyruscyliu)
 [Twitter](https://www.twitter.com/qiangliu717)
+[LinkedIn](https://www.linkedin.com/in/qiang-liu-7a3b50270/)
 
-## News
+## Projects and Publications
 
-[Our paper "ViDeZZo: Dependency-aware Virtual Device Fuzzing" got accepted at
-IEEESP 2023!](https://twitter.com/gannimo/status/1644323216020701186)
+We're open to discussing and collaborating on any of the following active
+projects. Feel free to reach out.
 
-Glad to join the Program Committee within the ASE'22 Artifact Evaluation track!
-
-[Our Paper "ECMO: Peripheral Transplantation to Rehost Embedded Linux Kernels"
-got accepted at
-CCS'21!](https://twitter.com/qiangliu717/status/1440590703067758592)
-
-[Our Paper "FirmGuide: Boosting the Capability of Rehosting Embedded
-Linux Kernels through Model-Guided Kernel Execution" got accepted at
-@ASE_conf 2021! #ASE2021 @zhclhy @JMuhui
-@yajinzhou.](https://twitter.com/qiangliu717/status/1413674256152637441?s=20)
-
-## Projects
-
-0x03 Hypervisor (Virtual Devices) Fuzzing
+### Hypervisor Fuzzing
 
 This project tries to discover vulnerabilities in both open-source and
-closed-source virtual devices and fix them as early as possible. This has very
-much benefit for cloud providers and users.  Relative research paper is [ViDeZZo
-(1st author)](./papers/videzzo-sp23.pdf) and [HyperPill (2nd
+closed-source hypervisors, covering virtual devices, VM management, and CPU
+emulation, and to fix them as early as possible. Relative research papers are
+[ViDeZZo (1st author)](./papers/videzzo-sp23.pdf) and [HyperPill (2nd
 author)](./papers/hyperpill-sec24.pdf).
 
 We open source the following projects.
@@ -52,12 +55,19 @@ QEMU/VirtualBox virtual devices. (Author and Maintainer)
 provides a template for your own userspace programs and kernel modules into a
 Buildroot kernel. I've been using this a lot to reproduce QEMU bugs. (Author and Maintainer)
 
-0x02 Embedded System Rehosting
+### Network Protocol Fuzzing
 
-This project tries to rehost embedded Linux kernels for routers, cameras, and
-other high-end devices. Then, we can dynamically analyze bugs or
-vulnerabilities, detect bugs or vulnerabilities, make honey pots, detect and
-inspect malware. Relative research papers are [FirmGuide (ASE'21,
+This project tries to fuzz network protocols, especially router protocols. I
+joined this project as an intern and wrote several Peach Pits by 1) learning the
+grammar of Peach Pit, 2) understanding specific network protocols via their
+specifications, 3) collaborating with others to deploy our Peach Pits.
+
+### Embedded System Rehosting (Archived)
+
+This project rehosts embedded Linux kernels for routers, cameras, and other
+high-end devices with QEMU. Then, we can dynamically analyze rootkits or
+vulnerabilities in the embedded Linux kernels and create honeypots at scale.
+Relative research papers are [FirmGuide (ASE'21,
 co-first-authors)](./papers/firmguide-ase21.pdf), and [ECMO (CCS'21, 4th
 author)](./papers/ecmo-ccs21.pdf).
 
@@ -91,23 +101,17 @@ successfully re-host the Linux kernel inside the image to get the shell.  Due to
 the variety of peripherals in embedded firmware images. It is rather hard to
 build a general emulator that supports all kinds of machines. The basic idea of
 ECMO is to transplant the peripherals by support ones into the target Linux
-kernel, hence solve the problem of peripheral variety. (Maintainer)
+kernel, hence solve the problem of peripheral variety.
 
-0x01 Android Authentication (Archived)
 
-This project tries to evaluate existing and propose new implicit continuous
-authentication approaches. The implicit continuous authentication can be a
-second authentication factor for fingerprint and face identification. I joined
-this project as an intern and then proposed this project to be my final project
-for my Bachelor's degree. Relative research papers are [RiskCog
-(TMC'20)](./papers/riskcog-tmc20.pdf), [ESPIALCOG (TMC'20)(5th
-author)](./papers/espialcog-tmc20.pdf), [One Cycle Attack (TIFS'20) (3rd
-author)](./papers/one-cycle-attack-tifs20.pdf), and [TRAPCOG (TMC'23) (3rd
-author)](./papers/trapcog-tmc23.pdf).
+### Android Authentication (Archived)
 
-0x00 Network Protocol Fuzzing (Archived)
+This project evaluates existing and proposes new implicit continuous
+authentication approaches to serve as a second authentication factor longside
+fingerprint and facial identification. I joined this project as an intern and
+then proposed this project to be my final project for my Bachelor's degree.
+Relative research papers are [RiskCog (TMC'20)](./papers/riskcog-tmc20.pdf),
+[ESPIALCOG (TMC'20)(5th author)](./papers/espialcog-tmc20.pdf), [One Cycle
+Attack (TIFS'20) (3rd author)](./papers/one-cycle-attack-tifs20.pdf), and
+[TRAPCOG (TMC'23) (3rd author)](./papers/trapcog-tmc23.pdf).
 
-This project tries to fuzz network protocols, especially router protocols. I
-joined this project as an intern and wrote several Peach Pits by 1) learning the
-grammar of Peach Pit, 2) understanding specific network protocols via their
-specifications, 3) collaborating with others to deploy our Peach Pits.
