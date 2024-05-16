@@ -1,26 +1,27 @@
-Hi, I am Qiang Liu, currently a postdoc at EPFL, collaborating with the talented
-people at [HexHive](https://hexhive.epfl.ch/) under the guidance of [Prof.
+I'm always thinking outside the box when it comes to cybersecurity's
+cat-and-mouse game. It started with CTF competitions, where I learned to break
+systems and work with teams. Over the years, collaborating with my colleagues,
+we've developed new approaches to protect systems from attacks.
+
+Hi, I am Qiang Liu, currently a postdoc at EPFL under the guidance of [Prof.
 Mathias Payer](https://nebelwelt.net/). I obtained my Ph.D. in cybersecurity at
 Zhejiang University (ZJU) in 2023, advised by [Prof. Yajin
 Zhou](https://yajin.org/). Prior to ZJU, I earned my bachelor's degree at
-Beijing Institute of Technology (BIT).
+Beijing Institute of Technology (BIT) in 2018.
 
-I'm always thinking outside the box when it comes to cybersecurity's
-cat-and-mouse game. It started with CTF competitions, where I learned to break
-systems and work with teams. Over the years, collaborating with experts, I've
-developed new approaches to protect systems from attacks. Along the way, I've
-also gotten better at managing multiple projects smoothly and keeping the team
-engaged.
+My research focuses on system and software security. The ultimate goal is to
+make the entire system (from hardware to applications) bug/exploitation-free
+through innovative designs in both hardware and software. Currently, I have
+broad interests in attacks and defenses covering different aspects, namely
+hypervisors, operating systems, browsers, and protocols. We have published a few
+papers at top-tier security conferences like IEEE S&P, Usenix Security, and CCS.
+To engage the community, we always open-source our tools and evaluation scripts.
 
-Specifically, my research focuses on system and software security. I have broad
-interests in attacks and defenses covering different areas, namely
-virtualization, operating systems, browsers, and protocols. We have published a
-few papers at top-tier security conferences like IEEE S&P, Usenix Security, and
-CCS. To engage the community, we always open-source our tools and evaluation
-scripts.
+Along the way of research, I've also gotten better at managing multiple projects
+smoothly, communicating with people well, and making the team deliver results.
 
-Besides research, I'm also interested in badminton, hiking, biking, and road
-trips. Feel free to contact me via this long-term email address:
+We're open to discussing and collaborating on any of the following active
+projects. Feel free to reach out via this long-term email address:
 <cyruscyliu@gmail.com>.
 
 [CV](./Qiang_s_CV.pdf)
@@ -30,9 +31,6 @@ trips. Feel free to contact me via this long-term email address:
 [LinkedIn](https://www.linkedin.com/in/qiang-liu-7a3b50270/)
 
 ## Projects and Publications
-
-We're open to discussing and collaborating on any of the following active
-projects. Feel free to reach out.
 
 ### Hypervisor Fuzzing
 
