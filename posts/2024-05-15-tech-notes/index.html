@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2024-05-01-sp24/">
+        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2024-05-15-tech-notes/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Notes for SP'24 - Qiang Liu's Homepage</title>
+        <title>Tech notes on 20240513 - Qiang Liu's Homepage</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#notes-for-sp24" class="md-skip">
+        <a href="#tech-notes-on-20240513" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Notes for SP'24
+              Tech notes on 20240513
             
           </span>
         </div>
@@ -300,51 +300,25 @@
                   
 
 
-<h1 id="notes-for-sp24">Notes for SP'24</h1>
-<p>Interesting topics</p>
+<h1 id="tech-notes-on-20240513">Tech notes on 20240513</h1>
 <ul>
-<li>Track 1 - Session 6: Fuzzing</li>
-<li>Track 1 - Session 11: Software Analysis</li>
-<li>Track 2 - Session 12: Systems Security</li>
+<li>How does script interpreter work?<ul>
+<li>The finalizer of an object is invoked as soon as the refcount of the
+object becomes 0. There are at most thousands of ways to trigger finalizers.</li>
+<li>Weak reference prevents objected from not being collected.</li>
+<li>As soon as an exception is raised, the control flow goes to the main loop
+via setjmp/longjmp without unwinding (causing memory leaks =&gt; refcount-based
+GC won't work =&gt; it needs mark-and-sweep-based GC) or explicity error
+propagation (refcount-based GC is working =&gt; no memory leaks).</li>
+<li>Exceptions are handled before executing each bytecode (after stack unwinding).</li>
+<li>try: finally: can have double returns.</li>
+<li>Generators have a lot of exception handling issues because generators handle
+heap-based stacks as well.</li>
+<li>Type is defined by its behavior that is defined by magic methods (duck typing).</li>
+<li>No security policy is enforced when using magic methods.</li>
+<li></li>
 </ul>
-<p>Somewhat interesting topics (Web/Network, Architecture, Mobile, IoT/Sensors, Antomotive)</p>
-<ul>
-<li>Track 1 - Session 2: Web Security</li>
-<li>Track 2 - Session 2: Security in the Real World</li>
-<li>Track 1 - Session 4: Software Supply Chain</li>
-<li>Track 3 - Session 4: Passwords and Authentication</li>
-<li>Track 1 - Session 7: IoT Security</li>
-<li>Track 1 - Session 10: Provenance and Enterprise Security</li>
-<li>Track 2 - Session 10: Hardware Sidechannels</li>
-<li>Track 2 - Session 11: TEE and Hardware Security</li>
-<li>Track 1 - Session 12: Network Security</li>
-<li>Track 1 - Session 8: Wireless Security and Privacy</li>
-</ul>
-<p>Uninteresting topics (Cyrptography, Machine Learning/LLM, Blockchain, Human Factors, Usable Security, Privacy)</p>
-<ul>
-<li>Track 1 - Session 1: Scams and Phishing</li>
-<li>Track 2 - Session 1: Deep Fakes</li>
-<li>Track 3 - Session 1: Privacy for Datasets</li>
-<li>Trace 3 - Session 2: Crypto with Others</li>
-<li>Track 1 - Session 3: Humans</li>
-<li>Track 2 - Session 3: LLMs and Security</li>
-<li>Track 3 - Session 3: Differential Privacy</li>
-<li>Track 2 - Session 4: ML Attacks</li>
-<li>Track 1 - Session 5: Being Secure Online</li>
-<li>Track 2 - Session 5: ML Security for Audio and Video</li>
-<li>Track 3 - Session 5: Zero Knowledge</li>
-<li>Track 2 - Session 6: ML Backdoors</li>
-<li>Track 3 - Session 6: Blockchain I</li>
-<li>Track 2 - Session 7: ML Defenses I</li>
-<li>Track 3 - Session 7: Crypto for Messaging and Storage</li>
-<li>Track 2 - Session 8: ML Defenses II</li>
-<li>Track 3 - Session 8: Crypto</li>
-<li>Track 1 - Session 9: Applications of Privacy</li>
-<li>Track 2 - Session 9: Miscellaneous ML</li>
-<li>Track 3 - Session 9: Security for Democracy</li>
-<li>Track 3 - Session 10: Blockchain II</li>
-<li>Track 3 - Session 11: ORAM and PIR</li>
-<li>Track 3 - Session 12: Privacy and ML</li>
+</li>
 </ul>
 
 
