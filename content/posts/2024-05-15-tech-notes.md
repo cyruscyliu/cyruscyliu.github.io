@@ -59,3 +59,42 @@ of which may require hard-to-satisfy arguments such as other DOM objects.
     to effectively generate highly-structured inputs. Additionally, its flawed
     implementation makes it challenging to bypass syntactic checks. Favocado can
     only explore a limited set of browser backend logic.
+
++ Cooper (NDSS'22):
+    + In this paper, we propose cooperative mutation, which modifies both the
+    script code and the program native input to trigger bugs in binding code. We
+    develop three novel techniques to enable practical cooperative mutation on
+    popular scripting languages: we first cluster objects into semantics similar
+    classes to reduce the mutation space of native inputs; then, we
+    statistically infer the relationship between script code and object classes
+    based on a large number of executions; at last, we use the inferred
+    relationship to select proper objects and related script code for targeted
+    mutation.  We applied our tool, COOPER, on three popular systems that
+    integrate scripting languages, including Adobe Acrobat, Foxit Reader and
+    Microsoft Word. COOPER successfully found 134 previously unknown bugs.
+
++ TypeOracle (ICSE'23):
+    + Full name: Operand-Variation-Oriented Differential Analysis for Fuzzing
+    Binding Calls in PDF Readers
+    + The parameter types of a binding call are inferred by executing the
+    binding call with different values of different types and investigating
+    which types cause an expected effect on the instruction operands. The
+    inferred type information is used to guide the test generation in fuzzing.
+
++ Gramatron (ISSTA'21)
+    + A fuzzer must generate syntactically valid inputs to fuzz beyond the
+    application parser. Previous fuzzers employ parse trees with CFG for input
+    generation and mutation. Existing grammar-aware fuzzers are ineffective at
+    synthesizing complex bug triggers due to biased sampling and localized
+    small-scale mutations.  Gramatron performs an automatic two-step
+    transformation on the CFG to create a grammar automaton. First, it
+    transforms the CFG into its GNF which performs the grammar restructuring.
+    Second, it converts the GNF of the grammar into an automaton. Gramatron can
+    encode any input that abides by the grammar as an automaton walk. Grammar
+    automatons restructure the grammar enabling the fuzzer to perform unbiased
+    sampling from the input state space.  This enable the fuzzer to generate
+    inputs with higher diversity more frequently. We also redesign the mutation
+    operators to operate on grammar automatons and perform aggressive changes
+    efficiently to discover bugs with complex triggers.
+
++ C# is also a memory safe language.

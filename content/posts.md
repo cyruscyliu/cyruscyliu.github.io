@@ -14,8 +14,8 @@ Pinned
 Reading
 
 + [2024-05-22 Quick notes for SP'24](posts/2024-05-01-sp24.md)
-+ [2024-05-15 Tech notes](posts/2024-05-15-tech-notes.md)
-+ [2024-05-08 Tech notes](posts/2024-05-08-tech-notes.md)
++ [2024-05-15 Tech notes: binding, grammar-aware fuzzing](posts/2024-05-15-tech-notes.md)
++ [2024-05-08 Tech notes: kernel, python, stack unwinding](posts/2024-05-08-tech-notes.md)
 + [2024-04-17 Introduction to Domain Specific Language](posts/2024-04-17-dsl.md)
 + [2024-02-26 Notes for NDSS'24](posts/2024-02-26-ndss24.md)
 + [2022-06-22 Windows, Windows Subsystem Linux (WSL), VirtualBox Ubuntu, Native Ubuntu](posts/2022-06-22-wsl-vm-native-machine.md)
