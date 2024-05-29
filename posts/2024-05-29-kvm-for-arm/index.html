@@ -1,0 +1,529 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2024-05-29-kvm-for-arm/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>2024 05 29 kvm for arm - Qiang Liu's Homepage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Code";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kvmarm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Qiang Liu&#39;s Homepage" class="md-header__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Qiang Liu's Homepage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2024 05 29 kvm for arm
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+    
+  
+  Posts
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Qiang Liu&#39;s Homepage" class="md-nav__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Qiang Liu's Homepage
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Posts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="kvmarm"><a href="https://dl.acm.org/doi/pdf/10.1145/2644865.2541946">KVM/ARM</a></h1>
+<ul>
+<li>Why KVM for ARM? Easy to have a hypervisor enabled for every SoC.</li>
+<li>Security monitor cannot support trap-and-emulate. Hypervisor mode was
+then introduced as a trap-and-emulate mechanism to support virtualization in
+the non-secure world<ul>
+<li>To run VMs, the hypervisor must at least partially reside in Hyp mode.</li>
+<li>From kernel mode: the hypervisor can configure the hardware to trap
+from kernel mode into hypervisor mode on various sensitive instructions and
+hardware interrupts.</li>
+<li>From user mode: can trap into kernel mode or hyp mode directly. The ARM
+architecture allows each trap to be configured to trap directly into a VM’s
+kernel mode instead of going through Hyp mode. For example, traps caused by
+system calls or page faults from user mode can be configured to trap to a
+VM’s kernel mode directly so that they are handled by the guest OS without
+intervention of the hypervisor.  This avoids going to Hyp mode on each
+system call or page fault, reducing virtualization overhead. Additionally,
+all traps into Hyp mode can be disabled and a single non-virtualized kernel
+can run in kernel mode and have complete control of the system.</li>
+<li>Has less control registers to use and share no page tables with host user
+space programs  (but share page tables with the host kernel)</li>
+</ul>
+</li>
+<li>Memory virtualization<ul>
+<li>Stage-2 page tables, which translate from Intermediate Physical
+Addresses (IPAs), also known as guest physical addresses, to physical
+addresses (PAs), also known as host physical addresses.  Stage-2
+translation can be completely disabled and enabled from Hyp mode.
+Stage-2 page tables use ARM’s new LPAE page table format, with subtle
+differences from the page tables used by kernel mode.</li>
+</ul>
+</li>
+<li>Comparison to x86<ul>
+<li>Hyp mode, which is a separate and strictly more privileged CPU mode
+than previous user and kernel modes. In contrast, Intel has root and
+non-root mode, which are orthogonal to the CPU protection modes. A
+crucial difference between the two hardware designs is that Intel’s root
+mode supports the same full range of user and kernel mode functionality
+as its non-root mode, whereas ARM’s Hyp mode is a strictly different CPU
+mode with its own set of features. A hypervisor using ARM’s Hyp mode
+has an arguably simpler set of features to use than the more complex
+options available with Intel’s root mode.</li>
+<li>No VMCS that is automatically saved and restored when switching to and
+from root mode. In contrast, any state that needs to be saved and
+restored must be done explicitly in software, which is flexible and
+potentially faster if no additional state to save.</li>
+<li>ARM and Intel are quite similar in their support for virtualizing
+physical memory.</li>
+</ul>
+</li>
+<li>
+<p>(split-mode virtualization) the lowvisor and the highvisor</p>
+<ul>
+<li>Lowvisor<ul>
+<li>(Setup) First, the lowvisor sets up the correct execution context by
+appropriate configuration of the hardware, and enforces protection
+and isolation between different execution contexts.</li>
+<li>(World Switch) Second, the lowvisor switches from a VM execution
+context to the host execution context and vice-versa. The host
+execution context is used to run the hypervisor and the host Linux
+kernel.</li>
+<li>(Limited trap handlers) Third, the lowvisor provides a
+virtualization trap handler, which handles interrupts and exceptions
+that must trap to the hypervisor.</li>
+</ul>
+</li>
+<li>Highvisor implements other functionalitys like handling Stage-2 page
+faults from the VM and performing instruction emulation</li>
+<li>(Double-traps) A trap to the highvisor while running the VM will first
+trap to the lowvisor running in Hyp mode (from user/kernel). The lowvisor
+will then cause another trap to run the highvisor. Similarly, going from the
+highvisor to a VM requires trapping from kernel mode to Hyp mode, and then
+switching to the VM (to user/kernel). Hyp mode is not bypassed.</li>
+<li>(Identy mapping) 1) the Hyp mode cannot reuse kernel's paga table because
+Hyp mode uses a different page table format, 2) the highvisor explicitly
+manages the Hyp mode page tables to map any code executed in Hyp mode and
+any data structures shared between the highvisor and the lowvisor to the
+same virtual addresses in Hyp mode and in kernel mode.</li>
+</ul>
+</li>
+<li>
+<p>CPU Virtualization</p>
+<ul>
+<li>Not trapping<ul>
+<li>Set of Stage-1 page table base register
+in most guest OSes.</li>
+</ul>
+</li>
+<li>
+<p>Hyp Mode -&gt; VM World</p>
+<ul>
+<li>(1) store all host GP registers on the Hyp stack</li>
+<li>(2) configure the VGIC for the VM</li>
+<li>(3) configure the timers for the VM</li>
+<li>(4) save all host-specific configuration registers onto the Hyp stack</li>
+<li>(5) load the VM’s configuration registers onto the hardware, which can be done without affecting current execution, because Hyp mode uses its own configuration registers, separate from the host state</li>
+<li>(6) configure Hyp mode to trap floating-point operations for lazy
+context switching, trap interrupts, trap CPU halt instructions
+(WFI/WFE), trap SMC instructions, trap specific configuration register
+accesses, and trap debug register accesses</li>
+<li>(7) write VM-specific IDs into shadow ID registers</li>
+<li>(8) set the Stage-2 page table base register (VTTBR) and enable
+Stage-2 address translation</li>
+<li>(9) restore all guest GP registers</li>
+<li>(10) trap into either user or kernel mode</li>
+</ul>
+</li>
+<li>
+<p>VM World -&gt; Hyp Mode -(123456789)-&gt; Kernel Mode</p>
+<ul>
+<li>(0) trap to Hyp Mode due to a Stage-2 page fault, or a hardware interrupt</li>
+<li>(1) store all VM GP registers</li>
+<li>(2) disable Stage-2 translation</li>
+<li>(3) configure Hyp mode to not trap any register access or instructions</li>
+<li>(4) save all VM-specific configuration registers</li>
+<li>(5) load the host’s configuration registers onto the hardware</li>
+<li>(6) configure the timers for the host</li>
+<li>(7) save VM-specific VGIC state</li>
+<li>(8) restore all host GP registers,</li>
+<li>(9) trap into kernel mode</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Memory Virtualization</p>
+<ul>
+<li>(stage-2 translation) stage-2 translation can only be configured in
+hypervisor mode, and accesses not allowed will cause stage-2 page faults
+which trap to the hypervisor (although both the highvisor and VMs share the
+same CPU modes). Stage-2 translation is disabled in the non-VM world (when
+running in the highvisor and lowviser), and is enabled when in the VM world.</li>
+<li>(stage-2 page table) KVM/ARM handles Stage-2 page faults by considering
+the IPA of the fault, and if that address belongs to normal memory in the VM
+memory map, KVM/ARM allocates a page for the VM by simply calling an
+existing kernel function, such as get_user_pages, and maps the allocated
+page to the VM in the Stage-2 page tables.</li>
+</ul>
+</li>
+<li>
+<p>I/O virtualization</p>
+<ul>
+<li>(virtual devices) QEMU and Virtio virtual devices in host userspace</li>
+<li>(interfaces) load/restore to MMIO device regions, no in/out</li>
+<li>(enforcement) Except the passthroughed devices, KVM/ARM uses stage-2
+translations to ensure that physical devices cannot be accessed directly
+from VMs. Any access outside of RAM regions allocated for the VM will trap
+to the hypervisor, which can route the access to a specific emulated device
+in QEMU based on the fault address.</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
