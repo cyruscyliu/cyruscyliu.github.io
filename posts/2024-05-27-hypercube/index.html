@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2024-05-15-tech-notes/">
+        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2024-05-27-hypercube/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Tech notes on 20240513 - Qiang Liu's Homepage</title>
+        <title>HyperCube OS for x86_64 - Qiang Liu's Homepage</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tech-notes-on-20240513" class="md-skip">
+        <a href="#hypercube-os-for-x86_64" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tech notes on 20240513
+              HyperCube OS for x86_64
             
           </span>
         </div>
@@ -287,6 +287,98 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#debug-with-qemu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debug with QEMU
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boostrapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boostrapping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boostrapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-0-arch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change 0: ARCH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-1-from-32-bit-to-64-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change 1, from 32-bit to 64-bit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interrupts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interrupts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interrupts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-3-update-idt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change 3, update IDT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-4-update-irss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change 4: update IRSs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-5-change-the-pt_regs-according-to-the-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change 5: change the pt_regs according to the stack
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -300,129 +392,118 @@
                   
 
 
-<h1 id="tech-notes-on-20240513">Tech notes on 20240513</h1>
+<h1 id="hypercube-os-for-x86_64">HyperCube OS for x86_64</h1>
+<p>I simply explain how to update
+<a href="https://github.com/RUB-SysSec/Hypercube">HyperCubeOS</a> to support x86_64.</p>
+<h2 id="debug-with-qemu">Debug with QEMU</h2>
+<p>Before the details, let me briefly introduce how to debug HyperCubeOS.</p>
+<p>Compile HyperCubeOS.</p>
+<pre><code>user$ pushd os &amp;&amp; make &amp;&amp; popd
+</code></pre>
+<p>Open two shells. Launch HyperCubeOS in shell 1.</p>
+<pre><code>user$ qemu-system-x86_64 \
+    -cdrom os/iso/hypercube_os_bios.iso \
+    -serial mon:stdio -m 100 -net none -S -s
+</code></pre>
+<p>Attach GDB to QEMU in shell 2.</p>
+<pre><code>user$ sudo gdb-multiarch os/isofiles/boot/kernel.bin
+ gdb$ b kernel_main
+ gdb$ directory os/src/
+ gdb$ target remote:1234
+ gdb$ c
+</code></pre>
+<h2 id="boostrapping">Boostrapping</h2>
+<p>Overall, HyperCubeOS (which is in fact an ELF) is bootstrapped by a bootloader
+(e.g., <a href="https://www.gnu.org/software/grub/">GRUB2</a>). The bootloader and
+HyperCubeOS are packed into <code>os/iso/hypercube_os_bios.iso</code>.</p>
+<p>Bootstrapping is way too arch-specific. It is just painful to revisit
+x86/x86_64's ISAs. Here is a short summary of different CPU modes.</p>
 <ul>
-<li>
-<p>How does script interpreter work?</p>
+<li>System Management Mode -&gt; Real mode -&gt; Protected Mode &lt;-&gt; Virtual 8086 Mode</li>
+<li>Protected Mode &lt;-&gt; Long Mode (64-bit Mode &lt;-&gt; Compatibility Mode)</li>
+<li>Virtual 8086 Mode is designed to run real mode program</li>
+<li>Protected mode cannot support 64-bit OS</li>
+<li>Long mode can support both 64-bit (64-bit mode) and 32-bit (compatibility
+mode) userspace applications</li>
+<li>In the long mode, registers are 64-bit</li>
+<li>The long mode has 8 more general purpose registers to use (16 in total, while aarch64 has 31)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operating Mode</th>
+<th style="text-align: center;">Shilf-and-add Segmentation</th>
+<th style="text-align: center;">Paging</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Real Mode</td>
+<td style="text-align: center;">Enabled</td>
+<td style="text-align: center;">Not existing</td>
+</tr>
+<tr>
+<td style="text-align: center;">Protected Mode (80286)</td>
+<td style="text-align: center;">Enabled</td>
+<td style="text-align: center;">Optional</td>
+</tr>
+<tr>
+<td style="text-align: center;">Protected Mode (80386 and above)</td>
+<td style="text-align: center;">Enabled</td>
+<td style="text-align: center;">Optional</td>
+</tr>
+<tr>
+<td style="text-align: center;">Compatibility Mode</td>
+<td style="text-align: center;">Enabled</td>
+<td style="text-align: center;">Enabled</td>
+</tr>
+<tr>
+<td style="text-align: center;">64-Bit Mode</td>
+<td style="text-align: center;">Bypassed</td>
+<td style="text-align: center;">Enabled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="change-0-arch">Change 0: ARCH</h3>
+<p>I added ARCH (x86, x86_64, and aarch64 (not implemented yet)) to relative
+Makefiles and bash scripts. Nothing unexpected.</p>
+<h3 id="change-1-from-32-bit-to-64-bit">Change 1, from 32-bit to 64-bit</h3>
+<p>We need the CPU running in the long mode to support 64-bit mode.</p>
+<p>GRUB2 is so limited. It cannot switch to the long mode by design. After the
+bootloader GRUB2 gives the control flow to the kernel, the CPU is in the
+protected mode. To run 64-bit programs, we need to switch the CPU to the long
+mode with paging enabled manually. Prior to switching to the long mode, GRUB2
+sets up two arguments that matter, 1) $eax (the magic value "0x36d76289" that
+indicates that the HyperCubeOS was loaded by a MultiBoot2-compiant boot loader)
+and 2) $eax (a 32-bit physical address of the Multiboot2 information structure
+defined in <a href="https://www.gnu.org/software/grub/manual/multiboot2/multiboot.html#Boot-information-format">Multiboot2 Specification version
+2.0</a>.
+I tried to save $eax and $ebx, set up the page table (cr3 -&gt; pml4t -&gt; pdpt -&gt;
+pdt -&gt; pt), and set up the GDT
+<a href="https://wiki.osdev.org/Setting_Up_Long_Mode#The_Switch_from_Protected_Mode">manually</a>,
+but I found it very problematic to use GRUB2 (a discussion is also available
+<a href="https://wiki.osdev.org/Creating_a_64-bit_kernel">here</a>). I chose
+<a href="https://wiki.osdev.org/Limine">Limine</a> as an alternative.</p>
+<h2 id="interrupts">Interrupts</h2>
+<p>Important data structures.</p>
 <ul>
-<li>The finalizer of an object is invoked as soon as the refcount of the
-object becomes 0. There are at most thousands of ways to trigger finalizers.</li>
-<li>Weak reference prevents objected from not being collected.</li>
-<li>As soon as an exception is raised, the control flow goes to the main loop
-via setjmp/longjmp without unwinding (causing memory leaks =&gt; refcount-based
-GC won't work =&gt; it needs mark-and-sweep-based GC) or explicity error
-propagation (refcount-based GC is working =&gt; no memory leaks).</li>
-<li>Exceptions are handled before executing each bytecode (after stack unwinding).</li>
-<li>try: finally: can have double returns.</li>
-<li>Generators have a lot of exception handling issues because generators handle
-heap-based stacks as well.</li>
-<li>Type is defined by its behavior that is defined by magic methods (duck typing).</li>
-<li>No security policy is enforced when using magic methods.</li>
+<li>ISRs are stored in the Interrupt Descriptor Table (IDT) when you're in
+Protected mode, or in the Interrupt Vector Table (IVT) when you're in Real Mode.</li>
+<li>IDTR has two fields, limit and base. IDTR.limit constraints the number of IDT
+entries and IDTR.base points to the first IDT entry. Each IDT entry has the
+interrupt handler address and a few flags. Note that, IDT entry is 16-byte in
+x86_64, while it is 8-byte in x86. Note that compilers may have problems with
+assembly to write the interrupt handler, so take a two-stage assembly wrapping
+(see <a href="https://wiki.osdev.org/ISR">this</a>).</li>
 </ul>
-</li>
-<li>
-<p><a href="https://en.wikipedia.org/wiki/Language_interoperability">Language
-interoperability</a>:
-Language interoperability is the capability of two different programming
-languages to natively interact as part of the same system and operate on the
-same kind of data structures. There are three methods for interoperability.
-Object models: COM (COM is a very ambiguous term. It can be a <a href="https://en.wikipedia.org/wiki/COM_file">COM
-format</a>, a <a href="https://en.wikipedia.org/wiki/COM_(hardware_interface)">COM
-port</a>, and Common Object
-Model, a binary interface introduced by Microsoft); Virtual Machine (a
-specialised intermediate language that different languages compile down to):
-Java Virtual Machine; foreign function interfaces (FFI), that is in the format
-of a wrapper library, also called bindings: JNI/JNA/<a href="https://www.swig.org/tutorial.html">SWIG</a>.</p>
-</li>
-<li>
-<p>Challenges when implementing language interoperability</p>
-<ul>
-<li>Object model differences: e.g., permit multiple inheritance or not</li>
-<li>Memory model differences: e.g., have garbage collector or not</li>
-<li>Mutability: e.g., immutable or not</li>
-</ul>
-</li>
-<li>
-<p>Favocado (NDSS'21): JS engines are embedded in commercial software, e.g.,
-Adobe Acrobat Reader, Foxit PDF Reader, Chromium, and WebKit. Even without
-considering the binding layers, it is difficult to effectively fuzz JavaScript
-engines in the first place. To generate syntactically correct JavaScript code as
-test cases, modern JavaScript engine fuzzers use context-free grammars  or
-existing semantically correct test cases. While no JavaScript fuzzers generate
-fully semantically correct code as test cases, some fuzzers can generate test
-cases in a semantic-aware manner. However, the percentage of rejected test cases
-that are generated by these semantic-aware fuzzers is still a significant
-problem.  Another challenge for effectively fuzzing the binding layer is the
-enormous input space, e.g., in Chromium, there are more than 1,000 DOM binding
-objects. Each DOM object may have a multitude of methods and properties, some
-of which may require hard-to-satisfy arguments such as other DOM objects.</p>
-</li>
-<li>
-<p>Drawbacks of Favocado</p>
-<ul>
-<li>From Minerva: Although Favocado also generates semantically-correct test
-cases, its typebased relations introduce redundant relations between APIs.
-Besides, its conservative generation strategy only choose a few interface
-objects in each test case, hindering the fuzzer from state space
-exploration.</li>
-<li>From SAGE: Favocado extracts semantic information from browsers’ source
-code, it doesn't make good use of them. Its semantic information is
-maintained in a JSON-like structure instead of CFG, which make it difficult
-to effectively generate highly-structured inputs. Additionally, its flawed
-implementation makes it challenging to bypass syntactic checks. Favocado can
-only explore a limited set of browser backend logic.</li>
-</ul>
-</li>
-<li>
-<p>Cooper (NDSS'22):</p>
-<ul>
-<li>In this paper, we propose cooperative mutation, which modifies both the
-script code and the program native input to trigger bugs in binding code. We
-develop three novel techniques to enable practical cooperative mutation on
-popular scripting languages: we first cluster objects into semantics similar
-classes to reduce the mutation space of native inputs; then, we
-statistically infer the relationship between script code and object classes
-based on a large number of executions; at last, we use the inferred
-relationship to select proper objects and related script code for targeted
-mutation.  We applied our tool, COOPER, on three popular systems that
-integrate scripting languages, including Adobe Acrobat, Foxit Reader and
-Microsoft Word. COOPER successfully found 134 previously unknown bugs.</li>
-</ul>
-</li>
-<li>
-<p>TypeOracle (ICSE'23):</p>
-<ul>
-<li>Full name: Operand-Variation-Oriented Differential Analysis for Fuzzing
-Binding Calls in PDF Readers</li>
-<li>The parameter types of a binding call are inferred by executing the
-binding call with different values of different types and investigating
-which types cause an expected effect on the instruction operands. The
-inferred type information is used to guide the test generation in fuzzing.</li>
-</ul>
-</li>
-<li>
-<p>Gramatron (ISSTA'21)</p>
-<ul>
-<li>A fuzzer must generate syntactically valid inputs to fuzz beyond the
-application parser. Previous fuzzers employ parse trees with CFG for input
-generation and mutation. Existing grammar-aware fuzzers are ineffective at
-synthesizing complex bug triggers due to biased sampling and localized
-small-scale mutations.  Gramatron performs an automatic two-step
-transformation on the CFG to create a grammar automaton. First, it
-transforms the CFG into its GNF which performs the grammar restructuring.
-Second, it converts the GNF of the grammar into an automaton. Gramatron can
-encode any input that abides by the grammar as an automaton walk. Grammar
-automatons restructure the grammar enabling the fuzzer to perform unbiased
-sampling from the input state space.  This enable the fuzzer to generate
-inputs with higher diversity more frequently. We also redesign the mutation
-operators to operate on grammar automatons and perform aggressive changes
-efficiently to discover bugs with complex triggers.</li>
-</ul>
-</li>
-<li>
-<p>C# is also a memory safe language.</p>
-</li>
-</ul>
+<h3 id="change-3-update-idt">Change 3, update IDT</h3>
+<p>I updated the definition of IDT entry and then filled each entry up. Note that
+GDT is set up by Limine (but is simply ignored I guess).</p>
+<h3 id="change-4-update-irss">Change 4: update IRSs</h3>
+<p>If the interrupt is an exception, the CPU will push an error code onto the stack
+if any, padded with bytes to form a doubleword (x86) or quadword (x86_64). If
+not, we push a fake error code.</p>
+<h3 id="change-5-change-the-pt_regs-according-to-the-stack">Change 5: change the pt_regs according to the stack</h3>
 
 
 
