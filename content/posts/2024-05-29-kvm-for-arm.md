@@ -67,7 +67,7 @@ the non-secure world
     any data structures shared between the highvisor and the lowvisor to the
     same virtual addresses in Hyp mode and in kernel mode.
 
-+ CPU Virtualization
++ CPU virtualization
     + Not trapping
         + Set of Stage-1 page table base register
         in most guest OSes.
@@ -99,7 +99,7 @@ the non-secure world
         + (8) restore all host GP registers,
         + (9) trap into kernel mode
 
-+ Memory Virtualization
++ Memory virtualization
     + (stage-2 translation) stage-2 translation can only be configured in
     hypervisor mode, and accesses not allowed will cause stage-2 page faults
     which trap to the hypervisor (although both the highvisor and VMs share the
@@ -119,3 +119,16 @@ the non-secure world
     from VMs. Any access outside of RAM regions allocated for the VM will trap
     to the hypervisor, which can route the access to a specific emulated device
     in QEMU based on the fault address.
+
++ Key ideas of nested virtualization
+    + Guest Hypervisor runs in vEL2 that is in EL1
+        + ARMv8.3 supports to trap EL2 operations/eret to EL2 from vEL2
+    + Virtual exceptions are enforced by
+        + trapping to Host hypervisor (EL2) first and then farwarding the
+        exception to Guest Hypervisor
+    + The virtual second-stage page tables are software-implemented shadow pages
+    + Exit Multiplication Problem: Guest Hypervisor has to access EL1 registers
+    and EL2 registers that all traps -> [NEVE](https://dl.acm.org/doi/pdf/10.1145/3132747.3132754)
+        + access EL1 registers -> access memory: similar to VMCS
+        + access EL2 registers -> redirect to EL1 registers
+        + 5 times faster
