@@ -18,7 +18,7 @@
     
     
       
-        <title>HyperCube OS for x86_64 - Qiang Liu's Homepage</title>
+        <title>Notes about HyperCubeOS for x86_64 - Qiang Liu's Homepage</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hypercube-os-for-x86_64" class="md-skip">
+        <a href="#notes-about-hypercubeos-for-x86_64" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              HyperCube OS for x86_64
+              Notes about HyperCubeOS for x86_64
             
           </span>
         </div>
@@ -294,44 +294,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#debug-with-qemu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Debug with QEMU
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#boostrapping" class="md-nav__link">
     <span class="md-ellipsis">
       Boostrapping
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Boostrapping">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#change-0-arch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Change 0: ARCH
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#change-1-from-32-bit-to-64-bit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Change 1, from 32-bit to 64-bit
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -341,39 +308,6 @@
       Interrupts
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Interrupts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#change-3-update-idt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Change 3, update IDT
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#change-4-update-irss" class="md-nav__link">
-    <span class="md-ellipsis">
-      Change 4: update IRSs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#change-5-change-the-pt_regs-according-to-the-stack" class="md-nav__link">
-    <span class="md-ellipsis">
-      Change 5: change the pt_regs according to the stack
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -392,30 +326,14 @@
                   
 
 
-<h1 id="hypercube-os-for-x86_64">HyperCube OS for x86_64</h1>
-<p>I simply explain how to update
+<h1 id="notes-about-hypercubeos-for-x86_64">Notes about HyperCubeOS for x86_64</h1>
+<p>There are some notes when I update
 <a href="https://github.com/RUB-SysSec/Hypercube">HyperCubeOS</a> to support x86_64.</p>
-<h2 id="debug-with-qemu">Debug with QEMU</h2>
-<p>Before the details, let me briefly introduce how to debug HyperCubeOS.</p>
-<p>Compile HyperCubeOS.</p>
-<pre><code>user$ pushd os &amp;&amp; make &amp;&amp; popd
-</code></pre>
-<p>Open two shells. Launch HyperCubeOS in shell 1.</p>
-<pre><code>user$ qemu-system-x86_64 \
-    -cdrom os/iso/hypercube_os_bios.iso \
-    -serial mon:stdio -m 100 -net none -S -s
-</code></pre>
-<p>Attach GDB to QEMU in shell 2.</p>
-<pre><code>user$ sudo gdb-multiarch os/isofiles/boot/kernel.bin
- gdb$ b kernel_main
- gdb$ directory os/src/
- gdb$ target remote:1234
- gdb$ c
-</code></pre>
+<p>Key conclusion: 1) boot the HyperCubeOS for x86_64 to long mode with Limine, 2)
+enable the identity mapped paging, 2) set up exception/interrupt handlers.</p>
 <h2 id="boostrapping">Boostrapping</h2>
 <p>Overall, HyperCubeOS (which is in fact an ELF) is bootstrapped by a bootloader
-(e.g., <a href="https://www.gnu.org/software/grub/">GRUB2</a>). The bootloader and
-HyperCubeOS are packed into <code>os/iso/hypercube_os_bios.iso</code>.</p>
+(e.g., <a href="https://www.gnu.org/software/grub/">GRUB2</a>).</p>
 <p>Bootstrapping is way too arch-specific. It is just painful to revisit
 x86/x86_64's ISAs. Here is a short summary of different CPU modes.</p>
 <ul>
@@ -426,7 +344,7 @@ x86/x86_64's ISAs. Here is a short summary of different CPU modes.</p>
 <li>Long mode can support both 64-bit (64-bit mode) and 32-bit (compatibility
 mode) userspace applications</li>
 <li>In the long mode, registers are 64-bit</li>
-<li>The long mode has 8 more general purpose registers to use (16 in total, while aarch64 has 31)</li>
+<li>The long mode has 16 general purpose registers to use (while aarch64 has 31)</li>
 </ul>
 <table>
 <thead>
@@ -464,19 +382,13 @@ mode) userspace applications</li>
 </tr>
 </tbody>
 </table>
-<h3 id="change-0-arch">Change 0: ARCH</h3>
-<p>I added ARCH (x86, x86_64, and aarch64 (not implemented yet)) to relative
-Makefiles and bash scripts. Nothing unexpected.</p>
-<h3 id="change-1-from-32-bit-to-64-bit">Change 1, from 32-bit to 64-bit</h3>
-<p>We need the CPU running in the long mode to support 64-bit mode.</p>
-<p>GRUB2 is so limited. It cannot switch to the long mode by design. After the
-bootloader GRUB2 gives the control flow to the kernel, the CPU is in the
-protected mode. To run 64-bit programs, we need to switch the CPU to the long
-mode with paging enabled manually. Prior to switching to the long mode, GRUB2
-sets up two arguments that matter, 1) $eax (the magic value "0x36d76289" that
-indicates that the HyperCubeOS was loaded by a MultiBoot2-compiant boot loader)
-and 2) $eax (a 32-bit physical address of the Multiboot2 information structure
-defined in <a href="https://www.gnu.org/software/grub/manual/multiboot2/multiboot.html#Boot-information-format">Multiboot2 Specification version
+<p>GRUBT2 boostraps the OS to 32-bit protected mode, but we need the CPU running in
+the long mode to support 64-bit mode. Specifically, to run 64-bit programs, we
+need to switch the CPU to the long mode with paging enabled manually. Prior to
+switching to the long mode, GRUB2 sets up two arguments that matter, 1) $eax
+(the magic value "0x36d76289" that indicates that the HyperCubeOS was loaded by
+a MultiBoot2-compiant boot loader) and 2) $eax (a 32-bit physical address of the
+Multiboot2 information structure defined in <a href="https://www.gnu.org/software/grub/manual/multiboot2/multiboot.html#Boot-information-format">Multiboot2 Specification version
 2.0</a>.
 I tried to save $eax and $ebx, set up the page table (cr3 -&gt; pml4t -&gt; pdpt -&gt;
 pdt -&gt; pt), and set up the GDT
@@ -484,6 +396,7 @@ pdt -&gt; pt), and set up the GDT
 but I found it very problematic to use GRUB2 (a discussion is also available
 <a href="https://wiki.osdev.org/Creating_a_64-bit_kernel">here</a>). I chose
 <a href="https://wiki.osdev.org/Limine">Limine</a> as an alternative.</p>
+<p>Luckily, Limine has identity mapped the lower 4G.</p>
 <h2 id="interrupts">Interrupts</h2>
 <p>Important data structures.</p>
 <ul>
@@ -496,14 +409,6 @@ x86_64, while it is 8-byte in x86. Note that compilers may have problems with
 assembly to write the interrupt handler, so take a two-stage assembly wrapping
 (see <a href="https://wiki.osdev.org/ISR">this</a>).</li>
 </ul>
-<h3 id="change-3-update-idt">Change 3, update IDT</h3>
-<p>I updated the definition of IDT entry and then filled each entry up. Note that
-GDT is set up by Limine (but is simply ignored I guess).</p>
-<h3 id="change-4-update-irss">Change 4: update IRSs</h3>
-<p>If the interrupt is an exception, the CPU will push an error code onto the stack
-if any, padded with bytes to form a doubleword (x86) or quadword (x86_64). If
-not, we push a fake error code.</p>
-<h3 id="change-5-change-the-pt_regs-according-to-the-stack">Change 5: change the pt_regs according to the stack</h3>
 
 
 
@@ -524,7 +429,7 @@ not, we push a fake error code.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 3, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 8, 2024</span>
   </span>
 
     
