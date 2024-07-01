@@ -1,21 +1,27 @@
-I'm always thinking outside the box when it comes to cybersecurity's
-cat-and-mouse game. It started with CTF competitions, where I learned to break
-systems and work with teams. Over the years, collaborating with my colleagues,
-we've developed new approaches to protect systems from attacks.
+I am always thinking outside the box when it comes to cybersecurity's
+cat-and-mouse game. It started with Capture the Flag (CTF) cybersecurity
+competition, where I learned to break systems, e.g., reverse engenering binaries
+and developing exploits, and be a team player. Over the years, collaborating
+with my colleagues, we have developed new approaches to protect systems from
+attacks. Specifically, we have proposed advanced fuzz testing techniques to
+unveil vulnerabilities in OS kernels and hypervisors before these infrastructure
+software is released.  I am interested in the infrastructure software, such as
+OS kernels and hypervisors, because they are used everywhere to establish
+security trust for the upper layers. These systems must be flawless, as any
+error could significantly impact not only individuals but also organizations.
+Their reliability is crucial for ensuring the smooth functioning of both
+personal and professional activities in daily life. All in all, my research
+focuses on making infrastructure software, such as OS kernels and hypervisors,
+protocols and browsers as well, bug and exploitation-free through innovative
+designs in both hardware and software.
 
 Hi, I am Qiang Liu, currently a postdoc at EPFL under the guidance of [Prof.
 Mathias Payer](https://nebelwelt.net/). I obtained my Ph.D. in cybersecurity at
 Zhejiang University (ZJU) in 2023, advised by [Prof. Yajin
 Zhou](https://yajin.org/). Prior to ZJU, I earned my bachelor's degree at
-Beijing Institute of Technology (BIT) in 2018.
-
-My research focuses on system and software security. The ultimate goal is to
-make the entire system (from hardware to applications) bug/exploitation-free
-through innovative designs in both hardware and software. Currently, I have
-broad interests in attacks and defenses covering different aspects, namely
-hypervisors, operating systems, browsers, and protocols. We have published a few
-papers at top-tier security conferences like IEEE S&P, Usenix Security, and CCS.
-To engage the community, we always open-source our tools and evaluation scripts.
+Beijing Institute of Technology (BIT) in 2018.  We have published a few papers
+at top-tier security conferences like IEEE S&P, Usenix Security, and CCS.  To
+engage the community, we always open-source our tools and evaluation scripts.
 
 Along the way of research, I've also gotten better at managing multiple projects
 smoothly, communicating with people well, and making the team deliver results.
