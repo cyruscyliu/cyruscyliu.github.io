@@ -1,3 +1,7 @@
+**I am seeking a Tenure-Track Asistant Professor position and am
+also open to working in industry. If you have job opportunities, please feel
+free to contact me.**
+
 I am always thinking outside the box when it comes to cybersecurity's
 cat-and-mouse game. It started with Capture the Flag (CTF) cybersecurity
 competition, where I learned to break systems, e.g., reverse engenering binaries
