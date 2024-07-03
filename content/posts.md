@@ -13,6 +13,7 @@ Pinned
 
 Reading
 
++ [2024-07-03 Tech notes about AFLNet](posts/2024-07-03-aflnet.md)
 + [2024-06-08 Notes about HyperCubeOS for x86_64](posts/2024-05-27-hypercube.md)
 + [2024-05-29 KVM/ARM](posts/2024-05-29-kvm-for-arm.md)
 + [2024-05-22 Quick notes for SP'24](posts/2024-05-01-sp24.md)
