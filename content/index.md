@@ -1,14 +1,14 @@
-**I am seeking a Tenure-Track Asistant Professor position and am
+**I am seeking a Tenure-Track Assistant Professor position and am
 also open to working in industry. If you have job opportunities, please feel
 free to contact me.**
 
 I am always thinking outside the box when it comes to cybersecurity's
 cat-and-mouse game. It started with Capture the Flag (CTF) cybersecurity
-competition, where I learned to break systems, e.g., reverse engenering binaries
+competition, where I learned to break systems, e.g., reverse engineering binaries
 and developing exploits, and be a team player. Over the years, collaborating
 with my colleagues, we have developed new approaches to protect systems from
 attacks. Specifically, we have proposed advanced fuzz testing techniques to
-unveil vulnerabilities in OS kernels and hypervisors before these infrastructure
+unveil vulnerabilities in OS kernels and hypervisors before this infrastructure
 software is released.  I am interested in the infrastructure software, such as
 OS kernels and hypervisors, because they are used everywhere to establish
 security trust for the upper layers. These systems must be flawless, as any
