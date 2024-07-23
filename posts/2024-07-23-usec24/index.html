@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2024-07-16-bgp/">
+        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2024-07-23-usec24/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Tech notes about BGP - Qiang Liu's Homepage</title>
+        <title>Usenix Security 24 - Qiang Liu's Homepage</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tech-notes-about-bgp" class="md-skip">
+        <a href="#usenix-security-24" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tech notes about BGP
+              Usenix Security 24
             
           </span>
         </div>
@@ -294,27 +294,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basics" class="md-nav__link">
+  <a href="#interesting-tracks" class="md-nav__link">
     <span class="md-ellipsis">
-      Basics
+      Interesting Tracks
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#path-attribute" class="md-nav__link">
+  <a href="#the-others" class="md-nav__link">
     <span class="md-ellipsis">
-      [Path Attribute
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#route-to" class="md-nav__link">
-    <span class="md-ellipsis">
-      [Route to
+      The others
     </span>
   </a>
   
@@ -335,51 +326,223 @@
                   
 
 
-<h1 id="tech-notes-about-bgp">Tech notes about BGP</h1>
-<h2 id="basics">Basics</h2>
+<h1 id="usenix-security-24">Usenix Security 24</h1>
+<p>Notes, 1) x/x/x follows a format of "# of Chinese first authors who study in
+China"/"# of Chinese first authors who study abroad"/"# of submissions", 2) x/x
+follows a format of "# of Chinese first authors"/"# of submissions".</p>
+<p>Chinese first authors are good at (&gt;=50% of submissions) hardware security,
+system security, network security, security analysis, mobile security, fuzzing,
+IoT and CPS, Autonomous and Automatic Systems, AR and VR, ML, LLM, block chain,
+and differential privacy.</p>
+<p>Not good at side channel, web security, user studies, cyrpto, cyrptographic
+protocols, social issues, zero-knowledge proof, and some other small topics.</p>
+<h2 id="interesting-tracks">Interesting Tracks</h2>
 <ul>
-<li>BGP is short for Border Gateway Protocol</li>
-<li>BGP is an application layer protocol but controls the routing layer</li>
-<li>BGP directs routing decisions between different ISP networks</li>
-<li>Problematic things: route filterings, insertion, handling withdraws</li>
-<li>Browse the Internet ecosystem: https://bgp.tools/</li>
-<li>BGP lacked consideration of security in the beginning, then enhanced by many
-other RFCs, e.g., RFC4272</li>
+<li>Hardware Security I: Attacks and Defense (2/2/4)</li>
+<li>Hardware Security II: Architecture and Microarchitecture (1/4/4)</li>
+<li>Hardware Security III: Signals (3/4/4)</li>
+<li>Hardware Security IV: Firmware (0/2/4)</li>
+<li>Hardware Security V: Embedded (2/2/2)</li>
+<li>
+<p><strong>8/14/18</strong></p>
+</li>
+<li>
+<p>System Security I: OS (1/2/4)</p>
+</li>
+<li>System Security II: OS Kernel (1/3/4)</li>
+<li>System Security III: Memory I (1/3/4)</li>
+<li>System Security IV: Multithreading (3/3/4)</li>
+<li>System Security V: Memory II (0/1/4)</li>
+<li>
+<p><strong>6/12/20</strong></p>
+</li>
+<li>
+<p>Network Security I: DDoS (1/3/4)</p>
+</li>
+<li>Network Security II: Attacks (2/2/4)</li>
+<li>Network Security III: Detection (2/2/5)</li>
+<li>Network Security IV: Infrastructure (3/4/4)</li>
+<li>
+<p><strong>8/11/17</strong></p>
+</li>
+<li>
+<p>Security Analysis I: Source Code and Binary (0/2/4)</p>
+</li>
+<li>Security Analysis II: Program Analysis (1/3/4)</li>
+<li>Security Analysis III: Protocol (1/2/5)</li>
+<li>Security Analysis IV: OS (1/2/4)</li>
+<li>
+<p><strong>3/9/17</strong></p>
+</li>
+<li>
+<p>Side Channel I: Transient Execution (2/4)</p>
+</li>
+<li>Side Channel II: RowHammer (0/4)</li>
+<li>Side Channel III (3/5)</li>
+<li>Side Channel IV (1/5)</li>
+<li>
+<p>6/18</p>
+</li>
+<li>
+<p>Mobile Security I (3/4)</p>
+</li>
+<li>Mobile Security II (2/4)</li>
+<li>
+<p><strong>5/8</strong></p>
+</li>
+<li>
+<p>Web Security I (1/4)</p>
+</li>
+<li>Web Security II: Privacy (0/4)</li>
+<li>Web Security III: XSS and PHP (0/4)</li>
+<li>
+<p>1/12</p>
+</li>
+<li>
+<p>Fuzzing I: Software (2/4)</p>
+</li>
+<li>Fuzzing II: Method (5/5)</li>
+<li>Fuzzing III: Network (3/4)</li>
+<li>Fuzzing IV: Hardware and Firmware (0/5)</li>
+<li>
+<p><strong>10/18</strong></p>
+</li>
+<li>
+<p>Wireless Security I: Cellular and Bluetooth (2/4)</p>
+</li>
+<li>Wireless Security II: Sky and Space (0/4)</li>
+<li>
+<p>2/8</p>
+</li>
+<li>
+<p>Language-Based Security (1/5)</p>
+</li>
+<li>Software Vulnerability Detection (1/4)</li>
+<li>Cloud Security (2/5)</li>
+<li>Forensics (1/4)</li>
+<li>IoT and CPS (<strong>2/4</strong>)</li>
+<li>Autonomous and Automatic Systems (<strong>3/4</strong>)</li>
+<li>
+<p>AR and VR (<strong>3/5</strong>)</p>
+</li>
+<li>
+<p>Measurement II: Network (0/5)</p>
+</li>
+<li>Measurement IV: Web (1/4)</li>
+<li>Measurement V: App (1/5)</li>
 </ul>
-<h2 id="path-attribute">[Path Attribute</h2>
-<p>Error](https://blog.benjojo.co.uk/post/bgp-path-attributes-grave-error-handling)</p>
-<p>BGP packet is split up into two sections: the Network Layer Reachability
-Information (NLRI) data (aka, the IP address ranges), and the attributes that
-help describe extra context about that reachability data.</p>
-<p>The feature allows possibly unknown information to propagate blindly through
-systems that do not understand the impact of what they are forwarding.</p>
-<p>The path attribute error is documented
-<a href="https://datatracker.ietf.org/doc/html/rfc7606#page-16">here</a>.</p>
-<p>How to experiment? GNS3 VMs or physical hardware in isolated VLANS.</p>
-<h2 id="route-to">[Route to</h2>
-<p>Bugs](https://www.blackhat.com/us-23/briefings/schedule/index.html#route-to-bugs-analyzing-the-security-of-bgp-message-parsing-32162)</p>
-<p>This talk discusses vulnerabilities in BGP message parsing.</p>
-<p>BGP has simple state machine with six states: Established, Idle, Connect,
-OpenSent, Active, and OpenConfirm. There are four types of messages: OPEN,
-UPDATE, NOTIFICATION, and KEEPALIVE.</p>
-<p><a href="https://datatracker.ietf.org/doc/html/rfc4272">RFC4272</a>: BGP Security
-Vulnerabilities Analysis (2006). Main concern is to filter incorrect or
-malicious routing information: origin validation, path validation, and path
-plausibility.</p>
-<p>20 years ago, researchers thought misconfigurations were more dangerous than
-implementation issues. Gradually, 129 CVEs have been found on BGP
-implementations, 123 (95%) of which because of message parsing issues. 6% RCE,
-10% information leak, 82% DoS, and 2% others.</p>
-<p>Some implementations process parts of OPEN messages (e.g., decapsulating
-optional parameters), before validating the BGP ID and ASN fields of the
-originating router. This means that only TCP spoofing (instead of a complete
-takeover of a configured peer) is required to inject malformed packets.</p>
-<p>We found three new vulnerabilities in a leading open-source implementation,
-FRRouting, which could be exploited to achieve denial of service on vulnerable
-BGP peers, thus dropping all BGP sessions and routing tables and rendering the
-peer unresponsive. These vulnerabilities were found using a fuzzer we developed
-and will release to the community.</p>
-<p>TBF.</p>
+<h2 id="the-others">The others</h2>
+<ul>
+<li>User Studies I: Social Media Platforms (0/4)</li>
+<li>User Studies II: At-Risk Users (1/5)</li>
+<li>User Studies III: Privacy I (0/5)</li>
+<li>User Studies IV: Policies and Best Practices I (0/5)</li>
+<li>User Studies V: Policies and Best Practices II (2/5)</li>
+<li>User Studies VI: Privacy II (0/5)</li>
+<li>User Studies VII: Policies and Best Practices III (1/4)</li>
+<li>User Studies VIII: Cryptography (0/4)</li>
+<li>
+<p>4/37</p>
+</li>
+<li>
+<p>ML I: Federated Learning (4/4)</p>
+</li>
+<li>ML II: Fault Injection and Robustness (3/4)</li>
+<li>ML for Security (1/4)</li>
+<li>ML III: Secure ML (4/5)</li>
+<li>ML IV: Privacy Inference I (2/5)</li>
+<li>ML V: Backdoor Defense (3/5)</li>
+<li>ML VI: Digital Adversarial Attacks (5/5)</li>
+<li>ML VII: Adversarial Attack Defense (3/5)</li>
+<li>ML VIII: Backdoors and Federated Learning (4/4)</li>
+<li>ML IX: Model Extraction and Watermark (2/5)</li>
+<li>ML X: Privacy Inference II (2/4)</li>
+<li>ML XI: Physical Adversarial Attacks (4/4)</li>
+<li>
+<p><strong>37/64</strong></p>
+</li>
+<li>
+<p>Crypto I: Secret Key Exchange (0/4)</p>
+</li>
+<li>Crypto II: Searchable Encryption (4/5)</li>
+<li>Crypto III: Password and Secret Key (1/4)</li>
+<li>Crypto IV: Position and Elections (2/5)</li>
+<li>Crypto V: Private Information Retrieval (0/4)</li>
+<li>Crypto VI: Security Analysis (2/4)</li>
+<li>Crypto VII: Private Set Operations (3/4)</li>
+<li>Crypto VIII: Side Channel (0/4)</li>
+<li>Crypto IX: Attacks (1/4)</li>
+<li>
+<p>13/38</p>
+</li>
+<li>
+<p>Cryptographic Protocols I: Multi-Party Computation (2/4)</p>
+</li>
+<li>Cryptographic Protocols II (2/5)</li>
+<li>Cryptographic Protocols III (1/5)</li>
+<li>
+<p>5/14</p>
+</li>
+<li>
+<p>LLM for Security (4/4)</p>
+</li>
+<li>LLM I: Attack and Defense (4/4)</li>
+<li>LLM II: Jailbreaking (4/4)</li>
+<li>LLM III: Abuse (3/4)</li>
+<li>
+<p><strong>15/16</strong></p>
+</li>
+<li>
+<p>Blockchain I (2/5)</p>
+</li>
+<li>Blockchain II (3/4)</li>
+<li>
+<p><strong>5/9</strong></p>
+</li>
+<li>
+<p>Measurement I: Fraud and Malware and Spam (3/4)</p>
+</li>
+<li>Measurement III: Auditing and Best Practices I (1/4)</li>
+<li>Measurement VI: Human Behavior and Security (1/4)</li>
+<li>
+<p>Measurement VII: Auditing and Best Practices II (0/3)</p>
+</li>
+<li>
+<p>Social Issues I: Phishing and Password (3/4)</p>
+</li>
+<li>Social Issues II: Surveillance and Censorship (2/5)</li>
+<li>Social Issues III: Social Media Platform (0/4)</li>
+<li>Social Issues IV (2/4)</li>
+<li>
+<p>7/17</p>
+</li>
+<li>
+<p>Differential Privacy I (3/4)</p>
+</li>
+<li>Differential Privacy II (2/4)</li>
+<li>
+<p><strong>5/8</strong></p>
+</li>
+<li>
+<p>Zero-Knowledge Proof I (3/4)</p>
+</li>
+<li>Zero-Knowledge Proof II (1/5)</li>
+<li>
+<p>4/9</p>
+</li>
+<li>
+<p>Mobile Privacy (3/4)</p>
+</li>
+<li>
+<p>Deepfake and Synthesis (2/4)</p>
+</li>
+<li>
+<p>Security Analysis V: ML (2/4)</p>
+</li>
+<li>Software Security + ML 1 (3/4)</li>
+<li>Software Security + ML 2 (3/3)</li>
+<li><strong>8/11</strong></li>
+</ul>
 
 
 
