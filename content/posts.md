@@ -13,6 +13,8 @@ Pinned
 
 Reading
 
++ [2024-07-23 Quick notes for USENIX Security'24](posts/2024-07-23-usec24.md)
++ [2024-07-16 Tech notes about BGP](posts/2024-07-16-bgp.md)
 + [2024-07-07 Tech notes about PyRTFuzz](posts/2024-07-07-pyrtfuzz.md)
 + [2024-07-03 Tech notes about AFLNet/ChatAFL](posts/2024-07-03-aflnet.md)
 + [2024-06-08 Notes about HyperCubeOS for x86_64](posts/2024-05-27-hypercube.md)
