@@ -1,176 +1,163 @@
-# How to Do [System|Software] (Security) Research
+# How to do system and software security research?
 
-## Where to find a problem
+## What is system and software security?
 
-Most practical ideas come from our research activities.
+We in system and software security aims to break and protect the assets that
+leverage hardware and software to provide widely-used services, such as
+browsers, compilers/interpreters, network protocols, operating systems,
+hypervisors, trust execution environment, and processors, based on thread models
+that define who will be trusted or not.
 
-Usually, we can read and propose a new idea after reading a paper. However,
-there would be a delay. First, a research paper would be published two years
-later than its authors came up with that idea. Second, even though some PC
+- A group of people are also interested in sound and electromagnetic waves,
+leveraging a complete different field of knowledge -- signal processing. Their
+research is likely offensive. By definition, I think such research is a branch
+of system and software security. The biggest problem IMO is whether they can
+gain write primitives besides breaking the confidentiality and availability.
+
+- Pure cryptography is mathematics. Applied cryptography has a small overlap
+with system and software security -- we apply very basic cryptography as a
+mechenism to provide confidentiality.
+
+- System people build systems and consider security as one of the properties
+their systems should have. My gut feeling is that system people is used to
+taking coarse-grained threat models when considering security compared to
+security people. Additionally, security people also build systems to break and
+protect assets.
+
+- Software engeering research is around software development lifecycle (SDLC).
+Similary, they also consider security as one of the properties they want to have
+in the SDLC. We security people emphasize vulnerabilities and exploitations.
+
+- Privacy preserving computation focuses on the privacy problem during the
+computation, exchanging, and storage of data. It might needs system and software
+security techniques, but that's it.
+
+- AI research is about data, models, and computing power. AI security aims to
+break and protect the high-dimensional function of the model. Importantly, AI
+infrastructure security has a overlap with system and software security, such as
+AI compiler security, GPU virtualization and isolation, and LLM prompt sandbox.
+
+- Technically, blockchain is about consensus. In practice, blockchain has
+abundant applications in finance, which is impressive. Similary, blockchain
+infrastructure security has a overlap with system and software security, such as
+smart contract security.
+
+## Where are the ideas from?
+
+An idea consists of a problem and a solution.
+
+First, we can read and propose a new idea after reading a paper. However, there
+will be a delay. One the one hand, a research paper is published two years later
+than its authors came up with that idea. One the other hand, even though some PC
 members can check all interesting papers submitted to a conference, there is
-about half a year or one-year delay. How can we fill the gap? No, we cannot
-unless we are connecting or collaborating with these scholars.
+about half a year or one-year delay. Can we fill the gap? No, we cannot unless
+we are connecting or collaborating with these authors.
 
-Another source of research ideas is the practical needs of users. This source is
-so inefficient unless we are connecting or collaborating with industry people.
+Ideas can also come from users, which is so inefficient unless we are connecting
+or collaborating with industry people.
 
-**Practical ideas come from our research
-activities, and we should be curious and critical thinkers about everything in
-our research activities all the time.** To make it more clear, we can put it
-this way. Whenever we study, or find or hear of a thing, we should show our
-interests: What security problems are there? What benefits will you gain?
+In practice, the first idea comes from our advisors. Later, practical ideas come
+from our research activities, and we should be curious and critical thinkers
+about everything in our research activities all the time. Whenever we study, or
+find or hear of a thing, we should show our interests: What security problems
+are there? How to address them?
 
-Of course, do not forget our connection with the academic and industrial
-community.
-
-BTW, check [this
+Check [this
 article](https://medium.com/digital-diplomacy/how-to-look-for-ideas-in-computer-science-research-7a3fa6f4696f)
 to learn the patterns of research and other tips.
 
-## How to evaluate a problem
+## There are too many ideas and how to decide?
 
-We introduce more principles to evaluate our problems because not all problems
-are worthy of study.
+The security research community has grown a lot. More PhD students generate more
+papers due to cheap resources (computing power, ChatGPT, etc.). Rat-race is
+going on and we have to fast forward our visibility by building our brand. In
+practice, we have to choose a topic where we can do resesarch for four to five
+years continously. Ask our advisors.
 
-The first question is whether a problem is generic (or important). **We have to
-check whether this problem has many instances in the real world, such that the
-real impact is there.**
+In terms of a specific topic, we have to evaluate our ideas because not all of
+them are worthy of our effort.
 
-The second question is whether a problem is solvable. We have to seek help from
-the computation theory and estimate what the best we can do. **We should
-carefully take reasonable assumptions and think of several solutions.**
+Principle 1: choose a good problem
 
-The third question is whether existing solutions have solved the problem
-already. **We should tell a clear and convincing story.** Please pay attention
-to how many papers and how many efforts exist. You may want to be at the
-beginning (0-2 papers) or not later than the peak (it depends on the publication
-wave related to our problems).
+- think about the problem first instead of having a solution first
+- a new problem is always better
+- the problem is easy to understand and has clear benefits
+- choose a problem with large security impact if the novelty is little
 
-## How to evaluate our ideas
+Principle 2: choose a solvable problem
 
-Remember that not all ideas can be accepted by top-tier conferences. One is the
-**novelty**, and the other is **superiority**. To be novel, we have to do a
-literature review and distinguish our idea from others’. Because of the time
-budget, we cannot make our idea superior to others in every aspect, and thus we
-can choose the core metrics. The core metrics evolve among the development of
-the whole community. Some technology becomes mature such that some metrics are
-easier to achieve. Such easier metrics are not the core metrics, but that we
-have to include. Consider all techniques we can use to be superior and tell why.
+- solving a easy problem does not need a paper
+- take reasonable assumptions and come up with several solutions
+- know the optimal: consider the computation theory and estimate what the best we can do
+- choose a solution with large security impact if the novelty is little
+- seperate design and implementation
 
-Besides, it's better to have the following achievements.
+Principle 3: must read related work to see how far they have gone. Please pay
+attention to how many research papers and industry blogs exist. You want to lead
+the research (there are only 0-2 papers) instead of following others. Do not be
+ignorant and remember your personal experience is biased.
 
-+ Our solutions apply to other scenarios.
-+ Our tools have good usability.
-
-OK. Let us do it! We have to be quick, and we are not supposed to make many
-mistakes. Nowadays, the computer science research community is competitive
-because not only most of the problems are easier to solve but also more and more
-people join us. When reviewers scan a manuscript, they pick up our mistakes and
-reject the papers that have more. Here are some tips from past research
-activities to evaluate our ideas quickly.
+## Tips to do research
 
 ### Budge our time
 
-- **Tell ourselves the DDL is truly two weeks in advance.**
-- Always consider what we are doing to be some paragraph in the paper and never do it twice.
-- Think and ask ourselves about what is the fastest way to do this and then do it.
-- Spend 30 seconds more to save us from a 30 mins disaster.
-- It is the context switch that wastes a lot of time.
-- Spend less than one day on a project we are not the first author.
-- Take holidays every four or five months: e.g., Chinese Spring Festivals, Labor Days, and National Holidays.
+- Mark the DDL two weeks in advance
+- Spend 30 seconds more to save us from a 30-minute disaster
+- Do not do many context switches, which wastes a lot of time
+- Spend less than one day on a project we are not the first author
+- Be busy when it is busy and have fun when it is not busy
+- Take holidays and weekends after submissions
 
-### Know what we are going to do
+### What we are going to is what we are going to write
 
-- **Review papers, run their systems, and write the summary (related work)**
-- **Identify challenges and evaluate solutions in theory (challenges, insights, solutions)**
-- **Design system and evaluate design choices in theory (background, system design)**
-- **Implement a generic prototype and write evaluation scripts (implementation, evaluation)**
-- **Write our paper in advance and get feedback from others**.
+- Review papers, run their systems, and summarize (RW)
+- Identify challenges and evaluate solutions in theory (challenges, insights, solutions)
+- Design system and evaluate design choices in theory (system design)
+- [Coding](./2021-09-03-Summary-Research-SE.md) and write evaluation scripts (IMPL, evaluation)
+- Write the paper at the same time and get feedback from others
 
 ### Set up servers
 
-- What architectures should you use? How many servers do you have?
-- If you are in the `sudo` group?
-- **Save runtime/intermediate data on SSD and save results on HDD.**
-- If there is no storage? Buy more!
-- If you disabled the hyper-threading?
+- What architectures should we use? How many servers do we have?
+- Are we in the `sudo` group?
+- Save runtime/intermediate data on SSD and save results on HDD.
+- Do we need to disable the hyper-threading?
+- Buy more CPU, RAM, and storge. 
 
-### Write evaluation scripts
+### Do evaluation
 
-- **All in Docker container.**
-- **Make it parallel.**
-- **Quick results first, middle-long results for writing, then long time evaluation for submission.**
-- **Diversity first, then quantity.**
-
-## Some tips about parallel tasks
-
-- Be busy when it is busy and have fun when it is not busy
-- Create a task, think about the solutions, importantly, think about why our results are not correct
-- Write our task down before we start and close it after we finish it (**I am using Marp (Markdown Slides).**)
+- All in Docker container
+- Make it parallel
+- Obtain quick results first, middle-long results for writing, then long time evaluation for submission
+- Go for diversity first, then quantity
 - Do not delete any data if we are sure. Just buy more storage!
-- Utilize all hardware resources we have. Do not make them have a rest.
+- Do not make the hardware have a rest.
 
-## How to sell our idea
+## Write a good paper
 
-### Write a good paper
-
-- Tell a well-constructed story
+- Tell a well-constructed story (information-flow, the pyramid principle)
 - Conduct reader-centred writing: straightforward and clear
-- Write in unity, support, and coherence
-- Find reviewers who haven't joined your discussion
-- Revise context and sentences, and do editing
-- Minimize disadvantages.
+- Writing process
+    + drafting: everyone is good!
+    + revising: focus, support, coherence
+        - a paragraph should have one topic sentence
+        - multiple topic sentences should be logical
+        - support material must be specific
+        - logic should be clear
+    + editing: grammar, word choice, sentence skill
+        + pay attention to a/an/the, single/plural, could/should
+        + choose words for all levels of reviewers
+        + choose a word that has only one meaning
+        + use few metaphors
+        + don't have formal analysis
+    + proofreading: everyone is good!
+- Minimize disadvantages
+- Our solutions apply to other scenarios
+- Our tools have good usability
 
-### A detailed analysis at the story level
+### Necessity for reader-centred writing
 
-1. What we cannot control
-    - How many papers were submitted to a conference and the target acceptance rate.
-    - Which reviewers would revise our paper, and how they know about what we are doing.
-2. What we can control
-    - Importance/Novelty/Superior
-    - Reasonable techniques and good enough implementation
-    - Clear writing
-    - Handle small flaws
-3. Storyline
-    - Importance, limitations of existing work, new theory and new techniques, evaluation
-4. Title: Summary of our work; Be attractive; No details
-5. Abstract: 2-minute storyline; Use hypernyms; No technical details;
-6. Introduction: 10-minute storyline; Show rationals; No concrete details;
-7. Background: Big background; Terminologies; Motivating Example
-8. System, Implementation, and Evaluation: Problems -> Approaches -> Why -> How well
-9. Related work: Introduce related works and Highlight the difference
-10. Discussion: Answer reviewers' questions and hint the future work
-11. Conclusion: Summarize and extract new knowledge
-
-### Clear writing in the section and paragraph-level
-
-- Each paragraph has its goal. Make sure the topic sentence highlights the goal.
-- Schema of a concept: Concept Name: Definition of concept. Example of Concept.
-- A strong argument includes 1) point, 2) theoretical argument (papers), 3)
-factual argument (data).
-    - Be confident but do not overclaim.
-    - Be critical but be not rude.
-- Schema of the introduction of a section: Description; Importance; Links.
-
-## Advertise
-
-- Homepage
-- Twitter
-- Main conference session
-- Poster session
-- Inter/Intra-Group
-
-## How to solve a problem (WIP)
-
-In general, we will define a problem as a computation problem in computer
-science. The tools we have are threat models, system primitives, etc. For
-algorithms, we think about decidability, time, and storage complexity.
-
-### Classification
-
-Classification is the first naive and powerful tool we are supposed to use. In
-fact, we use this tool implicitly every day. When we are talking about fuzzers,
-we will split them into black-box, white-box, and grey-box fuzzers. If someone
-asks us what is this, why is this, and how is this, probably the first answer is
-to ask what categories are of "this". If someone asks us what our favourite food
-is, we may ask: what categories of food we are asking?
+- Too many papers submitted but not enough reviewers
+- Too many DDLs so that a reviewer at most up to 1 day (maybe half) to figure
+out what we did. Good-writing paper save reviewer's time. Otherwise, he will
+leave a message "I couldn't figure out the contributions due the bad writting".
