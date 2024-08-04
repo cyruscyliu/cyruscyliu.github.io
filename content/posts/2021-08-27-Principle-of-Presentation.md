@@ -37,19 +37,20 @@ Who are you going to give the presentation to?
 
 1. [Susan McConnell (Stanford): Designing effective scientific presentations](https://www.youtube.com/watch?v=Hp7Id3Yb9XQ)
     - We are good listeners and let's transfer the knowledge to make slides
-2. Consider the attention curve
+2. One slide, one topic sentence, 4-5 sentences, 1 minute
+3. Consider the attention curve
     + https://ethos3.com/hacking-the-audience-attention-curve/
     + Split the talk into parts and summary the key message for each part
     + Write down the key messages first and fill up the rest of space
     + Highlight the key messages with both text and the soundtrack
-3. A simple style
+4. A simple style
     + One font (Calibri)
     + Large font size (24, 28, 36, 52) and less text
     + Sentence in one line
     + Built-in list
     + Box for the key summary
     + Backup slides
-4. Animation
+5. Animation
     + Too much text and show them one by one
 
 ### Practice
@@ -57,7 +58,7 @@ Who are you going to give the presentation to?
 + Slide by slide: starting from the last sentence for the last slide
 + All slides: control speed and try to remember as much as possible
 
-### Dry-run, answer questions, and take feedback
+### Dry-run, prepare and answer questions, and take feedback
 
 1. Have eye contact, be confident
 1. That's good/interesting question. Give a high level overview of your answer in the beginning and then give the remaining details of your answer.
