@@ -108,3 +108,7 @@ $ $LLVM_DIR/bin/opt \
     -load-pass-plugin ./libHelloWorld.so -passes=hello-world -disable-output \
     PLACEHOLDER.bc
 ```
+
+## Debug LLVM passes
+
+https://releases.llvm.org/1.5/docs/WritingAnLLVMPass.html#debughints

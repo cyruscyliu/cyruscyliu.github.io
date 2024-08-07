@@ -9,7 +9,18 @@ Waste less time = Gain more time!
 - Don't use all CPUs when you are using WSL
 - Don't delete files randomly
 
-## Make sure the servers are running all the time not you.
+## Make sure the servers are running all the time not you
+
+## Proxies Setup List
+
+- Setup Proxy for google, GitHub, Docker, apt sources
+- Proxy setup for WSL: 1) allow LAN, 2) access the host in WSL,
+https://learn.microsoft.com/en-us/windows/wsl/networking, 3) enable system proxy
+
+## Cloud storage for remote work
+
+- Google Driver/Nutshore/GitHub/servers
+- Commit and push before going home 
 
 ## Other pitfalls
 
