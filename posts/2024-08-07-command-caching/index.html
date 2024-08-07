@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2023-08-15-dont-waste-time/">
+        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2024-08-07-command-caching/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Pitfalls, Tweaks, Tricks in Research and Development - Qiang Liu's Homepage</title>
+        <title>Bash command hashing - Qiang Liu's Homepage</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pitfalls-tweaks-tricks-in-research-and-development" class="md-skip">
+        <a href="#bash-command-hashing" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pitfalls, Tweaks, Tricks in Research and Development
+              Bash command hashing
             
           </span>
         </div>
@@ -287,59 +287,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#avoid-re-doing-the-same-things-twice" class="md-nav__link">
-    <span class="md-ellipsis">
-      Avoid re-doing the same things twice
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#make-sure-the-servers-are-running-all-the-time-not-you" class="md-nav__link">
-    <span class="md-ellipsis">
-      Make sure the servers are running all the time not you
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proxies-setup-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      Proxies Setup List
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cloud-storage-for-remote-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cloud storage for remote work
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#other-pitfalls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Other pitfalls
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -353,37 +300,32 @@
                   
 
 
-<h1 id="pitfalls-tweaks-tricks-in-research-and-development">Pitfalls, Tweaks, Tricks in Research and Development</h1>
-<p>Waste less time = Gain more time!</p>
-<h2 id="avoid-re-doing-the-same-things-twice">Avoid re-doing the same things twice</h2>
-<ul>
-<li>Avoid building Buildroot twice by saving its configs</li>
-<li>Avoid developing scripts twice</li>
-<li>Don't use all CPUs when you are using WSL</li>
-<li>Don't delete files randomly</li>
-</ul>
-<h2 id="make-sure-the-servers-are-running-all-the-time-not-you">Make sure the servers are running all the time not you</h2>
-<h2 id="proxies-setup-list">Proxies Setup List</h2>
-<ul>
-<li>Setup Proxy for google, GitHub, Docker, apt sources</li>
-<li>Proxy setup for WSL: 1) allow LAN, 2) access the host in WSL,
-https://learn.microsoft.com/en-us/windows/wsl/networking, 3) enable system proxy</li>
-</ul>
-<h2 id="cloud-storage-for-remote-work">Cloud storage for remote work</h2>
-<ul>
-<li>Google Driver/Nutshore/GitHub/servers</li>
-<li>Commit and push before going home </li>
-</ul>
-<h2 id="other-pitfalls">Other pitfalls</h2>
-<ul>
-<li>Sogoupinyin doesn't work on Ubuntu</li>
-<li><code>ssh -X</code> forwards X11 back to your desktop (qemu <code>gtk initialization failed</code>)</li>
-<li>Don't use <code>git submodules</code></li>
-<li>Run <a href="https://github.com/koalaman/shellcheck">shellchecker</a> before running any bash/sh script</li>
-<li>Server restarted was due to out of memory</li>
-<li>Server not responding was due to a dead loop</li>
-<li>Don't play with Python's built-in functions and fields</li>
-</ul>
+<h1 id="bash-command-hashing">Bash command hashing</h1>
+<p>Reference:
+https://unix.stackexchange.com/questions/554785/why-does-shell-use-executable-in-usr-bin-and-not-in-usr-local-bin</p>
+<p>Bash will hash commands: amazing, In other words, when any command is executed
+without naming its path, the shell starts searching for that command within the
+directories, which are listed in the path variable. When the Bash gets that
+command, it keeps the location in a hash table so that it can remember the
+location of the command. After that, Bash starts checking the table to find the
+location of the command instead of looking for the command again. It makes the
+command run faster. However, if the command is moved after recording its
+location in a table, the shell will not be able to find the command. In this
+case, a full search of the directories in the path is performed to get the
+command data.</p>
+<p>The Filesystem Hierarchy Standard describes the filesystem conventions of a
+Linux system. In this standard, folders /lib, /usr/lib and /usr/local/lib are
+the default folders to store shared libraries. The /lib folder has libraries
+used during the boot time of the system but also used by programs in the /bin
+folder. Similarly, the/usr/lib folder has libraries used by programs in the
+/usr/bin folder. Finally, /usr/local/lib folder has libraries used by programs
+in /usr/local/bin folder. Therefore, we may first check these standard paths to
+find out if a specific shared library is installed on our system. (You never
+know when you will use this information when you learn it …)</p>
+<p>Libraries are also cached. So, after clear the command cache. You must clear the
+ldconfig cache. That’s what we will not learn from the textbook!!!!!! When
+teaching Linux kernel, also search on stack overflow:
+https://stackoverflow.com/questions/17889799/libraries-in-usr-local-lib-not-found</p>
 
 
 

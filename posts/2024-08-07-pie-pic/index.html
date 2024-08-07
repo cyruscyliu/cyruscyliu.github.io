@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2023-08-15-dont-waste-time/">
+        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2024-08-07-pie-pic/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Pitfalls, Tweaks, Tricks in Research and Development - Qiang Liu's Homepage</title>
+        <title>PIC and PIE - Qiang Liu's Homepage</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pitfalls-tweaks-tricks-in-research-and-development" class="md-skip">
+        <a href="#pic-and-pie" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pitfalls, Tweaks, Tricks in Research and Development
+              PIC and PIE
             
           </span>
         </div>
@@ -287,59 +287,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#avoid-re-doing-the-same-things-twice" class="md-nav__link">
-    <span class="md-ellipsis">
-      Avoid re-doing the same things twice
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#make-sure-the-servers-are-running-all-the-time-not-you" class="md-nav__link">
-    <span class="md-ellipsis">
-      Make sure the servers are running all the time not you
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proxies-setup-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      Proxies Setup List
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cloud-storage-for-remote-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cloud storage for remote work
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#other-pitfalls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Other pitfalls
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -353,37 +300,19 @@
                   
 
 
-<h1 id="pitfalls-tweaks-tricks-in-research-and-development">Pitfalls, Tweaks, Tricks in Research and Development</h1>
-<p>Waste less time = Gain more time!</p>
-<h2 id="avoid-re-doing-the-same-things-twice">Avoid re-doing the same things twice</h2>
-<ul>
-<li>Avoid building Buildroot twice by saving its configs</li>
-<li>Avoid developing scripts twice</li>
-<li>Don't use all CPUs when you are using WSL</li>
-<li>Don't delete files randomly</li>
-</ul>
-<h2 id="make-sure-the-servers-are-running-all-the-time-not-you">Make sure the servers are running all the time not you</h2>
-<h2 id="proxies-setup-list">Proxies Setup List</h2>
-<ul>
-<li>Setup Proxy for google, GitHub, Docker, apt sources</li>
-<li>Proxy setup for WSL: 1) allow LAN, 2) access the host in WSL,
-https://learn.microsoft.com/en-us/windows/wsl/networking, 3) enable system proxy</li>
-</ul>
-<h2 id="cloud-storage-for-remote-work">Cloud storage for remote work</h2>
-<ul>
-<li>Google Driver/Nutshore/GitHub/servers</li>
-<li>Commit and push before going home </li>
-</ul>
-<h2 id="other-pitfalls">Other pitfalls</h2>
-<ul>
-<li>Sogoupinyin doesn't work on Ubuntu</li>
-<li><code>ssh -X</code> forwards X11 back to your desktop (qemu <code>gtk initialization failed</code>)</li>
-<li>Don't use <code>git submodules</code></li>
-<li>Run <a href="https://github.com/koalaman/shellcheck">shellchecker</a> before running any bash/sh script</li>
-<li>Server restarted was due to out of memory</li>
-<li>Server not responding was due to a dead loop</li>
-<li>Don't play with Python's built-in functions and fields</li>
-</ul>
+<h1 id="pic-and-pie">PIC and PIE</h1>
+<p>The -fPIC flag is a compiler option used in the context of generating
+position-independent code (PIC). It stands for "Position Independent Code." This
+flag is commonly used when building shared libraries or dynamically loadable
+modules to ensure that the code can be loaded at any memory address, and doesn't
+depend on a fixed memory location.</p>
+<p>The -fPIE flag is another compiler option related to position-independent code,
+but it specifically stands for "Position Independent Executable." Like the -fPIC
+flag, it is used to generate position-independent code, but it is typically used
+for creating position-independent executables rather than shared libraries. When
+you compile code with -fPIE, the generated executable is designed to be
+position-independent, meaning it can be loaded at any memory address during
+runtime.</p>
 
 
 
