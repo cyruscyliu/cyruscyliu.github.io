@@ -1,6 +1,23 @@
-**I am seeking a Tenure-Track Assistant Professor position and am
-also open to working in industry. If you have job opportunities, please feel
-free to contact me.**
+**I am in the job market seeking a Tenure-Track Assistant Professor position and
+also an industrial system security researcher position. Reach out to me via
+email!**
+
+## About me
+
+Hi, I am Qiang Liu, currently a postdoc at EPFL under the guidance of [Prof.
+Mathias Payer](https://nebelwelt.net/). I obtained my Ph.D. in cybersecurity at
+Zhejiang University (ZJU) in 2023, advised by [Prof. Yajin
+Zhou](https://yajin.org/). Prior to ZJU, I earned my bachelor's degree at
+Beijing Institute of Technology (BIT) in 2018.  We have published a few papers
+at top-tier security conferences like IEEE S&P, Usenix Security, and CCS.  To
+engage the community, we always open-source our tools and evaluation scripts.
+
+[CV](./Qiang_s_CV.pdf)
+[LinkedIn](https://www.linkedin.com/in/qiang-liu-7a3b50270/)
+[Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
+[GitHub](https://github.com/cyruscyliu)
+[Twitter](https://www.twitter.com/qiangliu717)
+[Weibo](https://weibo.com/u/5397354395)
 
 I am always thinking outside the box when it comes to cybersecurity's
 cat-and-mouse game. It started with Capture the Flag (CTF) cybersecurity
@@ -19,56 +36,52 @@ focuses on making infrastructure software, such as OS kernels and hypervisors,
 protocols and browsers as well, bug and exploitation-free through innovative
 designs in both hardware and software.
 
-Hi, I am Qiang Liu, currently a postdoc at EPFL under the guidance of [Prof.
-Mathias Payer](https://nebelwelt.net/). I obtained my Ph.D. in cybersecurity at
-Zhejiang University (ZJU) in 2023, advised by [Prof. Yajin
-Zhou](https://yajin.org/). Prior to ZJU, I earned my bachelor's degree at
-Beijing Institute of Technology (BIT) in 2018.  We have published a few papers
-at top-tier security conferences like IEEE S&P, Usenix Security, and CCS.  To
-engage the community, we always open-source our tools and evaluation scripts.
-
-Along the way of research, I've also gotten better at managing multiple projects
+I've also gotten better at managing multiple projects
 smoothly, communicating with people well, and making the team deliver results.
 
 We're open to discussing and collaborating on any of the following active
 projects. Feel free to reach out via this long-term email address:
 <cyruscyliu@gmail.com>.
 
-[CV](./Qiang_s_CV.pdf)
-[Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
-[GitHub](https://github.com/cyruscyliu)
-[Twitter](https://www.twitter.com/qiangliu717)
-[LinkedIn](https://www.linkedin.com/in/qiang-liu-7a3b50270/)
+## Awards
+
++ [HyperPill](./papers/hyperpill-sec24.pdf) wins USENIX Security'24 Best Paper Award
 
 ## Projects and Publications
 
 ### Hypervisor Fuzzing
 
-This project tries to discover vulnerabilities in both open-source and
-closed-source hypervisors, covering virtual devices, VM management, and CPU
-emulation, and to fix them as early as possible. Relative research papers are
-[ViDeZZo (1st author)](./papers/videzzo-sp23.pdf) and [HyperPill (2nd
-author)](./papers/hyperpill-sec24.pdf).
-
-We open source the following projects.
-
-+ [ViDeZZo](https://github.com/HexHive/videzzo) can fuzz QEMU/VirtualBox virtual
-devices in a scalable and efficient way. (Author and Maintainer)
++ [ViDeZZo](./papers/videzzo-sp23.pdf) (IEEE SP'23) first summarized the intra-
+and inter-message dependencies required for fuzzing virtual devices. ViDeZZo is
+[open-source](https://github.com/HexHive/videzzo) and it can fuzz
+QEMU/VirtualBox virtual devices in a scalable and efficient way. 28 new bugs
+have been reported.
 
 + [ViDeZZo LLVM Project](https://github.com/cyruscyliu/videzzo-llvm-project),
 forked from LLVM Project 13, contains the compiler/libFuzzer we use to compile
-QEMU/VirtualBox virtual devices. (Author and Maintainer)
+QEMU/VirtualBox virtual devices.
 
 + [buildroot-external-packages](https://github.com/cyruscyliu/buildroot-external-packages)
-provides a template for your own userspace programs and kernel modules into a
-Buildroot kernel. I've been using this a lot to reproduce QEMU bugs. (Author and Maintainer)
+provides templates of userspace programs and kernel modules to reproduce virtual
+device bugs and develop exploits.
+
++ [HyperPill](./papers/hyperpill-sec24.pdf) (USENIX Security'24) first leveraged
+hardware virtualization interface to fuzz arbitrary hypervisors. We evaluated
+HyperPill with QEMU, Hyper-V, and macOS Virtualization Framework. 26 new bugs
+have been reported.
 
 ### Network Protocol Fuzzing
 
-This project tries to fuzz network protocols, especially router protocols. I
-joined this project as an intern and wrote several Peach Pits by 1) learning the
-grammar of Peach Pit, 2) understanding specific network protocols via their
-specifications, 3) collaborating with others to deploy our Peach Pits.
++ Development of Peach Pits for layer 3 network protocols. As an intern, I
+developed several Peach Pits by reading the specifications of specific network
+protocols.
+
++ [Tango](./papers/tango-raid24.pdf) (RAID'24) first abstracted state feedback
+from edge coverage feedback. Tango is
+[open-source](https://github.com/HexHive/tango) and it can fuzz stateful
+targets, i.e., 1) protocol targets: bftpd, dcmtk, dnsmasq, tinydtls, exim,
+lightftp, openssh, openssl, proftpd, pureftpd, live555, and kamailio, 2)
+parsers: expat, llhttp, and yaml. (forked-daap is not supported.)
 
 ### Embedded System Rehosting (Archived)
 
@@ -83,17 +96,15 @@ We open source the following projects.
 
 + [pyqemulog](https://github.com/cyruscyliu/pyqemulog) is the qemu-log ported to
 Python. It converts the structured trace generated by QEMU with -d to JSON.
-(Author and Maintainer)
 
 + [llbic](https://github.com/cyruscyliu/llbic), which is short for LLVM Linux
 Build Issues Collection, helps compile old Linux kernels in LLVM bitcode. It
 replaces GCC to clang and adjusts other flags in the make command lines to
 generate bitcode files, and then links them all together to a `vmlinux.bc`.
-(Co-authors and Maintainer)
 
 + [openwrt-build-docker](https://github.com/cyruscyliu/openwrt-build-docker)
 supports automatically building the OpenWrt project given a target/subtarget of
-a specific OpenWrt revision from 10.03 to 19.07.1. (Co-author and Maintainer)
+a specific OpenWrt revision from 10.03 to 19.07.1.
 
 + [FirmGuide](https://github.com/cyruscyliu/firmguide) can help you to develop a
 QEMU virtual machine for a Linux-based embedded system, especially boosting the
@@ -102,7 +113,7 @@ emulator, you can debug, trace, and test the Linux kernel to collect runtime
 information that can be used to understand vulnerabilities, PoCs, root causes of
 crashes in the Linux kernel. FirmGuide is an effectively complementary to
 Firmadyne that focuses on user space programs - FirmGuide focuses on the Linux
-kernel. (Co-author and Maintainer)
+kernel.
 
 + [ECMO](https://github.com/valour01/ecmo) receives a firmware image, and it can
 successfully re-host the Linux kernel inside the image to get the shell.  Due to
