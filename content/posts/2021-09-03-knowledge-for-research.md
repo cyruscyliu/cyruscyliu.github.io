@@ -1,19 +1,20 @@
-# Knowledge for System Security Research
+# Knowledge for System and Software Security Research
 
-In this post, I am maintainling a list of what we should know for system
-security research based on my experience.
+In this post, I am maintainling a list of what we should know for system and
+software security research based on my experience.
 
 ## Programming Language and Tooling
 
-+ Be familiar with C and Python. Don't use many advanced features of Python in
-one project, which otherwise introduces difficulty for code reviewers.
++ Be familiar with C and Python. Write self-explainable code. Don't use many
+advanced features of Python in one project, which otherwise introduces
+difficulty for code reviewers.
 
 + Learn basic C++ and basic bash. Enable linters, e.g., shellcheck, to remove
-stupid bugs and enable ChatGPT for functionality you do not remember.
+stupid bugs and use ChatGPT for quick prototyping.
 
 + Learn Java for object-oriented programming. I suggest that even developing in
-Python/C++, apply the best practice of OOP in Java that is simple and mostly
-efficient.
+Python/C++, apply the best practice of OOP just like coding in Java, which is
+simple and easy to understand.
 
 + Learn how to develop Dockerfile to make your artifact deployable everywhere.
 Learn Docker's entrypoint/arguments/environment variables/volumns/capabilities
@@ -23,18 +24,18 @@ and run your program in the Docker container all the time.
 
 + To compile C/C++, learn how to use gcc/g++/clang/clang++, how to install and
 uninstall these compilers, and how to debug any warnings and errors. Learn
-update-alternatives to have multiple versions of the tooling.
+update-alternatives to have multiple versions of the tooling. Have gdb-gef
+enabled.
 
-+ Learn what is cross compilation and how to use relative compilers.
++ Learn what is and how to use cross-platform compilers.
 
-+ [Optional] Considering the memory safety issues of C/C++, learn memory safe
-programming language, e.g., Rust.
++ Enable ASAN or UBSAN to mitigate your C/C++ bugs, or learn Rust.
 
 ## (Linux) utilities
 
-+ ls/mv/pwd/cat/echo/mkdir/rm/touch
++ ls/mv/pwd/cat/echo/mkdir/rm/touch/hexdump
 + cd/pushd/popd
-+ cp/rsync
++ cp/rsync/dd
 + vim
 + git
 + sudo/chmod/chown
@@ -46,53 +47,51 @@ programming language, e.g., Rust.
 + screen
 + apt-get/apt-cache
 + source/bash/hash/ldconfig/update-grub
-
-+PRBLM: Necessarily know what problem is going to address  
--PRBLM: Not necessarily know what problem is going to address  
-+IMPL: Necessarily know how to implement it  
--IMPL: Not necessarily know how to implement it
++ file/readelf
++ nm/ldd/objcopy
 
 ## Data Structure and Algorithm
 
-Textbook: [Introduction to Algorithms (4th)](https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf)
+Textbook: [Introduction to Algorithms
+(4th)](https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf)
 
-+ Sorting algorithms (-PRBLM, -IMPL)
+Textbook: [Hello Algo](https://www.hello-algo.com/en/chapter_hello_algo/)
 
-    + Insertion sort, Merge sort, Heapsort, Quick sort, Counting sort, Radix sort, Bucket sort
+Training: [Leetcode Top interview 150](https://leetcode.com/studyplan/top-interview-150/)
 
-+ Dynamic sets (+PRBLM, -IMPL)
++ Dynamic sets
 
     + Operations: Search, Insert, Delete, Minimum, Maximum, Successor,
     Predecessor
 
-    + Data structures: Array (Fast lookup), Stack, Matrices, Queue, Linked List
-    (Fast addition/removal), Rooted tree, Hash table
+    + Data structures: Array (list), Stack (deque), Matrices, Queue (deque),
+    Linked List , Rooted tree, Heap (heapq), Hash table
 
     + Data structure: Binary search tree (Binary tree, Left <= Right, Fast
     lookup/addition/removal)
 
-        + Red-black tree
+        + Red-black tree (RB tree)
 
-            + Every node in a red-black tree is either red or black, the
-            children of a red node are both black, and every simple path from a
-            node to a descendant leaf contains the same number of black nodes.
-            Red-black trees are one of many search-tree schemes that are
-            ``balanced'' in order to guarantee that basic dynamic-set operations
-            take O(lgn) time in the worst case.
+            + Every node in a RB tree is either red or black, the children of a
+            red node are both black, and every simple path from a node to a
+            descendant leaf contains the same number of black nodes.  RB trees
+            are one of many search-tree schemes that are balanced in order to
+            guarantee that basic dynamic-set operations take O(logn) time in the
+            worst case.
 
             + [Rbtress in Linux
-            kernel](https://docs.kernel.org/core-api/rbtree.html): Red-black
-            trees are a type of self-balancing binary search tree, used for
-            storing sortable key/value data pairs. This differs from radix trees
-            (which are used to efficiently store sparse arrays and thus use long
+            kernel](https://docs.kernel.org/core-api/rbtree.html): RB trees are
+            a type of self-balancing binary search tree, used for storing
+            sortable key/value data pairs. This differs from radix trees (which
+            are used to efficiently store sparse arrays and thus use long
             integer indexes to insert/access/delete nodes) and hash tables
             (which are not kept sorted to be easily traversed in order, and must
             be tuned for a specific size and hash function where rbtrees scale
-            gracefully storing arbitrary keys). Red-black trees are similar to
-            AVL trees, but provide faster real-time bounded worst case
-            performance for insertion and deletion (at most two rotations and
-            three rotations, respectively, to balance the tree), with slightly
-            slower (but still O(log n)) lookup time.
+            gracefully storing arbitrary keys). RB trees are similar to AVL
+            trees, but provide faster real-time bounded worst case performance
+            for insertion and deletion (at most two rotations and three
+            rotations, respectively, to balance the tree), with slightly slower
+            (but still O(log n)) lookup time.
 
         + AVL tree
 
@@ -100,19 +99,32 @@ Textbook: [Introduction to Algorithms (4th)](https://dl.ebooksworld.ir/books/Int
             each node x, the heights of the left and right subtrees of x differ
             by at most 1.
 
-+ Graph algorithm (+PRBLM, -IMPL)
++ Graph
+
     + Search, Topological sort, Strong connected components, Minimum spanning
     tree, Shortest paths, Maximum flow, Matching in bipartitie graphs
 
-+ Advanced data structures (-PRBLM, -IMPL)
-    + Augmented red-black tree, B-trees, data structures for disjointed sets
++ Advanced data structures
+    + Augmented RB tree, B-trees, data structures for disjointed sets
+
++ Sorting algorithms
+
+    + Insertion sort, Merge sort, Heapsort, Quick sort, Counting sort, Radix sort, Bucket sort
+
++ Searching algorithms
+
+    + Linear search, Breadth-first search, Depth-first search, Binary search,
+    Hash search, Tree search
 
 + Algorithm design and analysis
-    + Simulation, Recursive algorithms, Enumeration, Iterative algorithm, Divide
-    and conquer, Dynamic programming, Greedy algorithms, Amortized analysis,
+    + The halting problem over Turing machines
+    + Temporal and spatial complexity, Amortized analysis
+    + Simulation, Enumeration, Iterative algorithm (e.g., when handling linked
+    lists), Divide and conquer (recursive, e.g., when handing binary trees),
+    Backtracking algorithm (recursive), Dynamic programming, Greedy algorithms,
     Data structure augment
 
-+ Automata, regular expression, context-free grammar, temporal and spatial complexity, the halting problem over Turing machines
++ Automata, Regular expression, Context-free grammar
 
 ## Architecture and Computation System
 
@@ -250,8 +262,6 @@ VMX = Virtual Machine Extension
 
 + LLVM IR and passes
 
-## Software Security
 ## Distributed Systems
-## Probability
-## Graph Theory
-## Game Theory
+
+## Software Security
