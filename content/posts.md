@@ -13,6 +13,7 @@ Pinned
 
 Reading
 
++ [2024-09-15 Quick notes about confidential computing](posts/2024-09-15-confidential-computing.md)
 + [2024-08-07 Bash command caching](posts/2024-08-07-command-caching.md)
 + [2024-08-07 PIE and PIC](posts/2024-08-07-pie-pic.md)
 + [2024-07-23 Quick notes for USENIX Security'24](posts/2024-07-23-usec24.md)
