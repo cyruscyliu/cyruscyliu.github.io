@@ -7,7 +7,6 @@
 Syzkaller](https://www.cyberark.com/resources/threat-research-blog/your-nvme-had-been-syzed-fuzzing-nvme-of-tcp-driver-for-linux-with-syzkaller)
     + Remote KCOV is supported by kcov_remote_start()/kcov_remote_stop().
     + This blog shows how to pass the REMOTE_HANDLE to a new subsystem.
-
 + [Programmable System Call Security with eBPF](https://arxiv.org/pdf/2302.10366)
     + Syscall filter -> Least priviliedge
     + BPF: Bytecode v.s. JIT
@@ -17,7 +16,6 @@ Syzkaller](https://www.cyberark.com/resources/threat-research-blog/your-nvme-had
 + [SafeFetch: Practical Double-Fetch Protection with Kernel-Fetch Caching](https://www.usenix.org/system/files/sec24fall-prepub-1439-duta.pdf)
     + [Zero copy](https://en.wikipedia.org/wiki/Zero-copy)
     + Fetch-side cache v.s. Write-side cache (Midas)
-
 + [Python Garbage Collector](https://devguide.python.org/internals/garbage-collector/)
     + Reference count, mark-and-sweep
 + [Stack Unwinding](https://www.ibm.com/docs/en/zos/2.4.0?topic=only-stack-unwinding-c)
@@ -40,12 +38,9 @@ Syzkaller](https://www.cyberark.com/resources/threat-research-blog/your-nvme-had
     back in the processor and computation starts over from the return point of
     setjmp function but the returned value is the one passed as second argument
     to longjmp function.
-
 + [SoK: On the Analysis of Web Browser Security](https://arxiv.org/pdf/2112.15561)
-
 + Some staff related to KVM: Linux Kernel's KVM for x86_64 includes kvm.o,
 kvm_intel.o, and kvm_amd.o.
-
 + Ways to pass data from Linux Kernel to user space: procfs (maps kernel
 variable to usespace, mostly readonly), sysctl (/proc/sys, readable/writeable),
 sysfs (/sys, driver-specific), netlink (socket, net-tools->procfs deprecated,

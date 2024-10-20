@@ -4,13 +4,13 @@ email!**
 
 ## About me
 
-Hi, I am Qiang Liu, currently a postdoc at EPFL under the guidance of [Prof.
-Mathias Payer](https://nebelwelt.net/). I obtained my Ph.D. in cybersecurity at
-Zhejiang University (ZJU) in 2023, advised by [Prof. Yajin
-Zhou](https://yajin.org/). Prior to ZJU, I earned my bachelor's degree at
-Beijing Institute of Technology (BIT) in 2018.  We have published a few papers
-at all four top-tier security conferences, IEEE S&P, Usenix Security, ACM CCS, and NDSS.  To
-engage the community, we always open-source our tools and evaluation scripts.
+[**whoami**] Hi, I am Qiang Liu, currently a postdoc at EPFL with [Prof.  Mathias
+Payer](https://nebelwelt.net/). I obtained my Ph.D. in cybersecurity at Zhejiang
+University (ZJU) in 2023, advised by [Prof. Yajin Zhou](https://yajin.org/).
+Prior to ZJU, I earned my bachelor's degree at Beijing Institute of Technology
+(BIT) in 2018. We have published a few papers at all four top-tier security
+conferences, IEEE S&P, Usenix Security, ACM CCS, and ISOC NDSS. To engage the
+community, we always open-source our tools and evaluation scripts.
 
 [CV](./Qiang_s_CV.pdf)
 [LinkedIn](https://www.linkedin.com/in/qiang-liu-7a3b50270/)
@@ -19,118 +19,92 @@ engage the community, we always open-source our tools and evaluation scripts.
 [Twitter](https://www.twitter.com/qiangliu717)
 [Weibo](https://weibo.com/u/5397354395)
 
-I am always thinking outside the box when it comes to cybersecurity's
-cat-and-mouse game. It started with Capture the Flag (CTF) cybersecurity
-competition, where I learned to break systems, e.g., reverse engineering binaries
-and developing exploits, and be a team player. Over the years, collaborating
-with my colleagues, we have developed new approaches to protect systems from
-attacks. Specifically, we have proposed advanced fuzz testing techniques to
-unveil vulnerabilities in OS kernels and hypervisors before this infrastructure
-software is released.  I am interested in the infrastructure software, such as
-OS kernels and hypervisors, because they are used everywhere to establish
-security trust for the upper layers. These systems must be flawless, as any
-error could significantly impact not only individuals but also organizations.
-Their reliability is crucial for ensuring the smooth functioning of both
-personal and professional activities in daily life. All in all, my research
-focuses on making infrastructure software, such as OS kernels and hypervisors,
-protocols and browsers as well, bug and exploitation-free through innovative
-designs in both hardware and software.
+[**history**] Cybersecurity remains an arms race where attackers are inherently
+at a disadvantage as they must protect against all vulnerabilities while an
+attacker only needs to successfully exploit one. Security therefore requires
+thinking outside of the box. My journey began with a Capture the Flag (CTF)
+cybersecurity competition, where I learned to break systems and software through
+techniques like reverse engineering and exploitation. Over the years,
+collaborating with my colleagues, we have developed novel and practical designs
+to protect systems and software from attacks. Notably, we have designed advanced
+fuzz testing techniques to unveil almost a hundred vulnerabilities in
+hypervisors before software is released.
 
-I've also gotten better at managing multiple projects
-smoothly, communicating with people well, and making the team deliver results.
+[**help**] My research in cybersecurity aims at building a layered secure
+computing system, covering browsers, interpreters, network protocols, OS
+kernels, hypervisors, and trusted execution environment (TEE), which requires
+the research on the automatic vulnerability detection before the release of
+software and vulnerability mitigation at runtime. Ultimately, my research aims
+to make the computing system hard to break, benefiting not only individuals but
+also organizations.
 
-We're open to discussing and collaborating on any of the following active
-projects. Feel free to reach out via this long-term email address:
-<cyruscyliu@gmail.com>.
+[**mail**] We're open to discussing and collaborating on any of the
+following active projects. Feel free to reach out via this long-term email
+address: <cyruscyliu@gmail.com>.
 
 ## Awards
 
-+ [HyperPill](./papers/hyperpill-sec24.pdf) wins USENIX Security'24 Best Paper Award
++ [HyperPill](./papers/hyperpill-sec24.pdf) wons USENIX Security'24 Best Paper Award
++ [Tango](./papers/tango-raid24.pdf) won ACM RAID'24 Best Paper Award
 
-## Projects and Publications
+## Project: Hypervisor Fuzzing
 
-### Hypervisor Fuzzing
-
-+ [ViDeZZo](./papers/videzzo-sp23.pdf) (IEEE SP'23) first summarized the intra-
-and inter-message dependencies required for fuzzing virtual devices. ViDeZZo is
-[open-source](https://github.com/HexHive/videzzo) and it can fuzz
-QEMU/VirtualBox virtual devices in a scalable and efficient way. 28 new bugs
-have been reported.
-
++ [ViDeZZo](https://github.com/HexHive/videzzo),
+[paper](./papers/videzzo-sp23.pdf), **IEEE SP'23**, intra- and inter-message
+dependencies, libFuzzer, QEMU/VirtualBox, 28 new bugs
 + [ViDeZZo LLVM Project](https://github.com/cyruscyliu/videzzo-llvm-project),
-forked from LLVM Project 13, contains the compiler/libFuzzer we use to compile
-QEMU/VirtualBox virtual devices.
+forked from LLVM Project 13, instrumentation and libFuzzer for ViDeZZo
++ [buildroot-external-packages](https://github.com/cyruscyliu/buildroot-external-packages),
+PoC and exploit template
++ [HyperPill](https://github.com/HexHive/HyperPill/tree/artifact-evaluation),
+[paper](./papers/hyperpill-sec24.pdf), **USENIX Security'24** (Best Paper),
+taking snapshot at VM-Exit, libFuzzer, QEMU, Hyper-V, and macOS Virtualization
+Framework, 26 new bugs
 
-+ [buildroot-external-packages](https://github.com/cyruscyliu/buildroot-external-packages)
-provides templates of userspace programs and kernel modules to reproduce virtual
-device bugs and develop exploits.
-
-+ [HyperPill](./papers/hyperpill-sec24.pdf) (USENIX Security'24) first leveraged
-hardware virtualization interface to fuzz arbitrary hypervisors. We evaluated
-HyperPill with QEMU, Hyper-V, and macOS Virtualization Framework. 26 new bugs
-have been reported.
-
-### Network Protocol Fuzzing
+## Project: Network Protocol Fuzzing
 
 + Development of Peach Pits for layer 3 network protocols. As an intern, I
 developed several Peach Pits by reading the specifications of specific network
 protocols.
++ [Tango](https://github.com/HexHive/tango), [paper](./papers/tango-raid24.pdf),
+**ACM RAID'24** (Best Paper), abstract state feedback from edge coverage
+feedback, supporting targets in ProFuzzBench (except forked-daap).
 
-+ [Tango](./papers/tango-raid24.pdf) (RAID'24) first abstracted state feedback
-from edge coverage feedback. Tango is
-[open-source](https://github.com/HexHive/tango) and it can fuzz stateful
-targets, i.e., 1) protocol targets: bftpd, dcmtk, dnsmasq, tinydtls, exim,
-lightftp, openssh, openssl, proftpd, pureftpd, live555, and kamailio, 2)
-parsers: expat, llhttp, and yaml. (forked-daap is not supported.)
-
-### Embedded System Rehosting (Archived)
-
-This project rehosts embedded Linux kernels for routers, cameras, and other
-high-end devices with QEMU. Then, we can dynamically analyze rootkits or
-vulnerabilities in the embedded Linux kernels and create honeypots at scale.
-Relative research papers are [FirmGuide (ASE'21,
-co-first-authors)](./papers/firmguide-ase21.pdf), and [ECMO (CCS'21, 4th
-author)](./papers/ecmo-ccs21.pdf).
-
-We open source the following projects.
+## Project: Firmware Rehosting
 
 + [pyqemulog](https://github.com/cyruscyliu/pyqemulog) is the qemu-log ported to
 Python. It converts the structured trace generated by QEMU with -d to JSON.
-
-+ [llbic](https://github.com/cyruscyliu/llbic), which is short for LLVM Linux
-Build Issues Collection, helps compile old Linux kernels in LLVM bitcode. It
-replaces GCC to clang and adjusts other flags in the make command lines to
++ [llbic](https://github.com/cyruscyliu/llbic), short for LLVM Linux
+Build Issues Collection, compiles old Linux kernels in LLVM bitcode. It
+replaces GCC to clang and adjusts cflags in the command lines to
 generate bitcode files, and then links them all together to a `vmlinux.bc`.
-
 + [openwrt-build-docker](https://github.com/cyruscyliu/openwrt-build-docker)
 supports automatically building the OpenWrt project given a target/subtarget of
 a specific OpenWrt revision from 10.03 to 19.07.1.
-
-+ [FirmGuide](https://github.com/cyruscyliu/firmguide) can help you to develop a
++ [FirmGuide](https://github.com/cyruscyliu/firmguide) (**ASE'21**) creates a
 QEMU virtual machine for a Linux-based embedded system, especially boosting the
 capability of dynamic analysis of the corresponding Linux kernel. In the
 emulator, you can debug, trace, and test the Linux kernel to collect runtime
-information that can be used to understand vulnerabilities, PoCs, root causes of
+information to understand vulnerabilities, PoCs, root causes of
 crashes in the Linux kernel. FirmGuide is an effectively complementary to
 Firmadyne that focuses on user space programs - FirmGuide focuses on the Linux
 kernel.
++ [ECMO](https://github.com/valour01/ecmo) (**CCS'21**) takes a firmware image
+as input, and it can successfully rehost the Linux kernel inside the image to
+get the shell.  Due to the variety of peripherals in embedded firmware images.
+It is rather hard to build a general emulator that supports all kinds of
+machines. The basic idea of ECMO is to transplant the peripherals by support
+ones into the target Linux kernel, hence solve the problem of peripheral
+variety.
 
-+ [ECMO](https://github.com/valour01/ecmo) receives a firmware image, and it can
-successfully re-host the Linux kernel inside the image to get the shell.  Due to
-the variety of peripherals in embedded firmware images. It is rather hard to
-build a general emulator that supports all kinds of machines. The basic idea of
-ECMO is to transplant the peripherals by support ones into the target Linux
-kernel, hence solve the problem of peripheral variety.
-
-
-### Android Authentication (Archived)
+## Project: Android Authentication (Archived)
 
 This project evaluates existing and proposes new implicit continuous
 authentication approaches to serve as a second authentication factor longside
 fingerprint and facial identification. I joined this project as an intern and
 then proposed this project to be my final project for my Bachelor's degree.
 Relative research papers are [RiskCog (TMC'20)](./papers/riskcog-tmc20.pdf),
-[ESPIALCOG (TMC'20)(5th author)](./papers/espialcog-tmc20.pdf), [One Cycle
-Attack (TIFS'20) (3rd author)](./papers/one-cycle-attack-tifs20.pdf), and
-[TRAPCOG (TMC'23) (3rd author)](./papers/trapcog-tmc23.pdf).
+[ESPIALCOG (TMC'20)](./papers/espialcog-tmc20.pdf), [One Cycle Attack
+(TIFS'20)](./papers/one-cycle-attack-tifs20.pdf), and [TRAPCOG
+(TMC'23))](./papers/trapcog-tmc23.pdf).
 

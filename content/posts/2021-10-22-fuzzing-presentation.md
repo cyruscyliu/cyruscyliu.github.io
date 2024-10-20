@@ -255,15 +255,15 @@ algorithms. (30/2854, 30 s)
 
 ## Some selected comments
 
-1. CFI here is shitty for fuzzing, which should not be listed here.
-2. The initial set is under-valued. In this presentation, the initial set is
++ CFI here is shitty for fuzzing, which should not be listed here.
++ The initial set is under-valued. In this presentation, the initial set is
 part of the configuration. However, when we provide a good set of initial seeds,
 the fuzzer can only focus on exploitability.
-3. Pay attention to what are the problems in this field, what are solved, and
++ Pay attention to what are the problems in this field, what are solved, and
 what are not solved.
-4. Do you think this paper is useful for terminology uniformity? Answer: Yes,
++ Do you think this paper is useful for terminology uniformity? Answer: Yes,
 but I do not think we have the agreement in practice. Scholars create their own
 terminologies all the time.
 
-[^1]: [The Art, Science, and Engineering of Fuzzing: A Survey](https://arxiv.org/pdf/1812.00140.pdf) \
+[^1]: [The Art, Science, and Engineering of Fuzzing: A Survey](https://arxiv.org/pdf/1812.00140.pdf)
 [^2]: [Fuzzing: Hack, Art, and Science](https://wcventure.github.io/FuzzingPaper/Paper/CACM20_Fuzzing.pdf)

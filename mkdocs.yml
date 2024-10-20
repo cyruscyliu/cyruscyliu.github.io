@@ -1,11 +1,15 @@
 theme:
-    name: material
+    name: terminal
+    palette: pink
     features:
-        - navigation.tabs
-        - navigation.tabs.sticky
-        - navigation.tracking
-    font:
-        text: Fira Code
+    - footer.prev_next
+    - revision.date
+    - revision.history
+markdown_extensions:
+    - footnotes
+    - toc:
+        permalink: "#"
+        permalink_title: Do what you think is right
 docs_dir: content
 site_name: Qiang Liu's Homepage
 site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
@@ -14,4 +18,5 @@ nav:
     - Posts: 'posts.md'
 plugins:
   - search
+  - git-revision-date 
   - git-revision-date-localized

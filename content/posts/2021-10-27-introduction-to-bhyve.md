@@ -204,7 +204,8 @@ while (c = getopt())
 		// pci_slotinfo[snum].si_param = config; // null, tap0
 		// pci_slotinfo[snum].si_legacy = legacy; // 0, 1
 init_inout
-	install handler for each port: atpic, console, gdbport, elcr, pci_emu, pit 8254, post, rtc, and uart.
+	install handler for each port: 
+		atpic, console, gdbport, elcr, pci_emu, pit 8254, post, rtc, and uart.
 init_pci
 	// it depends on opts
 	pde = pci_emul_finddev(si->si_name);
@@ -214,12 +215,12 @@ init_pci
 
 ## Extend BTest (like QTest) to BHyve
 
-The basic idea of BTest is to implement the same primitives as QTest. We can
-leverage PCI interfaces to implemented it because we are doing in-memory fuzzing
-rather than doing traps.
+The idea of BTest is to implement the same primitives as QTest. We can leverage
+the PCI interfaces because we are doing in-memory fuzzing rather than doing
+traps.
 
-[^1]: [Homepage of Bhyve](https://bhyve.org/) \
-[^2]: [Wikipedia of Bhyve](https://en.wikipedia.org/wiki/Bhyve) \
-[^3]: [Q&A of Byyve](https://wiki.freebsd.org/bhyve) \
-[^4]: [xhyve](https://www.vpsee.com/2015/06/mac-os-x-hypervisor-xhyve-based-on-bhyve/) \
+[^1]: [Homepage of Bhyve](https://bhyve.org/)
+[^2]: [Wikipedia of Bhyve](https://en.wikipedia.org/wiki/Bhyve)
+[^3]: [Q&A of Byyve](https://wiki.freebsd.org/bhyve)
+[^4]: [xhyve](https://www.vpsee.com/2015/06/mac-os-x-hypervisor-xhyve-based-on-bhyve/)
 [^5]: [Extending bhyve beyond FreeBD guests](https://people.freebsd.org/~grehan/talks/eurobsdcon_2013_bhyve.pdf)

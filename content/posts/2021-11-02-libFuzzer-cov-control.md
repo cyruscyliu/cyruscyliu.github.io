@@ -735,11 +735,11 @@ update coverage information from ValueProfileMap, 2) comment these
 
 ## Conclusion
 
-1. For the basic block coverage, SanCov maintains an array that records how many
++ For the basic block coverage, SanCov maintains an array that records how many
 times a basic block is visited, and the libFuzzer will collect that information
 and calculate features.
 
-2. To disable fancy features, just do as below.
++ To disable fancy features, just do as below.
 
 ``` bash
 clang -o foo -fsanitize=fuzzer \

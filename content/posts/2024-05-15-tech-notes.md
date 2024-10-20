@@ -14,7 +14,6 @@
     heap-based stacks as well.
     + Type is defined by its behavior that is defined by magic methods (duck typing).
     + No security policy is enforced when using magic methods.
-
 + [Language
 interoperability](https://en.wikipedia.org/wiki/Language_interoperability):
 Language interoperability is the capability of two different programming
@@ -27,12 +26,10 @@ Model, a binary interface introduced by Microsoft); Virtual Machine (a
 specialised intermediate language that different languages compile down to):
 Java Virtual Machine; foreign function interfaces (FFI), that is in the format
 of a wrapper library, also called bindings: JNI/JNA/[SWIG](https://www.swig.org/tutorial.html).
-
 + Challenges when implementing language interoperability
     + Object model differences: e.g., permit multiple inheritance or not
     + Memory model differences: e.g., have garbage collector or not
     + Mutability: e.g., immutable or not
-
 + Favocado (NDSS'21): JS engines are embedded in commercial software, e.g.,
 Adobe Acrobat Reader, Foxit PDF Reader, Chromium, and WebKit. Even without
 considering the binding layers, it is difficult to effectively fuzz JavaScript
@@ -46,7 +43,6 @@ problem.  Another challenge for effectively fuzzing the binding layer is the
 enormous input space, e.g., in Chromium, there are more than 1,000 DOM binding
 objects. Each DOM object may have a multitude of methods and properties, some
 of which may require hard-to-satisfy arguments such as other DOM objects.
-
 + Drawbacks of Favocado
     + From Minerva: Although Favocado also generates semantically-correct test
     cases, its typebased relations introduce redundant relations between APIs.
@@ -59,7 +55,6 @@ of which may require hard-to-satisfy arguments such as other DOM objects.
     to effectively generate highly-structured inputs. Additionally, its flawed
     implementation makes it challenging to bypass syntactic checks. Favocado can
     only explore a limited set of browser backend logic.
-
 + Cooper (NDSS'22):
     + In this paper, we propose cooperative mutation, which modifies both the
     script code and the program native input to trigger bugs in binding code. We
@@ -72,7 +67,6 @@ of which may require hard-to-satisfy arguments such as other DOM objects.
     mutation.  We applied our tool, COOPER, on three popular systems that
     integrate scripting languages, including Adobe Acrobat, Foxit Reader and
     Microsoft Word. COOPER successfully found 134 previously unknown bugs.
-
 + TypeOracle (ICSE'23):
     + Full name: Operand-Variation-Oriented Differential Analysis for Fuzzing
     Binding Calls in PDF Readers
@@ -80,7 +74,6 @@ of which may require hard-to-satisfy arguments such as other DOM objects.
     binding call with different values of different types and investigating
     which types cause an expected effect on the instruction operands. The
     inferred type information is used to guide the test generation in fuzzing.
-
 + Gramatron (ISSTA'21)
     + A fuzzer must generate syntactically valid inputs to fuzz beyond the
     application parser. Previous fuzzers employ parse trees with CFG for input
@@ -96,5 +89,4 @@ of which may require hard-to-satisfy arguments such as other DOM objects.
     inputs with higher diversity more frequently. We also redesign the mutation
     operators to operate on grammar automatons and perform aggressive changes
     efficiently to discover bugs with complex triggers.
-
 + C# is also a memory safe language.

@@ -7,10 +7,7 @@ For daily reading, I plan to focus on the security big-4s as I guess there are
 including Sys/SE/PL/Arch confs. Additionally, I have to narrow down the topics
 I should follow. Just no one can know every paper.
 
-## Searching Keywords (To be updated)
-
-To write a literature reivew and a section of related work, these keywords help
-me to find a complete set of papers related to what I'm doing.
+## Searching Keywords
 
 ### Google Scholar
 

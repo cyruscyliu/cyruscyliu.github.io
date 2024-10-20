@@ -66,7 +66,6 @@ the non-secure world
     manages the Hyp mode page tables to map any code executed in Hyp mode and
     any data structures shared between the highvisor and the lowvisor to the
     same virtual addresses in Hyp mode and in kernel mode.
-
 + CPU virtualization
     + Not trapping
         + Set of Stage-1 page table base register
@@ -86,7 +85,6 @@ the non-secure world
         Stage-2 address translation
         + (9) restore all guest GP registers
         + (10) trap into either user or kernel mode
-
     + VM World -> Hyp Mode -(123456789)-> Kernel Mode
         + (0) trap to Hyp Mode due to a Stage-2 page fault, or a hardware interrupt
         + (1) store all VM GP registers
@@ -98,7 +96,6 @@ the non-secure world
         + (7) save VM-specific VGIC state
         + (8) restore all host GP registers,
         + (9) trap into kernel mode
-
 + Memory virtualization
     + (stage-2 translation) stage-2 translation can only be configured in
     hypervisor mode, and accesses not allowed will cause stage-2 page faults
@@ -110,7 +107,6 @@ the non-secure world
     memory map, KVM/ARM allocates a page for the VM by simply calling an
     existing kernel function, such as get_user_pages, and maps the allocated
     page to the VM in the Stage-2 page tables.
-
 + I/O virtualization
     + (virtual devices) QEMU and Virtio virtual devices in host userspace
     + (interfaces) load/restore to MMIO device regions, no in/out
@@ -119,7 +115,6 @@ the non-secure world
     from VMs. Any access outside of RAM regions allocated for the VM will trap
     to the hypervisor, which can route the access to a specific emulated device
     in QEMU based on the fault address.
-
 + Key ideas of nested virtualization
     + Guest Hypervisor runs in vEL2 that is in EL1
         + ARMv8.3 supports to trap EL2 operations/eret to EL2 from vEL2
@@ -132,3 +127,18 @@ the non-secure world
         + access EL1 registers -> access memory: similar to VMCS
         + access EL2 registers -> redirect to EL1 registers
         + 5 times faster
++ It seems the split-mode lowvisor/highvisor thing has been deprecated. Now,
+Linux kernel supports nVHE/hVHE/VHE.
+    + nVHE and VHE: KVM/arm64 supports different execution modes depending on
+    the availability of certain CPU features, namely, the Virtualization Host
+    Extensions (VHE) (ARMv8.1 and later). In one of those modes, commonly known
+    as the non-VHE mode, the hypervisor code is split out of the kernel image
+    during boot and installed at EL2, whereas the kernel itself runs at EL1.
+    Although part of the Linux codebase, the EL2 component of KVM is a small
+    component in charge of the switch between multiple EL1s. The hypervisor
+    component is compiled with Linux, but resides in a separate, dedicated
+    memory section of the vmlinux image. 
+    + And for nHVE, there is a protected mode enabled by kvm-arm.mode=protected.
+    nVHE-based mode with support for guests whose state is kept private from the
+    host. Not valid if the kernel is running in EL2.
+    + https://www.spinics.net/lists/arm-kernel/msg1019310.html
