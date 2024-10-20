@@ -1,700 +1,348 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/">
-      
-      
-      
-        <link rel="next" href="posts/">
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.5.3, mkdocs-terminal-4.6.0">
+     
+     
     
-    
-      
-        <title>Qiang Liu's Homepage</title>
-      
-    
-    
-      <link rel="stylesheet" href="assets/stylesheets/main.7e359304.min.css">
-      
-      
+    <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/"><link rel="icon" type="image/png" sizes="192x192" href="img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
 
 
     
+ 
+<title>Home - Qiang Liu's Homepage</title>
+
+
+<link href="css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="css/normalize.css" rel="stylesheet">
+<link href="css/terminal.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+<link href="css/theme.tile_grid.css" rel="stylesheet">
+<link href="css/theme.footer.css" rel="stylesheet">
+<!-- pink color palette -->
+<link href="css/palettes/pink.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+     
     
-      
+    
+
+    
+    <!-- search css support -->
+<link href="css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = ".",
+    shortcuts = "{}";
+</script>
+<script src="js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="js/bootstrap/bootstrap.min.js" defer></script>
+<script src="js/mkdocs/base.js" defer></script>
     
     
-      
+    
+    
+    <script src="search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="https://github.com/cyruscyliu/cyruscyliu.github.io/" class="no-style">Qiang Liu's Homepage</a></div>
+        </header>
         
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Fira Code";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-    
-  </head>
-  
-  
-    <body dir="ltr">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#about-me" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Qiang Liu&#39;s Homepage" class="md-header__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            Qiang Liu's Homepage
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+        <nav class="terminal-menu">
             
-              Home
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-    
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
-  </nav>
-  
-    
-      
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
-        
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="posts/" class="md-tabs__link">
-        
-  
-    
-  
-  Posts
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="." title="Qiang Liu&#39;s Homepage" class="md-nav__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    Qiang Liu's Homepage
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#about-me" class="md-nav__link">
-    <span class="md-ellipsis">
-      About me
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#awards" class="md-nav__link">
-    <span class="md-ellipsis">
-      Awards
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#projects-and-publications" class="md-nav__link">
-    <span class="md-ellipsis">
-      Projects and Publications
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Projects and Publications">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hypervisor-fuzzing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hypervisor Fuzzing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#network-protocol-fuzzing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Network Protocol Fuzzing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#embedded-system-rehosting-archived" class="md-nav__link">
-    <span class="md-ellipsis">
-      Embedded System Rehosting (Archived)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#android-authentication-archived" class="md-nav__link">
-    <span class="md-ellipsis">
-      Android Authentication (Archived)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="posts/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Posts
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#about-me" class="md-nav__link">
-    <span class="md-ellipsis">
-      About me
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#awards" class="md-nav__link">
-    <span class="md-ellipsis">
-      Awards
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#projects-and-publications" class="md-nav__link">
-    <span class="md-ellipsis">
-      Projects and Publications
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Projects and Publications">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hypervisor-fuzzing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hypervisor Fuzzing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#network-protocol-fuzzing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Network Protocol Fuzzing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#embedded-system-rehosting-archived" class="md-nav__link">
-    <span class="md-ellipsis">
-      Embedded System Rehosting (Archived)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#android-authentication-archived" class="md-nav__link">
-    <span class="md-ellipsis">
-      Android Authentication (Archived)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
                 
-                  
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="." class="menu-item active" property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="posts/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Posts</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                    
+                    
 
 
-  <h1>Home</h1>
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="2">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+  
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          
 
-<p><strong>I am in the job market seeking a Tenure-Track Assistant Professor position and
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        <span class="
+
+    terminal-mkdocs-side-nav-item--active">Home</span>
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="posts/">Posts</a>
+        
+    
+    
+    
+  </li>
+        
+    </ul>
+  
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#about-me">About me</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#project-hypervisor-fuzzing">Project: Hypervisor Fuzzing</a></li>
+        <li><a href="#project-network-protocol-fuzzing">Project: Network Protocol Fuzzing</a></li>
+        <li><a href="#project-firmware-rehosting">Project: Firmware Rehosting</a></li>
+        <li><a href="#project-android-authentication-archived">Project: Android Authentication (Archived)</a></li>
+        
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+    
+    
+    
+    
+    
+
+<section id="mkdocs-terminal-content">
+    <p><strong>I am in the job market seeking a Tenure-Track Assistant Professor position and
 also an industrial system security researcher position. Reach out to me via
 email!</strong></p>
-<h2 id="about-me">About me</h2>
-<p>Hi, I am Qiang Liu, currently a postdoc at EPFL under the guidance of <a href="https://nebelwelt.net/">Prof.
-Mathias Payer</a>. I obtained my Ph.D. in cybersecurity at
-Zhejiang University (ZJU) in 2023, advised by <a href="https://yajin.org/">Prof. Yajin
-Zhou</a>. Prior to ZJU, I earned my bachelor's degree at
-Beijing Institute of Technology (BIT) in 2018.  We have published a few papers
-at all four top-tier security conferences, IEEE S&amp;P, Usenix Security, ACM CCS, and NDSS.  To
-engage the community, we always open-source our tools and evaluation scripts.</p>
+<h2 id="about-me">About me<a class="headerlink" href="#about-me" title="Do what you think is right">#</a></h2>
+<p>[<strong>whoami</strong>] Hi, I am Qiang Liu, currently a postdoc at EPFL with <a href="https://nebelwelt.net/">Prof.  Mathias
+Payer</a>. I obtained my Ph.D. in cybersecurity at Zhejiang
+University (ZJU) in 2023, advised by <a href="https://yajin.org/">Prof. Yajin Zhou</a>.
+Prior to ZJU, I earned my bachelor's degree at Beijing Institute of Technology
+(BIT) in 2018. We have published a few papers at all four top-tier security
+conferences, IEEE S&amp;P, Usenix Security, ACM CCS, and ISOC NDSS. To engage the
+community, we always open-source our tools and evaluation scripts.</p>
 <p><a href="Qiang_s_CV.pdf">CV</a>
 <a href="https://www.linkedin.com/in/qiang-liu-7a3b50270/">LinkedIn</a>
 <a href="https://scholar.google.com/citations?user=fa1uB2sAAAAJ&amp;hl=en">Google Scholar</a>
 <a href="https://github.com/cyruscyliu">GitHub</a>
 <a href="https://www.twitter.com/qiangliu717">Twitter</a>
 <a href="https://weibo.com/u/5397354395">Weibo</a></p>
-<p>I am always thinking outside the box when it comes to cybersecurity's
-cat-and-mouse game. It started with Capture the Flag (CTF) cybersecurity
-competition, where I learned to break systems, e.g., reverse engineering binaries
-and developing exploits, and be a team player. Over the years, collaborating
-with my colleagues, we have developed new approaches to protect systems from
-attacks. Specifically, we have proposed advanced fuzz testing techniques to
-unveil vulnerabilities in OS kernels and hypervisors before this infrastructure
-software is released.  I am interested in the infrastructure software, such as
-OS kernels and hypervisors, because they are used everywhere to establish
-security trust for the upper layers. These systems must be flawless, as any
-error could significantly impact not only individuals but also organizations.
-Their reliability is crucial for ensuring the smooth functioning of both
-personal and professional activities in daily life. All in all, my research
-focuses on making infrastructure software, such as OS kernels and hypervisors,
-protocols and browsers as well, bug and exploitation-free through innovative
-designs in both hardware and software.</p>
-<p>I've also gotten better at managing multiple projects
-smoothly, communicating with people well, and making the team deliver results.</p>
-<p>We're open to discussing and collaborating on any of the following active
-projects. Feel free to reach out via this long-term email address:
-<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#121;&#114;&#117;&#115;&#99;&#121;&#108;&#105;&#117;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#99;&#121;&#114;&#117;&#115;&#99;&#121;&#108;&#105;&#117;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>.</p>
-<h2 id="awards">Awards</h2>
+<p>[<strong>history</strong>] Cybersecurity remains an arms race where attackers are inherently
+at a disadvantage as they must protect against all vulnerabilities while an
+attacker only needs to successfully exploit one. Security therefore requires
+thinking outside of the box. My journey began with a Capture the Flag (CTF)
+cybersecurity competition, where I learned to break systems and software through
+techniques like reverse engineering and exploitation. Over the years,
+collaborating with my colleagues, we have developed novel and practical designs
+to protect systems and software from attacks. Notably, we have designed advanced
+fuzz testing techniques to unveil almost a hundred vulnerabilities in
+hypervisors before software is released.</p>
+<p>[<strong>help</strong>] My research in cybersecurity aims at building a layered secure
+computing system, covering browsers, interpreters, network protocols, OS
+kernels, hypervisors, and trusted execution environment (TEE), which requires
+the research on the automatic vulnerability detection before the release of
+software and vulnerability mitigation at runtime. Ultimately, my research aims
+to make the computing system hard to break, benefiting not only individuals but
+also organizations.</p>
+<p>[<strong>mail</strong>] We're open to discussing and collaborating on any of the
+following active projects. Feel free to reach out via this long-term email
+address: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#121;&#114;&#117;&#115;&#99;&#121;&#108;&#105;&#117;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#99;&#121;&#114;&#117;&#115;&#99;&#121;&#108;&#105;&#117;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>.</p>
+<h2 id="awards">Awards<a class="headerlink" href="#awards" title="Do what you think is right">#</a></h2>
 <ul>
-<li><a href="papers/hyperpill-sec24.pdf">HyperPill</a> wins USENIX Security'24 Best Paper Award</li>
+<li><a href="papers/hyperpill-sec24.pdf">HyperPill</a> wons USENIX Security'24 Best Paper Award</li>
+<li><a href="papers/tango-raid24.pdf">Tango</a> won ACM RAID'24 Best Paper Award</li>
 </ul>
-<h2 id="projects-and-publications">Projects and Publications</h2>
-<h3 id="hypervisor-fuzzing">Hypervisor Fuzzing</h3>
+<h2 id="project-hypervisor-fuzzing">Project: Hypervisor Fuzzing<a class="headerlink" href="#project-hypervisor-fuzzing" title="Do what you think is right">#</a></h2>
 <ul>
-<li>
-<p><a href="papers/videzzo-sp23.pdf">ViDeZZo</a> (IEEE SP'23) first summarized the intra-
-and inter-message dependencies required for fuzzing virtual devices. ViDeZZo is
-<a href="https://github.com/HexHive/videzzo">open-source</a> and it can fuzz
-QEMU/VirtualBox virtual devices in a scalable and efficient way. 28 new bugs
-have been reported.</p>
-</li>
-<li>
-<p><a href="https://github.com/cyruscyliu/videzzo-llvm-project">ViDeZZo LLVM Project</a>,
-forked from LLVM Project 13, contains the compiler/libFuzzer we use to compile
-QEMU/VirtualBox virtual devices.</p>
-</li>
-<li>
-<p><a href="https://github.com/cyruscyliu/buildroot-external-packages">buildroot-external-packages</a>
-provides templates of userspace programs and kernel modules to reproduce virtual
-device bugs and develop exploits.</p>
-</li>
-<li>
-<p><a href="papers/hyperpill-sec24.pdf">HyperPill</a> (USENIX Security'24) first leveraged
-hardware virtualization interface to fuzz arbitrary hypervisors. We evaluated
-HyperPill with QEMU, Hyper-V, and macOS Virtualization Framework. 26 new bugs
-have been reported.</p>
-</li>
+<li><a href="https://github.com/HexHive/videzzo">ViDeZZo</a>,
+<a href="papers/videzzo-sp23.pdf">paper</a>, <strong>IEEE SP'23</strong>, intra- and inter-message
+dependencies, libFuzzer, QEMU/VirtualBox, 28 new bugs</li>
+<li><a href="https://github.com/cyruscyliu/videzzo-llvm-project">ViDeZZo LLVM Project</a>,
+forked from LLVM Project 13, instrumentation and libFuzzer for ViDeZZo</li>
+<li><a href="https://github.com/cyruscyliu/buildroot-external-packages">buildroot-external-packages</a>,
+PoC and exploit template</li>
+<li><a href="https://github.com/HexHive/HyperPill/tree/artifact-evaluation">HyperPill</a>,
+<a href="papers/hyperpill-sec24.pdf">paper</a>, <strong>USENIX Security'24</strong> (Best Paper),
+taking snapshot at VM-Exit, libFuzzer, QEMU, Hyper-V, and macOS Virtualization
+Framework, 26 new bugs</li>
 </ul>
-<h3 id="network-protocol-fuzzing">Network Protocol Fuzzing</h3>
+<h2 id="project-network-protocol-fuzzing">Project: Network Protocol Fuzzing<a class="headerlink" href="#project-network-protocol-fuzzing" title="Do what you think is right">#</a></h2>
 <ul>
-<li>
-<p>Development of Peach Pits for layer 3 network protocols. As an intern, I
+<li>Development of Peach Pits for layer 3 network protocols. As an intern, I
 developed several Peach Pits by reading the specifications of specific network
-protocols.</p>
-</li>
-<li>
-<p><a href="papers/tango-raid24.pdf">Tango</a> (RAID'24) first abstracted state feedback
-from edge coverage feedback. Tango is
-<a href="https://github.com/HexHive/tango">open-source</a> and it can fuzz stateful
-targets, i.e., 1) protocol targets: bftpd, dcmtk, dnsmasq, tinydtls, exim,
-lightftp, openssh, openssl, proftpd, pureftpd, live555, and kamailio, 2)
-parsers: expat, llhttp, and yaml. (forked-daap is not supported.)</p>
-</li>
+protocols.</li>
+<li><a href="https://github.com/HexHive/tango">Tango</a>, <a href="papers/tango-raid24.pdf">paper</a>,
+<strong>ACM RAID'24</strong> (Best Paper), abstract state feedback from edge coverage
+feedback, supporting targets in ProFuzzBench (except forked-daap).</li>
 </ul>
-<h3 id="embedded-system-rehosting-archived">Embedded System Rehosting (Archived)</h3>
-<p>This project rehosts embedded Linux kernels for routers, cameras, and other
-high-end devices with QEMU. Then, we can dynamically analyze rootkits or
-vulnerabilities in the embedded Linux kernels and create honeypots at scale.
-Relative research papers are <a href="papers/firmguide-ase21.pdf">FirmGuide (ASE'21,
-co-first-authors)</a>, and <a href="papers/ecmo-ccs21.pdf">ECMO (CCS'21, 4th
-author)</a>.</p>
-<p>We open source the following projects.</p>
+<h2 id="project-firmware-rehosting">Project: Firmware Rehosting<a class="headerlink" href="#project-firmware-rehosting" title="Do what you think is right">#</a></h2>
 <ul>
-<li>
-<p><a href="https://github.com/cyruscyliu/pyqemulog">pyqemulog</a> is the qemu-log ported to
-Python. It converts the structured trace generated by QEMU with -d to JSON.</p>
-</li>
-<li>
-<p><a href="https://github.com/cyruscyliu/llbic">llbic</a>, which is short for LLVM Linux
-Build Issues Collection, helps compile old Linux kernels in LLVM bitcode. It
-replaces GCC to clang and adjusts other flags in the make command lines to
-generate bitcode files, and then links them all together to a <code>vmlinux.bc</code>.</p>
-</li>
-<li>
-<p><a href="https://github.com/cyruscyliu/openwrt-build-docker">openwrt-build-docker</a>
+<li><a href="https://github.com/cyruscyliu/pyqemulog">pyqemulog</a> is the qemu-log ported to
+Python. It converts the structured trace generated by QEMU with -d to JSON.</li>
+<li><a href="https://github.com/cyruscyliu/llbic">llbic</a>, short for LLVM Linux
+Build Issues Collection, compiles old Linux kernels in LLVM bitcode. It
+replaces GCC to clang and adjusts cflags in the command lines to
+generate bitcode files, and then links them all together to a <code>vmlinux.bc</code>.</li>
+<li><a href="https://github.com/cyruscyliu/openwrt-build-docker">openwrt-build-docker</a>
 supports automatically building the OpenWrt project given a target/subtarget of
-a specific OpenWrt revision from 10.03 to 19.07.1.</p>
-</li>
-<li>
-<p><a href="https://github.com/cyruscyliu/firmguide">FirmGuide</a> can help you to develop a
+a specific OpenWrt revision from 10.03 to 19.07.1.</li>
+<li><a href="https://github.com/cyruscyliu/firmguide">FirmGuide</a> (<strong>ASE'21</strong>) creates a
 QEMU virtual machine for a Linux-based embedded system, especially boosting the
 capability of dynamic analysis of the corresponding Linux kernel. In the
 emulator, you can debug, trace, and test the Linux kernel to collect runtime
-information that can be used to understand vulnerabilities, PoCs, root causes of
+information to understand vulnerabilities, PoCs, root causes of
 crashes in the Linux kernel. FirmGuide is an effectively complementary to
 Firmadyne that focuses on user space programs - FirmGuide focuses on the Linux
-kernel.</p>
-</li>
-<li>
-<p><a href="https://github.com/valour01/ecmo">ECMO</a> receives a firmware image, and it can
-successfully re-host the Linux kernel inside the image to get the shell.  Due to
-the variety of peripherals in embedded firmware images. It is rather hard to
-build a general emulator that supports all kinds of machines. The basic idea of
-ECMO is to transplant the peripherals by support ones into the target Linux
-kernel, hence solve the problem of peripheral variety.</p>
-</li>
+kernel.</li>
+<li><a href="https://github.com/valour01/ecmo">ECMO</a> (<strong>CCS'21</strong>) takes a firmware image
+as input, and it can successfully rehost the Linux kernel inside the image to
+get the shell.  Due to the variety of peripherals in embedded firmware images.
+It is rather hard to build a general emulator that supports all kinds of
+machines. The basic idea of ECMO is to transplant the peripherals by support
+ones into the target Linux kernel, hence solve the problem of peripheral
+variety.</li>
 </ul>
-<h3 id="android-authentication-archived">Android Authentication (Archived)</h3>
+<h2 id="project-android-authentication-archived">Project: Android Authentication (Archived)<a class="headerlink" href="#project-android-authentication-archived" title="Do what you think is right">#</a></h2>
 <p>This project evaluates existing and proposes new implicit continuous
 authentication approaches to serve as a second authentication factor longside
 fingerprint and facial identification. I joined this project as an intern and
 then proposed this project to be my final project for my Bachelor's degree.
 Relative research papers are <a href="papers/riskcog-tmc20.pdf">RiskCog (TMC'20)</a>,
-<a href="papers/espialcog-tmc20.pdf">ESPIALCOG (TMC'20)(5th author)</a>, <a href="papers/one-cycle-attack-tifs20.pdf">One Cycle
-Attack (TIFS'20) (3rd author)</a>, and
-<a href="papers/trapcog-tmc23.pdf">TRAPCOG (TMC'23) (3rd author)</a>.</p>
+<a href="papers/espialcog-tmc20.pdf">ESPIALCOG (TMC'20)</a>, <a href="papers/one-cycle-attack-tifs20.pdf">One Cycle Attack
+(TIFS'20)</a>, and <a href="papers/trapcog-tmc23.pdf">TRAPCOG
+(TMC'23))</a>.</p>
+</section>
 
-
-
-
-
-
-
-  
+<section id="mkdocs-terminal-after-content">
     
-  
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2024</span>
-  </span>
-
-    
-    
-    
-    
-  </aside>
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</section>
+<section id="mkdocs-terminal-revision">
+<br>
+<aside>
+    <p>
+        <small>
+            <i>Page last updated 2024-10-20. </i>
+        </small>
+    </p>
+</aside>
+</section>
+            </main>
         </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+        <div id="terminal-mkdocs-footer-prev-next">
+            <nav class="btn-group">
+                <a href="posts/" title="Posts">Next</a>
+            </nav>
+        </div>
     </div>
-  </div>
 </footer>
-      
     </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
     </div>
+</div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-    
-    
-      <script src="assets/javascripts/bundle.bd41221c.min.js"></script>
-      
-    
-  </body>
+</body>
+
 </html>

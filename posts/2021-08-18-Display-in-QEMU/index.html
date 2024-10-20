@@ -1,519 +1,197 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2021-08-18-Display-in-QEMU/">
-      
-      
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.5.3, mkdocs-terminal-4.6.0">
+     
+     
     
-    
-      
-        <title>Display in QEMU - Qiang Liu's Homepage</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
-      
-      
+    <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2021-08-18-Display-in-QEMU/"><link rel="icon" type="image/png" sizes="192x192" href="../../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png" />
 
 
     
+ 
+<title>Display in QEMU - Qiang Liu's Homepage</title>
+
+
+<link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../../css/normalize.css" rel="stylesheet">
+<link href="../../css/terminal.css" rel="stylesheet">
+<link href="../../css/theme.css" rel="stylesheet">
+<link href="../../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../../css/theme.footer.css" rel="stylesheet">
+<!-- pink color palette -->
+<link href="../../css/palettes/pink.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+     
     
-      
+    
+
+    
+    <!-- search css support -->
+<link href="../../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "../..",
+    shortcuts = "{}";
+</script>
+<script src="../../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../../js/mkdocs/base.js" defer></script>
     
     
-      
+    
+    
+    <script src="../../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="https://github.com/cyruscyliu/cyruscyliu.github.io/" class="no-style">Qiang Liu's Homepage</a></div>
+        </header>
         
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Fira Code";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-    
-  </head>
-  
-  
-    <body dir="ltr">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#display-in-qemu" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Qiang Liu&#39;s Homepage" class="md-header__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            Qiang Liu's Homepage
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+        <nav class="terminal-menu">
             
-              Display in QEMU
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-    
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
-  </nav>
-  
-    
-      
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
-        
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
-        
-  
-    
-  
-  Posts
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Qiang Liu&#39;s Homepage" class="md-nav__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    Qiang Liu's Homepage
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Posts
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#qemu-displays" class="md-nav__link">
-    <span class="md-ellipsis">
-      QEMU Displays
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="QEMU Displays">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qemu-display-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      QEMU Display options
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#in-qemu-the-registration-process-is-in-the-following" class="md-nav__link">
-    <span class="md-ellipsis">
-      In QEMU, the registration process is in the following.
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#qemu-console" class="md-nav__link">
-    <span class="md-ellipsis">
-      QEMU Console
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="QEMU Console">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qemu-consoles-are-defined-as-a-list-of-qemuconsole" class="md-nav__link">
-    <span class="md-ellipsis">
-      QEMU consoles are defined as a list of QemuConsole.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#qemu-consoles-have-three-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      QEMU consoles have three types.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#qemu-consoles-are-initialized-by-new_console" class="md-nav__link">
-    <span class="md-ellipsis">
-      QEMU consoles are initialized by new_console.
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#qemu-consoles-qemu-video-devices-and-qemu-displays" class="md-nav__link">
-    <span class="md-ellipsis">
-      QEMU consoles, QEMU video devices and QEMU displays
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="QEMU consoles, QEMU video devices and QEMU displays">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-typical-example-would-be-graphic_console_init" class="md-nav__link">
-    <span class="md-ellipsis">
-      A typical example would be graphic_console_init.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-it-comes-to-a-text-console-things-are-similar" class="md-nav__link">
-    <span class="md-ellipsis">
-      When it comes to a text console, things are similar.
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interactions-through-qemu-consoles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interactions through QEMU consoles
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Interactions through QEMU consoles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#first-of-all-we-will-figure-out-when-the-hw_ops-are-called" class="md-nav__link">
-    <span class="md-ellipsis">
-      First of all, we will figure out when the hw_ops are called.
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="First of all, we will figure out when the hw_ops are called.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#group-1-graphic_hw_xxx" class="md-nav__link">
-    <span class="md-ellipsis">
-      Group 1: graphic_hw_xxx
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#group-2-gui_update-update_interval" class="md-nav__link">
-    <span class="md-ellipsis">
-      Group 2: gui_update -&gt; update_interval
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#group-3-dpy_compatible_with-and-dpy_set_ui_info_timer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Group 3: dpy_compatible_with and dpy_set_ui_info_timer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#second-we-will-figure-out-how-the-display-listener-callbacks-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      Second, we will figure out how the display listener callbacks work.
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Second, we will figure out how the display listener callbacks work.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#an-example-of-graphic-qemu-display" class="md-nav__link">
-    <span class="md-ellipsis">
-      An example of graphic QEMU display
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-about-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      What about together?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
                 
-                  
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../.." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Posts</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                    
+                    
 
 
-<h1 id="display-in-qemu">Display in QEMU</h1>
-<p>Gerd Hoffmann has introduced graphics in QEMU here and there[^1], and in this
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="2">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+  
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../..">Home</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../">Posts</a>
+        
+    
+    
+    
+  </li>
+        
+    </ul>
+  
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#display-in-qemu">Display in QEMU</a></li>
+        <li><a href="#qemu-displays">QEMU Displays</a></li><li><a href="#qemu-console">QEMU Console</a></li><li><a href="#qemu-consoles-qemu-video-devices-and-qemu-displays">QEMU consoles, QEMU video devices and QEMU displays</a></li><li><a href="#interactions-through-qemu-consoles">Interactions through QEMU consoles</a></li>
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+    
+    
+    
+    
+    
+
+<section id="mkdocs-terminal-content">
+    <h1 id="display-in-qemu">Display in QEMU<a class="headerlink" href="#display-in-qemu" title="Do what you think is right">#</a></h1>
+<p>Gerd Hoffmann has introduced graphics in QEMU here and there<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, and in this
 article, I will do some basic introduction about QEMU displays and QEMU consoles
 with QEMU code (QEMU 6.1.0-rc3).</p>
-<h2 id="qemu-displays">QEMU Displays</h2>
+<h2 id="qemu-displays">QEMU Displays<a class="headerlink" href="#qemu-displays" title="Do what you think is right">#</a></h2>
 <p>QEMU displays are a set of display change listeners with the support of text or
 graphic tools on the host machine.</p>
-<h3 id="qemu-display-options">QEMU Display options</h3>
+<h3 id="qemu-display-options">QEMU Display options<a class="headerlink" href="#qemu-display-options" title="Do what you think is right">#</a></h3>
 <p>As claimed <a href="https://wiki.gentoo.org/wiki/QEMU/Options">here</a>, we can send the
 QEMU display to sdl/curses/gtk/vnc/spice windows, or just do not display video
 output. Only curses supports text mode. "Nothing is displayed when the graphics
@@ -543,7 +221,7 @@ ui/gtk.c:635:static const DisplayChangeListenerOps dcl_gl_area_ops = {
 ui/gtk.c:656:static const DisplayChangeListenerOps dcl_egl_ops = {
 ui/vnc.c:3337:static const DisplayChangeListenerOps dcl_ops = {
 </code></pre>
-<h3 id="in-qemu-the-registration-process-is-in-the-following">In QEMU, the registration process is in the following.</h3>
+<h3 id="in-qemu-the-registration-process-is-in-the-following">In QEMU, the registration process is in the following.<a class="headerlink" href="#in-qemu-the-registration-process-is-in-the-following" title="Do what you think is right">#</a></h3>
 <p>First, <code>qemu_display_register</code> will register all <code>QemuDisplay</code> objects to
 <code>dpys[DISPLAY_TYPE__MAX]</code>.</p>
 <pre><code>static QemuDisplay *dpys[DISPLAY_TYPE__MAX];
@@ -600,9 +278,9 @@ void qemu_display_init(DisplayState *ds, DisplayOptions *opts) {
     dpys[opts-&gt;type]-&gt;init(ds, opts);
 }
 </code></pre>
-<h2 id="qemu-console">QEMU Console</h2>
+<h2 id="qemu-console">QEMU Console<a class="headerlink" href="#qemu-console" title="Do what you think is right">#</a></h2>
 <p>QEMU consoles are the bridges between video devices and QEMU displays.</p>
-<h3 id="qemu-consoles-are-defined-as-a-list-of-qemuconsole">QEMU consoles are defined as a list of <code>QemuConsole</code>.</h3>
+<h3 id="qemu-consoles-are-defined-as-a-list-of-qemuconsole">QEMU consoles are defined as a list of <code>QemuConsole</code>.<a class="headerlink" href="#qemu-consoles-are-defined-as-a-list-of-qemuconsole" title="Do what you think is right">#</a></h3>
 <pre><code class="language-c">static QTAILQ_HEAD(, QemuConsole) consoles = QTAILQ_HEAD_INITIALIZER(consoles);
 </code></pre>
 <ul>
@@ -618,7 +296,7 @@ qemu_console_lookup_by_device(... dev, ... head)
 qemu_console_lookup_by_device_name(... device_id, head) // device_id -&gt; dev
 qemu_console_lookup_unused()
 </code></pre>
-<h3 id="qemu-consoles-have-three-types">QEMU consoles have three types.</h3>
+<h3 id="qemu-consoles-have-three-types">QEMU consoles have three types.<a class="headerlink" href="#qemu-consoles-have-three-types" title="Do what you think is right">#</a></h3>
 <pre><code class="language-c">typedef enum {
     GRAPHIC_CONSOLE, TEXT_CONSOLE, TEXT_CONSOLE_FIXED_SIZE
 } console_type_t;
@@ -669,7 +347,7 @@ hw/display/pxa2xx_lcd.c
 <pre><code class="language-c">// e.g., chardev-vc
 vc_chr_open -&gt; new_console(..., TEXT_CONSOLE[_FIXED_SIZE], ...)
 </code></pre>
-<h3 id="qemu-consoles-are-initialized-by-new_console">QEMU consoles are initialized by <code>new_console</code>.</h3>
+<h3 id="qemu-consoles-are-initialized-by-new_console">QEMU consoles are initialized by <code>new_console</code>.<a class="headerlink" href="#qemu-consoles-are-initialized-by-new_console" title="Do what you think is right">#</a></h3>
 <p>First, <code>new_console</code> allocates an object and initializes some fields.</p>
 <pre><code class="language-c">obj = object_new(TYPE_QEMU_CONSOLE);
 s = QEMU_CONSOLE(obj);
@@ -697,8 +375,8 @@ of <code>PHASE_MACHINE_READY</code>, append the object and update its index.</li
 console and keep the graphic consoles in front of the text consoles. If in this
 situation, the text consoles will be renumbered. </li>
 </ul>
-<h2 id="qemu-consoles-qemu-video-devices-and-qemu-displays">QEMU consoles, QEMU video devices and QEMU displays</h2>
-<h3 id="a-typical-example-would-be-graphic_console_init">A typical example would be <code>graphic_console_init</code>.</h3>
+<h2 id="qemu-consoles-qemu-video-devices-and-qemu-displays">QEMU consoles, QEMU video devices and QEMU displays<a class="headerlink" href="#qemu-consoles-qemu-video-devices-and-qemu-displays" title="Do what you think is right">#</a></h2>
+<h3 id="a-typical-example-would-be-graphic_console_init">A typical example would be <code>graphic_console_init</code>.<a class="headerlink" href="#a-typical-example-would-be-graphic_console_init" title="Do what you think is right">#</a></h3>
 <p>First, by calling <code>get_alloc_dispaly</code>, it allocates or gets an allocated
 <code>DisplayState</code> that is bonded to a list of display change listeners.</p>
 <pre><code class="language-c">ds = get_alloc_displaystate();
@@ -735,7 +413,7 @@ dpy_gfx_replace_surface(s, surface);
 +QEMU vidio devices+ &lt;-hw_ops- +QEMU console+ -listeners-&gt; +QEMU dispalys+
 +------------------+           +------------+              +-------------+
 </code></pre>
-<h3 id="when-it-comes-to-a-text-console-things-are-similar">When it comes to a text console, things are similar.</h3>
+<h3 id="when-it-comes-to-a-text-console-things-are-similar">When it comes to a text console, things are similar.<a class="headerlink" href="#when-it-comes-to-a-text-console-things-are-similar" title="Do what you think is right">#</a></h3>
 <p>First, allocate a QEMU console.</p>
 <pre><code class="language-c">if (width == 0 || height == 0) {
     s = new_console(NULL, TEXT_CONSOLE, 0);
@@ -754,8 +432,8 @@ relative hardware operations.</p>
     ...
 }
 </code></pre>
-<h2 id="interactions-through-qemu-consoles">Interactions through QEMU consoles</h2>
-<h3 id="first-of-all-we-will-figure-out-when-the-hw_ops-are-called">First of all, we will figure out when the hw_ops are called.</h3>
+<h2 id="interactions-through-qemu-consoles">Interactions through QEMU consoles<a class="headerlink" href="#interactions-through-qemu-consoles" title="Do what you think is right">#</a></h2>
+<h3 id="first-of-all-we-will-figure-out-when-the-hw_ops-are-called">First of all, we will figure out when the hw_ops are called.<a class="headerlink" href="#first-of-all-we-will-figure-out-when-the-hw_ops-are-called" title="Do what you think is right">#</a></h3>
 <p>All hw_ops are defined in the following.</p>
 <pre><code class="language-c">typedef struct GraphicHwOps {
     int (*get_flags)(void *opaque); /* optional, default 0 */
@@ -770,7 +448,7 @@ relative hardware operations.</p>
 } GraphicHwOps;
 </code></pre>
 <p>We can group them according to their usage.</p>
-<h4 id="group-1-graphic_hw_xxx">Group 1: graphic_hw_xxx</h4>
+<h4 id="group-1-graphic_hw_xxx">Group 1: graphic_hw_xxx<a class="headerlink" href="#group-1-graphic_hw_xxx" title="Do what you think is right">#</a></h4>
 <p>Callbacks in this group will be called by QEMU displays. Graphic displays
 usually call <code>graphic_hw_update</code>, while text displays would call
 <code>graphic_hw_text_udpate</code>. A virtual device must tell the corresponding QEMU
@@ -781,16 +459,16 @@ graphic_hw_invalidate
 graphic_hw_gl_block
 graphic_hw_gl_flushed
 </code></pre>
-<h4 id="group-2-gui_update-update_interval">Group 2: gui_update -&gt; update_interval</h4>
+<h4 id="group-2-gui_update-update_interval">Group 2: gui_update -&gt; update_interval<a class="headerlink" href="#group-2-gui_update-update_interval" title="Do what you think is right">#</a></h4>
 <p>When <code>register_displaychangelistener</code> is called by a QEMU display, it will set a
 timer to call <code>phy_refresh</code> periodically. A virtual device can implement
 <code>update_interval</code> to synchronize the interval of the timer.</p>
-<h4 id="group-3-dpy_compatible_with-and-dpy_set_ui_info_timer">Group 3: dpy_compatible_with and dpy_set_ui_info_timer</h4>
+<h4 id="group-3-dpy_compatible_with-and-dpy_set_ui_info_timer">Group 3: dpy_compatible_with and dpy_set_ui_info_timer<a class="headerlink" href="#group-3-dpy_compatible_with-and-dpy_set_ui_info_timer" title="Do what you think is right">#</a></h4>
 <p>The former checks whether a video device is compatible with a QEMU display by
 calling <code>get_flags</code>. The latter will be triggered when ui info should be told to
 the guest.</p>
-<h3 id="second-we-will-figure-out-how-the-display-listener-callbacks-work">Second, we will figure out how the display listener callbacks work.</h3>
-<h4 id="an-example-of-graphic-qemu-display">An example of graphic QEMU display</h4>
+<h3 id="second-we-will-figure-out-how-the-display-listener-callbacks-work">Second, we will figure out how the display listener callbacks work.<a class="headerlink" href="#second-we-will-figure-out-how-the-display-listener-callbacks-work" title="Do what you think is right">#</a></h3>
+<h4 id="an-example-of-graphic-qemu-display">An example of graphic QEMU display<a class="headerlink" href="#an-example-of-graphic-qemu-display" title="Do what you think is right">#</a></h4>
 <pre><code class="language-c">static const DisplayChangeListenerOps dcl_ops = {
     .dpy_name             = &quot;gtk&quot;,
     .dpy_gfx_update       = gd_update,
@@ -808,7 +486,7 @@ will be called from vedio devices.</li>
 <li><code>gpy_gfx_switch</code> will be called in <code>register_displaychangelistener</code> or will be
 called by QEMU displays.</li>
 </ul>
-<h3 id="what-about-together">What about together?</h3>
+<h3 id="what-about-together">What about together?<a class="headerlink" href="#what-about-together" title="Do what you think is right">#</a></h3>
 <p>Let's review the history of graphic devices.</p>
 <ul>
 <li>1st gen VGA Card: output images but leave all calculations to CPU</li>
@@ -821,79 +499,64 @@ called by QEMU displays.</li>
 periodically, <code>graphic_hw_update</code> will be called switching from QEMU displays to
 QEMU video devices. The devices will process the image and then call
 <code>dpy_gfx_update</code> to inform the changes to QEMU displays.</p>
-<p>[^1]: <a href="https://www.kraxel.org/slides/qemu-gfx/">Graphics in QEMU</a></p>
-
-
-
-
-
-
-
-  
-    
-  
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 6, 2022</span>
-  </span>
-
-    
-    
-    
-    
-  </aside>
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://www.kraxel.org/slides/qemu-gfx/">Graphics in QEMU</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
 </div>
-      
+</section>
+
+<section id="mkdocs-terminal-after-content">
+    
+</section>
+<section id="mkdocs-terminal-revision">
+<br>
+<aside>
+    <p>
+        <small>
+            <i>Page last updated 2022-03-06. </i>
+        </small>
+    </p>
+</aside>
+</section>
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
     </div>
-  </div>
 </footer>
-      
     </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
     </div>
+</div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-    
-    
-      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
-      
-    
-  </body>
+</body>
+
 </html>

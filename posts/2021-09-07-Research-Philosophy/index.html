@@ -1,417 +1,191 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2021-09-07-Research-Philosophy/">
-      
-      
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.5.3, mkdocs-terminal-4.6.0">
+     
+     
     
-    
-      
-        <title>How to do system and software security research? - Qiang Liu's Homepage</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
-      
-      
+    <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2021-09-07-Research-Philosophy/"><link rel="icon" type="image/png" sizes="192x192" href="../../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png" />
 
 
     
+ 
+<title>How to do system and software security research? - Qiang Liu's Homepage</title>
+
+
+<link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../../css/normalize.css" rel="stylesheet">
+<link href="../../css/terminal.css" rel="stylesheet">
+<link href="../../css/theme.css" rel="stylesheet">
+<link href="../../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../../css/theme.footer.css" rel="stylesheet">
+<!-- pink color palette -->
+<link href="../../css/palettes/pink.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+     
     
-      
+    
+
+    
+    <!-- search css support -->
+<link href="../../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "../..",
+    shortcuts = "{}";
+</script>
+<script src="../../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../../js/mkdocs/base.js" defer></script>
     
     
-      
+    
+    
+    <script src="../../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="https://github.com/cyruscyliu/cyruscyliu.github.io/" class="no-style">Qiang Liu's Homepage</a></div>
+        </header>
         
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Fira Code";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-    
-  </head>
-  
-  
-    <body dir="ltr">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#how-to-do-system-and-software-security-research" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Qiang Liu&#39;s Homepage" class="md-header__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            Qiang Liu's Homepage
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+        <nav class="terminal-menu">
             
-              How to do system and software security research?
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-    
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
-  </nav>
-  
-    
-      
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
-        
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
-        
-  
-    
-  
-  Posts
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Qiang Liu&#39;s Homepage" class="md-nav__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    Qiang Liu's Homepage
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Posts
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-system-and-software-security" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is system and software security?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-are-the-ideas-from" class="md-nav__link">
-    <span class="md-ellipsis">
-      Where are the ideas from?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#there-are-too-many-ideas-and-how-to-decide" class="md-nav__link">
-    <span class="md-ellipsis">
-      There are too many ideas and how to decide?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tips-to-do-research" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tips to do research
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tips to do research">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#budge-our-time" class="md-nav__link">
-    <span class="md-ellipsis">
-      Budge our time
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-we-are-going-to-is-what-we-are-going-to-write" class="md-nav__link">
-    <span class="md-ellipsis">
-      What we are going to is what we are going to write
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-up-servers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Set up servers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#do-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Do evaluation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#write-a-good-paper" class="md-nav__link">
-    <span class="md-ellipsis">
-      Write a good paper
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Write a good paper">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#necessity-for-reader-centred-writing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Necessity for reader-centred writing
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
                 
-                  
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../.." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Posts</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                    
+                    
 
 
-<h1 id="how-to-do-system-and-software-security-research">How to do system and software security research?</h1>
-<h2 id="what-is-system-and-software-security">What is system and software security?</h2>
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="2">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+  
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../..">Home</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../">Posts</a>
+        
+    
+    
+    
+  </li>
+        
+    </ul>
+  
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#how-to-do-system-and-software-security-research">How to do system and software security research?</a></li>
+        <li><a href="#what-is-system-and-software-security">What is system and software security?</a></li><li><a href="#where-are-the-ideas-from">Where are the ideas from?</a></li><li><a href="#there-are-too-many-ideas-and-how-to-decide">There are too many ideas and how to decide?</a></li><li><a href="#tips-to-do-research">Tips to do research</a></li><li><a href="#write-a-good-paper">Write a good paper</a></li>
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+    
+    
+    
+    
+    
+
+<section id="mkdocs-terminal-content">
+    <h1 id="how-to-do-system-and-software-security-research">How to do system and software security research?<a class="headerlink" href="#how-to-do-system-and-software-security-research" title="Do what you think is right">#</a></h1>
+<h2 id="what-is-system-and-software-security">What is system and software security?<a class="headerlink" href="#what-is-system-and-software-security" title="Do what you think is right">#</a></h2>
 <p>We in system and software security aims to break and protect the assets that
 leverage hardware and software to provide widely-used services, such as
 browsers, compilers/interpreters, network protocols, operating systems,
@@ -460,7 +234,7 @@ infrastructure security has a overlap with system and software security, such as
 smart contract security.</p>
 </li>
 </ul>
-<h2 id="where-are-the-ideas-from">Where are the ideas from?</h2>
+<h2 id="where-are-the-ideas-from">Where are the ideas from?<a class="headerlink" href="#where-are-the-ideas-from" title="Do what you think is right">#</a></h2>
 <p>An idea consists of a problem and a solution.</p>
 <p>First, we can read and propose a new idea after reading a paper. However, there
 will be a delay. One the one hand, a research paper is published two years later
@@ -478,7 +252,7 @@ are there? How to address them?</p>
 <p>Check <a href="https://medium.com/digital-diplomacy/how-to-look-for-ideas-in-computer-science-research-7a3fa6f4696f">this
 article</a>
 to learn the patterns of research and other tips.</p>
-<h2 id="there-are-too-many-ideas-and-how-to-decide">There are too many ideas and how to decide?</h2>
+<h2 id="there-are-too-many-ideas-and-how-to-decide">There are too many ideas and how to decide?<a class="headerlink" href="#there-are-too-many-ideas-and-how-to-decide" title="Do what you think is right">#</a></h2>
 <p>The security research community has grown a lot. More PhD students generate more
 papers due to cheap resources (computing power, ChatGPT, etc.). Rat-race is
 going on and we have to fast forward our visibility by building our brand. In
@@ -505,8 +279,8 @@ them are worthy of our effort.</p>
 attention to how many research papers and industry blogs exist. You want to lead
 the research (there are only 0-2 papers) instead of following others. Do not be
 ignorant and remember your personal experience is biased.</p>
-<h2 id="tips-to-do-research">Tips to do research</h2>
-<h3 id="budge-our-time">Budge our time</h3>
+<h2 id="tips-to-do-research">Tips to do research<a class="headerlink" href="#tips-to-do-research" title="Do what you think is right">#</a></h2>
+<h3 id="budge-our-time">Budge our time<a class="headerlink" href="#budge-our-time" title="Do what you think is right">#</a></h3>
 <ul>
 <li>Mark the DDL two weeks in advance</li>
 <li>Spend 30 seconds more to save us from a 30-minute disaster</li>
@@ -515,7 +289,7 @@ ignorant and remember your personal experience is biased.</p>
 <li>Be busy when it is busy and have fun when it is not busy</li>
 <li>Take holidays and weekends after submissions</li>
 </ul>
-<h3 id="what-we-are-going-to-is-what-we-are-going-to-write">What we are going to is what we are going to write</h3>
+<h3 id="what-we-are-going-to-is-what-we-are-going-to-write">What we are going to is what we are going to write<a class="headerlink" href="#what-we-are-going-to-is-what-we-are-going-to-write" title="Do what you think is right">#</a></h3>
 <ul>
 <li>Review papers, run their systems, and summarize (RW)</li>
 <li>Identify challenges and evaluate solutions in theory (challenges, insights, solutions)</li>
@@ -523,7 +297,7 @@ ignorant and remember your personal experience is biased.</p>
 <li><a href="../2021-09-03-Summary-Research-SE/">Coding</a> and write evaluation scripts (IMPL, evaluation)</li>
 <li>Write the paper at the same time and get feedback from others</li>
 </ul>
-<h3 id="set-up-servers">Set up servers</h3>
+<h3 id="set-up-servers">Set up servers<a class="headerlink" href="#set-up-servers" title="Do what you think is right">#</a></h3>
 <ul>
 <li>What architectures should we use? How many servers do we have?</li>
 <li>Are we in the <code>sudo</code> group?</li>
@@ -531,7 +305,7 @@ ignorant and remember your personal experience is biased.</p>
 <li>Do we need to disable the hyper-threading?</li>
 <li>Buy more CPU, RAM, and storge. </li>
 </ul>
-<h3 id="do-evaluation">Do evaluation</h3>
+<h3 id="do-evaluation">Do evaluation<a class="headerlink" href="#do-evaluation" title="Do what you think is right">#</a></h3>
 <ul>
 <li>All in Docker container</li>
 <li>Make it parallel</li>
@@ -540,7 +314,7 @@ ignorant and remember your personal experience is biased.</p>
 <li>Do not delete any data if we are sure. Just buy more storage!</li>
 <li>Do not make the hardware have a rest.</li>
 </ul>
-<h2 id="write-a-good-paper">Write a good paper</h2>
+<h2 id="write-a-good-paper">Write a good paper<a class="headerlink" href="#write-a-good-paper" title="Do what you think is right">#</a></h2>
 <ul>
 <li>Tell a well-constructed story (information-flow, the pyramid principle)</li>
 <li>Conduct reader-centred writing: straightforward and clear</li>
@@ -568,85 +342,63 @@ ignorant and remember your personal experience is biased.</p>
 <li>Our solutions apply to other scenarios</li>
 <li>Our tools have good usability</li>
 </ul>
-<h3 id="necessity-for-reader-centred-writing">Necessity for reader-centred writing</h3>
+<h3 id="necessity-for-reader-centred-writing">Necessity for reader-centred writing<a class="headerlink" href="#necessity-for-reader-centred-writing" title="Do what you think is right">#</a></h3>
 <ul>
 <li>Too many papers submitted but not enough reviewers</li>
 <li>Too many DDLs so that a reviewer at most up to 1 day (maybe half) to figure
 out what we did. Good-writing paper save reviewer's time. Otherwise, he will
 leave a message "I couldn't figure out the contributions due the bad writting".</li>
 </ul>
+</section>
 
-
-
-
-
-
-
-  
+<section id="mkdocs-terminal-after-content">
     
-  
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 4, 2024</span>
-  </span>
-
-    
-    
-    
-    
-  </aside>
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</section>
+<section id="mkdocs-terminal-revision">
+<br>
+<aside>
+    <p>
+        <small>
+            <i>Page last updated 2024-08-04. </i>
+        </small>
+    </p>
+</aside>
+</section>
+            </main>
         </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
     </div>
-  </div>
 </footer>
-      
     </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
     </div>
+</div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-    
-    
-      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
-      
-    
-  </body>
+</body>
+
 </html>

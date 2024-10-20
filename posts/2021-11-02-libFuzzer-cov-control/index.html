@@ -1,504 +1,197 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2021-11-02-libFuzzer-cov-control/">
-      
-      
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.5.3, mkdocs-terminal-4.6.0">
+     
+     
     
-    
-      
-        <title>Coverage Control in libFuzzer - Qiang Liu's Homepage</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
-      
-      
+    <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2021-11-02-libFuzzer-cov-control/"><link rel="icon" type="image/png" sizes="192x192" href="../../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png" />
 
 
     
+ 
+<title>Coverage Control in libFuzzer - Qiang Liu's Homepage</title>
+
+
+<link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../../css/normalize.css" rel="stylesheet">
+<link href="../../css/terminal.css" rel="stylesheet">
+<link href="../../css/theme.css" rel="stylesheet">
+<link href="../../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../../css/theme.footer.css" rel="stylesheet">
+<!-- pink color palette -->
+<link href="../../css/palettes/pink.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+     
     
-      
+    
+
+    
+    <!-- search css support -->
+<link href="../../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "../..",
+    shortcuts = "{}";
+</script>
+<script src="../../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../../js/mkdocs/base.js" defer></script>
     
     
-      
+    
+    
+    <script src="../../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="https://github.com/cyruscyliu/cyruscyliu.github.io/" class="no-style">Qiang Liu's Homepage</a></div>
+        </header>
         
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Fira Code";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-    
-  </head>
-  
-  
-    <body dir="ltr">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#coverage-control-in-libfuzzer" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Qiang Liu&#39;s Homepage" class="md-header__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            Qiang Liu's Homepage
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+        <nav class="terminal-menu">
             
-              Coverage Control in libFuzzer
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-    
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
-  </nav>
-  
-    
-      
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
-        
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
-        
-  
-    
-  
-  Posts
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Qiang Liu&#39;s Homepage" class="md-nav__button md-logo" aria-label="Qiang Liu's Homepage" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    Qiang Liu's Homepage
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Posts
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use-libfuzzer" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to use libFuzzer?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-compiler-llvm-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to compiler LLVM project?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#details-beneath-fsanitizefuzzer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details beneath -fsanitize=fuzzer
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flow-of-instrumentations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Flow of instrumentations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#details-of-stubs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details of stubs
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Details of stubs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#__sanitizer_cov_indir_call" class="md-nav__link">
-    <span class="md-ellipsis">
-      __sanitizer_cov_indir_call
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#__sanitizer_cov_trace_const_cmp1248" class="md-nav__link">
-    <span class="md-ellipsis">
-      __sanitizer_cov_trace_[const_]cmp[1|2|4|8]
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#__sanitizer_cov_trace_pc" class="md-nav__link">
-    <span class="md-ellipsis">
-      __sanitizer_cov_trace_pc
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#__sanitizer_cov_trace_pc_guard_init" class="md-nav__link">
-    <span class="md-ellipsis">
-      __sanitizer_cov_trace_pc_guard[_init]
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#__sanitizer_cov_8bipctableentryidxpc_guard" class="md-nav__link">
-    <span class="md-ellipsis">
-      __sanitizer_cov_8biPCTableEntryIdxpc_guard`.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#__sanitizer_cov_bool_flag_init" class="md-nav__link">
-    <span class="md-ellipsis">
-      __sanitizer_cov_bool_flag_init
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#__sanitizer_cov_pcs_init" class="md-nav__link">
-    <span class="md-ellipsis">
-      __sanitizer_cov_pcs_init
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#a-brief-list-of-flag-stubs-and-information-sink-in-libfuzzer" class="md-nav__link">
-    <span class="md-ellipsis">
-      A brief list of (flag, stubs, and information sink in libFuzzer)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#details-of-coverage-collection-algorithm-and-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Details of coverage collection algorithm and implementation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Details of coverage collection algorithm and implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#resetmaps" class="md-nav__link">
-    <span class="md-ellipsis">
-      ResetMaps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#collectfeatures" class="md-nav__link">
-    <span class="md-ellipsis">
-      CollectFeatures
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#updateobservedpcs" class="md-nav__link">
-    <span class="md-ellipsis">
-      UpdateObservedPCs
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#libfuzzer-intercepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      libFuzzer intercepts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusion
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
                 
-                  
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../.." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Posts</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                    
+                    
 
 
-<h1 id="coverage-control-in-libfuzzer">Coverage Control in libFuzzer</h1>
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="2">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+  
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../..">Home</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../">Posts</a>
+        
+    
+    
+    
+  </li>
+        
+    </ul>
+  
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#coverage-control-in-libfuzzer">Coverage Control in libFuzzer</a></li>
+        <li><a href="#how-to-use-libfuzzer">How to use libFuzzer?</a></li><li><a href="#how-to-compiler-llvm-project">How to compiler LLVM project?</a></li><li><a href="#details-beneath-fsanitizefuzzer">Details beneath -fsanitize=fuzzer</a></li><li><a href="#flow-of-instrumentations">Flow of instrumentations</a></li><li><a href="#details-of-stubs">Details of stubs</a></li><li><a href="#details-of-coverage-collection-algorithm-and-implementation">Details of coverage collection algorithm and implementation</a></li><li><a href="#libfuzzer-intercepts">libFuzzer intercepts</a></li><li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+    
+    
+    
+    
+    
+
+<section id="mkdocs-terminal-content">
+    <h1 id="coverage-control-in-libfuzzer">Coverage Control in libFuzzer<a class="headerlink" href="#coverage-control-in-libfuzzer" title="Do what you think is right">#</a></h1>
 <p>This article reveals how to control the coverage collection in libFuzzer.</p>
-<h2 id="how-to-use-libfuzzer">How to use libFuzzer?</h2>
+<h2 id="how-to-use-libfuzzer">How to use libFuzzer?<a class="headerlink" href="#how-to-use-libfuzzer" title="Do what you think is right">#</a></h2>
 <p>To use libFuzzer, it is necessary to develop a fuzz target. Please refer to
 <a href="https://llvm.org/docs/LibFuzzer.html#id14">this</a> and
 <a href="https://llvm.org/docs/LibFuzzer.html#id23">this</a> to check how to develop a fuzz
 target and how to compile it with Clang.</p>
-<h2 id="how-to-compiler-llvm-project">How to compiler LLVM project?</h2>
+<h2 id="how-to-compiler-llvm-project">How to compiler LLVM project?<a class="headerlink" href="#how-to-compiler-llvm-project" title="Do what you think is right">#</a></h2>
 <p>Download llvm-project and compile like below. Please also refer to
 <a href="https://llvm.org/docs/GettingStarted.html">this</a> and
 <a href="https://clang.llvm.org/get_started.html">this</a>.</p>
@@ -508,7 +201,7 @@ cmake -G Ninja -DLLVM_USE_LINKER=gold -DLLVM_ENABLE_PROJECTS=&quot;clang;compile
 ninja clang compiler-rt
 export PATH=$PWD/bin:$PATH
 </code></pre>
-<h2 id="details-beneath-fsanitizefuzzer">Details beneath <code>-fsanitize=fuzzer</code></h2>
+<h2 id="details-beneath-fsanitizefuzzer">Details beneath <code>-fsanitize=fuzzer</code><a class="headerlink" href="#details-beneath-fsanitizefuzzer" title="Do what you think is right">#</a></h2>
 <p>As we all know, when compiling a program, a compiler will automatically expand
 its compiler flags. If <code>-v</code> is enable, the compiler will show all flags.
 Considering a very simple example: <code>clang -o foo -fsanitize=fuzzer foo.c</code>, the
@@ -694,7 +387,7 @@ the following.</p>
     foo.c
 </code></pre>
 <p>In this way, only <code>edge</code> and <code>inline-8bit-counters</code> are enabled.</p>
-<h2 id="flow-of-instrumentations">Flow of instrumentations</h2>
+<h2 id="flow-of-instrumentations">Flow of instrumentations<a class="headerlink" href="#flow-of-instrumentations" title="Do what you think is right">#</a></h2>
 <p>The module pass <code>SanitizerCoverage</code>
 (llvm/lib/Transforms/Instrumentation/SanitizerCoverage.cpp) will instrument
 coverage flag to each module.</p>
@@ -739,9 +432,9 @@ invoke <code>InjectCoverageAtBlock</code> to handle each basic blocks.
 <code>InjectCoverageAtBlock</code> will instrument <code>SanCovTracePC</code>, <code>SanCovTracePCGuard</code>,
 <code>Inline8BitCounters</code>, or <code>InlineBoolFlag</code>, or update the lowest stack frame, for
 each basic block.</p>
-<h2 id="details-of-stubs">Details of stubs</h2>
+<h2 id="details-of-stubs">Details of stubs<a class="headerlink" href="#details-of-stubs" title="Do what you think is right">#</a></h2>
 <p>Please also refer to <a href="https://clang.llvm.org/docs/SanitizerCoverage.html">this</a>.</p>
-<h3 id="__sanitizer_cov_indir_call">__sanitizer_cov_indir_call</h3>
+<h3 id="__sanitizer_cov_indir_call">__sanitizer_cov_indir_call<a class="headerlink" href="#__sanitizer_cov_indir_call" title="Do what you think is right">#</a></h3>
 <p>This will be in front of an indirect call. It requires at least one of
 <code>trace-pc</code>, <code>trace-pc-guard</code>, <code>inline-8bit-counters</code>, and <code>inline-bool-flag</code>.
 It accepts one parameter, the callee address. The address of the caller is
@@ -763,7 +456,7 @@ void __sanitizer_cov_trace_pc_indir(uintptr_t Callee) {
   fuzzer::TPC.HandleCallerCallee(PC, Callee);
 }
 </code></pre>
-<h3 id="__sanitizer_cov_trace_const_cmp1248">__sanitizer_cov_trace_[const_]cmp[1|2|4|8]</h3>
+<h3 id="__sanitizer_cov_trace_const_cmp1248">__sanitizer_cov_trace_[const_]cmp[1|2|4|8]<a class="headerlink" href="#__sanitizer_cov_trace_const_cmp1248" title="Do what you think is right">#</a></h3>
 <p>These will be in front of a cmp instruction with const operand or not. They
 accept both operands to be compared. The address of the caller is passed
 implicitly via caller PC. One of its implementation in libFuzzer is in the
@@ -791,10 +484,10 @@ void __sanitizer_cov_trace_cmp1(uint8_t Arg1, uint8_t Arg2) {
 <p>Similarly stubs are <code>__sanitizer_cov_trace_switch</code>,
 <code>__sanitizer_cov_trace_div[4|8]</code>, and <code>__sanitizer_cov_trace_gep</code>.  They all
 invoke HandleCmp at the end to update new information into the value profile.</p>
-<h3 id="__sanitizer_cov_trace_pc">__sanitizer_cov_trace_pc</h3>
+<h3 id="__sanitizer_cov_trace_pc">__sanitizer_cov_trace_pc<a class="headerlink" href="#__sanitizer_cov_trace_pc" title="Do what you think is right">#</a></h3>
 <p>This will be at the entry of each basic block. The address of the caller is
 passed implicitly via caller PC. This is deprecated.</p>
-<h3 id="__sanitizer_cov_trace_pc_guard_init">__sanitizer_cov_trace_pc_guard[_init]</h3>
+<h3 id="__sanitizer_cov_trace_pc_guard_init">__sanitizer_cov_trace_pc_guard[_init]<a class="headerlink" href="#__sanitizer_cov_trace_pc_guard_init" title="Do what you think is right">#</a></h3>
 <p><code>__sanitizer_cov_trace_pc_guard</code> will be at the entry of each basic block after
 <code>__sanitier_cov_trace_pc</code>. The address of the caller is passed implicitly via
 caller PC. They are deprecated.</p>
@@ -808,7 +501,7 @@ whose size is the number of the basic blocks. This array is associated with
 module.</p>
 <p>[NOT SURE] In the end, after linking, there will be one <code>sancov_guards</code> and one
 <code>sancov.module_ctor_trace_pc_guard</code>.</p>
-<h3 id="__sanitizer_cov_8bipctableentryidxpc_guard">__sanitizer_cov_8biPCTableEntryIdxpc_guard`.</h3>
+<h3 id="__sanitizer_cov_8bipctableentryidxpc_guard">__sanitizer_cov_8biPCTableEntryIdxpc_guard`.<a class="headerlink" href="#__sanitizer_cov_8bipctableentryidxpc_guard" title="Do what you think is right">#</a></h3>
 <p>Each function would have a function 8bit counter array <code>int8_t
 Function8BitArray[]</code> whose size is the number of the basic blocks. This array is
 associated with <code>sancov_cntrs</code> section. If a basic block is visited, then the
@@ -859,7 +552,7 @@ void __sanitizer_cov_8bit_counters_init(uint8_t *Start, uint8_t *Stop) {
   fuzzer::TPC.HandleInline8bitCountersInit(Start, Stop);
 }
 </code></pre>
-<h3 id="__sanitizer_cov_bool_flag_init">__sanitizer_cov_bool_flag_init</h3>
+<h3 id="__sanitizer_cov_bool_flag_init">__sanitizer_cov_bool_flag_init<a class="headerlink" href="#__sanitizer_cov_bool_flag_init" title="Do what you think is right">#</a></h3>
 <p>The inline bool flag will be at the entry of each basic block after the inline
 8bit counters.</p>
 <p>Each function would have a function 1 bit array <code>int1_t FunctionBoolArray[]</code>
@@ -872,7 +565,7 @@ initilize <code>sancov_bools</code> for each module.</p>
 <p>[NOT SURE] In the end, after linking, there will be one <code>sancov_bools</code> and one
 <code>sancov.module_ctor_bool_flag</code>.</p>
 <p><code>__sanitizer_cov_bool_flag_init</code> is not defined in the libFuzzer.</p>
-<h3 id="__sanitizer_cov_pcs_init">__sanitizer_cov_pcs_init</h3>
+<h3 id="__sanitizer_cov_pcs_init">__sanitizer_cov_pcs_init<a class="headerlink" href="#__sanitizer_cov_pcs_init" title="Do what you think is right">#</a></h3>
 <p>For each function, SanCov creates a PC array associated with <code>sancov_pcs</code> to
 store <code>{PC, PCFlags}</code> pairs. PC is the address of the corresponding basic block,
 and a PCFlags describes the basic block is the function entry block (1) or not
@@ -897,7 +590,7 @@ void __sanitizer_cov_pcs_init(const uintptr_t *pcs_beg,
   fuzzer::TPC.HandlePCsInit(pcs_beg, pcs_end);
 }
 </code></pre>
-<h3 id="a-brief-list-of-flag-stubs-and-information-sink-in-libfuzzer">A brief list of (flag, stubs, and information sink in libFuzzer)</h3>
+<h3 id="a-brief-list-of-flag-stubs-and-information-sink-in-libfuzzer">A brief list of (flag, stubs, and information sink in libFuzzer)<a class="headerlink" href="#a-brief-list-of-flag-stubs-and-information-sink-in-libfuzzer" title="Do what you think is right">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -984,7 +677,7 @@ void __sanitizer_cov_pcs_init(const uintptr_t *pcs_beg,
 </tr>
 </tbody>
 </table>
-<h2 id="details-of-coverage-collection-algorithm-and-implementation">Details of coverage collection algorithm and implementation</h2>
+<h2 id="details-of-coverage-collection-algorithm-and-implementation">Details of coverage collection algorithm and implementation<a class="headerlink" href="#details-of-coverage-collection-algorithm-and-implementation" title="Do what you think is right">#</a></h2>
 <p>Recalling that several stubs are instrumented to the target program. The implementation of these stubs are implemented in libFuzzer by default or can be replaced by developers. Most of them are defined in compiler-rt/lib/fuzzer/FuzzerTracePC.cpp. After testing an input, these stubs will update corresponding information. LibFuzzer will then calculate the coverage with the information. A detailed flow is in the following.</p>
 <pre><code class="language-c++">ExecuteCallback
     - TPC.ResetMaps();
@@ -994,7 +687,7 @@ if (NumNewFeatures || ForceAddToCorpus) {
   TPC.UpdateObservedPCs();
 }
 </code></pre>
-<h3 id="resetmaps">ResetMaps</h3>
+<h3 id="resetmaps">ResetMaps<a class="headerlink" href="#resetmaps" title="Do what you think is right">#</a></h3>
 <pre><code class="language-c++">template &lt;class Callback&gt;
 void IterateCounterRegions(Callback CB) {
   for (size_t m = 0; m &lt; NumModules; m++)
@@ -1017,7 +710,7 @@ void ResetMaps() {
 </code></pre>
 <p>TPC.ResetMaps reset 1) ValueProfileMap, a bit map for data flow value, 2)
 ExtraCounters, 3) InlineCouters, the area for <code>inline-8bit-counters</code>.</p>
-<h3 id="collectfeatures">CollectFeatures</h3>
+<h3 id="collectfeatures">CollectFeatures<a class="headerlink" href="#collectfeatures" title="Do what you think is right">#</a></h3>
 <pre><code class="language-c++">size_t NumUpdatesBefore = Corpus.NumFeatureUpdates();
 TPC.CollectFeatures([&amp;](size_t Feature) {
   if (Corpus.AddFeature(Feature, Size, Options.Shrink))
@@ -1087,7 +780,7 @@ end, the start of the new features will be updated by adding the bit number of
 modules. <code>ExtraCounters</code> works similarly. For the ValueProfileMap, each non-zero
 bit is a new feature. For the stack depth, it leverages a hash function
 StackDepthStepFunction.</p>
-<h3 id="updateobservedpcs">UpdateObservedPCs</h3>
+<h3 id="updateobservedpcs">UpdateObservedPCs<a class="headerlink" href="#updateobservedpcs" title="Do what you think is right">#</a></h3>
 <p>If any new features, libFuzzer will update observed PCs.</p>
 <pre><code class="language-c++">for (size_t i = 0; i &lt; NumModules; i++) {
   auto &amp;M = Modules[i];
@@ -1122,7 +815,7 @@ auto Observe = [&amp;](const PCTableEntry *TE) {
 </code></pre>
 <p>If the basic block is the entry, then update <code>ObservedFunc</code>. Otherwise, invoke
 <code>ObservePC</code> to update <code>ObservedPCs</code>.</p>
-<h2 id="libfuzzer-intercepts">libFuzzer intercepts</h2>
+<h2 id="libfuzzer-intercepts">libFuzzer intercepts<a class="headerlink" href="#libfuzzer-intercepts" title="Do what you think is right">#</a></h2>
 <p>LibFuzzer will intercepts <code>memcmp</code>, <code>strncmp</code>, <code>strcmp</code>, <code>strncasecmp</code>,
 <code>strcasecmp</code>, <code>strstr</code>, <code>strcasestr</code>, and <code>memmem</code> functions if no ASAN, TSAN,
 MSAN runtime is enabled. It is not easy to disable this behavior.</p>
@@ -1203,8 +896,8 @@ void __sanitizer_weak_hook_memcmp(void *caller_pc, const void *s1,
 update coverage information from ValueProfileMap, 2) comment these
 <code>__sanitizer_weak_hook_xxx</code> to reduce the overhead. Luckily,
 <code>-use_value_profile=0</code> is the default option of libFuzzer.</p>
-<h2 id="conclusion">Conclusion</h2>
-<ol>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Do what you think is right">#</a></h2>
+<ul>
 <li>
 <p>For the basic block coverage, SanCov maintains an array that records how many
 times a basic block is visited, and the libFuzzer will collect that information
@@ -1213,84 +906,70 @@ and calculate features.</p>
 <li>
 <p>To disable fancy features, just do as below.</p>
 </li>
-</ol>
+</ul>
 <pre><code class="language-bash">clang -o foo -fsanitize=fuzzer \
     -fsanitize-coverage=bb \
     -fno-sanitize-coverage=indirect-calls,trace-cmp,stack-depth,pc-table \
     foo.c
 </code></pre>
-
-
-
-
-
-
-
-  
-    
-  
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 9, 2023</span>
-  </span>
-
-    
-    
-    
-    
-  </aside>
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://clang.llvm.org/docs/SanitizerCoverage.html#edge-coverage">Clangedge-coverage</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
 </div>
-      
+</section>
+
+<section id="mkdocs-terminal-after-content">
+    
+</section>
+<section id="mkdocs-terminal-revision">
+<br>
+<aside>
+    <p>
+        <small>
+            <i>Page last updated 2024-10-20. </i>
+        </small>
+    </p>
+</aside>
+</section>
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
     </div>
-  </div>
 </footer>
-      
     </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
     </div>
+</div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-    
-    
-      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
-      
-    
-  </body>
+</body>
+
 </html>
