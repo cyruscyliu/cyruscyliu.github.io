@@ -127,6 +127,8 @@ the non-secure world
         + access EL1 registers -> access memory: similar to VMCS
         + access EL2 registers -> redirect to EL1 registers
         + 5 times faster
+    + Good images: https://developer.arm.com/documentation/102142/0100/Nested-virtualization
+
 + It seems the split-mode lowvisor/highvisor thing has been deprecated. Now,
 Linux kernel supports nVHE/hVHE/VHE.
     + nVHE and VHE: KVM/arm64 supports different execution modes depending on
@@ -135,10 +137,12 @@ Linux kernel supports nVHE/hVHE/VHE.
     as the non-VHE mode, the hypervisor code is split out of the kernel image
     during boot and installed at EL2, whereas the kernel itself runs at EL1.
     Although part of the Linux codebase, the EL2 component of KVM is a small
-    component in charge of the switch between multiple EL1s. The hypervisor
+    component in charge of the switch between multiple EL1s.  The hypervisor
     component is compiled with Linux, but resides in a separate, dedicated
-    memory section of the vmlinux image. 
-    + And for nHVE, there is a protected mode enabled by kvm-arm.mode=protected.
+    memory section of the vmlinux image.
+
+    + And for nVHE, there is a protected mode enabled by kvm-arm.mode=protected.
     nVHE-based mode with support for guests whose state is kept private from the
     host. Not valid if the kernel is running in EL2.
-    + https://www.spinics.net/lists/arm-kernel/msg1019310.html
+
+    + hVHE: enable VHE for split hypervisor mode
