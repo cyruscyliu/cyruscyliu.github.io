@@ -9,7 +9,7 @@
      
      
     
-    <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2020-11-18-buildroot-qemu-x86_64/"><link rel="icon" type="image/png" sizes="192x192" href="../../img/android-chrome-192x192.png" />
+    <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/posts/2024-10-20-control-flow-of-kvm-x86/"><link rel="icon" type="image/png" sizes="192x192" href="../../img/android-chrome-192x192.png" />
 <link rel="icon" type="image/png" sizes="512x512" href="../../img/android-chrome-512x512.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-touch-icon.png" />
 <link rel="shortcut icon" type="image/png" sizes="48x48" href="../../img/favicon.ico" />
@@ -19,7 +19,7 @@
 
     
  
-<title>Buildroot, QEMU and Linux kernel for x86_64 - Qiang Liu's Homepage</title>
+<title>Control flow of KVM/x86 - Qiang Liu's Homepage</title>
 
 
 <link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -171,8 +171,8 @@
 </nav><hr>
 <nav>
     <ul>
-        <li><a href="#buildroot-qemu-and-linux-kernel-for-x86_64">Buildroot, QEMU and Linux kernel for x86_64</a></li>
-        <li><a href="#download-buildroot">Download Buildroot</a></li><li><a href="#add-new-external-packages-user-space-program-and-kernel-module-optional">Add new external packages (user-space program and kernel module) (optional)</a></li><li><a href="#compile-buildroot">Compile Buildroot</a></li><li><a href="#launch-all-of-them">Launch all of them</a></li>
+        <li><a href="#control-flow-of-kvmx86">Control flow of KVM/x86</a></li>
+        <li><a href="#kvm_run">KVM_RUN</a></li><li><a href="#model-of-race-conditions">Model of race conditions</a></li>
     </ul>
 </nav>
 </aside>
@@ -184,75 +184,33 @@
     
 
 <section id="mkdocs-terminal-content">
-    <h1 id="buildroot-qemu-and-linux-kernel-for-x86_64">Buildroot, QEMU and Linux kernel for x86_64<a class="headerlink" href="#buildroot-qemu-and-linux-kernel-for-x86_64" title="Do what you think is right">#</a></h1>
-<p>How to build a minimum Linux kernel with customized rootfs and run it with QEMU?</p>
-<h2 id="download-buildroot">Download Buildroot<a class="headerlink" href="#download-buildroot" title="Do what you think is right">#</a></h2>
-<p>Please go <a href="https://buildroot.org/download.html">here</a> to download the latest
-Buildroot package and decompress it.</p>
-<h2 id="add-new-external-packages-user-space-program-and-kernel-module-optional">Add new external packages (user-space program and kernel module) (optional)<a class="headerlink" href="#add-new-external-packages-user-space-program-and-kernel-module-optional" title="Do what you think is right">#</a></h2>
-<p>To write an external user space program or install an external kernel module to
-validate your idea, e.g., to reproducing a bug, I refer to
-<a href="https://buildroot.org/downloads/manual/manual.html#adding-packages">this</a> and
-<a href="https://stackoverflow.com/questions/40307328/how-to-add-a-linux-kernel-driver-module-as-a-buildroot-package">this</a>.</p>
-<p>I have created a repo with support of the external user space program and kernel
-module. Please <code>git clone
-https://github.com/cyruscyliu/buildroot-external-packages.git</code>.</p>
-<h2 id="compile-buildroot">Compile Buildroot<a class="headerlink" href="#compile-buildroot" title="Do what you think is right">#</a></h2>
-<p>The directory layout is like below.</p>
-<pre><code class="language-txt">.
-├── buildroot-2022.02.4
-└── buildroot-external-packages
+    <h1 id="control-flow-of-kvmx86">Control flow of KVM/x86<a class="headerlink" href="#control-flow-of-kvmx86" title="Do what you think is right">#</a></h1>
+<h2 id="kvm_run">KVM_RUN<a class="headerlink" href="#kvm_run" title="Do what you think is right">#</a></h2>
+<p>kvm_vcpu_ioctl() in virt/kvm/kvm_main.c handles generate cmds like KVM_RUN,
+while kvm_arch_vcpu_ioctl() in arch/x86/kvm/x86.c handles arch-specific cmds
+like KVM_SET_CPUID.</p>
+<pre><code>kvm_vcpu_ioctl(): virt/kvm/kvm_main.c
+    case KVM_RUN:
+        kvm_arch_vcpu_ioctl_run(): arch/x86/kvm/x86.c
+            vcpu_run(): -
+                vcpu_enter_guest():
+                    vcpu_run() (-&gt; vmx_vcpu_run()):
+                            arch/x86/kvm/vmx/vmx.c
+                        vmx_vcpu_enter_exit(): - (ASM)
+                    handle_exit() (-&gt; vmx_handle_exit()): -
 </code></pre>
-<ol>
-<li>
-<p>Go to <code>buildroot</code></p>
-</li>
-<li>
-<p>If no external packages, just <code>make qemu_x86_64_defconfig</code>, otherwise, <code>make
-BR2_EXTERNAL="$(pwd)/../buildroot-external-packages" qemu_x86_64_defconfig</code>. If there is an old config,
-<code>make oldconfig</code> or <code>make BR2_EXTERNAL="$(pwd)/../buildroot-external-packages" oldconfig</code>.</p>
-</li>
-<li>
-<p>Before going on, we should update the C library and the TTY target by <code>make
-menuconfig</code>.</p>
-<ul>
-<li><code>Toolchain</code> -&gt; <code>C library</code> -&gt; <code>glibc</code></li>
-<li><code>System Configuration</code> -&gt; <code>Run a getty (login prompt) after boot</code>
--&gt; <code>TTY port</code> -&gt; <code>ttyS0</code></li>
-</ul>
-<p>We can optionally enable <code>lspci -v</code> to show more information on PCI devices.</p>
-<ul>
-<li><code>Target Packages</code> -&gt; <code>Hardware Handling</code> -&gt; <code>pciutils</code></li>
-</ul>
-<p>We can optionally enable the external packages.</p>
-<ul>
-<li><code>External options</code> -&gt; check what you want</li>
-</ul>
-</li>
-<li>
-<p><code>make</code> with <code>-jN</code> to accelerate your compilation.</p>
-</li>
-</ol>
-<h2 id="launch-all-of-them">Launch all of them<a class="headerlink" href="#launch-all-of-them" title="Do what you think is right">#</a></h2>
-<pre><code class="language-bash">qemu-system-x86_64 \
-    -M pc \
-    -kernel ./path/to/bzImage \
-    -drive file=./path/to/rootfs.ext2,if=virtio,format=raw \
-    -append &quot;root=/dev/vda console=ttyS0&quot; \
-    -net user,hostfwd=tcp:127.0.0.1:3333-:22 \
-    -net nic,model=virtio \
-    -nographic
-</code></pre>
-<p>If the external packages exist, please do as follows.</p>
-<pre><code class="language-bash">$ modprobe hello
-hello: loading out-of-tree module taints kernel.
-hello init
-$ desg
-...
-hello: loading out-of-tree module taints kernel.
-hello init
-$ userspace_program 
-Hello World!
+<h2 id="model-of-race-conditions">Model of race conditions<a class="headerlink" href="#model-of-race-conditions" title="Do what you think is right">#</a></h2>
+<pre><code>+-----------+           +-----------+
+|   vcpu1   | --------- |   vcpu2   |
++-----------+ \       / +-----------+
+               x-----x   
++-----------+ /       \ +-----------+
+| INTERUPT1 |           | INTERUPT2 |
++-----------+           +-----------+
+
++-----------+           +-----------+
+|   pcpu1   |           |   pcpu2   |
++-----------+           +-----------+
 </code></pre>
 </section>
 
@@ -264,7 +222,7 @@ Hello World!
 <aside>
     <p>
         <small>
-            <i>Page last updated 2024-11-05. </i>
+            <i>Page last updated 2024-10-20. </i>
         </small>
     </p>
 </aside>
