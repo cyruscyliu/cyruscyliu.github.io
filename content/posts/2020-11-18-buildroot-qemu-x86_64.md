@@ -56,8 +56,8 @@ menuconfig`.
 ``` bash
 qemu-system-x86_64 \
     -M pc \
-    -kernel ./output/images/bzImage \
-    -drive file=./output/images/rootfs.ext2,if=virtio,format=raw \
+    -kernel ./path/to/bzImage \
+    -drive file=./path/to/rootfs.ext2,if=virtio,format=raw \
     -append "root=/dev/vda console=ttyS0" \
     -net user,hostfwd=tcp:127.0.0.1:3333-:22 \
     -net nic,model=virtio \

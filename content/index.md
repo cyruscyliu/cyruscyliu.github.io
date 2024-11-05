@@ -1,7 +1,3 @@
-**I am in the job market seeking a Tenure-Track Assistant Professor position and
-also an industrial system security researcher position. Reach out to me via
-email!**
-
 ## About me
 
 [**whoami**] Hi, I am Qiang Liu, currently a postdoc at EPFL with [Prof.  Mathias
@@ -44,22 +40,25 @@ address: <cyruscyliu@gmail.com>.
 
 ## Awards
 
-+ [HyperPill](./papers/hyperpill-sec24.pdf) wons USENIX Security'24 Best Paper Award
-+ [Tango](./papers/tango-raid24.pdf) won ACM RAID'24 Best Paper Award
++ [HyperPill](./papers/hyperpill-sec24.pdf) won the USENIX Security'24 Best Paper Award
++ [Tango](./papers/tango-raid24.pdf) won the ACM RAID'24 Best Paper Award
 
 ## Project: Hypervisor Fuzzing
 
 + [ViDeZZo](https://github.com/HexHive/videzzo),
-[paper](./papers/videzzo-sp23.pdf), **IEEE SP'23**, intra- and inter-message
+[paper](./papers/videzzo-sp23.pdf), **IEEE S&P'23**, intra- and inter-message
 dependencies, libFuzzer, QEMU/VirtualBox, 28 new bugs
-+ [ViDeZZo LLVM Project](https://github.com/cyruscyliu/videzzo-llvm-project),
++ [ViDeZZo LLVM Project](https://github.com/cyruscyliu/videzzo-llvm-project)
 forked from LLVM Project 13, instrumentation and libFuzzer for ViDeZZo
 + [buildroot-external-packages](https://github.com/cyruscyliu/buildroot-external-packages),
-PoC and exploit template
+PoC, and exploit template
 + [HyperPill](https://github.com/HexHive/HyperPill/tree/artifact-evaluation),
 [paper](./papers/hyperpill-sec24.pdf), **USENIX Security'24** (Best Paper),
-taking snapshot at VM-Exit, libFuzzer, QEMU, Hyper-V, and macOS Virtualization
+taking a snapshot at VM-Exit, libFuzzer, QEMU, Hyper-V, and macOS Virtualization
 Framework, 26 new bugs
++ [Truman](#wip), [paper](#wip), **ISOC NDSS'25**, automatic inference of
+intra-/inter-message, and state dependencies, more coverage of virtio devices,
+53 new bugs in QEMU, VirtualBox, VMware Workstation Pro, and Parallels.
 
 ## Project: Network Protocol Fuzzing
 
@@ -91,8 +90,8 @@ Firmadyne that focuses on user space programs - FirmGuide focuses on the Linux
 kernel.
 + [ECMO](https://github.com/valour01/ecmo) (**CCS'21**) takes a firmware image
 as input, and it can successfully rehost the Linux kernel inside the image to
-get the shell.  Due to the variety of peripherals in embedded firmware images.
-It is rather hard to build a general emulator that supports all kinds of
+get the shell. Due to the variety of peripherals in embedded firmware images,
+it is rather hard to build a general emulator that supports all kinds of
 machines. The basic idea of ECMO is to transplant the peripherals by support
 ones into the target Linux kernel, hence solve the problem of peripheral
 variety.
@@ -100,9 +99,9 @@ variety.
 ## Project: Android Authentication (Archived)
 
 This project evaluates existing and proposes new implicit continuous
-authentication approaches to serve as a second authentication factor longside
+authentication approaches to serve as a second authentication factor alongside
 fingerprint and facial identification. I joined this project as an intern and
-then proposed this project to be my final project for my Bachelor's degree.
+then proposed this project as my final project for my bachelor's degree.
 Relative research papers are [RiskCog (TMC'20)](./papers/riskcog-tmc20.pdf),
 [ESPIALCOG (TMC'20)](./papers/espialcog-tmc20.pdf), [One Cycle Attack
 (TIFS'20)](./papers/one-cycle-attack-tifs20.pdf), and [TRAPCOG
