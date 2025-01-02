@@ -34,16 +34,23 @@ software and vulnerability mitigation at runtime. Ultimately, my research aims
 to make the computing system hard to break, benefiting not only individuals but
 also organizations.
 
-[**mail**] We're open to discussing and collaborating on any of the
-following active projects. Feel free to reach out via this long-term email
-address: <cyruscyliu@gmail.com>.
+[**mail**] I am willing to discuss and collaborate on any of the [open projects
+listed](./projects.md). Feel free to reach out via this long-term email address:
+<cyruscyliu@gmail.com>.
 
 ## Awards
 
 + [HyperPill](./papers/hyperpill-sec24.pdf) won the USENIX Security'24 Best Paper Award
 + [Tango](./papers/tango-raid24.pdf) won the ACM RAID'24 Best Paper Award
 
-## Project: Hypervisor Fuzzing
+## Publication and tools based on project
+
+[**Interpreter Security**]
+
++ [Reflecta](), [paper](), **AsiaCCS'25**, leveraging reflection to fuzz
+arbitry interpreters! (focusing on the libraries)
+
+[**Hypervisor Security**]
 
 + [Truman](https://github.com/vul337/Truman),
 [paper](./papers/truman-ndss24.pdf), **ISOC NDSS'25**, automatic inference of
@@ -58,10 +65,10 @@ Framework, 26 new bugs
 dependencies, libFuzzer, QEMU/VirtualBox, 28 new bugs
 + [ViDeZZo LLVM Project](https://github.com/cyruscyliu/videzzo-llvm-project)
 forked from LLVM Project 13, instrumentation and libFuzzer for ViDeZZo
-+ [buildroot-external-packages](https://github.com/cyruscyliu/buildroot-external-packages),
-PoC, and exploit template
++ [buildroot-external-packages](https://github.com/cyruscyliu/buildroot-external-packages)
+and [virtfuzz-bugs](https://github.com/HexHive/virtfuzz-bugs), PoC
 
-## Project: Network Protocol Fuzzing
+[**Network Protocol Fuzzing**]
 
 + [Tango](https://github.com/HexHive/tango), [paper](./papers/tango-raid24.pdf),
 **ACM RAID'24** (Best Paper), abstract state feedback from edge coverage
@@ -70,7 +77,7 @@ feedback, supporting targets in ProFuzzBench (except forked-daap).
 developed several Peach Pits by reading the specifications of specific network
 protocols.
 
-## Project: Firmware Rehosting
+[**Firmware Rehosting**]
 
 + [ECMO](https://github.com/valour01/ecmo) (**CCS'21**) takes a firmware image
 as input, and it can successfully rehost the Linux kernel inside the image to
@@ -97,7 +104,7 @@ generate bitcode files, and then links them all together to a `vmlinux.bc`.
 supports automatically building the OpenWrt project given a target/subtarget of
 a specific OpenWrt revision from 10.03 to 19.07.1.
 
-## Project: Android Authentication (Archived)
+[**Android Authentication (Archived)**]
 
 This project evaluates existing and proposes new implicit continuous
 authentication approaches to serve as a second authentication factor alongside

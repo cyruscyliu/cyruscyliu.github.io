@@ -47,7 +47,9 @@ if any questions or comments.
 
 ## Random notes
 
++ [2025-01-02 书单](posts/2025-01-02-books.md)
 + [2023-09-08 Crisis before getting a Ph.D.](posts/2023-09-08-crisis-before-getting-a-phd.md)
++ [2022-02-08 社会学概论](posts/2022-02-08-introduction-to-sociality.md)
 + [2019-11-23 Summary of CCS'19 (London)](posts/2019-11-23-CCS-London-Summary.md)
 + [2018-04-07 在杭州的100天-第二十七天](posts/2018-04-07-在杭州的100天-第二十七天.md)
 + [2018-03-28 在杭州的100天-第十天](posts/2018-03-28-在杭州的100天-第十天.md)

@@ -16,6 +16,7 @@ site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
 nav:
     - Home: 'index.md'
     - Posts: 'posts.md'
+    - Projects: 'projects.md'
 plugins:
   - search
   - git-revision-date 
