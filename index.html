@@ -106,6 +106,14 @@
                     <meta property="position" content="1">
                 </li>
                 
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="projects/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Projects</span>
+                    </a>
+                    <meta property="position" content="2">
+                </li>
+                
                     
                     
 
@@ -114,7 +122,7 @@
     <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
         <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
     </a>
-    <meta property="position" content="2">
+    <meta property="position" content="3">
 </li>
                     
             </ul>
@@ -164,6 +172,25 @@
     
   </li>
         
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="projects/">Projects</a>
+        
+    
+    
+    
+  </li>
+        
     </ul>
   
 </nav><hr>
@@ -171,10 +198,7 @@
     <ul>
         <li><a href="#about-me">About me</a></li>
         <li><a href="#awards">Awards</a></li>
-        <li><a href="#project-hypervisor-fuzzing">Project: Hypervisor Fuzzing</a></li>
-        <li><a href="#project-network-protocol-fuzzing">Project: Network Protocol Fuzzing</a></li>
-        <li><a href="#project-firmware-rehosting">Project: Firmware Rehosting</a></li>
-        <li><a href="#project-android-authentication-archived">Project: Android Authentication (Archived)</a></li>
+        <li><a href="#publication-and-tools-based-on-project">Publication and tools based on project</a></li>
         
     </ul>
 </nav>
@@ -218,15 +242,21 @@ the research on the automatic vulnerability detection before the release of
 software and vulnerability mitigation at runtime. Ultimately, my research aims
 to make the computing system hard to break, benefiting not only individuals but
 also organizations.</p>
-<p>[<strong>mail</strong>] We're open to discussing and collaborating on any of the
-following active projects. Feel free to reach out via this long-term email
-address: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#121;&#114;&#117;&#115;&#99;&#121;&#108;&#105;&#117;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#99;&#121;&#114;&#117;&#115;&#99;&#121;&#108;&#105;&#117;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>.</p>
+<p>[<strong>mail</strong>] I am willing to discuss and collaborate on any of the <a href="projects/">open projects
+listed</a>. Feel free to reach out via this long-term email address:
+<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#121;&#114;&#117;&#115;&#99;&#121;&#108;&#105;&#117;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#99;&#121;&#114;&#117;&#115;&#99;&#121;&#108;&#105;&#117;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>.</p>
 <h2 id="awards">Awards<a class="headerlink" href="#awards" title="Do what you think is right">#</a></h2>
 <ul>
 <li><a href="papers/hyperpill-sec24.pdf">HyperPill</a> won the USENIX Security'24 Best Paper Award</li>
 <li><a href="papers/tango-raid24.pdf">Tango</a> won the ACM RAID'24 Best Paper Award</li>
 </ul>
-<h2 id="project-hypervisor-fuzzing">Project: Hypervisor Fuzzing<a class="headerlink" href="#project-hypervisor-fuzzing" title="Do what you think is right">#</a></h2>
+<h2 id="publication-and-tools-based-on-project">Publication and tools based on project<a class="headerlink" href="#publication-and-tools-based-on-project" title="Do what you think is right">#</a></h2>
+<p>[<strong>Interpreter Security</strong>]</p>
+<ul>
+<li><a href="">Reflecta</a>, <a href="">paper</a>, <strong>AsiaCCS'25</strong>, leveraging reflection to fuzz
+arbitry interpreters! (focusing on the libraries)</li>
+</ul>
+<p>[<strong>Hypervisor Security</strong>]</p>
 <ul>
 <li><a href="https://github.com/vul337/Truman">Truman</a>,
 <a href="papers/truman-ndss24.pdf">paper</a>, <strong>ISOC NDSS'25</strong>, automatic inference of
@@ -241,10 +271,10 @@ Framework, 26 new bugs</li>
 dependencies, libFuzzer, QEMU/VirtualBox, 28 new bugs</li>
 <li><a href="https://github.com/cyruscyliu/videzzo-llvm-project">ViDeZZo LLVM Project</a>
 forked from LLVM Project 13, instrumentation and libFuzzer for ViDeZZo</li>
-<li><a href="https://github.com/cyruscyliu/buildroot-external-packages">buildroot-external-packages</a>,
-PoC, and exploit template</li>
+<li><a href="https://github.com/cyruscyliu/buildroot-external-packages">buildroot-external-packages</a>
+and <a href="https://github.com/HexHive/virtfuzz-bugs">virtfuzz-bugs</a>, PoC</li>
 </ul>
-<h2 id="project-network-protocol-fuzzing">Project: Network Protocol Fuzzing<a class="headerlink" href="#project-network-protocol-fuzzing" title="Do what you think is right">#</a></h2>
+<p>[<strong>Network Protocol Fuzzing</strong>]</p>
 <ul>
 <li><a href="https://github.com/HexHive/tango">Tango</a>, <a href="papers/tango-raid24.pdf">paper</a>,
 <strong>ACM RAID'24</strong> (Best Paper), abstract state feedback from edge coverage
@@ -253,7 +283,7 @@ feedback, supporting targets in ProFuzzBench (except forked-daap).</li>
 developed several Peach Pits by reading the specifications of specific network
 protocols.</li>
 </ul>
-<h2 id="project-firmware-rehosting">Project: Firmware Rehosting<a class="headerlink" href="#project-firmware-rehosting" title="Do what you think is right">#</a></h2>
+<p>[<strong>Firmware Rehosting</strong>]</p>
 <ul>
 <li><a href="https://github.com/valour01/ecmo">ECMO</a> (<strong>CCS'21</strong>) takes a firmware image
 as input, and it can successfully rehost the Linux kernel inside the image to
@@ -280,7 +310,7 @@ generate bitcode files, and then links them all together to a <code>vmlinux.bc</
 supports automatically building the OpenWrt project given a target/subtarget of
 a specific OpenWrt revision from 10.03 to 19.07.1.</li>
 </ul>
-<h2 id="project-android-authentication-archived">Project: Android Authentication (Archived)<a class="headerlink" href="#project-android-authentication-archived" title="Do what you think is right">#</a></h2>
+<p>[<strong>Android Authentication (Archived)</strong>]</p>
 <p>This project evaluates existing and proposes new implicit continuous
 authentication approaches to serve as a second authentication factor alongside
 fingerprint and facial identification. I joined this project as an intern and
@@ -299,7 +329,7 @@ Relative research papers are <a href="papers/riskcog-tmc20.pdf">RiskCog (TMC'20)
 <aside>
     <p>
         <small>
-            <i>Page last updated 2024-12-08. </i>
+            <i>Page last updated 2025-01-02. </i>
         </small>
     </p>
 </aside>
