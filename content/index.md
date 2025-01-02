@@ -9,11 +9,8 @@ conferences, IEEE S&P, Usenix Security, ACM CCS, and ISOC NDSS. To engage the
 community, we always open-source our tools and evaluation scripts.
 
 [CV](./Qiang_s_CV.pdf)
-[LinkedIn](https://www.linkedin.com/in/qiang-liu-7a3b50270/)
 [Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
 [GitHub](https://github.com/cyruscyliu)
-[Twitter](https://www.twitter.com/qiangliu717)
-[Weibo](https://weibo.com/u/5397354395)
 
 [**history**] Cybersecurity remains an arms race where attackers are inherently
 at a disadvantage as they must protect against all vulnerabilities while an
@@ -43,7 +40,7 @@ listed](./projects.md). Feel free to reach out via this long-term email address:
 + [HyperPill](./papers/hyperpill-sec24.pdf) won the USENIX Security'24 Best Paper Award
 + [Tango](./papers/tango-raid24.pdf) won the ACM RAID'24 Best Paper Award
 
-## Publication and tools based on project
+## Publication and Tools
 
 [**Interpreter Security**]
 

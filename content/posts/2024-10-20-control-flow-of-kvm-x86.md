@@ -1,4 +1,4 @@
-# Control flow of KVM/x86
+# Control flow of KVM
 
 ## KVM_RUN
 
@@ -18,18 +18,27 @@ kvm_vcpu_ioctl(): virt/kvm/kvm_main.c
                     handle_exit() (-> vmx_handle_exit()): -
 ```
 
-## Model of race conditions
+## KVM_RUN for ARM
 
 ```
-+-----------+           +-----------+
-|   vcpu1   | --------- |   vcpu2   |
-+-----------+ \       / +-----------+
-               x-----x   
-+-----------+ /       \ +-----------+
-| INTERUPT1 |           | INTERUPT2 |
-+-----------+           +-----------+
-
-+-----------+           +-----------+
-|   pcpu1   |           |   pcpu2   |
-+-----------+           +-----------+
+kvm_arch_vcpu_ioctl_run()
+  -> while (ret > 0)
+    -> ret = kvm_arm_vcpu_enter_exit()
+    | -> __kvm_vcpu_run()
+    | | -> __kvm_vcpu_run_vhe()
+    | | | -> do { exit_code = __guest_enter() }
+    | | | | -> el1_sync // vmexit
+    | | | | | -> el1_trap
+    | | | | | -> return exit_code=ARM_EXCEPTION_TRAP
+    | | | | -> return exit_code=ARM_EXCEPTION_TRAP
+    | | | -> while(fixup_guest_exit())
+    | | | | -> kvm_hyp_handle_exit()
+    | | | | | -> kvm_hyp_handle_dabt_low()
+    | | | | |   -> __populate_fault_info()
+    | | | | |     -> __get_fault_info()
+    | | | | -> return false
+    | | | -> return exit_code
+    | | -> return exit_code
+    | -> return exit_code
+    -> handle_exit()
 ```

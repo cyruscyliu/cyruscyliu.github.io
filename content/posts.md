@@ -13,7 +13,7 @@ if any questions or comments.
 
 ## Reading
 
-+ [2024-10-20 Control flow of KVM/x86](posts/2024-10-20-control-flow-of-kvm-x86.md)
++ [2024-10-20 Control flow of KVM](posts/2024-10-20-control-flow-of-kvm-x86.md)
 + [2024-09-15 Quick notes about confidential computing](posts/2024-09-15-confidential-computing.md)
 + [2024-08-07 Bash command caching](posts/2024-08-07-command-caching.md)
 + [2024-08-07 PIE and PIC](posts/2024-08-07-pie-pic.md)
