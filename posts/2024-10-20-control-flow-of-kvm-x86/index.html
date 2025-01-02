@@ -19,7 +19,7 @@
 
     
  
-<title>Control flow of KVM/x86 - Qiang Liu's Homepage</title>
+<title>Control flow of KVM - Qiang Liu's Homepage</title>
 
 
 <link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -198,8 +198,8 @@
 </nav><hr>
 <nav>
     <ul>
-        <li><a href="#control-flow-of-kvmx86">Control flow of KVM/x86</a></li>
-        <li><a href="#kvm_run">KVM_RUN</a></li><li><a href="#model-of-race-conditions">Model of race conditions</a></li>
+        <li><a href="#control-flow-of-kvm">Control flow of KVM</a></li>
+        <li><a href="#kvm_run">KVM_RUN</a></li><li><a href="#kvm_run-for-arm">KVM_RUN for ARM</a></li>
     </ul>
 </nav>
 </aside>
@@ -211,7 +211,7 @@
     
 
 <section id="mkdocs-terminal-content">
-    <h1 id="control-flow-of-kvmx86">Control flow of KVM/x86<a class="headerlink" href="#control-flow-of-kvmx86" title="Do what you think is right">#</a></h1>
+    <h1 id="control-flow-of-kvm">Control flow of KVM<a class="headerlink" href="#control-flow-of-kvm" title="Do what you think is right">#</a></h1>
 <h2 id="kvm_run">KVM_RUN<a class="headerlink" href="#kvm_run" title="Do what you think is right">#</a></h2>
 <p>kvm_vcpu_ioctl() in virt/kvm/kvm_main.c handles generate cmds like KVM_RUN,
 while kvm_arch_vcpu_ioctl() in arch/x86/kvm/x86.c handles arch-specific cmds
@@ -226,18 +226,27 @@ like KVM_SET_CPUID.</p>
                         vmx_vcpu_enter_exit(): - (ASM)
                     handle_exit() (-&gt; vmx_handle_exit()): -
 </code></pre>
-<h2 id="model-of-race-conditions">Model of race conditions<a class="headerlink" href="#model-of-race-conditions" title="Do what you think is right">#</a></h2>
-<pre><code>+-----------+           +-----------+
-|   vcpu1   | --------- |   vcpu2   |
-+-----------+ \       / +-----------+
-               x-----x   
-+-----------+ /       \ +-----------+
-| INTERUPT1 |           | INTERUPT2 |
-+-----------+           +-----------+
-
-+-----------+           +-----------+
-|   pcpu1   |           |   pcpu2   |
-+-----------+           +-----------+
+<h2 id="kvm_run-for-arm">KVM_RUN for ARM<a class="headerlink" href="#kvm_run-for-arm" title="Do what you think is right">#</a></h2>
+<pre><code>kvm_arch_vcpu_ioctl_run()
+  -&gt; while (ret &gt; 0)
+    -&gt; ret = kvm_arm_vcpu_enter_exit()
+    | -&gt; __kvm_vcpu_run()
+    | | -&gt; __kvm_vcpu_run_vhe()
+    | | | -&gt; do { exit_code = __guest_enter() }
+    | | | | -&gt; el1_sync // vmexit
+    | | | | | -&gt; el1_trap
+    | | | | | -&gt; return exit_code=ARM_EXCEPTION_TRAP
+    | | | | -&gt; return exit_code=ARM_EXCEPTION_TRAP
+    | | | -&gt; while(fixup_guest_exit())
+    | | | | -&gt; kvm_hyp_handle_exit()
+    | | | | | -&gt; kvm_hyp_handle_dabt_low()
+    | | | | |   -&gt; __populate_fault_info()
+    | | | | |     -&gt; __get_fault_info()
+    | | | | -&gt; return false
+    | | | -&gt; return exit_code
+    | | -&gt; return exit_code
+    | -&gt; return exit_code
+    -&gt; handle_exit()
 </code></pre>
 </section>
 
@@ -249,7 +258,7 @@ like KVM_SET_CPUID.</p>
 <aside>
     <p>
         <small>
-            <i>Page last updated 2024-10-20. </i>
+            <i>Page last updated 2025-01-02. </i>
         </small>
     </p>
 </aside>
