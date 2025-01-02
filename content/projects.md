@@ -29,7 +29,7 @@ raise children who are independent and creative, teachers can guides students
 who are collaborative and competitive, and entrepreneurs can engage customers
 who are eager to buy innovative products. Be classy and be cool!
 
-## Software Skills and Assistant for Research Scholars
+## Soft Skills and Assistant for Research Scholars
 
 keywords: lab management, invited talks, proposal enhancement
 
