@@ -1,16 +1,14 @@
 # Principles of Research Presentation
 
-To convey information and request feedback, you need to give presentations.
-Duration can vary from 1 minute (elevator pitch) to two hours (a lecture). Here
-are some principles that you should keep in mind and practice.
+Giving a clear, attractive, and convincing oral representation is one of the
+keys to keep you competitive, especially in front of people who do not share
+common values with you (most likely).
 
-## Be aware of your purpose
+## Be aware of the time budget
 
-Why are you going to give a presentation?
-
-1. 1-minute introduction about what you did.
-1. 1-minute introduction about what you are doing now.
-1. 5-minute update of your current progress (w/ or w/o slides).
+1. 1-minute elevator pitch (w/o slides).
+1. 1-minute update of your current progress (w/o slides).
+1. 5-minute update of your current progress (w/ slides).
 1. 15-minute conference talk (w/ slides).
 1. 45-minute invited talk (w/ slides).
 1. 45-minute job talk (w/ slides).
@@ -18,9 +16,7 @@ Why are you going to give a presentation?
 
 ## Be aware of your audience
 
-Who are you going to give the presentation to?
-
-1. Your supervisor.
+1. People who share the common values.
 1. People who join your group meeting.
 1. People who have a similar background.
 1. People outside of your committee.
