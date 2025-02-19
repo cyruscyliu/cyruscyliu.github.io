@@ -1,29 +1,39 @@
 # Principles of Research Presentation
 
-Giving a clear, attractive, and convincing oral representation is one of the
-keys to keep you competitive, especially in front of people who do not share
-common values with you (most likely).
+Making <u>__c__</u>lear, <u>__e__</u>ngaging, and <u>__p__</u>ursuasive oral
+representations is one of the keys to staying competitive, especially in front
+of people who (most likely) do not share your values.
 
-## Be aware of the time budget
+## Requirements
 
-1. 1-minute elevator pitch (w/o slides).
-1. 1-minute update of your current progress (w/o slides).
-1. 5-minute update of your current progress (w/ slides).
-1. 15-minute conference talk (w/ slides).
-1. 45-minute invited talk (w/ slides).
-1. 45-minute job talk (w/ slides).
-1. 90-minute lecture (w/ slides).
+clear: focus, support, coherence
 
-## Be aware of your audience
+engaging: background, conection to the audience
 
-1. People who share the common values.
-1. People who join your group meeting.
-1. People who have a similar background.
-1. People outside of your committee.
+pursuasive: catchy, trusted, desiring, safe, reasonable, pushing, evaluating
 
-## Prepare your presentation
+## Audience and Requirements
 
-1. Write down the speech text.
+The first step of knowing your audience is to assume an edge case that no one
+shares your values. All three requirements need to be satisfied. Second, adjust
+the strategies based on how much background that your audience knows and how
+much values that your audience shares with you.
+
+## Duration, Content, and Requirements 
+
+| Duration | Content | Requirements |
+|:--:|:---------------------------:|:----:|
+| 1m | elevator pitch (w/o slides) | cep |
+| 1m | weekly update (w/o slides)  | c |
+| 5m | weekly update (w/ slides)   | c |
+| 15m| conference talk (w/ slides) | ce |
+| 45m| invited talk (w/ slides)    | cep |
+| 45m| job talk (w/ slides)        | cep |
+| 90m| lecture (w/ slides)         | ce |
+
+## Steps
+
+1. Design (see above). 
 1. Make slides.
 1. Practice.
 1. Dry run, answer questions, and take feedback.
@@ -31,30 +41,34 @@ common values with you (most likely).
 
 ### Make slides
 
-1. [Susan McConnell (Stanford): Designing effective scientific presentations](https://www.youtube.com/watch?v=Hp7Id3Yb9XQ)
-    - We are good listeners and let's transfer the knowledge to make slides
-2. One slide, one topic sentence, 4-5 sentences, 1 minute
-3. Consider the attention curve
-    + https://ethos3.com/hacking-the-audience-attention-curve/
-    + Split the talk into parts and summary the key message for each part
-    + Write down the key messages first and fill up the rest of space
-    + Highlight the key messages with both text and the soundtrack
-4. A simple style
-    + One font (Calibri)
-    + Large font size (24, 28, 36, 52) and less text
-    + Sentence in one line
-    + Built-in list
-    + Box for the key summary
-    + Backup slides
-5. Animation
-    + Too much text and show them one by one
+[Susan McConnell (Stanford): Designing effective scientific
+presentations](https://www.youtube.com/watch?v=Hp7Id3Yb9XQ): We are good
+listeners and let's transfer the knowledge to make slides
+
+- One slide, one topic sentence, 4-5 sentences, 1 minute
+- Consider the attention curve
+    * https://ethos3.com/hacking-the-audience-attention-curve/
+    * Split into parts and summary the key message for each part
+    * Write down the key messages and then fill up the rest
+    * Highlight the key messages with both text and soundtrack
+- A simple style
+    * One font (Calibri)
+    * Large font size (24, 28, 36, 52) and less text
+    * Sentence in one line
+    * Built-in list
+    * Box for the key summary
+    * Backup slides
+- Animation
+    * Too much text and show them one by one
 
 ### Practice
 
-+ Slide by slide: starting from the last sentence for the last slide
-+ All slides: control speed and try to remember as much as possible
++ Per slide: start from the last sentence for the last slide
++ All slides: control speed and remember everything
 
 ### Dry-run, prepare and answer questions, and take feedback
 
-1. Have eye contact, be confident
-1. That's good/interesting question. Give a high level overview of your answer in the beginning and then give the remaining details of your answer.
+- Have eye contact, be confident
+- That's a good/interesting question/Let me rephrase your questions. Give a high
+level overview of your answer in the beginning and then give the remaining
+details of your answer.
