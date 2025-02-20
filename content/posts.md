@@ -6,7 +6,7 @@ if any questions or comments.
 + [Knowledge for System and Software Security Research](posts/2021-09-03-knowledge-for-research.md)
 + [Coding for System and Software Security Research](posts/2021-09-03-Summary-Research-SE.md)
 + [How to Do System and Software Security Research (for PhD students)](posts/2021-09-07-Research-Philosophy.md)
-+ [Principles of Research Presentation](posts/2021-08-27-Principle-of-Presentation.md)
++ [Research Presentation](posts/2021-08-27-research-presentation.md)
 + [Technology Transfer and Practices Under Control](posts/2022-08-30-technology-transfer.md)
 + [Pitfalls/Tweaks/Tricks in R&D](posts/2023-08-15-dont-waste-time.md)
 + [Daily Reading and Literature Review/Related Work](posts/2023-10-11-literature-review.md)

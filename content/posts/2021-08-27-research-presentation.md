@@ -1,4 +1,4 @@
-# Principles of Research Presentation
+# Research Presentation
 
 Making <u>__c__</u>lear, <u>__e__</u>ngaging, and <u>__p__</u>ursuasive oral
 representations is one of the keys to staying competitive, especially in front
@@ -19,7 +19,7 @@ shares your values. All three requirements need to be satisfied. Second, adjust
 the strategies based on how much background that your audience knows and how
 much values that your audience shares with you.
 
-## Duration, Content, and Requirements 
+## Duration, Content, and Requirements
 
 | Duration | Content | Requirements |
 |:--:|:---------------------------:|:----:|
@@ -33,7 +33,7 @@ much values that your audience shares with you.
 
 ## Steps
 
-1. Design (see above). 
+1. Design (see above).
 1. Make slides.
 1. Practice.
 1. Dry run, answer questions, and take feedback.
