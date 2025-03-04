@@ -8,7 +8,7 @@ of people who (most likely) do not share your values.
 
 clear: focus, support, coherence
 
-engaging: background, conection to the audience
+engaging: [situation, ]complextity, [question, ]resolution
 
 pursuasive: catchy, trusted, desiring, safe, reasonable, pushing, evaluating
 
