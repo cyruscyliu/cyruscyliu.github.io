@@ -199,7 +199,7 @@
 <nav>
     <ul>
         <li><a href="#introduction-to-bhyve">Introduction to Bhyve</a></li>
-        <li><a href="#what-is-bhyve123">What is Bhyve?123</a></li><li><a href="#components5">Components5</a></li><li><a href="#dismistafication">Dismistafication</a></li><li><a href="#vmx-vmcs-maintenace-instructions">VMX (VMCS-maintenace) instructions</a></li><li><a href="#some-data-structs">Some data structs</a></li><li><a href="#bhyve-vmexit-code">BHyve VMExit code</a></li><li><a href="#some-data-structs_1">Some data structs</a></li><li><a href="#virtual-devices-dummy-means-very-low-fidelity-old-bhyve">Virtual devices (dummy means very low fidelity) (Old BHyve)</a></li><li><a href="#extend-btest-like-qtest-to-bhyve">Extend BTest (like QTest) to BHyve</a></li>
+        <li><a href="#what-is-bhyve">What is Bhyve?</a></li><li><a href="#components">Components</a></li><li><a href="#dismistafication">Dismistafication</a></li><li><a href="#vmx-vmcs-maintenace-instructions">VMX (VMCS-maintenace) instructions</a></li><li><a href="#some-data-structs">Some data structs</a></li><li><a href="#bhyve-vmexit-code">BHyve VMExit code</a></li><li><a href="#some-data-structs_1">Some data structs</a></li><li><a href="#virtual-devices-dummy-means-very-low-fidelity-old-bhyve">Virtual devices (dummy means very low fidelity) (Old BHyve)</a></li><li><a href="#extend-btest-like-qtest-to-bhyve">Extend BTest (like QTest) to BHyve</a></li>
     </ul>
 </nav>
 </aside>
@@ -214,7 +214,7 @@
     <h1 id="introduction-to-bhyve">Introduction to Bhyve<a class="headerlink" href="#introduction-to-bhyve" title="Do what you think is right">#</a></h1>
 <p>In this short article, I'm going to introduce what is Bhyve, how it works, and
 how to modify it.</p>
-<h2 id="what-is-bhyve123">What is Bhyve?<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><a class="headerlink" href="#what-is-bhyve123" title="Do what you think is right">#</a></h2>
+<h2 id="what-is-bhyve">What is Bhyve?<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><a class="headerlink" href="#what-is-bhyve" title="Do what you think is right">#</a></h2>
 <ul>
 <li>Bhyve, pronounced "beehive", is a hypervisor for FreeBSD.</li>
 <li>Bhyve runs on x86_64 host and supports i386 and x86_64 guests.</li>
@@ -228,7 +228,7 @@ usr.sbin/bhyve/, usr.sbin/bhyveload/, usr.sbin/bhyvectl/, and lib/libvmmapi/</li
 Netvisor</a>, <a href="https://bhyvecon.org/bhyvecon2018-Gwydir.pdf">bhyve in
 Illumos-based distributions</a>.</li>
 </ul>
-<h2 id="components5">Components<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><a class="headerlink" href="#components5" title="Do what you think is right">#</a></h2>
+<h2 id="components">Components<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><a class="headerlink" href="#components" title="Do what you think is right">#</a></h2>
 <table>
 <thead>
 <tr>
