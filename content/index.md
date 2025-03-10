@@ -44,13 +44,13 @@ listed](./projects.md). Feel free to reach out via this long-term email address:
 
 [**Interpreter Security**]
 
-+ [Reflecta](), [paper](), **AsiaCCS'25**, leveraging reflection to fuzz
-arbitry interpreters! (focusing on the libraries)
++ Reflecta, [paper](./papers/reflecta-asiaccs25.pdf), **AsiaCCS'25**,
+leveraging reflection to fuzz arbitry interpreters! (focusing on the libraries)
 
 [**Hypervisor Security**]
 
 + [Truman](https://github.com/vul337/Truman),
-[paper](./papers/truman-ndss24.pdf), **ISOC NDSS'25**, automatic inference of
+[paper](./papers/truman-ndss25.pdf), **ISOC NDSS'25**, automatic inference of
 intra-/inter-message, and state dependencies, more coverage of virtio devices,
 53 new bugs in QEMU, VirtualBox, VMware Workstation Pro, and Parallels.
 + [HyperPill](https://github.com/HexHive/HyperPill/tree/artifact-evaluation),
