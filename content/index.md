@@ -1,6 +1,6 @@
-[**whoami**] Qiang Liu is a postdoctoral researcher at EPFL, working with [Prof.
-Mathias Payer](https://nebelwelt.net/) in the HexHive laboratory. He earned his
-Ph.D. in 2023 from Zhejiang University under the guidance of [Prof. Yajin
+Qiang Liu is a postdoc at EPFL, working with [Prof.  Mathias
+Payer](https://nebelwelt.net/) in the HexHive laboratory. He earned his Ph.D. in
+2023 from Zhejiang University (ZJU) under the guidance of [Prof. Yajin
 Zhou](https://yajin.org/) and a B.S. degree from the Beijing Institute of
 Technology (BIT) in 2018. His research in cybersecurity focuses on developing
 full-lifecycle security enforcement of systems, including ahead-of-release bug
@@ -12,26 +12,50 @@ ACM CSUR and ACM TOSEM.
 
 [CV](./Qiang_s_CV.pdf)
 [Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
-<cyruscyliu@gmail.com>
 
-[**history**] Qiang Liu's journey began with a Capture the Flag (CTF)
-competition, where he learned techniques like reverse engineering and
-exploitation. During his PhD and PostDoc, Qiang Liu pioneered innovative
-solutions, including auto-extracted input dependencies and a generic executor,
-to significantly strengthen hypervisor security. These breakthroughs led to the
-discovery and mitigation of nearly 100 hypervisor vulnerabilities prior to
-software release.
+Qiang Liu's journey began with a Capture the Flag (CTF) competition, where he
+learned techniques like reverse engineering and exploitation. During his PhD and
+PostDoc, Qiang Liu pioneered innovative solutions, including auto-extracted
+input dependencies and a generic executor, to significantly strengthen
+hypervisor security. These breakthroughs led to the discovery and mitigation of
+nearly 100 hypervisor vulnerabilities prior to software release. TBF.
 
-## Research and Tools 
+Feel free to [email me](mailto:cyruscyliu@gmail.com) about the following ongoing
+projects.
 
-[**interpreter security**]
+## [statefulness]
 
-+ Reflecta, [paper](./papers/reflecta-asiaccs25.pdf), **AsiaCCS'25**,
-leveraging reflection to fuzz arbitry interpreters! (focusing on the libraries)
+Statefulness is not well defined. Previous work has shown that states can be
+accumulated, reached, and formalized. However,  interactive and configurable
+protocols pose challenges to the definition of state due to overlooked response
+packets and to the exploration of state space due to configuration-based
+implementation. We are going to demystify statefulness.
 
-[**hypervisor security**]
+Regarding the definition of states: [Tango](https://github.com/HexHive/tango)
+([paper](./papers/tango-raid24.pdf), **ACM RAID'24**, Best Paper Award)
+first-in-public defines states with code coverage, which scales to different
+software.
 
-Hardening hypervisors need quality input and generic executors.
+## [GPU security]
+
+GPUs, new trust base, are part of a collaborative fabric, but isolation is
+little considered. Unluckily, the GPU hardware and software ecosystem is highly
+complex such as diverse architectures, proprietary drivers, and non-trivial
+programming models. How do we protect CPU-GPU-fusion and isolate
+multi-tenant/multi-task sharing?
+
+## [interpreter security]
+
+How do we design a more secure interpreter engine?
+
+The good: Reflecta ([paper](./papers/reflecta-asiaccs25.pdf), **AsiaCCS'25**)
+leverages reflection to infer the signatures of APIs to 3rd party libraries.
+
+## [hypervisor security]
+
+It is not hard at all to ensure hypervisor security. We have built a platform
+with auto-extracted input dependencies and a generic executor for hypervisors,
+so we can apply bug-finding (e.g., fuzzing) and mitigation techniques.
 
 Regarding quality input, [ViDeZZo](https://github.com/HexHive/videzzo)
 ([paper](./papers/videzzo-sp23.pdf), **IEEE SSP'23**) first proposed intra- and
@@ -47,37 +71,33 @@ Regarding generic executors,
 Award) first propose a snapshot-based hypervisor dock, capable of running both
 open-source and closed-source and both x86 and aarch64 hypervisors.
 
+Other tools
+
 + [ViDeZZo LLVM Project](https://github.com/cyruscyliu/videzzo-llvm-project)
 forked from LLVM Project 13, instrumentation and libFuzzer for ViDeZZo
 + [buildroot-external-packages](https://github.com/cyruscyliu/buildroot-external-packages)
 and [virtfuzz-bugs](https://github.com/HexHive/virtfuzz-bugs), PoC
 
-[**network protocol fuzzing**]
+Open projects
 
-+ [Tango](https://github.com/HexHive/tango), [paper](./papers/tango-raid24.pdf),
-**ACM RAID'24** (Best Paper), abstract state feedback from edge coverage
-feedback, supporting targets in ProFuzzBench (except forked-daap).
-+ Development of Peach Pits for layer 3 network protocols. As an intern, I
-developed several Peach Pits by reading the specifications of specific network
-protocols.
+- New target: Rust-based hypervisors (e.g., firecracker)
+- New tool: Hyper-Cube for 64, HyperPill for Aarch64
+- New attacks: race condition, out-of-resources
+- Automatic exploit generation: ref
+[1](https://www.usenix.org/system/files/woot19-paper_zhao.pdf)
 
-[**firmware rehosting**]
 
-+ [ECMO](https://github.com/valour01/ecmo) (**CCS'21**) takes a firmware image
-as input, and it can successfully rehost the Linux kernel inside the image to
-get the shell. Due to the variety of peripherals in embedded firmware images,
-it is rather hard to build a general emulator that supports all kinds of
-machines. The basic idea of ECMO is to transplant the peripherals by support
-ones into the target Linux kernel, hence solve the problem of peripheral
-variety.
-+ [FirmGuide](https://github.com/cyruscyliu/firmguide) (**ASE'21**) creates a
-QEMU virtual machine for a Linux-based embedded system, especially boosting the
-capability of dynamic analysis of the corresponding Linux kernel. In the
-emulator, you can debug, trace, and test the Linux kernel to collect runtime
-information to understand vulnerabilities, PoCs, root causes of
-crashes in the Linux kernel. FirmGuide is an effectively complementary to
-Firmadyne that focuses on user space programs - FirmGuide focuses on the Linux
-kernel.
+## [firmware rehosting]
+
+We aim to rehost embedded Linux kernels (the Linux kernels used in embedded
+devices). [FirmGuide](https://github.com/cyruscyliu/firmguide)
+([paper](./papers/firmguide-ase21.pdf), **ASE'21**) first modeled all interrupt
+controllers and timers. Then, [ECMO](https://github.com/valour01/ecmo)
+([paper](./papers/ecmo-ccs21.pdf), **CCS'21**) supported other peripherals like
+NIC via binary rewriting.
+
+Other tools
+
 + [pyqemulog](https://github.com/cyruscyliu/pyqemulog) is the qemu-log ported to
 Python. It converts the structured trace generated by QEMU with -d to JSON.
 + [llbic](https://github.com/cyruscyliu/llbic), short for LLVM Linux

@@ -1,21 +1,4 @@
-# Open Projects
-
-## Hypervisor Security
-
-keywords: new attacks, aeg
-
-- New target: Rust-based hypervisors (e.g., firecracker)
-- New tool: Hyper-Cube for 64, HyperPill for Aarch64
-- New attacks: race condition, out-of-resources
-- Automatic exploit generation: ref
-[1](https://www.usenix.org/system/files/woot19-paper_zhao.pdf)
-
-## GPGPU and Security
-
-keywords: compatibility, isolation
-
-- run cpu programs: wasm?
-- have a strong kernel isolation
+This page lists a few weekend projects ...
 
 ## Hacking Culture
 
@@ -28,10 +11,6 @@ ourselves but also to inspire and attract more people to join us.  Parents can
 raise children who are independent and creative, teachers can guides students
 who are collaborative and competitive, and entrepreneurs can engage customers
 who are eager to buy innovative products. Be classy and be cool!
-
-## Soft Skills and Assistant for Research Scholars
-
-keywords: lab management, invited talks, proposal enhancement
 
 ## Academic Family Tree of Computer Science Scholars
 
