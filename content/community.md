@@ -15,3 +15,9 @@ who are eager to buy innovative products. Be classy and be cool!
 ## Academic Family Tree of Computer Science Scholars
 
 keywords: xuefa, jinqinfanzhi, yongrenweiqin
+
+## Lines of Code on Earth
+
+How many lines of code are there in total on earth?
+
+Reference: [git-of-theseus](https://github.com/erikbern/git-of-theseus)
