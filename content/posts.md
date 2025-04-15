@@ -3,6 +3,7 @@ if any questions or comments.
 
 ## Pinned
 
++ [Why System Security?](posts/2025-04-15-why-system-security.md)
 + [Knowledge for System and Software Security Research](posts/2021-09-03-knowledge-for-research.md)
 + [Coding for System and Software Security Research](posts/2021-09-03-Summary-Research-SE.md)
 + [How to Do System and Software Security Research (for PhD students)](posts/2021-09-07-Research-Philosophy.md)
