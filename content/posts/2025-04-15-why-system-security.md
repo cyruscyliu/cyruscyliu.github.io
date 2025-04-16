@@ -3,8 +3,8 @@
 System security is the practice to prevent computer systems from threats, such
 as vulnerabilities and attacks, with safeguard technologies.
 
-System security is too difficult to start, too complex to progress, and too weak
-to survive.
+However, system security is too difficult to start, too complex to progress, and
+too weak to survive.
 
 Why are we doing system security? I believe it is because we are interested in
 it. But, seriously, why are we still doing system security?
@@ -20,7 +20,7 @@ always the last line of defense and the base of trust.
 That's cheerful. But we have issues.
 
 - Department of AI science does not need us
-- Venture capital does not favorate us
+- Venture capital does not favor us
 - We hate each other
 
 That's sad.
