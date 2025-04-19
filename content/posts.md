@@ -1,6 +1,3 @@
-Please raise [issues](https://github.com/cyruscyliu/cyruscyliu.github.io/issues)
-if any questions or comments.
-
 ## Pinned
 
 + [Why System Security?](posts/2025-04-15-why-system-security.md)
