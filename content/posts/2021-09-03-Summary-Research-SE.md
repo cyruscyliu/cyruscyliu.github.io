@@ -67,30 +67,3 @@ in mind to move commonly used code in the applications to the SDK and don't code
 too much in rapidly changing applications.
 
 ### Be more automatic
-
-## Training of coding
-
-### Train ourselves the basics
-
-First, we should review the data structure and algorithm regularly. It's not
-necessary to remember the implementation of each algorithm. Instead, it's
-important for us to understand how to design new algorithm, how to optimize it,
-and how to apply it to address real world problems.
-
-Second, we should learn existing system software/hardware such that we can
-quickly rewrite part of it to validate our ideas. It rarely happens but
-sometimes what we want is not implemented by anyone else. Our knowledge will
-help us quickly create such a tool.
-
-+ Fuzzer: AFL++/libFuzzer/Syzkaller
-+ Symbolic execution: KLEE
-+ Compiler: LLVM
-+ Operating System: Linux Kernel
-+ Virtualization: QEMU/VirtualBox
-
-Meanwhile, think about some metrics.
-
-+ CPU utilization
-+ Cache optimization
-+ Memory consumption
-+ Disk consumption

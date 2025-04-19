@@ -1,4 +1,4 @@
-# Why System Security?
+# Why system security?
 
 System security is the practice to prevent computer systems from threats, such
 as vulnerabilities and attacks, with safeguard technologies.

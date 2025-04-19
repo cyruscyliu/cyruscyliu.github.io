@@ -1,13 +1,15 @@
 ## Pinned
 
-+ [Why System Security?](posts/2025-04-15-why-system-security.md)
-+ [Knowledge for System and Software Security Research](posts/2021-09-03-knowledge-for-research.md)
-+ [Coding for System and Software Security Research](posts/2021-09-03-Summary-Research-SE.md)
-+ [How to Do System and Software Security Research (for PhD students)](posts/2021-09-07-Research-Philosophy.md)
-+ [Research Presentation](posts/2021-08-27-research-presentation.md)
-+ [Technology Transfer and Practices Under Control](posts/2022-08-30-technology-transfer.md)
-+ [Pitfalls/Tweaks/Tricks in R&D](posts/2023-08-15-dont-waste-time.md)
-+ [Daily Reading and Literature Review/Related Work](posts/2023-10-11-literature-review.md)
++ [Why system security?](posts/2025-04-15-why-system-security.md)
++ [Why system security is relavent to everyone?](posts/#)
++ [Why system security is important to AI?](posts/#)
++ [How to do system security research (for PhD students)](posts/2021-09-07-Research-Philosophy.md)
++ [Doing Research: Where to find related works?](posts/2023-10-11-literature-review.md)
++ [Doing Research: Build the knowledge database](posts/2021-09-03-knowledge-for-research.md)
++ [Doing Research: Coding and Prototyping](posts/2021-09-03-Summary-Research-SE.md)
++ [Doing Research: How to do research presentation?](posts/2021-08-27-research-presentation.md)
++ [Doing Research: Technology transfer under control](posts/2022-08-30-technology-transfer.md)
++ [Doing Research: Pitfalls/Tweaks/Tricks in R&D](posts/2023-08-15-dont-waste-time.md)
 
 ## Reading
 

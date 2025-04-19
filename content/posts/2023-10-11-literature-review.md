@@ -1,13 +1,26 @@
-# Daily Reading and Literature Review/Related Work
+# Where to find related works?
 
-## Conferences and Topics
+# I don't know any related work
+
+That's impossible.
+
+## I know one related work and would like to find more
+
+Find other papers that this related work cites or papers that cite this related
+work. For any other paper, repeat the process until we find all related ones.
+
+## I have a full list of related works
+
+I prefer to reflect historically and logically on the relevant research so that
+our paper can be seen as part of the historical and logical development of the
+technology.
+
+## There are just too many papers
 
 For daily reading, I plan to focus on the security big-4s as I guess there are
 1,000+ papers/year accepted by them when I am writing this post, apprantly more
-including Sys/SE/PL/Arch confs. Additionally, I have to narrow down the topics
-I should follow. Just no one can know every paper.
-
-## Searching Keywords
+including Sys/SE/PL/Arch conferences. Additionally, I have to narrow down the
+topics I should follow. Just no one can know every paper.
 
 ### Google Scholar
 
@@ -15,13 +28,6 @@ I should follow. Just no one can know every paper.
 - source:"USENIX Security Symposium"
 - source:"IEEE Symposium on Security and Privacy"
 - source:"Conference on Computer and Communications"
-- source:"Symposium on Software Testing and Analysis"
-- source:"Conference on Software Engineering"
-- source:"Conference on Automated Software Engineering"
-- source:"Symposium on the Foundations of Software Engineering"
-- source:"PLDI"
-- source:"Operating Systems Principles"
-- source:"Operating Systems Design and Implementation"|source:"OSDI"
 
 ### DBLP
 
@@ -29,13 +35,3 @@ I should follow. Just no one can know every paper.
 - venue:USENIX_Security_Symposium: 
 - venue:IEEE_Symposium_on_Security_and_Privacy: 
 - venue:CCS: 
-- venue:EuroSys: 
-- venue:USENIX_Annual_Technical_Conference: 
-- venue:ISSTA:
-- venue:ICSE:
-- venue:ASE:
-- venue:ESEC/SIGSOFT_FSE: 
-- venue:PLDI: 
-- venue:POPL: 
-- venue:SOSP:
-- venue:OSDI:

@@ -1,16 +1,23 @@
-# Knowledge for System and Software Security Research
+# Build the knowledge database
 
-In this post, I am maintainling a list of what we should know for system and
-software security research based on my experience.
+I'd like to build the knowledge database which can be accessed by any system
+security scholars, which will save a lot of their time.
+
+However, this knowledge database cannot offer creativity.
+
+We must at least know something, something important.
+
+1. Program = Data structure + Algorithm
+2. All problems in computer science can be solved by another level of
+indirection... Except ... too many layers of indirection.
 
 ## Programming Language and Tooling
 
-+ Be familiar with C and Python. Write self-explainable code. Don't use many
-advanced features of Python in one project, which otherwise introduces
-difficulty for code reviewers.
++ Be familiar with C and Python. Write self-explainable code. Don't use rarely
+used advanced features of Python in one project
 
-+ Learn basic C++ and basic bash. Enable linters, e.g., shellcheck, to remove
-stupid bugs and use ChatGPT for quick prototyping.
++ Learn basic C++ and basic bash. Use ChatGPT for quick prototyping and enable
+linters, e.g., shellcheck, to remove stupid bugs.
 
 + Learn Java for object-oriented programming. I suggest that even developing in
 Python/C++, apply the best practice of OOP just like coding in Java, which is
@@ -265,3 +272,18 @@ VMX = Virtual Machine Extension
 ## Distributed Systems
 
 ## Software Security
+
+## Other tools
+
++ Fuzzer: AFL++/libFuzzer/Syzkaller
++ Symbolic execution: KLEE
++ Compiler: LLVM
++ Operating System: Linux Kernel
++ Virtualization: QEMU/VirtualBox
+
+## Think about some metrics
+
++ CPU utilization
++ Cache optimization
++ Memory consumption
++ Disk consumption
