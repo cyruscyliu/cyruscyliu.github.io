@@ -19,7 +19,7 @@
 
     
  
-<title>Knowledge for System and Software Security Research - Qiang Liu's Homepage</title>
+<title>Build the knowledge database - Qiang Liu's Homepage</title>
 
 
 <link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -198,8 +198,8 @@
 </nav><hr>
 <nav>
     <ul>
-        <li><a href="#knowledge-for-system-and-software-security-research">Knowledge for System and Software Security Research</a></li>
-        <li><a href="#programming-language-and-tooling">Programming Language and Tooling</a></li><li><a href="#linux-utilities">(Linux) utilities</a></li><li><a href="#data-structure-and-algorithm">Data Structure and Algorithm</a></li><li><a href="#architecture-and-computation-system">Architecture and Computation System</a></li><li><a href="#operating-system">Operating System</a></li><li><a href="#virtualization">Virtualization</a></li><li><a href="#computer-networking">Computer Networking</a></li><li><a href="#database">Database</a></li><li><a href="#compiler">Compiler</a></li><li><a href="#distributed-systems">Distributed Systems</a></li><li><a href="#software-security">Software Security</a></li>
+        <li><a href="#build-the-knowledge-database">Build the knowledge database</a></li>
+        <li><a href="#programming-language-and-tooling">Programming Language and Tooling</a></li><li><a href="#linux-utilities">(Linux) utilities</a></li><li><a href="#data-structure-and-algorithm">Data Structure and Algorithm</a></li><li><a href="#architecture-and-computation-system">Architecture and Computation System</a></li><li><a href="#operating-system">Operating System</a></li><li><a href="#virtualization">Virtualization</a></li><li><a href="#computer-networking">Computer Networking</a></li><li><a href="#database">Database</a></li><li><a href="#compiler">Compiler</a></li><li><a href="#distributed-systems">Distributed Systems</a></li><li><a href="#software-security">Software Security</a></li><li><a href="#other-tools">Other tools</a></li><li><a href="#think-about-some-metrics">Think about some metrics</a></li>
     </ul>
 </nav>
 </aside>
@@ -211,19 +211,25 @@
     
 
 <section id="mkdocs-terminal-content">
-    <h1 id="knowledge-for-system-and-software-security-research">Knowledge for System and Software Security Research<a class="headerlink" href="#knowledge-for-system-and-software-security-research" title="Do what you think is right">#</a></h1>
-<p>In this post, I am maintainling a list of what we should know for system and
-software security research based on my experience.</p>
+    <h1 id="build-the-knowledge-database">Build the knowledge database<a class="headerlink" href="#build-the-knowledge-database" title="Do what you think is right">#</a></h1>
+<p>I'd like to build the knowledge database which can be accessed by any system
+security scholars, which will save a lot of their time.</p>
+<p>However, this knowledge database cannot offer creativity.</p>
+<p>We must at least know something, something important.</p>
+<ol>
+<li>Program = Data structure + Algorithm</li>
+<li>All problems in computer science can be solved by another level of
+indirection... Except ... too many layers of indirection.</li>
+</ol>
 <h2 id="programming-language-and-tooling">Programming Language and Tooling<a class="headerlink" href="#programming-language-and-tooling" title="Do what you think is right">#</a></h2>
 <ul>
 <li>
-<p>Be familiar with C and Python. Write self-explainable code. Don't use many
-advanced features of Python in one project, which otherwise introduces
-difficulty for code reviewers.</p>
+<p>Be familiar with C and Python. Write self-explainable code. Don't use rarely
+used advanced features of Python in one project</p>
 </li>
 <li>
-<p>Learn basic C++ and basic bash. Enable linters, e.g., shellcheck, to remove
-stupid bugs and use ChatGPT for quick prototyping.</p>
+<p>Learn basic C++ and basic bash. Use ChatGPT for quick prototyping and enable
+linters, e.g., shellcheck, to remove stupid bugs.</p>
 </li>
 <li>
 <p>Learn Java for object-oriented programming. I suggest that even developing in
@@ -568,6 +574,21 @@ information for the sensitive instruction that triggers the VM-Exit</li>
 </ul>
 <h2 id="distributed-systems">Distributed Systems<a class="headerlink" href="#distributed-systems" title="Do what you think is right">#</a></h2>
 <h2 id="software-security">Software Security<a class="headerlink" href="#software-security" title="Do what you think is right">#</a></h2>
+<h2 id="other-tools">Other tools<a class="headerlink" href="#other-tools" title="Do what you think is right">#</a></h2>
+<ul>
+<li>Fuzzer: AFL++/libFuzzer/Syzkaller</li>
+<li>Symbolic execution: KLEE</li>
+<li>Compiler: LLVM</li>
+<li>Operating System: Linux Kernel</li>
+<li>Virtualization: QEMU/VirtualBox</li>
+</ul>
+<h2 id="think-about-some-metrics">Think about some metrics<a class="headerlink" href="#think-about-some-metrics" title="Do what you think is right">#</a></h2>
+<ul>
+<li>CPU utilization</li>
+<li>Cache optimization</li>
+<li>Memory consumption</li>
+<li>Disk consumption</li>
+</ul>
 </section>
 
 <section id="mkdocs-terminal-after-content">
@@ -578,7 +599,7 @@ information for the sensitive instruction that triggers the VM-Exit</li>
 <aside>
     <p>
         <small>
-            <i>Page last updated 2024-09-13. </i>
+            <i>Page last updated 2025-04-19. </i>
         </small>
     </p>
 </aside>
