@@ -1,8 +1,6 @@
 ## Pinned
 
-+ [Why system security?](posts/2025-04-15-why-system-security.md)
-+ [Why system security is relavent to everyone?](posts/#)
-+ [Why system security is important to AI?](posts/#)
++ [A simple guide to system security survival](posts/2025-04-15-why-system-security.md)
 + [How to do system security research (for PhD students)](posts/2021-09-07-Research-Philosophy.md)
 + [Doing Research: Where to find related works?](posts/2023-10-11-literature-review.md)
 + [Doing Research: Build the knowledge database](posts/2021-09-03-knowledge-for-research.md)

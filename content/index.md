@@ -2,13 +2,14 @@ Qiang Liu is a postdoc at EPFL, working with [Prof. Mathias
 Payer](https://nebelwelt.net/) in the HexHive laboratory. He earned his Ph.D. in
 2023 from Zhejiang University (ZJU) under the guidance of [Prof. Yajin
 Zhou](https://yajin.org/) and a B.S. degree from the Beijing Institute of
-Technology (BIT) in 2018. His research in cybersecurity focuses on developing
-full-lifecycle security enforcement of systems, including ahead-of-release bug
-finding, understanding, and in-production attack mitigation. His work has been
-recognized at all top security conferences: IEEE SSP, Usenix Security, ACM CCS,
-and ISOC NDSS. He received the Best Paper Awards at USENIX Security'24 and ACM
-RAID'24. He is also serving on the program committee for ASE'25 and USENIX
-Security'25 and is a reviewer for ACM CSUR and ACM TOSEM. 
+Technology (BIT) in 2018. His research in cybersecurity focuses on 1) developing
+prior-to/after-release security enforcement of software based on our deep
+understanding, and 2) building the chain of trust examined by full-chain
+exploits. His work has been recognized at all top security conferences: IEEE
+SSP, Usenix Security, ACM CCS, and ISOC NDSS. He received the Best Paper Awards
+at USENIX Security'24 and ACM RAID'24. He is also serving on the program
+committee for IEEE/ACM ASE'25 and USENIX Security'25 and is a reviewer for ACM
+CSUR and ACM TOSEM. 
 
 [CV](./Qiang_s_CV.pdf)
 [Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
