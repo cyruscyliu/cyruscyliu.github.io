@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="generator" content="mkdocs-1.5.3, mkdocs-terminal-4.6.0">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.7.0">
      
      
     
@@ -199,7 +199,7 @@
 <nav>
     <ul>
         <li><a href="#introduction-to-bhyve">Introduction to Bhyve</a></li>
-        <li><a href="#what-is-bhyve">What is Bhyve?</a></li><li><a href="#components">Components</a></li><li><a href="#dismistafication">Dismistafication</a></li><li><a href="#vmx-vmcs-maintenace-instructions">VMX (VMCS-maintenace) instructions</a></li><li><a href="#some-data-structs">Some data structs</a></li><li><a href="#bhyve-vmexit-code">BHyve VMExit code</a></li><li><a href="#some-data-structs_1">Some data structs</a></li><li><a href="#virtual-devices-dummy-means-very-low-fidelity-old-bhyve">Virtual devices (dummy means very low fidelity) (Old BHyve)</a></li><li><a href="#extend-btest-like-qtest-to-bhyve">Extend BTest (like QTest) to BHyve</a></li>
+        <li><a href="#what-is-bhyve123">What is Bhyve?123</a></li><li><a href="#components5">Components5</a></li><li><a href="#dismistafication">Dismistafication</a></li><li><a href="#vmx-vmcs-maintenace-instructions">VMX (VMCS-maintenace) instructions</a></li><li><a href="#some-data-structs">Some data structs</a></li><li><a href="#bhyve-vmexit-code">BHyve VMExit code</a></li><li><a href="#some-data-structs_1">Some data structs</a></li><li><a href="#virtual-devices-dummy-means-very-low-fidelity-old-bhyve">Virtual devices (dummy means very low fidelity) (Old BHyve)</a></li><li><a href="#extend-btest-like-qtest-to-bhyve">Extend BTest (like QTest) to BHyve</a></li>
     </ul>
 </nav>
 </aside>
@@ -214,7 +214,7 @@
     <h1 id="introduction-to-bhyve">Introduction to Bhyve<a class="headerlink" href="#introduction-to-bhyve" title="Do what you think is right">#</a></h1>
 <p>In this short article, I'm going to introduce what is Bhyve, how it works, and
 how to modify it.</p>
-<h2 id="what-is-bhyve">What is Bhyve?<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><a class="headerlink" href="#what-is-bhyve" title="Do what you think is right">#</a></h2>
+<h2 id="what-is-bhyve123">What is Bhyve?<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><a class="headerlink" href="#what-is-bhyve123" title="Do what you think is right">#</a></h2>
 <ul>
 <li>Bhyve, pronounced "beehive", is a hypervisor for FreeBSD.</li>
 <li>Bhyve runs on x86_64 host and supports i386 and x86_64 guests.</li>
@@ -228,34 +228,34 @@ usr.sbin/bhyve/, usr.sbin/bhyveload/, usr.sbin/bhyvectl/, and lib/libvmmapi/</li
 Netvisor</a>, <a href="https://bhyvecon.org/bhyvecon2018-Gwydir.pdf">bhyve in
 Illumos-based distributions</a>.</li>
 </ul>
-<h2 id="components">Components<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><a class="headerlink" href="#components" title="Do what you think is right">#</a></h2>
+<h2 id="components5">Components<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><a class="headerlink" href="#components5" title="Do what you think is right">#</a></h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">component</th>
-<th style="text-align: center;">functionality</th>
+<th align="center">component</th>
+<th align="center">functionality</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">vmm.ko</td>
-<td style="text-align: center;">VT-x, local APCI, VT-d for PCI pass-thru, guest phymem mgmt, user-space cdev-interface</td>
+<td align="center">vmm.ko</td>
+<td align="center">VT-x, local APCI, VT-d for PCI pass-thru, guest phymem mgmt, user-space cdev-interface</td>
 </tr>
 <tr>
-<td style="text-align: center;">bhyveload</td>
-<td style="text-align: center;">user-space bootloader, userboot lib + bhyve API, creates VM, lays out kernel + metadata, sets up initial VM register state</td>
+<td align="center">bhyveload</td>
+<td align="center">user-space bootloader, userboot lib + bhyve API, creates VM, lays out kernel + metadata, sets up initial VM register state</td>
 </tr>
 <tr>
-<td style="text-align: center;">bhyve</td>
-<td style="text-align: center;">user-space run loop, PCI bus/device emulation, device backends, threads for vCPU, i/o devs, kqueue loop</td>
+<td align="center">bhyve</td>
+<td align="center">user-space run loop, PCI bus/device emulation, device backends, threads for vCPU, i/o devs, kqueue loop</td>
 </tr>
 <tr>
-<td style="text-align: center;">bhyvectl</td>
-<td style="text-align: center;">dump/modify VM state, dump VM stats, delete VMs</td>
+<td align="center">bhyvectl</td>
+<td align="center">dump/modify VM state, dump VM stats, delete VMs</td>
 </tr>
 <tr>
-<td style="text-align: center;">libvmmapi</td>
-<td style="text-align: center;">userland API</td>
+<td align="center">libvmmapi</td>
+<td align="center">userland API</td>
 </tr>
 </tbody>
 </table>
@@ -302,54 +302,54 @@ struct vm_exit vmexit[VM_MAXCPU];
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">code</th>
-<th style="text-align: center;">handler</th>
-<th style="text-align: center;">description</th>
-<th style="text-align: center;">next</th>
+<th align="center">code</th>
+<th align="center">handler</th>
+<th align="center">description</th>
+<th align="center">next</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_INOUT</td>
-<td style="text-align: center;">vmexit_inout</td>
-<td style="text-align: center;">in and out instructions</td>
-<td style="text-align: center;">VMEXIT_CONTINUE or VMEXIT_ABORT</td>
+<td align="center">VM_EXITCODE_INOUT</td>
+<td align="center">vmexit_inout</td>
+<td align="center">in and out instructions</td>
+<td align="center">VMEXIT_CONTINUE or VMEXIT_ABORT</td>
 </tr>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_VMX</td>
-<td style="text-align: center;">vmexit_vmx</td>
-<td style="text-align: center;">vm exit</td>
-<td style="text-align: center;">VMEXIT_ABORT</td>
+<td align="center">VM_EXITCODE_VMX</td>
+<td align="center">vmexit_vmx</td>
+<td align="center">vm exit</td>
+<td align="center">VMEXIT_ABORT</td>
 </tr>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_BOGUS</td>
-<td style="text-align: center;">vmexit_bogus</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">VMEXIT_RESTART or VMEXIT_SWITCH</td>
+<td align="center">VM_EXITCODE_BOGUS</td>
+<td align="center">vmexit_bogus</td>
+<td align="center"></td>
+<td align="center">VMEXIT_RESTART or VMEXIT_SWITCH</td>
 </tr>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_RDMSR</td>
-<td style="text-align: center;">vmexit_rdmsr</td>
-<td style="text-align: center;">Local APIC</td>
-<td style="text-align: center;">VMEXIT_ABORT</td>
+<td align="center">VM_EXITCODE_RDMSR</td>
+<td align="center">vmexit_rdmsr</td>
+<td align="center">Local APIC</td>
+<td align="center">VMEXIT_ABORT</td>
 </tr>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_WRMSR</td>
-<td style="text-align: center;">vmexit_wrmsr -&gt; emulate_wrmsr</td>
-<td style="text-align: center;">Local APIC</td>
-<td style="text-align: center;">VMEXIT_CONTINUE or VMEXIT_SWITCH</td>
+<td align="center">VM_EXITCODE_WRMSR</td>
+<td align="center">vmexit_wrmsr -&gt; emulate_wrmsr</td>
+<td align="center">Local APIC</td>
+<td align="center">VMEXIT_CONTINUE or VMEXIT_SWITCH</td>
 </tr>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_MTRAP</td>
-<td style="text-align: center;">vmexit_mtrap</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">VMEXIT_RESTART</td>
+<td align="center">VM_EXITCODE_MTRAP</td>
+<td align="center">vmexit_mtrap</td>
+<td align="center"></td>
+<td align="center">VMEXIT_RESTART</td>
 </tr>
 <tr>
-<td style="text-align: center;">VM_EXITCODE_PAGING</td>
-<td style="text-align: center;">vmexit_paging -&gt; emulate_instruction</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">VMEXIT_CONTINUE or VMEXIT_ABORT</td>
+<td align="center">VM_EXITCODE_PAGING</td>
+<td align="center">vmexit_paging -&gt; emulate_instruction</td>
+<td align="center"></td>
+<td align="center">VMEXIT_CONTINUE or VMEXIT_ABORT</td>
 </tr>
 </tbody>
 </table>
@@ -432,81 +432,81 @@ PCI_EMUL_SET(pci_xxx);
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">peripheral</th>
-<th style="text-align: center;">file</th>
-<th style="text-align: center;">description</th>
+<th align="center">peripheral</th>
+<th align="center">file</th>
+<th align="center">description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">atpic</td>
-<td style="text-align: center;">usr.sbin/bhyve/atpic.c</td>
-<td style="text-align: center;">dummy</td>
+<td align="center">atpic</td>
+<td align="center">usr.sbin/bhyve/atpic.c</td>
+<td align="center">dummy</td>
 </tr>
 <tr>
-<td style="text-align: center;">console</td>
-<td style="text-align: center;">usr.sbin/bhyve/consport.c</td>
-<td style="text-align: center;">ttyread|ttywrite</td>
+<td align="center">console</td>
+<td align="center">usr.sbin/bhyve/consport.c</td>
+<td align="center">ttyread|ttywrite</td>
 </tr>
 <tr>
-<td style="text-align: center;">gdbport</td>
-<td style="text-align: center;">usr.sbin/bhyve/dbgport.c</td>
-<td style="text-align: center;">bind, listen, accept, read|write</td>
+<td align="center">gdbport</td>
+<td align="center">usr.sbin/bhyve/dbgport.c</td>
+<td align="center">bind, listen, accept, read|write</td>
 </tr>
 <tr>
-<td style="text-align: center;">elcr</td>
-<td style="text-align: center;">usr.sbin/bhyve/dbgport.c</td>
-<td style="text-align: center;">dummy</td>
+<td align="center">elcr</td>
+<td align="center">usr.sbin/bhyve/dbgport.c</td>
+<td align="center">dummy</td>
 </tr>
 <tr>
-<td style="text-align: center;">pit 8254</td>
-<td style="text-align: center;">usr.sbin/bhyve/pit_8254.c</td>
-<td style="text-align: center;">pit_8254_handler</td>
+<td align="center">pit 8254</td>
+<td align="center">usr.sbin/bhyve/pit_8254.c</td>
+<td align="center">pit_8254_handler</td>
 </tr>
 <tr>
-<td style="text-align: center;">post</td>
-<td style="text-align: center;">usr.sbin/bhyve/post.c</td>
-<td style="text-align: center;">dummy</td>
+<td align="center">post</td>
+<td align="center">usr.sbin/bhyve/post.c</td>
+<td align="center">dummy</td>
 </tr>
 <tr>
-<td style="text-align: center;">rtc</td>
-<td style="text-align: center;">usr.sbin/bhyve/rtc.c</td>
-<td style="text-align: center;">rtc_addr_handler|rtc_data_handler</td>
+<td align="center">rtc</td>
+<td align="center">usr.sbin/bhyve/rtc.c</td>
+<td align="center">rtc_addr_handler|rtc_data_handler</td>
 </tr>
 <tr>
-<td style="text-align: center;">uart</td>
-<td style="text-align: center;">usr.sbin/bhyve/uart.c</td>
-<td style="text-align: center;">dummy</td>
+<td align="center">uart</td>
+<td align="center">usr.sbin/bhyve/uart.c</td>
+<td align="center">dummy</td>
 </tr>
 <tr>
-<td style="text-align: center;">pci-dummy</td>
-<td style="text-align: center;">usr.sbin/bhyve/pci_emul.c</td>
-<td style="text-align: center;">pci_emul_dinit|pci_emul_diow|pci_emul_dior</td>
+<td align="center">pci-dummy</td>
+<td align="center">usr.sbin/bhyve/pci_emul.c</td>
+<td align="center">pci_emul_dinit|pci_emul_diow|pci_emul_dior</td>
 </tr>
 <tr>
-<td style="text-align: center;">pci-hostbridge</td>
-<td style="text-align: center;">usr.sbin/bhyve/pci_hostbridge.c</td>
-<td style="text-align: center;">pci_hostbridge_init</td>
+<td align="center">pci-hostbridge</td>
+<td align="center">usr.sbin/bhyve/pci_hostbridge.c</td>
+<td align="center">pci_hostbridge_init</td>
 </tr>
 <tr>
-<td style="text-align: center;">pci-passthru</td>
-<td style="text-align: center;">usr.sbin/bhyve/pci_passthru.c</td>
-<td style="text-align: center;">/dev/pci, /dev/io</td>
+<td align="center">pci-passthru</td>
+<td align="center">usr.sbin/bhyve/pci_passthru.c</td>
+<td align="center">/dev/pci, /dev/io</td>
 </tr>
 <tr>
-<td style="text-align: center;">pci-uart</td>
-<td style="text-align: center;">usr.sbin/bhyve/pci_uart.c</td>
-<td style="text-align: center;">pci_uart_init|pci_uart_write|pci_uart_read</td>
+<td align="center">pci-uart</td>
+<td align="center">usr.sbin/bhyve/pci_uart.c</td>
+<td align="center">pci_uart_init|pci_uart_write|pci_uart_read</td>
 </tr>
 <tr>
-<td style="text-align: center;">pci-virtio-blk</td>
-<td style="text-align: center;">usr.sbin/bhyve/pci_virtio_block.c</td>
-<td style="text-align: center;">pci_vtblk_init|pci_vtblk_write|pci_vtblk_read</td>
+<td align="center">pci-virtio-blk</td>
+<td align="center">usr.sbin/bhyve/pci_virtio_block.c</td>
+<td align="center">pci_vtblk_init|pci_vtblk_write|pci_vtblk_read</td>
 </tr>
 <tr>
-<td style="text-align: center;">pci-virtio-net</td>
-<td style="text-align: center;">usr.sbin/bhyve/pci_virtio_net.c</td>
-<td style="text-align: center;">pci_vtnet_init|pci_vtnet_write|pci_vtnet_read</td>
+<td align="center">pci-virtio-net</td>
+<td align="center">usr.sbin/bhyve/pci_virtio_net.c</td>
+<td align="center">pci_vtnet_init|pci_vtnet_write|pci_vtnet_read</td>
 </tr>
 </tbody>
 </table>
