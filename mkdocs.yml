@@ -1,6 +1,6 @@
 theme:
     name: terminal
-    palette: pink
+    palette: default
     features:
     - footer.prev_next
     - revision.date
@@ -16,7 +16,6 @@ site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
 nav:
     - Home: 'index.md'
     - Posts: 'posts.md'
-    - Community: 'community.md'
 plugins:
   - search
   - git-revision-date 
