@@ -29,8 +29,8 @@
 <link href="css/theme.css" rel="stylesheet">
 <link href="css/theme.tile_grid.css" rel="stylesheet">
 <link href="css/theme.footer.css" rel="stylesheet">
-<!-- pink color palette -->
-<link href="css/palettes/pink.css" rel="stylesheet">
+<!-- default color palette -->
+<link href="css/palettes/default.css" rel="stylesheet">
 
 <!-- page layout -->
 <style>
@@ -106,14 +106,6 @@
                     <meta property="position" content="1">
                 </li>
                 
-                
-                <li property="itemListElement" typeof="ListItem">
-                    <a href="community/" class="menu-item " property="item" typeof="WebPage">
-                        <span property="name">Community</span>
-                    </a>
-                    <meta property="position" content="2">
-                </li>
-                
                     
                     
 
@@ -122,7 +114,7 @@
     <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
         <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
     </a>
-    <meta property="position" content="3">
+    <meta property="position" content="2">
 </li>
                     
             </ul>
@@ -172,36 +164,14 @@
     
   </li>
         
-          
-
-
-
-<li class="terminal-mkdocs-side-nav-li">
-    
-    
-    
-        
-        
-            <a class="
-
-    terminal-mkdocs-side-nav-item" href="community/">Community</a>
-        
-    
-    
-    
-  </li>
-        
     </ul>
   
 </nav><hr>
 <nav>
     <ul>
-        <li><a href="#system-understanding">[system understanding]</a></li>
-        <li><a href="#statefulness">[statefulness]</a></li>
-        <li><a href="#gpu-security">[GPU security]</a></li>
-        <li><a href="#interpreter-security">[interpreter security]</a></li>
-        <li><a href="#hypervisor-security">[hypervisor security]</a></li>
-        <li><a href="#firmware-rehosting">[firmware rehosting]</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#ongoing-projects">Ongoing Projects</a></li>
+        <li><a href="#weekend-projects">Weekend Projects</a></li>
         
     </ul>
 </nav>
@@ -219,105 +189,144 @@ Payer</a> in the HexHive laboratory. He earned his Ph.D. in
 2023 from Zhejiang University (ZJU) under the guidance of <a href="https://yajin.org/">Prof. Yajin
 Zhou</a> and a B.S. degree from the Beijing Institute of
 Technology (BIT) in 2018. His research in cybersecurity focuses on 1) developing
-prior-to/after-release security enforcement of software based on our deep
+prior-to/after-release security enforcement of software based on deep
 understanding, and 2) building the chain of trust examined by full-chain
 exploits. His work has been recognized at all top security conferences: IEEE
-SSP, Usenix Security, ACM CCS, and ISOC NDSS. He received the Best Paper Awards
+S&amp;P, Usenix Security, ACM CCS, and ISOC NDSS. He received the Best Paper Awards
 at USENIX Security'24 and ACM RAID'24. He is also serving on the program
 committee for IEEE/ACM ASE'25 and USENIX Security'25 and is a reviewer for ACM
-CSUR and ACM TOSEM. </p>
+CSUR and ACM TOSEM.</p>
+<details style="margin-bottom:1em">
+<summary>Introduction in Chinese</summary>
+<div style="margin-top:1em; margin-bottom:1em; margin-left:2em">
+
+刘强现为瑞士洛桑联邦理工学院（EPFL）HexHive实验室的博士后研究员，合作导师为Mathias Payer教授。
+他于2023年博士毕业于浙江大学，师从周亚金教授。他的研究聚焦于系统安全，致力于从深层理解出发，
+在软件发布前后实现有效的安全保障机制，同时围绕真实攻击路径构建和验证可信执行链。
+他的多项研究成果已发表在IEEE S&P、USENIX Security、ACM CCS 和 NDSS 等国际顶级安全会议上，
+并荣获USENIX Security 2024 和 ACM RAID 2024 最佳论文奖。
+同时，他是IEEE/ACM ASE 2025 与 USENIX Security 2025 的程序委员会委员，
+并为ACM CSUR 和 ACM TOSEM 等期刊担任审稿人。
+
+</div>
+</details>
+
 <p><a href="Qiang_s_CV.pdf">CV</a>
-<a href="https://scholar.google.com/citations?user=fa1uB2sAAAAJ&amp;hl=en">Google Scholar</a></p>
-<p>Qiang Liu's journey began with a Capture the Flag (CTF) competition, where he
-learned techniques like reverse engineering and exploitation. During his PhD and
-PostDoc, Qiang Liu pioneered innovative solutions, including auto-extracted
-input dependencies and a generic executor, to significantly strengthen
-hypervisor security. These breakthroughs led to the discovery and mitigation of
-nearly 100 hypervisor vulnerabilities prior to software release. TBF.</p>
-<p>Feel free to <a href="mailto:cyruscyliu@gmail.com">email me</a> about the following ongoing
-projects.</p>
-<h2 id="system-understanding">[system understanding]<a class="headerlink" href="#system-understanding" title="Do what you think is right">#</a></h2>
-<p>I'd like to build the knowledge database of all the computer system to verify
-and prototype our idea as quick as possible.</p>
-<h2 id="statefulness">[statefulness]<a class="headerlink" href="#statefulness" title="Do what you think is right">#</a></h2>
-<p>Statefulness is not well defined. Previous work has shown that states can be
-accumulated, reached, and formalized. However,  interactive and configurable
-protocols pose challenges to the definition of state due to overlooked response
-packets and to the exploration of state space due to configuration-based
-implementation. We are going to demystify statefulness.</p>
-<p>Regarding the definition of states: <a href="https://github.com/HexHive/tango">Tango</a>
-(<a href="papers/tango-raid24.pdf">paper</a>, <strong>ACM RAID'24</strong>, Best Paper Award)
-first-in-public defines states with code coverage, which scales to different
-software.</p>
-<h2 id="gpu-security">[GPU security]<a class="headerlink" href="#gpu-security" title="Do what you think is right">#</a></h2>
-<p>GPUs, new trust base, are part of a collaborative fabric, but isolation is
-little considered. Unluckily, the GPU hardware and software ecosystem is highly
-complex such as diverse architectures, proprietary drivers, and non-trivial
-programming models. How do we protect CPU-GPU-fusion and isolate
-multi-tenant/multi-task sharing?</p>
-<h2 id="interpreter-security">[interpreter security]<a class="headerlink" href="#interpreter-security" title="Do what you think is right">#</a></h2>
-<p>How do we design a more secure interpreter engine?</p>
-<p>The good: Reflecta (<a href="papers/reflecta-asiaccs25.pdf">paper</a>, <strong>AsiaCCS'25</strong>)
-leverages reflection to infer the signatures of APIs to 3rd party libraries.</p>
-<h2 id="hypervisor-security">[hypervisor security]<a class="headerlink" href="#hypervisor-security" title="Do what you think is right">#</a></h2>
-<p>It is not hard at all to ensure hypervisor security. We have built a platform
-with auto-extracted input dependencies and a generic executor for hypervisors,
-so we can apply bug-finding (e.g., fuzzing) and mitigation techniques.</p>
-<p>Regarding quality input, <a href="https://github.com/HexHive/videzzo">ViDeZZo</a>
-(<a href="papers/videzzo-sp23.pdf">paper</a>, <strong>IEEE SSP'23</strong>) first proposed intra- and
-inter-message dependencies, and then <a href="https://github.com/vul337/Truman">Truman</a>
-(<a href="papers/truman-ndss25.pdf">paper</a>,
-<strong>ISOC NDSS'25</strong>) highlighted state-dependency. Truman further explained how to
-auto-extract intra-/inter-message, and state dependencies from the Linux kernel
-via static analysis.</p>
-<p>Regarding generic executors,
-<a href="https://github.com/HexHive/HyperPill/tree/artifact-evaluation">HyperPill</a>
-(<a href="papers/hyperpill-sec24.pdf">paper</a>, <strong>USENIX Security'24</strong>, Best Paper
-Award) first propose a snapshot-based hypervisor dock, capable of running both
-open-source and closed-source and both x86 and aarch64 hypervisors.</p>
-<p>Other tools</p>
+<a href="https://scholar.google.com/citations?user=fa1uB2sAAAAJ&amp;hl=en">Google Scholar</a>
+<a href="mailto:cyruscyliu@gmail.com">Email</a></p>
+<h2 id="achievements">Achievements<a class="headerlink" href="#achievements" title="Do what you think is right">#</a></h2>
 <ul>
-<li><a href="https://github.com/cyruscyliu/videzzo-llvm-project">ViDeZZo LLVM Project</a>
-forked from LLVM Project 13, instrumentation and libFuzzer for ViDeZZo</li>
-<li><a href="https://github.com/cyruscyliu/buildroot-external-packages">buildroot-external-packages</a>
-and <a href="https://github.com/HexHive/virtfuzz-bugs">virtfuzz-bugs</a>, PoC</li>
+<li>🛠️ Grammar-based Arbitrary Hypervisor Fuzzing Framework
+(<a href="https://github.com/HexHive/HyperPill">HyperPill</a>[<a href="papers/hyperpill-sec24.pdf">SEC24</a>]/<a href="https://github.com/HexHive/videzzo">ViDeZZo</a>[<a href="papers/videzzo-sp23.pdf">SP23</a>]/<a href="https://github.com/vul337/Truman">Truman</a><a href="papers/truman-ndss25.pdf">[NDSS25]</a>)</li>
+<li>🏆 HyperPill won the best paper award at USENIX Security'24</li>
+<li>🏆 Tango won the best paper award at ACM RAID'24</li>
+<li>🛠️ Partial Rehosting of Linux-Based Firmware
+(<a href="https://github.com/cyruscyliu/firmguide">FirmGuide</a>[<a href="papers/firmguide-ase21.pdf">ASE21</a>]/<a href="https://github.com/valour01/ecmo">ECMO</a>[<a href="papers/ecmo-ccs21.pdf">CCS21</a>])</li>
 </ul>
-<p>Open projects</p>
-<ul>
-<li>New target: Rust-based hypervisors (e.g., firecracker)</li>
-<li>New tool: Hyper-Cube for 64, HyperPill for Aarch64</li>
-<li>New attacks: race condition, out-of-resources</li>
-<li>Automatic exploit generation: ref
-<a href="https://www.usenix.org/system/files/woot19-paper_zhao.pdf">1</a></li>
-</ul>
-<h2 id="firmware-rehosting">[firmware rehosting]<a class="headerlink" href="#firmware-rehosting" title="Do what you think is right">#</a></h2>
-<p>We aim to rehost embedded Linux kernels (the Linux kernels used in embedded
-devices). <a href="https://github.com/cyruscyliu/firmguide">FirmGuide</a>
-(<a href="papers/firmguide-ase21.pdf">paper</a>, <strong>ASE'21</strong>) first modeled all interrupt
-controllers and timers. Then, <a href="https://github.com/valour01/ecmo">ECMO</a>
-(<a href="papers/ecmo-ccs21.pdf">paper</a>, <strong>CCS'21</strong>) supported other peripherals like
-NIC via binary rewriting.</p>
-<p>Other tools</p>
-<ul>
-<li><a href="https://github.com/cyruscyliu/pyqemulog">pyqemulog</a> is the qemu-log ported to
-Python. It converts the structured trace generated by QEMU with -d to JSON.</li>
-<li><a href="https://github.com/cyruscyliu/llbic">llbic</a>, short for LLVM Linux
-Build Issues Collection, compiles old Linux kernels in LLVM bitcode. It
-replaces GCC to clang and adjusts cflags in the command lines to
-generate bitcode files, and then links them all together to a <code>vmlinux.bc</code>.</li>
-<li><a href="https://github.com/cyruscyliu/openwrt-build-docker">openwrt-build-docker</a>
-supports automatically building the OpenWrt project given a target/subtarget of
-a specific OpenWrt revision from 10.03 to 19.07.1.</li>
-</ul>
-<p>[<strong>android authentication (archived)</strong>]</p>
-<p>This project evaluates existing and proposes new implicit continuous
-authentication approaches to serve as a second authentication factor alongside
-fingerprint and facial identification. I joined this project as an intern and
-then proposed part of it as my final project for my bachelor's degree. Relative
-research papers are <a href="papers/riskcog-tmc20.pdf">RiskCog (TMC'20)</a>, <a href="papers/espialcog-tmc20.pdf">ESPIALCOG
-(TMC'20)</a>, <a href="papers/one-cycle-attack-tifs20.pdf">One Cycle Attack
-(TIFS'20)</a>, and <a href="papers/trapcog-tmc23.pdf">TRAPCOG
-(TMC'23))</a>.</p>
+<h2 id="ongoing-projects">Ongoing Projects<a class="headerlink" href="#ongoing-projects" title="Do what you think is right">#</a></h2>
+<details>
+<summary>Hypervisor Security</summary>
+<div style="margin-top:1em; margin-bottom:1em; margin-left:2em">
+
+With the rapid advancement and widespread adoption of AI, cloud computing is
+experiencing renewed momentum. At the core of secure cloud infrastructure lies a
+vulnerability-free hypervisor. Embracing a full-lifecycle security approach, our
+research focuses on identifying and resolving hypervisor vulnerabilities prior
+to release, while also developing complementary defenses to mitigate attacks in
+production environments. To drive deeper insights, we also develop real-world
+exploits targeting state-of-the-art hypervisors.
+
+</div>
+</details>
+
+<details>
+<summary>AI System Security</summary>
+<div style="margin-top:1em; margin-bottom:1em; margin-left:2em">
+
+The success of AI is fundamentally reshaping the entire computing stack, from
+hardware to high-level software. As new codebases and specialized hardware
+emerge to support AI workloads, longstanding security challenges are resurfacing
+in modern contexts. Our research investigates security issues across multiple
+layers of AI systems, focusing on compilers, interpreters, operating systems,
+hypervisors, and heterogeneous hardware such as GPUs.
+
+</div>
+</details>
+
+<details>
+<summary>AI for System Understanding</summary>
+<div style="margin-top:1em; margin-bottom:1em; margin-left:2em">
+
+Modern system software has reached a scale and complexity that surpasses human
+cognitive limits. No individual can realistically comprehend the full breadth of
+its specifications, source code, reviews, and development history. This
+overwhelming volume of information poses serious challenges to effective
+auditing, debugging, and security analysis. We envision a super model—a fusion
+of Large Language Models (LLMs) and Knowledge Graphs (KGs)—to bridge the gap
+between human understanding and large-scale system software. By encoding both
+structured knowledge (e.g., specifications, test results) and unstructured
+knowledge (e.g., source code, review discussions, crash reports), this model
+will provide a unified, intelligent interface for low-level system
+comprehension. As a collaborative assistant, the super model will help
+developers and researchers understand system intent, behavior, and evolution,
+significantly reducing manual effort in navigating, maintaining, and securing
+complex system software.
+
+
+</div>
+</details>
+
+<details style="margin-bottom:1em">
+<summary>Security Shift: from Defense to Resilience</summary>
+<div style="margin-top:1em; margin-bottom:1em; margin-left:2em">
+
+The evolution of computing has progressed through several transformative
+milestones—from standalone systems to personal computing and the Web 2.0 era,
+followed by large-scale computing and deep learning, and more recently, the rise
+of foundation models and AI breakthroughs. As we move into the next era—defined
+by ubiquitous computing and heterogeneous system architectures—security
+challenges are becoming more complex and distributed. In this new landscape,
+computing devices take many forms: personal, enterprise-grade, and embedded
+systems, all interconnected through a global edge fabric. The scale and
+diversity of these environments demand a unified software ecosystem and robust,
+adaptable security frameworks. Crucially, the security paradigm must shift:
+success is no longer measured solely by the ability to block attacks. Instead,
+the focus must be on resilience—ensuring rapid recovery, minimizing downtime,
+and maintaining business continuity after incidents. We propose a thin,
+scalable, and formally verified minimum recovery system as a foundational layer
+to meet this challenge, enabling reliable, system-wide restoration in the face
+of growing threats.
+
+</div>
+</details>
+
+<h2 id="weekend-projects">Weekend Projects<a class="headerlink" href="#weekend-projects" title="Do what you think is right">#</a></h2>
+<details>
+<summary>Hacking Culture</summary>
+<div style="margin-top:1em; margin-bottom:1em; margin-left:2em">
+
+We have focused too much on cool technology while neglecting the fun stories,
+nerdy fonts, and meme creativity that are equally important. It's time to
+systematically explore and celebrate hacking culture—not just to entertain
+ourselves but also to inspire and attract more people to join us.  Parents can
+raise children who are independent and creative, teachers can guides students
+who are collaborative and competitive, and entrepreneurs can engage customers
+who are eager to buy innovative products. Be classy and be cool!
+
+</div>
+</details>
+
+<details>
+<summary>Academic Family Tree of Computer Science Scholars</summary>
+<div style="margin-top:1em; margin-bottom:1em; margin-left:2em">
+</div>
+</details>
+
+<details>
+<summary>Lines of Code on Earth</summary>
+<div style="margin-top:1em; margin-bottom:1em; margin-left:2em">
+</div>
+</details>
 </section>
 
 <section id="mkdocs-terminal-after-content">
@@ -328,7 +337,7 @@ research papers are <a href="papers/riskcog-tmc20.pdf">RiskCog (TMC'20)</a>, <a 
 <aside>
     <p>
         <small>
-            <i>Page last updated 2025-04-27. </i>
+            <i>Page last updated 2025-06-06. </i>
         </small>
     </p>
 </aside>
