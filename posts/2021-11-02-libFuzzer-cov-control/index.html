@@ -594,86 +594,86 @@ void __sanitizer_cov_pcs_init(const uintptr_t *pcs_beg,
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Flag</th>
-<th style="text-align: center;">Stubs</th>
-<th style="text-align: center;">Information Sink</th>
+<th align="center">Flag</th>
+<th align="center">Stubs</th>
+<th align="center">Information Sink</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">trace-pc,indirect-calls</td>
-<td style="text-align: center;">__sanitizer_cov_trace_pc_indirect</td>
-<td style="text-align: center;">ValueProfileMap</td>
+<td align="center">trace-pc,indirect-calls</td>
+<td align="center">__sanitizer_cov_trace_pc_indirect</td>
+<td align="center">ValueProfileMap</td>
 </tr>
 <tr>
-<td style="text-align: center;">trace-pc-guard,indirect-calls</td>
-<td style="text-align: center;">__sanitizer_cov_trace_pc_indirect</td>
-<td style="text-align: center;">ValueProfileMap</td>
+<td align="center">trace-pc-guard,indirect-calls</td>
+<td align="center">__sanitizer_cov_trace_pc_indirect</td>
+<td align="center">ValueProfileMap</td>
 </tr>
 <tr>
-<td style="text-align: center;">inline-8bit-counters,indirect-calls</td>
-<td style="text-align: center;">__sanitizer_cov_trace_pc_indirect</td>
-<td style="text-align: center;">ValueProfileMap</td>
+<td align="center">inline-8bit-counters,indirect-calls</td>
+<td align="center">__sanitizer_cov_trace_pc_indirect</td>
+<td align="center">ValueProfileMap</td>
 </tr>
 <tr>
-<td style="text-align: center;">inline-bool-flag,indirect-calls</td>
-<td style="text-align: center;">__sanitizer_cov_trace_pc_indirect</td>
-<td style="text-align: center;">ValueProfileMap</td>
+<td align="center">inline-bool-flag,indirect-calls</td>
+<td align="center">__sanitizer_cov_trace_pc_indirect</td>
+<td align="center">ValueProfileMap</td>
 </tr>
 <tr>
-<td style="text-align: center;">trace-cmp</td>
-<td style="text-align: center;">__sanitizer_cov_trace_[const_]cmp[1|2|4|8]</td>
-<td style="text-align: center;">ValuleProfileMap</td>
+<td align="center">trace-cmp</td>
+<td align="center">__sanitizer_cov_trace_[const_]cmp[1|2|4|8]</td>
+<td align="center">ValuleProfileMap</td>
 </tr>
 <tr>
-<td style="text-align: center;">trace-switch</td>
-<td style="text-align: center;">__sanitizer_cov_trace_switch</td>
-<td style="text-align: center;">ValuleProfileMap</td>
+<td align="center">trace-switch</td>
+<td align="center">__sanitizer_cov_trace_switch</td>
+<td align="center">ValuleProfileMap</td>
 </tr>
 <tr>
-<td style="text-align: center;">trace-div</td>
-<td style="text-align: center;">__sanitizer_cov_trace_div[4|8]</td>
-<td style="text-align: center;">ValuleProfileMap</td>
+<td align="center">trace-div</td>
+<td align="center">__sanitizer_cov_trace_div[4|8]</td>
+<td align="center">ValuleProfileMap</td>
 </tr>
 <tr>
-<td style="text-align: center;">trace-gep</td>
-<td style="text-align: center;">__sanitizer_cov_trace_gep</td>
-<td style="text-align: center;">ValuleProfileMap</td>
+<td align="center">trace-gep</td>
+<td align="center">__sanitizer_cov_trace_gep</td>
+<td align="center">ValuleProfileMap</td>
 </tr>
 <tr>
-<td style="text-align: center;">trace-pc</td>
-<td style="text-align: center;">__sanitizer_cov_trace_pc</td>
-<td style="text-align: center;">deprecated</td>
+<td align="center">trace-pc</td>
+<td align="center">__sanitizer_cov_trace_pc</td>
+<td align="center">deprecated</td>
 </tr>
 <tr>
-<td style="text-align: center;">trace-pc-guard</td>
-<td style="text-align: center;">__sanitizer_cov_trace_pc_guard[_init]</td>
-<td style="text-align: center;">deprecated</td>
+<td align="center">trace-pc-guard</td>
+<td align="center">__sanitizer_cov_trace_pc_guard[_init]</td>
+<td align="center">deprecated</td>
 </tr>
 <tr>
-<td style="text-align: center;">inline-8bit-counters</td>
-<td style="text-align: center;">__sanitizer_cov_8bit_counters_init</td>
-<td style="text-align: center;">Modules</td>
+<td align="center">inline-8bit-counters</td>
+<td align="center">__sanitizer_cov_8bit_counters_init</td>
+<td align="center">Modules</td>
 </tr>
 <tr>
-<td style="text-align: center;">inline-bool-flag</td>
-<td style="text-align: center;">__sanitizer_cov_bool_flag_init</td>
-<td style="text-align: center;">not supported</td>
+<td align="center">inline-bool-flag</td>
+<td align="center">__sanitizer_cov_bool_flag_init</td>
+<td align="center">not supported</td>
 </tr>
 <tr>
-<td style="text-align: center;">trace-pc-guard,pc-table</td>
-<td style="text-align: center;">__sanitizer_cov_pcs_init</td>
-<td style="text-align: center;">ModulePCTable</td>
+<td align="center">trace-pc-guard,pc-table</td>
+<td align="center">__sanitizer_cov_pcs_init</td>
+<td align="center">ModulePCTable</td>
 </tr>
 <tr>
-<td style="text-align: center;">inline-8bit-guard,pc-table</td>
-<td style="text-align: center;">__sanitizer_cov_pcs_init</td>
-<td style="text-align: center;">ModulePCTable</td>
+<td align="center">inline-8bit-guard,pc-table</td>
+<td align="center">__sanitizer_cov_pcs_init</td>
+<td align="center">ModulePCTable</td>
 </tr>
 <tr>
-<td style="text-align: center;">inline-bool-flag,pc-table</td>
-<td style="text-align: center;">__sanitizer_cov_pcs_init</td>
-<td style="text-align: center;">ModulePCTable</td>
+<td align="center">inline-bool-flag,pc-table</td>
+<td align="center">__sanitizer_cov_pcs_init</td>
+<td align="center">ModulePCTable</td>
 </tr>
 </tbody>
 </table>
@@ -844,51 +844,51 @@ void __sanitizer_weak_hook_memcmp(void *caller_pc, const void *s1,
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Function</th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Information Sink</th>
+<th align="center">Function</th>
+<th align="center"></th>
+<th align="center">Information Sink</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">memcmp</td>
-<td style="text-align: center;">AddValueForMemcmp</td>
-<td style="text-align: center;">ValueProfileMap</td>
+<td align="center">memcmp</td>
+<td align="center">AddValueForMemcmp</td>
+<td align="center">ValueProfileMap</td>
 </tr>
 <tr>
-<td style="text-align: center;">strnmp</td>
-<td style="text-align: center;">AddValueForMemcmp</td>
-<td style="text-align: center;">ValueProfileMap</td>
+<td align="center">strnmp</td>
+<td align="center">AddValueForMemcmp</td>
+<td align="center">ValueProfileMap</td>
 </tr>
 <tr>
-<td style="text-align: center;">strcmp</td>
-<td style="text-align: center;">AddValueForMemcmp</td>
-<td style="text-align: center;">ValueProfileMap</td>
+<td align="center">strcmp</td>
+<td align="center">AddValueForMemcmp</td>
+<td align="center">ValueProfileMap</td>
 </tr>
 <tr>
-<td style="text-align: center;">strncasecmp</td>
-<td style="text-align: center;">AddValueForMemcmp</td>
-<td style="text-align: center;">ValueProfileMap</td>
+<td align="center">strncasecmp</td>
+<td align="center">AddValueForMemcmp</td>
+<td align="center">ValueProfileMap</td>
 </tr>
 <tr>
-<td style="text-align: center;">strcasecmp</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">AddValueForMemcmp</td>
+<td align="center">strcasecmp</td>
+<td align="center"></td>
+<td align="center">AddValueForMemcmp</td>
 </tr>
 <tr>
-<td style="text-align: center;">strstr</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">MMT(Mutation Only)</td>
+<td align="center">strstr</td>
+<td align="center"></td>
+<td align="center">MMT(Mutation Only)</td>
 </tr>
 <tr>
-<td style="text-align: center;">strcasestr</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">MMT(Mutation Only)</td>
+<td align="center">strcasestr</td>
+<td align="center"></td>
+<td align="center">MMT(Mutation Only)</td>
 </tr>
 <tr>
-<td style="text-align: center;">memmem</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">MMT(Mutation Only)</td>
+<td align="center">memmem</td>
+<td align="center"></td>
+<td align="center">MMT(Mutation Only)</td>
 </tr>
 </tbody>
 </table>
