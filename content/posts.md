@@ -46,6 +46,7 @@
 
 ## Random notes
 
++ [2025-01-02 我的三十岁](posts/2025-07-17-I-am-30.md)
 + [2025-01-02 书单](posts/2025-01-02-books.md)
 + [2023-09-08 Crisis before getting a Ph.D.](posts/2023-09-08-crisis-before-getting-a-phd.md)
 + [2022-02-08 社会学概论](posts/2022-02-08-introduction-to-sociality.md)
