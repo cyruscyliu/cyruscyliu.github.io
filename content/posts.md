@@ -36,6 +36,7 @@
 
 ## Talks
 
++ [2025 Hypervisor Security and AI System Security](posts/Talk-Hypervisor-Security-v1.4.pdf)
 + [2024-10-01 RAID'24 Tango](posts/TangoFuzz-raid24.pdf)
 + [2023-10-07 PhD Thesis](posts/2023-10-07-phd-thesis.md) and [Slides](posts/PhD-Defense.pdf)
 + [2023-07-26 Slides for ViDeZZo at SSLab (1 hour)](posts/Talk-SSLab-20230726.public.pdf)
