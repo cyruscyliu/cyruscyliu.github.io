@@ -19,7 +19,7 @@
 
     
  
-<title>How to do system and software security research? - Qiang Liu's Homepage</title>
+<title>How to do system security research? - Qiang Liu's Homepage</title>
 
 
 <link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -171,8 +171,8 @@
 </nav><hr>
 <nav>
     <ul>
-        <li><a href="#how-to-do-system-and-software-security-research">How to do system and software security research?</a></li>
-        <li><a href="#what-is-system-and-software-security">What is system and software security?</a></li><li><a href="#where-are-the-ideas-from">Where are the ideas from?</a></li><li><a href="#there-are-too-many-ideas-and-how-to-decide">There are too many ideas and how to decide?</a></li><li><a href="#tips-to-do-research">Tips to do research</a></li><li><a href="#write-a-good-paper">Write a good paper</a></li>
+        <li><a href="#how-to-do-system-security-research">How to do system security research?</a></li>
+        <li><a href="#what-is-system-security">What is system security?</a></li><li><a href="#where-are-the-ideas-from">Where are the ideas from?</a></li><li><a href="#there-are-too-many-ideas-and-how-to-decide">There are too many ideas and how to decide?</a></li><li><a href="#tips-to-do-research">Tips to do research</a></li><li><a href="#write-a-good-paper">Write a good paper</a></li>
     </ul>
 </nav>
 </aside>
@@ -184,74 +184,83 @@
     
 
 <section id="mkdocs-terminal-content">
-    <h1 id="how-to-do-system-and-software-security-research">How to do system and software security research?<a class="headerlink" href="#how-to-do-system-and-software-security-research" title="Do what you think is right">#</a></h1>
-<h2 id="what-is-system-and-software-security">What is system and software security?<a class="headerlink" href="#what-is-system-and-software-security" title="Do what you think is right">#</a></h2>
-<p>We in system and software security aims to break and protect the assets that
-leverage hardware and software to provide widely-used services, such as
-browsers, compilers/interpreters, network protocols, operating systems,
-hypervisors, trust execution environment, and processors, based on thread models
-that define who will be trusted or not.</p>
+    <h1 id="how-to-do-system-security-research">How to do system security research?<a class="headerlink" href="#how-to-do-system-security-research" title="Do what you think is right">#</a></h1>
+<h2 id="what-is-system-security">What is system security?<a class="headerlink" href="#what-is-system-security" title="Do what you think is right">#</a></h2>
+<p>We aims to break and protect the assets that leverage hardware and software to
+provide widely-used services, such as browsers, compilers/interpreters, network
+protocols, operating systems, hypervisors, trust execution environment, and
+processors, based on thread models that define who will be trusted or not.</p>
+<h3 id="algorithms">Algorithms<a class="headerlink" href="#algorithms" title="Do what you think is right">#</a></h3>
 <ul>
 <li>
-<p>A group of people are also interested in sound and electromagnetic waves,
-leveraging a complete different field of knowledge -- signal processing. Their
-research is likely offensive. By definition, I think such research is a branch
-of system and software security. The biggest problem IMO is whether they can
-gain write primitives besides breaking the confidentiality and availability.</p>
+<p>Pure cryptography is mathematics. Applied cryptography has an overlap with
+system and software security -- we apply very basic cryptography as a mechenism
+to provide confidentiality.</p>
 </li>
 <li>
-<p>Pure cryptography is mathematics. Applied cryptography has a small overlap
-with system and software security -- we apply very basic cryptography as a
-mechenism to provide confidentiality.</p>
+<p>Privacy preserving computation focuses on the privacy problem during the
+computation, exchanging, and storage of data.</p>
 </li>
+<li>
+<p>Trustworthy AI foundamentally aims break and protect the high-dimensional
+function of the model.</p>
+</li>
+</ul>
+<h3 id="software-and-hardware">Software and hardware<a class="headerlink" href="#software-and-hardware" title="Do what you think is right">#</a></h3>
+<ul>
 <li>
 <p>System people build systems and consider security as one of the properties
-their systems should have. My gut feeling is that system people is used to
-taking coarse-grained threat models when considering security compared to
-security people. Additionally, security people also build systems to break and
-protect assets.</p>
+their systems should have. Instead, security people do not care too much about
+the business.</p>
 </li>
 <li>
 <p>Software engeering research is around software development lifecycle (SDLC).
 Similary, they also consider security as one of the properties they want to have
-in the SDLC. We security people emphasize vulnerabilities and exploitations.</p>
+in the SDLC. Security people emphasize vulnerabilities and exploitations.</p>
+</li>
+</ul>
+<h3 id="niche-systems">Niche systems<a class="headerlink" href="#niche-systems" title="Do what you think is right">#</a></h3>
+<ul>
+<li>
+<p>Cloud, embedded devices, and personal computers are fully connected, which
+requires secure collaborative computing.</p>
 </li>
 <li>
-<p>Privacy preserving computation focuses on the privacy problem during the
-computation, exchanging, and storage of data. It might needs system and software
-security techniques, but that's it.</p>
+<p>Blockchain is about consensus. In practice, blockchain has abundant
+applications in finance, which is impressive.</p>
 </li>
 <li>
-<p>AI research is about data, models, and computing power. AI security aims to
-break and protect the high-dimensional function of the model. Importantly, AI
-infrastructure security has a overlap with system and software security, such as
-AI compiler security, GPU virtualization and isolation, and LLM prompt sandbox.</p>
-</li>
-<li>
-<p>Technically, blockchain is about consensus. In practice, blockchain has
-abundant applications in finance, which is impressive. Similary, blockchain
-infrastructure security has a overlap with system and software security, such as
-smart contract security.</p>
+<p>AI systems differ from traditional IT systems due to the change in the whole
+software and hardware stack.</p>
 </li>
 </ul>
 <h2 id="where-are-the-ideas-from">Where are the ideas from?<a class="headerlink" href="#where-are-the-ideas-from" title="Do what you think is right">#</a></h2>
 <p>An idea consists of a problem and a solution.</p>
-<p>First, we can read and propose a new idea after reading a paper. However, there
-will be a delay. One the one hand, a research paper is published two years later
-than its authors came up with that idea. One the other hand, even though some PC
-members can check all interesting papers submitted to a conference, there is
-about half a year or one-year delay. Can we fill the gap? No, we cannot unless
-we are connecting or collaborating with these authors.</p>
-<p>Ideas can also come from users, which is so inefficient unless we are connecting
-or collaborating with industry people.</p>
-<p>In practice, the first idea comes from our advisors. Later, practical ideas come
-from our research activities, and we should be curious and critical thinkers
-about everything in our research activities all the time. Whenever we study, or
-find or hear of a thing, we should show our interests: What security problems
-are there? How to address them?</p>
+<ul>
+<li>
+<p>Business metrics driven: the ideas are from industry. We work in industry, or
+we get gift funding from industry.</p>
+</li>
+<li>
+<p>National research funding driven: the ideas are shaped by the national funding
+agencies, who are responsible for implementing national stratigies.</p>
+</li>
+<li>
+<p>Paper driven: we can read and propose a new idea after reading a paper.
+However, there will be a delay. One the one hand, a research paper is published
+two years later than its authors came up with that idea. One the other hand,
+even though some PC members can check all interesting papers submitted to a
+conference, there is about half a year or one-year delay.</p>
+</li>
+<li>
+<p>Research activity driven: The first idea may come from our advisors.  Later,
+practical ideas are from our research activities, and we should be critical
+thinkers.</p>
+</li>
+</ul>
 <p>Check <a href="https://medium.com/digital-diplomacy/how-to-look-for-ideas-in-computer-science-research-7a3fa6f4696f">this
 article</a>
-to learn the patterns of research and other tips.</p>
+to learn the patterns of research. </p>
 <h2 id="there-are-too-many-ideas-and-how-to-decide">There are too many ideas and how to decide?<a class="headerlink" href="#there-are-too-many-ideas-and-how-to-decide" title="Do what you think is right">#</a></h2>
 <p>The security research community has grown a lot. More PhD students generate more
 papers due to cheap resources (computing power, ChatGPT, etc.). Rat-race is
@@ -262,48 +271,39 @@ years continously. Ask our advisors.</p>
 them are worthy of our effort.</p>
 <p>Principle 1: choose a good problem</p>
 <ul>
-<li>think about the problem first instead of having a solution first</li>
+<li>problem first then solution</li>
 <li>a new problem is always better</li>
-<li>the problem is easy to understand and has clear benefits</li>
-<li>choose a problem with large security impact if the novelty is little</li>
+<li>the idea is easy to understand and has clear benefits</li>
+<li>should have large security impact if the novelty is little</li>
 </ul>
-<p>Principle 2: choose a solvable problem</p>
+<p>Principle 2: choose a hard problem</p>
 <ul>
 <li>solving a easy problem does not need a paper</li>
 <li>take reasonable assumptions and come up with several solutions</li>
-<li>know the optimal: consider the computation theory and estimate what the best we can do</li>
-<li>choose a solution with large security impact if the novelty is little</li>
-<li>seperate design and implementation</li>
+<li>know the optimal: consider the computation theory and estimate what the best
+we can do, then do an approximation</li>
 </ul>
 <p>Principle 3: must read related work to see how far they have gone. Please pay
 attention to how many research papers and industry blogs exist. You want to lead
 the research (there are only 0-2 papers) instead of following others. Do not be
-ignorant and remember your personal experience is biased.</p>
+arrogant and remember your personal experience is biased.</p>
 <h2 id="tips-to-do-research">Tips to do research<a class="headerlink" href="#tips-to-do-research" title="Do what you think is right">#</a></h2>
 <h3 id="budge-our-time">Budge our time<a class="headerlink" href="#budge-our-time" title="Do what you think is right">#</a></h3>
 <ul>
 <li>Mark the DDL two weeks in advance</li>
 <li>Spend 30 seconds more to save us from a 30-minute disaster</li>
 <li>Do not do many context switches, which wastes a lot of time</li>
-<li>Spend less than one day on a project we are not the first author</li>
-<li>Be busy when it is busy and have fun when it is not busy</li>
-<li>Take holidays and weekends after submissions</li>
+<li>Spend less than one day on a non-first-author project</li>
+<li>Be busy when it is busy and have fun when you should have fun</li>
+<li>Take holidays and weekends after submissions (for PhDs)</li>
 </ul>
 <h3 id="what-we-are-going-to-is-what-we-are-going-to-write">What we are going to is what we are going to write<a class="headerlink" href="#what-we-are-going-to-is-what-we-are-going-to-write" title="Do what you think is right">#</a></h3>
 <ul>
 <li>Review papers, run their systems, and summarize (RW)</li>
 <li>Identify challenges and evaluate solutions in theory (challenges, insights, solutions)</li>
-<li>Design system and evaluate design choices in theory (system design)</li>
+<li>Design system and evaluate design choices in theory (design)</li>
 <li><a href="../2021-09-03-Summary-Research-SE/">Coding</a> and write evaluation scripts (IMPL, evaluation)</li>
 <li>Write the paper at the same time and get feedback from others</li>
-</ul>
-<h3 id="set-up-servers">Set up servers<a class="headerlink" href="#set-up-servers" title="Do what you think is right">#</a></h3>
-<ul>
-<li>What architectures should we use? How many servers do we have?</li>
-<li>Are we in the <code>sudo</code> group?</li>
-<li>Save runtime/intermediate data on SSD and save results on HDD.</li>
-<li>Do we need to disable the hyper-threading?</li>
-<li>Buy more CPU, RAM, and storge. </li>
 </ul>
 <h3 id="do-evaluation">Do evaluation<a class="headerlink" href="#do-evaluation" title="Do what you think is right">#</a></h3>
 <ul>
@@ -316,15 +316,15 @@ ignorant and remember your personal experience is biased.</p>
 </ul>
 <h2 id="write-a-good-paper">Write a good paper<a class="headerlink" href="#write-a-good-paper" title="Do what you think is right">#</a></h2>
 <ul>
-<li>Tell a well-constructed story (information-flow, the pyramid principle)</li>
+<li>Tell a well-constructed story (the pyramid principle)</li>
 <li>Conduct reader-centred writing: straightforward and clear</li>
+<li>Minimize disadvantages</li>
 <li>Writing process<ul>
 <li>drafting: everyone is good!</li>
 <li>revising: focus, support, coherence<ul>
 <li>a paragraph should have one topic sentence</li>
-<li>multiple topic sentences should be logical</li>
 <li>support material must be specific</li>
-<li>logic should be clear</li>
+<li>multiple topic sentences should be logical</li>
 </ul>
 </li>
 <li>editing: grammar, word choice, sentence skill<ul>
@@ -335,19 +335,15 @@ ignorant and remember your personal experience is biased.</p>
 <li>don't have formal analysis</li>
 </ul>
 </li>
-<li>proofreading: everyone is good!</li>
+<li>proofreading: get first around feedback from "reviewers"</li>
 </ul>
 </li>
-<li>Minimize disadvantages</li>
-<li>Our solutions apply to other scenarios</li>
-<li>Our tools have good usability</li>
 </ul>
 <h3 id="necessity-for-reader-centred-writing">Necessity for reader-centred writing<a class="headerlink" href="#necessity-for-reader-centred-writing" title="Do what you think is right">#</a></h3>
 <ul>
 <li>Too many papers submitted but not enough reviewers</li>
-<li>Too many DDLs so that a reviewer at most up to 1 day (maybe half) to figure
-out what we did. Good-writing paper save reviewer's time. Otherwise, he will
-leave a message "I couldn't figure out the contributions due the bad writting".</li>
+<li>Too many DDLs so that a reviewer at most up to 4 hours to figure out what we
+did. Save their time!</li>
 </ul>
 </section>
 
@@ -359,7 +355,7 @@ leave a message "I couldn't figure out the contributions due the bad writting".<
 <aside>
     <p>
         <small>
-            <i>Page last updated 2024-08-04. </i>
+            <i>Page last updated 2025-08-01. </i>
         </small>
     </p>
 </aside>
