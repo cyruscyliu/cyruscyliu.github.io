@@ -8,6 +8,7 @@
 + [Doing Research: How to do research presentation?](posts/2021-08-27-research-presentation.md)
 + [Doing Research: Technology transfer under control](posts/2022-08-30-technology-transfer.md)
 + [Doing Research: Pitfalls/Tweaks/Tricks in R&D](posts/2023-08-15-dont-waste-time.md)
++ [Doing Research: How to manage research lab?](posts/2025-08-02-research-groups.md)
 + [Crisis of Prosperit: Internal Shortcuts and External Setbacks](posts/2025-04-29-properity-of-crisis.md)
 
 ## Reading
