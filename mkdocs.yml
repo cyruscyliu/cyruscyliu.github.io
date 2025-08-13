@@ -1,15 +1,48 @@
 theme:
-    name: terminal
-    palette: default
+    name: material
+    palette:
+        - scheme: default
+          primary: white
+          accent: indigo
+          toggle:
+            icon: material/weather-night
+            name: Switch to dark mode
+        - scheme: slate
+          primary: black
+          accent: light blue
+          toggle:
+            icon: material/weather-sunny
+            name: Switch to light mode
     features:
+    - navigation.footer
     - footer.prev_next
     - revision.date
     - revision.history
+extra:
+    social:
+        - icon: simple/readdotcv
+          link: Qiang_s_CV.pdf
+        - icon: simple/googlescholar
+          link: https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en
+        - icon: simple/mailboxdotorg
+          link: mailto:cyruscyliu@gmail.com
+        - icon: simple/github
+          link: https://github.com/cyruscyliu
+        - icon: simple/wechat
+          link: weixin://dl/chat?ocat01
+    generator: false
+    analytics:
+        provider: google
+        property: G-KWJ9PWFFMZ
 markdown_extensions:
     - footnotes
     - toc:
         permalink: "#"
         permalink_title: Do what you think is right
+    - attr_list
+    - pymdownx.emoji:
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
 docs_dir: content
 site_name: Qiang Liu's Homepage
 site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
@@ -17,6 +50,6 @@ nav:
     - Home: 'index.md'
     - Posts: 'posts.md'
 plugins:
-  - search
   - git-revision-date 
   - git-revision-date-localized
+copyright: "Copyright &copy; 2018 - 2025, Qiang Liu. All rights reserved."

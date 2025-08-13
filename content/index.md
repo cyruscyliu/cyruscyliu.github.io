@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 Qiang Liu is a postdoc at EPFL, working with [Prof. Mathias
 Payer](https://nebelwelt.net/) in the HexHive laboratory. He earned his Ph.D. in
 2023 from Zhejiang University (ZJU) under the guidance of [Prof. Yajin
@@ -20,9 +25,11 @@ CSUR and ACM TOSEM.
 </div>
 </details>
 
-[CV](./Qiang_s_CV.pdf)
-[Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
-[Email](mailto:cyruscyliu@gmail.com)
+[:simple-readdotcv:](./Qiang_s_CV.pdf)
+[:simple-googlescholar:](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
+[:simple-mailboxdotorg:](mailto:cyruscyliu@gmail.com)
+[:simple-github:](https://github.com/cyruscyliu)
+[:simple-wechat:](weixin://dl/chat?ocat01)
 
 ## Achievements
 
