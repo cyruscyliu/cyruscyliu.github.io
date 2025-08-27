@@ -1,3 +1,7 @@
+---
+date: 2021-10-22
+---
+
 # CS-725 Presentation - Fuzz Testing
 
 This is the text of my speech in CS-725. This text is about fuzz testing, its

@@ -1,3 +1,7 @@
+---
+date: 2021-08-18
+---
+
 # Display in QEMU
 
 Gerd Hoffmann has introduced graphics in QEMU here and there[^1], and in this

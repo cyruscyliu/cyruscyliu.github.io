@@ -1,3 +1,7 @@
+---
+date: 2025-04-29
+---
+
 # Crisis of Prosperit: Internal Shortcuts and External Setbacks
 
 >Polished by ChatGPT

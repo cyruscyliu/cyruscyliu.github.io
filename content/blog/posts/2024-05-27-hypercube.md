@@ -1,3 +1,7 @@
+---
+date: 2024-05-27
+---
+
 # Notes about HyperCubeOS for x86_64
 
 There are some notes when I update

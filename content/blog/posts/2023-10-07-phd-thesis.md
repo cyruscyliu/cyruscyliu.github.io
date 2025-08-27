@@ -1,3 +1,7 @@
+---
+date: 2023-10-07
+---
+
 # Ph.D. Thesis
 
 The Internet of Things (IoT) is widely used in our daily life. Among them,

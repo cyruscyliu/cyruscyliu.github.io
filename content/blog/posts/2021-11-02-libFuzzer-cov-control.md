@@ -1,3 +1,7 @@
+---
+date: 2021-11-02
+---
+
 # Coverage Control in libFuzzer
 
 This article reveals how to control the coverage collection in libFuzzer.

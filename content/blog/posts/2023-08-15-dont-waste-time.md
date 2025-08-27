@@ -1,3 +1,7 @@
+---
+date: 2023-08-15
+---
+
 # Pitfalls, Tweaks, Tricks in Research and Development
 
 Waste less time = Gain more time!

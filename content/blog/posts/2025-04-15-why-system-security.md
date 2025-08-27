@@ -1,3 +1,7 @@
+---
+date: 2025-04-15
+---
+
 # A simple guide to system security survival
 
 >Polished by ChatGPT

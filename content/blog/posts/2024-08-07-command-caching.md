@@ -1,3 +1,7 @@
+---
+date: 2024-08-07
+---
+
 # Bash command hashing
 
 Reference:

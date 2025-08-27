@@ -1,3 +1,7 @@
+---
+date: 2022-06-22
+---
+
 # Windows, Windows Subsystem Linux (WSL), VirtualBox Ubuntu, Native Ubuntu
 
 I'm thinking about which solution is better for research and development.

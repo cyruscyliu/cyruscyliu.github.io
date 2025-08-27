@@ -1,3 +1,7 @@
+---
+date: 2020-11-18
+---
+
 # Buildroot, QEMU and Linux kernel for x86_64
 
 How to build a minimum Linux kernel with customized rootfs and run it with QEMU?

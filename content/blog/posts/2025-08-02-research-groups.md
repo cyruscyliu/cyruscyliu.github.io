@@ -1,3 +1,7 @@
+---
+date: 2025-08-02
+---
+
 # Manage of research lab
 
 三方面：物品/人员/项目

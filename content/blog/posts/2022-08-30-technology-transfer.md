@@ -1,3 +1,7 @@
+---
+date: 2022-08-30
+---
+
 # Technology Transfer and Practices Under Control
 
 Technology transfer is part of our research and will give feedback to our

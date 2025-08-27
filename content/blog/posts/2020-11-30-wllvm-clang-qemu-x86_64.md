@@ -1,3 +1,7 @@
+---
+date: 2020-11-30
+---
+
 # Clang, wllvm, passes, QEMU/Linux kernel for x86_64
 
 Building QEMU/Linux kernel with Clang enables running LLVM passes on these code

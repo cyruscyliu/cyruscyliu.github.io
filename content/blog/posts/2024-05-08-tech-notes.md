@@ -1,3 +1,7 @@
+---
+date: 2024-05-08
+---
+
 # Tech notes on 20240508
 
 + [Exploring Linux's New Random Kmalloc Caches](https://sam4k.com/exploring-linux-random-kmalloc-caches/)

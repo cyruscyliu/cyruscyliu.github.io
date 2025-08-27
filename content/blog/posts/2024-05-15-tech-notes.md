@@ -1,3 +1,7 @@
+---
+date: 2024-05-15
+---
+
 # Tech notes on 20240513
 
 + How does script interpreter work?

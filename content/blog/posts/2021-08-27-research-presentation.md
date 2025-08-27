@@ -1,3 +1,7 @@
+---
+date: 2021-08-27
+---
+
 # Research Presentation
 
 Making <u>__c__</u>lear, <u>__e__</u>ngaging, and <u>__p__</u>ursuasive oral

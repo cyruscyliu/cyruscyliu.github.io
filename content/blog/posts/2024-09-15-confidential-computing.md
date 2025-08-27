@@ -1,3 +1,7 @@
+---
+date: 2024-09-15
+---
+
 # Quick notes about confidential computing
 
 ## Intel TDX
