@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 ## Pinned
 
 + [A simple guide to system security survival](posts/2025-04-15-why-system-security.md)

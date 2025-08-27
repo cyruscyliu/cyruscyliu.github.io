@@ -13,8 +13,16 @@ theme:
           toggle:
             icon: material/weather-sunny
             name: Switch to light mode
+    logo: logo.png
+    favicon: logo.png
     features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.tracking
     - navigation.footer
+    - navigation.path
+    - navigation.top
+    - toc.integrate
     - footer.prev_next
     - revision.date
     - revision.history
@@ -48,8 +56,8 @@ site_name: Qiang Liu's Homepage
 site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
 nav:
     - Home: 'index.md'
-    - Posts: 'posts.md'
 plugins:
+  - blog
   - git-revision-date 
   - git-revision-date-localized
 copyright: "Copyright &copy; 2018 - 2025, Qiang Liu. All rights reserved."
