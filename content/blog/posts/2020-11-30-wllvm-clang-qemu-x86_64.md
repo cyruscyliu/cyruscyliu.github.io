@@ -1,5 +1,7 @@
 ---
 date: 2020-11-30
+categories:
+    - Tech Notes
 ---
 
 # Clang, wllvm, passes, QEMU/Linux kernel for x86_64

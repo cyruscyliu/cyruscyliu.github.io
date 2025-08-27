@@ -13,31 +13,29 @@ theme:
           toggle:
             icon: material/weather-sunny
             name: Switch to light mode
+    # custom_dir: overrides
     logo: logo.png
     favicon: logo.png
     features:
-    - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.tracking
     - navigation.footer
     - navigation.path
     - navigation.top
+    - navigation.indexes
     - toc.integrate
     - footer.prev_next
     - revision.date
     - revision.history
 extra:
     social:
-        - icon: simple/readdotcv
-          link: Qiang_s_CV.pdf
-        - icon: simple/googlescholar
-          link: https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en
-        - icon: simple/mailboxdotorg
+        - icon: material/email
           link: mailto:cyruscyliu@gmail.com
-        - icon: simple/github
-          link: https://github.com/cyruscyliu
+        - icon: fontawesome/brands/linkedin
+          link: https://www.linkedin.com/in/qiangliu15/
         - icon: simple/wechat
           link: weixin://dl/chat?ocat01
+        - icon: simple/github
+          link: https://github.com/cyruscyliu
     generator: false
     analytics:
         provider: google
@@ -52,12 +50,14 @@ markdown_extensions:
         emoji_index: !!python/name:material.extensions.emoji.twemoji
         emoji_generator: !!python/name:material.extensions.emoji.to_svg
 docs_dir: content
-site_name: Qiang Liu's Homepage
+site_name: Qiang Liu - Researcher in System Security | Problem Solver
 site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
 nav:
     - Home: 'index.md'
+    - Blog:
+      - blog/index.md
+    - Projects: 'projects.md'
 plugins:
-  - blog
-  - git-revision-date 
-  - git-revision-date-localized
+  - blog:
+      blog_toc: true
 copyright: "Copyright &copy; 2018 - 2025, Qiang Liu. All rights reserved."

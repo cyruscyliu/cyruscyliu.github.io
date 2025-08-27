@@ -1,5 +1,7 @@
 ---
 date: 2021-10-22
+categories:
+    - Tech Notes
 ---
 
 # CS-725 Presentation - Fuzz Testing

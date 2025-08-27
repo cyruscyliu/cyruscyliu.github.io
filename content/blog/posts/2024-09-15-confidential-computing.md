@@ -1,5 +1,7 @@
 ---
 date: 2024-09-15
+categories:
+    - Tech Notes
 ---
 
 # Quick notes about confidential computing

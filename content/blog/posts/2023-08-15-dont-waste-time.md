@@ -1,5 +1,7 @@
 ---
 date: 2023-08-15
+categories:
+    - Tech Notes
 ---
 
 # Pitfalls, Tweaks, Tricks in Research and Development

@@ -1,5 +1,7 @@
 ---
 date: 2021-08-18
+categories:
+    - Tech Notes
 ---
 
 # Display in QEMU

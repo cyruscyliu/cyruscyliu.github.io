@@ -1,5 +1,6 @@
 ---
 date: 2022-08-30
+pin: true
 ---
 
 # Technology Transfer and Practices Under Control

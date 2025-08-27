@@ -1,5 +1,7 @@
 ---
 date: 2021-11-02
+categories:
+    - Tech Notes
 ---
 
 # Coverage Control in libFuzzer

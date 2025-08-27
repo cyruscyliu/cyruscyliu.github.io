@@ -1,5 +1,7 @@
 ---
 date: 2020-11-18
+categories:
+    - Tech Notes
 ---
 
 # Buildroot, QEMU and Linux kernel for x86_64

@@ -1,5 +1,7 @@
 ---
 date: 2024-05-29
+categories:
+    - Tech Notes
 ---
 
 # [KVM/ARM](https://dl.acm.org/doi/pdf/10.1145/2644865.2541946)

@@ -1,5 +1,7 @@
 ---
 date: 2022-05-17
+categories:
+    - Tech Notes
 ---
 
 # A layered experiment environment

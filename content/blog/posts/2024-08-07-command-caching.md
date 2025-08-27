@@ -1,5 +1,7 @@
 ---
 date: 2024-08-07
+categories:
+    - Tech Notes
 ---
 
 # Bash command hashing

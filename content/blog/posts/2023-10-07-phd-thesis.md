@@ -1,5 +1,7 @@
 ---
 date: 2023-10-07
+categories:
+    - Tech Notes
 ---
 
 # Ph.D. Thesis

@@ -1,5 +1,7 @@
 ---
 date: 2024-05-15
+categories:
+    - Tech Notes
 ---
 
 # Tech notes on 20240513

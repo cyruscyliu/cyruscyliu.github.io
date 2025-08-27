@@ -1,5 +1,7 @@
 ---
 date: 2021-10-27
+categories:
+    - Tech Notes
 ---
 
 # Introduction to Bhyve

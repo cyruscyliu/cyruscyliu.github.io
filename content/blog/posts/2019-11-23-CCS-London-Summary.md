@@ -1,5 +1,7 @@
 ---
 date: 2019-11-23
+categories:
+    - Diary
 ---
 
 # Summary of CCS'19 (London)

@@ -1,5 +1,7 @@
 ---
 date: 2024-10-20
+categories:
+    - Tech Notes
 ---
 
 # Control flow of KVM
