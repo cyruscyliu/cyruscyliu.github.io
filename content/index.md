@@ -2,19 +2,18 @@
 hide:
   - navigation
   - toc
-  - footer
 ---
 
 # Securing the Computing, Together
 
->From research to reality, I help security researchers, security
-seekers, and the public shape open and trustworthy computing.
+>From research to reality, I work with researchers, companies, and
+the public to shape open and trustworthy computing.
 
-## Researcher | Seeker | Everyone
+## To Researchers | Companies | Educational Organizations
 
-+ 🎓 Explore my [projects](./projects.md) and reach out if you want to collaborate
-+ 💼 See my [services](./services.md) and reach out if you are running into system security problems
-+ 🌍 Read my [blogs](./blog/index.md) if you’re curious about securing your digital life with good habits
++ 🎓 Explore my [projects](projects/index.md) if you want to collaborate
++ 💼 See my [services](./services.md) if you are running into system security problems
++ 🌍 Read my [blogs](./blog/index.md) if you are curious about securing your digital life with good habits
 
 ## Achievements
 

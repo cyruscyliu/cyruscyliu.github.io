@@ -18,7 +18,6 @@ theme:
     favicon: logo.png
     features:
     - navigation.tracking
-    - navigation.footer
     - navigation.path
     - navigation.top
     - navigation.indexes
@@ -58,11 +57,12 @@ site_name: Qiang Liu - System Security | Problem Solver
 site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
 nav:
     - Home: index.md
-    - Projects: projects.md
+    - Projects: projects/index.md
     - Services: services.md
     - Blog:
       - blog/index.md
 plugins:
   - blog:
       blog_toc: true
+      post_excerpt: optional
 copyright: "Copyright &copy; 2018 - 2025, Qiang Liu. All rights reserved."
