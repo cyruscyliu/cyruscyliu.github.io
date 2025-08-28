@@ -1,0 +1,30 @@
+{# overrides/partials/footer.html #}
+{% set hides = [] %}
+{% if page and page.meta and page.meta.hide %}
+  {% set hides = page.meta.hide %}
+  {% if hides is string %}
+    {% set hides = [hides] %}
+  {% endif %}
+{% endif %}
+
+<footer class="md-footer">
+  {# show navigation bar unless 'hide: - footer' is set #}
+  {% if "footer" not in hides %}
+  <nav class="md-footer__inner md-grid">
+    <a href="{{ base_url }}/" class="md-footer__link md-footer__link--prev" aria-label="Home">
+      <div class="md-footer__button md-icon">
+        {% include ".icons/material/home.svg" %}
+      </div>
+      <div class="md-footer__title"><div class="md-ellipsis">Home</div></div>
+    </a>
+  </nav>
+  {% endif %}
+
+  {# always show the meta bar #}
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      {% include "partials/social.html" %}
+      {% include "partials/copyright.html" %}
+    </div>
+  </div>
+</footer>

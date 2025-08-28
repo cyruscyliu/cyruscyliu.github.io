@@ -13,13 +13,14 @@ theme:
           toggle:
             icon: material/weather-sunny
             name: Switch to light mode
-    # custom_dir: overrides
+    custom_dir: overrides
     logo: logo.png
     favicon: logo.png
     features:
     - navigation.tracking
     - navigation.path
     - navigation.top
+    - navigation.footer
     - navigation.indexes
     - toc.integrate
     - footer.prev_next
@@ -39,6 +40,8 @@ extra:
     analytics:
         provider: google
         property: G-KWJ9PWFFMZ
+# extra_css:
+    # - assets/stylesheets/extra.css
 markdown_extensions:
     - footnotes
     - toc:
@@ -59,10 +62,11 @@ nav:
     - Home: index.md
     - Projects: projects/index.md
     - Services: services.md
-    - Blog:
+    - Blogs:
       - blog/index.md
 plugins:
   - blog:
       blog_toc: true
       post_excerpt: optional
+  - tags
 copyright: "Copyright &copy; 2018 - 2025, Qiang Liu. All rights reserved."
