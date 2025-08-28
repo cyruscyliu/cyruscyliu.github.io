@@ -46,17 +46,22 @@ markdown_extensions:
         permalink: "#"
         permalink_title: Do what you think is right
     - attr_list
+    - md_in_html
     - pymdownx.emoji:
         emoji_index: !!python/name:material.extensions.emoji.twemoji
         emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
 docs_dir: content
-site_name: Qiang Liu - Researcher in System Security | Problem Solver
+site_name: Qiang Liu - System Security | Problem Solver
 site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
 nav:
-    - Home: 'index.md'
+    - Home: index.md
+    - Projects: projects.md
+    - Services: services.md
     - Blog:
       - blog/index.md
-    - Projects: 'projects.md'
 plugins:
   - blog:
       blog_toc: true
