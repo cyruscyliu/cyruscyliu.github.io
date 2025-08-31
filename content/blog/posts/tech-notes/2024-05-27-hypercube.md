@@ -6,6 +6,8 @@ categories:
 
 # Notes about HyperCubeOS for x86_64
 
+<!-- more -->
+
 There are some notes when I update
 [HyperCubeOS](https://github.com/RUB-SysSec/Hypercube) to support x86_64.
 

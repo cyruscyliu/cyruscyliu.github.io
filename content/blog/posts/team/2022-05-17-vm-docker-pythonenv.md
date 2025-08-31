@@ -6,6 +6,8 @@ categories:
 
 # A layered experiment environment
 
+<!-- more -->
+
 In the places where I worked during the last five years, I've suffered a lot
 from "different computation infrastructure". One place has two physical servers
 with Ubuntu installed, another place has only one physical server but uses PVE

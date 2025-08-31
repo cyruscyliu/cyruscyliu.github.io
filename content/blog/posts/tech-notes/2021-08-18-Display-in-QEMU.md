@@ -10,6 +10,8 @@ Gerd Hoffmann has introduced graphics in QEMU here and there[^1], and in this
 article, I will do some basic introduction about QEMU displays and QEMU consoles
 with QEMU code (QEMU 6.1.0-rc3).
 
+<!-- more -->
+
 ## QEMU Displays
 
 QEMU displays are a set of display change listeners with the support of text or

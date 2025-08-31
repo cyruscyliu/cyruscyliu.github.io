@@ -8,6 +8,8 @@ categories:
 
 I'm thinking about which solution is better for research and development.
 
+<!-- more -->
+
 ## Windows v.s Ubuntu
 
 After running Ubuntu on a native machine, I've been using Windows for years. The

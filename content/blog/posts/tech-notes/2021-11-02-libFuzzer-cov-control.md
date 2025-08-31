@@ -8,6 +8,8 @@ categories:
 
 This article reveals how to control the coverage collection in libFuzzer.
 
+<!-- more -->
+
 ## How to use libFuzzer?
 
 To use libFuzzer, it is necessary to develop a fuzz target. Please refer to

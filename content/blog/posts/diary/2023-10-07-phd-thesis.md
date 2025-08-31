@@ -1,10 +1,14 @@
 ---
 date: 2023-10-07
 categories:
-    - tech-notes
+    - diary
 ---
 
 # Ph.D. Thesis
+
+Please download [my thesis](zjuthesis-20231007.pdf) and [slides](PhD-Defense.pdf).
+
+<!-- more -->
 
 The Internet of Things (IoT) is widely used in our daily life. Among them,
 Linux-based IoT devices are the most prevalent and of high security risks, and

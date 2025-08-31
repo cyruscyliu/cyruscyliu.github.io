@@ -1,6 +1,12 @@
 ---
 date: 2022-02-08
+categories:
+    - diary
 ---
+
+# 社会学读书笔记
+
+<!-- more -->
 
 ## Lesson 1
 

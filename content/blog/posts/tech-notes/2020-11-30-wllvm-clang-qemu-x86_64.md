@@ -7,9 +7,12 @@ categories:
 # Clang, wllvm, passes, QEMU/Linux kernel for x86_64
 
 Building QEMU/Linux kernel with Clang enables running LLVM passes on these code
-and performing static analysis. One option is to run the passes during the
-compilation, the other is to run the passes (opt) on an generated LLVM bitcode
-file (wllvm).
+and performing static analysis.
+
+<!-- more -->
+
+One option is to run the passes during the compilation, the other is to run the
+passes (opt) on an generated LLVM bitcode file (wllvm).
 
 This blog is planning to show both, but with limited time bugdet, I will first
 explain how to run the passes on the generated bitcode files.

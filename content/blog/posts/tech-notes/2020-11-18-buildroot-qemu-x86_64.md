@@ -8,6 +8,8 @@ categories:
 
 How to build a minimum Linux kernel with customized rootfs and run it with QEMU?
 
+<!-- more -->
+
 ## Download Buildroot
 
 Please go [here](https://buildroot.org/download.html) to download the latest

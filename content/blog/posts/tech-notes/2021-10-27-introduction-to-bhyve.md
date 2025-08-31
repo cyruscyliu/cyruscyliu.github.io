@@ -9,6 +9,8 @@ categories:
 In this short article, I'm going to introduce what is Bhyve, how it works, and
 how to modify it.
 
+<!-- more -->
+
 ## What is Bhyve?[^1][^2][^3]
 
 + Bhyve, pronounced "beehive", is a hypervisor for FreeBSD.
