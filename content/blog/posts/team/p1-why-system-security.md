@@ -6,7 +6,7 @@ categories:
 
 # Doing Research - Part 1: A simple guide to system security survival
 
->Polished by ChatGPT
+<!-- more -->
 
 System security is the practice of defending computer systems from threats like
 vulnerabilities and attacks through safeguard technologies. It sounds noble—and
@@ -14,8 +14,6 @@ it is—but let’s be honest: system security is notoriously hard to start,
 exhausting to progress, and often too fragile to survive.
 
 So why do we still do it?
-
-<!-- more -->
 
 I believe it's because we're genuinely drawn to it. But seriously—why are we
 still doing system security, when so many forces seem against it?

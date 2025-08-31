@@ -1,13 +1,12 @@
 ---
-date: 2021-08-27
+date: 2025-04-20
 categories:
     - how-to-do-research-series
-tags:
-  - hypervisor
-  - firmware
 ---
 
 # Doing Research - Part 6: How to Do Research Presentation
+
+<!-- more -->
 
 Making <u>__c__</u>lear, <u>__e__</u>ngaging, and <u>__p__</u>ursuasive oral
 representations is one of the keys to staying competitive, especially in front

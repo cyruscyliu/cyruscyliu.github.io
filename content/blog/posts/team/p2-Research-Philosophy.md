@@ -1,12 +1,10 @@
 ---
-date: 2021-09-07
+date: 2025-04-16
 categories:
     - how-to-do-research-series
 ---
 
 # Doing Research - Part 2: How to do system security research?
-
-<!-- more -->
 
 ## What is system security?
 
@@ -14,6 +12,8 @@ We aims to break and protect the assets that leverage hardware and software to
 provide widely-used services, such as browsers, compilers/interpreters, network
 protocols, operating systems, hypervisors, trust execution environment, and
 processors, based on thread models that define who will be trusted or not.
+
+<!-- more -->
 
 ### Algorithms
 

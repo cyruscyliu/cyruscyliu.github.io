@@ -1,12 +1,14 @@
 ---
-date: 2023-08-15
+date: 2025-04-22
 categories:
-    - tech-notes
+    - how-to-do-research-series
 ---
 
-# Pitfalls, Tweaks, Tricks in Research and Development
+# Doing Research - Part 9: Pitfalls, Tweaks, Tricks in Research and Development
 
 Waste less time = Gain more time!
+
+<!-- more -->
 
 ## Avoid re-doing the same things twice
 

@@ -1,13 +1,15 @@
 ---
-date: 2021-09-03
+date: 2025-04-18
 categories:
     - how-to-do-research-series
 ---
 
-# Doing Research - Part 6: Build the knowledge database
+# Doing Research - Part 4: Build the knowledge database
 
 I'd like to build the knowledge database which can be accessed by any system
 security scholars, which will save a lot of their time.
+
+<!-- more -->
 
 However, this knowledge database cannot offer creativity.
 

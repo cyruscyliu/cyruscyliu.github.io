@@ -1,5 +1,5 @@
 ---
-date: 2021-09-03
+date: 2025-04-19
 categories:
     - how-to-do-research-series
 ---
@@ -7,6 +7,8 @@ categories:
 # Doing Research - Part 5: Coding for System Security Research
 
 Solid implementation in limited time makes us competitive in research.
+
+<!-- more -->
 
 - Artifact evaluation is introduced to overcome the "reproducibility issue".
 - The security community is third times than five years ago.

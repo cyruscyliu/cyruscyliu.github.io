@@ -1,10 +1,12 @@
 ---
-date: 2025-04-29
+date: 2025-04-24
+categories:
+    - how-to-do-research-series
 ---
 
-# Crisis of Prosperit: Internal Shortcuts and External Setbacks
+# Doing Research - Part 10: Crisis of Prosperit: Internal Shortcuts and External Setbacks
 
->Polished by ChatGPT
+<!-- more -->
 
 **Academic prosperity? In reality, it’s bad money driving out good.** The
 growing number of students in cybersecurity research has led to a surge in paper

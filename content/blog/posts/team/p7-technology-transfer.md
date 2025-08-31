@@ -1,9 +1,12 @@
 ---
-date: 2022-08-30
-pin: true
+date: 2025-04-21
+categories:
+    - how-to-do-research-series
 ---
 
-# Technology Transfer and Practices Under Control
+# Doing Research - Part 7: Technology Transfer and Practices Under Control
+
+<!-- more -->
 
 Technology transfer is part of our research and will give feedback to our
 research. Theoretical analysis will be omitted here. In practice, (but I still
