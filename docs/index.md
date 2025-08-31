@@ -12,9 +12,9 @@ the public to shape open and trustworthy computing.
 
 ## To Researchers | Companies | Educational Organizations
 
-+ 🎓 Explore my [projects](projects/index.md) if you want to collaborate
++ 🎓 Explore my [projects](projects/index.md) to collaborate
 + 💼 See my [services](./services.md) if you are running into system security problems
-+ 🌍 Read my [blogs](./blog/index.md) if you are curious about securing your digital life with good habits
++ 🌍 Read my [blogs](./blog/index.md) about securing your digital life with good habits
 
 ## Achievements
 
