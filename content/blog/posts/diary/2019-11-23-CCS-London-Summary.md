@@ -6,6 +6,8 @@ categories:
 
 # CCS'19 伦敦之行
 
+<!-- more -->
+
 计算机和通信安全会议 (ACM Conference on Computer and Communications Security, CCS) 是安全领域的老牌顶级国际会议，它与S&P、Usenix Security和NDSS并称为安全四大会。CCS是SIGSAC和美国通信协会组织ACM举办的年度旗舰会议，它汇集了来自世界各地的信息安全研究人员、从业人员、开发人员和用户, 探索前沿的想法和结果。CCS 2019来到了泰晤士河畔古老又现代的伦敦，本次CCS会议共接收论文149篇，涵盖了隐私数据安全、移动安全、云安全、机器学习安全、密码学、可信计算和区块链安全等主题。三天的main conference共安排了50个session。其中安全计算（Secure Computation）安排了5个session，区块链安全（Blockchain）安排了4个，机器学习安全（ML Security）和形式化分析（Formal Analysis）各安排了3个，这些session的数量能够反映出当下较为热门的研究方向。除了main conference之外，会议还安排了相关workshop、poster和panel discussion等环节供研究者交流其他的前沿研究。
 
 参加顶会让我受益良多。主要归结为两个问题，第一是语言问题；第二是“顶会”、“顶级研究”、“顶级研究者”和“顶级研究机构”出现在我面前时自己的思考。

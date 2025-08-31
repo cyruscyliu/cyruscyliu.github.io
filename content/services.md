@@ -14,10 +14,10 @@ hide:
 
 # Services
 
-## Hypervisor Fuzzing
+## Hypervisor Security 
 
-WIP
+- Consulting
 
 ## Dynamic Firmware Analysis
 
-WIP
+- Consulting

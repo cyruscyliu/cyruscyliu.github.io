@@ -22,6 +22,7 @@ theme:
     - navigation.top
     - navigation.footer
     - navigation.indexes
+    - navigation.expand
     - toc.integrate
     - footer.prev_next
     - revision.date
@@ -71,6 +72,7 @@ nav:
     - Services: services.md
     - Blogs:
       - blog/index.md
+      - Tags: blog/tags.md
 plugins:
   - blog:
       blog_toc: true

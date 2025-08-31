@@ -2,6 +2,9 @@
 date: 2021-08-27
 categories:
     - how-to-do-research-series
+tags:
+  - hypervisor
+  - firmware
 ---
 
 # Doing Research - Part 6: How to Do Research Presentation
