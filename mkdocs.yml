@@ -13,7 +13,7 @@ theme:
           toggle:
             icon: material/weather-sunny
             name: Switch to light mode
-    custom_dir: overrides
+    # custom_dir: overrides
     logo: logo.png
     favicon: logo.png
     features:
@@ -28,20 +28,27 @@ theme:
     - revision.history
 extra:
     social:
+        - icon: material/home
+          link: /
+          name: Home
         - icon: material/email
           link: mailto:cyruscyliu@gmail.com
         - icon: fontawesome/brands/linkedin
           link: https://www.linkedin.com/in/qiangliu15/
         - icon: simple/wechat
           link: weixin://dl/chat?ocat01
+        - icon: material/file-account
+          link: Qiang_s_CV.pdf
+        - icon: simple/googlescholar
+          link: https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en
         - icon: simple/github
           link: https://github.com/cyruscyliu
     generator: false
     analytics:
         provider: google
         property: G-KWJ9PWFFMZ
-# extra_css:
-    # - assets/stylesheets/extra.css
+extra_css:
+    - stylesheets/extra.css
 markdown_extensions:
     - footnotes
     - toc:
