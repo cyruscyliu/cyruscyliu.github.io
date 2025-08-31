@@ -20,7 +20,7 @@ WIP
 - [Part 2](posts/team/p2-Research-Philosophy.md)
 - [Part 3](posts/team/p3-literature-review.md)
 - [Part 4](posts/team/p4-knowledge-for-research.md)
-- [Part 5](posts/team/p5--Summary-Research-SE.md)
+- [Part 5](posts/team/p5-Summary-Research-SE.md)
 - [Part 6](posts/team/p6-research-presentation.md)
 - [Part 7](posts/team/p7-technology-transfer.md)
 - [Part 8](posts/team/p8-dont-waste-time.md)

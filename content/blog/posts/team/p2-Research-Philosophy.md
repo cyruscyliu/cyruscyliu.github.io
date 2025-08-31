@@ -118,7 +118,7 @@ arrogant and remember your personal experience is biased.
 - Review papers, run their systems, and summarize (RW)
 - Identify challenges and evaluate solutions in theory (challenges, insights, solutions)
 - Design system and evaluate design choices in theory (design)
-- [Coding](./2021-09-03-Summary-Research-SE.md) and write evaluation scripts (IMPL, evaluation)
+- [Coding](p5-Summary-Research-SE.md) and write evaluation scripts (IMPL, evaluation)
 - Write the paper at the same time and get feedback from others
 
 ### Do evaluation
