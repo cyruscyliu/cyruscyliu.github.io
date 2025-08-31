@@ -12,12 +12,8 @@ hide:
   .md-content__button { display: none !important; }
 </style>
 
-# Services
-
 ## Hypervisor Security 
-
 - Consulting
 
 ## Dynamic Firmware Analysis
-
 - Consulting

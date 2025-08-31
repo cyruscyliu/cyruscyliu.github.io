@@ -12,7 +12,7 @@ hide:
   .md-content__button { display: none !important; }
 </style>
 
-## Prototypes
+## Projects
 
 <div class="grid cards" markdown>
 
@@ -28,7 +28,7 @@ hide:
     compilers, operating systems, hypervisors, and heterogeneous hardware such
     as GPUs.
 
-    [:octicons-arrow-right-24: Machine Learning Model Obfuscation](ai-syssec.md#machine-learning-model-obfuscation)
+    [:octicons-arrow-right-24: aisyssec-1: Machine Learning Model Obfuscation](ai-syssec.md#machine-learning-model-obfuscation)
 
 -   :material-brain:{ .lg .middle } __AI for System Understanding__
 
@@ -44,7 +44,7 @@ hide:
 
     <!-- [:octicons-arrow-right-24: Customization](#) -->
 
--   :material-dock-bottom:{ .lg .middle } __Security Shift: from Defense to Resilience__
+-   :material-dock-bottom:{ .lg .middle } __Beyond Defense: Toward Resilience__
 
     ---
 
@@ -58,10 +58,10 @@ hide:
 
 </div>
 
-## Surveys
+## Others
 
-[:octicons-arrow-right-24: Beyond the Sample Firmware: Survey of Embedded System Security](surveys.md/#beyond-the-sample-firmware-survey-of-embedded-system-security)  
-[:octicons-arrow-right-24: Trust Across the Skies: Survey of All-Altitude Aero-Space Security](surveys.md/#trust-across-the-skies-survey-of-all-altitude-aero-space-security)  
+[:octicons-arrow-right-24: embdsec-1: Beyond the Sample Firmware: Survey of Embedded System Security](surveys.md/#beyond-the-sample-firmware-survey-of-embedded-system-security)  
+[:octicons-arrow-right-24: embdsec-2: Trust Across the Skies: Survey of All-Altitude Aero-Space Security](surveys.md/#trust-across-the-skies-survey-of-all-altitude-aero-space-security)  
 <!-- [:octicons-arrow-right-24: Hacking Culture](surveys.md#hacking-culture) -->
 
 <!--
