@@ -1,0 +1,34 @@
+.md-main__inner {
+  margin: 0 auto;   /* center */
+  padding: 0 20px;  /* horizontal padding */
+}
+
+/* Adjust spacing for paragraphs globally */
+.md-typeset p {
+  margin-bottom: 1em;  /* increase/decrease vertical margin */
+}
+
+.md-social {
+  padding: 0
+}
+
+.md-footer__link {
+  margin: 0;
+}
+
+.md-footer__button {
+  padding: 0
+}
+
+.md-footer__title {
+  padding: 0;
+  padding-left: 2pt;
+  margin: auto;
+  max-width: 100%;
+}
+
+.md-footer-meta__inner {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}

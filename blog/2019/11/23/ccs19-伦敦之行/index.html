@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/">
+        <link rel="canonical" href="https://github.com/cyruscyliu/cyruscyliu.github.io/blog/2019/11/23/ccs19-%E4%BC%A6%E6%95%A6%E4%B9%8B%E8%A1%8C/">
       
       
+        <link rel="prev" href="../../../../2018/04/07/%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%8436%E5%A4%A9/">
       
-        <link rel="next" href="projects/">
+      
+        <link rel="next" href="../../../../2020/11/18/buildroot-qemu-and-linux-kernel-for-x86_64/">
       
       
-      <link rel="icon" href="logo.png">
+      <link rel="icon" href="../../../../../logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
-        <title>Qiang Liu - System Security | Problem Solver</title>
+        <title>CCS'19 伦敦之行 - Qiang Liu - System Security | Problem Solver</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -84,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#securing-the-computing-together" class="md-skip">
+        <a href="#ccs19" class="md-skip">
           Skip to content
         </a>
       
@@ -100,9 +102,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Qiang Liu - System Security | Problem Solver" class="md-header__button md-logo" aria-label="Qiang Liu - System Security | Problem Solver" data-md-component="logo">
+    <a href="../../../../.." title="Qiang Liu - System Security | Problem Solver" class="md-header__button md-logo" aria-label="Qiang Liu - System Security | Problem Solver" data-md-component="logo">
       
-  <img src="logo.png" alt="logo">
+  <img src="../../../../../logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -119,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              CCS'19 伦敦之行
             
           </span>
         </div>
@@ -187,9 +189,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Qiang Liu - System Security | Problem Solver" class="md-nav__button md-logo" aria-label="Qiang Liu - System Security | Problem Solver" data-md-component="logo">
+    <a href="../../../../.." title="Qiang Liu - System Security | Problem Solver" class="md-nav__button md-logo" aria-label="Qiang Liu - System Security | Problem Solver" data-md-component="logo">
       
-  <img src="logo.png" alt="logo">
+  <img src="../../../../../logo.png" alt="logo">
 
     </a>
     Qiang Liu - System Security | Problem Solver
@@ -201,32 +203,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
         
   
   
@@ -237,53 +217,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#to-researchers-companies-educational-organizations" class="md-nav__link">
-    <span class="md-ellipsis">
-      To Researchers | Companies | Educational Organizations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#achievements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Achievements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bio-and-contacts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bio and Contacts   
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -295,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/" class="md-nav__link">
+      <a href="../../../../../projects/" class="md-nav__link">
         
   
   
@@ -317,7 +250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="services/" class="md-nav__link">
+      <a href="../../../../../services/" class="md-nav__link">
         
   
   
@@ -336,6 +269,8 @@
       
   
   
+    
+  
   
   
     
@@ -355,17 +290,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="blog/" class="md-nav__link ">
+            <a href="../../../../" class="md-nav__link ">
               
   
   
@@ -384,7 +317,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -400,7 +333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/tags/" class="md-nav__link">
+      <a href="../../../../tags/" class="md-nav__link">
         
   
   
@@ -483,7 +416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2025/" class="md-nav__link">
+      <a href="../../../../archive/2025/" class="md-nav__link">
         
   
   
@@ -508,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2024/" class="md-nav__link">
+      <a href="../../../../archive/2024/" class="md-nav__link">
         
   
   
@@ -533,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2023/" class="md-nav__link">
+      <a href="../../../../archive/2023/" class="md-nav__link">
         
   
   
@@ -558,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2022/" class="md-nav__link">
+      <a href="../../../../archive/2022/" class="md-nav__link">
         
   
   
@@ -583,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2021/" class="md-nav__link">
+      <a href="../../../../archive/2021/" class="md-nav__link">
         
   
   
@@ -608,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2020/" class="md-nav__link">
+      <a href="../../../../archive/2020/" class="md-nav__link">
         
   
   
@@ -633,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2019/" class="md-nav__link">
+      <a href="../../../../archive/2019/" class="md-nav__link">
         
   
   
@@ -658,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2018/" class="md-nav__link">
+      <a href="../../../../archive/2018/" class="md-nav__link">
         
   
   
@@ -739,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/diary/" class="md-nav__link">
+      <a href="../../../../category/diary/" class="md-nav__link">
         
   
   
@@ -764,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/how-to-do-research-series/" class="md-nav__link">
+      <a href="../../../../category/how-to-do-research-series/" class="md-nav__link">
         
   
   
@@ -789,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/tech-notes/" class="md-nav__link">
+      <a href="../../../../category/tech-notes/" class="md-nav__link">
         
   
   
@@ -829,68 +762,125 @@
             
           
           
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-                  
-  
-
-
-
-
-<h1 id="securing-the-computing-together">Securing the Computing, Together<a class="headerlink" href="#securing-the-computing-together" title="Do what you think is right">#</a></h1>
-<blockquote>
-<p>From research to reality, I work with researchers, companies, and
-the public to shape open and trustworthy computing.</p>
-</blockquote>
-<h2 id="to-researchers-companies-educational-organizations">To Researchers | Companies | Educational Organizations<a class="headerlink" href="#to-researchers-companies-educational-organizations" title="Do what you think is right">#</a></h2>
-<ul>
-<li>🎓 Explore my <a href="projects/">projects</a> if you want to collaborate</li>
-<li>💼 See my <a href="services/">services</a> if you are running into system security problems</li>
-<li>🌍 Read my <a href="blog/">blogs</a> if you are curious about securing your digital life with good habits</li>
-</ul>
-<h2 id="achievements">Achievements<a class="headerlink" href="#achievements" title="Do what you think is right">#</a></h2>
-<ul>
-<li>🛠️ Grammar-based Arbitrary Hypervisor Fuzzing Framework
-(<a href="https://github.com/HexHive/HyperPill">HyperPill</a>[<a href="papers/hyperpill-sec24.pdf">SEC24</a>]/<a href="https://github.com/HexHive/videzzo">ViDeZZo</a>[<a href="papers/videzzo-sp23.pdf">SP23</a>]/<a href="https://github.com/vul337/Truman">Truman</a><a href="papers/truman-ndss25.pdf">[NDSS25]</a>)</li>
-<li>🛠️ Full System Rehosting of Linux-Based Firmware
-(<a href="https://github.com/cyruscyliu/firmguide">FirmGuide</a>[<a href="papers/firmguide-ase21.pdf">ASE21</a>]/<a href="https://github.com/valour01/ecmo">ECMO</a>[<a href="papers/ecmo-ccs21.pdf">CCS21</a>])</li>
-<li>🏆 HyperPill won the best paper award at USENIX Security'24</li>
-<li>🏆 Tango won the best paper award at ACM RAID'24</li>
-</ul>
-<h2 id="bio-and-contacts">Bio and Contacts <a href="mailto:cyruscyliu@gmail.com"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></svg></span></a> <a href="https://www.linkedin.com/in/qiangliu15/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg></span></a> <a href="weixin://dl/chat?ocat01"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg></span></a><a class="headerlink" href="#bio-and-contacts" title="Do what you think is right">#</a></h2>
-<p>Qiang Liu is a postdoc at EPFL, working with <a href="https://nebelwelt.net/">Prof. Mathias
-Payer</a> in the HexHive laboratory. He earned his Ph.D. in
-2023 from Zhejiang University (ZJU) under the guidance of <a href="https://yajin.org/">Prof. Yajin
-Zhou</a>. His research in cybersecurity focuses on 1)
-developing prior-to/after-release security enforcement of software based on deep
-understanding, and 2) building the chain of trust examined by full-chain
-exploits. See his <a href="Qiang_s_CV.pdf">CV</a> and <a href="https://scholar.google.com/citations?user=fa1uB2sAAAAJ&amp;hl=en">Google
-Scholar</a> for more
-information.</p>
-
-
-
-
-
-
-
-  
-  
-
-
-
-  
-
-
-  
-
-
-
-                
-              </article>
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
             </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2019-11-23 00:00:00+00:00" class="md-ellipsis">November 23, 2019</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/diary/">diary</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              1 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
+            
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+
+<h1 id="ccs19">CCS'19 伦敦之行<a class="headerlink" href="#ccs19" title="Do what you think is right">#</a></h1>
+<!-- more -->
+
+<p>计算机和通信安全会议 (ACM Conference on Computer and Communications Security, CCS) 是安全领域的老牌顶级国际会议，它与S&amp;P、Usenix Security和NDSS并称为安全四大会。CCS是SIGSAC和美国通信协会组织ACM举办的年度旗舰会议，它汇集了来自世界各地的信息安全研究人员、从业人员、开发人员和用户, 探索前沿的想法和结果。CCS 2019来到了泰晤士河畔古老又现代的伦敦，本次CCS会议共接收论文149篇，涵盖了隐私数据安全、移动安全、云安全、机器学习安全、密码学、可信计算和区块链安全等主题。三天的main conference共安排了50个session。其中安全计算（Secure Computation）安排了5个session，区块链安全（Blockchain）安排了4个，机器学习安全（ML Security）和形式化分析（Formal Analysis）各安排了3个，这些session的数量能够反映出当下较为热门的研究方向。除了main conference之外，会议还安排了相关workshop、poster和panel discussion等环节供研究者交流其他的前沿研究。</p>
+<p>参加顶会让我受益良多。主要归结为两个问题，第一是语言问题；第二是“顶会”、“顶级研究”、“顶级研究者”和“顶级研究机构”出现在我面前时自己的思考。</p>
+<p>中国学生的英语学习大致分为几个阶段，幼儿时的教育、小初时的教育、高中时的教育、大学时的教育以及工作中的自我教育。语言当然是越早学习越好，有几个关键的节点能让人有显著的提高，第一是高考，其对语法的训练是关键的，阅读能力已经具备。第二是大学，其对词汇量的提高是重要的。如果在大学期间，有时间和金钱报考雅思、托福和GRE，那对英语的听说读写会有一个质的提高。第三是工作期间，在听力、口语以及写作会有较大的提升。以上的讨论限于正常的范围，不考虑学生参加补习班、家长是双语者或者学生在国际学校上学。就实际经验而言，在参加会议过程中，中国人讲的英语可以听懂，英语母语者讲的英语可以大致听明白，若是一些口音严重地区的人讲话，我可就不知道他们在说些什么了。结合过去的英语学习经验，和未来的英语写作需求，在研究生期间，自己对自己的英语学习还需上心。我今后，短期的计划上，应该对听力和语法强加练习，以满足听力和写作的需求。</p>
+<p>什么样的研究机构称得上顶级研究机构？CSRanking采用该研究机构在计算机科学各个领域中顶级会议上出现的正式论文或6页以上短文的数量来确定该研究机构的活跃性，排名靠前的则被成为顶级研究机构。此计算隐式地归一化了引用数量和领域大小，规避了人为引用作弊的风险。根据2019年末的最新统计结果，浙大在计算机安全领域亚洲第二，世界第40。CSRanking代码开放，所有人都可以检验其结果，较为公平公正。</p>
+<p>什么样的研究者称得上顶级研究者？这个要看一个研究者正处于什么阶段。如果他是一个博士生，在博士临近毕业的时候，考察他的研究是否具有开创新、其研究成果是否代表了这个研究领域的最新进展，如果答案都是肯定的，则其称得上是顶级研究者。在工作中，管理、服务和教学的工作增多，如果他还能保证其团队的科研质量，那么他仍然称得上是顶级的研究者，否则要考虑其他的因素带来的影响，或为顶级的管理者、顶级的教师等，不能一直称之为顶级的研究者。</p>
+<p>什么样的研究称得上为顶级研究？从操作上看，发到顶会上的研究认为是顶级研究。参加过顶会之后，顶会上论文越来越多，门类越来越多，那么顶级的研究要从“小同行”的角度考虑。有一些偏门的研究，顶会收了，但是看不到其对后来的论文的影响，或许就不好评价它，再或者如果学术委员会专门对其进行讨论，并声明其价值，倒也可以说它是一个顶级研究。总之，如果该研究在顶会上发表，开创了新的研究方向，或在既有的研究方向上有理论、方法的贡献，或有全面深刻的总结，都可以称之为顶级研究。</p>
+<p>什么样的研究称得上为顶级会议，这个问题已经被解决，计算机行业已经有自己的名义标准，而且政策上学校也不会阻碍各个实验室的具体毕业条件。</p>
+<p>讨论了这么多，可用一句话总结：革命尚未成功，同志仍需努力！</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
@@ -909,17 +899,33 @@ information.</p>
       
         
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" hidden>
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../../../2018/04/07/%E5%9C%A8%E6%9D%AD%E5%B7%9E%E7%9A%8436%E5%A4%A9/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 在杭州的36天">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                在杭州的36天
+              </div>
+            </div>
+          </a>
         
         
           
-          <a href="projects/" class="md-footer__link md-footer__link--next" aria-label="Next: Projects">
+          <a href="../../../../2020/11/18/buildroot-qemu-and-linux-kernel-for-x86_64/" class="md-footer__link md-footer__link--next" aria-label="Next: Buildroot, QEMU and Linux kernel for x86_64">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Projects
+                Buildroot, QEMU and Linux kernel for x86_64
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1027,10 +1033,10 @@ information.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.expand", "toc.integrate", "footer.prev_next", "revision.date", "revision.history"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.expand", "toc.integrate", "footer.prev_next", "revision.date", "revision.history"], "search": "../../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
