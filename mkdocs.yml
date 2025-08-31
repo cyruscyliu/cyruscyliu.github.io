@@ -63,7 +63,7 @@ markdown_extensions:
     - admonition
     - pymdownx.details
     - pymdownx.superfences
-docs_dir: content
+docs_dir: docs
 site_name: Qiang Liu - System Security | Problem Solver
 site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
 nav:
