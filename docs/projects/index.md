@@ -28,7 +28,9 @@ hide:
     compilers, operating systems, hypervisors, and heterogeneous hardware such
     as GPUs.
 
-    [:octicons-arrow-right-24: aisyssec-1: Machine Learning Model Obfuscation](ai-syssec.md#machine-learning-model-obfuscation)
+    [:octicons-arrow-right-24: aisyssec-1: ML Model Obfuscation](ai-syssec.md#machine-learning-model-obfuscation)
+    [:octicons-arrow-right-24: aisyssec-2: SoK: AI System Security]()
+    [:octicons-arrow-right-24: aisyssec-3: GPU Memory Safety]()
 
 -   :material-brain:{ .lg .middle } __AI for System Understanding__
 
@@ -53,6 +55,8 @@ hide:
     unified ecosystem and adaptable frameworks. Success is not just blocking
     attacks but achieving resilience through rapid recovery, minimal downtime,
     and sustained business continuity.
+
+    [:octicons-arrow-right-24: resilience-1: Fuzzing Not-fully Verified Code]()
 
     <!-- [:octicons-arrow-right-24: License](#) -->
 
