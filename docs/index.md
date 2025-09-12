@@ -14,9 +14,9 @@ the public to shape open and trustworthy computing.
 
 + 🎓 Explore my [projects](projects/index.md) to collaborate
 + 💼 See my [services](./services.md) if you are running into system security problems
-+ 🌍 Read my [blogs](./blog/index.md) about securing your digital life with good habits
++ 🌍 Read my [books](./books/index.md) about securing your digital life with good habits
 
-## Bio and Contacts [:material-email:](mailto:cyruscyliu@gmail.com) [:fontawesome-brands-linkedin:](https://www.linkedin.com/in/qiangliu15/) [:simple-wechat:](weixin://dl/chat?ocat01)
+## Bio and Contacts [:material-email:](mailto:cyruscyliu@gmail.com) [:fontawesome-brands-linkedin:](https://www.linkedin.com/in/qiangliu15/) [:simple-wechat:](weixin://dl/chat?ocat01) [CV](./Qiang_s_CV.pdf) [:simple-googlescholar:](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
 
 Qiang Liu is a postdoc at EPFL, working with [Prof. Mathias
 Payer](https://nebelwelt.net/) in the HexHive laboratory. He earned his Ph.D. in

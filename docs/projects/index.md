@@ -16,7 +16,11 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-computer:{ .lg .middle } __AI System Security__
+-   __Hypervisor Security__
+
+    ---
+
+-   __AI System Security__
 
     ---
 
@@ -32,7 +36,7 @@ hide:
     [:octicons-arrow-right-24: aisyssec-2: SoK: AI System Security]()  
     [:octicons-arrow-right-24: aisyssec-3: GPU Memory Safety]()
 
--   :material-brain:{ .lg .middle } __AI for System Understanding__
+-   __AI for System Understanding__
 
     ---
 
@@ -46,7 +50,7 @@ hide:
 
     <!-- [:octicons-arrow-right-24: Customization](#) -->
 
--   :material-dock-bottom:{ .lg .middle } __Beyond Defense: Toward Resilience__
+-   __Beyond Defense: Toward Resilience__
 
     ---
 
