@@ -1,10 +1,4 @@
----
-date: 2025-04-17
-categories:
-    - how-to-do-research-series
----
-
-# Doing Research - Part 3: Where to find related works?
+# Doing Research - Part 3: Where to Find Related Works?
 
 ## I don't know any related work
 

@@ -1,10 +1,4 @@
----
-date: 2025-04-15
-categories:
-    - how-to-do-research-series
----
-
-# Doing Research - Part 1: A simple guide to system security survival
+# Doing Research - Part 1: A Simple Guide to System Security Survival
 
 <!-- more -->
 

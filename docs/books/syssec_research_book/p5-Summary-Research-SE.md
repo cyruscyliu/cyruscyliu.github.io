@@ -1,9 +1,3 @@
----
-date: 2025-04-19
-categories:
-    - how-to-do-research-series
----
-
 # Doing Research - Part 5: Coding for System Security Research
 
 Solid implementation in limited time makes us competitive in research.

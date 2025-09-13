@@ -1,9 +1,3 @@
----
-date: 2025-04-21
-categories:
-    - how-to-do-research-series
----
-
 # Doing Research - Part 7: Technology Transfer and Practices Under Control
 
 <!-- more -->

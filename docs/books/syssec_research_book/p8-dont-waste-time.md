@@ -1,9 +1,3 @@
----
-date: 2025-04-22
-categories:
-    - how-to-do-research-series
----
-
 # Doing Research - Part 9: Pitfalls, Tweaks, Tricks in Research and Development
 
 Waste less time = Gain more time!

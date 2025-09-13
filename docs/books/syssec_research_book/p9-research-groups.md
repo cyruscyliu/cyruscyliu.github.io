@@ -1,10 +1,4 @@
----
-date: 2025-04-23
-categories:
-    - how-to-do-research-series
----
-
-# Doing Research - Part 9: Manage of research lab
+# Doing Research - Part 9: Manage of Research Lab
 
 三方面：物品/人员/项目
 

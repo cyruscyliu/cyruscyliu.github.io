@@ -1,10 +1,4 @@
----
-date: 2025-04-16
-categories:
-    - how-to-do-research-series
----
-
-# Doing Research - Part 2: How to do system security research?
+# Doing Research - Part 2: How to Do System Security Research?
 
 ## What is system security?
 

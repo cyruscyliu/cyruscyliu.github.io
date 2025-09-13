@@ -1,9 +1,3 @@
----
-date: 2025-04-24
-categories:
-    - how-to-do-research-series
----
-
 # Doing Research - Part 10: Crisis of Prosperit: Internal Shortcuts and External Setbacks
 
 <!-- more -->

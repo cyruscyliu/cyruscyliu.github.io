@@ -1,9 +1,3 @@
----
-date: 2025-04-20
-categories:
-    - how-to-do-research-series
----
-
 # Doing Research - Part 6: How to Do Research Presentation
 
 <!-- more -->
