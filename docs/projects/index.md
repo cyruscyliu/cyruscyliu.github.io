@@ -12,64 +12,49 @@ hide:
   .md-content__button { display: none !important; }
 </style>
 
-## Projects
+## Hypervisor Security
 
-<div class="grid cards" markdown>
+## AI System Security
 
--   __Hypervisor Security__
+The success of AI is fundamentally reshaping the entire computing stack, from
+hardware to high-level software. As new codebases and specialized hardware
+emerge to support AI workloads, longstanding security challenges are resurfacing
+in modern contexts. Our research investigates security issues across multiple
+layers of AI systems, focusing on data, models, AI compilers, operating systems,
+hypervisors, and heterogeneous hardware such as GPUs.
 
-    ---
++ [aisyssec-1: ML Model Obfuscation](ai-syssec.md#machine-learning-model-obfuscation)  
++ [aisyssec-2: SoK: AI System Security]()  
++ [aisyssec-3: GPU Memory Safety]()
 
--   __AI System Security__
+## AI for System Understanding
 
-    ---
+The success of AI is fundamentally reshaping the entire computing stack, from
+hardware to high-level software. As new codebases and specialized hardware
+emerge to support AI workloads, longstanding security challenges are resurfacing
+in modern contexts. Our research investigates security issues across multiple
+layers of AI systems, focusing on compilers, interpreters, operating systems,
+hypervisors, and heterogeneous hardware such as GPUs.
 
-    The success of AI is fundamentally reshaping the entire computing stack,
-    from hardware to high-level software. As new codebases and specialized
-    hardware emerge to support AI workloads, longstanding security challenges
-    are resurfacing in modern contexts. Our research investigates security
-    issues across multiple layers of AI systems, focusing on data, models, AI
-    compilers, operating systems, hypervisors, and heterogeneous hardware such
-    as GPUs.
+<!-- [:octicons-arrow-right-24: Customization](#) -->
 
-    [:octicons-arrow-right-24: aisyssec-1: ML Model Obfuscation](ai-syssec.md#machine-learning-model-obfuscation)  
-    [:octicons-arrow-right-24: aisyssec-2: SoK: AI System Security]()  
-    [:octicons-arrow-right-24: aisyssec-3: GPU Memory Safety]()
+## Beyond Defense: Toward Resilience
 
--   __AI for System Understanding__
+In the era of ubiquitous computing and heterogeneous architectures, security is
+increasingly complex and distributed. These environments require a unified
+ecosystem and adaptable frameworks. Success is not just blocking attacks but
+achieving resilience through rapid recovery, minimal downtime, and sustained
+business continuity.
 
-    ---
-
-    The success of AI is fundamentally reshaping the entire computing stack,
-    from hardware to high-level software. As new codebases and specialized
-    hardware emerge to support AI workloads, longstanding security challenges
-    are resurfacing in modern contexts. Our research investigates security
-    issues across multiple layers of AI systems, focusing on compilers,
-    interpreters, operating systems, hypervisors, and heterogeneous hardware
-    such as GPUs.
-
-    <!-- [:octicons-arrow-right-24: Customization](#) -->
-
--   __Beyond Defense: Toward Resilience__
-
-    ---
-
-    In the era of ubiquitous computing and heterogeneous architectures, security
-    is increasingly complex and distributed. These environments require a
-    unified ecosystem and adaptable frameworks. Success is not just blocking
-    attacks but achieving resilience through rapid recovery, minimal downtime,
-    and sustained business continuity.
-
-    [:octicons-arrow-right-24: resilience-1: Fuzzing Not-fully Verified Code]()
-
-    <!-- [:octicons-arrow-right-24: License](#) -->
-
-</div>
++ [resilience-1: Fuzzing Not-fully Verified Code]()
+<!-- [:octicons-arrow-right-24: License](#) -->
 
 ## Others
 
-[:octicons-arrow-right-24: embdsec-1: Beyond the Sample Firmware: Survey of Embedded System Security](surveys.md/#beyond-the-sample-firmware-survey-of-embedded-system-security)  
-[:octicons-arrow-right-24: embdsec-2: Trust Across the Skies: Survey of All-Altitude Aero-Space Security](surveys.md/#trust-across-the-skies-survey-of-all-altitude-aero-space-security)  
++ [embdsec-1: Beyond the Sample Firmware: Survey of Embedded System
+Security](surveys.md/#beyond-the-sample-firmware-survey-of-embedded-system-security)
++ [embdsec-2: Trust Across the Skies: Survey of All-Altitude Aero-Space
+Security](surveys.md/#trust-across-the-skies-survey-of-all-altitude-aero-space-security)
 <!-- [:octicons-arrow-right-24: Hacking Culture](surveys.md#hacking-culture) -->
 
 <!--

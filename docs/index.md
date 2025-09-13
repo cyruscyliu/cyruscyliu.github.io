@@ -7,14 +7,19 @@ hide:
 
 # Securing the Computing, Together
 
->From research to reality, I work with researchers, companies, and
+>From research to application, I work with researchers, companies, and
 the public to shape open and trustworthy computing.
 
 ## To Researchers | Companies | Educational Organizations
 
 + 🎓 Explore my [projects](projects/index.md) to collaborate
-+ 💼 See my [services](./services.md) if you are running into system security problems
-+ 🌍 Read my [books](./books/index.md) about securing your digital life with good habits
+    - [Hypervisor Security](projects/index.md#hypervisor-security)
+    - [AI System Security](projects/index.md#ai-system-security), [AI for System Understanding](projects/index.md#ai-for-system-understanding)
+    - [Beyond Defense Toward Resilience](projects/index.md#beyond-defense-toward-resilience)
++ 💼 See my [services](services/index.md) if you are running into system security problems
+    - [Hypervisor Security Analysis](services/index.md#hypervisor-security-analysis) 
+    - [Dynamic Firmware Analysis](services/index.md#dynamic-firmware-analysis)
++ 🌍 Read my book: [System Security Research Book](books/index.md#system-security-research-book) 
 
 ## Bio and Contacts [:material-email:](mailto:cyruscyliu@gmail.com) [:fontawesome-brands-linkedin:](https://www.linkedin.com/in/qiangliu15/) [:simple-wechat:](weixin://dl/chat?ocat01) [CV](./Qiang_s_CV.pdf) [:simple-googlescholar:](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en)
 
