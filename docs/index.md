@@ -5,12 +5,17 @@ hide:
   - footer
 ---
 
-# Securing the Computing, Together
+<style>
+  /* Hide this page's first H1 */
+  .md-typeset h1:first-of-type { display: none !important; }
+  /* Optional: hide the floating action buttons next to the H1 */
+  .md-content__button { display: none !important; }
+</style>
+
+## Securing the Computing, Together
 
 >From research to application, I work with researchers, companies, and
 the public to shape open and trustworthy computing.
-
-## To Researchers | Companies | Educational Organizations
 
 + 🎓 Explore my [projects](projects/index.md) to collaborate
     - [Hypervisor Security](projects/index.md#hypervisor-security)
