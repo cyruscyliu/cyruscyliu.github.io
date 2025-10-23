@@ -14,6 +14,19 @@ hide:
 
 ## Hypervisor Security
 
+## BGP Security
+
+BGP remains one of the weakest links in today’s Internet backbone, as the
+protocol was never designed with strong violation detection in mind.
+Misconfigurations, malicious route hijacks, memory safety, and inconsistency
+issues in the implementations can propagate globally within minutes, undermining
+the stability and trustworthiness of inter-domain routing.  To address this, I
+propose a golden model that is a formal, reference framework that captures the
+Internet’s topology, the BGP protocol semantics, and known implementation
+behaviors.  Such a model would serve as a baseline for detecting deviations and
+vulnerabilities across real deployments, enabling systematic verification of
+routing updates and automated bug detection.
+
 ## AI System Security
 
 The success of AI is fundamentally reshaping the entire computing stack, from
@@ -27,18 +40,18 @@ hypervisors, and heterogeneous hardware such as GPUs.
 + [aisyssec-2: SoK: AI System Security]()  
 + [aisyssec-3: GPU Memory Safety]()
 
-## AI for System Understanding
+<!-- ## AI for System Understanding
 
 The success of AI is fundamentally reshaping the entire computing stack, from
 hardware to high-level software. As new codebases and specialized hardware
 emerge to support AI workloads, longstanding security challenges are resurfacing
 in modern contexts. Our research investigates security issues across multiple
 layers of AI systems, focusing on compilers, interpreters, operating systems,
-hypervisors, and heterogeneous hardware such as GPUs.
+hypervisors, and heterogeneous hardware such as GPUs. -->
 
 <!-- [:octicons-arrow-right-24: Customization](#) -->
 
-## Beyond Defense: Toward Resilience
+## Security Shift: from Defense to Resilience.
 
 In the era of ubiquitous computing and heterogeneous architectures, security is
 increasingly complex and distributed. These environments require a unified
