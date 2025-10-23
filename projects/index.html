@@ -728,6 +728,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bgp-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      BGP Security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ai-system-security" class="md-nav__link">
     <span class="md-ellipsis">
       AI System Security
@@ -737,18 +746,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ai-for-system-understanding" class="md-nav__link">
+  <a href="#security-shift-from-defense-to-resilience" class="md-nav__link">
     <span class="md-ellipsis">
-      AI for System Understanding
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beyond-defense-toward-resilience" class="md-nav__link">
-    <span class="md-ellipsis">
-      Beyond Defense: Toward Resilience
+      Security Shift: from Defense to Resilience.
     </span>
   </a>
   
@@ -791,6 +791,17 @@
 </style>
 
 <h2 id="hypervisor-security">Hypervisor Security<a class="headerlink" href="#hypervisor-security" title="Do what you think is right">#</a></h2>
+<h2 id="bgp-security">BGP Security<a class="headerlink" href="#bgp-security" title="Do what you think is right">#</a></h2>
+<p>BGP remains one of the weakest links in today’s Internet backbone, as the
+protocol was never designed with strong violation detection in mind.
+Misconfigurations, malicious route hijacks, memory safety, and inconsistency
+issues in the implementations can propagate globally within minutes, undermining
+the stability and trustworthiness of inter-domain routing.  To address this, I
+propose a golden model that is a formal, reference framework that captures the
+Internet’s topology, the BGP protocol semantics, and known implementation
+behaviors.  Such a model would serve as a baseline for detecting deviations and
+vulnerabilities across real deployments, enabling systematic verification of
+routing updates and automated bug detection.</p>
 <h2 id="ai-system-security">AI System Security<a class="headerlink" href="#ai-system-security" title="Do what you think is right">#</a></h2>
 <p>The success of AI is fundamentally reshaping the entire computing stack, from
 hardware to high-level software. As new codebases and specialized hardware
@@ -803,16 +814,18 @@ hypervisors, and heterogeneous hardware such as GPUs.</p>
 <li><a href="">aisyssec-2: SoK: AI System Security</a>  </li>
 <li><a href="">aisyssec-3: GPU Memory Safety</a></li>
 </ul>
-<h2 id="ai-for-system-understanding">AI for System Understanding<a class="headerlink" href="#ai-for-system-understanding" title="Do what you think is right">#</a></h2>
-<p>The success of AI is fundamentally reshaping the entire computing stack, from
+<!-- ## AI for System Understanding
+
+The success of AI is fundamentally reshaping the entire computing stack, from
 hardware to high-level software. As new codebases and specialized hardware
 emerge to support AI workloads, longstanding security challenges are resurfacing
 in modern contexts. Our research investigates security issues across multiple
 layers of AI systems, focusing on compilers, interpreters, operating systems,
-hypervisors, and heterogeneous hardware such as GPUs.</p>
+hypervisors, and heterogeneous hardware such as GPUs. -->
+
 <!-- [:octicons-arrow-right-24: Customization](#) -->
 
-<h2 id="beyond-defense-toward-resilience">Beyond Defense: Toward Resilience<a class="headerlink" href="#beyond-defense-toward-resilience" title="Do what you think is right">#</a></h2>
+<h2 id="security-shift-from-defense-to-resilience">Security Shift: from Defense to Resilience.<a class="headerlink" href="#security-shift-from-defense-to-resilience" title="Do what you think is right">#</a></h2>
 <p>In the era of ubiquitous computing and heterogeneous architectures, security is
 increasingly complex and distributed. These environments require a unified
 ecosystem and adaptable frameworks. Success is not just blocking attacks but
