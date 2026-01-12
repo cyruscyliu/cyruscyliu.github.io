@@ -14,38 +14,30 @@ theme:
             icon: material/weather-sunny
             name: Switch to light mode
     # custom_dir: overrides
-    logo: logo.png
-    favicon: logo.png
     features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.top
-    - navigation.expand
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    # - navigation.top
+    # - navigation.expand
     - revision.date
     - revision.history
 extra:
-    social:
-        - icon: material/home
-          link: /
-          name: Home
-        - icon: material/email
-          link: mailto:cyruscyliu@gmail.com
-        - icon: fontawesome/brands/linkedin
-          link: https://www.linkedin.com/in/qiangliu15/
-        - icon: simple/wechat
-          link: weixin://dl/chat?ocat01
-        - icon: material/file-account
-          link: Qiang_s_CV.pdf
-        - icon: simple/googlescholar
-          link: https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en
-        - icon: simple/github
-          link: https://github.com/cyruscyliu
+    # social:
+    #     - icon: material/email
+    #       link: mailto:cyruscyliu@gmail.com
+    #     - icon: material/file-account
+    #       link: Qiang_s_CV.pdf
+    #     - icon: simple/googlescholar
+    #       link: https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en
+    #     - icon: simple/github
+    #       link: https://github.com/cyruscyliu
     generator: false
     analytics:
         provider: google
         property: G-KWJ9PWFFMZ
 extra_css:
-    - stylesheets/extra.css
+    # - stylesheets/extra.css
+    - stylesheets/no-header.css
 markdown_extensions:
     - footnotes
     - toc:
@@ -60,16 +52,8 @@ markdown_extensions:
     - pymdownx.details
     - pymdownx.superfences
 docs_dir: docs
-site_name: Qiang Liu - The Wind Rises
+site_name: Le vent se lève ! Il faut tenter de vivre.
 site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
-nav:
-    - Home: index.md
-    - Blog:
-      - blog/index.md 
 plugins:
-  - blog:
-      blog_toc: true
-      post_excerpt: optional
-      draft_on_serve: false
-  - tags
-copyright: "Copyright &copy; 2018 - 2025, Qiang Liu. All rights reserved."
+  - search: { enabled: false }
+copyright: "Copyright &copy; 2018 - 2026, Qiang Liu. All rights reserved."

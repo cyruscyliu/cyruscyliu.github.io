@@ -1,0 +1,9 @@
+/* remove the top header bar */
+.md-header {
+  display: none !important;
+}
+
+/* remove the vertical gap that the header used to reserve */
+.md-main {
+  margin-top: 0 !important;
+}
