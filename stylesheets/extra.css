@@ -1,0 +1,41 @@
+.md-tabs__item {
+  height: 1.2rem
+}
+
+.md-tabs__link {
+  margin: 0 auto
+}
+
+.md-main__inner {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.md-typeset p {
+  margin-bottom: 1em;
+}
+
+.md-social {
+  padding: 0
+}
+
+.md-footer__link {
+  margin: 0;
+}
+
+.md-footer__button {
+  padding: 0
+}
+
+.md-footer__title {
+  padding: 0;
+  padding-left: 2pt;
+  margin: auto;
+  max-width: 100%;
+}
+
+.md-footer-meta__inner {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
