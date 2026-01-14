@@ -34,11 +34,11 @@ currently apply it to low-level system software, such as the Linux kernel and
 hypervisors, within a single machine. The same observation, modeling, and
 enforcement pipeline can scale to higher-level components (for example
 interpreters and browsers) and to distributed and heterogeneous environments
-(for example network protocols and remote resources).
+(for example network protocols, xPU, and remote resources).
 
 Beyond dynamic analysis, I aim to take **multiple complementary approaches to
 support the full lifecycle of system trust**, such as secure programming
-languages such as Rust, large-scale static and dynamic analysis, secure boot and
+languages such as Rust, large-scale static analysis, secure boot and
 attestation, and minimal recovery systems, from build to deployment, execution,
 and recovery.
 
