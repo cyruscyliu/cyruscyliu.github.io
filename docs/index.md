@@ -49,11 +49,6 @@ stakeholders.
 
 ## Selected Publications 
 
-**Minoris: Practical Out-of-Emulator Kernel Module Fuzzing**  
-Yangxi Xiang, Feng Wang, Yuan Chen, **Qiang Liu**, Haoyu Wang, Jiashui Wang, Lei
-Wu, Chaoyuan Chen, Yajin Zhou  
-IEEE TDSC 2025
-
 **Truman: Constructing Device Behavior Models from OS Drivers to Fuzz Virtual
 Devices**  
 Zheyu Ma, **Qiang Liu**, Zheming Li, Tingting Yin, Wende Tan, Chao Zhang, Mathias
@@ -68,7 +63,8 @@ USENIX Security 2024
 
 **Tango: Extracting Higher-Order Feedback through State Inference**
 (Best Paper Award)  
-Ahmad Hazimeh, Duo Xu, **Qiang Liu\* (Marked as Corresponding Author)**, Yan Wang, Mathias Payer  
+Ahmad Hazimeh, Duo Xu, **Qiang Liu\***, Yan Wang, Mathias Payer  
+*Marked as Corresponding Author  
 ACM RAID 2024
 
 **VIDEZZO: Dependency-aware Virtual Device Fuzzing**  
@@ -80,7 +76,7 @@ IEEE S&P 2023
 Model-Guided Kernel Execution**  
 **Qiang Liu\***, Cen Zhang\*, Lin Ma, Muhui Jiang, Yajin Zhou, Lei
 Wu, Wenbo Shen, Xiapu Luo, Yang Liu, Kui Ren  
-*co-first authors  
+*Co-first authors  
 IEEE/ACM ASE 2021
 
 ## Selected Services
