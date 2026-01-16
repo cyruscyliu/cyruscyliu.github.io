@@ -20,61 +20,64 @@ _PostDoc in System Security at EPFL._
 > Open to faculty position in system security, AI system security, computer
 security, cybersecurity, etc.
 
-[CV](./Qiang_s_CV.pdf) /
-[:simple-googlescholar: Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en) /
-[:simple-github: GitHub](https://github.com/cyruscyliu) /
+[CV](./Qiang_s_CV.pdf) |
+[:simple-googlescholar: Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en) |
+[:simple-github: GitHub](https://github.com/cyruscyliu) |
 [:material-email: Email](mailto:cyruscyliu@gmail.com)
 
 ## Research Vision
 
-I propose the **OME framework to Observe, Model, and Enforce the trustworthiness
-of computer systems at runtime**. Grounded in dynamic analysis, OME treats trust
+I propose _the OME framework to Observe, Model, and Enforce the trustworthiness
+of computer systems at runtime_. Grounded in dynamic analysis, OME treats trust
 as a measurable property of execution rather than a static design assumption. I
 currently apply it to low-level system software, such as the Linux kernel and
 hypervisors, within a single machine. The same observation, modeling, and
-enforcement pipeline can scale to higher-level components (for example
-interpreters and browsers) and to distributed and heterogeneous environments
-(for example network protocols, xPU, and remote resources).
+enforcement pipeline can scale to higher-level components (e.g., interpreters,
+browsers, and AI agents) and to distributed and heterogeneous environments
+(e.g., xPU, remote resources, and network protocols).
 
-Beyond dynamic analysis, I aim to take **multiple complementary approaches to
-support the full lifecycle of system trust**, such as secure programming
+Beyond dynamic analysis, I aim to take _multiple complementary approaches to
+support the full lifecycle of system trust_, such as secure programming
 languages such as Rust, large-scale static analysis, secure boot and
 attestation, and minimal recovery systems, from build to deployment, execution,
 and recovery.
 
 Ultimately, my goal is to make computer systems measurably trustworthy,
-difficult to compromise, and safe to rely on for different classes of
+difficult to compromise, and secure to rely on for different classes of
 stakeholders.
+
+>AI agents show strong potential to automate many forms of human effort that
+>were previously unavoidable in security research. In parallel, I am studying
+>their design principles and performance benchmarks.
 
 
 ## Selected Publications 
 
-**Truman: Constructing Device Behavior Models from OS Drivers to Fuzz Virtual
-Devices**  
-Zheyu Ma, **Qiang Liu**, Zheming Li, Tingting Yin, Wende Tan, Chao Zhang, Mathias
+Truman: Constructing Device Behavior Models from OS Drivers to Fuzz Virtual
+Devices  
+Zheyu Ma, Qiang Liu, Zheming Li, Tingting Yin, Wende Tan, Chao Zhang, Mathias
 Payer  
 NDSS 2025
 
-**HYPERPILL: Fuzzing for Hypervisor-bugs by Leveraging the Hardware Virtualization
-Interface**
+HYPERPILL: Fuzzing for Hypervisor-bugs by Leveraging the Hardware Virtualization
+Interface
 (Best Paper Award)  
-Alexander Bulekov, **Qiang Liu**, Manuel Egele, Mathias Payer  
+Alexander Bulekov, Qiang Liu, Manuel Egele, Mathias Payer  
 USENIX Security 2024
 
-**Tango: Extracting Higher-Order Feedback through State Inference**
+Tango: Extracting Higher-Order Feedback through State Inference
 (Best Paper Award)  
-Ahmad Hazimeh, Duo Xu, **Qiang Liu\***, Yan Wang, Mathias Payer  
+Ahmad Hazimeh, Duo Xu, Qiang Liu\*, Yan Wang, Mathias Payer  
 *Marked as Corresponding Author  
 ACM RAID 2024
 
-**VIDEZZO: Dependency-aware Virtual Device Fuzzing**  
-**Qiang Liu\***, Flavio Toffalini, Yajin Zhou, Mathias Payer  
+VIDEZZO: Dependency-aware Virtual Device Fuzzing  
+Qiang Liu\*, Flavio Toffalini, Yajin Zhou, Mathias Payer  
 IEEE S&P 2023
 
-
-**FIRMGUIDE: Boosting the Capability of Rehosting Embedded Linux Kernels through
-Model-Guided Kernel Execution**  
-**Qiang Liu\***, Cen Zhang\*, Lin Ma, Muhui Jiang, Yajin Zhou, Lei
+FIRMGUIDE: Boosting the Capability of Rehosting Embedded Linux Kernels through
+Model-Guided Kernel Execution  
+Qiang Liu\*, Cen Zhang\*, Lin Ma, Muhui Jiang, Yajin Zhou, Lei
 Wu, Wenbo Shen, Xiapu Luo, Yang Liu, Kui Ren  
 *Co-first authors  
 IEEE/ACM ASE 2021
