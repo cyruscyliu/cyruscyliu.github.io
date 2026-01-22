@@ -20,9 +20,9 @@ hide:
 > Open to faculty position in system security, AI system security, computer
 security, cybersecurity, etc.
 
-[CV](./Qiang_s_CV.pdf) |
-[:simple-googlescholar: Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en) |
-[:simple-github: GitHub](https://github.com/cyruscyliu) |
+[CV](./Qiang_s_CV.pdf) /
+[:simple-googlescholar: Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en) /
+[:simple-github: GitHub](https://github.com/cyruscyliu) /
 [:material-email: Email](mailto:cyruscyliu@gmail.com)
 
 ## Research Vision
