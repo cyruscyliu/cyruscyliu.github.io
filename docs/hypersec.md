@@ -1,3 +1,11 @@
+---
+hide:
+  - navigation
+  - toc
+  - footer
+---
+
+
 # Hypervisor Security Services
 
 Virtualization is now the security boundary for AI and confidential workloads.
