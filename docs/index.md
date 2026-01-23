@@ -46,9 +46,9 @@ Ultimately, my goal is to make computer systems measurably trustworthy,
 difficult to compromise, and secure to rely on for different classes of
 stakeholders.
 
->AI agents show strong potential to automate many forms of human effort that
->were previously unavoidable in security research. In parallel, I am studying
->their design principles and performance benchmarks.
+>I am also investigating design principles for human-comparable AI agents for
+system secrity to automate labor-intensive workflows in learning, research,
+engineering, tech transfer, and community building.
 
 
 ## Selected Publications 
