@@ -51,7 +51,20 @@ system secrity to automate labor-intensive workflows in learning, research,
 engineering, tech transfer, and community building.
 
 
-## Selected Publications 
+## Selected Publications
+
+**Squeezing Juicy Variant Bugs Out of Modern Browsers**  
+Han Zheng, Flavio Toffalini, **Qiang Liu**, Mathias Payer  
+USENIX WOOT'26
+
+**Minoris: Practical Out-of-Emulator Kernel Module Fuzzing**  
+Yangxi Xiang, Feng Wang, Yuan Chen, **Qiang Liu**, Haoyu Wang, Jiashui Wang, Lei
+Wu, Chaoyuan Chen, Yajin Zhou  
+IEEE TDSC 2025
+
+**REFLECTA: Reflection-based Scalable and Semantic Scripting Language Fuzzing**  
+Chibin Zhang, Gwangmu Lee, **Qiang Liu**, Mathias Payer  
+ACM AsiaCCS 2025
 
 **Truman: Constructing Device Behavior Models from OS Drivers to Fuzz Virtual
 Devices**  
@@ -67,7 +80,7 @@ USENIX Security 2024
 
 **Tango: Extracting Higher-Order Feedback through State Inference**
 (Best Paper Award)  
-Ahmad Hazimeh, Duo Xu, **Qiang Liu\***, Yan Wang, Mathias Payer  
+Ahmad Hazimeh\*, Duo Xu, **Qiang Liu\***, Yan Wang, Mathias Payer  
 *Marked as Corresponding Author  
 ACM RAID 2024
 
