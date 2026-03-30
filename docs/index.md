@@ -16,7 +16,7 @@ hide:
 
 **_PostDoc in System Security at EPFL._**
 
-> On the academic job market (2025-2026)  
+> On the academic job market  
 > Open to faculty position in system security, AI system security, computer
 security, cybersecurity, etc.
 
@@ -46,16 +46,20 @@ Ultimately, my goal is to make computer systems measurably trustworthy,
 difficult to compromise, and secure to rely on for different classes of
 stakeholders.
 
->I am also investigating design principles for human-comparable AI agents for
-system secrity to automate labor-intensive workflows in learning, research,
-engineering, tech transfer, and community building.
+>I am also investigating agent harnesses to automate labor-intensive workflows
+in learning, research, engineering, tech transfer, and community building.
 
 
 ## Selected Publications
 
+**CrossFit: Demystifying VM Callback Bugs in Interpreters**  
+Chibin Zhang, **Qiang Liu**, Mathias Payer  
+ACM FSE 2026
+
+
 **Squeezing Juicy Variant Bugs Out of Modern Browsers**  
 Han Zheng, Flavio Toffalini, **Qiang Liu**, Mathias Payer  
-USENIX WOOT'26
+USENIX WOOT 2026
 
 **Minoris: Practical Out-of-Emulator Kernel Module Fuzzing**  
 Yangxi Xiang, Feng Wang, Yuan Chen, **Qiang Liu**, Haoyu Wang, Jiashui Wang, Lei
