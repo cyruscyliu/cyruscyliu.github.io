@@ -16,10 +16,6 @@ hide:
 
 **_PostDoc in System Security at EPFL._**
 
-> On the academic job market  
-> Open to faculty position in system security, AI system security, computer
-security, cybersecurity, etc.
-
 [CV](./Qiang_s_CV.pdf) /
 [:simple-googlescholar: Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en) /
 [:simple-github: GitHub](https://github.com/cyruscyliu) /
@@ -46,9 +42,27 @@ Ultimately, my goal is to make computer systems measurably trustworthy,
 difficult to compromise, and secure to rely on for different classes of
 stakeholders.
 
->I am also investigating agent harnesses to automate labor-intensive workflows
-in learning, research, engineering, tech transfer, and community building.
+### Remarks on AI
 
+- **Humans remain the central subject**, while AI acts as an extension of human
+capability. Although AI can accelerate many human tasks, humans retain unique
+strengths such as value judgment, responsibility, critical thinking, and
+innovation. What AI can do, humans can also do; what AI cannot do, humans can
+still do.
+
+- **AI does not and cannot turn undecidable problems into decidable ones**, and
+there is no universal automatic method that can determine whether any program
+satisfies all nontrivial security semantic properties.
+
+- AI can be understood through four components: data, algorithms, computing
+power, and agent frameworks. Its effectiveness is constrained by data quality
+(garbage in, garbage out), algorithmic limits (it appears to reason),
+computational cost, limited memory and sensing (incomplete knowledge of the
+world), and imperfect verification.
+
+- **AI is powerful in almost every area of information technology, but it is
+still not sufficient in niche domains**. We can and still need to improve it by
+enhancing these four components.
 
 ## Selected Publications
 
@@ -101,7 +115,6 @@ IEEE/ACM ASE 2021
 
 ## Selected Services
 
-Real World Deployment: [Hypervisor Security](./hypersec.md)  
 Program Committees: IEEE/ACM ASE 2025, USENIX Security 2025  
 Reviewer: ACM TIFS, ACM CSUR, ACM TOSEM  
 
