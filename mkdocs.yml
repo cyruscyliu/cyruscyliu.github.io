@@ -13,7 +13,6 @@ theme:
           toggle:
             icon: material/weather-sunny
             name: Switch to light mode
-    # custom_dir: overrides
     features:
     # - navigation.tabs
     # - navigation.tabs.sticky
@@ -53,7 +52,7 @@ markdown_extensions:
     - pymdownx.superfences
 docs_dir: docs
 site_name: Le vent se lève ! Il faut tenter de vivre.
-site_url: https://github.com/cyruscyliu/cyruscyliu.github.io
+site_url: https://cyruscyliu.github.io
 plugins:
   - search: { enabled: false }
 copyright: "Copyright &copy; 2018 - 2026, Qiang Liu. All rights reserved."
