@@ -19,7 +19,8 @@ hide:
 [CV](./Qiang_s_CV.pdf) /
 [:simple-googlescholar: Google Scholar](https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en) /
 [:simple-github: GitHub](https://github.com/cyruscyliu) /
-[:material-email: Email](mailto:cyruscyliu@gmail.com)
+[:material-email: Email](mailto:cyruscyliu@gmail.com) /
+[:material-linkedin: LinkedIn](https://www.linkedin.com/in/qiang-liu-744272406/)
 
 ## Research Vision
 
@@ -57,19 +58,17 @@ satisfies all nontrivial security semantic properties.
 - AI can be understood through four components: data, algorithms, computing
 power, and agent frameworks. Its effectiveness is constrained by data quality
 (garbage in, garbage out), algorithmic limits (it appears to reason),
-computational cost, limited memory and sensing (incomplete knowledge of the
-world), and imperfect verification.
+computational cost, intention drift, limited memory and sensing (incomplete
+knowledge of the world, not everything programable), and imperfect verification.
 
 - **AI is powerful in almost every area of information technology, but it is
-still not sufficient in niche domains**. We can and still need to improve it by
-enhancing these four components.
+still not sufficient in niche domains**.
 
 ## Selected Publications
 
 **CrossFit: Demystifying VM Callback Bugs in Interpreters**  
 Chibin Zhang, **Qiang Liu**, Mathias Payer  
 ACM FSE 2026
-
 
 **Squeezing Juicy Variant Bugs Out of Modern Browsers**  
 Han Zheng, Flavio Toffalini, **Qiang Liu**, Mathias Payer  
@@ -133,7 +132,3 @@ S&P, Usenix Security, ACM CCS, and ISOC NDSS. He received the Best Paper Awards
 at USENIX Security'24 and ACM RAID'24. He is also serving on the program
 committee for IEEE/ACM ASE'25 and USENIX Security'25 and has reviewed for
 journals including IEEE TIFS, ACM CSUR, and ACM TOSEM.
-
-## Contact
-
-[:material-email: Email](mailto:cyruscyliu@gmail.com): cyruscyliu@gmail.com
