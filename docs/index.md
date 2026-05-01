@@ -61,7 +61,7 @@ power, and agent frameworks. Its effectiveness is constrained by data quality
 computational cost, intention drift, limited memory and sensing (incomplete
 knowledge of the world, not everything programable), and imperfect verification.
 
-- **AI is powerful in almost every area of information technology, but it is
+- **AI is still not perfect, and it is
 still not sufficient in niche domains**.
 
 ## Selected Publications
