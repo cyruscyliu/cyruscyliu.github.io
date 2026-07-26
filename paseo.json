@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "run-cyruscyliu-github-io": {
+      "type": "service",
+      "command": "sh -lc 'mkdocs serve --livereload --dev-addr \"0.0.0.0:${RUN_CYRUSCYLIU_GITHUB_IO_PORT:-8000}\"'"
+    }
+  }
+}
