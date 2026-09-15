@@ -1,6 +1,9 @@
 {
   "meta": {
-    "title": { "en": "Home", "zh": "首页" },
+    "title": {
+      "en": "Home",
+      "zh": "首页"
+    },
     "description": {
       "en": "55AA Security Lab",
       "zh": "55AA Security Lab 实验室主页"
@@ -11,21 +14,36 @@
     "zh": "解决制造、上游及其他尚未有成熟答案的问题。"
   },
   "scope": {
-    "label": { "en": "Operating frame", "zh": "运行框架" },
+    "label": {
+      "en": "Operating frame",
+      "zh": "运行框架"
+    },
     "body": {
       "en": "One organization, three operating units, shared mission and rules.",
       "zh": "一个统一组织，三个运营单元，共享使命和规章制度。"
     },
     "units": [
-      { "en": "Research", "zh": "研究" },
-      { "en": "Productization", "zh": "产品化" },
-      { "en": "Marketing", "zh": "市场" }
+      {
+        "en": "Research",
+        "zh": "研究"
+      },
+      {
+        "en": "Productization",
+        "zh": "产品化"
+      },
+      {
+        "en": "Marketing",
+        "zh": "市场"
+      }
     ]
   },
   "sections": [
     {
       "key": "home",
-      "label": { "en": "Home", "zh": "首页" },
+      "label": {
+        "en": "Home",
+        "zh": "首页"
+      },
       "description": {
         "en": "Questions, methods, and research assets.",
         "zh": "研究问题、方法与研究资产。"
@@ -33,12 +51,21 @@
     },
     {
       "key": "news",
-      "label": { "en": "News", "zh": "新闻" },
-      "description": { "en": "Latest lab news.", "zh": "实验室最新消息。" }
+      "label": {
+        "en": "News",
+        "zh": "新闻"
+      },
+      "description": {
+        "en": "Latest lab news.",
+        "zh": "实验室最新消息。"
+      }
     },
     {
       "key": "people",
-      "label": { "en": "People", "zh": "成员" },
+      "label": {
+        "en": "People",
+        "zh": "成员"
+      },
       "description": {
         "en": "Researchers, students, and collaborators.",
         "zh": "研究者、学生与合作成员。"
@@ -46,7 +73,10 @@
     },
     {
       "key": "teaching",
-      "label": { "en": "Teaching", "zh": "教学" },
+      "label": {
+        "en": "Teaching",
+        "zh": "教学"
+      },
       "description": {
         "en": "Courses, notes, and research training.",
         "zh": "课程、讲义与研究训练。"
@@ -54,23 +84,21 @@
     },
     {
       "key": "projects",
-      "label": { "en": "Projects", "zh": "项目" },
+      "label": {
+        "en": "Projects",
+        "zh": "项目"
+      },
       "description": {
         "en": "Research and engineering in progress.",
         "zh": "正在推进的研究与工程项目。"
       }
     },
     {
-      "key": "publications",
-      "label": { "en": "Publications", "zh": "论文" },
-      "description": {
-        "en": "Papers, preprints, and public results.",
-        "zh": "论文、预印本与公开成果。"
-      }
-    },
-    {
       "key": "tools",
-      "label": { "en": "Tools", "zh": "工具" },
+      "label": {
+        "en": "Tools",
+        "zh": "工具"
+      },
       "description": {
         "en": "Tools, datasets, and infrastructure.",
         "zh": "工具、数据集与基础设施。"
@@ -78,12 +106,32 @@
     },
     {
       "key": "consultation",
-      "label": { "en": "Consultation", "zh": "咨询" },
-      "description": { "en": "Consultation and collaboration.", "zh": "咨询与合作。" }
+      "label": {
+        "en": "Consultation",
+        "zh": "咨询"
+      },
+      "description": {
+        "en": "Consultation and collaboration.",
+        "zh": "咨询与合作。"
+      }
+    },
+    {
+      "key": "publications",
+      "label": {
+        "en": "Publications",
+        "zh": "论文"
+      },
+      "description": {
+        "en": "Papers, preprints, and public results.",
+        "zh": "论文、预印本与公开成果。"
+      }
     },
     {
       "key": "blog",
-      "label": { "en": "Blog", "zh": "博客" },
+      "label": {
+        "en": "Blog",
+        "zh": "博客"
+      },
       "description": {
         "en": "Research notes and organization records.",
         "zh": "研究笔记与组织记录。"
@@ -91,29 +139,47 @@
     },
     {
       "key": "sponsorship",
-      "label": { "en": "Sponsorship", "zh": "赞助" },
-      "description": { "en": "Support open security research.", "zh": "支持开放安全研究。" }
+      "label": {
+        "en": "Sponsorship",
+        "zh": "赞助"
+      },
+      "description": {
+        "en": "Support open security research.",
+        "zh": "支持开放安全研究。"
+      }
     }
   ],
   "research": {
-    "label": { "en": "Research areas", "zh": "研究方向" },
+    "label": {
+      "en": "Research areas",
+      "zh": "研究方向"
+    },
     "items": [
       {
-        "title": { "en": "Runtime trust", "zh": "运行时可信" },
+        "title": {
+          "en": "Runtime trust",
+          "zh": "运行时可信"
+        },
         "description": {
           "en": "Observe, model, and enforce systems while they run.",
           "zh": "观察、建模并约束系统在运行过程中的可信性。"
         }
       },
       {
-        "title": { "en": "Software assurance", "zh": "软件保障" },
+        "title": {
+          "en": "Software assurance",
+          "zh": "软件保障"
+        },
         "description": {
           "en": "Connect languages, runtimes, kernels, and deployment through evidence.",
           "zh": "通过可验证证据连接语言、运行时、内核与部署环境。"
         }
       },
       {
-        "title": { "en": "Agentic systems", "zh": "智能体系统" },
+        "title": {
+          "en": "Agentic systems",
+          "zh": "智能体系统"
+        },
         "description": {
           "en": "Study agents that inspect, modify, and operate software systems.",
           "zh": "研究检查、修改和运行复杂软件系统的智能体。"
@@ -122,16 +188,28 @@
     ]
   },
   "library": {
-    "label": { "en": "Research library", "zh": "研究资料库" },
+    "label": {
+      "en": "Research library",
+      "zh": "研究资料库"
+    },
     "items": [
       {
         "path": "books",
-        "title": { "en": "Books", "zh": "书稿" },
-        "description": { "en": "Two books and chapter indexes.", "zh": "两本书与章节目录。" }
+        "title": {
+          "en": "Books",
+          "zh": "书稿"
+        },
+        "description": {
+          "en": "Two books and chapter indexes.",
+          "zh": "两本书与章节目录。"
+        }
       },
       {
         "path": "research-methods",
-        "title": { "en": "Research methods", "zh": "研究方法" },
+        "title": {
+          "en": "Research methods",
+          "zh": "研究方法"
+        },
         "description": {
           "en": "Working material for system security research.",
           "zh": "系统安全研究的工作资料。"
@@ -139,13 +217,22 @@
       },
       {
         "path": "teaching",
-        "title": { "en": "Teaching", "zh": "教学" },
-        "description": { "en": "Courses, notes, and exercises.", "zh": "课程、讲义与练习。" }
+        "title": {
+          "en": "Teaching",
+          "zh": "教学"
+        },
+        "description": {
+          "en": "Courses, notes, and exercises.",
+          "zh": "课程、讲义与练习。"
+        }
       }
     ]
   },
   "contact": {
-    "label": { "en": "Contact", "zh": "联系" },
+    "label": {
+      "en": "Contact",
+      "zh": "联系"
+    },
     "email": "cyruscyliu@gmail.com",
     "github": "https://github.com/cyruscyliu"
   }
