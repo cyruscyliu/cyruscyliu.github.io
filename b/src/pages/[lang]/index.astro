@@ -28,8 +28,8 @@ const labels = { en: { language: '中文', footer: '55AA Security Lab' }, zh: { 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{text(home.meta.title)} · 55AA Security Lab</title>
-    <meta name="description" content={text(home.meta.description)} />
+    <title>{lang === 'zh' ? '55AA 安全实验室｜大湾区大学系统安全研究' : '55AA Security Lab — System Security Research at Great Bay University'}</title>
+    <meta name="description" content={lang === 'zh' ? '55AA 安全实验室位于大湾区大学，开展系统安全、软件安全、程序分析、人工智能智能体和安全工程研究。' : '55AA Security Lab at Great Bay University conducts research in system security, software security, program analysis, AI agents, and security engineering.'} />
   </head>
   <body>
     <header class="site-header">
