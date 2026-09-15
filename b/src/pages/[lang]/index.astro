@@ -67,7 +67,7 @@ const canonicalUrl = `https://cyruscyliu.github.io/${lang}/`;
   </head>
   <body>
     <SiteHeader lang={lang} />
-    <section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><p id="hero-title" class="hero-intro">{lang === 'zh' ? `欢迎来到大湾区大学 55AA 安全实验室。我们围绕${researchSummary}开展研究，并将成果转化为课程、工具和服务。` : `Welcome to 55AA Security Lab at Great Bay University. We work on ${researchSummary}, turning our findings into courses, tools, and services.`}</p></div><div class="hero-orbit" aria-hidden="true"><span></span><span></span><span></span><i></i></div></section>
+    <section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><p id="hero-title" class="hero-intro">{lang === 'zh' ? `欢迎来到大湾区大学 55AA 安全实验室。我们围绕${researchSummary}开展研究，并将成果转化为课程、工具和服务。` : `Welcome to 55AA Security Lab at Great Bay University. We work on ${researchSummary}, turning our findings into courses, tools, and services.`}</p></div><div class="hero-visual" aria-hidden="true"><canvas data-hero-canvas></canvas><div class="hero-fallback">0101<br/>0101<br/>1010<br/>1010</div></div></section>
     <main>
       <section class="panel active" data-panel="home">
         <h2>News</h2>
@@ -92,6 +92,11 @@ const canonicalUrl = `https://cyruscyliu.github.io/${lang}/`;
       <section class="panel" data-panel="sponsorship"><p>{text(sponsorship.body)}</p><h2>{lang === 'zh' ? '赞助者列表' : 'Sponsors'}</h2>{sponsorship.sponsors.length ? sponsorship.sponsors.map((sponsor) => <p>{sponsor}</p>) : <p class="meta">{lang === 'zh' ? '暂无赞助者。' : 'No sponsors yet.'}</p>}</section>
     </main>
     <SiteFooter lang={lang} />
+    <script>
+      import * as THREE from 'three';
+      const canvas=document.querySelector('[data-hero-canvas]');
+      if(canvas instanceof HTMLCanvasElement){const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});const scene=new THREE.Scene();const camera=new THREE.PerspectiveCamera(32,1,.1,100);camera.position.z=8;const group=new THREE.Group();scene.add(group);['0101','0101','1010','1010'].forEach((row,y)=>[...row].forEach((bit,x)=>{const cube=new THREE.Mesh(new THREE.BoxGeometry(.82,.82,.32),new THREE.MeshStandardMaterial({color:bit==='1'?0x0066cc:0x93b5d8,roughness:.35,metalness:.08}));cube.position.set((x-1.5)*.9,(1.5-y)*.9,0);group.add(cube)}));scene.add(new THREE.AmbientLight(0xffffff,2.2));const light=new THREE.DirectionalLight(0xffffff,3);light.position.set(3,4,6);scene.add(light);const resize=()=>{const size=Math.min(canvas.clientWidth,canvas.clientHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(size,size,false)};resize();new ResizeObserver(resize).observe(canvas);group.rotation.set(-.3,.42,.08);const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const render=(time=0)=>{if(!reduce){group.rotation.y=.42+Math.sin(time*.00035)*.14;group.rotation.x=-.3+Math.cos(time*.0003)*.06}renderer.render(scene,camera);if(!reduce)requestAnimationFrame(render)};render();canvas.classList.add('ready')}
+    </script>
     <script>
       const buttons = [...document.querySelectorAll('.tab')];
       const panels = [...document.querySelectorAll('.panel')];
@@ -187,7 +192,7 @@ const canonicalUrl = `https://cyruscyliu.github.io/${lang}/`;
   </body>
 </html>
 <style>
-.hero{display:flex;justify-content:space-between;align-items:center;gap:2rem;width:min(960px,calc(100% - 2rem));margin:2rem auto 3rem;padding:2.5rem 0;border-bottom:1px solid #eee}.hero-copy{max-width:40rem}.eyebrow{margin:0 0 .75rem;color:#777;font-size:.85rem}.hero h2{margin:0 0 .75rem;font-size:clamp(1.8rem,4vw,3rem);line-height:1.1}.hero-intro{margin:0;line-height:1.7}.hero-orbit{width:10rem;height:10rem;flex:none;border:1px solid #b8c7d9;border-radius:50%}@media(max-width:600px){.hero{margin-top:1rem;padding:1.5rem 0}.hero-orbit{width:6rem;height:6rem}}
+.hero{display:flex;justify-content:space-between;align-items:center;gap:2rem;width:min(960px,calc(100% - 2rem));margin:2rem auto 3rem;padding:2.5rem 0;border-bottom:1px solid #eee}.hero-copy{max-width:40rem}.hero-intro{margin:0;line-height:1.7}.hero-visual{position:relative;width:12rem;height:12rem;flex:none}.hero-visual canvas{display:block;width:100%;height:100%;opacity:0}.hero-visual canvas.ready{opacity:1}.hero-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#06c;font:600 1.2rem/1.05 monospace;white-space:nowrap}.hero-visual canvas.ready+.hero-fallback{display:none}@media(max-width:600px){.hero{margin-top:1rem;padding:1.5rem 0}.hero-visual{width:7rem;height:7rem}}
 </style>
 
 <style>
