@@ -35,7 +35,7 @@ const labels = { en: { language: '中文', footer: '55AA Security Lab' }, zh: { 
     <header class="site-header">
       <div class="brand-lockup">
         <a class="gbu-logo" href="https://www.gbu.edu.cn/" aria-label="Great Bay University"><img src="/gbu-logo.png" alt="Great Bay University" /></a>
-        <a class="site-name" href={`/${lang}/`}><img src="/logo.svg" alt="" /><span class="wordmark"><span>55AA</span><span>Security Lab</span></span></a>
+        <a class="site-name" href={`/${lang}/`}><img src="/logo.svg" alt="" /><h1 class="wordmark"><span>55AA</span><span>Security Lab</span></h1></a>
       </div>
       <a class="language" data-language-link href={lang === 'en' ? '/zh/' : '/en/'}>{labels.language}</a>
     </header>
@@ -189,8 +189,8 @@ const labels = { en: { language: '中文', footer: '55AA Security Lab' }, zh: { 
   .gbu-logo img { display: block; width: auto; height: 2rem; }
   .site-name { display: inline-flex; align-items: center; gap: .55rem; color: #000; font-weight: 600; text-decoration: none; }
   .site-name img { width: 2rem; height: 2rem; }
-  .wordmark { display: flex; flex-direction: column; line-height: 1.05; }
-  .wordmark span:first-child { font-size: 1rem; }
+  .wordmark { display: flex; flex-direction: column; line-height: 1.05; margin: 0; padding: 0; font-family: inherit; font-size: 1rem; font-weight: 400; }
+  .wordmark span:first-child { font-size: 1rem; font-weight: 600; }
   .wordmark span:last-child { font-size: .8rem; }
   a { color: #06c; }
   .language { font-size: .9rem; }
@@ -241,10 +241,11 @@ const labels = { en: { language: '中文', footer: '55AA Security Lab' }, zh: { 
   .footer-logos a { display: inline-flex; align-items: center; }
   .footer-logos a:first-child img { width: auto; height: 2rem; }
   .footer-logos a:last-child img { width: 2.5rem; height: 2.5rem; }
-  .footer-site-mark { display: inline-flex; align-items: center; gap: .55rem; }
+  .footer-site-mark { display: inline-flex; align-items: center; gap: .55rem; color: #000; }
   .footer-site-mark img { width: 2.5rem; height: 2.5rem; }
   .footer-site-mark > span { display: flex; flex-direction: column; line-height: 1.05; }
-  .footer-site-mark strong { font-weight: 600; }
+  .footer-site-mark > span > strong { font-size: 1rem; font-weight: 600; }
+  .footer-site-mark > span > span { font-size: .8rem; font-weight: 400; }
   .footer-social { display: flex; gap: .75rem; }
   .qr-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 5.5rem; height: 5.5rem; border: 1px dashed #aaa; color: #777; text-align: center; }
   .qr-placeholder span { font-size: .85rem; }
