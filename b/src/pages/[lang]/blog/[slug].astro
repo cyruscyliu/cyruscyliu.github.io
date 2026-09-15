@@ -1,0 +1,49 @@
+---
+import blog from '../../../data/blog.json';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+
+export function getStaticPaths() {
+  return ['en', 'zh'].flatMap((lang) => blog.entries.map((entry, index) => ({ params: { lang, slug: `${entry.date}-${index + 1}` }, props: { entry, lang } })));
+}
+
+const { entry, lang } = Astro.props;
+const title = entry.title[lang];
+const description = entry.body[lang];
+const canonical = `https://cyruscyliu.github.io/${lang}/blog/${entry.date}-${blog.entries.indexOf(entry) + 1}/`;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · 55AA Security Lab</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={`https://cyruscyliu.github.io/en/blog/${entry.date}-${blog.entries.indexOf(entry) + 1}/`} />
+    <link rel="alternate" hreflang="zh" href={`https://cyruscyliu.github.io/zh/blog/${entry.date}-${blog.entries.indexOf(entry) + 1}/`} />
+    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: title, description, datePublished: entry.date, author: { '@type': 'Organization', name: '55AA Security Lab' }, publisher: { '@type': 'Organization', name: '55AA Security Lab' }, mainEntityOfPage: canonical })} />
+  </head>
+  <body>
+    <SiteHeader lang={lang} blogHref={`blog/${entry.date}-${blog.entries.indexOf(entry) + 1}/`} />
+    <main>
+      <p><a href={`/${lang}/#blog`}>{lang === 'zh' ? '返回博客' : 'Back to blog'}</a></p>
+      <article>
+        <p class="meta"><time datetime={entry.date}>{entry.date}</time> · {entry.meta[lang]}</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </article>
+    </main>
+    <SiteFooter lang={lang} />
+  </body>
+</html>
+<style>
+  :global(html) { overflow-y: scroll; }
+  :global(*) { box-sizing: border-box; }
+  :global(body) { min-height: 100vh; display: flex; flex-direction: column; width: 100%; max-width: none; margin: 0; padding: 0; background: #fff; color: #000; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.55; }
+  :global(main) { flex: 1; }
+  :global(main) { width: min(960px, calc(100% - 2rem)); margin-inline: auto; }
+  a { color: #06c; }
+  h1 { font-size: 1.45rem; font-weight: 600; }
+  .meta { color: #777; font-size: .9rem; }
+</style>
