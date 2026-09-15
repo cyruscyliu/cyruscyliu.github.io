@@ -22,7 +22,7 @@ export function getStaticPaths() {
 
 const lang = (Astro.params.lang === 'zh' ? 'zh' : 'en') as 'en' | 'zh';
 const text = (value: any) => typeof value === 'string' ? value : value?.[lang] ?? '';
-const researchSummary = research.areas.map((area) => text(area.title)).join(lang === 'zh' ? '、' : ', ');
+const researchSummary = research.areas.map((area) => { const title = text(area.title); return lang === 'en' ? title.replace(/^[A-Z]/, (letter) => letter.toLowerCase()) : title; }).join(lang === 'zh' ? '、' : ', ');
 const tabs = home.sections;
 const labels = { en: { language: '中文', footer: '55AA Security Lab' }, zh: { language: 'English', footer: '55AA Security Lab' } }[lang];
 const canonicalUrl = `https://cyruscyliu.github.io/${lang}/`;
