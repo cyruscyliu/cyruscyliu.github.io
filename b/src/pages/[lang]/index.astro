@@ -66,7 +66,7 @@ const canonicalUrl = `https://cyruscyliu.github.io/${lang}/`;
         <Preview title={text(teaching.meta.title)} keyName="teaching" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{teaching.courses.slice(0, 3).map((course) => <article><div class="course-heading"><h2>{text(course.name)}</h2><span class="course-level">{text(course.level)}</span><span class="course-level">{course.code}</span><span class="course-level">{text(course.status)}</span></div></article>)}</Preview>
         <Preview title={text(projects.meta.title)} keyName="projects" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{projects.projects.slice(0, 3).map((project) => <article><div class="item-heading"><h2><a href={text(project.href)}>{text(project.title)}</a></h2><span class="item-tag">{text(project.tag)}</span></div><p>{text(project.introduction)}</p></article>)}</Preview>
         <Preview title={text(publications.meta.title)} keyName="publications" readMore={lang === 'zh' ? '查看更多' : 'Read more'}><div class="dblp-preview" data-dblp-preview>{lang === 'zh' ? '正在加载 DBLP 论文…' : 'Loading DBLP publications…'}</div></Preview>
-        <Preview title={text(tools.meta.title)} keyName="tools" readMore={lang === 'zh' ? '查看更多' : 'Read more'}><div data-github-tools data-limit="3">{lang === 'zh' ? '正在加载 GitHub 工具…' : 'Loading GitHub tools…'}</div></Preview>
+        <Preview title={text(tools.meta.title)} keyName="tools" readMore={lang === 'zh' ? '查看更多' : 'Read more'}><div data-github-tools data-github-config={JSON.stringify(tools.tools)} data-limit="3">{lang === 'zh' ? '正在加载 GitHub 工具…' : 'Loading GitHub tools…'}</div></Preview>
         <Preview title={text(blog.meta.title)} keyName="blog" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{blog.entries.slice(0, 3).map((entry) => <article><p class="meta">{entry.date} · {text(entry.meta)}</p><h2>{text(entry.title)}</h2><p>{text(entry.body)}</p></article>)}</Preview>
       </section>
       <section class="panel" data-panel="people">
@@ -76,7 +76,7 @@ const canonicalUrl = `https://cyruscyliu.github.io/${lang}/`;
         <div class="dblp-list" data-dblp-list data-dblp-rss={publications.dblp[0]?.rss ?? ''} data-language={lang}><p>{lang === 'zh' ? '正在加载 DBLP 论文…' : 'Loading DBLP publications…'}</p></div>
       </section>
       <section class="panel" data-panel="projects">{projects.projects.map((project) => <article><div class="item-heading"><h2><a href={text(project.href)}>{text(project.title)}</a></h2><span class="item-tag">{text(project.tag)}</span></div><p>{text(project.introduction)}</p></article>)}</section>
-      <section class="panel" data-panel="tools"><div data-github-tools>{lang === 'zh' ? '正在加载 GitHub 工具…' : 'Loading GitHub tools…'}</div></section>
+      <section class="panel" data-panel="tools"><div data-github-tools data-github-config={JSON.stringify(tools.tools)}>{lang === 'zh' ? '正在加载 GitHub 工具…' : 'Loading GitHub tools…'}</div></section>
       <section class="panel" data-panel="teaching"><CourseGraph lang={lang} />{[...teaching.courses].sort((a, b) => (a.level.en === 'Undergraduate' ? 0 : 1) - (b.level.en === 'Undergraduate' ? 0 : 1)).map((course) => <article><div class="course-heading"><h2>{text(course.name)}</h2><span class="course-level">{text(course.level)}</span><span class="course-level">{course.code}</span><span class="course-level">{text(course.status)}</span></div></article>)}</section>
       <section class="panel" data-panel="consultation"><p>{text(consultation.body)}</p>{consultation.services.map((service) => <article><div class="item-heading"><h2>{text(service.title)}</h2><span class="item-tag">{text(service.duration)}</span></div></article>)}</section>
       <section class="panel" data-panel="blog">{blog.entries.map((entry) => <article><p class="meta">{entry.date} · {text(entry.meta)}</p><h2>{text(entry.title)}</h2><p>{text(entry.body)}</p></article>)}</section>
@@ -125,15 +125,20 @@ const canonicalUrl = `https://cyruscyliu.github.io/${lang}/`;
         if (button) selectTab(button, false);
         syncLanguageLink();
       });
-      const githubTools = {tools: JSON.parse(`{JSON.stringify(tools.tools)}`)};
+      const githubTools = {tools: JSON.parse(document.querySelector('[data-github-config]')?.dataset.githubConfig || '[]')};
+      const githubToolsKey = '55aa:github-tools:v1';
+      const githubToolsTtl = 6 * 60 * 60 * 1000;
+      let githubToolsCache; try { githubToolsCache = JSON.parse(localStorage.getItem(githubToolsKey) || 'null'); } catch {}
+      const githubToolsFetch = (!githubToolsCache?.savedAt || Date.now() - githubToolsCache.savedAt > githubToolsTtl)
+        ? Promise.all(githubTools.tools.map((t) => fetch(`https://api.github.com/repos/${t.repo}`).then((r) => r.ok ? r.json() : Promise.reject(r.status))))
+            .then((items) => { try { localStorage.setItem(githubToolsKey, JSON.stringify({savedAt: Date.now(), items})); } catch {} return items; })
+            .catch(() => githubToolsCache?.items || [])
+        : Promise.resolve(githubToolsCache.items || []);
       document.querySelectorAll('[data-github-tools]').forEach((container) => {
         const limit = Number(container.dataset.limit || githubTools.tools.length);
-        const lang = document.documentElement.lang === 'zh' ? 'zh' : 'en';
-        const key = '55aa:github-tools:v1'; const ttl = 6 * 60 * 60 * 1000;
-        let cached; try { cached = JSON.parse(localStorage.getItem(key) || 'null'); } catch {}
-        const render = (items) => { container.innerHTML = items.slice(0, limit).map((x) => `<article><div class="item-heading"><h2><a href="${x.html_url}" target="_blank" rel="noreferrer">${x.name}</a></h2><span class="item-tag">GitHub</span></div><p>${x.description || ''}</p></article>`).join(''); };
-        if (cached?.items?.length) render(cached.items);
-        if (!cached?.savedAt || Date.now() - cached.savedAt > ttl) Promise.all(githubTools.tools.map((t) => fetch(`https://api.github.com/repos/${t.repo}`).then((r) => r.json()))).then((items) => { render(items); try { localStorage.setItem(key, JSON.stringify({savedAt: Date.now(), items}));} catch {} }).catch(() => {});
+        const render = (items) => { container.innerHTML = items.slice(0, limit).map((x) => `<article><p class="tool-title"><a href="${x.html_url}" target="_blank" rel="noreferrer">${x.name}</a> <span class="item-tag">GitHub</span></p><p>${x.description || ''}</p></article>`).join(''); };
+        if (githubToolsCache?.items?.length) render(githubToolsCache.items);
+        githubToolsFetch.then(render);
       });
       const publicationList = document.querySelector('[data-dblp-list]');
       const publicationPreview = document.querySelector('[data-dblp-preview]');
@@ -240,6 +245,11 @@ const canonicalUrl = `https://cyruscyliu.github.io/${lang}/`;
   :global(.dblp-list p), :global(.dblp-preview p) { margin: 0; padding: 0; font-size: 1rem; line-height: 1.55; }
   :global(.dblp-list .publication-title), :global(.dblp-preview .publication-title) { font-weight: 600; }
   :global(.dblp-list a), :global(.dblp-preview a) { color: #06c !important; }
+  :global(.tool-title) { margin: 0; padding: 0; font-size: 1rem; line-height: 1.55; font-weight: 600; }
+  :global(.tool-title a) { color: #06c; }
+  :global(.tool-title .item-tag) { color: #777; font-size: .8rem; font-weight: 400; }
+  :global([data-github-tools] article) { margin: 0 0 1.35rem; }
+  :global([data-github-tools] article > p) { margin: 0; padding: 0; font-size: 1rem; line-height: 1.55; }
   .person { display: flex; align-items: flex-start; gap: 1.25rem; }
   .person-image { display: block; flex: 0 0 auto; width: 144px; height: 144px; object-fit: cover; }
   .person-info { min-height: 144px; display: flex; flex-direction: column; justify-content: space-between; padding-top: .05rem; }
