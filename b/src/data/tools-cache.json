@@ -1,0 +1,21 @@
+{
+  "fetchedAt": "2026-09-15T15:14:32.571Z",
+  "tools": {
+    "cyruscyliu/firmguide": {
+      "title": "firmguide",
+      "description": "FirmGuide: Boosting the Capability of Rehosting Embedded Linux Kernels through Model-Guided Kernel Execution"
+    },
+    "HexHive/HyperPill": {
+      "title": "HyperPill",
+      "description": ""
+    },
+    "HexHive/ViDeZZo": {
+      "title": "ViDeZZo",
+      "description": "ViDeZZo source code."
+    },
+    "cyruscyliu/computing-genealogy-project": {
+      "title": "computing-genealogy-project",
+      "description": "Explore computer science academic genealogy: PhD advisors, students, institutions, and lineage networks."
+    }
+  }
+}
