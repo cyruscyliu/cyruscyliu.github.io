@@ -1,6 +1,7 @@
 ---
 import homeData from '../data/home.json';
-const { lang, blogHref = null } = Astro.props;
+const { lang: propLang = 'en', blogHref = null } = Astro.props;
+const lang = Astro.params?.lang === 'zh' ? 'zh' : (Astro.params?.lang === 'en' ? 'en' : propLang);
 const home = `/${lang}/`;
 const language = lang === 'en' ? '中文' : 'English';
 const languageHref = blogHref ? `/${lang === 'en' ? 'zh' : 'en'}/${blogHref}` : `/${lang === 'en' ? 'zh' : 'en'}/`;
