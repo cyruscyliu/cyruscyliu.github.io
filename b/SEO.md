@@ -196,9 +196,9 @@ DBLP 当前通过浏览器请求 RSS，搜索引擎可能只看到 `Loading DBLP
 
 ## 六、图片、二维码和可访问性
 
-### 16. 补充有意义的 alt 文本
+### 16. [已完成] 补充有意义的 alt 文本
 
-装饰性 Logo 可以使用 `alt=""`，独立品牌 Logo 和人物照片应有准确描述性 alt 文本。
+装饰性 55AA logo 使用 `alt=""` 并由相邻文字提供名称；GBU logo 使用准确的品牌 alt；人物照片使用数据中的双语描述性 alt；Hero 的 Canvas/SVG 视觉层置于 `aria-hidden="true"`，不会干扰读屏内容。
 
 ### 17. 用真实二维码替换 placeholder
 
