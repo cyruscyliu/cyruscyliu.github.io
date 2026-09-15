@@ -4,22 +4,144 @@
     <loc>https://cyruscyliu.github.io/en/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/" />
   </url>
   <url>
     <loc>https://cyruscyliu.github.io/zh/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/" />
   </url>
-  <url><loc>https://cyruscyliu.github.io/en/blog/2026-09-14-1/</loc></url>
-  <url><loc>https://cyruscyliu.github.io/en/blog/2026-09-14-2/</loc></url>
-  <url><loc>https://cyruscyliu.github.io/zh/blog/2026-09-14-1/</loc></url>
-  <url><loc>https://cyruscyliu.github.io/zh/blog/2026-09-14-2/</loc></url>
-  <url><loc>https://cyruscyliu.github.io/en/projects/</loc></url><url><loc>https://cyruscyliu.github.io/zh/projects/</loc></url>
-  <url><loc>https://cyruscyliu.github.io/en/publications/</loc></url><url><loc>https://cyruscyliu.github.io/zh/publications/</loc></url>
-  <url><loc>https://cyruscyliu.github.io/en/teaching/</loc></url><url><loc>https://cyruscyliu.github.io/zh/teaching/</loc></url>
-  <url><loc>https://cyruscyliu.github.io/en/tools/</loc></url><url><loc>https://cyruscyliu.github.io/zh/tools/</loc></url>
-  <url><loc>https://cyruscyliu.github.io/en/blog/</loc></url><url><loc>https://cyruscyliu.github.io/zh/blog/</loc></url>
-  <url><loc>https://cyruscyliu.github.io/en/people/</loc></url><url><loc>https://cyruscyliu.github.io/zh/people/</loc></url>
-  <url><loc>https://cyruscyliu.github.io/en/consultation/</loc></url><url><loc>https://cyruscyliu.github.io/zh/consultation/</loc></url>
-  <url><loc>https://cyruscyliu.github.io/en/sponsorship/</loc></url><url><loc>https://cyruscyliu.github.io/zh/sponsorship/</loc></url>
+  <url>
+    <loc>https://cyruscyliu.github.io/en/news/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/news/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/news/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/news/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/zh/news/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/news/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/news/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/news/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/en/people/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/people/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/people/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/people/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/zh/people/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/people/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/people/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/people/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/en/teaching/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/teaching/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/teaching/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/teaching/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/zh/teaching/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/teaching/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/teaching/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/teaching/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/en/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/projects/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/projects/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/zh/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/projects/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/projects/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/en/tools/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/tools/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/tools/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/tools/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/zh/tools/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/tools/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/tools/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/tools/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/en/consultation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/consultation/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/consultation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/consultation/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/zh/consultation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/consultation/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/consultation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/consultation/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/en/publications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/publications/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/publications/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/publications/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/zh/publications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/publications/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/publications/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/publications/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/blog/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/zh/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/blog/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/en/sponsorship/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/sponsorship/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/sponsorship/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/sponsorship/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/zh/sponsorship/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/sponsorship/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/sponsorship/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/sponsorship/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/en/blog/2026-09-14-1/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/blog/2026-09-14-1/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/blog/2026-09-14-1/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/blog/2026-09-14-1/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/zh/blog/2026-09-14-1/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/blog/2026-09-14-1/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/blog/2026-09-14-1/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/blog/2026-09-14-1/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/en/blog/2026-09-14-2/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/blog/2026-09-14-2/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/blog/2026-09-14-2/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/blog/2026-09-14-2/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/zh/blog/2026-09-14-2/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/blog/2026-09-14-2/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/blog/2026-09-14-2/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/blog/2026-09-14-2/" />
+  </url>
 </urlset>

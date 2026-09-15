@@ -2,6 +2,7 @@
 import blog from '../../../data/blog.json';
 import SiteHeader from '../../../components/SiteHeader.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
+import SeoHead from '../../../components/SeoHead.astro';
 
 export function getStaticPaths() {
   return ['en', 'zh'].flatMap((lang) => blog.entries.map((entry, index) => ({ params: { lang, slug: `${entry.date}-${index + 1}` }, props: { entry, lang } })));
@@ -15,13 +16,7 @@ const canonical = `https://cyruscyliu.github.io/${lang}/blog/${entry.date}-${blo
 <!doctype html>
 <html lang={lang}>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} · 55AA Security Lab</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en" href={`https://cyruscyliu.github.io/en/blog/${entry.date}-${blog.entries.indexOf(entry) + 1}/`} />
-    <link rel="alternate" hreflang="zh" href={`https://cyruscyliu.github.io/zh/blog/${entry.date}-${blog.entries.indexOf(entry) + 1}/`} />
+    <SeoHead lang={lang} path={`blog/${entry.date}-${blog.entries.indexOf(entry) + 1}`} title={`${title} · 55AA Security Lab`} description={description} type="article" />
     <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: title, description, datePublished: entry.date, author: { '@type': 'Organization', name: '55AA Security Lab' }, publisher: { '@type': 'Organization', name: '55AA Security Lab' }, mainEntityOfPage: canonical })} />
   </head>
   <body>

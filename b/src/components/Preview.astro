@@ -1,9 +1,9 @@
 ---
-const { title, keyName, readMore = 'Read more', cta = '' } = Astro.props;
+const { title, keyName, readMore = 'Read more' } = Astro.props;
 ---
 <section class="preview">
   <div class="preview-heading" style="display:flex;align-items:baseline;justify-content:space-between;gap:1rem">
-    <h2>{title}</h2>{cta && <span class="item-tag section-cta">{cta}</span>}
+    <h2>{title}</h2>
     <button type="button" class="read-more" data-goto={keyName}>{readMore} →</button>
   </div>
   <slot />
@@ -12,6 +12,5 @@ const { title, keyName, readMore = 'Read more', cta = '' } = Astro.props;
 <style>
   .preview { margin-top: 2.75rem; }
   .preview-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
-  .section-cta { color:#555; font-size:.85rem; margin-left:auto; }
   .read-more { border: 0; background: none; color: #06c; cursor: pointer; padding: 0; font: inherit; }
 </style>

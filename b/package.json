@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/fetch-tools.mjs || true && astro build",
+    "build": "node scripts/generate-sitemap.mjs && (node scripts/fetch-tools.mjs || true) && astro build",
     "preview": "astro preview",
     "fetch-dblp": "node scripts/fetch-dblp.mjs"
   },

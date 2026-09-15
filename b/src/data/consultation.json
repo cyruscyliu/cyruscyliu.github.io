@@ -1,9 +1,8 @@
 {
   "meta": {
     "title": { "en": "Consultation", "zh": "咨询" },
-    "description": { "en": "Consultation and collaboration with 55AA Security Lab", "zh": "55AA 安全实验室咨询与合作" },
-    "cta": { "en": "Booking: contact us", "zh": "预约方式：联系实验室" }
-  },
+    "description": { "en": "Consultation and collaboration with 55AA Security Lab", "zh": "55AA 安全实验室咨询与合作" }
+    },
   "body": { "en": "We welcome inquiries about system security, software security, security research, and related engineering work. Please describe your question, context, and expected outcome when contacting us.", "zh": "欢迎就系统安全、软件安全、安全研究及相关工程工作进行咨询。联系时请尽量说明问题、背景和期望结果。" },
   "services": [
     { "title": { "en": "PhD Interview Simulation", "zh": "博士面试模拟" }, "duration": { "en": "1 hour", "zh": "1 小时" } },

@@ -1,0 +1,44 @@
+---
+interface Props {
+  lang: 'en' | 'zh';
+  path?: string;
+  title: string;
+  description: string;
+  type?: 'website' | 'article';
+  image?: string;
+}
+
+const {
+  lang,
+  path = '',
+  title,
+  description,
+  type = 'website',
+  image = '/og-image.svg'
+} = Astro.props;
+const site = Astro.site ?? new URL('https://cyruscyliu.github.io');
+const normalizedPath = path ? `${path.replace(/^\/+|\/+$/g, '')}/` : '';
+const localizedUrl = (language: 'en' | 'zh') => new URL(`/${language}/${normalizedPath}`, site).href;
+const canonical = localizedUrl(lang);
+const imageUrl = new URL(image, site).href;
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang="en" href={localizedUrl('en')} />
+<link rel="alternate" hreflang="zh" href={localizedUrl('zh')} />
+<link rel="alternate" hreflang="x-default" href={localizedUrl('en')} />
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content="55AA Security Lab" />
+<meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : 'en_US'} />
+<meta property="og:locale:alternate" content={lang === 'zh' ? 'en_US' : 'zh_CN'} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={imageUrl} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
