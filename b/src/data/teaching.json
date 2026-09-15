@@ -22,7 +22,7 @@
     {
       "code": "55AA-003",
       "level": { "en": "Undergraduate", "zh": "本科生" },
-      "name": { "en": "Systems Security", "zh": "系统安全" },
+      "name": { "en": "System Security", "zh": "系统安全" },
       "status": { "en": "Under development", "zh": "建设中" }
     },
     {
@@ -118,7 +118,7 @@
     {
       "code": "55AA-019",
       "level": { "en": "Graduate", "zh": "研究生" },
-      "name": { "en": "Systems Security Research Methods", "zh": "系统安全科研方法" },
+      "name": { "en": "System Security Research Methods", "zh": "系统安全科研方法" },
       "status": { "en": "Under development", "zh": "建设中" }
     },
     {

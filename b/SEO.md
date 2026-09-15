@@ -38,7 +38,7 @@
 建议：
 
 ```text
-55AA Security Lab — Systems Security Research at Great Bay University
+55AA Security Lab — System Security Research at Great Bay University
 55AA 安全实验室｜大湾区大学系统安全研究
 ```
 
@@ -57,7 +57,7 @@
 英文示例：
 
 ```text
-55AA Security Lab at Great Bay University conducts research in systems security, software security, program analysis, AI agents, and security engineering.
+55AA Security Lab at Great Bay University conducts research in system security, software security, program analysis, AI agents, and security engineering.
 ```
 
 ### 4. [已完成] 增加 canonical、hreflang 和 sitemap
@@ -184,7 +184,7 @@ DBLP 当前通过浏览器请求 RSS，搜索引擎可能只看到 `Loading DBLP
 
 建议建立术语表并保持全站一致，例如：
 
-- `systems security` / `system security`
+- `system security` / `system security`
 - `software security` / `software assurance`
 - `AI agents` / `agentic systems`
 - `POC generation`
