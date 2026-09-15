@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "title": { "en": "People", "zh": "成员" },
+    "description": {
+      "en": "People at 55AA Security Lab",
+      "zh": "55AA Security Lab 成员"
+    }
+  },
+  "label": { "en": "Lab members", "zh": "实验室成员" },
+  "linksLabel": { "en": "links", "zh": "链接" },
+  "people": [
+    {
+    "name": "Qiang Liu",
+    "role": {
+      "en": "Assistant Professor",
+      "zh": "助理教授"
+    },
+    "interests": {
+      "en": ["Systems Security", "AI Agents", "Meta-science"],
+      "zh": ["系统安全", "AI 智能体", "元科学"]
+    },
+    "motto": {
+      "en": "Le vent se lève, il faut tenter de vivre.",
+      "zh": "风起唯有努力生存"
+    },
+    "profileImage": "https://avatars.githubusercontent.com/cyruscyliu?s=256",
+    "alt": {
+      "en": "Profile image of Qiang Liu",
+      "zh": "Qiang Liu 的头像"
+    },
+    "links": [
+      {
+        "kind": "scholar",
+        "label": {
+          "en": "Google Scholar",
+          "zh": "Google Scholar"
+        },
+        "url": "https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en"
+      },
+      {
+        "kind": "github",
+        "label": {
+          "en": "GitHub",
+          "zh": "GitHub"
+        },
+        "url": "https://github.com/cyruscyliu"
+      },
+      {
+        "kind": "email",
+        "label": {
+          "en": "Email",
+          "zh": "邮件"
+        },
+        "url": "mailto:cyruscyliu@gmail.com"
+      }
+    ]
+    }
+  ]
+}

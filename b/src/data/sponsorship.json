@@ -1,0 +1,8 @@
+{
+  "meta": {
+    "title": { "en": "Sponsorship", "zh": "赞助" },
+    "description": { "en": "Support the open research and engineering work of 55AA Security Lab", "zh": "支持 55AA 安全实验室的开放研究与工程工作" }
+  },
+  "body": { "en": "We welcome different forms of sponsorship, including gifts, research grants, equipment donations, cloud and infrastructure credits, and support for student projects and open-source development. Sponsorship helps improve student support, build durable security research infrastructure, and keep our work and artifacts open to the community. Sponsors receive transparent updates on how funds are used and, with their permission, are acknowledged by name on our homepage.", "zh": "我们欢迎不同形式的赞助，包括捐赠资金、科研经费、设备捐赠、云服务与基础设施额度，以及对学生项目和开源开发的支持。赞助将用于改善学生待遇、建设长期的安全研究基础设施，并持续向社区开放研究工作与成果。我们会向赞助者透明说明资金使用情况；经赞助者同意后，也会在主页公开致谢并列出赞助者名称。" },
+  "sponsors": []
+}

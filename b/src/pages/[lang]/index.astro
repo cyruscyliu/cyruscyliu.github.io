@@ -1,0 +1,264 @@
+---
+import home from '../../data/home.json';
+import research from '../../data/research.json';
+import people from '../../data/people.json';
+import publications from '../../data/publications.json';
+import projects from '../../data/projects.json';
+import tools from '../../data/tools.json';
+import teaching from '../../data/teaching.json';
+import blog from '../../data/blog.json';
+import news from '../../data/news.json';
+import Preview from '../../components/Preview.astro';
+import SocialIcon from '../../components/SocialIcon.astro';
+import CourseGraph from '../../components/CourseGraph.astro';
+import consultation from '../../data/consultation.json';
+import sponsorship from '../../data/sponsorship.json';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'en' } }, { params: { lang: 'zh' } }];
+}
+
+const lang = (Astro.params.lang === 'zh' ? 'zh' : 'en') as 'en' | 'zh';
+const text = (value: any) => typeof value === 'string' ? value : value?.[lang] ?? '';
+const tabs = home.sections;
+const labels = { en: { language: '中文', footer: '55AA Security Lab' }, zh: { language: 'English', footer: '55AA Security Lab' } }[lang];
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{text(home.meta.title)} · 55AA Security Lab</title>
+    <meta name="description" content={text(home.meta.description)} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand-lockup">
+        <a class="gbu-logo" href="https://www.gbu.edu.cn/" aria-label="Great Bay University"><img src="/gbu-logo.png" alt="Great Bay University" /></a>
+        <a class="site-name" href={`/${lang}/`}><img src="/logo.svg" alt="" /><span class="wordmark"><span>55AA</span><span>Security Lab</span></span></a>
+      </div>
+      <a class="language" data-language-link href={lang === 'en' ? '/zh/' : '/en/'}>{labels.language}</a>
+    </header>
+    <main>
+      <nav class="tabs" aria-label="Sections">
+        {tabs.map((tab, index) => <button type="button" class={index === 0 ? 'tab active' : 'tab'} data-tab={tab.key} aria-selected={index === 0}>{text(tab.label)}</button>)}
+      </nav>
+
+      <section class="panel active" data-panel="home">
+        <h2>News</h2>
+        {news.entries.slice(0, 3).map((entry) => <article class="news-item"><time class="meta" datetime={entry.date}>{entry.date}</time><h2>{text(entry.title)}</h2></article>)}
+        <h2>Research</h2>
+        {research.areas.map((area) => <article class="research-item"><h2 class="research-title"><a href={text(area.href)}>{text(area.title)}</a></h2><p>{text(area.body)}</p></article>)}
+        <Preview title={text(teaching.meta.title)} keyName="teaching" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{teaching.courses.slice(0, 3).map((course) => <article><div class="course-heading"><h2>{text(course.name)}</h2><span class="course-level">{text(course.level)}</span><span class="course-level">{course.code}</span><span class="course-level">{text(course.status)}</span></div></article>)}</Preview>
+        <Preview title={text(projects.meta.title)} keyName="projects" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{projects.projects.slice(0, 3).map((project) => <article><div class="item-heading"><h2><a href={text(project.href)}>{text(project.title)}</a></h2><span class="item-tag">{text(project.tag)}</span></div><p>{text(project.introduction)}</p></article>)}</Preview>
+        <Preview title={text(publications.meta.title)} keyName="publications" readMore={lang === 'zh' ? '查看更多' : 'Read more'}><div class="dblp-preview" data-dblp-preview>{lang === 'zh' ? '正在加载 DBLP 论文…' : 'Loading DBLP publications…'}</div></Preview>
+        <Preview title={text(tools.meta.title)} keyName="tools" readMore={lang === 'zh' ? '查看更多' : 'Read more'}><div data-github-tools data-limit="3">{lang === 'zh' ? '正在加载 GitHub 工具…' : 'Loading GitHub tools…'}</div></Preview>
+        <Preview title={text(blog.meta.title)} keyName="blog" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{blog.entries.slice(0, 3).map((entry) => <article><p class="meta">{entry.date} · {text(entry.meta)}</p><h2>{text(entry.title)}</h2><p>{text(entry.body)}</p></article>)}</Preview>
+      </section>
+      <section class="panel" data-panel="people">
+        {people.people.map((person) => <article class="person"><img class="person-image" src={person.profileImage} alt={text(person.alt)} /><div class="person-info"><h2>{person.name}</h2><div class="person-details"><p class="person-role">{text(person.role)}</p><p class="person-interests">{person.interests[lang].join(' · ')}</p><p class="person-motto">{text(person.motto)}</p><div class="socials">{person.links.map((link) => <a href={link.url} aria-label={text(link.label)} title={text(link.label)}><SocialIcon kind={link.kind} /></a>)}</div></div></div></article>)}
+      </section>
+      <section class="panel" data-panel="publications">
+        <div class="dblp-list" data-dblp-list data-dblp-rss={publications.dblp[0]?.rss ?? ''} data-language={lang}><p>{lang === 'zh' ? '正在加载 DBLP 论文…' : 'Loading DBLP publications…'}</p></div>
+      </section>
+      <section class="panel" data-panel="projects">{projects.projects.map((project) => <article><div class="item-heading"><h2><a href={text(project.href)}>{text(project.title)}</a></h2><span class="item-tag">{text(project.tag)}</span></div><p>{text(project.introduction)}</p></article>)}</section>
+      <section class="panel" data-panel="tools"><div data-github-tools>{lang === 'zh' ? '正在加载 GitHub 工具…' : 'Loading GitHub tools…'}</div></section>
+      <section class="panel" data-panel="teaching"><CourseGraph lang={lang} />{[...teaching.courses].sort((a, b) => (a.level.en === 'Undergraduate' ? 0 : 1) - (b.level.en === 'Undergraduate' ? 0 : 1)).map((course) => <article><div class="course-heading"><h2>{text(course.name)}</h2><span class="course-level">{text(course.level)}</span><span class="course-level">{course.code}</span><span class="course-level">{text(course.status)}</span></div></article>)}</section>
+      <section class="panel" data-panel="consultation"><p>{text(consultation.body)}</p>{consultation.services.map((service) => <article><div class="item-heading"><h2>{text(service.title)}</h2><span class="item-tag">{text(service.duration)}</span></div></article>)}</section>
+      <section class="panel" data-panel="blog">{blog.entries.map((entry) => <article><p class="meta">{entry.date} · {text(entry.meta)}</p><h2>{text(entry.title)}</h2><p>{text(entry.body)}</p></article>)}</section>
+      <section class="panel" data-panel="sponsorship"><p>{text(sponsorship.body)}</p><h2>{lang === 'zh' ? '赞助者列表' : 'Sponsors'}</h2>{sponsorship.sponsors.length ? sponsorship.sponsors.map((sponsor) => <p>{sponsor}</p>) : <p class="meta">{lang === 'zh' ? '暂无赞助者。' : 'No sponsors yet.'}</p>}</section>
+    </main>
+    <footer class="footer-upper">
+      <div class="footer-identity">
+        <div class="footer-logos">
+          <a href="https://www.gbu.edu.cn/" aria-label="Great Bay University"><img src="/gbu-logo.png" alt="Great Bay University" /></a>
+          <div class="footer-site-mark"><img src="/logo.svg" alt="" /><span><strong>55AA</strong><span>Security Lab</span></span></div>
+        </div>
+        <p>{lang === 'zh' ? '邮编 523808 · 广东省东莞市松山湖大学路 16 号大湾区大学（松山湖校区）' : 'Great Bay University (Songshan Lake Campus), No. 16 Daxue Road, Songshan Lake, Dongguan, Guangdong 523808, China'}</p>
+      </div>
+      <div class="footer-social">
+        <div class="qr-placeholder"><span>{lang === 'zh' ? '交流群' : 'Community'}</span><small>QR placeholder</small></div>
+        <div class="qr-placeholder"><span>Bilibili</span><small>QR placeholder</small></div>
+        <div class="qr-placeholder"><span>小红书</span><small>QR placeholder</small></div>
+        <div class="qr-placeholder"><span>infosec.exchange</span><small>QR placeholder</small></div>
+        <div class="qr-placeholder"><span>X</span><small>QR placeholder</small></div>
+      </div>
+    </footer>
+    <footer>
+      <span>© 2026 55AA Security Lab, GBU. All rights reserved.</span>
+      <span>{lang === 'zh' ? '最后编辑：2026-07-26' : 'Last edited: 2026-07-26'}</span>
+    </footer>
+    <script>
+      const buttons = [...document.querySelectorAll('.tab')];
+      const panels = [...document.querySelectorAll('.panel')];
+      const languageLink = document.querySelector('[data-language-link]');
+      const syncLanguageLink = () => {
+        if (languageLink) languageLink.href = languageLink.pathname + location.hash;
+      };
+      syncLanguageLink();
+      const selectTab = (button, updateUrl = true) => {
+        const key = button.dataset.tab;
+        buttons.forEach((item) => { const selected = item === button; item.classList.toggle('active', selected); item.setAttribute('aria-selected', String(selected)); });
+        panels.forEach((panel) => panel.classList.toggle('active', panel.dataset.panel === key));
+        if (updateUrl && key) history.replaceState(null, '', `#${key}`);
+        syncLanguageLink();
+      };
+      buttons.forEach((button) => button.addEventListener('click', () => selectTab(button)));
+      const initialKey = location.hash.slice(1);
+      const initialButton = buttons.find((button) => button.dataset.tab === initialKey);
+      if (initialButton) selectTab(initialButton, false);
+      window.addEventListener('hashchange', () => {
+        const button = buttons.find((item) => item.dataset.tab === location.hash.slice(1));
+        if (button) selectTab(button, false);
+        syncLanguageLink();
+      });
+      const githubTools = {tools: JSON.parse(`{JSON.stringify(tools.tools)}`)};
+      document.querySelectorAll('[data-github-tools]').forEach((container) => {
+        const limit = Number(container.dataset.limit || githubTools.tools.length);
+        const lang = document.documentElement.lang === 'zh' ? 'zh' : 'en';
+        const key = '55aa:github-tools:v1'; const ttl = 6 * 60 * 60 * 1000;
+        let cached; try { cached = JSON.parse(localStorage.getItem(key) || 'null'); } catch {}
+        const render = (items) => { container.innerHTML = items.slice(0, limit).map((x) => `<article><div class="item-heading"><h2><a href="${x.html_url}" target="_blank" rel="noreferrer">${x.name}</a></h2><span class="item-tag">GitHub</span></div><p>${x.description || ''}</p></article>`).join(''); };
+        if (cached?.items?.length) render(cached.items);
+        if (!cached?.savedAt || Date.now() - cached.savedAt > ttl) Promise.all(githubTools.tools.map((t) => fetch(`https://api.github.com/repos/${t.repo}`).then((r) => r.json()))).then((items) => { render(items); try { localStorage.setItem(key, JSON.stringify({savedAt: Date.now(), items}));} catch {} }).catch(() => {});
+      });
+      const publicationList = document.querySelector('[data-dblp-list]');
+      const publicationPreview = document.querySelector('[data-dblp-preview]');
+      if (publicationList) {
+        const rss = publicationList.dataset.dblpRss;
+        const lang = publicationList.dataset.language === 'zh' ? 'zh' : 'en';
+        const api = rss ? `https://r.jina.ai/${rss}` : '';
+        const cacheKey = `55aa:dblp:v2:${rss}`;
+        const cacheTtl = 60 * 60 * 1000;
+        const showMessage = (message) => {
+          publicationList.innerHTML = `<p>${message}</p>`;
+          if (publicationPreview) publicationPreview.innerHTML = publicationList.innerHTML;
+        };
+        const render = (items) => {
+          const html = items.map((item) => `<article><p class="publication-title"><a href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a></p><p class="publication-authors">${item.authors || ''}</p><p class="meta">${item.venue || ''}${item.year ? ` · ${item.year}` : ''}</p></article>`).join('');
+          publicationList.innerHTML = html || `<p>${lang === 'zh' ? '暂无 DBLP 论文。' : 'No DBLP publications found.'}</p>`;
+          if (publicationPreview) publicationPreview.innerHTML = html ? html.split('</article>').slice(0, 3).join('</article>') : publicationList.innerHTML;
+        };
+        const cached = (() => { try { return JSON.parse(localStorage.getItem(cacheKey) || 'null'); } catch { return null; } })();
+        if (cached?.items?.length) render(cached.items);
+        const shouldRefresh = !cached?.savedAt || Date.now() - cached.savedAt > cacheTtl;
+        if (shouldRefresh) fetch(api).then((response) => response.text()).then((raw) => {
+          const items = [...raw.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((match) => {
+            const block = match[1];
+            const get = (tag) => block.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`))?.[1]?.trim() ?? '';
+            const clean = (value) => value.replace(/<!\[CDATA\[/g, '').replace(/\]\]>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+            const description = get('description');
+            const authorBlock = description.split('<br>')[0] || '';
+            const authors = [...authorBlock.matchAll(/itemprop="name"[^>]*>([^<]+)</g)].map((match) => match[1].trim());
+            const afterAuthors = description.split('<br>')[1] || '';
+            const venue = afterAuthors.match(/itemprop="isPartOf"[\s\S]*?itemprop="name"[^>]*>([^<]+)</)?.[1]?.trim() || '';
+            const year = description.match(/itemprop="datePublished"[^>]*>([^<]+)</)?.[1]?.trim() || '';
+            const authorHtml = authors.map((author) => author === 'Qiang Liu' ? `<strong>${author}</strong>` : author).join(', ');
+            const title = clean(get('title')).replace(/[.]$/, '');
+            return { title, url: get('link'), authors: authorHtml, venue, year };
+          });
+          return items;
+        }).then((data) => {
+          render(data);
+          try { localStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), items: data })); } catch {}
+        }).catch(() => {
+          if (!cached?.items?.length) showMessage(lang === 'zh' ? 'DBLP 论文暂时无法加载。' : 'DBLP publications are temporarily unavailable.');
+        });
+      }
+      document.querySelectorAll('[data-goto]').forEach((link) => link.addEventListener('click', () => {
+        document.querySelector(`.tab[data-tab="${link.dataset.goto}"]`)?.click();
+      }));
+      if (document.querySelector('.mermaid')) {
+        import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs').then(({ default: mermaid }) => {
+          mermaid.initialize({ startOnLoad: false, theme: 'base', securityLevel: 'strict', fontFamily: 'system-ui, sans-serif' });
+          mermaid.run({ nodes: document.querySelectorAll('.mermaid') });
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(html) { overflow-y: scroll; }
+  :global(body) { min-height: 100vh; display: flex; flex-direction: column; margin: 0; background: #fff; color: #000; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.55; }
+  .site-header, main, footer { width: min(960px, calc(100% - 2rem)); margin-inline: auto; }
+  main { flex: 1; }
+  .site-header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; }
+  .brand-lockup { display: flex; align-items: center; gap: 1rem; }
+  .gbu-logo { display: inline-flex; align-items: center; }
+  .gbu-logo img { display: block; width: auto; height: 2rem; }
+  .site-name { display: inline-flex; align-items: center; gap: .55rem; color: #000; font-weight: 600; text-decoration: none; }
+  .site-name img { width: 2rem; height: 2rem; }
+  .wordmark { display: flex; flex-direction: column; line-height: 1.05; }
+  .wordmark span:first-child { font-size: 1rem; }
+  .wordmark span:last-child { font-size: .8rem; }
+  a { color: #06c; }
+  .language { font-size: .9rem; }
+  .tabs { display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; padding: .35rem 0; }
+  .tab { border: 0; background: none; color: #06c; cursor: pointer; font: inherit; padding: .25rem 0; }
+  .tab.active { color: #000; font-weight: 600; }
+  .panel { display: none; padding: 1.5rem 0 2rem; }
+  .panel.active { display: block; }
+  h1 { font-size: 1.45rem; font-weight: 600; margin: 0 0 1.2rem; }
+  h2 { font-size: 1.05rem; font-weight: 600; margin: 0 0 .25rem; }
+  .research-title { font-weight: 600; }
+  .research-item h2 { margin: 0 0 .25rem; }
+  .research-item p { margin: 0; }
+  article { margin: 0 0 1.35rem; }
+  .news-item { margin-bottom: .9rem; }
+  .news-item time, .news-item h2 { display: block; }
+  .news-item h2 { margin: .15rem 0 0; font-weight: 400; }
+  .panel[data-panel="home"] > h2 { margin-top: 2.75rem; }
+  .panel[data-panel="home"] > h2:first-child { margin-top: 0; }
+  .preview { margin-top: 2.75rem; }
+  .read-more { border: 0; background: none; color: #06c; cursor: pointer; padding: 0; font: inherit; }
+  p { margin: .25rem 0 .65rem; }
+  .tags, .meta { color: #555; font-size: .9rem; }
+  .course-heading { display: flex; align-items: baseline; gap: .5rem; }
+  .course-heading h2 { margin: 0; }
+  .course-level { color: #777; font-size: .8rem; }
+  .item-heading { display: flex; align-items: baseline; gap: .5rem; }
+  .item-heading h2 { margin: 0; }
+  .item-tag { color: #777; font-size: .8rem; }
+  .course-description { white-space: nowrap; }
+  :global(.dblp-preview), :global(.dblp-list) { min-height: 1.55em; margin: 0; padding: 0; }
+  :global(.dblp-list article), :global(.dblp-preview article) { margin: 0 0 1.35rem; }
+  :global(.dblp-list p), :global(.dblp-preview p) { margin: 0; padding: 0; font-size: 1rem; line-height: 1.55; }
+  :global(.dblp-list .publication-title), :global(.dblp-preview .publication-title) { font-weight: 600; }
+  :global(.dblp-list a), :global(.dblp-preview a) { color: #06c !important; }
+  .person { display: flex; align-items: flex-start; gap: 1.25rem; }
+  .person-image { display: block; flex: 0 0 auto; width: 144px; height: 144px; object-fit: cover; }
+  .person-info { min-height: 144px; display: flex; flex-direction: column; justify-content: space-between; padding-top: .05rem; }
+  .person-info h2 { margin: 0; }
+  .person-details { display: flex; flex-direction: column; gap: .15rem; }
+  .person-role, .person-interests, .person-motto { margin: 0; }
+  .socials { display: flex; align-items: center; gap: .4rem; margin-top: .2rem; }
+  .socials a { display: inline-flex; align-items: center; justify-content: center; width: 1.35rem; height: 1.35rem; text-decoration: none; }
+  footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0 2rem; color: #555; font-size: .9rem; }
+  .footer-upper { align-items: flex-start; padding: 2rem 0 1.25rem; border-top: 1px solid #eee; color: #555; }
+  .footer-identity p { margin: .75rem 0 0; }
+  .footer-logos { display: flex; align-items: center; gap: 1rem; }
+  .footer-logos a { display: inline-flex; align-items: center; }
+  .footer-logos a:first-child img { width: auto; height: 2rem; }
+  .footer-logos a:last-child img { width: 2.5rem; height: 2.5rem; }
+  .footer-site-mark { display: inline-flex; align-items: center; gap: .55rem; }
+  .footer-site-mark img { width: 2.5rem; height: 2.5rem; }
+  .footer-site-mark > span { display: flex; flex-direction: column; line-height: 1.05; }
+  .footer-site-mark strong { font-weight: 600; }
+  .footer-social { display: flex; gap: .75rem; }
+  .qr-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 5.5rem; height: 5.5rem; border: 1px dashed #aaa; color: #777; text-align: center; }
+  .qr-placeholder span { font-size: .85rem; }
+  .qr-placeholder small { margin-top: .25rem; font-size: .65rem; }
+  @media (max-width: 600px) {
+    .footer-upper { flex-wrap: wrap; }
+    footer { flex-wrap: wrap; }
+    .course-description { white-space: normal; }
+    .brand-lockup { gap: .65rem; }
+    .gbu-logo img { height: 1.6rem; }
+    .site-name img { width: 1.75rem; height: 1.75rem; }
+    .person { gap: .9rem; }
+    .person-image { width: 104px; height: 104px; }
+    .person-info { min-height: 104px; }
+  }
+</style>

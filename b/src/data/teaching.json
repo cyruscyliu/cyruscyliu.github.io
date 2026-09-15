@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "title": { "en": "Teaching", "zh": "教学" },
+    "description": {
+      "en": "Courses under development at 55AA Security Lab",
+      "zh": "55AA 安全实验室正在建设的课程"
+    }
+  },
+  "courses": [
+    {
+      "code": "55AA-001",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Software Engineering", "zh": "软件工程" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-002",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Software Security", "zh": "软件安全" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-003",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Systems Security", "zh": "系统安全" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-014",
+      "level": { "en": "Graduate", "zh": "研究生" },
+      "name": { "en": "Hardware Injection and Hardware Security", "zh": "硬件注入和硬件安全" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-015",
+      "level": { "en": "Graduate", "zh": "研究生" },
+      "name": { "en": "Digital Forensics and Attribution", "zh": "电子取证和溯源" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-004",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Operating Systems", "zh": "操作系统" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-005",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Computer Architecture", "zh": "体系结构" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-006",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Computer Organization", "zh": "组成原理" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-007",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Assembly Language", "zh": "汇编语言" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-008",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Systems Programming", "zh": "系统编程" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-009",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Compiler Principles", "zh": "编译原理" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-010",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Static Program Analysis", "zh": "静态程序分析" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-011",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Dynamic Program Analysis", "zh": "动态程序分析" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-012",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Computer Networks", "zh": "计算机网络" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-016",
+      "level": { "en": "Graduate", "zh": "研究生" },
+      "name": { "en": "Network Protocol Analysis and Verification", "zh": "网络协议分析和验证" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-013",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Applied Cryptography", "zh": "应用密码学" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-017",
+      "level": { "en": "Graduate", "zh": "研究生" },
+      "name": { "en": "Trusted Computing Methods and Security", "zh": "可信计算方法和安全" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-018",
+      "level": { "en": "Graduate", "zh": "研究生" },
+      "name": { "en": "Embedded Systems Principles and Security", "zh": "嵌入式系统原理和安全" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-019",
+      "level": { "en": "Graduate", "zh": "研究生" },
+      "name": { "en": "Systems Security Research Methods", "zh": "系统安全科研方法" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-020",
+      "level": { "en": "Graduate", "zh": "研究生" },
+      "name": { "en": "Virtualization Methods and Security", "zh": "虚拟化方法和安全" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-021",
+      "level": { "en": "Graduate", "zh": "研究生" },
+      "name": { "en": "Security Baselines, Compliance, and Automation", "zh": "安全基线、合规和自动化" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    }
+  ]
+}

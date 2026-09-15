@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "title": { "en": "Projects", "zh": "项目" },
+    "description": {
+      "en": "Projects at 55AA Security Lab",
+      "zh": "55AA Security Lab 项目"
+    }
+  },
+  "projects": [
+    {
+      "id": "poc-generation-workflow",
+      "tag": { "en": "Engineering · Undergraduate capstone", "zh": "工程 · 本科毕业设计" },
+      "href": "",
+      "training": [],
+      "title": { "en": "Building a Recursive Self-Improvement Workflow for POC Generation", "zh": "回归自进化的 POC Generation 工作流构建" },
+      "introduction": { "en": "", "zh": "" },
+      "contact": ""
+    }
+  ]
+}

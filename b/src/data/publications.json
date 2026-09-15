@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": { "en": "Publications", "zh": "论文" },
+    "description": {
+      "en": "Publications from 55AA Security Lab",
+      "zh": "55AA Security Lab 论文与成果"
+    }
+  },
+  "manual": [],
+  "dblp": [
+    {
+      "link": "https://dblp.org/pid/61/3234-34.html",
+      "rss": "https://dblp.org/pid/61/3234-34.rss"
+    }
+  ]
+}

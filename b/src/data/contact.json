@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": { "en": "Contact", "zh": "联系" },
+    "description": {
+      "en": "Contact 55AA Security Lab",
+      "zh": "联系 55AA Security Lab"
+    }
+  },
+  "entries": [
+    {
+      "label": { "en": "Email", "zh": "邮件" },
+      "value": "cyruscyliu@gmail.com",
+      "href": "mailto:cyruscyliu@gmail.com"
+    },
+    {
+      "label": { "en": "Code and artifacts", "zh": "代码与研究资产" },
+      "value": "github.com/cyruscyliu",
+      "href": "https://github.com/cyruscyliu"
+    },
+    {
+      "label": { "en": "Research record", "zh": "研究记录" },
+      "value": "Google Scholar",
+      "href": "https://scholar.google.com/citations?user=fa1uB2sAAAAJ&hl=en"
+    },
+    {
+      "label": { "en": "Documents", "zh": "文档" },
+      "value": "Research library",
+      "href": { "en": "/library/", "zh": "/zh/library/" }
+    }
+  ]
+}

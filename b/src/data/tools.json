@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "title": { "en": "Tools", "zh": "工具" },
+    "description": {
+      "en": "Tools from 55AA Security Lab",
+      "zh": "55AA Security Lab 工具与基础设施"
+    }
+  },
+  "tools": [
+    {
+      "repo": "cyruscyliu/firmguide"
+    },
+    {
+      "repo": "HexHive/HyperPill"
+    },
+    {
+      "repo": "HexHive/ViDeZZo"
+    },
+    {
+      "repo": "cyruscyliu/computing-genealogy-project"
+    }
+  ]
+}
