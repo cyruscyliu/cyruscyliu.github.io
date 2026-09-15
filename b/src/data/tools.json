@@ -8,16 +8,24 @@
   },
   "tools": [
     {
-      "repo": "cyruscyliu/firmguide"
+      "repo": "cyruscyliu/firmguide",
+      "fallbackTitle": "firmguide",
+      "fallbackDescription": "FirmGuide: Boosting the Capability of Rehosting Embedded Linux Kernels through Model-Guided Kernel Execution"
     },
     {
-      "repo": "HexHive/HyperPill"
+      "repo": "HexHive/HyperPill",
+      "fallbackTitle": "HyperPill",
+      "fallbackDescription": ""
     },
     {
-      "repo": "HexHive/ViDeZZo"
+      "repo": "HexHive/ViDeZZo",
+      "fallbackTitle": "ViDeZZo",
+      "fallbackDescription": "ViDeZZo source code."
     },
     {
-      "repo": "cyruscyliu/computing-genealogy-project"
+      "repo": "cyruscyliu/computing-genealogy-project",
+      "fallbackTitle": "Computing Genealogy Project",
+      "fallbackDescription": "Explore computer science academic genealogy: PhD advisors, students, institutions, and lineage networks."
     }
   ]
 }

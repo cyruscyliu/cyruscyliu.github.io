@@ -1,0 +1,62 @@
+name: Check tools metadata
+
+on:
+  schedule:
+    - cron: '17 3 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compare GitHub repository metadata
+        id: compare
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          report_file="$RUNNER_TEMP/tools-metadata-report.md"
+          printf '%s\n\n' 'The following entries in `b/src/data/tools.json` no longer match GitHub:' > "$report_file"
+          changed=0
+
+          while IFS= read -r item; do
+            repo=$(jq -r '.repo' <<< "$item")
+            expected_title=$(jq -r '.fallbackTitle // ""' <<< "$item")
+            expected_description=$(jq -r '.fallbackDescription // ""' <<< "$item")
+            metadata=$(gh api "repos/$repo")
+            actual_title=$(jq -r '.name // ""' <<< "$metadata")
+            actual_description=$(jq -r '.description // ""' <<< "$metadata")
+
+            if [[ "$expected_title" != "$actual_title" || "$expected_description" != "$actual_description" ]]; then
+              changed=1
+              {
+                printf '## `%s`\n\n' "$repo"
+                printf '| Field | tools.json | GitHub |\n'
+                printf '| --- | --- | --- |\n'
+                printf '| Title | `%s` | `%s` |\n' "$expected_title" "$actual_title"
+                printf '| Description | %s | %s |\n\n' "${expected_description:-*(empty)*}" "${actual_description:-*(empty)*}"
+              } >> "$report_file"
+            fi
+          done < <(jq -c '.tools[]' b/src/data/tools.json)
+
+          if [[ "$changed" == 1 ]]; then
+            printf '%s\n' 'changed=true' >> "$GITHUB_OUTPUT"
+          else
+            printf '%s\n' 'changed=false' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create issue when metadata differs
+        if: steps.compare.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title='Tools metadata is out of sync'
+          existing=$(gh issue list --state open --search "$title in:title" --json title --jq ".[] | select(.title == \"$title\") | .title")
+          if [[ -z "$existing" ]]; then
+            gh issue create --title "$title" --body-file "$RUNNER_TEMP/tools-metadata-report.md"
+          fi
