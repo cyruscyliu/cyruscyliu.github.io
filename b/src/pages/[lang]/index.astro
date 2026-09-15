@@ -40,6 +40,23 @@ const canonicalUrl = `https://cyruscyliu.github.io/${lang}/`;
     <meta name="twitter:title" content={lang === 'zh' ? '55AA 安全实验室｜大湾区大学系统安全研究' : '55AA Security Lab — System Security Research at Great Bay University'} />
     <meta name="twitter:description" content={lang === 'zh' ? '55AA 安全实验室位于大湾区大学，开展系统安全、软件安全、程序分析、人工智能智能体和安全工程研究。' : '55AA Security Lab at Great Bay University conducts research in system security, software security, program analysis, AI agents, and security engineering.'} />
     <meta name="twitter:image" content="https://cyruscyliu.github.io/og-image.svg" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ResearchOrganization',
+      name: lang === 'zh' ? '55AA 安全实验室' : '55AA Security Lab',
+      url: canonicalUrl,
+      logo: 'https://cyruscyliu.github.io/logo.svg',
+      parentOrganization: { '@type': 'CollegeOrUniversity', name: 'Great Bay University', url: 'https://www.gbu.edu.cn/' },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'No. 16 Daxue Road, Songshan Lake',
+        addressLocality: 'Dongguan',
+        addressRegion: 'Guangdong',
+        postalCode: '523808',
+        addressCountry: 'CN'
+      },
+      knowsAbout: ['System security', 'Software security', 'Program analysis', 'AI agents', 'Security engineering']
+    })} />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/" />
     <link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/" />
