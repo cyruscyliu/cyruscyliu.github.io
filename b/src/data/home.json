@@ -32,6 +32,11 @@
       }
     },
     {
+      "key": "news",
+      "label": { "en": "News", "zh": "新闻" },
+      "description": { "en": "Latest lab news.", "zh": "实验室最新消息。" }
+    },
+    {
       "key": "people",
       "label": { "en": "People", "zh": "成员" },
       "description": {
