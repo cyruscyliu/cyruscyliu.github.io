@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://cyruscyliu.github.io/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/" />
+  </url>
+  <url>
+    <loc>https://cyruscyliu.github.io/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/" />
+  </url>
+</urlset>

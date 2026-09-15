@@ -22,6 +22,7 @@ const lang = (Astro.params.lang === 'zh' ? 'zh' : 'en') as 'en' | 'zh';
 const text = (value: any) => typeof value === 'string' ? value : value?.[lang] ?? '';
 const tabs = home.sections;
 const labels = { en: { language: '中文', footer: '55AA Security Lab' }, zh: { language: 'English', footer: '55AA Security Lab' } }[lang];
+const canonicalUrl = `https://cyruscyliu.github.io/${lang}/`;
 ---
 <!doctype html>
 <html lang={lang}>
@@ -30,6 +31,10 @@ const labels = { en: { language: '中文', footer: '55AA Security Lab' }, zh: { 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{lang === 'zh' ? '55AA 安全实验室｜大湾区大学系统安全研究' : '55AA Security Lab — System Security Research at Great Bay University'}</title>
     <meta name="description" content={lang === 'zh' ? '55AA 安全实验室位于大湾区大学，开展系统安全、软件安全、程序分析、人工智能智能体和安全工程研究。' : '55AA Security Lab at Great Bay University conducts research in system security, software security, program analysis, AI agents, and security engineering.'} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/" />
+    <link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/" />
+    <link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/" />
   </head>
   <body>
     <header class="site-header">
