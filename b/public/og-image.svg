@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">55AA Security Lab</title>
+  <desc id="desc">System Security Research at Great Bay University</desc>
+  <rect width="1200" height="630" fill="#fff"/>
+  <g transform="translate(120 145)">
+    <g transform="scale(2)">
+      <g fill="#111111">
+        <rect x="3" y="3" width="13" height="13" rx="1.5"/><rect x="33" y="3" width="13" height="13" rx="1.5"/>
+        <rect x="3" y="18" width="13" height="13" rx="1.5"/><rect x="33" y="18" width="13" height="13" rx="1.5"/>
+        <rect x="18" y="33" width="13" height="13" rx="1.5"/><rect x="48" y="33" width="13" height="13" rx="1.5"/>
+        <rect x="18" y="48" width="13" height="13" rx="1.5"/><rect x="48" y="48" width="13" height="13" rx="1.5"/>
+      </g>
+      <g fill="#0066cc">
+        <rect x="18" y="3" width="13" height="13" rx="1.5"/><rect x="48" y="3" width="13" height="13" rx="1.5"/>
+        <rect x="18" y="18" width="13" height="13" rx="1.5"/><rect x="48" y="18" width="13" height="13" rx="1.5"/>
+        <rect x="3" y="33" width="13" height="13" rx="1.5"/><rect x="33" y="33" width="13" height="13" rx="1.5"/>
+        <rect x="3" y="48" width="13" height="13" rx="1.5"/><rect x="33" y="48" width="13" height="13" rx="1.5"/>
+      </g>
+    </g>
+    <text x="170" y="62" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="600" fill="#111">55AA</text>
+    <text x="170" y="105" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#111">Security Lab</text>
+  </g>
+</svg>
