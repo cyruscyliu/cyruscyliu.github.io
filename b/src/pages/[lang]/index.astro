@@ -27,8 +27,8 @@ const researchSummary = research.areas.map((area) => { const title = text(area.t
 const tabs = home.sections;
 const labels = { en: { language: '中文', footer: '55AA Security Lab' }, zh: { language: 'English', footer: '55AA Security Lab' } }[lang];
 const canonicalUrl = `https://cyruscyliu.github.io/${lang}/`;
-const seoTitle = lang === 'zh' ? '55AA 安全实验室｜大湾区大学系统安全研究' : '55AA Security Lab — System Security Research at Great Bay University';
-const seoDescription = lang === 'zh' ? '55AA 安全实验室位于大湾区大学，开展系统安全、软件安全、程序分析、人工智能智能体和安全工程研究。' : '55AA Security Lab at Great Bay University conducts research in system security, software security, program analysis, AI agents, and security engineering.';
+const seoTitle = lang === 'zh' ? '55AA 安全实验室｜系统安全研究' : '55AA Security Lab — System Security Research';
+const seoDescription = lang === 'zh' ? '55AA 安全实验室开展系统安全、软件安全、程序分析、人工智能智能体和安全工程研究。' : '55AA Security Lab conducts research in system security, software security, program analysis, AI agents, and security engineering.';
 ---
 <!doctype html>
 <html lang={lang}>
@@ -40,21 +40,14 @@ const seoDescription = lang === 'zh' ? '55AA 安全实验室位于大湾区大�
       name: lang === 'zh' ? '55AA 安全实验室' : '55AA Security Lab',
       url: canonicalUrl,
       logo: 'https://cyruscyliu.github.io/logo.svg',
-      parentOrganization: { '@type': 'CollegeOrUniversity', name: 'Great Bay University', url: 'https://www.gbu.edu.cn/' },
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'No. 16 Daxue Road, Songshan Lake',
-        addressLocality: 'Dongguan',
-        addressRegion: 'Guangdong',
-        postalCode: '523808',
-        addressCountry: 'CN'
-      },
+      // Institutional affiliation and campus address are intentionally omitted
+      // until written authorization for the public presentation is confirmed.
       knowsAbout: ['System security', 'Software security', 'Program analysis', 'AI agents', 'Security engineering']
     })} />
   </head>
   <body>
     <SiteHeader lang={lang} />
-    <section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><p id="hero-title" class="hero-intro">{lang === 'zh' ? `欢迎来到大湾区大学 55AA 安全实验室。我们围绕${researchSummary}开展研究，并将成果转化为课程、工具和服务。` : `Welcome to 55AA Security Lab at Great Bay University. We work on ${researchSummary}, turning our findings into courses, tools, and services.`}</p></div><div class="hero-visual" aria-hidden="true"><canvas data-hero-canvas></canvas><div class="hero-fallback">01010101<br/>10101010</div><div class="byte-labels"><span>0x55</span><span>0xAA</span></div></div></section>
+    <section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><p id="hero-title" class="hero-intro">{lang === 'zh' ? `欢迎来到 55AA 安全实验室。我们围绕${researchSummary}开展研究，并将成果转化为课程、工具和服务。` : `Welcome to 55AA Security Lab. We work on ${researchSummary}, turning our findings into courses, tools, and services.`}</p></div><div class="hero-visual" aria-hidden="true"><canvas data-hero-canvas></canvas><div class="hero-fallback">01010101<br/>10101010</div><div class="byte-labels"><span>0x55</span><span>0xAA</span></div></div></section>
     <main>
       <section class="panel active" data-panel="home">
         <h2>News</h2>

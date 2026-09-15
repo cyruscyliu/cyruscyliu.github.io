@@ -8,7 +8,12 @@ const languageHref = blogHref ? `/${lang === 'en' ? 'zh' : 'en'}/${blogHref}` : 
 const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
 ---
 <header class="site-header">
-  <div class="brand-lockup"><a class="gbu-logo" href="https://www.gbu.edu.cn/" aria-label="Great Bay University"><img src="/gbu-logo.png" width="132" height="32" loading="eager" decoding="sync" alt="Great Bay University" /></a><a class="site-name" href={home}><img src="/logo.svg" width="40" height="40" loading="eager" decoding="sync" alt="" /><h1 class="wordmark"><span>55AA</span><span>Security Lab</span></h1></a></div>
+  <div class="brand-lockup">
+    <!-- GBU logo temporarily hidden pending written brand authorization.
+    <a class="gbu-logo" href="https://www.gbu.edu.cn/" aria-label="Great Bay University"><img src="/gbu-logo.png" width="132" height="32" loading="eager" decoding="sync" alt="Great Bay University" /></a>
+    -->
+    <a class="site-name" href={home}><img src="/logo.svg" width="40" height="40" loading="eager" decoding="sync" alt="" /><h1 class="wordmark"><span>55AA</span><span>Security Lab</span></h1></a>
+  </div>
   <a class="language" href={languageHref}>{language}</a>
 </header>
 <nav class="tabs" aria-label="Sections">{homeData.sections.map((tab) => { const href = `/${lang}/${tab.key === 'home' ? '' : `${tab.key}/`}`; const active = currentPath === href.replace(/\/+$/, '') || (tab.key === 'blog' && currentPath.startsWith(`/${lang}/blog`)); return <a class={active ? 'active' : undefined} href={href} aria-current={active ? 'page' : undefined}>{tab.label[lang]}</a> })}</nav>
