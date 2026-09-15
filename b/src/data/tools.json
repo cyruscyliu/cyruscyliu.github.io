@@ -4,7 +4,8 @@
     "description": {
       "en": "Tools from 55AA Security Lab",
       "zh": "55AA Security Lab 工具与基础设施"
-    }
+    },
+    "cta": { "en": "Access: GitHub", "zh": "适用入口：GitHub" }
   },
   "tools": [
     {
