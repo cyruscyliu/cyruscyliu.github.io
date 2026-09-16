@@ -1,0 +1,108 @@
+---
+import data from '../../../data/courses.json';
+import refs from '../../../data/course-references.json';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import SeoHead from '../../../components/SeoHead.astro';
+
+const slug = (code) => code.toLowerCase();
+
+export function getStaticPaths() {
+  const languages = ['en', 'zh'];
+  return languages.flatMap((lang) => data.courses.map((course) => ({
+    params: { lang, code: course.code.toLowerCase() },
+    props: { lang, course }
+  })));
+}
+
+const { lang, course } = Astro.props;
+const text = (value) => typeof value === 'string' ? value : value?.[lang] ?? '';
+const title = `${course.code} ${text(course.name)}`;
+const description = `${text(course.level)} · ${text(course.status)}`;
+const courseRefs = refs[course.code];
+const sorted = (list) => list ? [...list].sort((a, b) => a.school.localeCompare(b.school)) : [];
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <SeoHead lang={lang} path={`courses/${slug(course.code)}`} title={`${title} · 55AA Security Lab`} description={description} />
+  </head>
+  <body>
+    <SiteHeader lang={lang} blogHref={`courses/${slug(course.code)}/`} />
+    <main>
+      <article>
+        <p class="meta">{course.code}</p>
+        <h1>{text(course.name)}</h1>
+        <dl>
+          <div>
+            <dt>{lang === 'zh' ? '层级' : 'Level'}</dt>
+            <dd>{text(course.level)}</dd>
+          </div>
+          <div>
+            <dt>{lang === 'zh' ? '状态' : 'Status'}</dt>
+            <dd>{text(course.status)}</dd>
+          </div>
+        </dl>
+
+        {courseRefs && (
+          <section class="references">
+            <h2>{lang === 'zh' ? '参考课程' : 'Reference Courses'}</h2>
+
+            {courseRefs.international && courseRefs.international.length > 0 && (
+              <div class="ref-group">
+                <h3>{lang === 'zh' ? '国际名校' : 'International'}</h3>
+                <ul>
+                  {sorted(courseRefs.international).map((r) => (
+                    <li>
+                      <span class="school">{r.school}</span>
+                      <a href={r.url} target="_blank" rel="noopener noreferrer">{r.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {courseRefs.china985 && courseRefs.china985.length > 0 && (
+              <div class="ref-group">
+                <h3>{lang === 'zh' ? '中国 985 高校' : 'China 985 Universities'}</h3>
+                <ul>
+                  {sorted(courseRefs.china985).map((r) => (
+                    <li>
+                      <span class="school">{r.school}</span>
+                      <a href={r.url} target="_blank" rel="noopener noreferrer">{r.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </section>
+        )}
+      </article>
+    </main>
+    <SiteFooter lang={lang} />
+  </body>
+</html>
+<style>
+  :global(html) { overflow-y: scroll; }
+  :global(*) { box-sizing: border-box; }
+  :global(body) { min-height: 100vh; display: flex; flex-direction: column; width: 100%; max-width: none; margin: 0; padding: 0; background: #fff; color: #000; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.55; }
+  :global(main) { flex: 1; width: min(960px, calc(100% - 2rem)); margin-inline: auto; padding: 1.5rem 0 2rem; }
+  a { color: #06c; }
+  article { margin-top: 0; }
+  h1 { max-width: 46rem; margin: .2rem 0 1.25rem; font-size: 1.6rem; line-height: 1.25; font-weight: 600; }
+  .meta { margin: 0; color: #777; font-size: .9rem; }
+  dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; max-width: 38rem; margin: 0; }
+  dl div { padding-top: .8rem; border-top: 1px solid #e5e5e5; }
+  dt { color: #777; font-size: .85rem; }
+  dd { margin: .15rem 0 0; }
+  @media (max-width: 600px) { dl { grid-template-columns: 1fr; } }
+
+  .references { margin-top: 2.5rem; }
+  .references h2 { font-size: 1.1rem; font-weight: 600; margin: 0 0 1.25rem; padding-bottom: .5rem; border-bottom: 1px solid #e5e5e5; }
+  .ref-group { margin-bottom: 1.5rem; }
+  .ref-group h3 { font-size: .85rem; font-weight: 600; color: #777; text-transform: uppercase; letter-spacing: .04em; margin: 0 0 .6rem; }
+  .ref-group ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .35rem; }
+  .ref-group li { display: flex; align-items: baseline; gap: .6rem; font-size: .95rem; }
+  .school { color: #555; width: 11rem; flex-shrink: 0; font-size: .88rem; }
+  @media (max-width: 600px) { .school { width: 7rem; } }
+</style>

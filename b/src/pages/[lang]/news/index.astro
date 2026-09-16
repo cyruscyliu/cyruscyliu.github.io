@@ -1,6 +1,7 @@
 ---
 import news from '../../../data/news.json'; import SiteHeader from '../../../components/SiteHeader.astro'; import SiteFooter from '../../../components/SiteFooter.astro'; import SeoHead from '../../../components/SeoHead.astro';
-export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const lang=((Astro.props??{}).lang??'en')==='zh'?'zh':'en'; const text=v=>typeof v==='string'?v:v?.[lang]??'';
+export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const runtimePath=Astro.url?.pathname??Astro.request?.url??''; const lang=runtimePath.includes('/zh/')?'zh':(((Astro.props??{}).lang??'en')==='zh'?'zh':'en'); const text=v=>typeof v==='string'?v:v?.[lang]??'';
+const today = new Date().toISOString().slice(0, 10); const publishedNews = news.entries.filter((entry) => entry.date <= today);
 ---
 <!doctype html>
 <html lang={lang}>
@@ -10,11 +11,11 @@ export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},pr
 <body>
 <SiteHeader lang={lang} blogHref="news/"/>
 <main>
-<h1>{lang==='zh'?'新闻':'News'}</h1>{news.entries.map(entry=>
+<h1>{lang==='zh'?'新闻':'News'}</h1>{publishedNews.length ? publishedNews.map(entry=>
 <article>
 <time datetime={entry.date}>{entry.date}</time>
 <p>{text(entry.title)}</p>
-</article>)}</main>
+</article>) : <p class="empty">{lang==='zh'?'暂无新闻。':'No news yet.'}</p>}</main>
 <SiteFooter lang={lang}/>
 </body>
 </html>

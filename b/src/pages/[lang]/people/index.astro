@@ -1,5 +1,5 @@
 ---
-import data from '../../../data/people.json'; import SiteHeader from '../../../components/SiteHeader.astro'; import SiteFooter from '../../../components/SiteFooter.astro'; import SeoHead from '../../../components/SeoHead.astro';
+import data from '../../../data/people.json'; import SiteHeader from '../../../components/SiteHeader.astro'; import SiteFooter from '../../../components/SiteFooter.astro'; import SeoHead from '../../../components/SeoHead.astro'; import SocialIcon from '../../../components/SocialIcon.astro';
 export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const runtimePath=Astro.url?.pathname??Astro.request?.url??''; const lang=runtimePath.includes('/zh/')?'zh':(((Astro.props??{}).lang??'en')==='zh'?'zh':'en'); const text=v=>typeof v==='string'?v:v?.[lang]??'';
 ---
 <!doctype html>
@@ -10,17 +10,19 @@ export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},pr
 <body>
 <SiteHeader lang={lang} blogHref="people/"/>
 <main>
-<h1>{lang==='zh'?'成员':'People'}</h1>{data.people.map(p=>
-<article class="person">
-<img src={p.profileImage} alt={text(p.alt)}/>
+<h1>{lang==='zh'?'成员':'People'}</h1><div class="people-grid">{data.people.map(p=>
+<article class="person-card">
+<img class="person-image" src={p.profileImage} alt={text(p.alt)}/>
+<div class="person-body">
 <div>
 <h2>{p.name}</h2>
-<p>{text(p.role)}</p>
-<p>{p.interests[lang].join(' · ')}</p>
-<p>{text(p.motto)}</p>
+<p class="person-role">{text(p.role)}</p>
 </div>
-</article>)}</main>
+<p class="person-interests">{p.interests[lang].join(' · ')}</p>
+<div class="person-links">{p.links.map(link=><a href={link.url} aria-label={text(link.label)} title={text(link.label)}><SocialIcon kind={link.kind}/></a>)}</div>
+</div>
+</article>)}</div></main>
 <SiteFooter lang={lang}/>
 </body>
 </html>
-<style>:global(*){box-sizing:border-box}:global(html){overflow-y:scroll}:global(body){min-height:100vh;display:flex;flex-direction:column;margin:0;background:#fff;color:#000;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}:global(main){flex:1;width:min(960px,calc(100% - 2rem));margin:0 auto;padding:1.5rem 0 2rem}h1{display:none;font-size:1.45rem;margin:0 0 1.2rem}h2{font-size:1.05rem;margin:0}.person{display:flex;gap:1.25rem;margin-bottom:1.35rem}.person img{width:144px;height:144px;object-fit:cover}.person p{margin:.15rem 0}main>h1+p{margin-top:0}</style>
+<style>:global(*){box-sizing:border-box}:global(html){overflow-y:scroll}:global(body){min-height:100vh;display:flex;flex-direction:column;margin:0;background:#fff;color:#000;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}:global(main){flex:1;width:min(960px,calc(100% - 2rem));margin:0 auto;padding:1.5rem 0 2rem}h1{display:none;font-size:1.45rem;margin:0 0 1.2rem}h2{font-size:1.05rem;margin:0}.people-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.person-card{display:flex;gap:1rem;min-width:0;margin:0;padding:1rem;background:rgba(255,255,255,.86)}.person-image{display:block;flex:0 0 auto;width:104px;height:104px;object-fit:cover}.person-body{display:flex;min-width:0;flex:1;flex-direction:column;gap:.3rem}.person-body p{margin:0}.person-role{color:#555}.person-interests{color:#333;font-size:.92rem}.person-links{display:flex;align-items:center;gap:.4rem;margin-top:auto}.person-links a{display:inline-flex;align-items:center;justify-content:center;width:1.35rem;height:1.35rem;text-decoration:none}@media(max-width:600px){.people-grid{grid-template-columns:1fr}.person-card{padding:.9rem}.person-image{width:88px;height:88px}}</style>

@@ -4,8 +4,11 @@ const site = 'https://cyruscyliu.github.io';
 const languages = ['en', 'zh'];
 const sections = ['', 'news', 'people', 'courses', 'projects', 'tools', 'consultation', 'publications', 'blog', 'sponsorship'];
 const blog = JSON.parse(await readFile(new URL('../src/data/blog.json', import.meta.url), 'utf8'));
+const teaching = JSON.parse(await readFile(new URL('../src/data/courses.json', import.meta.url), 'utf8'));
+const coursePaths = teaching.courses.map((course) => `courses/${course.code.toLowerCase()}`);
 const paths = [
   ...sections,
+  ...coursePaths,
   ...blog.entries.map((entry, index) => `blog/${entry.date}-${index + 1}`)
 ];
 const escapeXml = (value) => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll("'", '&apos;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');

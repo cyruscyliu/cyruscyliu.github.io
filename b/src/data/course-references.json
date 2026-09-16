@@ -1,0 +1,437 @@
+{
+  "55AA-007": {
+    "international": [
+      {"school": "CMU", "name": "15-151: Mathematical Foundations for Computer Science", "url": "https://www.csd.cmu.edu/course/15151/s24"},
+      {"school": "Cornell", "name": "CS 2800: Discrete Structures", "url": "https://classes.cornell.edu/browse/roster/SP26/class/CS/2800"},
+      {"school": "ETH Zurich", "name": "Discrete Mathematics", "url": "https://crypto.ethz.ch/teaching/DM24/"},
+      {"school": "Georgia Tech", "name": "CS 2050: Introduction to Discrete Mathematics for Computer Science", "url": "https://catalog.gatech.edu/search/?P=CS+2050"},
+      {"school": "MIT", "name": "6.042J Mathematics for Computer Science", "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/"},
+      {"school": "Oxford", "name": "Discrete Mathematics", "url": "https://www.cs.ox.ac.uk/teaching/courses/2024-2025/discretemaths/"},
+      {"school": "Princeton", "name": "COS 340: Reasoning about Computation", "url": "https://www.cs.princeton.edu/courses/archive/spring21/cos340/"},
+      {"school": "Stanford", "name": "CS103: Mathematical Foundations of Computing", "url": "https://web.stanford.edu/class/cs103/"},
+      {"school": "UC Berkeley", "name": "CS 70: Discrete Mathematics and Probability Theory", "url": "https://www2.eecs.berkeley.edu/Courses/CS70/"},
+      {"school": "University of Washington", "name": "CSE 311: Foundations of Computing I", "url": "https://courses.cs.washington.edu/courses/cse311/"}
+    ],
+    "china985": [
+      {"school": "哈尔滨工业大学", "name": "离散数学", "url": "https://computing.hit.edu.cn/2026/0525/c21428a392281/page.htm"},
+      {"school": "南京大学", "name": "离散数学", "url": "https://cs.nju.edu.cn/yuanyao/dismath.htm"},
+      {"school": "上海交通大学", "name": "Discrete Mathematics", "url": "https://jhc.sjtu.edu.cn/courses/2021/1013/28.html"},
+      {"school": "西安交通大学", "name": "离散数学", "url": "https://www.mooc.xjtudlc.com/course/924"},
+      {"school": "中国科学技术大学", "name": "离散数学", "url": "http://home.ustc.edu.cn/~wangyuntao/ta/dm.html"},
+      {"school": "浙江大学", "name": "MATH 213 离散数学", "url": "https://zjui.intl.zju.edu.cn/node/1678"}
+    ]
+  },
+  "55AA-001": {
+    "international": [
+      {"school": "CMU", "name": "17-313 Foundations of Software Engineering", "url": "https://web2.qatar.cmu.edu/cs/17313/"},
+      {"school": "MIT", "name": "6.102 Software Construction", "url": "https://web.mit.edu/6.102/www/sp26/"},
+      {"school": "UC Berkeley", "name": "CS 169A Introduction to Software Engineering", "url": "https://www2.eecs.berkeley.edu/Courses/CS169A/"},
+      {"school": "University of Washington", "name": "CSE 403 Software Engineering", "url": "https://courses.cs.washington.edu/courses/cse403/"},
+      {"school": "Georgia Tech", "name": "CS 6300 Software Development Process", "url": "https://omscs.gatech.edu/cs-6300-software-development-process"},
+      {"school": "ETH Zurich", "name": "Rigorous Software Engineering", "url": "https://www.sri.inf.ethz.ch/teaching/rse2026"},
+      {"school": "Oxford", "name": "Software Engineering Programme", "url": "https://www.cs.ox.ac.uk/softeng/home/"}
+    ],
+    "china985": [
+      {"school": "清华大学", "name": "软件工程", "url": "https://lab.cs.tsinghua.edu.cn/software-engineering/"},
+      {"school": "北京大学", "name": "软件工程", "url": "https://cs.pku.edu.cn/sse/yxjj.htm"},
+      {"school": "上海交通大学", "name": "软件工程原理与实践", "url": "https://base.sjtu.edu.cn/se/index.html"},
+      {"school": "浙江大学", "name": "软件工程", "url": "http://www.cst.zju.edu.cn/"},
+      {"school": "哈尔滨工业大学", "name": "软件工程", "url": "https://software.hit.edu.cn/12780/list.htm"},
+      {"school": "复旦大学", "name": "软件工程", "url": "https://software.fudan.edu.cn/"},
+      {"school": "南京大学", "name": "软件工程", "url": "https://selearning.nju.edu.cn/course/index.php?categoryid=22"},
+      {"school": "中国科学技术大学", "name": "软件工程", "url": "https://sse.ustc.edu.cn/mainm.htm"},
+      {"school": "华中科技大学", "name": "软件工程", "url": "https://sse.hust.edu.cn/info/1042/2505.htm"},
+      {"school": "西安交通大学", "name": "软件工程", "url": "https://se.xjtu.edu.cn/info/1094/3267.htm"}
+    ]
+  },
+  "55AA-002": {
+    "international": [
+      {"school": "Stanford", "name": "CS 155 Computer and Network Security", "url": "https://cs155.stanford.edu/"},
+      {"school": "MIT", "name": "6.566 Computer Systems Security", "url": "https://css.csail.mit.edu/6.858/2024/"},
+      {"school": "UC Berkeley", "name": "CS 161 Computer Security", "url": "https://inst.eecs.berkeley.edu/~cs161/sp26"},
+      {"school": "CMU", "name": "18-732 Secure Software Systems", "url": "https://courses.ece.cmu.edu/18732"},
+      {"school": "University of Washington", "name": "CSE 484 Computer Security", "url": "https://courses.cs.washington.edu/courses/cse484/"},
+      {"school": "ETH Zurich", "name": "System Security", "url": "https://www.syssec.ethz.ch/courses/system-security/"},
+      {"school": "Georgia Tech", "name": "CS 6265 Information Security Lab", "url": "https://omscs.gatech.edu/cs-6265-information-security-lab"},
+      {"school": "Princeton", "name": "COS 432 Information Security", "url": "https://www.cs.princeton.edu/courses/archive/spring24/cos432/"},
+      {"school": "Cambridge", "name": "Software and Security Engineering", "url": "https://www.cl.cam.ac.uk/teaching/2526/SWSecEng/"}
+    ],
+    "china985": [
+      {"school": "清华大学", "name": "网络空间安全研究生课程", "url": "https://www.insc.tsinghua.edu.cn/jwjx/yjskc.htm"},
+      {"school": "北京大学", "name": "信息安全实验室", "url": "https://infosec.pku.edu.cn/"},
+      {"school": "上海交通大学", "name": "IS308 计算机系统安全", "url": "https://gosec.sjtu.edu.cn/courses/is308-2022/"},
+      {"school": "浙江大学", "name": "Network Security", "url": "https://list.zju.edu.cn/kaibu/netsec2024/index.html"},
+      {"school": "哈尔滨工业大学", "name": "网络空间安全学院", "url": "https://cys.hit.edu.cn/info/1052/1178.htm"},
+      {"school": "复旦大学", "name": "系统软件与安全实验室", "url": "https://security.fudan.edu.cn/"},
+      {"school": "南京大学", "name": "COSEC 安全课程", "url": "https://cosec.nju.edu.cn/kcxx/list.htm"},
+      {"school": "中国科学技术大学", "name": "软件安全与测试", "url": "http://staff.ustc.edu.cn/~sycheng/sst/index-cn.html"},
+      {"school": "华中科技大学", "name": "网络空间安全学院", "url": "https://cse.hust.edu.cn/"}
+    ]
+  },
+  "55AA-004": {
+    "international": [
+      {"school": "MIT", "name": "6.1810 Operating System Engineering", "url": "https://pdos.csail.mit.edu/6.1810/2024/index.html"},
+      {"school": "Stanford", "name": "CS140: Operating Systems", "url": "https://www.scs.stanford.edu/21wi-cs140/"},
+      {"school": "CMU", "name": "15-410: Operating System Design and Implementation", "url": "https://www.cs.cmu.edu/~410/"},
+      {"school": "UC Berkeley", "name": "CS 162: Operating Systems and System Programming", "url": "https://cs162.org/"},
+      {"school": "ETH Zurich", "name": "Advanced Operating Systems", "url": "https://systems.ethz.ch/education/courses/2025-spring/advanced-operating-systems-.html"},
+      {"school": "University of Washington", "name": "CSE 451: Introduction to Operating Systems", "url": "https://courses.cs.washington.edu/courses/cse451/26sp/"},
+      {"school": "Princeton", "name": "COS 318: Operating Systems", "url": "https://www.cs.princeton.edu/courses/archive/fall21/cos318/"},
+      {"school": "Georgia Tech", "name": "CS 6200: Introduction to Operating Systems", "url": "https://omscs.gatech.edu/cs-6200-introduction-operating-systems"},
+      {"school": "Cambridge", "name": "Operating Systems", "url": "https://www.cl.cam.ac.uk/teaching/2526/OpSystems/"}
+    ],
+    "china985": [
+      {"school": "清华大学", "name": "操作系统（含 rCore/uCore 实验）", "url": "https://learningos.cn/os-lectures/"},
+      {"school": "南京大学", "name": "操作系统：设计与实现", "url": "https://jyywiki.cn/OS/2025/"},
+      {"school": "上海交通大学", "name": "操作系统（SE315）", "url": "https://ipads.se.sjtu.edu.cn/courses/os/"},
+      {"school": "中国科学技术大学", "name": "操作系统", "url": "http://staff.ustc.edu.cn/~huangwc/os.html"},
+      {"school": "浙江大学", "name": "操作系统原理与实践", "url": "https://niuxintao.github.io/courses/2024Spring-OS/main/"},
+      {"school": "复旦大学", "name": "操作系统(H)荣誉课程", "url": "https://osh.fducslg.com/"},
+      {"school": "北京大学", "name": "操作系统原理", "url": "https://cs.pku.edu.cn/sse/info/1005/1019.htm"},
+      {"school": "哈尔滨工业大学", "name": "操作系统（李治军）", "url": "https://www.icourse163.org/course/HIT-1002531008"},
+      {"school": "北京航空航天大学", "name": "操作系统（OSome平台）", "url": "https://os.buaa.edu.cn/"},
+      {"school": "华中科技大学", "name": "操作系统原理", "url": "http://www.cs.hust.edu.cn/info/1396/1297.htm"},
+      {"school": "西安交通大学", "name": "操作系统原理", "url": "https://syxt.xjtu.edu.cn/info/1018/2154.htm"}
+    ]
+  },
+  "55AA-005": {
+    "international": [
+      {"school": "MIT", "name": "6.5900 Computer System Architecture", "url": "https://csg.csail.mit.edu/6.5900/"},
+      {"school": "Stanford", "name": "EE 282: Computer Systems Architecture", "url": "https://web.stanford.edu/class/ee282/"},
+      {"school": "CMU", "name": "18-742: Computer Architecture and Systems", "url": "https://www.cs.cmu.edu/~18742/index.html"},
+      {"school": "UC Berkeley", "name": "CS 152/252A: Computer Architecture and Engineering", "url": "http://www-inst.eecs.berkeley.edu/~cs152"},
+      {"school": "ETH Zurich", "name": "Computer Architecture", "url": "https://safari.ethz.ch/architecture/fall2025/doku.php?id=start"},
+      {"school": "Cornell", "name": "CS 3410: Computer System Organization and Programming", "url": "https://www.cs.cornell.edu/courses/cs3410/2025fa/course/syllabus.html"},
+      {"school": "Georgia Tech", "name": "CS 6290: High Performance Computer Architecture", "url": "https://omscs.gatech.edu/index%2Ephp/cs-6290-high-performance-computer-architecture"},
+      {"school": "University of Washington", "name": "CSE 548: Computer Systems Architecture", "url": "https://courses.cs.washington.edu/courses/cse548/25au/"},
+      {"school": "Princeton", "name": "COS 375: Computer Architecture and Organization", "url": "https://www.cs.princeton.edu/courses/archive/fall16/cos375/"}
+    ],
+    "china985": [
+      {"school": "清华大学", "name": "计算机系统结构", "url": "https://lab.cs.tsinghua.edu.cn/ca-lab-docs/"},
+      {"school": "中国科学技术大学", "name": "计算机体系结构", "url": "http://staff.ustc.edu.cn/~comparch/"},
+      {"school": "浙江大学", "name": "Computer Architecture", "url": "https://list.zju.edu.cn/kaibu/comparch2024/"},
+      {"school": "上海交通大学", "name": "计算机体系结构", "url": "https://www.cs.sjtu.edu.cn/~leng-jw/teach/fall2020.html"},
+      {"school": "南京大学", "name": "计算机体系结构", "url": "https://cs.nju.edu.cn/lands/course1.html"},
+      {"school": "复旦大学", "name": "计算机系统结构", "url": "https://cs.fudan.edu.cn/17/19/c24277a268057/page.htm"},
+      {"school": "西安交通大学", "name": "计算机组成原理与系统结构", "url": "https://syxt.xjtu.edu.cn/info/1018/2368.htm"}
+    ]
+  },
+  "55AA-006": {
+    "international": [
+      {"school": "CMU", "name": "18-447: Introduction to Computer Architecture", "url": "https://courses.ece.cmu.edu/18447"},
+      {"school": "Cornell", "name": "CS 3410: Computer System Organization and Programming", "url": "https://www.cs.cornell.edu/courses/cs3410/2026fa/"},
+      {"school": "ETH Zurich", "name": "Computer Architecture", "url": "https://safari.ethz.ch/architecture/fall2025/doku.php?id=start"},
+      {"school": "Georgia Tech", "name": "CS 2200: Introduction to Systems and Networking", "url": "https://faculty.cc.gatech.edu/~rama/CS2200-External/"},
+      {"school": "MIT", "name": "6.191: Computation Structures", "url": "https://6191.mit.edu/spring26"},
+      {"school": "Princeton", "name": "COS/ELE 375: Computer Architecture and Organization", "url": "https://ece.princeton.edu/courses/computer-architecture-and-organization"},
+      {"school": "Stanford", "name": "CS 107: Computer Organization & Systems", "url": "https://web.stanford.edu/class/cs107/"},
+      {"school": "UC Berkeley", "name": "CS 61C: Great Ideas in Computer Architecture", "url": "https://cs61c.org/"},
+      {"school": "UIUC", "name": "CS 233: Computer Architecture", "url": "https://siebelschool.illinois.edu/academics/courses/cs233"},
+      {"school": "University of Washington", "name": "CSE 378: Machine Organization & Assembly Language", "url": "https://courses.cs.washington.edu/courses/cse378/"}
+    ],
+    "china985": [
+      {"school": "北京大学", "name": "计算机组成原理", "url": "http://eecs.pku.edu.cn/xxkxjsxy/info/1057/1784.htm"},
+      {"school": "北京航空航天大学", "name": "计算机组成原理", "url": "https://scse.buaa.edu.cn/bkspy/bkspy/kcml.htm"},
+      {"school": "复旦大学", "name": "计算机体系结构（组成原理）", "url": "https://jszx.fudan.edu.cn/a1/b7/c8238a106935/page.htm"},
+      {"school": "哈尔滨工业大学", "name": "计算机组成原理", "url": "https://computing.hit.edu.cn/11453/list.htm"},
+      {"school": "华中科技大学", "name": "计算机组成原理", "url": "https://cs.hust.edu.cn/rcpy/bksjy/kc.htm"},
+      {"school": "南京大学", "name": "计算机系统基础（ICS）", "url": "https://cs.nju.edu.cn/sufeng/course/ics/lab.htm"},
+      {"school": "上海交通大学", "name": "计算机组成与系统结构", "url": "https://www.cs.sjtu.edu.cn/bks_kcxx.html"},
+      {"school": "武汉大学", "name": "计算机组成原理与设计", "url": "https://cslabcg.whu.edu.cn/indexcs/courses.jsp"},
+      {"school": "西安交通大学", "name": "计算机组成原理与系统结构", "url": "https://syxt.xjtu.edu.cn/info/1018/2368.htm"},
+      {"school": "浙江大学", "name": "计算机组成原理", "url": "http://www.cs.zju.edu.cn/csen/26995/list.htm"},
+      {"school": "中国科学技术大学", "name": "计算机组成原理", "url": "https://soc.ustc.edu.cn/COD/"},
+      {"school": "清华大学", "name": "计算机组成原理", "url": "https://lab.cs.tsinghua.edu.cn/cod-lab-docs/"}
+    ]
+  },
+  "55AA-006B": {
+    "international": [
+      {"school": "CMU", "name": "15-213: Introduction to Computer Systems", "url": "https://www.cs.cmu.edu/~213/"},
+      {"school": "Cornell", "name": "ECE 2300: Digital Logic and Computer Organization", "url": "https://www.csl.cornell.edu/courses/ece2300/index.html"},
+      {"school": "ETH Zurich", "name": "Digital Design and Computer Architecture", "url": "https://safari.ethz.ch/ddca/spring2026/doku.php?id=start"},
+      {"school": "Georgia Tech", "name": "CS 2110: Computer Organization and Programming", "url": "https://cs2110.gatech.edu/"},
+      {"school": "MIT", "name": "6.1810: Operating System Engineering (RISC-V assembly)", "url": "https://pdos.csail.mit.edu/6.1810/2025/general.html"},
+      {"school": "Princeton", "name": "COS 217: Introduction to Programming Systems", "url": "https://www.cs.princeton.edu/courses/cos217/"},
+      {"school": "Stanford", "name": "CS 107E: Computer Systems from the Ground Up", "url": "https://cs107e.github.io/"},
+      {"school": "UC Berkeley", "name": "CS 61C: Great Ideas in Computer Architecture (RISC-V)", "url": "https://cs61c.org/"},
+      {"school": "UIUC", "name": "ECE 391: Computer Systems Engineering", "url": "https://ece.illinois.edu/academics/courses/ece391"},
+      {"school": "University of Washington", "name": "CSE 351: The Hardware/Software Interface", "url": "https://www.cs.washington.edu/351"}
+    ],
+    "china985": [
+      {"school": "北京大学", "name": "汇编语言程序设计", "url": "http://eecs.pku.edu.cn/xxkxjsxy/info/1057/1784.htm"},
+      {"school": "北京航空航天大学", "name": "微机原理与接口技术", "url": "https://shi.buaa.edu.cn/lini/zh_CN/skxx/5359/content/1480.htm"},
+      {"school": "复旦大学", "name": "汇编语言与计算机组成", "url": "https://cs.fudan.edu.cn/35578/list.htm"},
+      {"school": "哈尔滨工业大学", "name": "汇编语言程序设计", "url": "https://ecei.hitsz.edu.cn/info/1069/1147.htm"},
+      {"school": "华中科技大学", "name": "汇编语言与微机原理", "url": "https://cs.hust.edu.cn/rcpy/bksjy/kc.htm"},
+      {"school": "南京大学", "name": "计算机系统基础（含汇编语言）", "url": "https://nju-projectn.github.io/ics-pa-gitbook/ics2024/"},
+      {"school": "上海交通大学", "name": "计算机系统基础（ICS，含汇编语言）", "url": "https://ipads.sjtu.edu.cn/courses/ics/"},
+      {"school": "武汉大学", "name": "汇编语言与接口技术", "url": "https://cslabcg.whu.edu.cn/indexcs/courses.jsp"},
+      {"school": "西安交通大学", "name": "微机原理与接口技术", "url": "https://syxt.xjtu.edu.cn/info/1018/2087.htm"},
+      {"school": "中国科学技术大学", "name": "计算系统综合实验（含汇编）", "url": "https://soc.ustc.edu.cn/CECS/"},
+      {"school": "清华大学", "name": "汇编语言程序设计", "url": "https://www.cs.tsinghua.edu.cn/info/1045/1496.htm"}
+    ]
+  },
+  "55AA-008": {
+    "international": [
+      {"school": "CMU", "name": "15-213 Introduction to Computer Systems", "url": "https://www.cs.cmu.edu/~213/"},
+      {"school": "Stanford", "name": "CS110: Principles of Computer Systems", "url": "https://web.stanford.edu/class/cs110/"},
+      {"school": "Princeton", "name": "COS 217: Introduction to Programming Systems", "url": "https://www.cs.princeton.edu/courses/cos217/"},
+      {"school": "MIT", "name": "6.033 Computer System Engineering", "url": "https://web.mit.edu/6.033/www/"},
+      {"school": "University of Washington", "name": "CSE 351: The Hardware/Software Interface", "url": "https://courses.cs.washington.edu/courses/cse351/"},
+      {"school": "Cornell", "name": "CS 3410: Computer Organization and Systems Programming", "url": "https://www.cs.cornell.edu/courses/cs3410/2025fa/"},
+      {"school": "Georgia Tech", "name": "CS 2200: Introduction to Systems and Networking", "url": "https://faculty.cc.gatech.edu/~rama/CS2200-External/"}
+    ],
+    "china985": [
+      {"school": "清华大学", "name": "程序设计训练（Rust）", "url": "https://lab.cs.tsinghua.edu.cn/rust/"},
+      {"school": "上海交通大学", "name": "计算机系统基础（ICS）", "url": "https://ipads.sjtu.edu.cn/courses/ics/index.shtml"},
+      {"school": "南京大学", "name": "操作系统：设计与实现", "url": "https://jyywiki.cn/OS/2026/"},
+      {"school": "中国科学技术大学", "name": "操作系统", "url": "http://staff.ustc.edu.cn/~ykli/os2026/"},
+      {"school": "西安交通大学", "name": "操作系统原理", "url": "https://syxt.xjtu.edu.cn/info/1018/2154.htm"}
+    ]
+  },
+  "55AA-009": {
+    "international": [
+      {"school": "Stanford", "name": "CS 143: Compilers", "url": "https://web.stanford.edu/class/cs143/index.html"},
+      {"school": "CMU", "name": "15-411/611 Compiler Design", "url": "https://www.cs.cmu.edu/~411/index.html"},
+      {"school": "UC Berkeley", "name": "CS 164: Programming Languages and Compilers", "url": "https://www-inst.eecs.berkeley.edu/~cs164/"},
+      {"school": "MIT", "name": "6.035: Computer Language Engineering", "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/"},
+      {"school": "Cornell", "name": "CS 4120/4121: Introduction to Compilers", "url": "https://www.cs.cornell.edu/courses/cs4120/"},
+      {"school": "University of Washington", "name": "CSE 401: Introduction to Compiler Construction", "url": "https://courses.cs.washington.edu/courses/cse401/24au/syllabus.html"},
+      {"school": "Princeton", "name": "COS 320: Compiling Techniques", "url": "https://www.cs.princeton.edu/courses/archive/spring26/cos320/"},
+      {"school": "Georgia Tech", "name": "CS 4240: Compilers and Interpreters", "url": "https://faculty.cc.gatech.edu/~qrzhang/course/cs4240-25s/index.html"},
+      {"school": "ETH Zurich", "name": "252-0210-00L Compiler Design", "url": "https://video.ethz.ch/lectures/d-infk/2024/autumn/252-0210-00L"}
+    ],
+    "china985": [
+      {"school": "南京大学", "name": "编译原理", "url": "https://cs.nju.edu.cn/changxu/2_compiler/index.html"},
+      {"school": "中国科学技术大学", "name": "编译原理和技术", "url": "https://ustc-compiler.github.io/2024fall/"},
+      {"school": "浙江大学", "name": "编译原理", "url": "http://netmedia.zju.edu.cn/compiler/"},
+      {"school": "上海交通大学", "name": "CS 2612: Programming Languages and Compilers", "url": "https://jhc.sjtu.edu.cn/public/courses/CS2612/"},
+      {"school": "北京大学", "name": "程序设计语言原理", "url": "https://www.math.pku.edu.cn/teachers/qiuzy/plan/"},
+      {"school": "哈尔滨工业大学", "name": "编译原理", "url": "https://www.icourse163.org/learn/HIT-1002123007"}
+    ]
+  },
+  "55AA-003": {
+    "international": [
+      {"school": "MIT", "name": "6.858 Computer Systems Security", "url": "https://css.csail.mit.edu/6.858/2024/"},
+      {"school": "Stanford", "name": "CS 155: Computer and Network Security", "url": "https://cs155.stanford.edu/"},
+      {"school": "CMU", "name": "15-793: Secure Computer Systems", "url": "https://www.cs.cmu.edu/~15793/"},
+      {"school": "UC Berkeley", "name": "CS 161: Computer Security", "url": "https://inst.eecs.berkeley.edu/~cs161/sp25/"},
+      {"school": "ETH Zurich", "name": "System Security", "url": "https://syssec.ethz.ch/courses/system-security/"},
+      {"school": "Cornell", "name": "CS 5430: System Security", "url": "https://www.cs.cornell.edu/courses/cs5430/2026sp/"},
+      {"school": "University of Washington", "name": "CSE 484: Computer Security", "url": "https://courses.cs.washington.edu/courses/cse484/26wi/"},
+      {"school": "Georgia Tech", "name": "CS 6264: Information Security Lab—System and Network Defenses", "url": "https://omscs.gatech.edu/cs-6264-information-security-lab-system-and-network-defenses"},
+      {"school": "Princeton", "name": "COS 432/ECE 432: Information Security", "url": "https://ece432-spring26.github.io/index.html"},
+      {"school": "UIUC", "name": "CS 461/ECE 422: Introduction to Computer Security", "url": "https://courses.grainger.illinois.edu/CS461/fa2025/"}
+    ],
+    "china985": [
+      {"school": "清华大学", "name": "网络与系统安全研究生课程", "url": "https://www.insc.tsinghua.edu.cn/jwjx/yjskc.htm"},
+      {"school": "浙江大学", "name": "Network Security", "url": "https://list.zju.edu.cn/kaibu/netsec2024/index.html"},
+      {"school": "中国科学技术大学", "name": "系统安全与软件安全", "url": "http://staff.ustc.edu.cn/~sycheng/sst/index-cn.html"},
+      {"school": "上海交通大学", "name": "网络空间安全学院本科生课程", "url": "https://infosec.sjtu.edu.cn/train.aspx?id=7"},
+      {"school": "南京大学", "name": "系统安全与二进制代码分析", "url": "https://cs.nju.edu.cn/maobing/dragonstar2017.htm"},
+      {"school": "哈尔滨工业大学", "name": "网络空间安全学院课程体系", "url": "https://cys.hit.edu.cn/info/1052/1178.htm"},
+      {"school": "武汉大学", "name": "信息安全专业课程", "url": "https://cse.whu.edu.cn/rcpy/bkspy/zyjs/xxaqzy.htm"},
+      {"school": "华中科技大学", "name": "网络空间安全学院", "url": "https://cse.hust.edu.cn/info/1045/1075.htm"},
+      {"school": "西安交通大学", "name": "网络空间安全学院", "url": "http://cybersec.xjtu.edu.cn/"}
+    ]
+  },
+  "55AA-010": {
+    "international": [
+      {"school": "MIT", "name": "6.820 Fundamentals of Program Analysis", "url": "https://ocw.mit.edu/courses/6-820-fundamentals-of-program-analysis-fall-2015/"},
+      {"school": "CMU", "name": "17-355/17-665: Program Analysis", "url": "https://cmu-program-analysis.github.io/2025/index.html"},
+      {"school": "Stanford", "name": "CS 243: Program Analysis and Optimizations", "url": "https://suif.stanford.edu/~courses/cs243/"},
+      {"school": "UC Berkeley", "name": "CS 294-260: Program Analysis and Optimization", "url": "https://inst.eecs.berkeley.edu/~cs294-260/sp24/"},
+      {"school": "ETH Zurich", "name": "Program Analysis for System Security and Reliability", "url": "https://www.sri.inf.ethz.ch/teaching/pass2022"},
+      {"school": "Cornell", "name": "CS 6120: Advanced Compilers", "url": "https://www.cs.cornell.edu/courses/cs6120/2025fa/"},
+      {"school": "Georgia Tech", "name": "CS 6340: Software Analysis and Test", "url": "https://faculty.cc.gatech.edu/~qrzhang/course/cs6340/index.html"},
+      {"school": "Princeton", "name": "COS 516: Automated Reasoning about Software", "url": "https://www.cs.princeton.edu/courses/archive/fall25/cos516/"},
+      {"school": "University of Washington", "name": "CSE 503: Software Engineering", "url": "https://courses.cs.washington.edu/courses/cse503/25wi/"}
+    ],
+    "china985": [
+      {"school": "南京大学", "name": "软件分析（Software Analysis）", "url": "https://pascal-group.bitbucket.io/teaching.html"},
+      {"school": "北京大学", "name": "软件分析技术", "url": "https://xiongyingfei.github.io/SA/2022/main.htm"},
+      {"school": "中国科学技术大学", "name": "程序语言设计与程序分析", "url": "http://staff.ustc.edu.cn/~yuzhang/pldpa/"},
+      {"school": "上海交通大学", "name": "CS 2612: Programming Languages and Compilers", "url": "https://jhc.sjtu.edu.cn/public/courses/CS2612/"},
+      {"school": "清华大学", "name": "程序分析", "url": "https://numbda.cs.tsinghua.edu.cn/teach.html"},
+      {"school": "复旦大学", "name": "智能化软件工程与系统", "url": "https://cs.fudan.edu.cn/7b/d8/c24781a490456/page.htm"}
+    ]
+  },
+  "55AA-013": {
+    "international": [
+      {"school": "Stanford", "name": "CS 255: Introduction to Cryptography", "url": "https://crypto.stanford.edu/~dabo/cs255/"},
+      {"school": "CMU", "name": "15-356/15-856: Introduction to Cryptography", "url": "https://www.cs.cmu.edu/~goyal/15356/"},
+      {"school": "UC Berkeley", "name": "CS 276: Cryptography", "url": "https://www2.eecs.berkeley.edu/Courses/CS276/"},
+      {"school": "ETH Zurich", "name": "Applied Cryptography", "url": "https://appliedcrypto.ethz.ch/education/current-courses.html"},
+      {"school": "Cambridge", "name": "Cryptography", "url": "https://www.cl.cam.ac.uk/teaching/current/Crypto/"},
+      {"school": "Oxford", "name": "Applied Cryptography", "url": "https://www.cs.ox.ac.uk/pmp/subjects/APC.html"},
+      {"school": "Georgia Tech", "name": "CS 6260: Applied Cryptography", "url": "https://omscs.gatech.edu/cs-6260-applied-cryptography"},
+      {"school": "University of Washington", "name": "CSEP 590: Applied Cryptography", "url": "https://courses.cs.washington.edu/courses/csep590d/23sp/"},
+      {"school": "Princeton", "name": "COS 433: Cryptography", "url": "https://www.cs.princeton.edu/courses/archive/spring10/cos433/"},
+      {"school": "MIT", "name": "6.875: Cryptography and Cryptanalysis", "url": "https://courses.csail.mit.edu/6.875/"}
+    ],
+    "china985": [
+      {"school": "清华大学", "name": "现代密码学", "url": "https://qzc.tsinghua.edu.cn/info/1194/2070.htm"},
+      {"school": "北京大学", "name": "密码学", "url": "https://math.pku.edu.cn/bks/sykc/148705.htm"},
+      {"school": "浙江大学", "name": "密码学", "url": "https://icsr.zju.edu.cn/bksjs/list.htm"},
+      {"school": "上海交通大学", "name": "现代密码学", "url": "https://infosec.sjtu.edu.cn/PolicyDetail.aspx?id=8"},
+      {"school": "复旦大学", "name": "密码学", "url": "https://cs.fudan.edu.cn/7b/e5/c24781a490469/page.htm"},
+      {"school": "中国科学技术大学", "name": "密码学理论与实践", "url": "http://staff.ustc.edu.cn/~syang/index.htm"},
+      {"school": "南京大学", "name": "密码学", "url": "https://cosec.nju.edu.cn/46884/list.htm"},
+      {"school": "哈尔滨工业大学", "name": "密码学基础", "url": "https://sce.hit.edu.cn/info/1192/2617.htm"},
+      {"school": "武汉大学", "name": "密码科学与技术专业", "url": "https://cse.whu.edu.cn/rcpy/bkspy/zyjs/mmkxyjszy.htm"},
+      {"school": "西安交通大学", "name": "密码学", "url": "http://cybersec.xjtu.edu.cn/index.htm"}
+    ]
+  },
+  "55AA-014": {
+    "international": [
+      {"school": "MIT", "name": "6.5950 Secure Hardware Design", "url": "https://shd.mit.edu/2025/index.html"},
+      {"school": "CMU", "name": "18-632: Introduction to Hardware Security", "url": "https://courses.ece.cmu.edu/18632"},
+      {"school": "CMU", "name": "17-715: Advanced Topics in Hardware Security", "url": "https://www.cs.cmu.edu/~rpaccagn/17715-f24"},
+      {"school": "Georgia Tech", "name": "Hardware Security and Sidechannel Analysis", "url": "https://scp.cc.gatech.edu/hardware-security-and-sidechannel-analysis"},
+      {"school": "EPFL", "name": "CS-447: Secure Hardware Design", "url": "https://edu.epfl.ch/coursebook/en/secure-hardware-design-CS-447"},
+      {"school": "University of Michigan", "name": "EECS 598-12: Hardware Security", "url": "https://web.eecs.umich.edu/~genkin/teaching/fall2018/EECS598-12.html"}
+    ],
+    "china985": [
+      {"school": "清华大学", "name": "可信网络与系统研究所", "url": "https://www.thss.tsinghua.edu.cn/info/1032/1087.htm"},
+      {"school": "北京大学", "name": "硬件安全研究方向", "url": "https://www.ece.pku.edu.cn/info/1045/2467.htm"},
+      {"school": "浙江大学", "name": "IoT Security（含硬件安全）", "url": "https://www.usslab.org/courses/iot_security.html"},
+      {"school": "电子科技大学", "name": "嵌入式系统设计", "url": "https://i.study.uestc.edu.cn/ESD/menu/course-objective"}
+    ]
+  },
+  "55AA-015": {
+    "international": [
+      {"school": "CMU", "name": "14-822: Host Based Forensics", "url": "https://www.andrew.cmu.edu/course/14-822/"},
+      {"school": "Georgia Tech", "name": "Forensics and Attribution", "url": "https://scp.cc.gatech.edu/forensics-and-attribution"},
+      {"school": "Cambridge", "name": "Cybercrime", "url": "https://www.cl.cam.ac.uk/teaching/2526/R354/"},
+      {"school": "Oxford", "name": "Digital Forensics", "url": "https://www.cs.ox.ac.uk/pmp/subjects/FOR.html"},
+      {"school": "UCL", "name": "Digital Forensic Science and Technology", "url": "https://www.ucl.ac.uk/module-catalogue/modules/digital-forensic-science-and-technology-SECU0063"},
+      {"school": "ETH Zurich", "name": "Applied Security Laboratory", "url": "https://infsec.ethz.ch/education/as2023/seclab.html"},
+      {"school": "Stanford", "name": "CS203: Computer Security and the Law", "url": "https://seclab.stanford.edu/courses/cs203/"}
+    ],
+    "china985": [
+      {"school": "武汉大学", "name": "网络空间安全专业（含电子取证方向）", "url": "https://cse.whu.edu.cn/rcpy/lxspy/zyjs/wlkjaqzypyfa.htm"},
+      {"school": "中国科学技术大学", "name": "互联网安全深度实践", "url": "https://cybersec.ustc.edu.cn/2022/0721/c23847a563219/page.htm"},
+      {"school": "哈尔滨工业大学", "name": "可视媒体取证方向", "url": "https://cys.hit.edu.cn/info/1022/1241.htm"},
+      {"school": "上海交通大学", "name": "网络空间安全学院本科生培养", "url": "https://infosec.sjtu.edu.cn/train.aspx?id=7"},
+      {"school": "复旦大学", "name": "司法鉴定中心（电子数据鉴定）", "url": "https://forensic.fudan.edu.cn/wyjd1/jdxm.htm"},
+      {"school": "清华大学", "name": "网络科学与网络空间研究院研究生课程", "url": "https://www.insc.tsinghua.edu.cn/jwjx/yjskc.htm"},
+      {"school": "南京大学", "name": "COSEC 安全课程", "url": "https://cosec.nju.edu.cn/kcxx/list.htm"}
+    ]
+  },
+  "55AA-016": {
+    "international": [
+      {"school": "ETH Zurich", "name": "Advanced Topics in Communication Networks", "url": "https://adv-net.ethz.ch/"},
+      {"school": "ETH Zurich", "name": "Formal Methods for Information Security", "url": "https://infsec.ethz.ch/education/ss2025/fmsec.html"},
+      {"school": "Stanford", "name": "CS 259: Security Analysis of Network Protocols", "url": "http://web.stanford.edu/class/cs259/WWW08/"},
+      {"school": "Stanford", "name": "CS 357S: Formal Methods for Computer Systems", "url": "https://web.stanford.edu/class/cs357s/"},
+      {"school": "CMU", "name": "18-731: Network Security", "url": "https://users.ece.cmu.edu/~vsekar/Teaching/Spring25/18731/"}
+    ],
+    "china985": [
+      {"school": "清华大学", "name": "网络科学与网络空间研究院研究生课程", "url": "https://www.insc.tsinghua.edu.cn/jwjx/yjskc.htm"},
+      {"school": "浙江大学", "name": "网络空间安全研究中心研究生课程", "url": "https://icsr.zju.edu.cn/yjskc/list.htm"},
+      {"school": "中国科学技术大学", "name": "信息网络协议基础", "url": "https://if.ustc.edu.cn/course/course/view.php?id=43"},
+      {"school": "南京大学", "name": "COSEC 课程信息", "url": "https://cosec.nju.edu.cn/kcxx/list.htm"}
+    ]
+  },
+  "55AA-017": {
+    "international": [
+      {"school": "MIT", "name": "Trusted Computing @ MIT CSAIL", "url": "https://tc.csail.mit.edu/"},
+      {"school": "MIT", "name": "6.5950 Secure Hardware Design（含 TEE）", "url": "https://shd.mit.edu/2025/index.html"},
+      {"school": "CMU", "name": "15-793: Secure Computer Systems", "url": "https://www.cs.cmu.edu/~15793/"},
+      {"school": "Stanford", "name": "CS 155: Computer and Network Security（含处理器/TEE安全）", "url": "https://cs155.stanford.edu/"},
+      {"school": "ETH Zurich", "name": "System Security — SECTRS Group", "url": "https://sectrs.ethz.ch/education/autumn-semester-2023-24/system-security-autumn2023-24.html"},
+      {"school": "ETH Zurich", "name": "Trusted Computing 研究方向", "url": "https://www.syssec.ethz.ch/areas/trusted-computing/"},
+      {"school": "University of Michigan", "name": "EECS 598-12: Hardware Security", "url": "https://web.eecs.umich.edu/~genkin/teaching/fall2018/EECS598-12.html"}
+    ],
+    "china985": [
+      {"school": "清华大学", "name": "可信网络与系统研究所", "url": "https://www.thss.tsinghua.edu.cn/info/1032/1087.htm"},
+      {"school": "北京大学", "name": "高可信软件技术教育部重点实验室", "url": "https://hcst.pku.edu.cn/xsyj/yjfxynr.htm"},
+      {"school": "中国科学技术大学", "name": "可信融合课题组（IoT安全与可信计算）", "url": "http://iotsec.ustc.edu.cn/kxrh/list.htm"},
+      {"school": "上海交通大学", "name": "网络空间安全学院本科培养体系", "url": "https://infosec.sjtu.edu.cn/Train.aspx?eid=12&id=7"}
+    ]
+  },
+  "55AA-018": {
+    "international": [
+      {"school": "CMU", "name": "ECE 649: Embedded & Internet Security", "url": "https://course.ece.cmu.edu/~ece649/"},
+      {"school": "Purdue", "name": "ECET 53600: Embedded Systems Security", "url": "https://catalog.purdue.edu/preview_course_nopop.php?catoid=14&coid=140966"},
+      {"school": "Georgia Tech", "name": "Embedded System Cyber Security VIP Lab", "url": "https://escs.vip.gatech.edu/publications"},
+      {"school": "University of Washington", "name": "CSE 484: Computer Security（含嵌入式安全）", "url": "https://www.cs.washington.edu/484"}
+    ],
+    "china985": [
+      {"school": "中国科学技术大学", "name": "嵌入式系统安全与设计", "url": "http://staff.ustc.edu.cn/~lszhuang/ARM/"},
+      {"school": "中国科学技术大学", "name": "嵌入式系统设计方法", "url": "http://staff.ustc.edu.cn/~llxx/embedded/"},
+      {"school": "上海交通大学", "name": "嵌入式系统原理与应用", "url": "https://bjwb.seiee.sjtu.edu.cn/bkjwb/info/13295.htm"},
+      {"school": "北京大学", "name": "嵌入式系统编程与实践", "url": "https://bonany.cc/esp25/"},
+      {"school": "哈尔滨工业大学", "name": "嵌入式软硬件设计与实践", "url": "https://ceevc.hit.edu.cn/2023/0710/c17626a320410/page.htm"},
+      {"school": "电子科技大学", "name": "嵌入式系统及应用", "url": "https://www.icourse163.org/course/UESTC-1206862805"}
+    ]
+  },
+  "55AA-019": {
+    "international": [
+      {"school": "MIT", "name": "6.5660 Computer Systems Security", "url": "https://css.csail.mit.edu/6.5660/2026/"},
+      {"school": "CMU", "name": "15-799: Security for Software and Hardware Systems", "url": "https://www.cs.cmu.edu/~15799/syllabus.html"},
+      {"school": "Georgia Tech", "name": "CS 6265: Information Security Lab", "url": "https://tc.gts3.org/cs6265/2025-fall/info.html"},
+      {"school": "UC Berkeley", "name": "Cyber 215: Usable Privacy and Security Research", "url": "https://www.ischool.berkeley.edu/courses/cyber/215"},
+      {"school": "University of Washington", "name": "CSE 564: Computer Security", "url": "https://courses.cs.washington.edu/courses/cse564/24wi/"}
+    ],
+    "china985": [
+      {"school": "南京大学", "name": "COSEC 系统安全科研组", "url": "https://cosec.nju.edu.cn/"},
+      {"school": "南京大学", "name": "Dragon Star: System Security and Binary Code Analysis", "url": "https://cs.nju.edu.cn/maobing/dragonstar2017.htm"},
+      {"school": "复旦大学", "name": "系统软件与安全实验室", "url": "https://security.fudan.edu.cn/"},
+      {"school": "中国科学技术大学", "name": "网络空间安全学院", "url": "http://cybersec.ustc.edu.cn/main.htm"},
+      {"school": "浙江大学", "name": "网络空间安全研究中心", "url": "https://icsr.zju.edu.cn/yjskc/list.htm"}
+    ]
+  },
+  "55AA-020": {
+    "international": [
+      {"school": "CMU", "name": "CS 17-770: Virtual Machines and Managed Runtimes", "url": "https://www.cs.cmu.edu/~wasm/cs17-770/fall2025/"},
+      {"school": "CMU", "name": "15-793: Secure Computer Systems", "url": "https://csd.cmu.edu/course/15793/s25"},
+      {"school": "ETH Zurich", "name": "252-0217-00L Computer Systems（含虚拟化安全）", "url": "https://video.ethz.ch/lectures/d-infk/2026/autumn/252-0217-00L"},
+      {"school": "ETH Zurich", "name": "Computer Systems — Secure & Trustworthy Systems", "url": "https://sectrs.ethz.ch/education/autumn-semester-2022-23/Computer-Systems-autumn2022-23.html"},
+      {"school": "MIT", "name": "6.828 Operating System Engineering（含 VMM）", "url": "https://pdos.csail.mit.edu/6.828/2024/lec/l-vmm.txt"}
+    ],
+    "china985": [
+      {"school": "北京大学", "name": "操作系统与虚拟化安全（沈晴霓）", "url": "https://www.coursera.org/learn/os-virtsecurity"},
+      {"school": "北京大学", "name": "沈晴霓教授主页", "url": "https://ss.pku.edu.cn/sztd/qygcbssz/c10ec19ea27f4a35ba81161a9214ce61.htm"},
+      {"school": "上海交通大学", "name": "CS3328 系统安全（含虚拟化）", "url": "https://www.cs.sjtu.edu.cn/~lichao/courses/cs3328.html"},
+      {"school": "浙江大学", "name": "USSLab ICS课程（含虚拟化安全）", "url": "https://usslab.org/courses/ics/"}
+    ]
+  },
+  "55AA-021": {
+    "international": [
+      {"school": "CMU", "name": "15-793: Secure Computer Systems", "url": "https://csd.cmu.edu/course/15793/s25"},
+      {"school": "CMU", "name": "15-316: Software Foundations of Security & Privacy", "url": "https://15316-cmu.github.io/2024/index.html"},
+      {"school": "Stanford", "name": "XACS235: Cloud Security（含合规与自动化）", "url": "https://online.stanford.edu/courses/xacs235-cloud-security"},
+      {"school": "University of Washington", "name": "CSE 564: Computer Security", "url": "https://courses.cs.washington.edu/courses/cse564/26wi/"}
+    ],
+    "china985": [
+      {"school": "清华大学", "name": "网络空间安全研究生培养方案", "url": "https://www.insc.tsinghua.edu.cn/jwjx/yjskc.htm"},
+      {"school": "中国科学技术大学", "name": "网络空间安全学科硕士研究生培养方案", "url": "https://gradschool.ustc.edu.cn/static/upload/article/ueditor/1758537613942-796599.pdf"},
+      {"school": "武汉大学", "name": "网络空间安全专业培养方案", "url": "https://cse.whu.edu.cn/rcpy/lxspy/zyjs/wlkjaqzypyfa.htm"},
+      {"school": "哈尔滨工业大学", "name": "网络空间安全学院信息安全专业", "url": "https://cys.hit.edu.cn/info/1052/1178.htm"},
+      {"school": "复旦大学", "name": "网络空间安全一级学科方向", "url": "https://cs.fudan.edu.cn/7b/e4/c24781a490468/page.htm"}
+    ]
+  },
+  "55AA-012": {
+    "international": [
+      {"school": "MIT", "name": "6.1800: Computer Networks", "url": "https://web.mit.edu/6.1800/www/"},
+      {"school": "Stanford", "name": "CS 144: Introduction to Computer Networking", "url": "https://cs144.github.io/"},
+      {"school": "CMU", "name": "15-441/641: Networking and the Internet", "url": "https://psteenkiste.github.io/nets-fa24/"},
+      {"school": "UC Berkeley", "name": "CS 168: Introduction to the Internet: Architecture and Protocols", "url": "https://fa24.cs168.io/"},
+      {"school": "ETH Zurich", "name": "Computer Networks", "url": "https://netsec.ethz.ch/courses/cn-2024/"},
+      {"school": "Princeton", "name": "COS 461: Computer Networks", "url": "https://www.cs.princeton.edu/courses/archive/fall25/cos461/"},
+      {"school": "University of Washington", "name": "CSE 461: Introduction to Computer Communication Networks", "url": "https://courses.cs.washington.edu/courses/cse461/24au/"},
+      {"school": "Cornell", "name": "CS 4450/5456: Introduction to Computer Networks", "url": "https://www.racheesingh.com/computernetworks-fa24/"},
+      {"school": "Georgia Tech", "name": "CS 6250: Computer Networks", "url": "https://omscs.gatech.edu/cs-6250-computer-networks"}
+    ],
+    "china985": [
+      {"school": "清华大学", "name": "计算机网络（Router Lab）", "url": "https://lab.cs.tsinghua.edu.cn/router/doc/"},
+      {"school": "上海交通大学", "name": "CS339: 计算机网络", "url": "https://www.cs.sjtu.edu.cn/~linghe.kong/CS339/"},
+      {"school": "浙江大学", "name": "计算机网络", "url": "https://zjucomp.net/"},
+      {"school": "中国科学技术大学", "name": "计算机网络", "url": "http://if.ustc.edu.cn/course/course/index.php?categoryid=4"},
+      {"school": "南京大学", "name": "计算机网络", "url": "https://cs.nju.edu.cn/lands/course7.html"},
+      {"school": "哈尔滨工业大学", "name": "计算机网络", "url": "https://www.icourse163.org/course/HIT-154005"},
+      {"school": "武汉大学", "name": "计算机网络", "url": "https://cslabcg.whu.edu.cn/indexcs/courses.jsp"}
+    ]
+  }
+}

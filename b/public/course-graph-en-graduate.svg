@@ -1,0 +1,167 @@
+<!-- Title: CourseGraph Pages: 1 -->
+<svg width="620pt" height="628pt"
+ viewBox="0.00 0.00 619.52 627.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(5.76 621.76)">
+<!-- 55AA&#45;014&#45;&gt;55AA&#45;017 -->
+<g id="edge1" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M364.46,-551.79C371.43,-546.98 378.12,-541.7 384,-536 442.29,-479.47 486.43,-393.96 508.61,-345.32"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="510.43,-345.96 510.94,-340.15 506.92,-344.37 510.43,-345.96"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;014 -->
+<g id="edge3" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M139.26,-340.28C145.47,-345.3 151.23,-350.87 156,-357 207.44,-423.11 162.09,-471.06 215,-536 218.56,-540.37 222.64,-544.43 227.03,-548.17"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="226.04,-549.85 231.52,-551.82 228.46,-546.86 226.04,-549.85"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;015 -->
+<g id="edge4" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M135.15,-340.12C142.5,-345.34 149.66,-351.02 156,-357 188.64,-387.83 181.68,-408.91 215,-439 219.94,-443.46 225.37,-447.7 231.01,-451.68"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="230.17,-453.43 235.8,-454.95 232.35,-450.25 230.17,-453.43"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;016 -->
+<g id="edge5" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M156.08,-336.79C175.7,-344.12 196.85,-352.02 216.69,-359.44"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="216.15,-361.29 221.98,-361.41 217.5,-357.68 216.15,-361.29"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;017 -->
+<g id="edge6" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M156.09,-308C234.28,-308 355.11,-308 436.88,-308"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="437.2,-309.93 442.7,-308 437.2,-306.08 437.2,-309.93"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;018 -->
+<g id="edge7" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M156.08,-279.21C178.49,-270.83 202.91,-261.71 225.09,-253.42"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="225.9,-255.18 230.38,-251.45 224.56,-251.57 225.9,-255.18"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;020 -->
+<g id="edge8" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M108.48,-275.88C134.86,-248.14 175.38,-207.92 215,-178 221.32,-173.23 228.14,-168.55 235.07,-164.1"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="236.26,-165.62 239.88,-161.05 234.2,-162.37 236.26,-165.62"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;021 -->
+<g id="edge9" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M92.14,-275.64C112.65,-228.28 156.1,-139.37 215,-81 219.95,-76.1 225.48,-71.5 231.28,-67.23"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="232.4,-68.8 235.76,-64.04 230.17,-65.66 232.4,-68.8"/>
+</g>
+<!-- 55AA&#45;020&#45;&gt;55AA&#45;017 -->
+<g id="edge2" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M359.04,-161.17C367.61,-166.5 376.17,-172.19 384,-178 422.66,-206.7 462.56,-244.55 489.91,-272"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="488.62,-273.43 493.86,-275.98 491.35,-270.72 488.62,-273.43"/>
+</g>
+<!-- 55AA&#45;014 -->
+<g id="node1" class="node">
+<g id="a_node1"><a xlink:href="/en/courses/55aa-014/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="230.5,-552 230.5,-616 368.5,-616 368.5,-552 230.5,-552"/>
+<text text-anchor="start" x="237.5" y="-600.2" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;014</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="316.5,-591 316.5,-615 367.5,-615 367.5,-591 316.5,-591"/>
+<text text-anchor="start" x="347.5" y="-600.8" font-family="Arial" font-size="9.00" fill="#665b70">GR</text>
+<text text-anchor="start" x="237.5" y="-575.4" font-family="Arial" font-size="12.00" fill="#5f666d">Hardware Injection and</text>
+<text text-anchor="start" x="249.5" y="-562.4" font-family="Arial" font-size="12.00" fill="#5f666d">Hardware Security</text>
+<polygon fill="none" stroke="#d3d7dc" points="230.5,-552 230.5,-616 368.5,-616 368.5,-552 230.5,-552"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;015 -->
+<g id="node2" class="node">
+<g id="a_node2"><a xlink:href="/en/courses/55aa-015/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="235.5,-455 235.5,-519 363.5,-519 363.5,-455 235.5,-455"/>
+<text text-anchor="start" x="242.5" y="-503.2" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;015</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="316.5,-494 316.5,-518 362.5,-518 362.5,-494 316.5,-494"/>
+<text text-anchor="start" x="342.5" y="-503.8" font-family="Arial" font-size="9.00" fill="#665b70">GR</text>
+<text text-anchor="start" x="242.5" y="-478.4" font-family="Arial" font-size="12.00" fill="#5f666d">Digital Forensics and</text>
+<text text-anchor="start" x="272" y="-465.4" font-family="Arial" font-size="12.00" fill="#5f666d">Attribution</text>
+<polygon fill="none" stroke="#d3d7dc" points="235.5,-455 235.5,-519 363.5,-519 363.5,-455 235.5,-455"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;016 -->
+<g id="node3" class="node">
+<g id="a_node3"><a xlink:href="/en/courses/55aa-016/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="222,-358 222,-422 377,-422 377,-358 222,-358"/>
+<text text-anchor="start" x="229.5" y="-406.2" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;016</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="317.5,-397 317.5,-421 376.5,-421 376.5,-397 317.5,-397"/>
+<text text-anchor="start" x="356.5" y="-406.8" font-family="Arial" font-size="9.00" fill="#665b70">GR</text>
+<text text-anchor="start" x="229.5" y="-381.4" font-family="Arial" font-size="12.00" fill="#5f666d">Network Protocol Analysis</text>
+<text text-anchor="start" x="258.5" y="-368.4" font-family="Arial" font-size="12.00" fill="#5f666d">and Verification</text>
+<polygon fill="none" stroke="#d3d7dc" points="222,-358 222,-422 377,-422 377,-358 222,-358"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;017 -->
+<g id="node4" class="node">
+<g id="a_node4"><a xlink:href="/en/courses/55aa-017/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="443,-276 443,-340 608,-340 608,-276 443,-276"/>
+<text text-anchor="start" x="450.5" y="-324.2" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;017</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="543.5,-315 543.5,-339 607.5,-339 607.5,-315 543.5,-315"/>
+<text text-anchor="start" x="587.5" y="-324.8" font-family="Arial" font-size="9.00" fill="#665b70">GR</text>
+<text text-anchor="start" x="450.5" y="-299.4" font-family="Arial" font-size="12.00" fill="#5f666d">Trusted Computing Methods</text>
+<text text-anchor="start" x="492.5" y="-286.4" font-family="Arial" font-size="12.00" fill="#5f666d">and Security</text>
+<polygon fill="none" stroke="#d3d7dc" points="443,-276 443,-340 608,-340 608,-276 443,-276"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;018 -->
+<g id="node5" class="node">
+<g id="a_node5"><a xlink:href="/en/courses/55aa-018/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="230.5,-194 230.5,-258 368.5,-258 368.5,-194 230.5,-194"/>
+<text text-anchor="start" x="237.5" y="-242.2" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;018</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="316.5,-233 316.5,-257 367.5,-257 367.5,-233 316.5,-233"/>
+<text text-anchor="start" x="347.5" y="-242.8" font-family="Arial" font-size="9.00" fill="#665b70">GR</text>
+<text text-anchor="start" x="245.5" y="-217.4" font-family="Arial" font-size="12.00" fill="#5f666d">Embedded Systems</text>
+<text text-anchor="start" x="237.5" y="-204.4" font-family="Arial" font-size="12.00" fill="#5f666d">Principles and Security</text>
+<polygon fill="none" stroke="#d3d7dc" points="230.5,-194 230.5,-258 368.5,-258 368.5,-194 230.5,-194"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;011 -->
+<g id="node6" class="node">
+<g id="a_node6"><a xlink:href="/en/courses/55aa-011/" target="_top">
+<polygon fill="#ffffff" stroke="transparent" points="24.5,-373.5 24.5,-424.5 131.5,-424.5 131.5,-373.5 24.5,-373.5"/>
+<text text-anchor="start" x="32" y="-408.2" font-family="Arial" font-size="11.00" fill="#4c5965">55AA&#45;011</text>
+<polygon fill="#eadcf8" stroke="transparent" points="96,-399 96,-423 131,-423 131,-399 96,-399"/>
+<text text-anchor="start" x="111" y="-408.8" font-family="Arial" font-size="9.00" fill="#6c348f">GR</text>
+<text text-anchor="start" x="32" y="-383.4" font-family="Arial" font-size="12.00" fill="#111111">Capstone Project</text>
+<polygon fill="none" stroke="#8bb8df" points="24.5,-373.5 24.5,-424.5 131.5,-424.5 131.5,-373.5 24.5,-373.5"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;019 -->
+<g id="node7" class="node">
+<g id="a_node7"><a xlink:href="/en/courses/55aa-019/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="0,-276 0,-340 156,-340 156,-276 0,-276"/>
+<text text-anchor="start" x="7" y="-324.2" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;019</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="95,-315 95,-339 155,-339 155,-315 95,-315"/>
+<text text-anchor="start" x="135" y="-324.8" font-family="Arial" font-size="9.00" fill="#665b70">GR</text>
+<text text-anchor="start" x="7" y="-299.4" font-family="Arial" font-size="12.00" fill="#5f666d">System Security Research</text>
+<text text-anchor="start" x="55" y="-286.4" font-family="Arial" font-size="12.00" fill="#5f666d">Methods</text>
+<polygon fill="none" stroke="#d3d7dc" points="0,-276 0,-340 156,-340 156,-276 0,-276"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;020 -->
+<g id="node8" class="node">
+<g id="a_node8"><a xlink:href="/en/courses/55aa-020/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="221.5,-97 221.5,-161 377.5,-161 377.5,-97 221.5,-97"/>
+<text text-anchor="start" x="228.5" y="-145.2" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;020</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="316.5,-136 316.5,-160 376.5,-160 376.5,-136 316.5,-136"/>
+<text text-anchor="start" x="356.5" y="-145.8" font-family="Arial" font-size="9.00" fill="#665b70">GR</text>
+<text text-anchor="start" x="228.5" y="-120.4" font-family="Arial" font-size="12.00" fill="#5f666d">Virtualization Methods and</text>
+<text text-anchor="start" x="277.5" y="-107.4" font-family="Arial" font-size="12.00" fill="#5f666d">Security</text>
+<polygon fill="none" stroke="#d3d7dc" points="221.5,-97 221.5,-161 377.5,-161 377.5,-97 221.5,-97"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;021 -->
+<g id="node9" class="node">
+<g id="a_node9"><a xlink:href="/en/courses/55aa-021/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="215,0 215,-64 384,-64 384,0 215,0"/>
+<text text-anchor="start" x="222.5" y="-48.2" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;021</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="317.5,-39 317.5,-63 383.5,-63 383.5,-39 317.5,-39"/>
+<text text-anchor="start" x="363.5" y="-48.8" font-family="Arial" font-size="9.00" fill="#665b70">GR</text>
+<text text-anchor="start" x="248.5" y="-23.4" font-family="Arial" font-size="12.00" fill="#5f666d">Security Baselines,</text>
+<text text-anchor="start" x="222.5" y="-10.4" font-family="Arial" font-size="12.00" fill="#5f666d">Compliance, and Automation</text>
+<polygon fill="none" stroke="#d3d7dc" points="215,0 215,-64 384,-64 384,0 215,0"/>
+</a>
+</g>
+</g>
+</g>
+</svg>

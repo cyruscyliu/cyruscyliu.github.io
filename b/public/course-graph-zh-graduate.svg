@@ -1,0 +1,159 @@
+<!-- Title: CourseGraph Pages: 1 -->
+<svg width="511pt" height="551pt"
+ viewBox="0.00 0.00 510.52 550.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(5.76 544.76)">
+<!-- 55AA&#45;014&#45;&gt;55AA&#45;017 -->
+<g id="edge1" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M296.39,-487.9C303.77,-483.03 310.9,-477.54 317,-471.5 368.35,-420.62 405.92,-343.25 424.15,-300.54"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="426.01,-301.07 426.38,-295.25 422.47,-299.57 426.01,-301.07"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;014 -->
+<g id="edge3" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M95.4,-295.02C101.16,-299.99 106.61,-305.53 111,-311.5 155.88,-372.57 121.2,-413.51 170,-471.5 173.94,-476.19 178.55,-480.47 183.5,-484.35"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="182.57,-486.06 188.13,-487.8 184.87,-482.97 182.57,-486.06"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;015 -->
+<g id="edge4" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M92.48,-295.14C98.9,-300.28 105.33,-305.85 111,-311.5 141.29,-341.68 137.79,-359.37 170,-387.5 175.88,-392.63 182.47,-397.46 189.23,-401.88"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="188.25,-403.54 193.92,-404.87 190.32,-400.29 188.25,-403.54"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;016 -->
+<g id="edge5" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M111.05,-291.79C131.59,-300.18 155.17,-309.82 176.64,-318.59"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="175.94,-320.38 181.76,-320.68 177.39,-316.82 175.94,-320.38"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;017 -->
+<g id="edge6" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M111.35,-269.5C179.76,-269.5 296.63,-269.5 370.05,-269.5"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="370.19,-271.43 375.69,-269.5 370.19,-267.58 370.19,-271.43"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;018 -->
+<g id="edge7" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M111.05,-247.21C130.91,-239.1 153.61,-229.82 174.5,-221.28"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="175.41,-222.99 179.77,-219.13 173.95,-219.43 175.41,-222.99"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;020 -->
+<g id="edge8" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M77.72,-243.53C99.26,-218.15 134.43,-179.39 170,-151.5 175.93,-146.85 182.43,-142.36 189.02,-138.16"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="190.43,-139.55 194.07,-135.01 188.39,-136.29 190.43,-139.55"/>
+</g>
+<!-- 55AA&#45;019&#45;&gt;55AA&#45;021 -->
+<g id="edge9" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M65.79,-243.73C81.73,-202.37 117.73,-120.47 170,-67.5 174.63,-62.81 179.89,-58.46 185.42,-54.49"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="186.69,-55.95 190.11,-51.23 184.5,-52.78 186.69,-55.95"/>
+</g>
+<!-- 55AA&#45;020&#45;&gt;55AA&#45;017 -->
+<g id="edge2" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M292.8,-135.17C301.11,-140.23 309.48,-145.76 317,-151.5 351.83,-178.09 386.96,-214.14 410.02,-239.37"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="408.78,-240.86 413.9,-243.63 411.63,-238.27 408.78,-240.86"/>
+</g>
+<!-- 55AA&#45;014 -->
+<g id="node1" class="node">
+<g id="a_node1"><a xlink:href="/zh/courses/55aa-014/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="182,-488 182,-539 305,-539 305,-488 182,-488"/>
+<text text-anchor="start" x="189.5" y="-522.7" font-family="Noto Sans CJK SC" font-size="11.00" fill="#6f767d">55AA&#45;014</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="262.5,-513.5 262.5,-537.5 304.5,-537.5 304.5,-513.5 262.5,-513.5"/>
+<text text-anchor="start" x="288.5" y="-523.3" font-family="Noto Sans CJK SC" font-size="9.00" fill="#665b70">研</text>
+<text text-anchor="start" x="189.5" y="-497.9" font-family="Noto Sans CJK SC" font-size="12.00" fill="#5f666d">硬件注入和硬件安全</text>
+<polygon fill="none" stroke="#d3d7dc" points="182,-488 182,-539 305,-539 305,-488 182,-488"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;015 -->
+<g id="node2" class="node">
+<g id="a_node2"><a xlink:href="/zh/courses/55aa-015/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="194,-404 194,-455 293,-455 293,-404 194,-404"/>
+<text text-anchor="start" x="201.5" y="-438.7" font-family="Noto Sans CJK SC" font-size="11.00" fill="#6f767d">55AA&#45;015</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="262.5,-429.5 262.5,-453.5 292.5,-453.5 292.5,-429.5 262.5,-429.5"/>
+<text text-anchor="start" x="276.5" y="-439.3" font-family="Noto Sans CJK SC" font-size="9.00" fill="#665b70">研</text>
+<text text-anchor="start" x="201.5" y="-413.9" font-family="Noto Sans CJK SC" font-size="12.00" fill="#5f666d">电子取证和溯源</text>
+<polygon fill="none" stroke="#d3d7dc" points="194,-404 194,-455 293,-455 293,-404 194,-404"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;016 -->
+<g id="node3" class="node">
+<g id="a_node3"><a xlink:href="/zh/courses/55aa-016/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="182,-320 182,-371 305,-371 305,-320 182,-320"/>
+<text text-anchor="start" x="189.5" y="-354.7" font-family="Noto Sans CJK SC" font-size="11.00" fill="#6f767d">55AA&#45;016</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="262.5,-345.5 262.5,-369.5 304.5,-369.5 304.5,-345.5 262.5,-345.5"/>
+<text text-anchor="start" x="288.5" y="-355.3" font-family="Noto Sans CJK SC" font-size="9.00" fill="#665b70">研</text>
+<text text-anchor="start" x="189.5" y="-329.9" font-family="Noto Sans CJK SC" font-size="12.00" fill="#5f666d">网络协议分析和验证</text>
+<polygon fill="none" stroke="#d3d7dc" points="182,-320 182,-371 305,-371 305,-320 182,-320"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;017 -->
+<g id="node4" class="node">
+<g id="a_node4"><a xlink:href="/zh/courses/55aa-017/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="376,-244 376,-295 499,-295 499,-244 376,-244"/>
+<text text-anchor="start" x="383.5" y="-278.7" font-family="Noto Sans CJK SC" font-size="11.00" fill="#6f767d">55AA&#45;017</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="456.5,-269.5 456.5,-293.5 498.5,-293.5 498.5,-269.5 456.5,-269.5"/>
+<text text-anchor="start" x="482.5" y="-279.3" font-family="Noto Sans CJK SC" font-size="9.00" fill="#665b70">研</text>
+<text text-anchor="start" x="383.5" y="-253.9" font-family="Noto Sans CJK SC" font-size="12.00" fill="#5f666d">可信计算方法和安全</text>
+<polygon fill="none" stroke="#d3d7dc" points="376,-244 376,-295 499,-295 499,-244 376,-244"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;018 -->
+<g id="node5" class="node">
+<g id="a_node5"><a xlink:href="/zh/courses/55aa-018/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="176,-168 176,-219 311,-219 311,-168 176,-168"/>
+<text text-anchor="start" x="183.5" y="-202.7" font-family="Noto Sans CJK SC" font-size="11.00" fill="#6f767d">55AA&#45;018</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="262.5,-193.5 262.5,-217.5 310.5,-217.5 310.5,-193.5 262.5,-193.5"/>
+<text text-anchor="start" x="294.5" y="-203.3" font-family="Noto Sans CJK SC" font-size="9.00" fill="#665b70">研</text>
+<text text-anchor="start" x="183.5" y="-177.9" font-family="Noto Sans CJK SC" font-size="12.00" fill="#5f666d">嵌入式系统原理和安全</text>
+<polygon fill="none" stroke="#d3d7dc" points="176,-168 176,-219 311,-219 311,-168 176,-168"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;011 -->
+<g id="node6" class="node">
+<g id="a_node6"><a xlink:href="/zh/courses/55aa-011/" target="_top">
+<polygon fill="#ffffff" stroke="transparent" points="12,-328 12,-379 99,-379 99,-328 12,-328"/>
+<text text-anchor="start" x="19.5" y="-362.7" font-family="Noto Sans CJK SC" font-size="11.00" fill="#4c5965">55AA&#45;011</text>
+<polygon fill="#eadcf8" stroke="transparent" points="74.5,-353.5 74.5,-377.5 98.5,-377.5 98.5,-353.5 74.5,-353.5"/>
+<text text-anchor="start" x="82.5" y="-363.3" font-family="Noto Sans CJK SC" font-size="9.00" fill="#6c348f">研</text>
+<text text-anchor="start" x="19.5" y="-337.9" font-family="Noto Sans CJK SC" font-size="12.00" fill="#111111">综合实践项目</text>
+<polygon fill="none" stroke="#8bb8df" points="12,-328 12,-379 99,-379 99,-328 12,-328"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;019 -->
+<g id="node7" class="node">
+<g id="a_node7"><a xlink:href="/zh/courses/55aa-019/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="0,-244 0,-295 111,-295 111,-244 0,-244"/>
+<text text-anchor="start" x="7.5" y="-278.7" font-family="Noto Sans CJK SC" font-size="11.00" fill="#6f767d">55AA&#45;019</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="74.5,-269.5 74.5,-293.5 110.5,-293.5 110.5,-269.5 74.5,-269.5"/>
+<text text-anchor="start" x="94.5" y="-279.3" font-family="Noto Sans CJK SC" font-size="9.00" fill="#665b70">研</text>
+<text text-anchor="start" x="7.5" y="-253.9" font-family="Noto Sans CJK SC" font-size="12.00" fill="#5f666d">系统安全科研方法</text>
+<polygon fill="none" stroke="#d3d7dc" points="0,-244 0,-295 111,-295 111,-244 0,-244"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;020 -->
+<g id="node8" class="node">
+<g id="a_node8"><a xlink:href="/zh/courses/55aa-020/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="188,-84 188,-135 299,-135 299,-84 188,-84"/>
+<text text-anchor="start" x="195.5" y="-118.7" font-family="Noto Sans CJK SC" font-size="11.00" fill="#6f767d">55AA&#45;020</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="262.5,-109.5 262.5,-133.5 298.5,-133.5 298.5,-109.5 262.5,-109.5"/>
+<text text-anchor="start" x="282.5" y="-119.3" font-family="Noto Sans CJK SC" font-size="9.00" fill="#665b70">研</text>
+<text text-anchor="start" x="195.5" y="-93.9" font-family="Noto Sans CJK SC" font-size="12.00" fill="#5f666d">虚拟化方法和安全</text>
+<polygon fill="none" stroke="#d3d7dc" points="188,-84 188,-135 299,-135 299,-84 188,-84"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;021 -->
+<g id="node9" class="node">
+<g id="a_node9"><a xlink:href="/zh/courses/55aa-021/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="170,0 170,-51 317,-51 317,0 170,0"/>
+<text text-anchor="start" x="177.5" y="-34.7" font-family="Noto Sans CJK SC" font-size="11.00" fill="#6f767d">55AA&#45;021</text>
+<polygon fill="#e8e4ec" stroke="transparent" points="262.5,-25.5 262.5,-49.5 316.5,-49.5 316.5,-25.5 262.5,-25.5"/>
+<text text-anchor="start" x="300.5" y="-35.3" font-family="Noto Sans CJK SC" font-size="9.00" fill="#665b70">研</text>
+<text text-anchor="start" x="177.5" y="-9.9" font-family="Noto Sans CJK SC" font-size="12.00" fill="#5f666d">安全基线、合规和自动化</text>
+<polygon fill="none" stroke="#d3d7dc" points="170,0 170,-51 317,-51 317,0 170,0"/>
+</a>
+</g>
+</g>
+</g>
+</svg>

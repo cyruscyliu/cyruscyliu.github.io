@@ -56,9 +56,15 @@
       "status": { "en": "Under development", "zh": "建设中" }
     },
     {
-      "code": "55AA-007",
+      "code": "55AA-006B",
       "level": { "en": "Undergraduate", "zh": "本科生" },
       "name": { "en": "Assembly Language", "zh": "汇编语言" },
+      "status": { "en": "Under development", "zh": "建设中" }
+    },
+    {
+      "code": "55AA-007",
+      "level": { "en": "Undergraduate", "zh": "本科生" },
+      "name": { "en": "Discrete Mathematics", "zh": "离散数学" },
       "status": { "en": "Under development", "zh": "建设中" }
     },
     {
@@ -76,13 +82,7 @@
     {
       "code": "55AA-010",
       "level": { "en": "Undergraduate", "zh": "本科生" },
-      "name": { "en": "Static Program Analysis", "zh": "静态程序分析" },
-      "status": { "en": "Under development", "zh": "建设中" }
-    },
-    {
-      "code": "55AA-011",
-      "level": { "en": "Undergraduate", "zh": "本科生" },
-      "name": { "en": "Dynamic Program Analysis", "zh": "动态程序分析" },
+      "name": { "en": "Program Analysis", "zh": "程序分析" },
       "status": { "en": "Under development", "zh": "建设中" }
     },
     {
@@ -116,6 +116,12 @@
       "status": { "en": "Under development", "zh": "建设中" }
     },
     {
+      "code": "55AA-011",
+      "level": { "en": "Graduate", "zh": "研究生" },
+      "name": { "en": "Capstone Project", "zh": "综合实践项目" },
+      "status": { "en": "Placeholder", "zh": "待定" }
+    },
+    {
       "code": "55AA-019",
       "level": { "en": "Graduate", "zh": "研究生" },
       "name": { "en": "System Security Research Methods", "zh": "系统安全科研方法" },
@@ -133,5 +139,55 @@
       "name": { "en": "Security Baselines, Compliance, and Automation", "zh": "安全基线、合规和自动化" },
       "status": { "en": "Under development", "zh": "建设中" }
     }
+  ],
+  "dependencies": [
+    ["55AA-006", "55AA-006B"],
+    ["55AA-006", "55AA-005"],
+    ["55AA-006", "55AA-008"],
+    ["55AA-006B", "55AA-008"],
+    ["55AA-006B", "55AA-013"],
+    ["55AA-006", "55AA-017"],
+    ["55AA-005", "55AA-017"],
+    ["55AA-006", "55AA-018"],
+    ["55AA-005", "55AA-018"],
+    ["55AA-007", "55AA-013"],
+    ["55AA-007", "55AA-009"],
+    ["55AA-008", "55AA-012"],
+    ["55AA-008", "55AA-004"],
+    ["55AA-008", "55AA-002"],
+    ["55AA-008", "55AA-018"],
+    ["55AA-009", "55AA-010"],
+    ["55AA-010", "55AA-002"],
+    ["55AA-010", "55AA-003"],
+    ["55AA-010", "55AA-016"],
+    ["55AA-012", "55AA-016"],
+    ["55AA-012", "55AA-013"],
+    ["55AA-013", "55AA-016"],
+    ["55AA-013", "55AA-003"],
+    ["55AA-013", "55AA-014"],
+    ["55AA-013", "55AA-021"],
+    ["55AA-013", "55AA-017"],
+    ["55AA-014", "55AA-017"],
+    ["55AA-001", "55AA-002"],
+    ["55AA-004", "55AA-003"],
+    ["55AA-002", "55AA-003"],
+    ["55AA-005", "55AA-003"],
+    ["55AA-003", "55AA-014"],
+    ["55AA-005", "55AA-014"],
+    ["55AA-003", "55AA-015"],
+    ["55AA-004", "55AA-015"],
+    ["55AA-003", "55AA-020"],
+    ["55AA-004", "55AA-020"],
+    ["55AA-005", "55AA-020"],
+    ["55AA-020", "55AA-017"],
+    ["55AA-003", "55AA-021"],
+    ["55AA-004", "55AA-021"],
+    ["55AA-019", "55AA-014"],
+    ["55AA-019", "55AA-015"],
+    ["55AA-019", "55AA-016"],
+    ["55AA-019", "55AA-017"],
+    ["55AA-019", "55AA-018"],
+    ["55AA-019", "55AA-020"],
+    ["55AA-019", "55AA-021"]
   ]
 }

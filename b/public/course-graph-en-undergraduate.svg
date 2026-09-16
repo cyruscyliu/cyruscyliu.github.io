@@ -1,0 +1,257 @@
+<!-- Title: CourseGraph Pages: 1 -->
+<svg width="1071pt" height="585pt"
+ viewBox="0.00 0.00 1070.52 584.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(5.76 578.76)">
+<!-- 55AA&#45;001&#45;&gt;55AA&#45;002 -->
+<g id="edge14" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M696.73,-135.16C721.32,-147.36 750.78,-161.97 775.96,-174.46"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="775.15,-176.21 780.94,-176.92 776.87,-172.76 775.15,-176.21"/>
+</g>
+<!-- 55AA&#45;002&#45;&gt;55AA&#45;003 -->
+<g id="edge18" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M872.04,-228.1C899.47,-246.81 936.7,-272.21 965.18,-291.64"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="964.41,-293.44 970.03,-294.95 966.58,-290.26 964.41,-293.44"/>
+</g>
+<!-- 55AA&#45;004&#45;&gt;55AA&#45;003 -->
+<g id="edge17" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M887.35,-378.84C908.14,-368.75 932,-357.16 952.95,-346.99"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="953.83,-348.7 957.93,-344.57 952.14,-345.24 953.83,-348.7"/>
+</g>
+<!-- 55AA&#45;005&#45;&gt;55AA&#45;003 -->
+<g id="edge19" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M519.84,-545.27C611.31,-539.49 778.53,-518.94 899,-446.5 938.29,-422.87 970.59,-380.07 989.45,-350.98"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="991.24,-351.74 992.59,-346.07 988,-349.67 991.24,-351.74"/>
+</g>
+<!-- 55AA&#45;006&#45;&gt;55AA&#45;005 -->
+<g id="edge2" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M138.21,-496.65C157.06,-502.89 177.65,-509.05 197,-513.5 257.88,-527.5 328.38,-536.37 379.71,-541.52"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="379.58,-543.44 385.25,-542.07 379.96,-539.61 379.58,-543.44"/>
+</g>
+<!-- 55AA&#45;006&#45;&gt;55AA&#45;006B -->
+<g id="edge1" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M138.24,-471.5C156.33,-471.5 175.84,-471.5 193.85,-471.5"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="193.88,-473.43 199.38,-471.5 193.88,-469.58 193.88,-473.43"/>
+</g>
+<!-- 55AA&#45;006&#45;&gt;55AA&#45;008 -->
+<g id="edge3" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M138.21,-446.35C157.06,-440.11 177.65,-433.95 197,-429.5 257.78,-415.52 328.13,-406.67 379.45,-401.51"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="379.7,-403.42 384.98,-400.96 379.32,-399.59 379.7,-403.42"/>
+</g>
+<!-- 55AA&#45;006B&#45;&gt;55AA&#45;008 -->
+<g id="edge4" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M323.6,-446.93C342.43,-439.36 363.29,-430.97 382.61,-423.2"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="383.62,-424.87 388.01,-421.03 382.19,-421.3 383.62,-424.87"/>
+</g>
+<!-- 55AA&#45;006B&#45;&gt;55AA&#45;013 -->
+<g id="edge5" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M323.51,-467.07C376.1,-462.39 453.8,-453.42 520,-437.5 606.65,-416.66 625.68,-402.12 709,-370.5 727.48,-363.49 747.39,-355.58 765.71,-348.17"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="766.46,-349.94 770.83,-346.09 765.01,-346.37 766.46,-349.94"/>
+</g>
+<!-- 55AA&#45;007&#45;&gt;55AA&#45;009 -->
+<g id="edge11" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M326.22,-106.61C345.72,-100.52 367.17,-93.82 386.73,-87.72"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="387.52,-89.49 392.2,-86.01 386.37,-85.81 387.52,-89.49"/>
+</g>
+<!-- 55AA&#45;007&#45;&gt;55AA&#45;013 -->
+<g id="edge10" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M326.23,-148.19C433.89,-184.83 650.96,-258.71 762.64,-296.72"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="762.05,-298.55 767.87,-298.5 763.29,-294.91 762.05,-298.55"/>
+</g>
+<!-- 55AA&#45;008&#45;&gt;55AA&#45;002 -->
+<g id="edge16" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M477.17,-369.73C500.86,-345.29 539.38,-309.06 579,-286.5 641.33,-251.02 720.89,-227.74 774.1,-214.88"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="774.59,-216.75 779.49,-213.59 773.69,-213 774.59,-216.75"/>
+</g>
+<!-- 55AA&#45;008&#45;&gt;55AA&#45;004 -->
+<g id="edge15" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M520.39,-397.09C590.77,-398.76 700.69,-401.37 769.55,-403.01"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="769.71,-404.93 775.26,-403.14 769.81,-401.09 769.71,-404.93"/>
+</g>
+<!-- 55AA&#45;008&#45;&gt;55AA&#45;012 -->
+<g id="edge9" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M520.04,-371.97C539.05,-365.25 559.73,-357.94 578.61,-351.27"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="579.34,-353.05 583.88,-349.4 578.05,-349.42 579.34,-353.05"/>
+</g>
+<!-- 55AA&#45;009&#45;&gt;55AA&#45;010 -->
+<g id="edge6" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M512.68,-54.38C535.4,-49.35 561.31,-43.6 584.02,-38.57"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="584.46,-40.45 589.41,-37.38 583.63,-36.69 584.46,-40.45"/>
+</g>
+<!-- 55AA&#45;010&#45;&gt;55AA&#45;002 -->
+<g id="edge7" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M687.4,-51.17C694.83,-56.27 702.32,-61.81 709,-67.5 747.11,-99.95 785.09,-143.6 808.67,-172.36"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="807.36,-173.8 812.33,-176.85 810.34,-171.37 807.36,-173.8"/>
+</g>
+<!-- 55AA&#45;010&#45;&gt;55AA&#45;003 -->
+<g id="edge8" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M698.75,-45.08C753.61,-66.99 838.99,-106.61 899,-160.5 940.89,-198.12 974.47,-255.14 992.64,-289.98"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="990.98,-290.95 995.21,-294.95 994.4,-289.18 990.98,-290.95"/>
+</g>
+<!-- 55AA&#45;012&#45;&gt;55AA&#45;013 -->
+<g id="edge12" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M704.07,-325.98C722.45,-325.2 742.91,-324.32 762,-323.51"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="762.46,-325.42 767.87,-323.26 762.3,-321.57 762.46,-325.42"/>
+</g>
+<!-- 55AA&#45;013&#45;&gt;55AA&#45;003 -->
+<g id="edge13" class="edge">
+<path fill="none" stroke="#9bb6cf" stroke-width="1.1" d="M899.41,-320.5C916.81,-320.5 935.46,-320.5 952.28,-320.5"/>
+<polygon fill="#9bb6cf" stroke="#9bb6cf" stroke-width="1.1" points="952.41,-322.43 957.91,-320.5 952.41,-318.58 952.41,-322.43"/>
+</g>
+<!-- 55AA&#45;001 -->
+<g id="node1" class="node">
+<g id="a_node1"><a xlink:href="/en/courses/55aa-001/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="579,-84 579,-135 709,-135 709,-84 579,-84"/>
+<text text-anchor="start" x="586" y="-118.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;001</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="661,-109.5 661,-133.5 708,-133.5 708,-109.5 661,-109.5"/>
+<text text-anchor="start" x="688" y="-119.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="586" y="-93.9" font-family="Arial" font-size="12.00" fill="#5f666d">Software Engineering</text>
+<polygon fill="none" stroke="#d3d7dc" points="579,-84 579,-135 709,-135 709,-84 579,-84"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;002 -->
+<g id="node2" class="node">
+<g id="a_node2"><a xlink:href="/en/courses/55aa-002/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="779.5,-177 779.5,-228 887.5,-228 887.5,-177 779.5,-177"/>
+<text text-anchor="start" x="786.5" y="-211.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;002</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="850.5,-202.5 850.5,-226.5 886.5,-226.5 886.5,-202.5 850.5,-202.5"/>
+<text text-anchor="start" x="866.5" y="-212.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="786.5" y="-186.9" font-family="Arial" font-size="12.00" fill="#5f666d">Software Security</text>
+<polygon fill="none" stroke="#d3d7dc" points="779.5,-177 779.5,-228 887.5,-228 887.5,-177 779.5,-177"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;003 -->
+<g id="node3" class="node">
+<g id="a_node3"><a xlink:href="/en/courses/55aa-003/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="958,-295 958,-346 1059,-346 1059,-295 958,-295"/>
+<text text-anchor="start" x="965.5" y="-329.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;003</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="1026.5,-320.5 1026.5,-344.5 1058.5,-344.5 1058.5,-320.5 1026.5,-320.5"/>
+<text text-anchor="start" x="1038.5" y="-330.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="965.5" y="-304.9" font-family="Arial" font-size="12.00" fill="#5f666d">System Security</text>
+<polygon fill="none" stroke="#d3d7dc" points="958,-295 958,-346 1059,-346 1059,-295 958,-295"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;004 -->
+<g id="node4" class="node">
+<g id="a_node4"><a xlink:href="/en/courses/55aa-004/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="775.5,-379 775.5,-430 891.5,-430 891.5,-379 775.5,-379"/>
+<text text-anchor="start" x="782.5" y="-413.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;004</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="850.5,-404.5 850.5,-428.5 890.5,-428.5 890.5,-404.5 850.5,-404.5"/>
+<text text-anchor="start" x="870.5" y="-414.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="782.5" y="-388.9" font-family="Arial" font-size="12.00" fill="#5f666d">Operating Systems</text>
+<polygon fill="none" stroke="#d3d7dc" points="775.5,-379 775.5,-430 891.5,-430 891.5,-379 775.5,-379"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;005 -->
+<g id="node5" class="node">
+<g id="a_node5"><a xlink:href="/en/courses/55aa-005/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="385.5,-522 385.5,-573 519.5,-573 519.5,-522 385.5,-522"/>
+<text text-anchor="start" x="392.5" y="-556.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;005</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="469.5,-547.5 469.5,-571.5 518.5,-571.5 518.5,-547.5 469.5,-547.5"/>
+<text text-anchor="start" x="498.5" y="-557.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="392.5" y="-531.9" font-family="Arial" font-size="12.00" fill="#5f666d">Computer Architecture</text>
+<polygon fill="none" stroke="#d3d7dc" points="385.5,-522 385.5,-573 519.5,-573 519.5,-522 385.5,-522"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;006 -->
+<g id="node6" class="node">
+<g id="a_node6"><a xlink:href="/en/courses/55aa-006/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="0,-446 0,-497 138,-497 138,-446 0,-446"/>
+<text text-anchor="start" x="7" y="-480.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;006</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="86,-471.5 86,-495.5 137,-495.5 137,-471.5 86,-471.5"/>
+<text text-anchor="start" x="117" y="-481.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="7" y="-455.9" font-family="Arial" font-size="12.00" fill="#5f666d">Computer Organization</text>
+<polygon fill="none" stroke="#d3d7dc" points="0,-446 0,-497 138,-497 138,-446 0,-446"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;006B -->
+<g id="node7" class="node">
+<g id="a_node7"><a xlink:href="/en/courses/55aa-006b/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="199.5,-446 199.5,-497 323.5,-497 323.5,-446 199.5,-446"/>
+<text text-anchor="start" x="206.5" y="-480.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;006B</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="282.5,-471.5 282.5,-495.5 322.5,-495.5 322.5,-471.5 282.5,-471.5"/>
+<text text-anchor="start" x="302.5" y="-481.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="206.5" y="-455.9" font-family="Arial" font-size="12.00" fill="#5f666d">Assembly Language</text>
+<polygon fill="none" stroke="#d3d7dc" points="199.5,-446 199.5,-497 323.5,-497 323.5,-446 199.5,-446"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;007 -->
+<g id="node8" class="node">
+<g id="a_node8"><a xlink:href="/en/courses/55aa-007/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="197,-101 197,-152 326,-152 326,-101 197,-101"/>
+<text text-anchor="start" x="204.5" y="-135.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;007</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="279.5,-126.5 279.5,-150.5 325.5,-150.5 325.5,-126.5 279.5,-126.5"/>
+<text text-anchor="start" x="305.5" y="-136.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="204.5" y="-110.9" font-family="Arial" font-size="12.00" fill="#5f666d">Discrete Mathematics</text>
+<polygon fill="none" stroke="#d3d7dc" points="197,-101 197,-152 326,-152 326,-101 197,-101"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;008 -->
+<g id="node9" class="node">
+<g id="a_node9"><a xlink:href="/en/courses/55aa-008/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="385,-370 385,-421 520,-421 520,-370 385,-370"/>
+<text text-anchor="start" x="392.5" y="-404.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;008</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="470.5,-395.5 470.5,-419.5 519.5,-419.5 519.5,-395.5 470.5,-395.5"/>
+<text text-anchor="start" x="499.5" y="-405.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="392.5" y="-379.9" font-family="Arial" font-size="12.00" fill="#5f666d">Systems Programming</text>
+<polygon fill="none" stroke="#d3d7dc" points="385,-370 385,-421 520,-421 520,-370 385,-370"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;009 -->
+<g id="node10" class="node">
+<g id="a_node10"><a xlink:href="/en/courses/55aa-009/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="392.5,-42 392.5,-93 512.5,-93 512.5,-42 392.5,-42"/>
+<text text-anchor="start" x="399.5" y="-76.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;009</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="469.5,-67.5 469.5,-91.5 511.5,-91.5 511.5,-67.5 469.5,-67.5"/>
+<text text-anchor="start" x="491.5" y="-77.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="399.5" y="-51.9" font-family="Arial" font-size="12.00" fill="#5f666d">Compiler Principles</text>
+<polygon fill="none" stroke="#d3d7dc" points="392.5,-42 392.5,-93 512.5,-93 512.5,-42 392.5,-42"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;010 -->
+<g id="node11" class="node">
+<g id="a_node11"><a xlink:href="/en/courses/55aa-010/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="589.5,0 589.5,-51 698.5,-51 698.5,0 589.5,0"/>
+<text text-anchor="start" x="597" y="-34.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;010</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="662,-25.5 662,-49.5 698,-49.5 698,-25.5 662,-25.5"/>
+<text text-anchor="start" x="678" y="-35.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="597" y="-9.9" font-family="Arial" font-size="12.00" fill="#5f666d">Program Analysis</text>
+<polygon fill="none" stroke="#d3d7dc" points="589.5,0 589.5,-51 698.5,-51 698.5,0 589.5,0"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;012 -->
+<g id="node12" class="node">
+<g id="a_node12"><a xlink:href="/en/courses/55aa-012/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="584,-303 584,-354 704,-354 704,-303 584,-303"/>
+<text text-anchor="start" x="591" y="-337.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;012</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="661,-328.5 661,-352.5 703,-352.5 703,-328.5 661,-328.5"/>
+<text text-anchor="start" x="683" y="-338.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="591" y="-312.9" font-family="Arial" font-size="12.00" fill="#5f666d">Computer Networks</text>
+<polygon fill="none" stroke="#d3d7dc" points="584,-303 584,-354 704,-354 704,-303 584,-303"/>
+</a>
+</g>
+</g>
+<!-- 55AA&#45;013 -->
+<g id="node13" class="node">
+<g id="a_node13"><a xlink:href="/en/courses/55aa-013/" target="_top">
+<polygon fill="#eef0f2" stroke="transparent" points="768,-295 768,-346 899,-346 899,-295 768,-295"/>
+<text text-anchor="start" x="775.5" y="-329.7" font-family="Arial" font-size="11.00" fill="#6f767d">55AA&#45;013</text>
+<polygon fill="#e3e8ee" stroke="transparent" points="851.5,-320.5 851.5,-344.5 898.5,-344.5 898.5,-320.5 851.5,-320.5"/>
+<text text-anchor="start" x="878.5" y="-330.3" font-family="Arial" font-size="9.00" fill="#596472">UG</text>
+<text text-anchor="start" x="775.5" y="-304.9" font-family="Arial" font-size="12.00" fill="#5f666d">Applied Cryptography</text>
+<polygon fill="none" stroke="#d3d7dc" points="768,-295 768,-346 899,-346 899,-295 768,-295"/>
+</a>
+</g>
+</g>
+</g>
+</svg>

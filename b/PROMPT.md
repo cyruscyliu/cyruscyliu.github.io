@@ -82,7 +82,7 @@ Google Scholar、GitHub 和 Email 只能显示 icon，不能显示文字链接�
   - `publications.json`
   - `projects.json`
   - `tools.json`
-  - `teaching.json`
+  - `courses.json`
   - `blog.json`
   - `contact.json`
 - 不创建一个新的统一 JSON 替代这些文件。

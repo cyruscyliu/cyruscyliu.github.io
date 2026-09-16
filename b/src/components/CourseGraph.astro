@@ -1,63 +1,230 @@
 ---
+import data from '../data/courses.json';
+
 const { lang = 'en' } = Astro.props;
 const zh = lang === 'zh';
-const label = (code: string, en: string, cn: string) => `${code} ${zh ? cn : en}`;
-const graph = `graph LR
-  C008["${label('55AA-008', 'Computer Organization', '组成原理')}"] --> C009["${label('55AA-009', 'Assembly Language', '汇编语言')}"]
-  C008 --> C007["${label('55AA-007', 'Computer Architecture', '体系结构')}"]
-  C009 --> C013["${label('55AA-013', 'Systems Programming', '系统编程')}"]
-  C007 --> C013
-  C014["${label('55AA-014', 'Compiler Principles', '编译原理')}"] --> C015["${label('55AA-015', 'Static Program Analysis', '静态程序分析')}"]
-  C015 --> C002
-  C015 --> C003
-  C015 --> C016["${label('55AA-016', 'Dynamic Program Analysis', '动态程序分析')}"]
-  C016 --> C002
-  C016 --> C003
-  C013 --> C017["${label('55AA-017', 'Computer Networks', '计算机网络')}"]
-  C017 --> C018["${label('55AA-018', 'Network Protocol Analysis & Verification', '网络协议分析和验证')}"]
-  C003 --> C018
-  C015 --> C018
-  C008 --> C019["${label('55AA-019', 'Applied Cryptography', '应用密码学')}"]
-  C017 --> C019
-  C019 --> C018
-  C019 --> C003
-  C019 --> C004
-  C019 --> C012
-  C004 --> C020["${label('55AA-020', 'Trusted Computing Methods & Security', '可信计算方法和安全')}"]
-  C008 --> C020
-  C007 --> C020
-  C019 --> C020
-  C010 --> C020
-  C003 --> C020
-  C008 --> C021["${label('55AA-021', 'Embedded Systems Principles & Security', '嵌入式系统原理和安全')}"]
-  C007 --> C021
-  C013 --> C021
-  C003 --> C021
-  C001["${label('55AA-001', 'Software Engineering', '软件工程')}"] --> C002["${label('55AA-002', 'Software Security', '软件安全')}"]
-  C013 --> C006["${label('55AA-006', 'Operating Systems', '操作系统')}"]
-  C013 --> C002
-  C006 --> C003["${label('55AA-003', 'System Security', '系统安全')}"]
-  C002 --> C003
-  C007 --> C003
-  C003 --> C004["${label('55AA-004', 'Hardware Injection & Hardware Security', '硬件注入和硬件安全')}"]
-  C007 --> C004
-  C003 --> C005["${label('55AA-005', 'Digital Forensics & Attribution', '电子取证和溯源')}"]
-  C006 --> C005
-  C003 --> C010["${label('55AA-010', 'Virtualization Methods & Security', '虚拟化方法和安全')}"]
-  C006 --> C010
-  C007 --> C010
-  C003 --> C012["${label('55AA-012', 'Security Baselines & Automation', '安全基线、合规和自动化')}"]
-  C006 --> C012
-  C003 --> C011["${label('55AA-011', 'System Security Research Methods', '系统安全科研方法')}"]
-`;
+
+const allCourses = data.courses.map(c => ({
+  code: c.code,
+  name: zh ? c.name.zh : c.name.en,
+  level: c.level.en,
+  status: zh ? c.status.zh : c.status.en,
+  url: `/${lang}/courses/${c.code.toLowerCase()}/`
+}));
+
+const graphData = JSON.stringify({
+  courses: allCourses,
+  dependencies: data.dependencies
+});
+
+const gradCourses = allCourses.filter(c => c.level === 'Graduate');
 ---
-<figure class="course-graph">
-  <figcaption>{zh ? '课程依赖关系（先修课程 → 后续课程）' : 'Course dependencies (prerequisite → subsequent course)'}</figcaption>
-  <pre class="mermaid">{graph}</pre>
-</figure>
+
+<div class="course-graphs">
+  <figure class="course-graph">
+    <figcaption>{zh ? '本科生课程图' : 'Undergraduate Course Graph'}</figcaption>
+    <div id="cy-undergraduate" class="cy-container" data-level="Undergraduate" data-graph={graphData}></div>
+  </figure>
+  <figure class="course-graph">
+    <figcaption>{zh ? '研究生课程' : 'Graduate Courses'}</figcaption>
+    <div class="grad-grid">
+      {gradCourses.map(c => (
+        <a href={c.url} class:list={['grad-card', { placeholder: c.status === 'Placeholder' || c.status === '待定' }]}>
+          <span class="grad-code" style={`font-size:${zh ? '14px' : '13px'}`}>{c.code}</span>
+          <span class="grad-name" style={`font-size:${zh ? '14px' : '13px'}`}>{c.name}</span>
+        </a>
+      ))}
+    </div>
+  </figure>
+</div>
+
+<script>
+import cytoscape from 'cytoscape';
+import dagre from 'cytoscape-dagre';
+cytoscape.use(dagre);
+
+const UG = { bg: '#d9ebfb', border: '#8bb8df' };
+
+function wrapLabel(text, maxLen) {
+  if (text.length <= maxLen) return text;
+  const words = text.split(/\s+/);
+  const lines = [];
+  let line = '';
+  for (const w of words) {
+    const candidate = line ? line + ' ' + w : w;
+    if (candidate.length > maxLen) {
+      if (line) lines.push(line);
+      line = w;
+    } else {
+      line = candidate;
+    }
+  }
+  if (line) lines.push(line);
+  return lines.join('\n');
+}
+
+function initGraph(container) {
+  const graphData = JSON.parse(container.dataset.graph);
+  const levelFilter = container.dataset.level;
+  const codes = new Set(graphData.courses.filter(c => c.level === levelFilter).map(c => c.code));
+  const isCJK = /[一-鿿]/.test(graphData.courses[0]?.name ?? '');
+  const wrapLen = isCJK ? 6 : 14;
+
+  const nodes = graphData.courses
+    .filter(c => c.level === levelFilter)
+    .map(c => ({
+      data: {
+        id: c.code,
+        label: wrapLabel(c.name, wrapLen),
+        code: c.code,
+        url: c.url,
+        placeholder: c.status === 'Placeholder' || c.status === '待定'
+      }
+    }));
+
+  const edges = graphData.dependencies
+    .filter(([s, t]) => codes.has(s) && codes.has(t))
+    .map(([s, t]) => ({ data: { id: `${s}-${t}`, source: s, target: t } }));
+
+  // Use 2x pixel ratio for crisp text
+  const dpr = Math.max(window.devicePixelRatio || 1, 2);
+
+  const nodeW = 160;
+  const nodeH = 80;
+  const fontSize = isCJK ? 14 : 13;
+
+  const cy = cytoscape({
+    container,
+    elements: [...nodes, ...edges],
+    pixelRatio: dpr,
+    style: [
+      {
+        selector: 'node',
+        style: {
+          shape: 'roundrectangle',
+          width: nodeW,
+          height: nodeH,
+          'background-color': ele => ele.data('placeholder') ? '#f5f5f5' : UG.bg,
+          'border-width': 1.5,
+          'border-color': ele => ele.data('placeholder') ? '#ddd' : UG.border,
+          label: ele => ele.data('code') + '\n' + ele.data('label'),
+          'text-wrap': 'wrap',
+          'text-valign': 'center',
+          'text-halign': 'center',
+          'font-size': fontSize,
+          'line-height': 1.4,
+          'font-family': isCJK
+            ? '"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif'
+            : '"Inter","Segoe UI",system-ui,sans-serif',
+          color: ele => ele.data('placeholder') ? '#999' : '#111',
+          cursor: 'pointer',
+          'transition-property': 'background-color, border-color, border-width, opacity',
+          'transition-duration': '120ms'
+        }
+      },
+      {
+        selector: 'node.hl',
+        style: { 'border-color': '#0066cc', 'border-width': 2.5, 'background-color': '#dceeff' }
+      },
+      {
+        selector: 'node.dim',
+        style: { opacity: 0.2 }
+      },
+      {
+        selector: 'edge',
+        style: {
+          width: 1.2,
+          'line-color': '#b0c8de',
+          'target-arrow-color': '#b0c8de',
+          'target-arrow-shape': 'triangle',
+          'arrow-scale': 0.75,
+          'curve-style': 'bezier',
+          'transition-property': 'line-color, target-arrow-color, width, opacity',
+          'transition-duration': '120ms'
+        }
+      },
+      {
+        selector: 'edge.hl',
+        style: { 'line-color': '#0066cc', 'target-arrow-color': '#0066cc', width: 2 }
+      },
+      {
+        selector: 'edge.dim',
+        style: { opacity: 0.08 }
+      }
+    ],
+    layout: {
+      name: 'dagre',
+      rankDir: 'TB',
+      nodeSep: 8,
+      rankSep: 8,
+      padding: 12,
+      animate: false
+    },
+    userZoomingEnabled: false,
+    userPanningEnabled: false,
+    boxSelectionEnabled: false,
+    autoungrabify: true
+  });
+
+  cy.on('mouseover', 'node', evt => {
+    const n = evt.target;
+    const neighborhood = n.closedNeighborhood();
+    cy.elements().not(neighborhood).addClass('dim');
+    neighborhood.nodes().addClass('hl');
+    neighborhood.edges().addClass('hl');
+  });
+
+  cy.on('mouseout', 'node', () => {
+    cy.elements().removeClass('dim hl');
+  });
+
+  cy.on('tap', 'node', evt => {
+    const url = evt.target.data('url');
+    if (url) window.location.href = url;
+  });
+
+  // No zoom — render at 1:1, set height to fit all nodes, width is 100% via CSS
+  const pad = 24;
+  const bb = cy.elements().boundingBox();
+  const h = Math.ceil(bb.h + pad * 2);
+  container.style.height = h + 'px';
+  cy.resize();
+  cy.viewport({ zoom: 1, pan: { x: pad - bb.x1, y: pad - bb.y1 } });
+}
+
+document.querySelectorAll('.cy-container').forEach(initGraph);
+</script>
 
 <style>
-  .course-graph { margin: 0 0 2rem; }
-  figcaption { margin-bottom: .6rem; font-weight: 600; }
-  .mermaid { margin: 0; overflow-x: auto; white-space: pre; font-family: inherit; }
+  .course-graphs { display: grid; gap: 2rem; margin: 0 0 2rem; }
+  .course-graph { margin: 0; }
+  figcaption { margin-bottom: .75rem; font-weight: 600; font-size: .95rem; }
+  .cy-container { width: 100%; min-height: 280px; background: transparent; }
+
+  .grad-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+  }
+  .grad-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+    height: 80px;
+    padding: .5rem .75rem;
+    border-radius: 6px;
+    border: 1.5px solid #c0a0e0;
+    background: #eadcf8;
+    text-decoration: none;
+    color: #111;
+    text-align: center;
+    transition: background 120ms, border-color 120ms;
+  }
+  .grad-card:hover { background: #ddc8f5; border-color: #9060c0; }
+  .grad-card.placeholder { background: #f5f5f5; border-color: #ddd; color: #999; }
+  .grad-code { font-weight: 600; color: #6c348f; }
+  .grad-card.placeholder .grad-code { color: #bbb; }
+  .grad-name { line-height: 1.35; }
 </style>
