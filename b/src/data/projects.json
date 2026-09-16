@@ -8,12 +8,135 @@
   },
   "projects": [
     {
-      "id": "poc-generation-workflow",
-      "tag": { "en": "Engineering · Undergraduate capstone", "zh": "工程 · 本科毕业设计" },
+      "id": "computing-genealogy-project",
+      "tag": { "en": "Engineering · Bachelor's capstone", "zh": "工程 · 本科毕业设计" },
+      "href": "https://github.com/cyruscyliu/computing-genealogy-project",
+      "training": [],
+      "title": {
+        "en": "000 Computing Genealogy Project",
+        "zh": "000 计算机学术谱系项目"
+      },
+      "introduction": {
+        "en": "This bachelor's capstone project develops the Computing Genealogy Project into a usable public-facing system for exploring academic relationships in computing. The work includes collecting and cleaning advisor-student and collaboration data, improving the UI/UX for search, browsing, and visualization, designing stable APIs for programmatic access, and supporting embeddable views that can be integrated into personal pages, lab websites, or course materials.",
+        "zh": "本本科毕业设计项目将 Computing Genealogy Project 打造成一个可用的计算机学科学术谱系系统，用于探索导师、学生与合作关系。项目工作包括采集和清洗导师-学生及合作数据，优化搜索、浏览和可视化场景下的 UI/UX，设计稳定的 API 以支持程序化访问，并提供可嵌入视图，使其能够集成到个人主页、实验室网站或课程材料中。"
+      },
+      "contact": ""
+    },
+    {
+      "id": "hypervisor-security-sok",
+      "tag": { "en": "Engineering · Master's capstone · Hiring for 2026-2027", "zh": "工程 · 硕士毕业设计 · 2026-2027 招募" },
       "href": "",
       "training": [],
-      "title": { "en": "Building a Recursive Self-Improvement Workflow for POC Generation", "zh": "回归自进化的 POC Generation 工作流构建" },
-      "introduction": { "en": "", "zh": "" },
+      "title": {
+        "en": "100 Hypervisor Security SoK",
+        "zh": "100 Hypervisor Security SoK"
+      },
+      "introduction": {
+        "en": "This master's capstone project studies hypervisors from three connected angles: hypervisors used as security mechanisms, the security of hypervisors themselves, and the risks introduced by insecure hypervisor designs or deployments. The project aims to build a systematic knowledge base that clarifies threat models, isolation assumptions, vulnerability classes, measurement methods, and open research problems across commodity, cloud, embedded, and security-oriented virtualization systems.",
+        "zh": "本硕士毕业设计项目从三个相互关联的角度系统研究 hypervisor：作为安全机制的 hypervisor、hypervisor 自身的安全性，以及不安全 hypervisor 设计或部署带来的风险。项目目标是形成一份系统化知识图谱，梳理通用、云端、嵌入式和安全增强型虚拟化系统中的威胁模型、隔离假设、漏洞类型、测量方法和开放研究问题。"
+      },
+      "contact": ""
+    },
+    {
+      "id": "firmware-rehosting-service-and-reports",
+      "tag": { "en": "Engineering · Master's capstone", "zh": "工程 · 硕士毕业设计" },
+      "href": "",
+      "training": [],
+      "title": {
+        "en": "101 Firmware Rehosting Service and Reports",
+        "zh": "101 固件重托管服务与分析报告"
+      },
+      "introduction": {
+        "en": "This master's engineering project builds a firmware rehosting service that turns firmware images into reproducible emulation and analysis tasks. The system should support firmware intake, unpacking, architecture and platform identification, environment reconstruction, service launch, instrumentation, and execution monitoring. It also produces structured reports that summarize rehosting status, reachable services, runtime behavior, configuration assumptions, observed failures, and follow-up security testing opportunities.",
+        "zh": "本硕士工程项目构建一个固件重托管服务，将固件镜像转化为可复现的仿真与分析任务。系统应支持固件导入、解包、架构与平台识别、运行环境重建、服务启动、插桩和执行监控，并生成结构化报告，总结重托管状态、可达服务、运行时行为、配置假设、观察到的失败原因以及后续安全测试机会。"
+      },
+      "contact": ""
+    },
+    {
+      "id": "hypervisor-fuzzing-service-and-reports",
+      "tag": { "en": "Engineering · Master's capstone", "zh": "工程 · 硕士毕业设计" },
+      "href": "",
+      "training": [],
+      "title": {
+        "en": "102 Hypervisor Fuzzing Service and Reports",
+        "zh": "102 Hypervisor Fuzzing 服务与分析报告"
+      },
+      "introduction": {
+        "en": "This master's engineering project builds a hypervisor fuzzing service for repeatable testing of hypervisor interfaces and virtualization components. The system should manage target setup, guest workload generation, interface modeling, input mutation, crash detection, coverage collection, triage, and regression replay. It also produces structured reports that describe tested interfaces, fuzzing campaigns, discovered crashes, reproducibility, root-cause hypotheses, security impact, and recommended next steps.",
+        "zh": "本硕士工程项目构建一个面向 hypervisor 接口和虚拟化组件的 fuzzing 服务，用于开展可重复的安全测试。系统应支持目标环境搭建、guest workload 生成、接口建模、输入变异、崩溃检测、覆盖率收集、问题归类和回归复现，并生成结构化报告，描述测试接口、fuzzing 活动、发现的崩溃、可复现性、根因假设、安全影响和后续建议。"
+      },
+      "contact": ""
+    },
+    {
+      "id": "poc-generation-workflow",
+      "tag": { "en": "Engineering · Master's capstone · Hiring for 2026-2027", "zh": "工程 · 硕士毕业设计 · 2026-2027 招募" },
+      "href": "",
+      "training": [],
+      "title": { "en": "103 Building a Recursive Self-Improvement Workflow for POC Generation", "zh": "103 回归自进化的 POC Generation 工作流构建" },
+      "introduction": {
+        "en": "This master's engineering project builds a recursive self-improvement workflow for proof-of-concept generation. Based on Magma, ground-truth bug benchmarks, and a workflow DSL, the project designs and evaluates an agentic pipeline that can generate POCs, execute them against known vulnerable targets, diagnose failures, revise its workflow, and accumulate reusable strategies over time. The goal is to turn benchmark-backed POC generation into a measurable engineering loop for studying how LLM-based security agents improve through execution feedback.",
+        "zh": "本硕士工程项目构建一个面向 POC 生成的回归自进化工作流。项目基于 Magma、带有 ground-truth 的漏洞基准和 workflow DSL，设计并评测一个 agentic pipeline，使其能够生成 POC、在已知漏洞目标上执行验证、诊断失败原因、修订自身工作流，并持续积累可复用策略。项目目标是把有基准支撑的 POC 生成转化为一个可度量的工程闭环，用于研究基于 LLM 的安全智能体如何通过执行反馈持续改进。"
+      },
+      "contact": ""
+    },
+    {
+      "id": "regression-aware-llm-system-programming",
+      "tag": { "en": "Research · PhD project", "zh": "科研 · 博士项目" },
+      "href": "",
+      "training": [],
+      "title": {
+        "en": "200 Regression-Aware LLMs for System Programming",
+        "zh": "200 面向系统编程的回归感知 LLM"
+      },
+      "introduction": {
+        "en": "This PhD research project investigates how large language models are changing system programming and how they introduce regressions into evolving codebases. The project tracks emerging LLM-based system-programming workflows, develops methods to detect functional, performance, security, and reliability regressions, and studies how regression risk accumulates during long-running software development and maintenance. It further explores regression-aware reflection and self-evolution mechanisms that allow LLM-based agents to learn from failures, preserve previously validated behavior, and avoid reintroducing regressions over time.",
+        "zh": "本博士科研项目研究大语言模型如何改变系统编程，以及 LLM 在持续演化的代码库中引入回归问题的机制。项目将追踪当前 LLM for System Programming 的发展趋势，研究功能、性能、安全性和可靠性回归的检测方法，并分析软件长期开发与维护过程中回归风险如何累积。进一步地，项目探索面向回归的反思与自进化机制，使基于 LLM 的智能体能够从失败中学习、保留已经验证的行为，并在持续运行和迭代过程中避免重复引入回归问题。"
+      },
+      "contact": ""
+    },
+    {
+      "id": "fault-injection-and-prevention",
+      "tag": { "en": "Research · PhD project", "zh": "科研 · 博士项目" },
+      "href": "",
+      "training": [],
+      "title": {
+        "en": "201 Fault Injection and Prevention",
+        "zh": "201 故障注入与防护"
+      },
+      "introduction": {
+        "en": "This PhD research project studies fault injection as a practical attack path when software systems become increasingly difficult to exploit directly. The project examines how attackers use voltage, clock, electromagnetic, laser, and other physical fault models to bypass security checks, corrupt control flow, extract secrets, or undermine trusted execution. It further develops prevention and detection techniques across hardware, firmware, compilers, runtimes, and system software, with the goal of building systems that remain secure even under realistic fault attacks.",
+        "zh": "本博士科研项目研究当软件系统本身越来越难以直接利用时，攻击者如何转向硬件层面的故障注入。项目关注电压、时钟、电磁、激光等物理故障模型如何被用于绕过安全检查、破坏控制流、窃取秘密或削弱可信执行机制，并进一步研究跨硬件、固件、编译器、运行时和系统软件的检测与防护方法，目标是在真实故障攻击条件下仍然构建可靠的安全系统。"
+      },
+      "contact": ""
+    },
+    {
+      "id": "cyberspace-range",
+      "tag": { "en": "Research · PhD project", "zh": "科研 · 博士项目" },
+      "href": "",
+      "training": [],
+      "title": {
+        "en": "202 Cyberspace Range",
+        "zh": "202 网络空间靶场"
+      },
+      "introduction": {
+        "en": "This PhD research project builds a cyberspace range that mimics realistic cybersecurity environments at scale. The range combines complex infrastructure, strategic multi-step missions, realistic attacker and defender workflows, and large numbers of predefined agents to create reproducible yet dynamic cyber scenarios. The goal is to exercise and evaluate cyber models in settings closer to real operations, where success depends not only on isolated vulnerability solving, but also on planning, adaptation, coordination, situational awareness, and long-horizon decision making.",
+        "zh": "本博士科研项目构建一个贴近真实网络安全环境的网络空间靶场。该靶场结合复杂基础设施、战略性多阶段任务、真实攻防流程，以及大规模预定义智能体，形成可复现且动态演化的网络安全场景。项目目标是在更接近真实行动的环境中训练和评测 cyber model，使其能力不只停留在单点漏洞求解，而是覆盖规划、适应、协同、态势感知和长周期决策。"
+      },
+      "contact": ""
+    },
+    {
+      "id": "defense-in-depth-for-sandboxes",
+      "tag": { "en": "Research · PhD project · Hiring for 2026-2027", "zh": "科研 · 博士项目 · 2026-2027 招募" },
+      "href": "",
+      "training": [],
+      "title": {
+        "en": "203 Defense in Depth for Sandboxes",
+        "zh": "203 沙箱纵深防御"
+      },
+      "introduction": {
+        "en": "This PhD research project studies defense-in-depth architectures for process-based and VM-based sandboxes. The project investigates how sandbox escapes and policy bypasses emerge across system-call interfaces, shared resources, runtime services, and hardware boundaries, then develops layered defenses that combine behavioral monitoring at security-relevant interfaces, exploit prevention, and compartmentalization. It further explores techniques such as pattern matching, hardware-assisted enforcement, and hardware-software co-design to make sandboxed execution more resilient against both known attack patterns and previously unseen exploitation strategies.",
+        "zh": "本博士科研项目研究面向进程级沙箱和虚拟机级沙箱的纵深防御体系。项目关注沙箱逃逸和策略绕过如何在系统调用接口、共享资源、运行时服务和硬件边界处产生，并设计结合安全接口行为监测、漏洞利用预防和分舱隔离的多层防护机制。项目进一步探索模式匹配、硬件辅助执行保护以及软硬件协同设计等技术，使沙箱执行环境能够同时抵御已知攻击模式和未见过的利用策略。"
+      },
       "contact": ""
     }
   ]

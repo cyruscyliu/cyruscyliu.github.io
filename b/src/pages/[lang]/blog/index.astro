@@ -1,6 +1,6 @@
 ---
 import blog from '../../../data/blog.json'; import SiteHeader from '../../../components/SiteHeader.astro'; import SiteFooter from '../../../components/SiteFooter.astro'; import SeoHead from '../../../components/SeoHead.astro';
-export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const runtimePath=Astro.url?.pathname??Astro.request?.url??''; const lang=runtimePath.includes('/zh/')?'zh':(((Astro.props??{}).lang??'en')==='zh'?'zh':'en');
+export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const runtimePath=Astro.url?.pathname??Astro.request?.url??''; const lang=runtimePath.includes('/zh/')?'zh':(((Astro.props??{}).lang??'en')==='zh'?'zh':'en'); const noBlogText=lang==='zh'?'暂无博客。':'No blog yet.';
 ---
 <!doctype html>
 <html lang={lang}>
@@ -10,7 +10,7 @@ export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},pr
 <body>
 <SiteHeader lang={lang} blogHref="blog/"/>
 <main>
-<h1>{blog.meta.title[lang]}</h1>{blog.entries.map((entry,index)=>
+<h1>{blog.meta.title[lang]}</h1>{blog.entries.length ? (blog.entries.map((entry,index)=>
 <article>
 <p class="meta">
 <time datetime={entry.date}>{entry.date}</time> · {entry.meta[lang]}</p>
@@ -18,7 +18,7 @@ export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},pr
 <a href={`/${lang}/blog/${entry.date}-${index+1}/`}>{entry.title[lang]}</a>
 </h2>
 <p>{entry.body[lang]}</p>
-</article>)}</main>
+</article>)) : <p class="meta">{noBlogText}</p>}</main>
 <SiteFooter lang={lang}/>
 </body>
 </html>

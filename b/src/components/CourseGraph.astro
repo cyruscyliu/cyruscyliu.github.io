@@ -1,10 +1,13 @@
 ---
 import data from '../data/courses.json';
 
-const { lang = 'en' } = Astro.props;
+const { lang = 'en', includeDraft = true } = Astro.props;
 const zh = lang === 'zh';
+const sourceCourses = includeDraft
+  ? data.courses
+  : data.courses.filter(c => !['Under development', 'Placeholder'].includes(c.status?.en));
 
-const allCourses = data.courses.map(c => ({
+const allCourses = sourceCourses.map(c => ({
   code: c.code,
   name: zh ? c.name.zh : c.name.en,
   level: c.level.en,

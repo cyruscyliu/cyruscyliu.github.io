@@ -6,30 +6,5 @@
       "zh": "55AA Security Lab 博客与笔记"
     }
   },
-  "entries": [
-    {
-      "date": "2026-09-14",
-      "meta": { "en": "Organization", "zh": "组织" },
-      "title": {
-        "en": "One laboratory, three operating units",
-        "zh": "一个实验室，三个运营单元"
-      },
-      "body": {
-        "en": "Research, Productization, and Marketing share a mission and rules while keeping their operating responsibilities clear.",
-        "zh": "Research、Productization 和 Marketing 统一于使命和规章制度，同时保持清晰的运营边界。"
-      }
-    },
-    {
-      "date": "2026-09-14",
-      "meta": { "en": "Research practice", "zh": "研究实践" },
-      "title": {
-        "en": "From growth to world solutions",
-        "zh": "从促进增长到世界方案"
-      },
-      "body": {
-        "en": "What changes when the goal is not only local advantage but a solution others can use, reproduce, deploy, and maintain?",
-        "zh": "当目标不只是局部领先，而是让更多人和组织能够使用、复现、部署和维护，研究会发生什么变化？"
-      }
-    }
-  ]
+  "entries": []
 }

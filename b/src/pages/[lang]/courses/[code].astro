@@ -28,6 +28,10 @@ const lessonsForWeek = (weekNumber) => lessons.filter((lesson) => lesson.week ==
 const lessonNumber = (lesson) => lessons.findIndex((item) => item.id === lesson.id) + 1;
 const sorted = (list) => list ? [...list].sort((a, b) => a.school.localeCompare(b.school)) : [];
 const list = (value) => value?.[lang] ?? value?.zh ?? value?.en ?? [];
+const isDraftCourse = ['Under development', 'Placeholder'].includes(course.status?.en);
+const draftNotice = lang === 'zh'
+  ? '提示：本课程仍在持续设计和校准中，页面内容仅供参考，不代表最终教学版本。'
+  : 'Note: this course is still being designed and calibrated; the page content is for reference and does not represent the final teaching version.';
 ---
 <!doctype html>
 <html lang={lang}>
@@ -50,6 +54,7 @@ const list = (value) => value?.[lang] ?? value?.zh ?? value?.en ?? [];
             <dd>{text(course.status)}</dd>
           </div>
         </dl>
+        {isDraftCourse && <p class="notice">{draftNotice}</p>}
 
         {syllabus && (
           <section class="syllabus">
@@ -207,6 +212,7 @@ const list = (value) => value?.[lang] ?? value?.zh ?? value?.en ?? [];
   dl div { padding-top: .8rem; border-top: 1px solid #e5e5e5; }
   dt { color: #777; font-size: .85rem; }
   dd { margin: .15rem 0 0; }
+  .notice { max-width: 50rem; margin: 1rem 0 0; color: #555; font-size: .9rem; }
   @media (max-width: 600px) { dl { grid-template-columns: 1fr; } }
 
   .syllabus { margin-top: 2.5rem; }
