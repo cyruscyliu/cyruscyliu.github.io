@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node scripts/generate-course-graphs.mjs && astro dev",
-    "build": "node scripts/generate-course-graphs.mjs && node scripts/generate-sitemap.mjs && (node scripts/fetch-tools.mjs || true) && astro build",
+    "dev": "npm run build && astro dev",
+    "build": "node scripts/generate-course-graphs.mjs && node scripts/generate-sitemap.mjs && (node scripts/fetch-tools.mjs || true) && astro build && node scripts/generate-pdfs.mjs",
     "preview": "astro preview",
     "fetch-dblp": "node scripts/fetch-dblp.mjs"
   },
