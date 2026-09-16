@@ -1,6 +1,8 @@
 ---
 import data from '../../../data/courses.json';
 import refs from '../../../data/course-references.json';
+import syllabi from '../../../data/syllabi.js';
+import lessonPlans from '../../../data/lesson-plans/index.js';
 import SiteHeader from '../../../components/SiteHeader.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import SeoHead from '../../../components/SeoHead.astro';
@@ -20,7 +22,12 @@ const text = (value) => typeof value === 'string' ? value : value?.[lang] ?? '';
 const title = `${course.code} ${text(course.name)}`;
 const description = `${text(course.level)} · ${text(course.status)}`;
 const courseRefs = refs[course.code];
+const syllabus = syllabi[course.code];
+const lessons = lessonPlans[course.code] ?? [];
+const lessonsForWeek = (weekNumber) => lessons.filter((lesson) => lesson.week === weekNumber);
+const lessonNumber = (lesson) => lessons.findIndex((item) => item.id === lesson.id) + 1;
 const sorted = (list) => list ? [...list].sort((a, b) => a.school.localeCompare(b.school)) : [];
+const list = (value) => value?.[lang] ?? value?.zh ?? value?.en ?? [];
 ---
 <!doctype html>
 <html lang={lang}>
@@ -43,6 +50,111 @@ const sorted = (list) => list ? [...list].sort((a, b) => a.school.localeCompare(
             <dd>{text(course.status)}</dd>
           </div>
         </dl>
+
+        {syllabus && (
+          <section class="syllabus">
+            <h2>{lang === 'zh' ? '教学大纲' : 'Syllabus'}</h2>
+
+            {(syllabus.summary || syllabus.positioning) && (
+              <div class="syllabus-block overview">
+                <h3>{lang === 'zh' ? '课程概览' : 'Course Overview'}</h3>
+                {syllabus.summary && <p class="lead">{text(syllabus.summary)}</p>}
+                {syllabus.positioning && <p>{text(syllabus.positioning)}</p>}
+              </div>
+            )}
+
+            {syllabus.prerequisites && (
+              <div class="syllabus-block">
+                <h3>{lang === 'zh' ? '先修要求' : 'Prerequisites'}</h3>
+                <ul>
+                  {list(syllabus.prerequisites).map((item) => <li>{item}</li>)}
+                </ul>
+              </div>
+            )}
+
+            {syllabus.learningOutcomes && (
+              <div class="syllabus-block">
+                <h3>{lang === 'zh' ? '学习目标' : 'Learning Outcomes'}</h3>
+                <ul>
+                  {list(syllabus.learningOutcomes).map((item) => <li>{item}</li>)}
+                </ul>
+              </div>
+            )}
+
+            {syllabus.format && (
+              <div class="syllabus-block">
+                <h3>{lang === 'zh' ? '教学组织' : 'Course Format'}</h3>
+                <ul>
+                  {list(syllabus.format).map((item) => <li>{item}</li>)}
+                </ul>
+              </div>
+            )}
+
+            {syllabus.weeklyPlan && (
+              <div class="syllabus-block">
+                <h3>{lang === 'zh' ? '周计划' : 'Weekly Plan'}</h3>
+                <div class="weeks">
+                  {syllabus.weeklyPlan.map((week) => {
+                    const weekLessons = lessonsForWeek(week.week);
+                    return (
+                      <div class="week">
+                        <div class="week-number">{lang === 'zh' ? `第 ${week.week} 周` : `Week ${week.week}`}</div>
+                        <div>
+                          <h4>{text(week.topic)}</h4>
+                          <p>{text(week.work)}</p>
+                          {weekLessons.length > 0 && (
+                            <div class="week-lessons" aria-label={lang === 'zh' ? '本周教学计划' : 'Teaching plans for this week'}>
+                              {weekLessons.map((lesson) => (
+                                <a href={`/${lang}/courses/${slug(course.code)}/lessons/${lesson.id}/`}>
+                                  <span>{lang === 'zh' ? `第 ${lessonNumber(lesson)} 次课` : `Session ${lessonNumber(lesson)}`}</span>
+                                  <strong>{text(lesson.title)}</strong>
+                                  <em>{lesson.durationMinutes} min</em>
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {syllabus.assessment && (
+              <div class="syllabus-block">
+                <h3>{lang === 'zh' ? '考核方式' : 'Assessment'}</h3>
+                <div class="assessment">
+                  {syllabus.assessment.map((item) => (
+                    <div class="assessment-row">
+                      <div>
+                        <strong>{text(item.item)}</strong>
+                        <p>{text(item.description)}</p>
+                      </div>
+                      <span>{item.weight}%</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {syllabus.project && (
+              <div class="syllabus-block">
+                <h3>{lang === 'zh' ? '课程项目' : 'Course Project'}</h3>
+                <p>{text(syllabus.project)}</p>
+              </div>
+            )}
+
+            {syllabus.policies && (
+              <div class="syllabus-block">
+                <h3>{lang === 'zh' ? '课程政策' : 'Policies'}</h3>
+                <ul>
+                  {list(syllabus.policies).map((item) => <li>{item}</li>)}
+                </ul>
+              </div>
+            )}
+          </section>
+        )}
 
         {courseRefs && (
           <section class="references">
@@ -97,8 +209,39 @@ const sorted = (list) => list ? [...list].sort((a, b) => a.school.localeCompare(
   dd { margin: .15rem 0 0; }
   @media (max-width: 600px) { dl { grid-template-columns: 1fr; } }
 
+  .syllabus { margin-top: 2.5rem; }
   .references { margin-top: 2.5rem; }
+  .syllabus h2,
   .references h2 { font-size: 1.1rem; font-weight: 600; margin: 0 0 1.25rem; padding-bottom: .5rem; border-bottom: 1px solid #e5e5e5; }
+  .syllabus .lead { max-width: 50rem; font-size: 1rem; }
+  .syllabus p { max-width: 50rem; }
+  .syllabus-block { margin-top: 1.75rem; }
+  .syllabus-block.overview { margin-top: 0; }
+  .syllabus-block h3 { font-size: 1rem; font-weight: 600; margin: 0 0 .6rem; }
+  .syllabus-block ul { max-width: 50rem; margin: 0; padding-left: 1.2rem; }
+  .syllabus-block li + li { margin-top: .25rem; }
+  .weeks { display: grid; gap: .65rem; max-width: 56rem; }
+  .week { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem; padding-top: .7rem; border-top: 1px solid #eee; }
+  .week-number { color: #666; font-size: .85rem; }
+  .week h4 { margin: 0; font-size: .95rem; font-weight: 600; }
+  .week p { margin: .2rem 0 0; color: #333; }
+  .week-lessons { display: grid; gap: .35rem; max-width: 48rem; margin-top: .55rem; }
+  .week-lessons a { display: grid; grid-template-columns: 4.8rem minmax(0, 1fr) 4rem; gap: .6rem; align-items: baseline; padding: .45rem .55rem; border-left: 2px solid #d8e8ff; background: #f7fbff; text-decoration: none; }
+  .week-lessons span { color: #666; font-size: .82rem; }
+  .week-lessons strong { color: #06c; font-size: .9rem; font-weight: 600; }
+  .week-lessons em { color: #555; font-size: .82rem; font-style: normal; text-align: right; }
+  .assessment { max-width: 54rem; border-top: 1px solid #eee; }
+  .assessment-row { display: grid; grid-template-columns: minmax(0, 1fr) 4rem; gap: 1rem; padding: .75rem 0; border-bottom: 1px solid #eee; }
+  .assessment-row p { margin: .15rem 0 0; color: #333; }
+  .assessment-row span { text-align: right; font-weight: 600; }
+  @media (max-width: 600px) {
+    .week { grid-template-columns: 1fr; gap: .2rem; }
+    .week-lessons a { grid-template-columns: 1fr; gap: .1rem; }
+    .week-lessons em { text-align: left; }
+    .assessment-row { grid-template-columns: 1fr; }
+    .assessment-row span { text-align: left; }
+  }
+
   .ref-group { margin-bottom: 1.5rem; }
   .ref-group h3 { font-size: .85rem; font-weight: 600; color: #777; text-transform: uppercase; letter-spacing: .04em; margin: 0 0 .6rem; }
   .ref-group ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .35rem; }

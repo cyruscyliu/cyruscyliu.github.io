@@ -1,0 +1,226 @@
+---
+import coursesData from '../../../../../data/courses.json';
+import lessonPlans from '../../../../../data/lesson-plans/index.js';
+import SiteHeader from '../../../../../components/SiteHeader.astro';
+import SiteFooter from '../../../../../components/SiteFooter.astro';
+import SeoHead from '../../../../../components/SeoHead.astro';
+
+function slug(code) {
+  return code.toLowerCase();
+}
+const text = (value, lang) => typeof value === 'string' ? value : value?.[lang] ?? value?.zh ?? value?.en ?? '';
+const list = (value, lang) => value?.[lang] ?? value?.zh ?? value?.en ?? [];
+
+export function getStaticPaths() {
+  const languages = ['en', 'zh'];
+  const coursesByCode = Object.fromEntries(coursesData.courses.map((course) => [course.code, course]));
+
+  return languages.flatMap((lang) => Object.entries(lessonPlans).flatMap(([courseCode, lessons]) => {
+    const course = coursesByCode[courseCode];
+    return lessons.map((lesson) => ({
+      params: { lang, code: courseCode.toLowerCase(), lesson: lesson.id },
+      props: { lang, course, lesson }
+    }));
+  }));
+}
+
+const { lang, course, lesson } = Astro.props;
+const title = `${course.code} ${text(lesson.title, lang)}`;
+const courseLessons = lessonPlans[course.code] ?? [];
+const lessonNumber = courseLessons.findIndex((item) => item.id === lesson.id) + 1;
+const description = `${lang === 'zh' ? `第 ${lessonNumber} 次课 · 第 ${lesson.week} 周` : `Session ${lessonNumber} · Week ${lesson.week}`} · ${lesson.durationMinutes} min`;
+const courseHref = `/${lang}/courses/${slug(course.code)}/`;
+const scriptForFlow = (index) => lesson.script[lang][Math.min(index, lesson.script[lang].length - 1)];
+const questionForFlow = (index) => lesson.questions[Math.min(Math.floor(index / 2), lesson.questions.length - 1)];
+const mediaForFlow = (index) => lesson.media.videoSegments[Math.min(Math.floor(index / 3), lesson.media.videoSegments.length - 1)];
+const slidesForFlow = (index) => {
+  const start = Math.min(index, Math.max(lesson.slides.length - 1, 0));
+  return lesson.slides.slice(start, start + 3).length ? lesson.slides.slice(start, start + 3) : lesson.slides.slice(-3);
+};
+const placeholderDeckHref = `/${lang}/courses/${slug(course.code)}/lessons/${lesson.id}/slides-placeholder.pdf`;
+const placeholderVideoHref = `/${lang}/courses/${slug(course.code)}/lessons/${lesson.id}/video-placeholder.mp4`;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <SeoHead lang={lang} path={`courses/${slug(course.code)}/lessons/${lesson.id}`} title={`${title} · 55AA Security Lab`} description={description} />
+  </head>
+  <body>
+    <SiteHeader lang={lang} blogHref={`courses/${slug(course.code)}/lessons/${lesson.id}/`} />
+    <main>
+      <article>
+        <div class="meta-row">
+          <p class="meta">{course.code} · {description}</p>
+          <a class="back" href={courseHref} data-back-link>{lang === 'zh' ? '返回课程' : 'Back to course'}</a>
+        </div>
+        <h1>{text(lesson.title, lang)}</h1>
+        <p class="lead">{text(lesson.position, lang)}</p>
+
+        <section>
+          <h2>{lang === 'zh' ? '学习目标' : 'Learning Objectives'}</h2>
+          <ul>
+            {list(lesson.objectives, lang).map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section>
+          <h2>{lang === 'zh' ? '先备知识' : 'Prerequisites'}</h2>
+          <ul>
+            {list(lesson.prerequisites, lang).map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section>
+          <h2>{lang === 'zh' ? '课前准备' : 'Preparation'}</h2>
+          <ul>
+            {list(lesson.preparation, lang).map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section>
+          <h2>{lang === 'zh' ? '课堂流程' : 'Class Flow'}</h2>
+          <div class="flow">
+            {lesson.flow.map((item, index) => {
+              const script = scriptForFlow(index);
+              const question = questionForFlow(index);
+              const slideDeck = slidesForFlow(index);
+              const media = mediaForFlow(index);
+              return (
+                <details class="flow-row">
+                  <summary>
+                    <span class="time">{item.minutes}</span>
+                    <div>
+                      <strong>{text(item.title, lang)}</strong>
+                      <p>{text(item.plan, lang)}</p>
+                    </div>
+                    <em>{item.type}</em>
+                  </summary>
+                  <div class="asset-tabs">
+                    <div class="asset-tab">
+                      <span>{lang === 'zh' ? '互动问题' : 'Question'}</span>
+                      <div>
+                        <h3>{text(question.prompt, lang)}</h3>
+                        <p><strong>{lang === 'zh' ? '预期回答：' : 'Expected answer: '}</strong>{text(question.expectedAnswer, lang)}</p>
+                        <p><strong>{lang === 'zh' ? '追问：' : 'Follow-up: '}</strong>{text(question.followUp, lang)}</p>
+                      </div>
+                    </div>
+                    <div class="asset-tab">
+                      <span>{lang === 'zh' ? '逐字稿' : 'Script'}</span>
+                      <div>
+                        <h3>{script.section}</h3>
+                        <p>{script.text}</p>
+                      </div>
+                    </div>
+                    <div class="asset-tab">
+                      <span>{lang === 'zh' ? 'Demo / 练习' : 'Demo / Exercise'}</span>
+                      <div>
+                        <h3>{text(lesson.demo.title, lang)}</h3>
+                        <p>{index % 2 === 0 ? text(lesson.demo.steps, lang)[0] : text(lesson.exercise.prompt, lang)}</p>
+                      </div>
+                    </div>
+                    <div class="asset-tab">
+                      <span>Slides</span>
+                      <div>
+                        <a class="deck-link" href={placeholderDeckHref}>
+                          {lang === 'zh' ? '打开 Slides 占位文件' : 'Open slides placeholder'}
+                        </a>
+                        <div class="slide-strip" aria-label={lang === 'zh' ? 'Slides 占位预览' : 'Slides placeholder preview'}>
+                          {slideDeck.map((deckSlide, slideIndex) => (
+                            <div class="slide-thumb">
+                              <span>Slide {index + slideIndex + 1}</span>
+                              <strong>{text(deckSlide.title, lang)}</strong>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="asset-tab">
+                      <span>{lang === 'zh' ? '视频媒介' : 'Video Media'}</span>
+                      <div>
+                        <a class="video-link" href={placeholderVideoHref}>
+                          {lang === 'zh' ? '视频占位链接' : 'Video placeholder link'}
+                        </a>
+                        <p>{text(media.title, lang)}</p>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              );
+            })}
+          </div>
+        </section>
+
+        <section>
+          <h2>{lang === 'zh' ? '课后作业' : 'Homework'}</h2>
+          <p>{text(lesson.homework, lang)}</p>
+        </section>
+      </article>
+    </main>
+    <SiteFooter lang={lang} />
+    <script define:vars={{ courseHref }}>
+      const backLink = document.querySelector('[data-back-link]');
+      const normalizePath = (path) => path.endsWith('/') ? path : `${path}/`;
+
+      backLink?.addEventListener('click', (event) => {
+        if (!document.referrer || history.length <= 1) return;
+
+        const referrer = new URL(document.referrer);
+        if (referrer.origin !== window.location.origin) return;
+
+        if (normalizePath(referrer.pathname) === normalizePath(courseHref)) {
+          event.preventDefault();
+          history.back();
+        }
+      });
+    </script>
+  </body>
+</html>
+<style>
+  :global(html) { overflow-y: scroll; }
+  :global(*) { box-sizing: border-box; }
+  :global(body) { min-height: 100vh; display: flex; flex-direction: column; width: 100%; max-width: none; margin: 0; padding: 0; background: #fff; color: #000; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.55; }
+  :global(main) { flex: 1; width: min(960px, calc(100% - 2rem)); margin-inline: auto; padding: 1.5rem 0 2rem; }
+  a { color: #06c; }
+  article { margin-top: 0; }
+  .meta-row { display: flex; flex-wrap: nowrap; gap: .75rem; align-items: baseline; max-width: 58rem; margin: 0 0 .25rem; }
+  .meta { flex: 0 1 auto; min-width: 0; margin: 0; color: #777; font-size: .9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .back { flex: 0 0 auto; white-space: nowrap; font-size: .9rem; }
+  h1 { max-width: 52rem; margin: 0 0 1rem; font-size: 1.6rem; line-height: 1.25; font-weight: 600; }
+  .lead { max-width: 54rem; margin: 0 0 2rem; color: #222; }
+  section { margin-top: 2rem; }
+  section h2 { font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem; padding-bottom: .5rem; border-bottom: 1px solid #e5e5e5; }
+  h3 { margin: 0 0 .3rem; font-size: .98rem; font-weight: 600; }
+  p { max-width: 54rem; }
+  ul, ol { max-width: 54rem; padding-left: 1.2rem; }
+  li + li { margin-top: .25rem; }
+  .flow { display: grid; max-width: 58rem; border-bottom: 1px solid #e5e5e5; }
+  .flow-row { border-top: 1px solid #eee; }
+  .flow-row summary { display: grid; grid-template-columns: 5.8rem minmax(0, 1fr) 5.5rem; gap: 1rem; align-items: start; padding: .85rem 0; cursor: pointer; list-style: none; }
+  .flow-row summary::-webkit-details-marker { display: none; }
+  .flow-row .time { color: #666; font-size: .85rem; }
+  .flow-row summary strong { font-size: .95rem; font-weight: 600; }
+  .flow-row summary p { margin: .25rem 0 0; color: #333; max-width: none; }
+  .flow-row summary em { color: #555; font-size: .82rem; font-style: normal; text-align: right; }
+  .flow-row summary em::after { content: " +"; color: #777; }
+  .flow-row[open] summary em::after { content: " -"; }
+  .asset-tabs { display: grid; gap: .35rem; padding: 0 0 .85rem 6.8rem; }
+  .asset-tab { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem; align-items: start; min-width: 0; padding: .62rem .75rem; background: #f3f8fd; border-left: 2px solid #d4e8fb; }
+  .asset-tab > span { color: #666; font-size: .85rem; }
+  .asset-tab h3 { margin: 0; color: #06c; font-size: .95rem; font-weight: 600; }
+  .asset-tab p { margin: .25rem 0 0; color: #333; font-size: .92rem; max-width: none; }
+  .asset-tab p strong { font-weight: 600; }
+  .deck-link, .video-link { display: inline-flex; align-items: center; min-height: 1.9rem; color: #06c; font-size: .92rem; font-weight: 600; text-decoration: none; }
+  .deck-link::before { content: "▣"; margin-right: .45rem; color: #4f8fc9; font-size: .78rem; }
+  .video-link::before { content: "▶"; margin-right: .45rem; color: #4f8fc9; font-size: .72rem; }
+  .slide-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; margin-top: .45rem; max-width: 34rem; }
+  .slide-thumb { display: grid; align-content: space-between; aspect-ratio: 16 / 9; min-width: 0; padding: .55rem; background: linear-gradient(180deg, #fff 0%, #eef6ff 100%); border: 1px solid #cfe3f6; box-shadow: inset 0 0 0 1px rgba(255,255,255,.7); }
+  .slide-thumb span { color: #5d748b; font-size: .7rem; }
+  .slide-thumb strong { overflow: hidden; color: #17324d; font-size: .78rem; line-height: 1.25; font-weight: 600; text-overflow: ellipsis; }
+  @media (max-width: 650px) {
+    .flow-row summary { grid-template-columns: 1fr; gap: .2rem; }
+    .flow-row summary em { text-align: left; }
+    .asset-tabs { padding-left: 0; }
+    .asset-tab { grid-template-columns: 1fr; gap: .15rem; }
+    .slide-strip { grid-template-columns: 1fr 1fr; }
+  }
+</style>
