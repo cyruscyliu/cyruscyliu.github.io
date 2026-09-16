@@ -16,7 +16,7 @@
       }
     },
     {
-      "title": { "en": "Cybermodel, AI agents, and benchmarks", "zh": "网络模型、AI 智能体与基准" },
+      "title": { "en": "Cybersecurity LLMs, AI agents, and benchmarks", "zh": "网安大模型、AI 智能体与基准" },
       "href": { "en": "/library/research-methods/", "zh": "/zh/library/research-methods/" },
       "body": {
         "en": "Build cyber models, study AI agents that operate on complex systems, and develop benchmarks for measuring their capabilities and limitations.",

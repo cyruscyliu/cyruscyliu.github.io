@@ -72,10 +72,10 @@
       }
     },
     {
-      "key": "teaching",
+      "key": "courses",
       "label": {
-        "en": "Teaching",
-        "zh": "教学"
+        "en": "Courses",
+        "zh": "课程"
       },
       "description": {
         "en": "Courses, notes, and research training.",
@@ -216,10 +216,10 @@
         }
       },
       {
-        "path": "teaching",
+        "path": "courses",
         "title": {
-          "en": "Teaching",
-          "zh": "教学"
+          "en": "Courses",
+          "zh": "课程"
         },
         "description": {
           "en": "Courses, notes, and exercises.",

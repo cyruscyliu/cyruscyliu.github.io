@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 
 const site = 'https://cyruscyliu.github.io';
 const languages = ['en', 'zh'];
-const sections = ['', 'news', 'people', 'teaching', 'projects', 'tools', 'consultation', 'publications', 'blog', 'sponsorship'];
+const sections = ['', 'news', 'people', 'courses', 'projects', 'tools', 'consultation', 'publications', 'blog', 'sponsorship'];
 const blog = JSON.parse(await readFile(new URL('../src/data/blog.json', import.meta.url), 'utf8'));
 const paths = [
   ...sections,

@@ -10,7 +10,7 @@
 - [x] 页面 title 与 meta description。
 - [x] 共享 SEO head：全站页面统一输出 title、description、canonical、双语 hreflang、Open Graph 和 Twitter Card。
 - [x] robots.txt 和构建时自动生成的 sitemap.xml；当前覆盖全部 24 个静态 URL，并为每个双语页面声明 alternate。
-- [x] Open Graph、Twitter Card 和 `public/og-image.svg`。
+- [x] Open Graph、Twitter Card 和 `public/logo-lockup.svg`。
 - [x] 首页 `ResearchOrganization` 和博客文章 `Article` JSON-LD。
 - [x] News/Blog 列表页和博客文章独立 URL。
 - [x] People、Teaching、Projects、Publications、Tools、Consultation、Sponsorship 独立 URL。

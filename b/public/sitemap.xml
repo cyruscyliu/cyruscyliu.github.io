@@ -37,16 +37,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/people/" />
   </url>
   <url>
-    <loc>https://cyruscyliu.github.io/en/teaching/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/teaching/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/teaching/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/teaching/" />
+    <loc>https://cyruscyliu.github.io/en/courses/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/courses/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/courses/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/courses/" />
   </url>
   <url>
-    <loc>https://cyruscyliu.github.io/zh/teaching/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/teaching/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/teaching/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/teaching/" />
+    <loc>https://cyruscyliu.github.io/zh/courses/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/courses/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/courses/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/courses/" />
   </url>
   <url>
     <loc>https://cyruscyliu.github.io/en/projects/</loc>

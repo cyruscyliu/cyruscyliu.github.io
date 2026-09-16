@@ -1,14 +1,14 @@
 ---
 import data from '../../../data/teaching.json'; import CourseGraph from '../../../components/CourseGraph.astro'; import SiteHeader from '../../../components/SiteHeader.astro'; import SiteFooter from '../../../components/SiteFooter.astro'; import SeoHead from '../../../components/SeoHead.astro';
-export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const runtimePath=Astro.url?.pathname??Astro.request?.url??''; const lang=runtimePath.includes('/zh/')?'zh':(((Astro.props??{}).lang??'en')==='zh'?'zh':'en'); const text=v=>typeof v==='string'?v:v?.[lang]??''; const canonical=`https://cyruscyliu.github.io/${lang}/teaching/`; const courses=[...data.courses].sort((a,b)=>(a.level.en==='Undergraduate'?0:1)-(b.level.en==='Undergraduate'?0:1));
+export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const runtimePath=Astro.url?.pathname??Astro.request?.url??''; const lang=runtimePath.includes('/zh/')?'zh':(((Astro.props??{}).lang??'en')==='zh'?'zh':'en'); const text=v=>typeof v==='string'?v:v?.[lang]??''; const canonical=`https://cyruscyliu.github.io/${lang}/courses/`; const courses=[...data.courses].sort((a,b)=>(a.level.en==='Undergraduate'?0:1)-(b.level.en==='Undergraduate'?0:1));
 ---
 <!doctype html>
 <html lang={lang}>
 <head>
-<SeoHead lang={lang} path="teaching" title={`${text(data.meta.title)} · 55AA Security Lab`} description={text(data.meta.description)}/>
+<SeoHead lang={lang} path="courses" title={`${text(data.meta.title)} · 55AA Security Lab`} description={text(data.meta.description)}/>
 </head>
 <body>
-<SiteHeader lang={lang} blogHref="teaching/"/>
+<SiteHeader lang={lang} blogHref="courses/"/>
 <main>
 <h1>{text(data.meta.title)}</h1>
 <CourseGraph lang={lang}/>{courses.map(c=>
