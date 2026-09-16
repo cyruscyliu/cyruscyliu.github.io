@@ -9,9 +9,9 @@
 - [x] 唯一品牌主标题与语义化结构（首页保留 `55AA Security Lab`，子页面不再重复显示与 tab 相同的标题）。
 - [x] 页面 title 与 meta description。
 - [x] 共享 SEO head：全站页面统一输出 title、description、canonical、双语 hreflang、Open Graph 和 Twitter Card。
-- [x] robots.txt 和构建时自动生成的 sitemap.xml；当前覆盖全部 24 个静态 URL，并为每个双语页面声明 alternate。
-- [x] Open Graph、Twitter Card 和 `public/logo-lockup.svg`。
-- [x] 首页 `ResearchOrganization` 和博客文章 `Article` JSON-LD。
+- [x] robots.txt 和构建时自动生成的 sitemap.xml；当前覆盖全部已生成的双语页面（包括课程教学计划页），并为每个双语页面声明 alternate。
+- [x] Open Graph、Twitter Card 和 `public/logo-lockup.png`。
+- [x] 首页 `ResearchOrganization`、People `Person`、课程 `Course`、lesson `LearningResource` 和博客文章 `Article` JSON-LD。
 - [x] News/Blog 列表页和博客文章独立 URL。
 - [x] People、Teaching、Projects、Publications、Tools、Consultation、Sponsorship 独立 URL。
 - [x] 导航 tab 使用真实链接，并根据当前 URL 显示选中状态。
@@ -35,7 +35,7 @@
 
 - [ ] 将 DBLP RSS 在构建或定时工作流中解析为静态论文 HTML，并保留最近一次成功缓存；当前按要求暂时跳过该问题。
 - [ ] 为静态论文数据增加真实的 `ScholarlyArticle` JSON-LD，包括标题、作者、venue、年份、DOI/URL；不得在 DBLP 数据不可用时编造。
-- [ ] 为 People 页面中的成员增加 `Person` JSON-LD，并使用真实的职务、所属机构和 `sameAs` 链接。
+- [x] 为 People 页面中的成员增加 `Person` JSON-LD，并使用真实的职务、所属机构和 `sameAs` 链接。
 - [ ] 为每条 News 建立独立、稳定的中英文详情 URL；目前只有 News 列表页。
 - [ ] 新闻详情页增加 `NewsArticle` JSON-LD、canonical、hreflang、发布日期和独立描述。
 - [ ] 为 Mermaid 课程依赖图提供等价的可索引文本关系，确保不执行图形脚本时仍能理解课程先修关系。
@@ -266,11 +266,10 @@ DBLP 当前通过浏览器请求 RSS，搜索引擎可能只看到 `Loading DBLP
 
 1. 确定正式域名并完成域名迁移。
 2. 在 Google Search Console 和 Bing Webmaster Tools 验证站点、提交 sitemap。
-3. 部署后检查 24 个现有 URL、重定向、canonical、hreflang 和结构化数据。
+3. 部署后检查全部已生成 URL、重定向、canonical、hreflang 和结构化数据。
 4. 为 News 建立独立详情页并增加 `NewsArticle` JSON-LD。
 5. 补齐 Projects、Teaching、Tools 和 Consultation 的真实 item metadata 与正文。
-6. 为 People 增加真实 `Person` JSON-LD。
-7. 在 DBLP 获取链路稳定后，将论文列表静态化并增加 `ScholarlyArticle` JSON-LD。
+6. 在 DBLP 获取链路稳定后，将论文列表静态化并增加 `ScholarlyArticle` JSON-LD。
 8. 替换真实二维码和社交入口。
 9. 建立性能基线和月度 SEO 效果记录。
 10. 根据 Search Console 的真实查询和落地页数据持续调整内容。

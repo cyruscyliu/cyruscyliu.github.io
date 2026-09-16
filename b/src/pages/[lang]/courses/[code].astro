@@ -20,9 +20,9 @@ export function getStaticPaths() {
 const { lang, course } = Astro.props;
 const text = (value) => typeof value === 'string' ? value : value?.[lang] ?? '';
 const title = `${course.code} ${text(course.name)}`;
-const description = `${text(course.level)} · ${text(course.status)}`;
-const courseRefs = refs[course.code];
 const syllabus = syllabi[course.code];
+const description = text(syllabus?.summary) || `${text(course.level)} · ${text(course.status)}`;
+const courseRefs = refs[course.code];
 const lessons = lessonPlans[course.code] ?? [];
 const lessonsForWeek = (weekNumber) => lessons.filter((lesson) => lesson.week === weekNumber);
 const lessonNumber = (lesson) => lessons.findIndex((item) => item.id === lesson.id) + 1;
@@ -37,6 +37,16 @@ const draftNotice = lang === 'zh'
 <html lang={lang}>
   <head>
     <SeoHead lang={lang} path={`courses/${slug(course.code)}`} title={`${title} · 55AA Security Lab`} description={description} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name: title,
+      description,
+      url: `https://cyruscyliu.github.io/${lang}/courses/${slug(course.code)}/`,
+      inLanguage: lang,
+      isAccessibleForFree: true,
+      provider: { '@type': 'Organization', name: '55AA Security Lab', url: 'https://cyruscyliu.github.io/' }
+    })} />
   </head>
   <body>
     <SiteHeader lang={lang} blogHref={`courses/${slug(course.code)}/`} />

@@ -6,6 +6,23 @@ export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},pr
 <html lang={lang}>
 <head>
 <SeoHead lang={lang} path="people" title={`${lang==='zh'?'成员':'People'} · 55AA Security Lab`} description={lang==='zh'?'55AA 安全实验室成员。':'People at 55AA Security Lab.'}/>
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: lang === 'zh' ? '55AA 安全实验室成员' : '55AA Security Lab people',
+  itemListElement: data.people.map((person, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Person',
+      name: person.name,
+      jobTitle: text(person.role),
+      image: person.profileImage,
+      sameAs: person.links.filter((link) => link.kind !== 'email').map((link) => link.url),
+      worksFor: { '@type': 'Organization', name: '55AA Security Lab', url: 'https://cyruscyliu.github.io/' }
+    }
+  }))
+})} />
 </head>
 <body>
 <SiteHeader lang={lang} blogHref="people/"/>

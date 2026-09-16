@@ -28,7 +28,7 @@ const { lang, course, lesson } = Astro.props;
 const title = `${course.code} ${text(lesson.title, lang)}`;
 const courseLessons = lessonPlans[course.code] ?? [];
 const lessonNumber = courseLessons.findIndex((item) => item.id === lesson.id) + 1;
-const description = `${lang === 'zh' ? `第 ${lessonNumber} 次课 · 第 ${lesson.week} 周` : `Session ${lessonNumber} · Week ${lesson.week}`} · ${lesson.durationMinutes} min`;
+const description = text(lesson.position, lang) || `${lang === 'zh' ? `第 ${lessonNumber} 次课 · 第 ${lesson.week} 周` : `Session ${lessonNumber} · Week ${lesson.week}`} · ${lesson.durationMinutes} min`;
 const courseHref = `/${lang}/courses/${slug(course.code)}/`;
 const scriptForFlow = (index) => lesson.script[lang][Math.min(index, lesson.script[lang].length - 1)];
 const questionForFlow = (index) => lesson.questions[Math.min(Math.floor(index / 2), lesson.questions.length - 1)];
@@ -44,6 +44,22 @@ const placeholderVideoHref = `/${lang}/courses/${slug(course.code)}/lessons/${le
 <html lang={lang}>
   <head>
     <SeoHead lang={lang} path={`courses/${slug(course.code)}/lessons/${lesson.id}`} title={`${title} · 55AA Security Lab`} description={description} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'LearningResource',
+      name: title,
+      description,
+      url: `https://cyruscyliu.github.io/${lang}/courses/${slug(course.code)}/lessons/${lesson.id}/`,
+      inLanguage: lang,
+      learningResourceType: lang === 'zh' ? '课程教学计划' : 'Lesson plan',
+      isPartOf: {
+        '@type': 'Course',
+        name: `${course.code} ${text(course.name, lang)}`,
+        url: `https://cyruscyliu.github.io/${lang}/courses/${slug(course.code)}/`
+      },
+      isAccessibleForFree: true,
+      provider: { '@type': 'Organization', name: '55AA Security Lab', url: 'https://cyruscyliu.github.io/' }
+    })} />
   </head>
   <body>
     <SiteHeader lang={lang} blogHref={`courses/${slug(course.code)}/lessons/${lesson.id}/`} />

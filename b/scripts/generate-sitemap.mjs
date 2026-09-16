@@ -1,4 +1,5 @@
 import { readFile, writeFile } from 'node:fs/promises';
+import lessonPlans from '../src/data/lesson-plans/index.js';
 
 const site = 'https://cyruscyliu.github.io';
 const languages = ['en', 'zh'];
@@ -6,9 +7,13 @@ const sections = ['', 'news', 'people', 'courses', 'projects', 'tools', 'consult
 const blog = JSON.parse(await readFile(new URL('../src/data/blog.json', import.meta.url), 'utf8'));
 const teaching = JSON.parse(await readFile(new URL('../src/data/courses.json', import.meta.url), 'utf8'));
 const coursePaths = teaching.courses.map((course) => `courses/${course.code.toLowerCase()}`);
+const lessonPaths = Object.entries(lessonPlans).flatMap(([courseCode, lessons]) =>
+  lessons.map((lesson) => `courses/${courseCode.toLowerCase()}/lessons/${lesson.id}`)
+);
 const paths = [
   ...sections,
   ...coursePaths,
+  ...lessonPaths,
   ...blog.entries.map((entry, index) => `blog/${entry.date}-${index + 1}`)
 ];
 const escapeXml = (value) => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll("'", '&apos;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
