@@ -1,0 +1,879 @@
+{
+  "sourceFiles": [
+    "src/data/tmp/3234-34.xml"
+  ],
+  "publications": [
+    {
+      "key": "journals/pacmse/ZhangLP26",
+      "type": "article",
+      "title": "CrossFit: Demystifying VM Callback Bugs in Interpreters",
+      "authors": [
+        {
+          "name": "Chibin Zhang",
+          "pid": "277/2766",
+          "orcid": "0009-0003-7367-2131",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "0000-0002-5865-6227",
+          "isTarget": true
+        },
+        {
+          "name": "Mathias Payer",
+          "pid": "31/1273",
+          "orcid": "0000-0001-5054-7547",
+          "isTarget": false
+        }
+      ],
+      "year": 2026,
+      "month": "",
+      "venue": "Proc. ACM Softw. Eng.",
+      "pages": "2328-2349",
+      "volume": "3",
+      "number": "FSE",
+      "doi": "10.1145/3808111",
+      "url": "https://doi.org/10.1145/3808111",
+      "dblpUrl": "https://dblp.org/db/journals/pacmse/pacmse3.html#ZhangLP26",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "journals/tdsc/XiangWCLWWWCZ26",
+      "type": "article",
+      "title": "Minoris: Practical Out-of-Emulator Kernel Module Fuzzing",
+      "authors": [
+        {
+          "name": "Yangxi Xiang",
+          "pid": "247/9496",
+          "orcid": "0009-0006-7837-5090",
+          "isTarget": false
+        },
+        {
+          "name": "Feng Wang",
+          "pid": "90/4225",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Yuan Chen",
+          "pid": "55/6958",
+          "orcid": "0009-0009-2321-4910",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "0000-0002-5865-6227",
+          "isTarget": true
+        },
+        {
+          "name": "Haoyu Wang",
+          "pid": "50/8499-1",
+          "orcid": "0000-0003-1100-8633",
+          "isTarget": false
+        },
+        {
+          "name": "Jiashui Wang",
+          "pid": "301/5814",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Lei Wu",
+          "pid": "68/5597-12",
+          "orcid": "0000-0003-1675-5283",
+          "isTarget": false
+        },
+        {
+          "name": "Chaoyuan Chen",
+          "pid": "426/3136",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Yajin Zhou",
+          "pid": "15/7381",
+          "orcid": "0000-0001-7610-4736",
+          "isTarget": false
+        }
+      ],
+      "year": 2026,
+      "month": "January - February",
+      "venue": "IEEE Trans. Dependable Secur. Comput.",
+      "pages": "1360-1372",
+      "volume": "23",
+      "number": "1",
+      "doi": "10.1109/TDSC.2025.3616496",
+      "url": "https://doi.org/10.1109/TDSC.2025.3616496",
+      "dblpUrl": "https://dblp.org/db/journals/tdsc/tdsc23.html#XiangWCLWWWCZ26",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "journals/corr/abs-2606-16646",
+      "type": "article",
+      "title": "SoK: Taxonomizing the Low-Level Attack Surface of Modern Web Browsers",
+      "authors": [
+        {
+          "name": "Han Zheng",
+          "pid": "75/1424-6",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Qinying Wang",
+          "pid": "156/1247",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "",
+          "isTarget": true
+        },
+        {
+          "name": "Mathias Payer",
+          "pid": "31/1273",
+          "orcid": "",
+          "isTarget": false
+        }
+      ],
+      "year": 2026,
+      "month": "June",
+      "venue": "CoRR",
+      "pages": "",
+      "volume": "abs/2606.16646",
+      "number": "",
+      "doi": "10.48550/arXiv.2606.16646",
+      "url": "https://doi.org/10.48550/arXiv.2606.16646",
+      "dblpUrl": "https://dblp.org/db/journals/corr/corr2606.html#abs-2606-16646",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "conf/woot/ZhengTLP26",
+      "type": "inproceedings",
+      "title": "Squeezing Juicy Variant Bugs Out of Modern Browsers",
+      "authors": [
+        {
+          "name": "Han Zheng",
+          "pid": "75/1424-6",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Flavio Toffalini",
+          "pid": "88/9958",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "",
+          "isTarget": true
+        },
+        {
+          "name": "Mathias Payer",
+          "pid": "31/1273",
+          "orcid": "",
+          "isTarget": false
+        }
+      ],
+      "year": 2026,
+      "month": "",
+      "venue": "WOOT",
+      "pages": "131-151",
+      "volume": "",
+      "number": "",
+      "doi": "",
+      "url": "https://www.usenix.org/conference/woot26/presentation/zheng",
+      "dblpUrl": "https://dblp.org/db/conf/woot/woot2026.html#ZhengTLP26",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "journals/corr/abs-2608-28016",
+      "type": "article",
+      "title": "The Impact of Magma: A Ground-Truth Fuzzing Benchmark",
+      "authors": [
+        {
+          "name": "Ahmad Hazimeh",
+          "pid": "274/1539",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Adrian Herrera",
+          "pid": "125/8594",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Srividya Subramanian",
+          "pid": "289/7352",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Thaqiya Aman",
+          "pid": "445/7850",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Sara Vaccino",
+          "pid": "445/6616",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "",
+          "isTarget": true
+        },
+        {
+          "name": "Mathias Payer",
+          "pid": "31/1273",
+          "orcid": "",
+          "isTarget": false
+        }
+      ],
+      "year": 2026,
+      "month": "August",
+      "venue": "CoRR",
+      "pages": "",
+      "volume": "abs/2608.28016",
+      "number": "",
+      "doi": "10.48550/arXiv.2608.28016",
+      "url": "https://doi.org/10.48550/arXiv.2608.28016",
+      "dblpUrl": "https://dblp.org/db/journals/corr/corr2608.html#abs-2608-28016",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "journals/corr/abs-2511-17799",
+      "type": "article",
+      "title": "Characteristics, Root Causes, and Detection of Incomplete Security Bug Fixes in the Linux Kernel",
+      "authors": [
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "",
+          "isTarget": true
+        },
+        {
+          "name": "Wenlong Zhang",
+          "pid": "63/7023",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Muhui Jiang",
+          "pid": "203/0794",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Lei Wu",
+          "pid": "68/5597-12",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Yajin Zhou",
+          "pid": "15/7381",
+          "orcid": "",
+          "isTarget": false
+        }
+      ],
+      "year": 2025,
+      "month": "November",
+      "venue": "CoRR",
+      "pages": "",
+      "volume": "abs/2511.17799",
+      "number": "",
+      "doi": "10.48550/arXiv.2511.17799",
+      "url": "https://doi.org/10.48550/arXiv.2511.17799",
+      "dblpUrl": "https://dblp.org/db/journals/corr/corr2511.html#abs-2511-17799",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "conf/asiaccs/ZhangLLP25",
+      "type": "inproceedings",
+      "title": "REFLECTA: Reflection-based Scalable and Semantic Scripting Language Fuzzing",
+      "authors": [
+        {
+          "name": "Chibin Zhang",
+          "pid": "277/2766",
+          "orcid": "0009-0003-7367-2131",
+          "isTarget": false
+        },
+        {
+          "name": "Gwangmu Lee",
+          "pid": "173/9806",
+          "orcid": "0009-0006-6464-355X",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "0000-0002-5865-6227",
+          "isTarget": true
+        },
+        {
+          "name": "Mathias Payer",
+          "pid": "31/1273",
+          "orcid": "0000-0001-5054-7547",
+          "isTarget": false
+        }
+      ],
+      "year": 2025,
+      "month": "",
+      "venue": "AsiaCCS",
+      "pages": "1772-1787",
+      "volume": "",
+      "number": "",
+      "doi": "10.1145/3708821.3710818",
+      "url": "https://doi.org/10.1145/3708821.3710818",
+      "dblpUrl": "https://dblp.org/db/conf/asiaccs/asiaccs2025.html#ZhangLLP25",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "conf/ndss/Ma0LYT0P25",
+      "type": "inproceedings",
+      "title": "Truman: Constructing Device Behavior Models from OS Drivers to Fuzz Virtual Devices",
+      "authors": [
+        {
+          "name": "Zheyu Ma",
+          "pid": "249/4978",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "",
+          "isTarget": true
+        },
+        {
+          "name": "Zheming Li",
+          "pid": "62/7776",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Tingting Yin",
+          "pid": "40/4177",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Wende Tan",
+          "pid": "228/6653",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Chao Zhang",
+          "pid": "94/3019-8",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Mathias Payer",
+          "pid": "31/1273",
+          "orcid": "",
+          "isTarget": false
+        }
+      ],
+      "year": 2025,
+      "month": "",
+      "venue": "NDSS",
+      "pages": "",
+      "volume": "",
+      "number": "",
+      "doi": "",
+      "url": "https://www.ndss-symposium.org/ndss-paper/truman-constructing-device-behavior-models-from-os-drivers-to-fuzz-virtual-devices/",
+      "dblpUrl": "https://dblp.org/db/conf/ndss/ndss2025.html#Ma0LYT0P25",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "conf/uss/BulekovLEP24",
+      "type": "inproceedings",
+      "title": "HYPERPILL: Fuzzing for Hypervisor-bugs by leveraging the Hardware Virtualization Interface",
+      "authors": [
+        {
+          "name": "Alexander Bulekov",
+          "pid": "294/4488",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "",
+          "isTarget": true
+        },
+        {
+          "name": "Manuel Egele",
+          "pid": "27/3108",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Mathias Payer",
+          "pid": "31/1273",
+          "orcid": "",
+          "isTarget": false
+        }
+      ],
+      "year": 2024,
+      "month": "",
+      "venue": "USENIX Security Symposium",
+      "pages": "",
+      "volume": "",
+      "number": "",
+      "doi": "",
+      "url": "https://www.usenix.org/conference/usenixsecurity24/presentation/bulekov",
+      "dblpUrl": "https://dblp.org/db/conf/uss/uss2024.html#BulekovLEP24",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "conf/raid/HazimehX0WP24",
+      "type": "inproceedings",
+      "title": "Tango: Extracting Higher-Order Feedback through State Inference",
+      "authors": [
+        {
+          "name": "Ahmad Hazimeh",
+          "pid": "274/1539",
+          "orcid": "0009-0002-4191-7395",
+          "isTarget": false
+        },
+        {
+          "name": "Duo Xu",
+          "pid": "55/1715-6",
+          "orcid": "0009-0005-8082-154X",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "0000-0002-5865-6227",
+          "isTarget": true
+        },
+        {
+          "name": "Yan Wang",
+          "pid": "59/2227-149",
+          "orcid": "0009-0008-0484-5576",
+          "isTarget": false
+        },
+        {
+          "name": "Mathias Payer",
+          "pid": "31/1273",
+          "orcid": "0000-0001-5054-7547",
+          "isTarget": false
+        }
+      ],
+      "year": 2024,
+      "month": "",
+      "venue": "RAID",
+      "pages": "403-418",
+      "volume": "",
+      "number": "",
+      "doi": "10.1145/3678890.3678908",
+      "url": "https://www.wikidata.org/entity/Q130959441",
+      "dblpUrl": "https://dblp.org/db/conf/raid/raid2024.html#HazimehX0WP24",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "journals/tmc/YingZLXWCFLWWC24",
+      "type": "article",
+      "title": "TrapCog: An Anti-Noise, Transferable, and Privacy-Preserving Real-Time Mobile User Authentication System With High Accuracy",
+      "authors": [
+        {
+          "name": "Jie Ying",
+          "pid": "95/2324",
+          "orcid": "0009-0006-4293-5850",
+          "isTarget": false
+        },
+        {
+          "name": "Tiantian Zhu",
+          "pid": "153/5745-1",
+          "orcid": "0000-0002-8657-662X",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "0000-0002-5865-6227",
+          "isTarget": true
+        },
+        {
+          "name": "Chunlin Xiong",
+          "pid": "86/5273",
+          "orcid": "0000-0003-4426-3585",
+          "isTarget": false
+        },
+        {
+          "name": "Zhengqiu Weng",
+          "pid": "191/8659",
+          "orcid": "0000-0003-4175-6763",
+          "isTarget": false
+        },
+        {
+          "name": "Tieming Chen",
+          "pid": "66/6179",
+          "orcid": "0000-0003-4664-3311",
+          "isTarget": false
+        },
+        {
+          "name": "Lei Fu",
+          "pid": "31/4018",
+          "orcid": "0000-0002-9907-3212",
+          "isTarget": false
+        },
+        {
+          "name": "Mingqi Lv",
+          "pid": "39/8683",
+          "orcid": "0000-0003-4810-7491",
+          "isTarget": false
+        },
+        {
+          "name": "Han Wu",
+          "pid": "13/1864",
+          "orcid": "0009-0007-2669-9189",
+          "isTarget": false
+        },
+        {
+          "name": "Ting Wang",
+          "pid": "12/2633-4",
+          "orcid": "0000-0002-0121-5324",
+          "isTarget": false
+        },
+        {
+          "name": "Yan Chen",
+          "pid": "88/2827-4",
+          "orcid": "0000-0003-4103-1498",
+          "isTarget": false
+        }
+      ],
+      "year": 2024,
+      "month": "April",
+      "venue": "IEEE Trans. Mob. Comput.",
+      "pages": "2832-2848",
+      "volume": "23",
+      "number": "4",
+      "doi": "10.1109/TMC.2023.3265071",
+      "url": "https://doi.org/10.1109/TMC.2023.3265071",
+      "dblpUrl": "https://dblp.org/db/journals/tmc/tmc23.html#YingZLXWCFLWWC24",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "conf/sp/LiuTZP23",
+      "type": "inproceedings",
+      "title": "ViDeZZo: Dependency-aware Virtual Device Fuzzing",
+      "authors": [
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "",
+          "isTarget": true
+        },
+        {
+          "name": "Flavio Toffalini",
+          "pid": "88/9958",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Yajin Zhou",
+          "pid": "15/7381",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Mathias Payer",
+          "pid": "31/1273",
+          "orcid": "",
+          "isTarget": false
+        }
+      ],
+      "year": 2023,
+      "month": "",
+      "venue": "SP",
+      "pages": "3228-3245",
+      "volume": "",
+      "number": "",
+      "doi": "10.1109/SP46215.2023.10179354",
+      "url": "https://doi.org/10.1109/SP46215.2023.10179354",
+      "dblpUrl": "https://dblp.org/db/conf/sp/sp2023.html#LiuTZP23",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "journals/tmc/ZhuWSCLCLC22",
+      "type": "article",
+      "title": "EspialCog: General, Efficient and Robust Mobile User Implicit Authentication in Noisy Environment",
+      "authors": [
+        {
+          "name": "Tiantian Zhu",
+          "pid": "153/5745-1",
+          "orcid": "0000-0002-8657-662X",
+          "isTarget": false
+        },
+        {
+          "name": "Zhengqiu Weng",
+          "pid": "191/8659",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Qijie Song",
+          "pid": "309/6303",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Yuan Chen",
+          "pid": "55/6958",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "0000-0002-5865-6227",
+          "isTarget": true
+        },
+        {
+          "name": "Yan Chen",
+          "pid": "88/2827-4",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Mingqi Lv",
+          "pid": "39/8683",
+          "orcid": "0000-0003-4810-7491",
+          "isTarget": false
+        },
+        {
+          "name": "Tieming Chen",
+          "pid": "66/6179",
+          "orcid": "0000-0003-4664-3311",
+          "isTarget": false
+        }
+      ],
+      "year": 2022,
+      "month": "",
+      "venue": "IEEE Trans. Mob. Comput.",
+      "pages": "555-572",
+      "volume": "21",
+      "number": "2",
+      "doi": "10.1109/TMC.2020.3012491",
+      "url": "https://doi.org/10.1109/TMC.2020.3012491",
+      "dblpUrl": "https://dblp.org/db/journals/tmc/tmc21.html#ZhuWSCLCLC22",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "conf/ccs/JiangMZLZWLW021",
+      "type": "inproceedings",
+      "title": "ECMO: Peripheral Transplantation to Rehost Embedded Linux Kernels",
+      "authors": [
+        {
+          "name": "Muhui Jiang",
+          "pid": "203/0794",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Lin Ma",
+          "pid": "74/3608-9",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Yajin Zhou",
+          "pid": "15/7381",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "0000-0002-5865-6227",
+          "isTarget": true
+        },
+        {
+          "name": "Cen Zhang",
+          "pid": "200/7275",
+          "orcid": "0000-0001-5603-1322",
+          "isTarget": false
+        },
+        {
+          "name": "Zhi Wang",
+          "pid": "95/6543-4",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Xiapu Luo",
+          "pid": "53/1565",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Lei Wu",
+          "pid": "68/5597-12",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Kui Ren",
+          "pid": "20/6179-1",
+          "orcid": "",
+          "isTarget": false
+        }
+      ],
+      "year": 2021,
+      "month": "",
+      "venue": "CCS",
+      "pages": "734-748",
+      "volume": "abs/2105.14295",
+      "number": "",
+      "doi": "10.1145/3460120.3484753",
+      "url": "https://www.wikidata.org/entity/Q130836175",
+      "dblpUrl": "https://dblp.org/db/conf/ccs/ccs2021.html#JiangMZLZWLW021",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "conf/kbse/LiuZMJZWSLL021",
+      "type": "inproceedings",
+      "title": "FirmGuide: Boosting the Capability of Rehosting Embedded Linux Kernels through Model-Guided Kernel Execution",
+      "authors": [
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "0000-0002-5865-6227",
+          "isTarget": true
+        },
+        {
+          "name": "Cen Zhang",
+          "pid": "200/7275",
+          "orcid": "0000-0001-5603-1322",
+          "isTarget": false
+        },
+        {
+          "name": "Lin Ma",
+          "pid": "74/3608-9",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Muhui Jiang",
+          "pid": "203/0794",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Yajin Zhou",
+          "pid": "15/7381",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Lei Wu",
+          "pid": "68/5597-12",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Wenbo Shen",
+          "pid": "18/5040",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Xiapu Luo",
+          "pid": "53/1565",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Yang Liu",
+          "pid": "51/3710-3",
+          "orcid": "0000-0001-7300-9215",
+          "isTarget": false
+        },
+        {
+          "name": "Kui Ren",
+          "pid": "20/6179-1",
+          "orcid": "",
+          "isTarget": false
+        }
+      ],
+      "year": 2021,
+      "month": "",
+      "venue": "ASE",
+      "pages": "792-804",
+      "volume": "",
+      "number": "",
+      "doi": "10.1109/ASE51524.2021.9678653",
+      "url": "https://www.wikidata.org/entity/Q131111025",
+      "dblpUrl": "https://dblp.org/db/conf/kbse/ase2021.html#LiuZMJZWSLL021",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    },
+    {
+      "key": "journals/tifs/ZhuFLLCC21",
+      "type": "article",
+      "title": "One Cycle Attack: Fool Sensor-Based Personal Gait Authentication With Clustering",
+      "authors": [
+        {
+          "name": "Tiantian Zhu",
+          "pid": "153/5745-1",
+          "orcid": "0000-0002-8657-662X",
+          "isTarget": false
+        },
+        {
+          "name": "Lei Fu",
+          "pid": "31/4018",
+          "orcid": "0000-0002-9907-3212",
+          "isTarget": false
+        },
+        {
+          "name": "Qiang Liu",
+          "pid": "61/3234-34",
+          "orcid": "0000-0002-5865-6227",
+          "isTarget": true
+        },
+        {
+          "name": "Zi Lin",
+          "pid": "81/2999",
+          "orcid": "0000-0001-8588-0868",
+          "isTarget": false
+        },
+        {
+          "name": "Yan Chen",
+          "pid": "88/2827-4",
+          "orcid": "",
+          "isTarget": false
+        },
+        {
+          "name": "Tieming Chen",
+          "pid": "66/6179",
+          "orcid": "0000-0003-1667-7924",
+          "isTarget": false
+        }
+      ],
+      "year": 2021,
+      "month": "",
+      "venue": "IEEE Trans. Inf. Forensics Secur.",
+      "pages": "553-568",
+      "volume": "16",
+      "number": "",
+      "doi": "10.1109/TIFS.2020.3016819",
+      "url": "https://doi.org/10.1109/TIFS.2020.3016819",
+      "dblpUrl": "https://dblp.org/db/journals/tifs/tifs16.html#ZhuFLLCC21",
+      "sourceFile": "src/data/tmp/3234-34.xml"
+    }
+  ]
+}

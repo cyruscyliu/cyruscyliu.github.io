@@ -2,18 +2,24 @@
   "name": "cyruscyliu-home",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=9.6.5"
+  },
   "scripts": {
     "dev": "npm run build && astro dev",
-    "build": "node scripts/generate-course-graphs.mjs && node scripts/generate-sitemap.mjs && (node scripts/fetch-tools.mjs || true) && astro build && node scripts/generate-pdfs.mjs",
+    "build": "node scripts/convert-dblp.mjs && node scripts/generate-course-graphs.mjs && node scripts/generate-sitemap.mjs && (node scripts/fetch-tools.mjs || true) && astro build && node scripts/generate-pdfs.mjs",
     "preview": "astro preview",
-    "fetch-dblp": "node scripts/fetch-dblp.mjs"
+    "fetch-dblp": "node scripts/fetch-dblp.mjs",
+    "convert-dblp": "node scripts/convert-dblp.mjs"
   },
   "dependencies": {
-    "astro": "^5.13.5",
+    "astro": "^7.3.3",
     "cytoscape": "3.31.0",
     "cytoscape-dagre": "2.5.0",
     "dagre": "0.8.5",
     "lucide-static": "^1.46.0",
+    "sax": "^1.6.1",
     "three": "^0.186.0",
     "typescript": "^5.7.3"
   },

@@ -29,6 +29,85 @@
           "zh": "Qiang Liu 的头像"
         },
         "cv": "/Qiang_s_CV.pdf",
+        "profile": {
+          "slug": "qiang-liu",
+          "sections": [
+            {
+              "key": "biography",
+              "title": {
+                "en": "Biography",
+                "zh": "个人简介"
+              },
+              "paragraphs": {
+                "en": [
+                  "Qiang Liu is a postdoc at EPFL, working with Prof. Mathias Payer in the HexHive laboratory. He earned his Ph.D. in 2023 from Zhejiang University (ZJU) under the guidance of Prof. Yajin Zhou. His research interest is system security that seeks to establish chain of trust spanning the entire technology stack, from low-level software to user applications, and from individual computers to large-scale distributed and heterogeneous systems, grounded in a deep understanding of hardware and software. His work has been recognized at all the top security conferences: IEEE S&P, Usenix Security, ACM CCS, and ISOC NDSS. He received the Best Paper Awards at USENIX Security'24 and ACM RAID'24. He is also serving on the program committee for IEEE/ACM ASE'25 and USENIX Security'25 and has reviewed for journals including IEEE TIFS, ACM CSUR, and ACM TOSEM."
+                ],
+                "zh": [
+                  "Qiang Liu 是 EPFL 的博士后研究员，在 HexHive 实验室与 Mathias Payer 教授合作。他于 2023 年在浙江大学（ZJU）获得博士学位，导师为 Yajin Zhou 教授。他的研究兴趣是系统安全，致力于建立贯穿整个技术栈的信任链：从底层软件到用户应用，从单台计算机到大规模分布式和异构系统，并以对硬件和软件的深入理解为基础。他的工作获得了各大顶级安全会议的认可，包括 IEEE S&P、USENIX Security、ACM CCS 和 ISOC NDSS。他曾获得 USENIX Security'24 和 ACM RAID'24 最佳论文奖。目前他还担任 IEEE/ACM ASE'25 和 USENIX Security'25 的程序委员会委员，并为 IEEE TIFS、ACM CSUR 和 ACM TOSEM 等期刊审稿。"
+                ]
+              }
+            },
+            {
+              "key": "research-vision",
+              "title": {
+                "en": "Research Vision",
+                "zh": "研究愿景"
+              },
+              "paragraphs": {
+                "en": [
+                  "I propose the OME framework to Observe, Model, and Enforce the trustworthiness of computer systems at runtime. Grounded in dynamic analysis, OME treats trust as a measurable property of execution rather than a static design assumption. I currently apply it to low-level system software, such as the Linux kernel and hypervisors, within a single machine. The same observation, modeling, and enforcement pipeline can scale to higher-level components (e.g., interpreters, browsers, and AI agents) and to distributed and heterogeneous environments (e.g., xPU, remote resources, and network protocols).",
+                  "Beyond dynamic analysis, I aim to take multiple complementary approaches to support the full lifecycle of system trust, such as secure programming languages such as Rust, large-scale static analysis, secure boot and attestation, and minimal recovery systems, from build to deployment, execution, and recovery.",
+                  "Ultimately, my goal is to make computer systems measurably trustworthy, difficult to compromise, and secure to rely on for different classes of stakeholders."
+                ],
+                "zh": [
+                  "我提出 OME 框架，在运行时对计算机系统的可信性进行观察（Observe）、建模（Model）和强制执行（Enforce）。OME 以动态分析为基础，将信任视为执行过程中的可测量属性，而不是静态的设计假设。目前，我主要在单台机器上将其应用于 Linux 内核和虚拟机监控器等底层系统软件。同一套观察、建模和强制执行流程也可以扩展到更高层的组件，例如解释器、浏览器和 AI 智能体，以及分布式和异构环境，例如 xPU、远程资源和网络协议。",
+                  "除了动态分析之外，我还希望采用多种互补方法来支持系统信任的完整生命周期，包括 Rust 等安全编程语言、大规模静态分析、安全启动与远程证明，以及从构建、部署、执行到恢复阶段的最小化恢复系统。",
+                  "最终，我希望让计算机系统的可信性变得可度量，使其更难被攻破，并能够让不同类型的利益相关者安全地依赖。"
+                ]
+              },
+              "subsections": [
+                {
+                  "key": "remarks-on-ai",
+                  "title": {
+                    "en": "Remarks on AI",
+                    "zh": "关于 AI 的思考"
+                  },
+                  "paragraphs": {
+                    "en": [
+                      "Humans remain the central subject, while AI acts as an extension of human capability. Although AI can accelerate many human tasks, humans retain unique strengths such as value judgment, responsibility, critical thinking, and innovation. What AI can do, humans can also do; what AI cannot do, humans can still do.",
+                      "AI does not and cannot turn undecidable problems into decidable ones, and there is no universal automatic method that can determine whether any program satisfies all nontrivial security semantic properties.",
+                      "AI can be understood through four components: data, algorithms, computing power, and agent frameworks. Its effectiveness is constrained by data quality (garbage in, garbage out), algorithmic limits (it appears to reason), computational cost, intention drift, limited memory and sensing (incomplete knowledge of the world, not everything programable), and imperfect verification.",
+                      "AI is still not perfect, and it is still not sufficient in niche domains."
+                    ],
+                    "zh": [
+                      "人类始终是核心主体，而 AI 是人类能力的延伸。虽然 AI 可以加速许多人的工作，但人类仍然拥有独特的优势，例如价值判断、责任意识、批判性思维和创新能力。AI 能做的事情，人类也能做；AI 不能做的事情，人类仍然可以做。",
+                      "AI 不会也不能把不可判定问题变成可判定问题，也不存在一种普适的自动化方法，能够判断任意程序是否满足所有非平凡的安全语义属性。",
+                      "AI 可以从四个组成部分来理解：数据、算法、算力和智能体框架。它的有效性受到数据质量（垃圾进，垃圾出）、算法局限（看起来像是在推理）、计算成本、意图漂移、记忆与感知能力有限（对世界的认识不完整，并非一切都能被编程）以及验证不完善等因素的约束。",
+                      "AI 仍然并不完美，在一些小众或专业领域也仍然不够充分。"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "key": "services",
+              "title": {
+                "en": "Services",
+                "zh": "学术服务"
+              },
+              "items": {
+                "en": [
+                  "Program Committees: IEEE/ACM ASE 2025, USENIX Security 2025",
+                  "Reviewer: ACM TIFS, ACM CSUR, ACM TOSEM"
+                ],
+                "zh": [
+                  "程序委员会：IEEE/ACM ASE 2025、USENIX Security 2025",
+                  "审稿人：ACM TIFS、ACM CSUR、ACM TOSEM"
+                ]
+              }
+            }
+          ]
+        },
         "links": [
           {
             "kind": "scholar",

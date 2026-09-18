@@ -1,22 +1,34 @@
 ---
-import data from '../../../data/publications.json'; import SiteHeader from '../../../components/SiteHeader.astro'; import SiteFooter from '../../../components/SiteFooter.astro'; import SeoHead from '../../../components/SeoHead.astro';
-export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const runtimePath=Astro.url?.pathname??Astro.request?.url??''; const lang=runtimePath.includes('/zh/')?'zh':(((Astro.props??{}).lang??'en')==='zh'?'zh':'en'); const canonical=`https://cyruscyliu.github.io/${lang}/publications/`;
+import config from '../../../data/publications.json';
+import dblp from '../../../data/dblp.json';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import SeoHead from '../../../components/SeoHead.astro';
+import PublicationList from '../../../components/PublicationList.astro';
+
+export function getStaticPaths() {
+  return ['en', 'zh'].map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const lang = Astro.props.lang === 'zh' ? 'zh' : 'en';
 ---
 <!doctype html>
 <html lang={lang}>
 <head>
-<SeoHead lang={lang} path="publications" title={`${data.meta.title[lang]} · 55AA Security Lab`} description={data.meta.description[lang]}/>
+<SeoHead lang={lang} path="publications" title={`${config.meta.title[lang]} · 55AA Security Lab`} description={config.meta.description[lang]}/>
 </head>
 <body>
 <SiteHeader lang={lang} blogHref="publications/"/>
 <main>
-<h1>{data.meta.title[lang]}</h1>
-<p>{lang==='zh'?'论文列表由 DBLP 自动加载。':'Publications are loaded automatically from DBLP.'}</p>
-<p>
-<a href={data.dblp[0].link}>DBLP author profile</a>
-</p>
+<PublicationList lang={lang} publications={dblp.publications} showFilters={true}/>
 </main>
 <SiteFooter lang={lang}/>
 </body>
 </html>
-<style>:global(*){box-sizing:border-box}:global(html){overflow-y:scroll}:global(body){min-height:100vh;display:flex;flex-direction:column;margin:0;background:#fff;color:#000;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}:global(main){flex:1;width:min(960px,calc(100% - 2rem));margin:0 auto;padding:1.5rem 0 2rem}h1{display:none;font-size:1.45rem;margin:0 0 1.2rem}a{color:#06c}main>h1+p{margin-top:0}</style>
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(html) { overflow-y: scroll; }
+  :global(body) { min-height: 100vh; display: flex; flex-direction: column; margin: 0; background: #fff; color: #000; font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  :global(main) { flex: 1; width: min(960px, calc(100% - 2rem)); margin: 0 auto; padding: 1.5rem 0 2rem; }
+  a { color: #06c; }
+</style>

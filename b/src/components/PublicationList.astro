@@ -1,0 +1,115 @@
+---
+const {
+  lang = 'en',
+  publications = [],
+  limit = null,
+  showFilters = false,
+} = Astro.props;
+
+const visiblePublications = limit ? publications.slice(0, limit) : publications;
+const emptyMessage = lang === 'zh' ? '暂无论文。' : 'No publications found.';
+const filteredEmptyMessage = lang === 'zh' ? '没有符合条件的论文。' : 'No publications match the selected filters.';
+const years = [...new Set(visiblePublications.map((publication) => publication.year).filter(Boolean))].sort((a, b) => b - a);
+const authors = [...new Set(visiblePublications.flatMap((publication) => publication.authors.map((author) => author.name)))].sort((a, b) => a.localeCompare(b));
+const venues = [...new Set(visiblePublications.map((publication) => publication.venue).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+---
+
+{showFilters && <div class="publication-filters" data-publication-filters>
+  <label>
+    <span>{lang === 'zh' ? '时间' : 'Year'}</span>
+    <select data-filter="year">
+      <option value="">{lang === 'zh' ? '全部时间' : 'All years'}</option>
+      {years.map((year) => <option value={year}>{year}</option>)}
+    </select>
+  </label>
+  <label>
+    <span>{lang === 'zh' ? '作者' : 'Author'}</span>
+    <select data-filter="author">
+      <option value="">{lang === 'zh' ? '全部作者' : 'All authors'}</option>
+      {authors.map((author) => <option value={author}>{author}</option>)}
+    </select>
+  </label>
+  <label>
+    <span>Venue</span>
+    <select data-filter="venue">
+      <option value="">{lang === 'zh' ? '全部 venue' : 'All venues'}</option>
+      {venues.map((venue) => <option value={venue}>{venue}</option>)}
+    </select>
+  </label>
+</div>}
+
+<div class="publication-list">
+  {visiblePublications.length ? visiblePublications.map((publication) => (
+    <article
+      class="publication"
+      data-publication
+      data-year={publication.year ?? ''}
+      data-authors={publication.authors.map((author) => author.name).join('|')}
+      data-venue={publication.venue}
+    >
+      <p class="publication-title" style="font-size: 1rem; line-height: 1.55;">
+        <a href={publication.dblpUrl || publication.url} target="_blank" rel="noreferrer">{publication.title}</a>
+      </p>
+      <p class="publication-authors" style="font-size: 1rem; line-height: 1.55;">
+        {publication.authors.map((author, index) => (
+          <>
+            {index > 0 && ', '}
+            {author.isTarget ? <strong>{author.name}</strong> : author.name}
+          </>
+        ))}
+      </p>
+      <p class="publication-meta" style="font-size: .9rem; line-height: 1.55; color: #555;">
+        {publication.venue}
+        {publication.year ? ` · ${publication.year}` : ''}
+        {publication.pages ? ` · pp. ${publication.pages}` : ''}
+      </p>
+    </article>
+  )) : <p class="empty">{emptyMessage}</p>}
+  {showFilters && visiblePublications.length ? <p class="empty filter-empty" data-filter-empty hidden>{filteredEmptyMessage}</p> : null}
+</div>
+
+<style>
+  .publication-filters { display: flex; flex-wrap: wrap; gap: .75rem 1rem; margin: 0 0 1.5rem; }
+  .publication-filters label { display: inline-flex; align-items: center; gap: .4rem; }
+  .publication-filters span { color: #555; font-size: .9rem; }
+  .publication-filters select { min-width: 8rem; padding: .2rem .35rem; border: 1px solid #bbb; border-radius: 0; background: #fff; color: #000; font: inherit; }
+  .publication-list { margin: 0; padding: 0; }
+  .publication { margin: 0 0 1.35rem; }
+  .publication-title { margin: 0; font-weight: 600; }
+  .publication p { margin: 0; }
+  .publication-authors { color: #222; }
+  .publication-meta, .empty { color: #555; font-size: .9rem; }
+  a { color: #06c; }
+  @media(max-width:600px) {
+    .publication-filters { display: grid; grid-template-columns: minmax(0, 1fr); }
+    .publication-filters label { justify-content: space-between; }
+    .publication-filters select { flex: 1; min-width: 0; }
+  }
+</style>
+
+{showFilters && <script>
+  document.querySelectorAll('[data-publication-filters]').forEach((filters) => {
+    const container = filters.parentElement;
+    const publications = [...container.querySelectorAll('[data-publication]')];
+    const empty = container.querySelector('[data-filter-empty]');
+    const selects = [...filters.querySelectorAll('select[data-filter]')];
+
+    const update = () => {
+      const values = Object.fromEntries(selects.map((select) => [select.dataset.filter, select.value]));
+      let visibleCount = 0;
+
+      publications.forEach((publication) => {
+        const matchesYear = !values.year || publication.dataset.year === values.year;
+        const matchesAuthor = !values.author || publication.dataset.authors.split('|').includes(values.author);
+        const matchesVenue = !values.venue || publication.dataset.venue === values.venue;
+        const visible = matchesYear && matchesAuthor && matchesVenue;
+        publication.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+
+      if (empty) empty.hidden = visibleCount !== 0;
+    };
+
+    selects.forEach((select) => select.addEventListener('change', update));
+  });
+</script>}

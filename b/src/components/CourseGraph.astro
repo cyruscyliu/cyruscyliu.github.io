@@ -67,6 +67,8 @@ function wrapLabel(text, maxLen) {
 }
 
 function initGraph(container) {
+  if (container.dataset.graphInitialized === 'true' || container.clientWidth === 0) return;
+
   const graphData = JSON.parse(container.dataset.graph);
   const levelFilter = container.dataset.level;
   const codes = new Set(graphData.courses.filter(c => c.level === levelFilter).map(c => c.code));
@@ -191,11 +193,20 @@ function initGraph(container) {
   const bb = cy.elements().boundingBox();
   const h = Math.ceil(bb.h + pad * 2);
   container.style.height = h + 'px';
+  container.dataset.graphInitialized = 'true';
   cy.resize();
   cy.viewport({ zoom: 1, pan: { x: pad - bb.x1, y: pad - bb.y1 } });
 }
 
-document.querySelectorAll('.cy-container').forEach(initGraph);
+const graphContainers = [...document.querySelectorAll('.cy-container')];
+const graphObserver = new ResizeObserver((entries) => {
+  entries.forEach(({ target }) => initGraph(target));
+});
+
+graphContainers.forEach((container) => {
+  graphObserver.observe(container);
+  initGraph(container);
+});
 </script>
 
 <style>
