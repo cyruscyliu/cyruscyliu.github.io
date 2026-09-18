@@ -1,6 +1,15 @@
 ---
-// Redirect to /en/ or /zh/ based on Accept-Language header (SSG fallback: /en/)
-const acceptLang = Astro.request.headers.get('accept-language') ?? '';
-const lang = acceptLang.toLowerCase().includes('zh') ? 'zh' : 'en';
-return Astro.redirect(`/${lang}/`, 302);
 ---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0;url=/en/" />
+    <meta name="robots" content="noindex" />
+    <script is:inline>
+      const language = navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en';
+      window.location.replace(`/${language}/`);
+    </script>
+  </head>
+  <body></body>
+</html>
