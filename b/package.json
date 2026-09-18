@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "npm run build && astro dev",
-    "build": "node scripts/convert-dblp.mjs && node scripts/generate-course-graphs.mjs && node scripts/generate-sitemap.mjs && (node scripts/fetch-tools.mjs || true) && astro build && node scripts/generate-pdfs.mjs",
+    "build": "node scripts/convert-dblp.mjs && node scripts/generate-course-graphs.mjs && node scripts/generate-sitemap.mjs && (node scripts/fetch-tools.mjs || true) && astro build",
     "preview": "astro preview",
     "fetch-dblp": "node scripts/fetch-dblp.mjs",
     "convert-dblp": "node scripts/convert-dblp.mjs"
@@ -22,8 +22,5 @@
     "sax": "^1.6.1",
     "three": "^0.186.0",
     "typescript": "^5.7.3"
-  },
-  "devDependencies": {
-    "playwright": "^1.63.0"
   }
 }

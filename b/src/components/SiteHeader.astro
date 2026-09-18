@@ -1,14 +1,11 @@
 ---
 import homeData from '../data/home.json';
 import languagesIcon from 'lucide-static/icons/languages.svg?url';
-import downloadIcon from 'lucide-static/icons/download.svg?url';
 const { lang: propLang = 'en', blogHref = null, tabActionHref = null, tabActionLabel = null } = Astro.props;
 const lang = Astro.params?.lang === 'zh' ? 'zh' : (Astro.params?.lang === 'en' ? 'en' : propLang);
 const home = `/${lang}/`;
 const language = lang === 'en' ? '中文' : 'English';
 const languageHref = blogHref ? `/${lang === 'en' ? 'zh' : 'en'}/${blogHref}` : `/${lang === 'en' ? 'zh' : 'en'}/`;
-const exportLabel = lang === 'zh' ? '导出本站 PDF' : 'Export site PDF';
-const exportHref = `/55AA-Security-Lab-${lang}.pdf`;
 const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
 ---
 <header class="site-header">
@@ -19,9 +16,6 @@ const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
     <a class="site-name" href={home}><img src="/logo-lockup.svg" width="125" height="40" loading="eager" decoding="sync" alt="55AA Security Lab" /></a>
   </div>
   <div class="header-actions">
-    <a class="header-action" href={exportHref} download={`55AA-Security-Lab-${lang}.pdf`} aria-label={exportLabel} title={exportLabel}>
-      <img src={downloadIcon} width="22" height="22" alt="" loading="eager" decoding="sync" aria-hidden="true" />
-    </a>
     <a class="header-action" href={languageHref} aria-label={language} title={language}>
       <img src={languagesIcon} width="22" height="22" alt="" loading="eager" decoding="sync" aria-hidden="true" />
     </a>
