@@ -9,7 +9,7 @@ const blog = defineCollection({
     date: z.string(),
     language: z.enum(['en', 'zh']),
     slug: z.string(),
-    meta: z.string(),
+    tags: z.array(z.string()).min(1),
     sourceUrl: z.string().url().optional(),
     draft: z.boolean().default(false),
   }),

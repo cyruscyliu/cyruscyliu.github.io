@@ -4,7 +4,8 @@ description: "为服务国家创新驱动发展战略，助力粤港澳大湾区
 date: "2026-09-19"
 language: "zh"
 slug: "gbu-hit-2027-joint-phd-admissions"
-meta: "博士招生"
+tags:
+  - "博士招生"
 sourceUrl: "https://www.gbu.edu.cn/lpbs_details/1442.html"
 draft: false
 ---

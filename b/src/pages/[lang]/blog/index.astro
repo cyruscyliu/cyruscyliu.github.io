@@ -26,7 +26,7 @@ const noBlogText = lang === 'zh' ? '暂无博客。' : 'No blog yet.';
 <h1>{pageTitle}</h1>{posts.length ? (posts.map((post) =>
 <article>
 <p class="meta">
-<time datetime={post.data.date}>{post.data.date}</time> · {post.data.meta}</p>
+<time datetime={post.data.date}>{post.data.date}</time>{post.data.tags.map((tag) => <> <span class="tag">{tag}</span></>)}</p>
 <h2>
 <a href={`/${lang}/blog/${post.data.slug}/`}>{post.data.title}</a>
 </h2>
@@ -35,4 +35,4 @@ const noBlogText = lang === 'zh' ? '暂无博客。' : 'No blog yet.';
 <SiteFooter lang={lang}/>
 </body>
 </html>
-<style>:global(*){box-sizing:border-box}:global(html){overflow-y:scroll}:global(body){min-height:100vh;display:flex;flex-direction:column;margin:0;background:#fff;color:#000;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}:global(main){flex:1;width:min(960px,calc(100% - 2rem));margin:0 auto;padding:1.5rem 0 2rem}h1{display:none;font-size:1.45rem;margin:0 0 1.2rem}h2{font-size:1.05rem;margin:0 0 .25rem}h2 a{color:#06c}.meta{color:#777;font-size:.9rem}article{margin:0 0 1.35rem}p{margin:.25rem 0 .65rem}main>h1+p{margin-top:0}</style>
+<style>:global(*){box-sizing:border-box}:global(html){overflow-y:scroll}:global(body){min-height:100vh;display:flex;flex-direction:column;margin:0;background:#fff;color:#000;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}:global(main){flex:1;width:min(960px,calc(100% - 2rem));margin:0 auto;padding:1.5rem 0 2rem}h1{display:none;font-size:1.45rem;margin:0 0 1.2rem}h2{font-size:1.05rem;margin:0 0 .25rem}h2 a{color:#06c}.meta{color:#777;font-size:.9rem}.tag{display:inline-block;padding:.05rem .35rem;border:1px solid #bbb;color:#555;font-size:.8rem}article{margin:0 0 1.35rem}p{margin:.25rem 0 .65rem}main>h1+p{margin-top:0}</style>

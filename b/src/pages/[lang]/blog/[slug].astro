@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const { title, description, date, language: lang, slug, meta } = post.data;
+const { title, description, date, language: lang, slug, tags } = post.data;
 const canonical = `https://cyruscyliu.github.io/${lang}/blog/${slug}/`;
 ---
 <!doctype html>
@@ -29,7 +29,7 @@ const canonical = `https://cyruscyliu.github.io/${lang}/blog/${slug}/`;
     <main>
       <p><a href={`/${lang}/blog/`}>{lang === 'zh' ? '返回博客' : 'Back to blog'}</a></p>
       <article>
-        <p class="meta"><time datetime={date}>{date}</time> · {meta}</p>
+        <p class="meta"><time datetime={date}>{date}</time>{tags.map((tag) => <> <span class="tag">{tag}</span></>)}</p>
         <h1>{title}</h1>
         <div class="article-body"><Content /></div>
       </article>
@@ -46,6 +46,7 @@ const canonical = `https://cyruscyliu.github.io/${lang}/blog/${slug}/`;
   a { color: #06c; }
   h1 { font-size: 1.45rem; font-weight: 600; }
   .meta { color: #777; font-size: .9rem; }
+  .tag { display: inline-block; padding: .05rem .35rem; border: 1px solid #bbb; color: #555; font-size: .8rem; }
   .article-body :global(h2) { margin: 1.5rem 0 .5rem; font-size: 1.2rem; }
   .article-body :global(h3) { margin: 1.25rem 0 .5rem; font-size: 1rem; }
   .article-body :global(p) { margin: .5rem 0 1rem; }
