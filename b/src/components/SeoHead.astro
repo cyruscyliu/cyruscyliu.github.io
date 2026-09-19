@@ -6,6 +6,7 @@ interface Props {
   description: string;
   type?: 'website' | 'article';
   image?: string;
+  alternates?: boolean;
 }
 
 const {
@@ -14,7 +15,8 @@ const {
   title,
   description,
   type = 'website',
-  image = '/logo-lockup.png'
+  image = '/logo-lockup.png',
+  alternates = true
 } = Astro.props;
 const site = Astro.site ?? new URL('https://cyruscyliu.github.io');
 const normalizedPath = path ? `${path.replace(/^\/+|\/+$/g, '')}/` : '';
@@ -31,14 +33,14 @@ const imageAlt = lang === 'zh' ? '55AA 安全实验室标志' : '55AA Security L
 <meta name="author" content="55AA Security Lab" />
 <link rel="preload" as="image" href="/logo-lockup.svg" type="image/svg+xml" />
 <link rel="canonical" href={canonical} />
-<link rel="alternate" hreflang="en" href={localizedUrl('en')} />
-<link rel="alternate" hreflang="zh" href={localizedUrl('zh')} />
-<link rel="alternate" hreflang="x-default" href={localizedUrl('en')} />
+{alternates && <link rel="alternate" hreflang="en" href={localizedUrl('en')} />}
+{alternates && <link rel="alternate" hreflang="zh" href={localizedUrl('zh')} />}
+{alternates && <link rel="alternate" hreflang="x-default" href={localizedUrl('en')} />}
 <link rel="icon" href="/logo.png" type="image/png" />
 <meta property="og:type" content={type} />
 <meta property="og:site_name" content="55AA Security Lab" />
 <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : 'en_US'} />
-<meta property="og:locale:alternate" content={lang === 'zh' ? 'en_US' : 'zh_CN'} />
+{alternates && <meta property="og:locale:alternate" content={lang === 'zh' ? 'en_US' : 'zh_CN'} />}
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />

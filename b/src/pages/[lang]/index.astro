@@ -7,8 +7,8 @@ import projects from '../../data/projects.json';
 import tools from '../../data/tools.json';
 import toolsCache from '../../data/tools-cache.json';
 import teaching from '../../data/courses.json';
-import blog from '../../data/blog.json';
 import news from '../../data/news.json';
+import { getBlogPosts } from '../../lib/blog';
 import Preview from '../../components/Preview.astro';
 import SocialIcon from '../../components/SocialIcon.astro';
 import CourseGraph from '../../components/CourseGraph.astro';
@@ -33,6 +33,7 @@ const seoTitle = lang === 'zh' ? '55AA 安全实验室｜系统安全研究' : '
 const seoDescription = lang === 'zh' ? '55AA 安全实验室开展系统安全、软件安全、程序分析、人工智能智能体和安全工程研究。' : '55AA Security Lab conducts research in system security, software security, program analysis, AI agents, and security engineering.';
 const today = new Date().toISOString().slice(0, 10);
 const publishedNews = news.entries.filter((entry) => entry.date <= today);
+const blogPosts = (await getBlogPosts()).filter((post) => post.data.language === lang);
 const hiringProjects = projects.projects.filter((project) => project.tag?.en?.includes('Hiring for'));
 const publishedCourses = teaching.courses.filter((course) => !['Under development', 'Placeholder'].includes(course.status?.en));
 const noPublishedCoursesText = lang === 'zh' ? '暂无已发布课程。' : 'No published courses yet.';
@@ -66,7 +67,7 @@ const displayTools = tools.tools.map((tool) => {
     <main>
       <section class="panel active" data-panel="home">
         <h2>News</h2>
-        {publishedNews.length ? publishedNews.slice(0, 3).map((entry) => <article class="news-item"><time class="meta" datetime={entry.date}>{entry.date}</time><h2>{text(entry.title)}</h2></article>) : <p class="meta">{lang === 'zh' ? '暂无新闻。' : 'No news yet.'}</p>}
+        {publishedNews.length ? publishedNews.slice(0, 3).map((entry) => <article class="news-item"><time class="meta" datetime={entry.date}>{entry.date}</time><h2>{entry.href ? <a href={entry.href}>{text(entry.title)}</a> : text(entry.title)}</h2></article>) : <p class="meta">{lang === 'zh' ? '暂无新闻。' : 'No news yet.'}</p>}
         <Preview title={text(teaching.meta.title)} keyName="courses" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{publishedCourses.length ? publishedCourses.slice(0, 3).map((course) => <article><div class="course-heading"><h2>{text(course.name)}</h2><span class="course-level">{text(course.level)}</span><span class="course-level">{course.code}</span><span class="course-level">{text(course.status)}</span><span class="course-level">{lang === 'zh' ? '开班时间：待定' : 'Course start: TBD'}</span></div></article>) : <p class="meta">{noPublishedCoursesText}</p>}</Preview>
         <Preview title={text(projects.meta.title)} keyName="projects" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{hiringProjects.slice(0, 3).map((project) => <article><div class="item-heading"><h2><a href={text(project.href)}>{text(project.title)}</a></h2><span class="item-tag">{text(project.tag)}</span></div><p>{text(project.introduction) || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</Preview>
         <Preview title={text(tools.meta.title)} keyName="tools" readMore={lang === 'zh' ? '查看更多' : 'Read more'}><div>{displayTools.slice(0, 3).map((tool) => <article><p class="tool-title"><a href={`https://github.com/${tool.repo}`} target="_blank" rel="noreferrer">{tool.fallbackTitle}</a> <span class="item-tag">GitHub</span><span class="item-tag">{lang === 'zh' ? '适用入口：GitHub' : 'Access: GitHub'}</span></p><p>{tool.fallbackDescription || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</div></Preview>
@@ -85,7 +86,7 @@ const displayTools = tools.tools.map((tool) => {
       <section class="panel" data-panel="tools"><div>{displayTools.map((tool) => <article><p class="tool-title"><a href={`https://github.com/${tool.repo}`} target="_blank" rel="noreferrer">{tool.fallbackTitle}</a> <span class="item-tag">GitHub</span></p><p>{tool.fallbackDescription || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</div></section>
       <section class="panel" data-panel="courses">{publishedCourses.length ? <><CourseGraph lang={lang} includeDraft={false} />{[...publishedCourses].sort((a, b) => (a.level.en === 'Undergraduate' ? 0 : 1) - (b.level.en === 'Undergraduate' ? 0 : 1)).map((course) => <article><div class="course-heading"><h2>{text(course.name)}</h2><span class="course-level">{text(course.level)}</span><span class="course-level">{course.code}</span><span class="course-level">{text(course.status)}</span></div></article>)}</> : <p class="meta">{noPublishedCoursesText}</p>}</section>
       <section class="panel" data-panel="consultation"><p>{text(consultation.body)}</p>{consultation.services.map((service) => <article><div class="item-heading"><h2>{text(service.title)}</h2><span class="item-tag">{text(service.duration)}</span></div></article>)}</section>
-      <section class="panel" data-panel="blog">{blog.entries.length ? blog.entries.map((entry, index) => <article><p class="meta">{entry.date} · {text(entry.meta)}</p><h2><a href={`/${lang}/blog/${entry.date}-${index + 1}/`}>{text(entry.title)}</a></h2><p>{text(entry.body)}</p></article>) : <p class="meta">{lang === 'zh' ? '暂无博客。' : 'No blog yet.'}</p>}</section>
+      <section class="panel" data-panel="blog">{blogPosts.length ? blogPosts.map((post) => <article><p class="meta">{post.data.date} · {post.data.meta}</p><h2><a href={`/${lang}/blog/${post.data.slug}/`}>{post.data.title}</a></h2><p>{post.data.description}</p></article>) : <p class="meta">{lang === 'zh' ? '暂无博客。' : 'No blog yet.'}</p>}</section>
       <section class="panel" data-panel="sponsorship"><p>{text(sponsorship.body)}</p><h2>{lang === 'zh' ? '赞助者列表' : 'Sponsors'}</h2>{sponsorship.sponsors.length ? sponsorship.sponsors.map((sponsor) => <p>{sponsor}</p>) : <p class="meta">{lang === 'zh' ? '暂无赞助者。' : 'No sponsors yet.'}</p>}</section>
     </main>
     <SiteFooter lang={lang} />

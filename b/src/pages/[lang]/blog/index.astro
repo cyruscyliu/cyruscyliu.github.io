@@ -1,23 +1,36 @@
 ---
-import blog from '../../../data/blog.json'; import SiteHeader from '../../../components/SiteHeader.astro'; import SiteFooter from '../../../components/SiteFooter.astro'; import SeoHead from '../../../components/SeoHead.astro';
-export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const runtimePath=Astro.url?.pathname??Astro.request?.url??''; const lang=runtimePath.includes('/zh/')?'zh':(((Astro.props??{}).lang??'en')==='zh'?'zh':'en'); const noBlogText=lang==='zh'?'暂无博客。':'No blog yet.';
+import { getBlogPosts } from '../../../lib/blog';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import SeoHead from '../../../components/SeoHead.astro';
+
+export function getStaticPaths() {
+  return ['en', 'zh'].map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const runtimePath = Astro.url?.pathname ?? Astro.request?.url ?? '';
+const lang = runtimePath.includes('/zh/') ? 'zh' : (((Astro.props ?? {}).lang ?? 'en') === 'zh' ? 'zh' : 'en');
+const posts = (await getBlogPosts()).filter((post) => post.data.language === lang);
+const pageTitle = lang === 'zh' ? '博客' : 'Blog';
+const pageDescription = lang === 'zh' ? '55AA Security Lab 博客与笔记' : 'Blog and notes from 55AA Security Lab';
+const noBlogText = lang === 'zh' ? '暂无博客。' : 'No blog yet.';
 ---
 <!doctype html>
 <html lang={lang}>
 <head>
-<SeoHead lang={lang} path="blog" title={`${blog.meta.title[lang]} · 55AA Security Lab`} description={blog.meta.description[lang]}/>
+<SeoHead lang={lang} path="blog" title={`${pageTitle} · 55AA Security Lab`} description={pageDescription}/>
 </head>
 <body>
 <SiteHeader lang={lang} blogHref="blog/"/>
 <main>
-<h1>{blog.meta.title[lang]}</h1>{blog.entries.length ? (blog.entries.map((entry,index)=>
+<h1>{pageTitle}</h1>{posts.length ? (posts.map((post) =>
 <article>
 <p class="meta">
-<time datetime={entry.date}>{entry.date}</time> · {entry.meta[lang]}</p>
+<time datetime={post.data.date}>{post.data.date}</time> · {post.data.meta}</p>
 <h2>
-<a href={`/${lang}/blog/${entry.date}-${index+1}/`}>{entry.title[lang]}</a>
+<a href={`/${lang}/blog/${post.data.slug}/`}>{post.data.title}</a>
 </h2>
-<p>{entry.body[lang]}</p>
+<p>{post.data.description}</p>
 </article>)) : <p class="meta">{noBlogText}</p>}</main>
 <SiteFooter lang={lang}/>
 </body>

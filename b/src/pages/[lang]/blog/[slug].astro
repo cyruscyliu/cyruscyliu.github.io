@@ -1,32 +1,37 @@
 ---
-import blog from '../../../data/blog.json';
+import { render } from 'astro:content';
+import { getBlogPosts } from '../../../lib/blog';
 import SiteHeader from '../../../components/SiteHeader.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import SeoHead from '../../../components/SeoHead.astro';
 
-export function getStaticPaths() {
-  return ['en', 'zh'].flatMap((lang) => blog.entries.map((entry, index) => ({ params: { lang, slug: `${entry.date}-${index + 1}` }, props: { entry, lang } })));
+export async function getStaticPaths() {
+  const posts = await getBlogPosts();
+  return posts.map((post) => ({
+    params: { lang: post.data.language, slug: post.data.slug },
+    props: { post },
+  }));
 }
 
-const { entry, lang } = Astro.props;
-const title = entry.title[lang];
-const description = entry.body[lang];
-const canonical = `https://cyruscyliu.github.io/${lang}/blog/${entry.date}-${blog.entries.indexOf(entry) + 1}/`;
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, description, date, language: lang, slug, meta } = post.data;
+const canonical = `https://cyruscyliu.github.io/${lang}/blog/${slug}/`;
 ---
 <!doctype html>
 <html lang={lang}>
   <head>
-    <SeoHead lang={lang} path={`blog/${entry.date}-${blog.entries.indexOf(entry) + 1}`} title={`${title} · 55AA Security Lab`} description={description} type="article" />
-    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: title, description, datePublished: entry.date, author: { '@type': 'Organization', name: '55AA Security Lab' }, publisher: { '@type': 'Organization', name: '55AA Security Lab' }, mainEntityOfPage: canonical })} />
+    <SeoHead lang={lang} path={`blog/${slug}`} title={`${title} · 55AA Security Lab`} description={description} type="article" alternates={false} />
+    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: title, description, datePublished: date, author: { '@type': 'Organization', name: '55AA Security Lab' }, publisher: { '@type': 'Organization', name: '55AA Security Lab' }, mainEntityOfPage: canonical })} />
   </head>
   <body>
-    <SiteHeader lang={lang} blogHref={`blog/${entry.date}-${blog.entries.indexOf(entry) + 1}/`} />
+    <SiteHeader lang={lang} blogHref="blog/" />
     <main>
-      <p><a href={`/${lang}/#blog`}>{lang === 'zh' ? '返回博客' : 'Back to blog'}</a></p>
+      <p><a href={`/${lang}/blog/`}>{lang === 'zh' ? '返回博客' : 'Back to blog'}</a></p>
       <article>
-        <p class="meta"><time datetime={entry.date}>{entry.date}</time> · {entry.meta[lang]}</p>
+        <p class="meta"><time datetime={date}>{date}</time> · {meta}</p>
         <h1>{title}</h1>
-        <p>{description}</p>
+        <div class="article-body"><Content /></div>
       </article>
     </main>
     <SiteFooter lang={lang} />
@@ -41,4 +46,13 @@ const canonical = `https://cyruscyliu.github.io/${lang}/blog/${entry.date}-${blo
   a { color: #06c; }
   h1 { font-size: 1.45rem; font-weight: 600; }
   .meta { color: #777; font-size: .9rem; }
+  .article-body :global(h2) { margin: 1.5rem 0 .5rem; font-size: 1.2rem; }
+  .article-body :global(h3) { margin: 1.25rem 0 .5rem; font-size: 1rem; }
+  .article-body :global(p) { margin: .5rem 0 1rem; }
+  .article-body :global(a) { color: #06c; }
+  .article-body :global(strong) { font-weight: 700; }
+  .article-body :global(blockquote) { margin: 1rem 0; padding: .75rem 1rem; border-left: 4px solid #06c; background: #f5f8ff; }
+  .article-body :global(blockquote p) { margin: .35rem 0; }
+  .article-body :global(table) { width: 100%; border-collapse: collapse; }
+  .article-body :global(th), .article-body :global(td) { border: 1px solid #bbb; padding: .4rem .5rem; text-align: left; }
 </style>

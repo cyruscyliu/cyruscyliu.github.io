@@ -14,9 +14,9 @@ const today = new Date().toISOString().slice(0, 10); const publishedNews = news.
 <h1>{lang==='zh'?'新闻':'News'}</h1>{publishedNews.length ? publishedNews.map(entry=>
 <article>
 <time datetime={entry.date}>{entry.date}</time>
-<p>{text(entry.title)}</p>
+<p>{entry.href ? <a href={entry.href}>{text(entry.title)}</a> : text(entry.title)}</p>
 </article>) : <p class="empty">{lang==='zh'?'暂无新闻。':'No news yet.'}</p>}</main>
 <SiteFooter lang={lang}/>
 </body>
 </html>
-<style>:global(*){box-sizing:border-box}:global(html){overflow-y:scroll}:global(body){min-height:100vh;display:flex;flex-direction:column;margin:0;background:#fff;color:#000;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}:global(main){flex:1;width:min(960px,calc(100% - 2rem));margin:0 auto;padding:1.5rem 0 2rem}h1{display:none}article{margin:0 0 .75rem}time{color:#777;font-size:.9rem}p{margin:.1rem 0 0}</style>
+<style>:global(*){box-sizing:border-box}:global(html){overflow-y:scroll}:global(body){min-height:100vh;display:flex;flex-direction:column;margin:0;background:#fff;color:#000;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}:global(main){flex:1;width:min(960px,calc(100% - 2rem));margin:0 auto;padding:1.5rem 0 2rem}h1{display:none}article{margin:0 0 .75rem}time{color:#777;font-size:.9rem}p{margin:.1rem 0 0}a{color:#06c}</style>

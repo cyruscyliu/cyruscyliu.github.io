@@ -19,8 +19,8 @@
       "title": { "en": "Cybersecurity LLMs, AI agents, and benchmarks", "zh": "网安大模型、AI 智能体与基准" },
       "href": { "en": "/library/research-methods/", "zh": "/zh/library/research-methods/" },
       "body": {
-        "en": "Build cyber models, study AI agents that operate on complex systems, and develop benchmarks for measuring their capabilities and limitations.",
-        "zh": "构建网络空间模型，研究运行于复杂系统之上的 AI 智能体，并建立衡量其能力与局限的基准。"
+        "en": "Facilitate cybersecurity LLMs, study AI agents that operate on complex systems, and develop benchmarks for measuring their capabilities and limitations.",
+        "zh": "促进网安大模型发展，研究运行于复杂系统之上的 AI 智能体，并建立衡量其能力与局限的基准。"
       }
     },
     {
@@ -28,7 +28,7 @@
       "href": { "en": "/library/research-methods/", "zh": "/zh/library/research-methods/" },
       "body": {
         "en": "Study how scientific knowledge is produced, evaluated, organized, and made more reproducible and useful.",
-        "zh": "研究科学知识如何产生、评估、组织，并变得更加可复现和有用。"
+        "zh": "研究网安知识如何产生、评估、组织，并变得更加可复现和有用。"
       }
     }
   ]
