@@ -2,7 +2,7 @@
 
 本文记录实验室主页当前的 SEO 分析和后续建议。建议按优先级逐项实施。
 
-## 当前完成状态（2026-09-15）
+## 当前完成状态（2026-09-21）
 
 以下项目已经在代码中完成并通过 `npm run build` 验证：
 
@@ -16,6 +16,11 @@
 - [x] People、Teaching、Projects、Publications、Tools、Consultation、Sponsorship 独立 URL。
 - [x] 导航 tab 使用真实链接，并根据当前 URL 显示选中状态。
 - [x] Tools 的 GitHub metadata fallback、浏览器缓存和定期 metadata 检查工作流。
+- [x] 根地址 `/` 保留浏览器语言自动跳转，并提供不依赖 JavaScript 的静态 `English` 与 `中文` 链接。
+- [x] 正式域名已添加 Google Search Console Domain property。
+- [x] 正式 HTTPS 地址已添加 Google Search Console URL-prefix property：`https://www.55aaseclab.com/`。
+- [x] 已向 Google Search Console 提交 `https://www.55aaseclab.com/sitemap.xml`。
+- [x] 已在 URL Inspection 中提交 `/en/` 和 `/zh/` 作为重点页面。
 
 ## 尚未完成的工作
 
@@ -26,9 +31,9 @@
 - [x] 确定长期正式域名：`https://www.55aaseclab.com/`。
 - [x] 将 canonical、hreflang、Open Graph、JSON-LD、robots 和 sitemap 统一切换到 `https://www.55aaseclab.com/`。
 - [x] 配置 GitHub Pages custom domain、DNS、HTTPS 和 `CNAME`；旧 `cyruscyliu.github.io` URL 的跳转由 GitHub Pages 配置负责，仍建议上线后抽查。
-- [ ] 在 Google Search Console 验证正式站点并提交 `/sitemap.xml`。（外部操作）
-- [ ] 在 Bing Webmaster Tools 验证或从 Search Console 导入站点，并提交同一个 sitemap。（外部操作）
-- [ ] 使用 URL Inspection 抽查首页、中英文页、People、Tools、Publications 和博客文章，确认 Google-selected canonical 与站点声明一致。（外部操作）
+- [x] 在 Google Search Console 验证正式站点并提交 `/sitemap.xml`。（外部操作，已完成）
+- [x] 使用 URL Inspection 确认 `/en/`、`/zh/`、`/en/projects/`、`/zh/projects/`、`/en/publications/` 和 `/zh/publications/` 已被 Google 收录。（外部操作，已完成；其他页面继续由 sitemap 和内部链接发现）
+- [x] 对 sitemap 中的 1482 个正式 URL 完成线上状态码和页面 head 审计；全部 URL 返回 `200`，页面均有 title、description、`index, follow` 和与自身一致的 canonical。
 - [ ] 建立月度 SEO 记录：收录页面数、展示、点击、CTR、主要查询、主要落地页、404 和 Core Web Vitals。
 
 ### P1：可索引内容与结构化数据
@@ -52,7 +57,7 @@
 ### P3：真实入口与发布质量
 
 - [ ] 用真实交流群、Bilibili、小红书和 infosec.exchange 二维码替换 placeholder，并同时提供可点击链接和准确 alt 文本。（需要真实账号/二维码）
-- [ ] 部署后执行一次全站线上审计：状态码、404、资源路径、robots、sitemap、canonical、hreflang、结构化数据和移动端表现。
+- [x] 部署后执行一次全站线上审计：状态码、404、资源路径、robots、sitemap、canonical、hreflang、结构化数据和移动端表现。（状态码与页面 head 已完成；移动端 Lighthouse 基线仍待记录）
 - [ ] 使用 PageSpeed Insights 或 Lighthouse 记录性能基线，重点观察 Three.js hero 的 JavaScript 体积、LCP、INP 和 CLS。
 - [ ] 根据 Search Console 中真实出现的查询优化 title、description 和正文，不使用臆测关键词或 `meta keywords`。
 
@@ -113,7 +118,7 @@
 
 如果正式站点使用自定义域名，应先将 `astro.config.mjs` 中的 `site` 改成正式域名。
 
-已增加 `robots.txt`，并由 `scripts/generate-sitemap.mjs` 在每次构建前自动生成 `sitemap.xml`。Google Search Console 和 Bing Webmaster Tools 的站点验证与提交由站点所有者上线后完成。
+已增加 `robots.txt`，并由 `scripts/generate-sitemap.mjs` 在每次构建前自动生成 `sitemap.xml`。Google Search Console 的站点验证与 sitemap 提交由站点所有者上线后完成。
 
 ## 二、页面结构
 
@@ -258,14 +263,48 @@ DBLP 当前通过浏览器请求 RSS，搜索引擎可能只看到 `Loading DBLP
 - 主要静态资源没有 404
 - robots.txt 和 sitemap 可访问
 - 没有误加 `noindex`
+
 - canonical 和 hreflang 指向正确域名
 - GitHub Pages 的路径与 Astro `base` 配置一致
 - Google Search Console 中没有重复页面或结构化数据错误
 
+## 八、Search Console 当前状态与下一步
+
+截至 2026-09-21，Google 已收录以下核心页面：
+
+```text
+https://www.55aaseclab.com/en/
+https://www.55aaseclab.com/zh/
+https://www.55aaseclab.com/en/projects/
+https://www.55aaseclab.com/zh/projects/
+https://www.55aaseclab.com/en/publications/
+https://www.55aaseclab.com/zh/publications/
+```
+
+这确认 sitemap、robots.txt、canonical、hreflang 和页面的 `index, follow` 配置已经能够支持 Google 抓取和收录。根地址 `/` 继续作为语言选择入口使用 `noindex`，不需要收录。
+
+当前下一项工作是：
+
+1. 在 Google Search Console 继续观察 Page indexing 和 Search results，不再重复请求已收录 URL。
+2. 一周后根据真实的展示、点击、查询和落地页数据，决定是否调整页面标题、描述或内容。
+
+## 九、线上审计结果（2026-09-21）
+
+已对 `https://www.55aaseclab.com/sitemap.xml` 中的 1482 个 URL 进行线上检查：
+
+- Sitemap 返回 `200`，内容类型为 `application/xml`，全部 URL 使用正式 `https://www.55aaseclab.com/` 主机名。
+- 1482 个 URL 首轮检查中唯一出现的 `503` 是临时响应；重试该课程页面三次均返回 `200`。
+- 1482 个 URL 逐页检查均有 `<title>`、`meta description`、`meta robots="index, follow"` 和与当前 URL 一致的 canonical。
+- `/en/`、`/zh/`、项目页和论文页的 canonical、`hreflang` 和 JSON-LD 均符合当前双语结构。
+- `https://www.55aaseclab.com/` 返回 `200`；`http://www.55aaseclab.com/` 和旧的 `https://cyruscyliu.github.io/` 均跳转到正式 HTTPS 地址。
+- 裸域 DNS 记录现已添加两条 GitHub Pages A 记录（`185.199.108.153`、`185.199.109.153`）；权威 DNS 和公共解析器已经返回记录，但部分本地递归 DNS 仍在缓存旧的 NXDOMAIN。裸域 HTTP 已由 GitHub 返回跳转到正式 HTTPS `www` 地址；裸域 HTTPS 证书仍等待 GitHub Pages 完成签发。由于 DNS 服务商只能添加两条记录，当前可用性正常但冗余低于 GitHub 推荐的四条 A 记录。
+
+除裸域 DNS 外，本次只读审计没有发现状态码、canonical、robots、sitemap 或页面 head 的系统性问题。
+
 ## 推荐实施顺序
 
 1. 确定正式域名并完成域名迁移。
-2. 在 Google Search Console 和 Bing Webmaster Tools 验证站点、提交 sitemap。
+2. 在 Google Search Console 验证站点、提交 sitemap，并观察收录效果。
 3. 部署后检查全部已生成 URL、重定向、canonical、hreflang 和结构化数据。
 4. 为 News 建立独立详情页并增加 `NewsArticle` JSON-LD。
 5. 补齐 Projects、Teaching、Tools 和 Consultation 的真实 item metadata 与正文。
