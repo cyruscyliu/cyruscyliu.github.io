@@ -1,0 +1,60 @@
+---
+import data from '../../../data/projects.json';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import SeoHead from '../../../components/SeoHead.astro';
+
+export function getStaticPaths() {
+  return ['en', 'zh'].flatMap((lang) =>
+    data.projects
+      .filter((project) => project.id === 'aero-space-security-survey')
+      .map((project) => ({
+        params: { lang, slug: 'aero-space-security' },
+        props: { lang, project }
+      }))
+  );
+}
+
+const lang = Astro.props.lang === 'zh' ? 'zh' : 'en';
+const project = Astro.props.project;
+const text = (value) => typeof value === 'string' ? value : value?.[lang] ?? value?.en ?? '';
+const title = text(project.title);
+const description = text(project.introduction);
+const references = project.references ?? [];
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <SeoHead lang={lang} path="projects/aero-space-security" title={`${title} · 55AA Security Lab`} description={description}/>
+</head>
+<body>
+<SiteHeader lang={lang} blogHref="projects/"/>
+<main>
+  <p><a href={`/${lang}/projects/`}>{lang === 'zh' ? '返回项目列表' : 'Back to projects'}</a></p>
+  <article>
+    <p class="meta">{text(project.tag)}</p>
+    <h1>{title}</h1>
+    <p class="lead">{description}</p>
+    <h2>{lang === 'zh' ? '参考资料' : 'References'}</h2>
+    <ol>
+      {references.map((reference) => <li><a href={reference.url} target="_blank" rel="noreferrer">{text(reference.title)}</a></li>)}
+    </ol>
+  </article>
+</main>
+<SiteFooter lang={lang}/>
+</body>
+</html>
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(html) { overflow-y: scroll; }
+  :global(body) { min-height: 100vh; display: flex; flex-direction: column; margin: 0; background: #fff; color: #000; font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  :global(main) { flex: 1; width: min(960px, calc(100% - 2rem)); margin: 0 auto; padding: 1.5rem 0 2rem; }
+  a { color: #06c; }
+  article { max-width: 72rem; }
+  h1 { margin: .35rem 0 .8rem; font-size: 1.5rem; font-weight: 600; }
+  h2 { margin: 1.7rem 0 .55rem; font-size: 1.15rem; font-weight: 600; }
+  .meta { margin: 1.2rem 0 .35rem; color: #777; font-size: .9rem; }
+  .lead { max-width: 68rem; margin: 0; }
+  ol { margin: 0; padding-left: 1.35rem; }
+  li { margin: 0 0 .45rem; }
+</style>

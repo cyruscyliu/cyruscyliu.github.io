@@ -13,7 +13,7 @@ export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},pr
 <h1>{text(data.meta.title)}</h1>{data.projects.map(p=>
 <article>
 <p class="title">
-<a href={text(p.href)}>{text(p.title)}</a> <span>{text(p.tag)}</span>
+<a href={p.id === 'aero-space-security-survey' ? `/${lang}/projects/aero-space-security/` : text(p.href)}>{text(p.title)}</a> <span>{text(p.tag)}</span>
 </p>
 <p>{text(p.introduction) || (lang === 'zh' ? '待定' : 'TBD')}</p>
 </article>)}</main>
