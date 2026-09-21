@@ -57,7 +57,7 @@
 ### P3：真实入口与发布质量
 
 - [ ] 用真实交流群、Bilibili、小红书和 infosec.exchange 二维码替换 placeholder，并同时提供可点击链接和准确 alt 文本。（需要真实账号/二维码）
-- [x] 部署后执行一次全站线上审计：状态码、404、资源路径、robots、sitemap、canonical、hreflang、结构化数据和移动端表现。（状态码与页面 head 已完成；移动端 Lighthouse 基线仍待记录）
+- [x] 部署后执行一次全站线上审计：状态码、404、资源路径、robots、sitemap、canonical、hreflang、结构化数据和移动端表现。（移动端 Lighthouse 基线已记录）
 - [ ] 使用 PageSpeed Insights 或 Lighthouse 记录性能基线，重点观察 Three.js hero 的 JavaScript 体积、LCP、INP 和 CLS。
 - [ ] 根据 Search Console 中真实出现的查询优化 title、description 和正文，不使用臆测关键词或 `meta keywords`。
 
@@ -298,6 +298,7 @@ https://www.55aaseclab.com/zh/publications/
 - `/en/`、`/zh/`、项目页和论文页的 canonical、`hreflang` 和 JSON-LD 均符合当前双语结构。
 - `https://www.55aaseclab.com/` 返回 `200`；`http://www.55aaseclab.com/` 和旧的 `https://cyruscyliu.github.io/` 均跳转到正式 HTTPS 地址。
 - 裸域 DNS 记录现已添加两条 GitHub Pages A 记录（`185.199.108.153`、`185.199.109.153`）；权威 DNS 和公共解析器已经返回记录，但部分本地递归 DNS 仍在缓存旧的 NXDOMAIN。裸域 HTTP 已由 GitHub 返回跳转到正式 HTTPS `www` 地址；裸域 HTTPS 证书仍等待 GitHub Pages 完成签发。由于 DNS 服务商只能添加两条记录，当前可用性正常但冗余低于 GitHub 推荐的四条 A 记录。
+- 移动端 Lighthouse（`/en/`，2026-09-21）基线为：Performance 96、Accessibility 95、SEO 100；FCP 0.9 s、LCP 1.8 s、TBT 140 ms、CLS 0。此前发现的 `#777` 灰色标签对比度问题已改为 `#666`，重新测试的 color-contrast 审计通过。
 
 除裸域 DNS 外，本次只读审计没有发现状态码、canonical、robots、sitemap 或页面 head 的系统性问题。
 
