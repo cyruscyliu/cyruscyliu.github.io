@@ -23,9 +23,9 @@
 
 ### P0：正式发布与效果监测
 
-- [ ] 确定长期正式域名。首选向学校申请 `55aa.gbu.edu.cn`；若暂时无法申请，再选择实验室独立域名。域名确定前不要在多个临时域名之间反复迁移。
-- [ ] 将站点 URL 集中为单一配置来源。目前 Astro 页面优先使用 `Astro.site`，但 sitemap 生成脚本和部分 JSON-LD 仍含 `https://cyruscyliu.github.io`。正式域名确定后需要统一移除硬编码。
-- [ ] 配置 GitHub Pages custom domain、DNS、HTTPS 和 `CNAME`，并验证旧 `cyruscyliu.github.io` URL 是否按原路径永久跳转到新域名。
+- [x] 确定长期正式域名：`https://www.55aaseclab.com/`。
+- [x] 将 canonical、hreflang、Open Graph、JSON-LD、robots 和 sitemap 统一切换到 `https://www.55aaseclab.com/`。
+- [x] 配置 GitHub Pages custom domain、DNS、HTTPS 和 `CNAME`；旧 `cyruscyliu.github.io` URL 的跳转由 GitHub Pages 配置负责，仍建议上线后抽查。
 - [ ] 在 Google Search Console 验证正式站点并提交 `/sitemap.xml`。（外部操作）
 - [ ] 在 Bing Webmaster Tools 验证或从 Search Console 导入站点，并提交同一个 sitemap。（外部操作）
 - [ ] 使用 URL Inspection 抽查首页、中英文页、People、Tools、Publications 和博客文章，确认 Google-selected canonical 与站点声明一致。（外部操作）
@@ -105,10 +105,10 @@
 目前 `/en/` 与 `/zh/` 页面缺少 canonical 和 `hreflang`。建议为每种语言页面加入：
 
 ```html
-<link rel="canonical" href="https://cyruscyliu.github.io/en/" />
-<link rel="alternate" hreflang="en" href="https://cyruscyliu.github.io/en/" />
-<link rel="alternate" hreflang="zh" href="https://cyruscyliu.github.io/zh/" />
-<link rel="alternate" hreflang="x-default" href="https://cyruscyliu.github.io/en/" />
+<link rel="canonical" href="https://www.55aaseclab.com/en/" />
+<link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/" />
+<link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/" />
+<link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/" />
 ```
 
 如果正式站点使用自定义域名，应先将 `astro.config.mjs` 中的 `site` 改成正式域名。

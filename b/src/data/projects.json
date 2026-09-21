@@ -143,6 +143,7 @@
       "id": "defense-in-depth-for-sandboxes",
       "tag": { "en": "Research · PhD project · Hiring for 2026-2027", "zh": "科研 · 博士项目 · 2026-2027 招募" },
       "href": "",
+      "detailSlug": "sandbox-defense",
       "training": [],
       "title": {
         "en": "203 Defense in Depth for Sandboxes",
@@ -152,12 +153,59 @@
         "en": "This PhD research project studies defense-in-depth architectures for process-based and VM-based sandboxes. The project investigates how sandbox escapes and policy bypasses emerge across system-call interfaces, shared resources, runtime services, and hardware boundaries, then develops layered defenses that combine behavioral monitoring at security-relevant interfaces, exploit prevention, and compartmentalization. It further explores techniques such as pattern matching, hardware-assisted enforcement, and hardware-software co-design to make sandboxed execution more resilient against both known attack patterns and previously unseen exploitation strategies.",
         "zh": "本博士科研项目研究面向进程级沙箱和虚拟机级沙箱的纵深防御体系。项目关注沙箱逃逸和策略绕过如何在系统调用接口、共享资源、运行时服务和硬件边界处产生，并设计结合安全接口行为监测、漏洞利用预防和分舱隔离的多层防护机制。项目进一步探索模式匹配、硬件辅助执行保护以及软硬件协同设计等技术，使沙箱执行环境能够同时抵御已知攻击模式和未见过的利用策略。"
       },
+      "references": [
+        {
+          "title": {
+            "en": "Nioh: Hardening The Hypervisor by Filtering Illegal I/O Requests to Virtual Devices",
+            "zh": "Nioh: Hardening The Hypervisor by Filtering Illegal I/O Requests to Virtual Devices"
+          },
+          "venue": "ACSAC17",
+          "note": {
+            "en": "non-spec",
+            "zh": "non-spec"
+          }
+        },
+        {
+          "title": {
+            "en": "Hardening Hypervisors against Vulnerabilities in Instruction Emulators",
+            "zh": "Hardening Hypervisors against Vulnerabilities in Instruction Emulators"
+          },
+          "venue": "EuroSec18",
+          "note": {
+            "en": "seccomp",
+            "zh": "seccomp"
+          }
+        },
+        {
+          "title": {
+            "en": "Nioh-PT: Virtual I/O Filtering for Agile Protection against Vulnerability Windows",
+            "zh": "Nioh-PT: Virtual I/O Filtering for Agile Protection against Vulnerability Windows"
+          },
+          "venue": "SAC23",
+          "note": {
+            "en": "spec, I/O sequence",
+            "zh": "spec, I/O sequence"
+          }
+        },
+        {
+          "title": {
+            "en": "SEDSpec: Securing Emulated Devices by Enforcing Execution Specification",
+            "zh": "SEDSpec: Securing Emulated Devices by Enforcing Execution Specification"
+          },
+          "venue": "DSN24",
+          "note": {
+            "en": "automated model extraction; a follow-up to Nioh",
+            "zh": "automated model extraction; a follow-up to Nioh"
+          }
+        }
+      ],
       "contact": ""
     },
     {
       "id": "aero-space-security-survey",
       "tag": { "en": "Research · PhD project", "zh": "科研 · 博士项目" },
       "href": "",
+      "detailSlug": "aero-space-security",
       "training": [],
       "title": {
         "en": "204 Aero-Space Security Across the Stack",

@@ -28,7 +28,7 @@ const text = (value: any) => typeof value === 'string' ? value : value?.[lang] ?
 const researchSummary = research.areas.map((area) => { const title = text(area.title); return lang === 'en' ? title.replace(/^[A-Z]/, (letter) => letter.toLowerCase()) : title; }).join(lang === 'zh' ? '、' : ', ');
 const tabs = home.sections;
 const labels = { en: { language: '中文', footer: '55AA Security Lab' }, zh: { language: 'English', footer: '55AA Security Lab' } }[lang];
-const canonicalUrl = `https://cyruscyliu.github.io/${lang}/`;
+const canonicalUrl = `https://www.55aaseclab.com/${lang}/`;
 const seoTitle = lang === 'zh' ? '55AA 安全实验室｜系统安全研究' : '55AA Security Lab — System Security Research';
 const seoDescription = lang === 'zh' ? '55AA 安全实验室开展系统安全、软件安全、程序分析、人工智能智能体和安全工程研究。' : '55AA Security Lab conducts research in system security, software security, program analysis, AI agents, and security engineering.';
 const today = new Date().toISOString().slice(0, 10);
@@ -55,7 +55,7 @@ const displayTools = tools.tools.map((tool) => {
       '@type': 'ResearchOrganization',
       name: lang === 'zh' ? '55AA 安全实验室' : '55AA Security Lab',
       url: canonicalUrl,
-      logo: 'https://cyruscyliu.github.io/logo.svg',
+      logo: 'https://www.55aaseclab.com/logo.svg',
       // Institutional affiliation and campus address are intentionally omitted
       // until written authorization for the public presentation is confirmed.
       knowsAbout: ['System security', 'Software security', 'Program analysis', 'AI agents', 'Security engineering']
@@ -69,7 +69,7 @@ const displayTools = tools.tools.map((tool) => {
         <h2>News</h2>
         {publishedNews.length ? publishedNews.slice(0, 3).map((entry) => <article class="news-item"><time class="meta" datetime={entry.date}>{entry.date}</time><h2>{entry.href ? <a href={entry.href}>{text(entry.title)}</a> : text(entry.title)}</h2></article>) : <p class="meta">{lang === 'zh' ? '暂无新闻。' : 'No news yet.'}</p>}
         <Preview title={text(teaching.meta.title)} keyName="courses" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{publishedCourses.length ? publishedCourses.slice(0, 3).map((course) => <article><div class="course-heading"><h2>{text(course.name)}</h2><span class="course-level">{text(course.level)}</span><span class="course-level">{course.code}</span><span class="course-level">{text(course.status)}</span><span class="course-level">{lang === 'zh' ? '开班时间：待定' : 'Course start: TBD'}</span></div></article>) : <p class="meta">{noPublishedCoursesText}</p>}</Preview>
-        <Preview title={text(projects.meta.title)} keyName="projects" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{hiringProjects.slice(0, 3).map((project) => <article><div class="item-heading"><h2><a href={project.id === 'aero-space-security-survey' ? `/${lang}/projects/aero-space-security/` : text(project.href)}>{text(project.title)}</a></h2><span class="item-tag">{text(project.tag)}</span></div><p>{text(project.introduction) || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</Preview>
+        <Preview title={text(projects.meta.title)} keyName="projects" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{hiringProjects.slice(0, 3).map((project) => <article><div class="item-heading"><h2><a href={project.detailSlug ? `/${lang}/projects/${project.detailSlug}/` : text(project.href)}>{text(project.title)}</a></h2><span class="item-tag">{text(project.tag)}</span></div><p>{text(project.introduction) || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</Preview>
         <Preview title={text(tools.meta.title)} keyName="tools" readMore={lang === 'zh' ? '查看更多' : 'Read more'}><div>{displayTools.slice(0, 3).map((tool) => <article><p class="tool-title"><a href={`https://github.com/${tool.repo}`} target="_blank" rel="noreferrer">{tool.fallbackTitle}</a> <span class="item-tag">GitHub</span><span class="item-tag">{lang === 'zh' ? '适用入口：GitHub' : 'Access: GitHub'}</span></p><p>{tool.fallbackDescription || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</div></Preview>
         <Preview title={text(consultation.meta.title)} keyName="consultation" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>
           <p>{text(consultation.body)}</p>
@@ -82,7 +82,7 @@ const displayTools = tools.tools.map((tool) => {
       <section class="panel" data-panel="publications">
         <PublicationList lang={lang} publications={dblp.publications} />
       </section>
-      <section class="panel" data-panel="projects">{hiringProjects.map((project) => <article><div class="item-heading"><h2><a href={project.id === 'aero-space-security-survey' ? `/${lang}/projects/aero-space-security/` : text(project.href)}>{text(project.title)}</a></h2><span class="item-tag">{text(project.tag)}</span></div><p>{text(project.introduction) || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</section>
+      <section class="panel" data-panel="projects">{hiringProjects.map((project) => <article><div class="item-heading"><h2><a href={project.detailSlug ? `/${lang}/projects/${project.detailSlug}/` : text(project.href)}>{text(project.title)}</a></h2><span class="item-tag">{text(project.tag)}</span></div><p>{text(project.introduction) || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</section>
       <section class="panel" data-panel="tools"><div>{displayTools.map((tool) => <article><p class="tool-title"><a href={`https://github.com/${tool.repo}`} target="_blank" rel="noreferrer">{tool.fallbackTitle}</a> <span class="item-tag">GitHub</span></p><p>{tool.fallbackDescription || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</div></section>
       <section class="panel" data-panel="courses">{publishedCourses.length ? <><CourseGraph lang={lang} includeDraft={false} />{[...publishedCourses].sort((a, b) => (a.level.en === 'Undergraduate' ? 0 : 1) - (b.level.en === 'Undergraduate' ? 0 : 1)).map((course) => <article><div class="course-heading"><h2>{text(course.name)}</h2><span class="course-level">{text(course.level)}</span><span class="course-level">{course.code}</span><span class="course-level">{text(course.status)}</span></div></article>)}</> : <p class="meta">{noPublishedCoursesText}</p>}</section>
       <section class="panel" data-panel="consultation"><p>{text(consultation.body)}</p>{consultation.services.map((service) => <article><div class="item-heading"><h2>{text(service.title)}</h2><span class="item-tag">{text(service.duration)}</span></div></article>)}</section>

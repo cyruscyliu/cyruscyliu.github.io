@@ -1,6 +1,6 @@
 ---
 import data from '../../../data/tools.json'; import cache from '../../../data/tools-cache.json'; import SiteHeader from '../../../components/SiteHeader.astro'; import SiteFooter from '../../../components/SiteFooter.astro'; import SeoHead from '../../../components/SeoHead.astro';
-export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const runtimePath=Astro.url?.pathname??Astro.request?.url??''; const lang=runtimePath.includes('/zh/')?'zh':(((Astro.props??{}).lang??'en')==='zh'?'zh':'en'); const canonical=`https://cyruscyliu.github.io/${lang}/tools/`;
+export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const runtimePath=Astro.url?.pathname??Astro.request?.url??''; const lang=runtimePath.includes('/zh/')?'zh':(((Astro.props??{}).lang??'en')==='zh'?'zh':'en'); const canonical=`https://www.55aaseclab.com/${lang}/tools/`;
 const mergedTools=data.tools.map(t=>({...t,...(cache.tools?.[t.repo]??{}),fallbackTitle:cache.tools?.[t.repo]?.title??t.fallbackTitle,fallbackDescription:cache.tools?.[t.repo]?.description??t.fallbackDescription}));
 ---
 <!doctype html>

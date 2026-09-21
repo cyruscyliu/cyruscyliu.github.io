@@ -18,7 +18,7 @@ const {
   image = '/logo-lockup.png',
   alternates = true
 } = Astro.props;
-const site = Astro.site ?? new URL('https://cyruscyliu.github.io');
+const site = Astro.site ?? new URL('https://www.55aaseclab.com');
 const normalizedPath = path ? `${path.replace(/^\/+|\/+$/g, '')}/` : '';
 const localizedUrl = (language: 'en' | 'zh') => new URL(`/${language}/${normalizedPath}`, site).href;
 const canonical = localizedUrl(lang);

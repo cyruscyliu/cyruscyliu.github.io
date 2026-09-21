@@ -1,7 +1,7 @@
 import { readFile, readdir, writeFile } from 'node:fs/promises';
 import lessonPlans from '../src/data/lesson-plans/index.js';
 
-const site = 'https://cyruscyliu.github.io';
+const site = 'https://www.55aaseclab.com';
 const languages = ['en', 'zh'];
 const sections = ['', 'news', 'people', 'courses', 'projects', 'tools', 'consultation', 'publications', 'blog', 'sponsorship'];
 const blogIndex = JSON.parse(await readFile(new URL('../src/data/blog.json', import.meta.url), 'utf8'));
@@ -20,8 +20,13 @@ const coursePaths = teaching.courses.map((course) => `courses/${course.code.toLo
 const lessonPaths = Object.entries(lessonPlans).flatMap(([courseCode, lessons]) =>
   lessons.map((lesson) => `courses/${courseCode.toLowerCase()}/lessons/${lesson.id}`)
 );
+const projects = JSON.parse(await readFile(new URL('../src/data/projects.json', import.meta.url), 'utf8'));
+const projectPaths = projects.projects
+  .filter((project) => project.detailSlug)
+  .map((project) => `projects/${project.detailSlug}`);
 const paths = [
   ...sections,
+  ...projectPaths,
   ...coursePaths,
   ...lessonPaths,
 ];

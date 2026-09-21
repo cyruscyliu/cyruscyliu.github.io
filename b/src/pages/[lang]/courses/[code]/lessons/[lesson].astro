@@ -47,16 +47,16 @@ const slidesForFlow = (index) => {
       '@type': 'LearningResource',
       name: title,
       description,
-      url: `https://cyruscyliu.github.io/${lang}/courses/${slug(course.code)}/lessons/${lesson.id}/`,
+      url: `https://www.55aaseclab.com/${lang}/courses/${slug(course.code)}/lessons/${lesson.id}/`,
       inLanguage: lang,
       learningResourceType: lang === 'zh' ? '课程教学计划' : 'Lesson plan',
       isPartOf: {
         '@type': 'Course',
         name: `${course.code} ${text(course.name, lang)}`,
-        url: `https://cyruscyliu.github.io/${lang}/courses/${slug(course.code)}/`
+        url: `https://www.55aaseclab.com/${lang}/courses/${slug(course.code)}/`
       },
       isAccessibleForFree: true,
-      provider: { '@type': 'Organization', name: '55AA Security Lab', url: 'https://cyruscyliu.github.io/' }
+      provider: { '@type': 'Organization', name: '55AA Security Lab', url: 'https://www.55aaseclab.com/' }
     })} />
   </head>
   <body>

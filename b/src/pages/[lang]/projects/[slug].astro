@@ -7,9 +7,9 @@ import SeoHead from '../../../components/SeoHead.astro';
 export function getStaticPaths() {
   return ['en', 'zh'].flatMap((lang) =>
     data.projects
-      .filter((project) => project.id === 'aero-space-security-survey')
+      .filter((project) => project.detailSlug)
       .map((project) => ({
-        params: { lang, slug: 'aero-space-security' },
+        params: { lang, slug: project.detailSlug },
         props: { lang, project }
       }))
   );
@@ -21,11 +21,12 @@ const text = (value) => typeof value === 'string' ? value : value?.[lang] ?? val
 const title = text(project.title);
 const description = text(project.introduction);
 const references = project.references ?? [];
+const slug = project.detailSlug;
 ---
 <!doctype html>
 <html lang={lang}>
 <head>
-  <SeoHead lang={lang} path="projects/aero-space-security" title={`${title} · 55AA Security Lab`} description={description}/>
+  <SeoHead lang={lang} path={`projects/${slug}`} title={`${title} · 55AA Security Lab`} description={description}/>
 </head>
 <body>
 <SiteHeader lang={lang} blogHref="projects/"/>
@@ -37,7 +38,7 @@ const references = project.references ?? [];
     <p class="lead">{description}</p>
     <h2>{lang === 'zh' ? '参考资料' : 'References'}</h2>
     <ol>
-      {references.map((reference) => <li><a href={reference.url} target="_blank" rel="noreferrer">{text(reference.title)}</a></li>)}
+      {references.map((reference) => <li>{reference.url ? <a href={reference.url} target="_blank" rel="noreferrer">{text(reference.title)}</a> : text(reference.title)}{reference.venue ? <> <span class="reference-meta">({reference.venue})</span></> : null}{reference.note ? <>: {text(reference.note)}</> : null}</li>)}
     </ol>
   </article>
 </main>
