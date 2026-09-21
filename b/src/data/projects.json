@@ -80,6 +80,21 @@
       "contact": ""
     },
     {
+      "id": "paper2product",
+      "tag": { "en": "Engineering · Master's capstone", "zh": "工程 · 硕士毕业设计" },
+      "href": "",
+      "training": [],
+      "title": {
+        "en": "104 Paper2Product: A Research-to-Technology Transfer Workflow",
+        "zh": "104 Paper2Product：科研成果转化工作流"
+      },
+      "introduction": {
+        "en": "This master's engineering project studies how the central challenge of academic work changes when publishing papers is no longer the main bottleneck: the problem shifts from producing visible research to turning research into knowledge that can be verified, reused, and deployed. The project develops Paper2Product, a workflow that ingests a large research corpus, extracts claims, evidence, methods, data, and artifacts, groups related findings, identifies practical needs, and proposes feasible paths toward tools, datasets, services, standards, or follow-up studies. It also investigates why technology transfer is difficult, including missing context, weak reproducibility, tacit knowledge, intellectual-property constraints, incentive misalignment, and the gap between research prototypes and reliable systems. The deliverable is a working prototype, a documented transfer workflow, and case studies that evaluate where automation helps and where human judgment remains necessary.",
+        "zh": "本硕士工程项目研究：当论文发表不再是主要瓶颈时，学术工作的主要矛盾如何从生产可见的研究成果，转向把研究转化为可验证、可复用和可部署的知识与技术。项目构建 Paper2Product 工作流，面向大规模论文语料提取主张、证据、方法、数据和研究资产，聚合相关发现，识别实际需求，并为工具、数据集、服务、标准或后续研究提出可行的转化路径。项目同时分析科技转化困难的来源，包括上下文缺失、可复现性不足、隐性知识、知识产权约束、激励机制错位，以及研究原型与可靠系统之间的距离。最终成果包括一个可运行的原型、一套有文档记录的转化工作流，以及用于评估自动化边界和人工判断必要性的案例研究。"
+      },
+      "contact": ""
+    },
+    {
       "id": "regression-aware-llm-system-programming",
       "tag": { "en": "Research · PhD project", "zh": "科研 · 博士项目" },
       "href": "",
