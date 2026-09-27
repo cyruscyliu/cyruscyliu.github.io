@@ -23,5 +23,8 @@
     "sax": "^1.6.1",
     "three": "^0.186.0",
     "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^24.43.1"
   }
 }
