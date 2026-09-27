@@ -8857,9 +8857,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-16-session-02/" />
   </url>
   <url>
-    <loc>https://www.55aaseclab.com/zh/blog/55aa-security-lab-asset-management/</loc>
-  </url>
-  <url>
     <loc>https://www.55aaseclab.com/zh/blog/55aa-member-process-management/</loc>
   </url>
   <url>
@@ -8873,5 +8870,8 @@
   </url>
   <url>
     <loc>https://www.55aaseclab.com/zh/blog/gbu-hit-2027-joint-phd-admissions/</loc>
+  </url>
+  <url>
+    <loc>https://www.55aaseclab.com/zh/blog/syssec-not-hard-anymore/</loc>
   </url>
 </urlset>

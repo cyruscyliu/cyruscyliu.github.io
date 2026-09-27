@@ -19,6 +19,7 @@
     "cytoscape-dagre": "2.5.0",
     "dagre": "0.8.5",
     "lucide-static": "^1.46.0",
+    "mermaid": "^11.17.2",
     "sax": "^1.6.1",
     "three": "^0.186.0",
     "typescript": "^5.7.3"
