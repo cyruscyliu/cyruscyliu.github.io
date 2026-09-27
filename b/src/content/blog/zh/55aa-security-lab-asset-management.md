@@ -1,13 +1,12 @@
 ---
-title: "55AA安全实验室物品管理（草稿）"
+title: "55AA安全实验室物品管理"
 description: "记录55AA安全实验室的物理资产清单、数字化维护流程以及安全与卫生底线。"
 date: "2026-09-19"
 language: "zh"
 slug: "55aa-security-lab-asset-management"
 tags:
   - "物品管理"
-  - "草稿"
-draft: false
+draft: true
 ---
 
 ## 实验室物理资产清单
