@@ -67,19 +67,29 @@ const draftNotice = lang === 'zh' ? '草稿：未发布，仅本地预览。' : 
   :global(main) { flex: 1; }
   :global(main) { width: min(960px, calc(100% - 2rem)); margin-inline: auto; }
   a { color: #06c; }
-  h1 { font-size: 1.45rem; font-weight: 600; }
+  h1 { font-size: 1.45rem; font-weight: 700; font-family: "Songti SC", "SimSun", "STSong", "Noto Serif CJK SC", serif; }
   .meta { color: #777; font-size: .9rem; }
-  .tag { display: inline-block; padding: .05rem .35rem; border: 1px solid #bbb; color: #555; font-size: .8rem; }
+  .tag { display: inline-block; padding: .15rem .45rem; margin: .1rem 0; background: #f0f0f0; border-radius: 4px; color: #555; font-size: .75rem; font-family: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .tag.draft { background: #fff0e6; color: #c60; }
   .notice { padding: .5rem .75rem; border: 1px solid #c60; color: #c60; font-size: .9rem; background: #fff8f2; }
-  .article-body :global(h2) { margin: 1.5rem 0 .5rem; font-size: 1.2rem; }
+  .article-body :global(h2) { margin: 1.5rem 0 .5rem; font-size: 1.2rem; font-weight: 700; font-family: "Songti SC", "SimSun", "STSong", "Noto Serif CJK SC", serif; }
   .article-body :global(h3) { margin: 1.25rem 0 .5rem; font-size: 1rem; }
-  .article-body :global(p) { margin: .5rem 0 1rem; }
+  .article-body :global(p) { margin: .5rem 0 1rem; text-align: justify; }
   .article-body :global(a) { color: #06c; }
   .article-body :global(strong) { font-weight: 700; }
-  .article-body :global(blockquote) { margin: 1rem 0; padding: .75rem 1rem; border-left: 4px solid #06c; background: #f5f8ff; }
+  .article-body :global(blockquote) { margin: 1rem 0; padding: .5rem 1rem; border-left: .25em solid #d0d7de; color: #59636e; background: #f6f8fa; border-radius: 0 4px 4px 0; }
   .article-body :global(blockquote p) { margin: .35rem 0; }
   .article-body :global(table) { width: 100%; border-collapse: collapse; }
   .article-body :global(th), .article-body :global(td) { border: 1px solid #bbb; padding: .4rem .5rem; text-align: left; }
   .article-body :global(.mermaid) { margin: 1.5rem 0; overflow-x: auto; text-align: center; }
   .article-body :global(.mermaid svg) { height: auto; max-width: 100%; }
+  .article-body :global(pre) { background: #f6f8fa !important; color: #24292e !important; padding: .75rem 1rem !important; border-radius: 4px; overflow-x: auto; white-space: pre-wrap; word-break: break-all; }
+  .article-body :global(code) { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+  .article-body :global(.footnotes) { border-top: 1px solid #ddd; margin-top: 2rem; padding-top: 1rem; font-size: .9rem; color: #555; }
+  .article-body :global(.footnotes h2#footnote-label) { position: static; width: auto; height: auto; margin: 0 0 .5rem; overflow: visible; clip: auto; white-space: normal; font-size: 0; font-weight: 600; color: #333; }
+  .article-body :global(.footnotes h2#footnote-label::before) { content: "脚注"; font-size: 1rem; }
+  .article-body :global(.footnotes) { overflow-wrap: anywhere; }
+  .article-body :global(.footnotes p) { margin: .35rem 0; text-indent: 0; overflow-wrap: anywhere; }
+  .article-body :global(.footnotes a[href^="http"]) { word-break: break-all; }
+  .article-body :global(.footnotes .data-footnote-backref) { margin-left: .25rem; }
 </style>
