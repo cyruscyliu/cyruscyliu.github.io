@@ -145,6 +145,16 @@ async function main() {
     if (toolbar && toolbar.parentNode) toolbar.parentNode.removeChild(toolbar);
   });
 
+  // Extract Xiaohongshu metadata from the rendered page
+  const meta = await page.evaluate(() => {
+    const title = document.querySelector('article h1')?.textContent?.trim() || document.querySelector('h1')?.textContent?.trim() || '';
+    const description = document.querySelector('meta[name="description"]')?.getAttribute('content')?.trim() || '';
+    const hashtags = Array.from(document.querySelectorAll('.tag')).map(el => el.textContent.trim()).filter(Boolean);
+    return { title, description, hashtags };
+  });
+  fs.writeFileSync(path.join(outDir, 'xiaohongshu.json'), JSON.stringify(meta, null, 2));
+  console.log(`Metadata: ${path.join(outDir, 'xiaohongshu.json')}`);
+
   const pdfPath = path.join(outDir, 'pages.pdf');
   await page.pdf({
     path: pdfPath,
