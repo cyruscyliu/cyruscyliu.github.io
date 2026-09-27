@@ -19,8 +19,8 @@ import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 
-const CARD_WIDTH = 1080;
-const CARD_HEIGHT = 1440;
+const CARD_WIDTH = 2160;
+const CARD_HEIGHT = 2880;
 const MOBILE_WIDTH = 390;
 const BASE_URL = process.env.BASE_URL || 'http://localhost:4400';
 
@@ -87,12 +87,13 @@ async function main() {
   const browser = await puppeteer.launch({
     executablePath: findChrome(),
     headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--incognito', '--disable-cache', '--disk-cache-size=0']
   });
 
   const page = await browser.newPage();
   await page.setViewport({ width: MOBILE_WIDTH, height: 844, deviceScaleFactor: 3 });
   await page.goto(url, { waitUntil: 'networkidle0' });
+  await page.reload({ waitUntil: 'networkidle0', bypassCache: true });
   await new Promise(r => setTimeout(r, 3000));
 
   await page.addStyleTag({
@@ -154,7 +155,7 @@ async function main() {
   });
   await browser.close();
 
-  execSync(`pdftoppm -png -r 264 -f 1 "${pdfPath}" "${path.join(outDir, 'page')}"`);
+  execSync(`pdftoppm -png -scale-to-x ${CARD_WIDTH} -scale-to-y ${CARD_HEIGHT} -f 1 "${pdfPath}" "${path.join(outDir, 'page')}"`);
 
   const files = fs.readdirSync(outDir)
     .filter(f => /^page-\d+\.png$/.test(f))
@@ -163,14 +164,19 @@ async function main() {
   for (let i = 0; i < files.length; i++) {
     const src = path.join(outDir, files[i]);
     const dst = path.join(outDir, `${String(i + 1).padStart(2, '0')}.png`);
-    execSync(`convert "${src}" -resize ${CARD_WIDTH}x${CARD_HEIGHT} -background white -gravity center -extent ${CARD_WIDTH}x${CARD_HEIGHT} "${dst}"`);
-    fs.unlinkSync(src);
+    fs.renameSync(src, dst);
     console.log(`Card ${i + 1}: ${dst}`);
   }
   fs.unlinkSync(pdfPath);
 
   const count = files.length;
-  const cols = Math.ceil(Math.sqrt(count));
+  const cols = (() => {
+    const s = Math.floor(Math.sqrt(count));
+    for (let c = s; c >= 2; c--) {
+      if (count % c === 0) return c;
+    }
+    return s || 1;
+  })();
   const cardFiles = Array.from({ length: count }, (_, i) =>
     path.join(outDir, `${String(i + 1).padStart(2, '0')}.png`)
   ).join(' ');
