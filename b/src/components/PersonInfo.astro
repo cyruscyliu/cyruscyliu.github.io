@@ -1,0 +1,37 @@
+---
+import SocialIcon from './SocialIcon.astro';
+const { person, lang, nameTag: NameTag = 'h1', nameHref, showName = true } = Astro.props;
+const text = (value) => typeof value === 'string' ? value : value?.[lang] ?? value?.en ?? '';
+---
+<div class="person-info">
+  {showName && (
+    <NameTag class="person-name">
+      {nameHref ? <a class="person-name-link" href={nameHref}>{person.name}</a> : person.name}
+    </NameTag>
+  )}
+  <p class="person-role">{text(person.role)}</p>
+  <p class="person-interests">{person.interests[lang].join(' · ')}</p>
+  <div class="person-links">
+    {person.cv && <a class="cv-link" href={person.cv} target="_blank" rel="noreferrer">CV</a>}
+    {person.links.map((link) => (
+      <a href={link.url} aria-label={text(link.label)} title={text(link.label)}>
+        <SocialIcon kind={link.kind}/>
+      </a>
+    ))}
+  </div>
+</div>
+
+<style>
+  .person-info { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
+  .person-name { margin: 0; font-size: 1rem; font-weight: 600; line-height: 1.4; }
+  .person-name-link { color: inherit; text-decoration: none; }
+  .person-name-link:hover { text-decoration: underline; }
+  .person-role,
+  .person-interests,
+  .person-links { margin: 0; line-height: 1.4; }
+  .person-role { color: #555; font-size: 0.95rem; }
+  .person-interests { color: #333; font-size: 0.9rem; }
+  .person-links { display: flex; align-items: center; gap: 0.4rem; }
+  .person-links a { color: #06c; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+  .person-links .cv-link { font-size: 0.95rem; margin-right: 0.1rem; }
+</style>

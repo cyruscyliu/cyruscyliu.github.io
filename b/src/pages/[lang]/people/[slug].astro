@@ -3,7 +3,7 @@ import data from '../../../data/people.json';
 import SiteHeader from '../../../components/SiteHeader.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import SeoHead from '../../../components/SeoHead.astro';
-import SocialIcon from '../../../components/SocialIcon.astro';
+import PersonInfo from '../../../components/PersonInfo.astro';
 
 export function getStaticPaths() {
   return ['en', 'zh'].flatMap((lang) =>
@@ -22,6 +22,7 @@ const text = (value) => typeof value === 'string' ? value : value?.[lang] ?? val
 const profile = person.profile;
 const profileText = (value) => Array.isArray(value) ? value : value?.[lang] ?? value?.en ?? [];
 ---
+
 <!doctype html>
 <html lang={lang}>
 <head>
@@ -41,16 +42,8 @@ const profileText = (value) => Array.isArray(value) ? value : value?.[lang] ?? v
 <SiteHeader lang={lang} blogHref="people/"/>
 <main>
   <section class="profile-intro">
-    <img class="profile-image" src={person.profileImage} alt={text(person.alt)} />
-    <div class="profile-summary">
-      <h1>{person.name}</h1>
-      <p class="profile-role">{text(person.role)}</p>
-      <p class="profile-interests">{person.interests[lang].join(' · ')}</p>
-      <div class="profile-links">
-        {person.cv && <a class="cv-link" href={person.cv} target="_blank" rel="noreferrer">CV</a>}
-        {person.links.map((link) => <a href={link.url} aria-label={text(link.label)} title={text(link.label)}><SocialIcon kind={link.kind}/></a>)}
-      </div>
-    </div>
+    <img class="profile-image" src={person.profileImage} alt={text(person.alt)} width="88" height="88" />
+    <PersonInfo person={person} lang={lang} nameTag="h1" />
   </section>
   <div class="profile-sections">
     {profile.sections.map((section) => (
@@ -71,31 +64,35 @@ const profileText = (value) => Array.isArray(value) ? value : value?.[lang] ?? v
 <SiteFooter lang={lang}/>
 </body>
 </html>
+
 <style>
   :global(*) { box-sizing: border-box; }
   :global(html) { overflow-y: scroll; }
-  :global(body) { min-height: 100vh; display: flex; flex-direction: column; margin: 0; background: #fff; color: #000; font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-  :global(main) { flex: 1; width: min(960px, calc(100% - 2rem)); margin: 0 auto; padding: 1.5rem 0 2rem; }
-  a { color: #06c; }
-  .profile-intro { display: flex; align-items: flex-start; gap: 1rem; min-width: 0; margin: 0 0 2rem; padding: 1rem; background: rgba(255,255,255,.86); }
-  .profile-image { display: block; flex: 0 0 auto; width: 104px; height: 104px; object-fit: cover; }
-  .profile-summary { min-width: 0; }
-  h1 { margin: 0; font-size: 1.05rem; font-weight: 600; }
-  .profile-role, .profile-interests { margin: .25rem 0 0; }
-  .profile-role { color: #555; }
-  .profile-interests { color: #333; font-size: .92rem; }
-  .profile-links { display: flex; align-items: center; gap: .4rem; margin-top: .65rem; }
-  .profile-links a { display: inline-flex; align-items: center; justify-content: center; width: 1.35rem; height: 1.35rem; text-decoration: none; }
-  .profile-links .cv-link { width: auto; height: auto; margin-right: .25rem; }
+  :global(body) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background: #fff;
+    color: #000;
+    font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  :global(main) {
+    flex: 1;
+    width: min(960px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 1.5rem 0 2rem;
+  }
+  .profile-intro { display: flex; align-items: flex-start; gap: 1rem; margin: 0 0 2rem; padding: 1rem; background: rgba(255, 255, 255, 0.86); }
+  .profile-image { display: block; flex: 0 0 auto; width: 88px; height: 88px; object-fit: cover; }
   .profile-section { margin: 0 0 2rem; }
-  .profile-section h2 { margin: 0 0 .65rem; font-size: 1.15rem; font-weight: 600; }
+  .profile-section h2 { margin: 0 0 0.65rem; font-size: 1.15rem; font-weight: 600; }
   .profile-subsection { margin: 1.25rem 0 0; }
-  .profile-subsection h3 { margin: 0 0 .5rem; font-size: 1rem; font-weight: 600; }
-  p { max-width: 68rem; margin: 0 0 .8rem; }
+  .profile-subsection h3 { margin: 0 0 0.5rem; font-size: 1rem; font-weight: 600; }
+  p { max-width: 68rem; margin: 0 0 0.8rem; }
   ul { margin: 0; padding-left: 1.25rem; }
-  li { margin: 0 0 .35rem; }
-  @media(max-width:600px) {
-    .profile-intro { gap: .85rem; padding: .9rem; }
-    .profile-image { width: 88px; height: 88px; }
+  li { margin: 0 0 0.35rem; }
+  @media (max-width: 600px) {
+    .profile-intro { gap: 0.85rem; padding: 0.9rem; }
   }
 </style>
