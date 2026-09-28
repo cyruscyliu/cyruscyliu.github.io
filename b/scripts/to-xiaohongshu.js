@@ -171,10 +171,15 @@ async function main() {
     .filter(f => /^page-\d+\.png$/.test(f))
     .sort();
 
+  const now = Date.now() / 1000;
   for (let i = 0; i < files.length; i++) {
     const src = path.join(outDir, files[i]);
     const dst = path.join(outDir, `${String(i + 1).padStart(2, '0')}.png`);
     fs.renameSync(src, dst);
+    // Set timestamps so 01.png is newest; apps that sort by mtime newest-first
+    // will present cards in the intended order.
+    const t = now - i * 60;
+    fs.utimesSync(dst, t, t);
     console.log(`Card ${i + 1}: ${dst}`);
   }
   fs.unlinkSync(pdfPath);
