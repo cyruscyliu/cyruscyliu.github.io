@@ -197,6 +197,9 @@ async function main() {
   ).join(' ');
   const montagePath = path.join(outDir, 'preview-montage.png');
   execSync(`montage ${cardFiles} -tile ${cols}x -geometry 360x480+8+8 -background '#1a1a1a' "${montagePath}"`);
+  // Keep montage preview older than all cards so it doesn't sort first.
+  const montageTime = now - files.length * 60;
+  fs.utimesSync(montagePath, montageTime, montageTime);
   console.log(`Montage: ${montagePath}`);
 }
 
