@@ -8,6 +8,7 @@
   },
   "areas": [
     {
+      "id": "systems-security",
       "title": { "en": "Full lifecycle system security", "zh": "全生命周期系统安全" },
       "href": { "en": "/library/systems-security/", "zh": "/zh/library/systems-security/" },
       "body": {
@@ -16,6 +17,7 @@
       }
     },
     {
+      "id": "cybersecurity-ai",
       "title": { "en": "Cybersecurity LLMs, AI agents, and benchmarks", "zh": "网安大模型、AI 智能体与基准" },
       "href": { "en": "/library/research-methods/", "zh": "/zh/library/research-methods/" },
       "body": {
@@ -24,6 +26,7 @@
       }
     },
     {
+      "id": "meta-science",
       "title": { "en": "Meta-science", "zh": "元科学" },
       "href": { "en": "/library/research-methods/", "zh": "/zh/library/research-methods/" },
       "body": {

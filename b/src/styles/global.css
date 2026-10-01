@@ -1,0 +1,17 @@
+.tag {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  color: #777;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: .8rem;
+  font-weight: 400;
+}
+
+.tag + .tag {
+  margin-left: .5rem;
+}
+
+.tag.draft {
+  color: #c60;
+}

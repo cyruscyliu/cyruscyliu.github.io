@@ -1,6 +1,6 @@
 ---
-import data from '../../../data/projects.json'; import SiteHeader from '../../../components/SiteHeader.astro'; import SiteFooter from '../../../components/SiteFooter.astro'; import SeoHead from '../../../components/SeoHead.astro';
-export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const runtimePath=Astro.url?.pathname??Astro.request?.url??''; const lang=runtimePath.includes('/zh/')?'zh':(((Astro.props??{}).lang??'en')==='zh'?'zh':'en'); const text=v=>typeof v==='string'?v:v?.[lang]??''; const canonical=`https://www.55aaseclab.com/${lang}/projects/`;
+import data from '../../../data/projects.json'; import research from '../../../data/research.json'; import SiteHeader from '../../../components/SiteHeader.astro'; import SiteFooter from '../../../components/SiteFooter.astro'; import SeoHead from '../../../components/SeoHead.astro';
+export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},props:{lang}}))} const runtimePath=Astro.url?.pathname??Astro.request?.url??''; const lang=runtimePath.includes('/zh/')?'zh':(((Astro.props??{}).lang??'en')==='zh'?'zh':'en'); const text=v=>typeof v==='string'?v:v?.[lang]??''; const researchAreaTitle=id=>text(research.areas.find(area=>area.id===id)?.title); const projectTags=project=>[researchAreaTitle(project.researchArea),...project.tags.map(text)].filter(Boolean); const projectFilterKeys=project=>[`area:${project.researchArea}`,...project.tags.map(tag=>`tag:${tag.en}`)]; const tagOptions=[...new Map(data.projects.flatMap(project=>project.tags).map(tag=>[tag.en,tag])).values()]; const filterOptions=[...research.areas.map(area=>({key:`area:${area.id}`,label:text(area.title)})),...tagOptions.map(tag=>({key:`tag:${tag.en}`,label:text(tag)}))]; const canonical=`https://www.55aaseclab.com/${lang}/projects/`;
 ---
 <!doctype html>
 <html lang={lang}>
@@ -10,14 +10,33 @@ export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},pr
 <body>
 <SiteHeader lang={lang} blogHref="projects/"/>
 <main>
-<h1>{text(data.meta.title)}</h1>{data.projects.map(p=>
-<article>
+<h1>{text(data.meta.title)}</h1>
+<div class="filters" aria-label={lang === 'zh' ? '按标签筛选项目' : 'Filter projects by tag'}>
+<button type="button" class="tag filter-button active" data-project-filter="all" aria-pressed="true">{lang === 'zh' ? '全部' : 'All'}</button>
+{filterOptions.map(option=><button type="button" class="tag filter-button" data-project-filter={option.key} aria-pressed="false">{option.label}</button>)}
+</div>
+<div id="project-list">{data.projects.map(p=>
+<article data-project-filters={projectFilterKeys(p).join('|')}>
 <p class="title">
-<a href={p.detailSlug ? `/${lang}/projects/${p.detailSlug}/` : text(p.href)}>{text(p.title)}</a> <span>{text(p.tag)}</span>
+<a href={p.detailSlug ? `/${lang}/projects/${p.detailSlug}/` : text(p.href)}>{text(p.title)}</a>{projectTags(p).map((tag) => <> <span class="tag">{tag}</span></>)}
 </p>
 <p>{text(p.introduction) || (lang === 'zh' ? '待定' : 'TBD')}</p>
-</article>)}</main>
+</article>)}</div></main>
 <SiteFooter lang={lang}/>
+<script>
+const filterButtons=document.querySelectorAll<HTMLButtonElement>('[data-project-filter]');
+const projectItems=document.querySelectorAll<HTMLElement>('[data-project-filters]');
+const applyFilter=(selectedFilter:string,updateUrl=false)=>{
+const selectedButton=[...filterButtons].find(button=>button.dataset.projectFilter===selectedFilter)??filterButtons[0];
+const activeFilter=selectedButton?.dataset.projectFilter??'all';
+filterButtons.forEach(button=>{const active=button===selectedButton;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
+projectItems.forEach(item=>{const filters=item.dataset.projectFilters?.split('|')??[];item.hidden=activeFilter!=='all'&&!filters.includes(activeFilter);});
+if(updateUrl){const url=new URL(window.location.href);if(activeFilter==='all')url.searchParams.delete('filter');else url.searchParams.set('filter',activeFilter);history.pushState(null,'',`${url.pathname}${url.search}${url.hash}`);window.dispatchEvent(new Event('locationchange'));}
+};
+filterButtons.forEach(button=>button.addEventListener('click',()=>applyFilter(button.dataset.projectFilter??'all',true)));
+applyFilter(new URLSearchParams(window.location.search).get('filter')??'all');
+window.addEventListener('popstate',()=>applyFilter(new URLSearchParams(window.location.search).get('filter')??'all'));
+</script>
 </body>
 </html>
-<style>:global(*){box-sizing:border-box}:global(html){overflow-y:scroll}:global(body){min-height:100vh;display:flex;flex-direction:column;margin:0;background:#fff;color:#000;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}:global(main){flex:1;width:min(960px,calc(100% - 2rem));margin:0 auto;padding:1.5rem 0 2rem}h1{display:none;font-size:1.45rem;margin:0 0 1.2rem}.title{margin:0;font-weight:600}.title a{color:#06c}.title span{color:#777;font-size:.8rem;font-weight:400}article{margin:0 0 1.35rem}p{margin:.25rem 0 .65rem}main>h1+p{margin-top:0}</style>
+<style>:global(*){box-sizing:border-box}:global(html){overflow-y:scroll}:global(body){min-height:100vh;display:flex;flex-direction:column;margin:0;background:#fff;color:#000;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}:global(main){flex:1;width:min(960px,calc(100% - 2rem));margin:0 auto;padding:1.5rem 0 2rem}h1{display:none;font-size:1.45rem;margin:0 0 1.2rem}.filters{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin:0 0 1.25rem;padding-bottom:.75rem;border-bottom:1px solid #eee}.filters .tag+.tag{margin-left:0}.filter-button{padding:.15rem 0;border:0;border-bottom:1px solid transparent;background:none;cursor:pointer}.filter-button:hover{color:#333}.filter-button.active{border-bottom-color:#333;color:#000}.title{margin:0;font-weight:600}.title a{color:#06c}article{margin:0 0 1.35rem}p{margin:.25rem 0 .65rem}main>h1+p{margin-top:0}</style>
