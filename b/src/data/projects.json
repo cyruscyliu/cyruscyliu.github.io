@@ -336,6 +336,27 @@
         }
       ],
       "contact": ""
+    },
+    {
+      "id": "ai-hard-problems-in-system-security",
+      "researchArea": "systems-security",
+      "tags": [
+        { "en": "Open problem", "zh": "开放问题" },
+        { "en": "Bachelor's project", "zh": "本科项目" },
+        { "en": "Master's project", "zh": "硕士项目" },
+        { "en": "PhD project", "zh": "博士项目" }
+      ],
+      "href": "",
+      "training": [],
+      "title": {
+        "en": "300 AI-Hard Problems in System Security",
+        "zh": "300 让 AI 失灵的系统安全难题"
+      },
+      "introduction": {
+        "en": "This open problem asks whether system security contains fundamental challenges—and compositions of those challenges—that reliably cause current AI models and agents to fail. Software hardening and resistance to reverse engineering provide a representative setting: obfuscation, packing, anti-debugging, anti-emulation, self-modifying code, opaque predicates, indirect control flow, and adversarially composed transformations can each obstruct analysis, while their combinations may create qualitatively harder problems than any component alone. The project builds a taxonomy and benchmark suite of primitive and composed AI-hard tasks, measures where models lose correctness, robustness, efficiency, or the ability to recover from mistakes, and studies whether failures arise from missing knowledge, limited context, long-horizon reasoning, tool use, partial observability, or adversarial structure. Undergraduate projects can construct and evaluate focused challenge instances, master's projects can build scalable benchmark and analysis systems, and PhD projects can characterize capability boundaries, compositional hardness, and new methods that overcome them.",
+        "zh": "本开放问题研究：系统安全中是否存在一些能够稳定导致当前 AI 模型和智能体失灵的基础难题，以及由这些难题组合而成、难度显著高于单个组成部分的复合问题。软件加固与防逆向提供了一个代表性场景：代码混淆、加壳、反调试、反模拟、自修改代码、不透明谓词、间接控制流和对抗性组合变换都可能分别阻碍分析，而多种机制叠加后可能形成性质不同的更难问题。项目将构建基础难题与复合难题的分类体系和基准，测量 AI 在正确性、鲁棒性、效率及错误恢复能力上的失效边界，并分析失败究竟源于知识缺失、上下文限制、长程推理、工具使用、部分可观测性还是对抗性结构。本科项目可构造并评测聚焦的难题实例，硕士项目可建设可扩展的基准与分析系统，博士项目可研究能力边界、组合难度及突破这些限制的新方法。"
+      },
+      "contact": ""
     }
   ]
 }
