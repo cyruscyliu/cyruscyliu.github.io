@@ -15,6 +15,6 @@ export async function getBlogPosts(): Promise<CollectionEntry<'blog'>[]> {
 
   if (!includeDrafts) return indexed;
 
-  const drafts = posts.filter((post) => post.data.draft);
+  const drafts = posts.filter((post) => post.data.draft && !blogIndex.entries.includes(post.data.slug));
   return [...indexed, ...drafts].sort((a, b) => b.data.date.localeCompare(a.data.date));
 }
