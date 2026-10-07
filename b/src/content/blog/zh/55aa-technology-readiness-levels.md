@@ -1,6 +1,6 @@
 ---
-title: "55AA实验室科技转化技术成熟度指南"
-description: "覆盖论文投稿、artifact evaluation、产品化与商业回报的技术成熟度指南。"
+title: "55AA实验室科技转化技术成熟度参考"
+description: "覆盖论文投稿、artifact evaluation、产品化与商业回报的技术成熟度参考。"
 date: "2026-10-07"
 language: "zh"
 slug: "55aa-technology-readiness-levels"
