@@ -169,7 +169,7 @@ async function main() {
 
   const files = fs.readdirSync(outDir)
     .filter(f => /^page-\d+\.png$/.test(f))
-    .sort();
+    .sort((a, b) => parseInt(a.match(/\d+/)[0], 10) - parseInt(b.match(/\d+/)[0], 10));
 
   const now = Date.now() / 1000;
   for (let i = 0; i < files.length; i++) {
