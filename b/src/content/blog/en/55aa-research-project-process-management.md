@@ -3,7 +3,7 @@ title: "Research Project Process Management at 55AA Lab"
 description: "The 55AA Lab research project management process covers 0-1 validation, cognitive alignment, investigation and validation, paper submission, outcome strengthening, and reflection and improvement."
 date: "2026-09-19"
 language: "en"
-slug: "55aa-research-project-process-management-en"
+slug: "55aa-research-project-process-management"
 tags:
   - "Research Management"
   - "Version 0.1"

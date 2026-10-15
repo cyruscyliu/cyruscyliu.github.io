@@ -7,13 +7,14 @@
     }
   },
   "entries": [
-    "55aa-member-process-management",
-    "55aa-member-process-management-en",
-    "55aa-research-project-process-management",
-    "55aa-research-project-process-management-en",
-    "55aa-technology-readiness-levels",
-    "gbu-hit-2027-joint-phd-admissions",
-    "gbu-sustech-2027-joint-master-admissions",
-    "syssec-not-hard-anymore"
+    "zh/55aa-member-process-management",
+    "en/55aa-member-process-management",
+    "zh/55aa-research-project-process-management",
+    "en/55aa-research-project-process-management",
+    "zh/55aa-technology-readiness-levels",
+    "zh/gbu-hit-2027-joint-phd-admissions",
+    "zh/gbu-sustech-2027-joint-master-admissions",
+    "zh/syssec-not-hard-anymore",
+    "en/syssec-not-hard-anymore"
   ]
 }

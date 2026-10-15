@@ -3,7 +3,7 @@ title: "Member Process Management at 55AA Lab"
 description: "The 55AA Lab process for member recruitment, training, activities, assessment, incentives, and departures."
 date: "2026-09-19"
 language: "en"
-slug: "55aa-member-process-management-en"
+slug: "55aa-member-process-management"
 tags:
   - "Member Management"
   - "v0.1"
