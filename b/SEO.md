@@ -111,7 +111,7 @@ Search Console 已记录以下旧 URL 的展示：
 
 以后发布单门课程时再逐门审核。课程页至少需要正式发布状态、完成中英文内容审核、移除 TBD/placeholder、提供完整大纲和真实课程材料，并能够满足独立搜索意图；课次页还必须经过逐页人工审核，移除占位 Slides、占位视频和模板化材料。审核通过后才设置显式索引标记并重新进入 sitemap。
 
-### P0-4：[已修复并待上线验收] 个人搜索需求没有落到最合适的页面
+### P0-4：[已修复并上线] 个人搜索需求没有落到最合适的页面
 
 `/en/people/qiang-liu/` 和 `/zh/people/qiang-liu/` 原本已经存在，但不在 sitemap 中，也没有出现在本次 Search Console 页面数据里。个人详情页 description 原本只有 `Principal Investigator`，不足以承接已经出现的姓名、EPFL 和研究方向查询。CV 已产生流量，但 PDF 原本缺少 Title、Author、Subject 等文档元数据。
 
@@ -124,7 +124,9 @@ Search Console 已记录以下旧 URL 的展示：
 - 首页和 People 列表页继续使用可抓取的个人详情页链接，并同步显示本地化姓名；CV 链接使用具有含义的双语锚文本。
 - `Qiang_s_CV.pdf` 补齐 Title、Author、Subject 和 Keywords；元数据源保存在 `scripts/Qiang_s_CV.metadata.txt`，便于以后重新生成 PDF 时复用。
 
-本地已使用 Node.js 24.22.1 和 npm 11.19.1 完整构建：7 个测试全部通过，33/33 个 sitemap URL 均对应可索引 canonical 页面，课程区仍保持 0 个可索引和 1,454 个 `noindex` 页面。针对性验收确认双语个人页的 title、description、H1、canonical、robots、hreflang、`Person` JSON-LD 以及首页和 People 页内部链接均正确；`pdfinfo` 确认 CV 元数据存在、页数仍为 5，`pdftotext` 确认正文可读取。正式站状态待本次部署完成后复查。
+本地已使用 Node.js 24.22.1 和 npm 11.19.1 完整构建：7 个测试全部通过，33/33 个 sitemap URL 均对应可索引 canonical 页面，课程区仍保持 0 个可索引和 1,454 个 `noindex` 页面。针对性验收确认双语个人页的 title、description、H1、canonical、robots、hreflang、`Person` JSON-LD 以及首页和 People 页内部链接均正确；`pdfinfo` 确认 CV 元数据存在、页数仍为 5，`pdftotext` 确认正文可读取。
+
+GitHub Actions workflow `39971755351` 已完成相同构建和自动验收，并成功部署到 GitHub Pages。正式站复查确认：`/sitemap.xml` 返回 `200 application/xml` 且包含 33 个 URL，两个人详情 URL 各出现一次；双语个人页均返回 `200 text/html`，输出预期的 title、description、canonical、hreflang、`index, follow` 和 `Person` JSON-LD；首页和 People 列表页均保留详情页链接。线上 CV 返回 `200 application/pdf`，Title、Author、Subject、Keywords 均正确，仍为 5 页且正文可读取。
 
 ### P1-1：首页缺少一级标题
 
@@ -161,7 +163,7 @@ Search Console 已记录以下旧 URL 的展示：
 - [x] **步骤 3：明确两个英文博客旧 URL 的弃用策略。** 2026-10-23 已确认旧 URL 没有外链，且不考虑兼容：旧 URL 保持 `404`，不恢复、不做 `301`；新 URL 均返回 `200`，canonical、sitemap 和内部链接只使用新 URL。
 - [x] **步骤 4：定义课程索引门槛。** 2026-10-23 已确认当前没有认真建设并完成审核的课程，因此 Courses 整体按建设中处理。索引采用显式白名单：课程首页、单门课程和单个课次分别明确设置 `indexable: true` 后才有资格进入 sitemap；课次必须同时获得父课程和自身批准。未来课程页还需满足正式发布、中英文审核完成、无 TBD/placeholder、具有完整大纲和真实材料、能够满足独立搜索意图；课次还需逐页人工审核且不得含占位 Slides、视频或模板化材料。
 - [x] **步骤 5：为共享 SEO head 增加可配置 robots 并执行课程区策略。** `SeoHead` 已支持按页面输出 `index, follow` 或 `noindex, follow`；课程首页、44 个双语课程详情页和 1,408 个双语课次页继续生成并可访问，但合计 1,454 个页面全部输出 `noindex, follow`，且从 sitemap 移除。sitemap 由 1,485 个 URL 减少为 31 个。新增课程索引策略与构建产物自动验收，7 个测试全部通过；完整本地构建确认 31/31 个 sitemap URL 均为可索引 canonical 页面，并确认课程区 0 个页面可索引、1,454 个页面为 `noindex`。GitHub Actions workflow `39969252535` 完成相同验收并成功部署；正式 sitemap 返回 `200 application/xml`、包含 31 个 URL 且不含课程 URL，抽查中英文课程首页、课程详情和课次详情均返回 `200`、输出 `noindex, follow` 并显示建设中提示。
-- [x] **步骤 6：把双语刘强（Qiang Liu）个人详情页加入 sitemap。** 2026-10-23 已确认中文正式姓名为“刘强”，新单位为“大湾区大学 / Great Bay University / GBU”。sitemap 从 31 增至 33 个 URL；双语详情页已优化 title、description、H1 和 `Person` JSON-LD，当前 EPFL 博士后与 2027 年 1 月加入 GBU 的时间关系分开表述。首页和 People 页的内部链接已验收，CV 已补齐 Title、Author、Subject 和 Keywords。Node.js 24.22.1 完整构建及针对性本地验收均通过，正式部署验收待 workflow 完成后补记。
+- [x] **步骤 6：把双语刘强（Qiang Liu）个人详情页加入 sitemap。** 2026-10-23 已确认中文正式姓名为“刘强”，新单位为“大湾区大学 / Great Bay University / GBU”。sitemap 从 31 增至 33 个 URL；双语详情页已优化 title、description、H1 和 `Person` JSON-LD，当前 EPFL 博士后与 2027 年 1 月加入 GBU 的时间关系分开表述。首页和 People 页的内部链接已验收，CV 已补齐 Title、Author、Subject 和 Keywords。Node.js 24.22.1 完整构建及针对性本地验收均通过；GitHub Actions workflow `39971755351` 构建并部署成功，正式站的 33 项 sitemap、双语个人页、内部链接、结构化数据及 PDF 元数据均已复查通过。
 - [ ] **步骤 7：恢复首页唯一文本 `<h1>`。** 英文使用 `55AA Security Lab`；中文名称使用经过确认的正式表述，后续 section 继续使用 `<h2>`。
 - [ ] **步骤 8：取得 Search Console Page indexing 和 Sitemaps 数据。** 记录实际索引数，以及 `Crawled - currently not indexed`、`Discovered - currently not indexed`、重复网页和 404 等原因。
 
