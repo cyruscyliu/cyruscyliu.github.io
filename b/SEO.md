@@ -14,6 +14,7 @@
 - **课程索引供给已收敛**：上线首月 sitemap 约 98% 是尚在建设中的课程和课次页面，它们取得了大量展示但没有点击。2026-10-23 已将 Courses 整体标记为建设中：1,454 个双语课程相关页面继续开放访问，但全部输出 `noindex, follow` 并退出 sitemap；sitemap 从 1,485 个 URL 收敛为 31 个。
 - **首个发布回归已经修复**：2026-10-23 发现线上 sitemap 中 9 个博客详情 URL 重复包含语言目录并返回 `404`；同日已修复、部署并完成线上验收。
 - **旧博客 URL 已明确弃用**：两个曾在 Search Console 获得展示的英文博客旧 URL 没有外链，也不需要兼容；保持 `404`，不恢复页面、不配置 `301`，并只在 canonical、sitemap 和内部链接中使用新 URL。
+- **个人姓名搜索入口已完成优化**：双语刘强（Qiang Liu）详情页已加入 sitemap；页面使用独立 title、description 和完整 `Person` JSON-LD，CV PDF 已补齐文档元数据。当前任职表述为 EPFL/HexHive 博士后，未来任职表述为 2027 年 1 月加入大湾区大学（Great Bay University，GBU）。
 - **首页标题层级发生回归**：2026-10-23 线上检查确认 `/en/` 和 `/zh/` 都没有 `<h1>`，页面标题层级从多个 `<h2>` 开始。
 
 ## 首月 Search Console 基线
@@ -110,9 +111,20 @@ Search Console 已记录以下旧 URL 的展示：
 
 以后发布单门课程时再逐门审核。课程页至少需要正式发布状态、完成中英文内容审核、移除 TBD/placeholder、提供完整大纲和真实课程材料，并能够满足独立搜索意图；课次页还必须经过逐页人工审核，移除占位 Slides、占位视频和模板化材料。审核通过后才设置显式索引标记并重新进入 sitemap。
 
-### P0-4：个人搜索需求没有落到最合适的页面
+### P0-4：[已修复并待上线验收] 个人搜索需求没有落到最合适的页面
 
-`/en/people/qiang-liu/` 和 `/zh/people/qiang-liu/` 已经存在，但不在当前 sitemap 中，也没有出现在本次 Search Console 页面数据里。个人详情页 description 目前只有 `Principal Investigator`，不足以承接已经出现的姓名、EPFL 和研究方向查询。CV 已产生流量，但 PDF 缺少 Title、Author、Subject 等文档元数据。
+`/en/people/qiang-liu/` 和 `/zh/people/qiang-liu/` 原本已经存在，但不在 sitemap 中，也没有出现在本次 Search Console 页面数据里。个人详情页 description 原本只有 `Principal Investigator`，不足以承接已经出现的姓名、EPFL 和研究方向查询。CV 已产生流量，但 PDF 原本缺少 Title、Author、Subject 等文档元数据。
+
+2026-10-23 已确认中文正式姓名为“刘强”，新单位的正式写法为“大湾区大学 / Great Bay University / GBU”。本次据此完成以下调整：
+
+- 双语个人详情页加入 sitemap，sitemap 由 31 个 URL 增至 33 个；两页均保留自引用 canonical、双语 hreflang 和 `index, follow`。
+- 英文页使用 `Qiang Liu`，中文页使用“刘强”，并以 `alternateName` 在 `Person` JSON-LD 中建立双语姓名关联。
+- description 明确区分时间：当前为 EPFL/HexHive 博士后，计划于 2027 年 1 月加入大湾区大学（Great Bay University，GBU）任教；在到任前不把 GBU 错写为当前雇主。
+- `Person` JSON-LD 增加稳定 `@id`、页面 `url`、`mainEntityOfPage`、研究领域 `knowsAbout`、当前任职单位 EPFL、55AA Security Lab affiliation、浙江大学教育背景，以及 Google Scholar、GitHub `sameAs`。
+- 首页和 People 列表页继续使用可抓取的个人详情页链接，并同步显示本地化姓名；CV 链接使用具有含义的双语锚文本。
+- `Qiang_s_CV.pdf` 补齐 Title、Author、Subject 和 Keywords；元数据源保存在 `scripts/Qiang_s_CV.metadata.txt`，便于以后重新生成 PDF 时复用。
+
+本地已使用 Node.js 24.22.1 和 npm 11.19.1 完整构建：7 个测试全部通过，33/33 个 sitemap URL 均对应可索引 canonical 页面，课程区仍保持 0 个可索引和 1,454 个 `noindex` 页面。针对性验收确认双语个人页的 title、description、H1、canonical、robots、hreflang、`Person` JSON-LD 以及首页和 People 页内部链接均正确；`pdfinfo` 确认 CV 元数据存在、页数仍为 5，`pdftotext` 确认正文可读取。正式站状态待本次部署完成后复查。
 
 ### P1-1：首页缺少一级标题
 
@@ -128,6 +140,7 @@ Search Console 已记录以下旧 URL 的展示：
 - [x] 配置 robots.txt 和构建时自动生成的 sitemap.xml。
 - [x] sitemap 与课程索引自动验收已接入 `npm run build`：逐项检查 URL 唯一性、正式域名、生成文件、canonical、sitemap 中不得出现 `noindex`，并反向检查所有课程相关页面的显式索引标记、robots 指令和 sitemap 收录状态；失败会阻止 Pages artifact 上传。
 - [x] 项目和 GitHub Pages 工作流已统一到 Node.js 24；官方 Actions 已升级到原生 Node 24 的稳定主版本。
+- [x] 本地默认 Node.js 已升级为 24.22.1，npm 为 11.19.1。
 - [x] 为 People、Courses、Projects、Publications、Tools、Blog、Consultation 和 Sponsorship 建立独立 URL。
 - [x] 导航使用真实链接，主要内容可以在静态 HTML 中抓取。
 - [x] 首页 `ResearchOrganization`、People `Person`、课程 `Course`、课次 `LearningResource` 和博客 `Article` JSON-LD。
@@ -148,7 +161,7 @@ Search Console 已记录以下旧 URL 的展示：
 - [x] **步骤 3：明确两个英文博客旧 URL 的弃用策略。** 2026-10-23 已确认旧 URL 没有外链，且不考虑兼容：旧 URL 保持 `404`，不恢复、不做 `301`；新 URL 均返回 `200`，canonical、sitemap 和内部链接只使用新 URL。
 - [x] **步骤 4：定义课程索引门槛。** 2026-10-23 已确认当前没有认真建设并完成审核的课程，因此 Courses 整体按建设中处理。索引采用显式白名单：课程首页、单门课程和单个课次分别明确设置 `indexable: true` 后才有资格进入 sitemap；课次必须同时获得父课程和自身批准。未来课程页还需满足正式发布、中英文审核完成、无 TBD/placeholder、具有完整大纲和真实材料、能够满足独立搜索意图；课次还需逐页人工审核且不得含占位 Slides、视频或模板化材料。
 - [x] **步骤 5：为共享 SEO head 增加可配置 robots 并执行课程区策略。** `SeoHead` 已支持按页面输出 `index, follow` 或 `noindex, follow`；课程首页、44 个双语课程详情页和 1,408 个双语课次页继续生成并可访问，但合计 1,454 个页面全部输出 `noindex, follow`，且从 sitemap 移除。sitemap 由 1,485 个 URL 减少为 31 个。新增课程索引策略与构建产物自动验收，7 个测试全部通过；完整本地构建确认 31/31 个 sitemap URL 均为可索引 canonical 页面，并确认课程区 0 个页面可索引、1,454 个页面为 `noindex`。GitHub Actions workflow `39969252535` 完成相同验收并成功部署；正式 sitemap 返回 `200 application/xml`、包含 31 个 URL 且不含课程 URL，抽查中英文课程首页、课程详情和课次详情均返回 `200`、输出 `noindex, follow` 并显示建设中提示。
-- [ ] **步骤 6：把双语 Qiang Liu 个人详情页加入 sitemap。** 优化个人页 title、description、`Person` JSON-LD、内部链接和 CV 元数据；姓名中文写法、当前/未来机构身份必须由本人确认。
+- [x] **步骤 6：把双语刘强（Qiang Liu）个人详情页加入 sitemap。** 2026-10-23 已确认中文正式姓名为“刘强”，新单位为“大湾区大学 / Great Bay University / GBU”。sitemap 从 31 增至 33 个 URL；双语详情页已优化 title、description、H1 和 `Person` JSON-LD，当前 EPFL 博士后与 2027 年 1 月加入 GBU 的时间关系分开表述。首页和 People 页的内部链接已验收，CV 已补齐 Title、Author、Subject 和 Keywords。Node.js 24.22.1 完整构建及针对性本地验收均通过，正式部署验收待 workflow 完成后补记。
 - [ ] **步骤 7：恢复首页唯一文本 `<h1>`。** 英文使用 `55AA Security Lab`；中文名称使用经过确认的正式表述，后续 section 继续使用 `<h2>`。
 - [ ] **步骤 8：取得 Search Console Page indexing 和 Sitemaps 数据。** 记录实际索引数，以及 `Crawled - currently not indexed`、`Discovered - currently not indexed`、重复网页和 404 等原因。
 

@@ -21,21 +21,32 @@ const person = Astro.props.person;
 const text = (value) => typeof value === 'string' ? value : value?.[lang] ?? value?.en ?? '';
 const profile = person.profile;
 const profileText = (value) => Array.isArray(value) ? value : value?.[lang] ?? value?.en ?? [];
+const displayName = lang === 'zh' ? person.nameZh ?? person.name : person.name;
+const alternateName = lang === 'zh' ? person.name : person.nameZh;
+const pageUrl = `https://www.55aaseclab.com/${lang}/people/${profile.slug}/`;
+const description = text(profile.seo.description);
 ---
 
 <!doctype html>
 <html lang={lang}>
 <head>
-<SeoHead lang={lang} path={`people/${profile.slug}`} title={`${person.name} · 55AA Security Lab`} description={text(person.role)}/>
+<SeoHead lang={lang} path={`people/${profile.slug}`} title={text(profile.seo.title)} description={description}/>
 <script type="application/ld+json" set:html={JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: person.name,
-  jobTitle: text(person.role),
+  '@id': `${pageUrl}#person`,
+  name: displayName,
+  alternateName,
+  url: pageUrl,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+  jobTitle: text(profile.currentPosition.title),
   image: person.profileImage,
-  description: text(person.role),
+  description,
+  knowsAbout: person.interests[lang],
   sameAs: person.links.filter((link) => link.kind !== 'email').map((link) => link.url),
-  worksFor: { '@type': 'Organization', name: '55AA Security Lab', url: 'https://www.55aaseclab.com/' }
+  worksFor: { '@type': 'Organization', ...profile.currentPosition.organization },
+  affiliation: { '@type': 'ResearchOrganization', name: lang === 'zh' ? '55AA 安全实验室' : '55AA Security Lab', url: 'https://www.55aaseclab.com/' },
+  alumniOf: { '@type': 'CollegeOrUniversity', name: lang === 'zh' ? '浙江大学' : 'Zhejiang University', alternateName: 'ZJU', url: 'https://www.zju.edu.cn/english/' }
 })} />
 </head>
 <body>

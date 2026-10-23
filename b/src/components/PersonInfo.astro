@@ -2,17 +2,18 @@
 import SocialIcon from './SocialIcon.astro';
 const { person, lang, nameTag: NameTag = 'h1', nameHref, showName = true } = Astro.props;
 const text = (value) => typeof value === 'string' ? value : value?.[lang] ?? value?.en ?? '';
+const displayName = lang === 'zh' ? person.nameZh ?? person.name : person.name;
 ---
 <div class="person-info">
   {showName && (
     <NameTag class="person-name">
-      {nameHref ? <a class="person-name-link" href={nameHref}>{person.name}</a> : person.name}
+      {nameHref ? <a class="person-name-link" href={nameHref}>{displayName}</a> : displayName}
     </NameTag>
   )}
   <p class="person-role">{text(person.role)}</p>
   <p class="person-interests">{person.interests[lang].join(' · ')}</p>
   <div class="person-links">
-    {person.cv && <a class="cv-link" href={person.cv} target="_blank" rel="noreferrer">CV</a>}
+    {person.cv && <a class="cv-link" href={person.cv} target="_blank" rel="noreferrer">{lang === 'zh' ? '个人简历（PDF）' : 'Curriculum vitae (PDF)'}</a>}
     {person.links.map((link) => (
       <a href={link.url} aria-label={text(link.label)} title={text(link.label)}>
         <SocialIcon kind={link.kind}/>

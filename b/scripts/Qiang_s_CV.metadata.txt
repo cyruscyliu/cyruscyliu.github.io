@@ -1,0 +1,12 @@
+InfoBegin
+InfoKey: Title
+InfoValue: Qiang Liu — Curriculum Vitae
+InfoBegin
+InfoKey: Author
+InfoValue: Qiang Liu
+InfoBegin
+InfoKey: Subject
+InfoValue: System security researcher at EPFL and incoming faculty member at Great Bay University (GBU) in January 2027
+InfoBegin
+InfoKey: Keywords
+InfoValue: Qiang Liu; system security; EPFL; Great Bay University; GBU

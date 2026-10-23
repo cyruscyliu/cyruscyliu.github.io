@@ -16,6 +16,7 @@ const lang = runtimePath.includes('/zh/')
 const text = (value) => typeof value === 'string' ? value : value?.[lang] ?? '';
 const title = lang === 'zh' ? '成员' : 'People';
 const description = lang === 'zh' ? '55AA 安全实验室成员。' : 'People at 55AA Security Lab.';
+const displayName = (person) => lang === 'zh' ? person.nameZh ?? person.name : person.name;
 ---
 
 <!doctype html>
@@ -31,11 +32,17 @@ const description = lang === 'zh' ? '55AA 安全实验室成员。' : 'People at
     position: index + 1,
     item: {
       '@type': 'Person',
-      name: person.name,
+      name: displayName(person),
+      alternateName: lang === 'zh' ? person.name : person.nameZh,
       jobTitle: text(person.role),
       image: person.profileImage,
+      description: person.profile ? text(person.profile.seo.description) : text(person.role),
+      knowsAbout: person.interests[lang],
       sameAs: person.links.filter((link) => link.kind !== 'email').map((link) => link.url),
-      worksFor: { '@type': 'Organization', name: '55AA Security Lab', url: 'https://www.55aaseclab.com/' }
+      worksFor: person.profile?.currentPosition
+        ? { '@type': 'Organization', ...person.profile.currentPosition.organization }
+        : undefined,
+      affiliation: { '@type': 'ResearchOrganization', name: lang === 'zh' ? '55AA 安全实验室' : '55AA Security Lab', url: 'https://www.55aaseclab.com/' }
     }
   }))
 })} />

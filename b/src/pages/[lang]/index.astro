@@ -25,6 +25,7 @@ export function getStaticPaths() {
 
 const lang = (Astro.params.lang === 'zh' ? 'zh' : 'en') as 'en' | 'zh';
 const text = (value: any) => typeof value === 'string' ? value : value?.[lang] ?? '';
+const personName = (person: typeof people.people[number]) => lang === 'zh' ? person.nameZh ?? person.name : person.name;
 const researchSummary = research.areas.map((area) => { const title = text(area.title); return lang === 'en' ? title.replace(/^[A-Z]/, (letter) => letter.toLowerCase()) : title; }).join(lang === 'zh' ? '、' : ', ');
 const tabs = home.sections;
 const labels = { en: { language: '中文', footer: '55AA Security Lab' }, zh: { language: 'English', footer: '55AA Security Lab' } }[lang];
@@ -79,7 +80,7 @@ const displayTools = tools.tools.map((tool) => {
         </Preview>
       </section>
       <section class="panel" data-panel="people">
-        <div class="people-grid">{people.people.map((person) => <article class="person-card">{person.profile ? <a class="person-image-link" href={`/${lang}/people/${person.profile.slug}/`}><img class="person-image" src={person.profileImage} alt={text(person.alt)} /></a> : <img class="person-image" src={person.profileImage} alt={text(person.alt)} />}<div class="person-info"><div>{person.profile ? <h2><a class="person-name" href={`/${lang}/people/${person.profile.slug}/`}>{person.name}</a></h2> : <h2>{person.name}</h2>}<p class="person-role">{text(person.role)}</p></div><p class="person-interests">{person.interests[lang].join(' · ')}</p><div class="socials">{person.cv && <a class="cv-link" href={person.cv} target="_blank" rel="noreferrer">CV</a>}{person.links.map((link) => <a href={link.url} aria-label={text(link.label)} title={text(link.label)}><SocialIcon kind={link.kind} /></a>)}</div></div></article>)}</div>
+        <div class="people-grid">{people.people.map((person) => <article class="person-card">{person.profile ? <a class="person-image-link" href={`/${lang}/people/${person.profile.slug}/`}><img class="person-image" src={person.profileImage} alt={text(person.alt)} /></a> : <img class="person-image" src={person.profileImage} alt={text(person.alt)} />}<div class="person-info"><div>{person.profile ? <h2><a class="person-name" href={`/${lang}/people/${person.profile.slug}/`}>{personName(person)}</a></h2> : <h2>{personName(person)}</h2>}<p class="person-role">{text(person.role)}</p></div><p class="person-interests">{person.interests[lang].join(' · ')}</p><div class="socials">{person.cv && <a class="cv-link" href={person.cv} target="_blank" rel="noreferrer">{lang === 'zh' ? '个人简历（PDF）' : 'Curriculum vitae (PDF)'}</a>}{person.links.map((link) => <a href={link.url} aria-label={text(link.label)} title={text(link.label)}><SocialIcon kind={link.kind} /></a>)}</div></div></article>)}</div>
       </section>
       <section class="panel" data-panel="publications">
         <PublicationList lang={lang} publications={dblp.publications} />

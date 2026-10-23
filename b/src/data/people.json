@@ -11,6 +11,7 @@
   "people": [
       {
         "name": "Qiang Liu",
+        "nameZh": "刘强",
         "role": {
           "en": "Principal Investigator",
           "zh": "课题负责人"
@@ -26,11 +27,46 @@
         "profileImage": "https://avatars.githubusercontent.com/cyruscyliu?s=256",
         "alt": {
           "en": "Profile image of Qiang Liu",
-          "zh": "Qiang Liu 的头像"
+          "zh": "刘强的头像"
         },
         "cv": "/Qiang_s_CV.pdf",
         "profile": {
           "slug": "qiang-liu",
+          "seo": {
+            "title": {
+              "en": "Qiang Liu — System Security Researcher · 55AA Security Lab",
+              "zh": "刘强（Qiang Liu）— 系统安全研究者 · 55AA 安全实验室"
+            },
+            "description": {
+              "en": "Qiang Liu is an EPFL postdoctoral researcher in system security and will join Great Bay University (GBU) in January 2027.",
+              "zh": "刘强是 EPFL 系统安全方向博士后研究员，计划于 2027 年 1 月加入大湾区大学（Great Bay University，GBU）任教。"
+            }
+          },
+          "currentPosition": {
+            "title": {
+              "en": "Postdoctoral Researcher",
+              "zh": "博士后研究员"
+            },
+            "organization": {
+              "name": "EPFL",
+              "url": "https://www.epfl.ch/"
+            }
+          },
+          "futurePosition": {
+            "title": {
+              "en": "Faculty Member",
+              "zh": "教师"
+            },
+            "startDate": "2027-01",
+            "organization": {
+              "name": {
+                "en": "Great Bay University",
+                "zh": "大湾区大学"
+              },
+              "alternateName": "GBU",
+              "url": "https://www.gbu.edu.cn/"
+            }
+          },
           "sections": [
             {
               "key": "biography",
@@ -43,7 +79,7 @@
                   "Qiang Liu is a postdoc at EPFL, working with Prof. Mathias Payer in the HexHive laboratory. He earned his Ph.D. in 2023 from Zhejiang University (ZJU) under the guidance of Prof. Yajin Zhou. His research interest is system security that seeks to establish chain of trust spanning the entire technology stack, from low-level software to user applications, and from individual computers to large-scale distributed and heterogeneous systems, grounded in a deep understanding of hardware and software. His work has been recognized at all the top security conferences: IEEE S&P, Usenix Security, ACM CCS, and ISOC NDSS. He received the Best Paper Awards at USENIX Security'24, ACM RAID'24, and USENIX WOOT'26. He served on the program committee for IEEE/ACM ASE'25 and USENIX Security'25 and has reviewed for journals including IEEE TIFS, ACM CSUR, and ACM TOSEM. He will join Great Bay University (GBU) as a faculty member in January 2027."
                 ],
                 "zh": [
-                  "Qiang Liu 是 EPFL 的博士后研究员，在 HexHive 实验室与 Mathias Payer 教授合作。他于 2023 年在浙江大学（ZJU）获得博士学位，导师为 Yajin Zhou 教授。他的研究兴趣是系统安全，致力于建立贯穿整个技术栈的信任链：从底层软件到用户应用，从单台计算机到大规模分布式和异构系统，并以对硬件和软件的深入理解为基础。他的工作获得了各大顶级安全会议的认可，包括 IEEE S&P、USENIX Security、ACM CCS 和 ISOC NDSS。他曾获得 USENIX Security'24、ACM RAID'24 和 USENIX WOOT'26 最佳论文奖。他曾担任 IEEE/ACM ASE'25 和 USENIX Security'25 的程序委员会委员，并为 IEEE TIFS、ACM CSUR 和 ACM TOSEM 等期刊审稿。他将于 2027 年 1 月加入大湾区大学（GBU）任教。"
+                  "刘强是 EPFL 的博士后研究员，在 HexHive 实验室与 Mathias Payer 教授合作。他于 2023 年在浙江大学（ZJU）获得博士学位，导师为 Yajin Zhou 教授。他的研究兴趣是系统安全，致力于建立贯穿整个技术栈的信任链：从底层软件到用户应用，从单台计算机到大规模分布式和异构系统，并以对硬件和软件的深入理解为基础。他的工作获得了各大顶级安全会议的认可，包括 IEEE S&P、USENIX Security、ACM CCS 和 ISOC NDSS。他曾获得 USENIX Security'24、ACM RAID'24 和 USENIX WOOT'26 最佳论文奖。他曾担任 IEEE/ACM ASE'25 和 USENIX Security'25 的程序委员会委员，并为 IEEE TIFS、ACM CSUR 和 ACM TOSEM 等期刊审稿。他将于 2027 年 1 月加入大湾区大学（Great Bay University，GBU）任教。"
                 ]
               }
             },

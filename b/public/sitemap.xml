@@ -133,6 +133,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/projects/aero-space-security/" />
   </url>
   <url>
+    <loc>https://www.55aaseclab.com/en/people/qiang-liu/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/people/qiang-liu/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/people/qiang-liu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/people/qiang-liu/" />
+  </url>
+  <url>
+    <loc>https://www.55aaseclab.com/zh/people/qiang-liu/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/people/qiang-liu/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/people/qiang-liu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/people/qiang-liu/" />
+  </url>
+  <url>
     <loc>https://www.55aaseclab.com/zh/blog/55aa-member-process-management/</loc>
   </url>
   <url>

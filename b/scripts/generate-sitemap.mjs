@@ -40,9 +40,14 @@ const projects = JSON.parse(await readFile(new URL('../src/data/projects.json', 
 const projectPaths = projects.projects
   .filter((project) => project.detailSlug)
   .map((project) => `projects/${project.detailSlug}`);
+const people = JSON.parse(await readFile(new URL('../src/data/people.json', import.meta.url), 'utf8'));
+const peoplePaths = people.people
+  .filter((person) => person.profile?.slug)
+  .map((person) => `people/${person.profile.slug}`);
 const paths = [
   ...sections,
   ...projectPaths,
+  ...peoplePaths,
   ...coursePaths,
   ...lessonPaths,
 ];
