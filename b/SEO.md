@@ -11,7 +11,7 @@
 - **技术基础有效**：正式域名、HTTPS、robots、canonical、hreflang、独立 URL、静态内容和 Search Console 提交已经让站点进入搜索结果。
 - **增长方向正常**：后 16 天展示量较前 16 天增长约 107%，点击由 3 增至 7。
 - **主题权威尚未建立**：目前唯一得到充分验证的查询需求是 `Qiang Liu` 相关个人姓名词，而不是实验室品牌词或系统安全主题词。
-- **索引供给失衡**：线上 sitemap 约 98% 是尚在建设中的课程和课次页面，它们取得了大量展示但没有点击。
+- **课程索引供给已收敛**：上线首月 sitemap 约 98% 是尚在建设中的课程和课次页面，它们取得了大量展示但没有点击。2026-10-23 已将 Courses 整体标记为建设中：1,454 个双语课程相关页面继续开放访问，但全部输出 `noindex, follow` 并退出 sitemap；sitemap 从 1,485 个 URL 收敛为 31 个。
 - **首个发布回归已经修复**：2026-10-23 发现线上 sitemap 中 9 个博客详情 URL 重复包含语言目录并返回 `404`；同日已修复、部署并完成线上验收。
 - **旧博客 URL 已明确弃用**：两个曾在 Search Console 获得展示的英文博客旧 URL 没有外链，也不需要兼容；保持 `404`，不恢复页面、不配置 `301`，并只在 canonical、sitemap 和内部链接中使用新 URL。
 - **首页标题层级发生回归**：2026-10-23 线上检查确认 `/en/` 和 `/zh/` 都没有 `<h1>`，页面标题层级从多个 `<h2>` 开始。
@@ -94,11 +94,21 @@ Search Console 已记录以下旧 URL 的展示：
 ### P0-3：课程页面数量与成熟度不匹配
 
 - 22 门课程中，21 门状态为 `Under development`，1 门为 `Placeholder`，没有正式发布课程。
-- sitemap 中 1454/1485，即约 97.9% 的 URL 是课程相关页面；1408/1485，即约 94.8% 是课次页面。
+- 调整前的 sitemap 中 1454/1485，即约 97.9% 的 URL 是课程相关页面；1408/1485，即约 94.8% 是课次页面。
 - Search Console 中出现过展示的课程与课次 URL 共 221 个，获得 383 次页面级展示和 0 次点击。
 - 非课程页面只有 31 个，却获得 338 次页面级展示和全部 10 次点击。
 
 这不是典型的抓取预算问题，而是索引质量和优先级问题。建设中页面可以继续对直接访问者开放，但在达到发布标准前不应占据几乎全部 sitemap，也不应全部输出 `index, follow`。
+
+2026-10-23 已按“整体建设中”处理：课程首页、22 门课程详情和 704 个课次的中英文页面仍然生成并可直接访问，但 1,454 个页面全部输出 `noindex, follow`，且不再出现在 sitemap。课程页面没有被 robots.txt 阻止，因此搜索引擎可以读取 `noindex` 并逐步移除已经发现的 URL。
+
+课程索引采用显式白名单，未设置字段或字段不是布尔值 `true` 时一律视为未发布：
+
+- 课程首页只有在 `courses.json` 的 `meta.indexable` 为 `true` 时才允许索引。
+- 单门课程只有在课程对象的 `indexable` 为 `true` 时才允许索引。
+- 单个课次必须同时满足父课程 `indexable: true` 和课次自身 `indexable: true`；发布课程不会自动发布其批量生成的课次。
+
+以后发布单门课程时再逐门审核。课程页至少需要正式发布状态、完成中英文内容审核、移除 TBD/placeholder、提供完整大纲和真实课程材料，并能够满足独立搜索意图；课次页还必须经过逐页人工审核，移除占位 Slides、占位视频和模板化材料。审核通过后才设置显式索引标记并重新进入 sitemap。
 
 ### P0-4：个人搜索需求没有落到最合适的页面
 
@@ -114,9 +124,9 @@ Search Console 已记录以下旧 URL 的展示：
 
 - [x] 确定长期正式域名 `https://www.55aaseclab.com/`，配置 DNS、HTTPS、GitHub Pages custom domain 和 `CNAME`。
 - [x] 在 Google Search Console 验证 Domain property 和正式 HTTPS URL-prefix property，并提交 sitemap。
-- [x] 全站共享 title、description、canonical、双语 hreflang、Open Graph、Twitter Card 和 `index, follow`。
+- [x] 全站共享 title、description、canonical、双语 hreflang、Open Graph 和 Twitter Card；robots 默认为 `index, follow`，并可按页面切换为 `noindex, follow`。
 - [x] 配置 robots.txt 和构建时自动生成的 sitemap.xml。
-- [x] sitemap 自动验收已接入 `npm run build`：逐项检查 URL 唯一性、正式域名、生成文件、canonical 和 `noindex`，失败会阻止 Pages artifact 上传。
+- [x] sitemap 与课程索引自动验收已接入 `npm run build`：逐项检查 URL 唯一性、正式域名、生成文件、canonical、sitemap 中不得出现 `noindex`，并反向检查所有课程相关页面的显式索引标记、robots 指令和 sitemap 收录状态；失败会阻止 Pages artifact 上传。
 - [x] 项目和 GitHub Pages 工作流已统一到 Node.js 24；官方 Actions 已升级到原生 Node 24 的稳定主版本。
 - [x] 为 People、Courses、Projects、Publications、Tools、Blog、Consultation 和 Sponsorship 建立独立 URL。
 - [x] 导航使用真实链接，主要内容可以在静态 HTML 中抓取。
@@ -136,8 +146,8 @@ Search Console 已记录以下旧 URL 的展示：
 - [x] **步骤 1：修复 sitemap 博客路径生成逻辑。** 2026-10-23 已修复、部署并通过本地与线上验收：sitemap 的 1485 个 URL 全部唯一且对应生成页面，canonical 全部一致；9 个博客详情 URL 与 Markdown frontmatter 完全一致、线上均返回 `200`，不再出现重复语言目录。
 - [x] **步骤 2：加入 sitemap 自动验收。** 2026-10-23 已将 `scripts/validate-sitemap.mjs` 接入生产构建：所有 `<loc>` 必须唯一、使用正式域名、不含 query/fragment、对应 `dist` 中的生成文件；HTML 页面必须只有一个与 `<loc>` 一致的 canonical，且不得声明 `noindex`。4 个自动测试覆盖正常页面、重复 URL、缺少生成文件、canonical 不一致和 `noindex`。本地 Node.js 24.22.1 完整构建已验证 1485/1485 个 URL；GitHub Actions workflow `39963643402` 使用 Node.js 24.21.0 再次通过 4 个测试、1485 项验收、artifact 上传和 Pages 部署，正式站复查同样通过。
 - [x] **步骤 3：明确两个英文博客旧 URL 的弃用策略。** 2026-10-23 已确认旧 URL 没有外链，且不考虑兼容：旧 URL 保持 `404`，不恢复、不做 `301`；新 URL 均返回 `200`，canonical、sitemap 和内部链接只使用新 URL。
-- [ ] **步骤 4：定义课程索引门槛。** 只有正式发布、没有 TBD/placeholder、具有真实课程材料且能满足独立搜索意图的课程和课次才进入 sitemap。
-- [ ] **步骤 5：为共享 SEO head 增加可配置 robots。** 建设中课程与课次输出 `noindex, follow` 并从 sitemap 移除；不要用 robots.txt 阻止 Google 读取 `noindex`。
+- [x] **步骤 4：定义课程索引门槛。** 2026-10-23 已确认当前没有认真建设并完成审核的课程，因此 Courses 整体按建设中处理。索引采用显式白名单：课程首页、单门课程和单个课次分别明确设置 `indexable: true` 后才有资格进入 sitemap；课次必须同时获得父课程和自身批准。未来课程页还需满足正式发布、中英文审核完成、无 TBD/placeholder、具有完整大纲和真实材料、能够满足独立搜索意图；课次还需逐页人工审核且不得含占位 Slides、视频或模板化材料。
+- [x] **步骤 5：为共享 SEO head 增加可配置 robots 并执行课程区策略。** `SeoHead` 已支持按页面输出 `index, follow` 或 `noindex, follow`；课程首页、44 个双语课程详情页和 1,408 个双语课次页继续生成并可访问，但合计 1,454 个页面全部输出 `noindex, follow`，且从 sitemap 移除。sitemap 由 1,485 个 URL 减少为 31 个。新增课程索引策略与构建产物自动验收，7 个测试全部通过；完整本地构建确认 31/31 个 sitemap URL 均为可索引 canonical 页面，并确认课程区 0 个页面可索引、1,454 个页面为 `noindex`。
 - [ ] **步骤 6：把双语 Qiang Liu 个人详情页加入 sitemap。** 优化个人页 title、description、`Person` JSON-LD、内部链接和 CV 元数据；姓名中文写法、当前/未来机构身份必须由本人确认。
 - [ ] **步骤 7：恢复首页唯一文本 `<h1>`。** 英文使用 `55AA Security Lab`；中文名称使用经过确认的正式表述，后续 section 继续使用 `<h2>`。
 - [ ] **步骤 8：取得 Search Console Page indexing 和 Sitemaps 数据。** 记录实际索引数，以及 `Crawled - currently not indexed`、`Discovered - currently not indexed`、重复网页和 404 等原因。
@@ -169,7 +179,7 @@ Search Console 已记录以下旧 URL 的展示：
 下一阶段不以“继续增加 URL”或“全站平均排名上升”作为主要成功标准，而观察：
 
 1. sitemap 中的 URL 全部返回 `200`，并且只包含希望被索引的 canonical 页面。
-2. 建设中课程退出 sitemap，并在发布前保持 `noindex, follow`。
+2. 建设中课程退出 sitemap，并在发布前保持 `noindex, follow`；2026-10-23 本地构建已实现，正式站部署后继续通过 Search Console 观察移除过程。
 3. Qiang Liu 姓名查询开始由个人 HTML 页面承接，而不是主要落在通用首页或 PDF。
 4. Tools、Publications、Projects 或招生页面获得首批非姓名词点击。
 5. Search Console 中 sitemap 发现数、实际索引数和未索引原因可以按月对比。

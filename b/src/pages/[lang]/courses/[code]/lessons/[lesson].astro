@@ -4,6 +4,7 @@ import lessonPlans from '../../../../../data/lesson-plans/index.js';
 import SiteHeader from '../../../../../components/SiteHeader.astro';
 import SiteFooter from '../../../../../components/SiteFooter.astro';
 import SeoHead from '../../../../../components/SeoHead.astro';
+import { isLessonIndexable } from '../../../../../lib/course-indexing.js';
 
 function slug(code) {
   return code.toLowerCase();
@@ -30,6 +31,10 @@ const courseLessons = lessonPlans[course.code] ?? [];
 const lessonNumber = courseLessons.findIndex((item) => item.id === lesson.id) + 1;
 const description = text(lesson.position, lang) || `${lang === 'zh' ? `第 ${lessonNumber} 次课 · 第 ${lesson.week} 周` : `Session ${lessonNumber} · Week ${lesson.week}`} · ${lesson.durationMinutes} min`;
 const courseHref = `/${lang}/courses/${slug(course.code)}/`;
+const indexable = isLessonIndexable(course, lesson);
+const draftNotice = lang === 'zh'
+  ? '提示：本课次仍在建设中，尚未经过正式课程发布审核，内容仅供参考。'
+  : 'Note: this lesson is still under development, has not passed formal course publication review, and is provided for reference only.';
 const scriptForFlow = (index) => lesson.script[lang][Math.min(index, lesson.script[lang].length - 1)];
 const questionForFlow = (index) => lesson.questions[Math.min(Math.floor(index / 2), lesson.questions.length - 1)];
 const mediaForFlow = (index) => lesson.media.videoSegments[Math.min(Math.floor(index / 3), lesson.media.videoSegments.length - 1)];
@@ -41,7 +46,7 @@ const slidesForFlow = (index) => {
 <!doctype html>
 <html lang={lang}>
   <head>
-    <SeoHead lang={lang} path={`courses/${slug(course.code)}/lessons/${lesson.id}`} title={`${title} · 55AA Security Lab`} description={description} />
+    <SeoHead lang={lang} path={`courses/${slug(course.code)}/lessons/${lesson.id}`} title={`${title} · 55AA Security Lab`} description={description} indexable={indexable} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'LearningResource',
@@ -68,6 +73,7 @@ const slidesForFlow = (index) => {
           <a class="back" href={courseHref} data-back-link>{lang === 'zh' ? '返回课程' : 'Back to course'}</a>
         </div>
         <h1>{text(lesson.title, lang)}</h1>
+        {!indexable && <p class="notice">{draftNotice}</p>}
         <p class="lead">{text(lesson.position, lang)}</p>
 
         <section>
@@ -200,6 +206,7 @@ const slidesForFlow = (index) => {
   .meta { flex: 0 1 auto; min-width: 0; margin: 0; color: #777; font-size: .9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .back { flex: 0 0 auto; white-space: nowrap; font-size: .9rem; }
   h1 { max-width: 52rem; margin: 0 0 1rem; font-size: 1.6rem; line-height: 1.25; font-weight: 600; }
+  .notice { max-width: 54rem; margin: 0 0 1rem; color: #555; font-size: .9rem; }
   .lead { max-width: 54rem; margin: 0 0 2rem; color: #222; }
   section { margin-top: 2rem; }
   section h2 { font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem; padding-bottom: .5rem; border-bottom: 1px solid #e5e5e5; }

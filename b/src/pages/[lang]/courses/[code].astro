@@ -6,6 +6,7 @@ import lessonPlans from '../../../data/lesson-plans/index.js';
 import SiteHeader from '../../../components/SiteHeader.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import SeoHead from '../../../components/SeoHead.astro';
+import { isCourseIndexable } from '../../../lib/course-indexing.js';
 
 const slug = (code) => code.toLowerCase();
 
@@ -28,6 +29,7 @@ const lessonsForWeek = (weekNumber) => lessons.filter((lesson) => lesson.week ==
 const lessonNumber = (lesson) => lessons.findIndex((item) => item.id === lesson.id) + 1;
 const sorted = (list) => list ? [...list].sort((a, b) => a.school.localeCompare(b.school)) : [];
 const list = (value) => value?.[lang] ?? value?.zh ?? value?.en ?? [];
+const indexable = isCourseIndexable(course);
 const isDraftCourse = ['Under development', 'Placeholder'].includes(course.status?.en);
 const draftNotice = lang === 'zh'
   ? '提示：本课程仍在持续设计和校准中，页面内容仅供参考，不代表最终教学版本。'
@@ -36,7 +38,7 @@ const draftNotice = lang === 'zh'
 <!doctype html>
 <html lang={lang}>
   <head>
-    <SeoHead lang={lang} path={`courses/${slug(course.code)}`} title={`${title} · 55AA Security Lab`} description={description} />
+    <SeoHead lang={lang} path={`courses/${slug(course.code)}`} title={`${title} · 55AA Security Lab`} description={description} indexable={indexable} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Course',
@@ -64,7 +66,7 @@ const draftNotice = lang === 'zh'
             <dd>{text(course.status)}</dd>
           </div>
         </dl>
-        {isDraftCourse && <p class="notice">{draftNotice}</p>}
+        {(!indexable || isDraftCourse) && <p class="notice">{draftNotice}</p>}
 
         {syllabus && (
           <section class="syllabus">

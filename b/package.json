@@ -11,7 +11,7 @@
     "prebuild": "npm test",
     "dev": "npm run build && astro dev",
     "build": "node scripts/convert-dblp.mjs && node scripts/generate-course-graphs.mjs && node scripts/generate-sitemap.mjs && (node scripts/fetch-tools.mjs || true) && astro build && npm run validate:sitemap",
-    "validate:sitemap": "node scripts/validate-sitemap.mjs",
+    "validate:sitemap": "node scripts/validate-sitemap.mjs && node scripts/validate-course-indexing.mjs",
     "preview": "astro preview",
     "fetch-dblp": "node scripts/fetch-dblp.mjs",
     "convert-dblp": "node scripts/convert-dblp.mjs"
