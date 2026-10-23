@@ -7,12 +7,17 @@ const sections = ['', 'news', 'people', 'courses', 'projects', 'tools', 'consult
 const blogIndex = JSON.parse(await readFile(new URL('../src/data/blog.json', import.meta.url), 'utf8'));
 const blogDirectory = new URL('../src/content/blog/', import.meta.url);
 const blogFiles = (await readdir(blogDirectory, { recursive: true })).filter((file) => file.endsWith('.md'));
-const blogEntries = await Promise.all(blogIndex.entries.map(async (slug) => {
-  const file = blogFiles.find((candidate) => candidate === `${slug}.md` || candidate.endsWith(`/${slug}.md`));
-  if (!file) throw new Error(`Blog index references missing Markdown post: ${slug}`);
+const blogEntries = await Promise.all(blogIndex.entries.map(async (entryKey) => {
+  const file = blogFiles.find((candidate) => candidate === `${entryKey}.md` || candidate.endsWith(`/${entryKey}.md`));
+  if (!file) throw new Error(`Blog index references missing Markdown post: ${entryKey}`);
   const markdown = await readFile(new URL(file, blogDirectory), 'utf8');
   const language = markdown.match(/^language:\s*["']?(en|zh)["']?\s*$/m)?.[1];
   if (!language) throw new Error(`Markdown post is missing a valid language: ${file}`);
+  const slug = markdown.match(/^slug:\s*["']?([^"'\r\n]+)["']?\s*$/m)?.[1];
+  if (!slug) throw new Error(`Markdown post is missing a slug: ${file}`);
+  if (entryKey !== `${language}/${slug}`) {
+    throw new Error(`Blog index key does not match frontmatter: ${entryKey}`);
+  }
   return { language, path: `blog/${slug}` };
 }));
 const teaching = JSON.parse(await readFile(new URL('../src/data/courses.json', import.meta.url), 'utf8'));
