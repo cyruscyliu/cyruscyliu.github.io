@@ -116,6 +116,8 @@ Search Console 已记录以下旧 URL 的展示：
 - [x] 在 Google Search Console 验证 Domain property 和正式 HTTPS URL-prefix property，并提交 sitemap。
 - [x] 全站共享 title、description、canonical、双语 hreflang、Open Graph、Twitter Card 和 `index, follow`。
 - [x] 配置 robots.txt 和构建时自动生成的 sitemap.xml。
+- [x] sitemap 自动验收已接入 `npm run build`：逐项检查 URL 唯一性、正式域名、生成文件、canonical 和 `noindex`，失败会阻止 Pages artifact 上传。
+- [x] 项目和 GitHub Pages 工作流已统一到 Node.js 24；官方 Actions 已升级到原生 Node 24 的稳定主版本。
 - [x] 为 People、Courses、Projects、Publications、Tools、Blog、Consultation 和 Sponsorship 建立独立 URL。
 - [x] 导航使用真实链接，主要内容可以在静态 HTML 中抓取。
 - [x] 首页 `ResearchOrganization`、People `Person`、课程 `Course`、课次 `LearningResource` 和博客 `Article` JSON-LD。
@@ -132,7 +134,7 @@ Search Console 已记录以下旧 URL 的展示：
 ### P0：立即处理
 
 - [x] **步骤 1：修复 sitemap 博客路径生成逻辑。** 2026-10-23 已修复、部署并通过本地与线上验收：sitemap 的 1485 个 URL 全部唯一且对应生成页面，canonical 全部一致；9 个博客详情 URL 与 Markdown frontmatter 完全一致、线上均返回 `200`，不再出现重复语言目录。
-- [ ] **步骤 2：加入 sitemap 自动验收。** 构建或部署检查必须验证每个 sitemap URL 对应实际生成页面或线上 `200`，任一 `404` 都使检查失败。
+- [x] **步骤 2：加入 sitemap 自动验收。** 2026-10-23 已将 `scripts/validate-sitemap.mjs` 接入生产构建：所有 `<loc>` 必须唯一、使用正式域名、不含 query/fragment、对应 `dist` 中的生成文件；HTML 页面必须只有一个与 `<loc>` 一致的 canonical，且不得声明 `noindex`。4 个自动测试覆盖正常页面、重复 URL、缺少生成文件、canonical 不一致和 `noindex`；Node.js 24.22.1 下的完整构建已验证 1485/1485 个 URL。代码待推送后还需确认 GitHub Actions 实际运行成功。
 - [ ] **步骤 3：处理两个英文博客旧 URL。** 恢复原 URL，或配置旧 URL 到新 URL 的 `301`；同步 canonical、sitemap 和内部链接。
 - [ ] **步骤 4：定义课程索引门槛。** 只有正式发布、没有 TBD/placeholder、具有真实课程材料且能满足独立搜索意图的课程和课次才进入 sitemap。
 - [ ] **步骤 5：为共享 SEO head 增加可配置 robots。** 建设中课程与课次输出 `noindex, follow` 并从 sitemap 移除；不要用 robots.txt 阻止 Google 读取 `noindex`。
@@ -419,7 +421,7 @@ https://www.55aaseclab.com/zh/publications/
 ## 十、执行与复查规则
 
 1. 严格按文档开头的“当前行动清单”逐项推进；完成一项、验证一项、记录一项。
-2. 每次部署前运行完整构建，并验证所有 sitemap URL 与实际生成路由一致。
+2. 每次部署前运行完整构建；构建已自动验证所有 sitemap URL 与实际生成路由、canonical 和索引指令一致，失败时不得绕过检查上传 artifact。
 3. 每次部署后抽查正式线上状态码、canonical、robots、hreflang、结构化数据和 sitemap；不得只检查本地 `dist`。
 4. 修复技术问题后等待 Search Console 重新抓取，不反复提交已经正常收录的 URL。
 5. 每月使用相同日期窗口导出 Search results、Page indexing、Sitemaps 和 Core Web Vitals，以保证数据可以环比。
