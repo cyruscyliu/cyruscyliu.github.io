@@ -15,7 +15,7 @@
 - **首个发布回归已经修复**：2026-10-23 发现线上 sitemap 中 9 个博客详情 URL 重复包含语言目录并返回 `404`；同日已修复、部署并完成线上验收。
 - **旧博客 URL 已明确弃用**：两个曾在 Search Console 获得展示的英文博客旧 URL 没有外链，也不需要兼容；保持 `404`，不恢复页面、不配置 `301`，并只在 canonical、sitemap 和内部链接中使用新 URL。
 - **个人姓名搜索入口已完成优化**：双语刘强（Qiang Liu）详情页已加入 sitemap；页面使用独立 title、description 和完整 `Person` JSON-LD，CV PDF 已补齐文档元数据。当前任职表述为 EPFL/HexHive 博士后，未来任职表述为 2027 年 1 月加入大湾区大学（Great Bay University，GBU）。
-- **首页标题层级发生回归**：2026-10-23 线上检查确认 `/en/` 和 `/zh/` 都没有 `<h1>`，页面标题层级从多个 `<h2>` 开始。
+- **首页标题层级回归已修复**：双语首页已恢复可见且唯一的文本 `<h1>`；英文为 `55AA Security Lab`，中文为经过确认的“55AA 安全实验室”，后续 section 继续使用 `<h2>`。
 
 ## 首月 Search Console 基线
 
@@ -128,9 +128,13 @@ Search Console 已记录以下旧 URL 的展示：
 
 GitHub Actions workflow `39971755351` 已完成相同构建和自动验收，并成功部署到 GitHub Pages。正式站复查确认：`/sitemap.xml` 返回 `200 application/xml` 且包含 33 个 URL，两个人详情 URL 各出现一次；双语个人页均返回 `200 text/html`，输出预期的 title、description、canonical、hreflang、`index, follow` 和 `Person` JSON-LD；首页和 People 列表页均保留详情页链接。线上 CV 返回 `200 application/pdf`，Title、Author、Subject、Keywords 均正确，仍为 5 页且正文可读取。
 
-### P1-1：首页缺少一级标题
+### P1-1：[已修复并待上线验收] 首页缺少一级标题
 
-2026-10-23 线上检查确认英文和中文首页均没有 `<h1>`，页面从多个 `<h2>` 开始。`55AA Security Lab` 目前只出现在带 alt 的 logo 和页面 title 中。应在首页恢复一个真实的文本 `<h1>`；可以保持克制的视觉尺寸或使用可靠的 visually-hidden 样式，但不能用图片 alt 完全替代文档主标题。
+2026-10-23 线上检查确认英文和中文首页均没有 `<h1>`，页面从多个 `<h2>` 开始。`55AA Security Lab` 当时只出现在带 alt 的 logo 和页面 title 中。
+
+同日已确认中文正式名称为“55AA 安全实验室”，并完成修复：英文首页使用可见且唯一的 `<h1>55AA Security Lab</h1>`，中文首页使用可见且唯一的 `<h1>55AA 安全实验室</h1>`；原研究简介保留为 `<p>`，后续 section 继续使用 `<h2>`。Hero 的 `aria-labelledby="hero-title"` 指向 `<h1 id="hero-title">`，标题同时承担页面主标题和 Hero 无障碍名称。
+
+新增 `scripts/validate-homepage-headings.mjs` 并接入 `npm run build`，构建会检查两个首页各自恰好有一个 `<h1>`、名称精确匹配、`id` 和 `aria-labelledby` 关联正确，并确认后续仍有 `<h2>`；失败会阻止部署。2 个正反测试覆盖正确结构、缺少 `<h1>`、重复 `<h1>`、名称错误和无障碍关联错误。Node.js 24.22.1 下共 9 个测试全部通过，完整构建生成 1,488 个页面，并通过 33 项 sitemap、1,454 项课程索引和 2 个首页标题验收。Chrome 桌面端与 390px 移动端渲染检查确认标题可见、布局正常且没有横向溢出。正式站状态待本次部署完成后复查。
 
 ## 当前完成状态（2026-10-23）
 
@@ -141,6 +145,7 @@ GitHub Actions workflow `39971755351` 已完成相同构建和自动验收，并
 - [x] 全站共享 title、description、canonical、双语 hreflang、Open Graph 和 Twitter Card；robots 默认为 `index, follow`，并可按页面切换为 `noindex, follow`。
 - [x] 配置 robots.txt 和构建时自动生成的 sitemap.xml。
 - [x] sitemap 与课程索引自动验收已接入 `npm run build`：逐项检查 URL 唯一性、正式域名、生成文件、canonical、sitemap 中不得出现 `noindex`，并反向检查所有课程相关页面的显式索引标记、robots 指令和 sitemap 收录状态；失败会阻止 Pages artifact 上传。
+- [x] 双语首页标题结构自动验收已接入 `npm run build`：每页必须恰好包含一个名称正确的品牌 `<h1>`，Hero 无障碍关联正确，后续内容保留 `<h2>`；回归会阻止部署。标题可见性和响应式布局另由浏览器渲染验收。
 - [x] 项目和 GitHub Pages 工作流已统一到 Node.js 24；官方 Actions 已升级到原生 Node 24 的稳定主版本。
 - [x] 本地默认 Node.js 已升级为 24.22.1，npm 为 11.19.1。
 - [x] 为 People、Courses、Projects、Publications、Tools、Blog、Consultation 和 Sponsorship 建立独立 URL。
@@ -164,7 +169,7 @@ GitHub Actions workflow `39971755351` 已完成相同构建和自动验收，并
 - [x] **步骤 4：定义课程索引门槛。** 2026-10-23 已确认当前没有认真建设并完成审核的课程，因此 Courses 整体按建设中处理。索引采用显式白名单：课程首页、单门课程和单个课次分别明确设置 `indexable: true` 后才有资格进入 sitemap；课次必须同时获得父课程和自身批准。未来课程页还需满足正式发布、中英文审核完成、无 TBD/placeholder、具有完整大纲和真实材料、能够满足独立搜索意图；课次还需逐页人工审核且不得含占位 Slides、视频或模板化材料。
 - [x] **步骤 5：为共享 SEO head 增加可配置 robots 并执行课程区策略。** `SeoHead` 已支持按页面输出 `index, follow` 或 `noindex, follow`；课程首页、44 个双语课程详情页和 1,408 个双语课次页继续生成并可访问，但合计 1,454 个页面全部输出 `noindex, follow`，且从 sitemap 移除。sitemap 由 1,485 个 URL 减少为 31 个。新增课程索引策略与构建产物自动验收，7 个测试全部通过；完整本地构建确认 31/31 个 sitemap URL 均为可索引 canonical 页面，并确认课程区 0 个页面可索引、1,454 个页面为 `noindex`。GitHub Actions workflow `39969252535` 完成相同验收并成功部署；正式 sitemap 返回 `200 application/xml`、包含 31 个 URL 且不含课程 URL，抽查中英文课程首页、课程详情和课次详情均返回 `200`、输出 `noindex, follow` 并显示建设中提示。
 - [x] **步骤 6：把双语刘强（Qiang Liu）个人详情页加入 sitemap。** 2026-10-23 已确认中文正式姓名为“刘强”，新单位为“大湾区大学 / Great Bay University / GBU”。sitemap 从 31 增至 33 个 URL；双语详情页已优化 title、description、H1 和 `Person` JSON-LD，当前 EPFL 博士后与 2027 年 1 月加入 GBU 的时间关系分开表述。首页和 People 页的内部链接已验收，CV 已补齐 Title、Author、Subject 和 Keywords。Node.js 24.22.1 完整构建及针对性本地验收均通过；GitHub Actions workflow `39971755351` 构建并部署成功，正式站的 33 项 sitemap、双语个人页、内部链接、结构化数据及 PDF 元数据均已复查通过。
-- [ ] **步骤 7：恢复首页唯一文本 `<h1>`。** 英文使用 `55AA Security Lab`；中文名称使用经过确认的正式表述，后续 section 继续使用 `<h2>`。
+- [x] **步骤 7：恢复首页唯一文本 `<h1>`。** 2026-10-23 已确认中文正式名称为“55AA 安全实验室”。英文首页使用 `55AA Security Lab`，中文首页使用“55AA 安全实验室”；标题可见且每页唯一，原研究简介保留为段落，后续 section 继续使用 `<h2>`。新增构建期自动验收及 2 个正反测试；Node.js 24.22.1 下 9 个测试、完整构建、桌面端和移动端渲染检查均通过，正式部署验收待 workflow 完成后补记。
 - [ ] **步骤 8：取得 Search Console Page indexing 和 Sitemaps 数据。** 记录实际索引数，以及 `Crawled - currently not indexed`、`Discovered - currently not indexed`、重复网页和 404 等原因。
 
 ### P1：未来 2 至 4 周
@@ -204,14 +209,14 @@ GitHub Actions workflow `39971755351` 已完成相同构建和自动验收，并
 
 ## 一、最高优先级
 
-### 1. [回归待修复] 增加唯一的页面主标题 `h1`
+### 1. [已完成] 增加唯一的页面主标题 `h1`
 
-早期版本曾计划在首页保留唯一的品牌 `<h1>`，但 2026-10-23 线上检查确认当前双语首页均无 `<h1>`，页面标题层级从 `<h2>` 开始。应恢复唯一文本主标题：
+早期版本曾计划在首页保留唯一的品牌 `<h1>`，但 2026-10-23 线上检查确认当时双语首页均无 `<h1>`，页面标题层级从 `<h2>` 开始。同日已恢复以下唯一文本主标题：
 
 - English: `55AA Security Lab`
 - 中文：`55AA 安全实验室`
 
-视觉上不需要制作成大型 hero 标题，可以保持现有朴素排版。
+标题采用克制的可见 hero 排版，研究简介保持为普通段落，后续 section 从 `<h2>` 展开。
 
 ### 2. [已完成] 优化页面 title
 
@@ -441,7 +446,7 @@ https://www.55aaseclab.com/zh/publications/
 
 除裸域 DNS 外，本次只读审计没有发现状态码、canonical、robots、sitemap 或页面 head 的系统性问题。
 
-这是一个时间点审计，不代表这些结论永久有效。2026-10-23 已发现后续发布引入的 sitemap 博客 `404`、两个英文博客旧 URL 仍被 Search Console 记录、建设中课程占据约 98% sitemap，以及首页缺少 `<h1>` 等情况；其中 sitemap 回归和课程索引供给均已在同日修复并上线，两个旧 URL 已确认永久弃用并保持 `404`，其余问题详见文档开头。
+这是一个时间点审计，不代表这些结论永久有效。2026-10-23 已发现后续发布引入的 sitemap 博客 `404`、两个英文博客旧 URL 仍被 Search Console 记录、建设中课程占据约 98% sitemap，以及首页缺少 `<h1>` 等情况；sitemap 回归、课程索引供给和首页标题层级均已在同日修复，两个旧 URL 已确认永久弃用并保持 `404`，其余问题详见文档开头。
 
 ## 十、执行与复查规则
 
