@@ -134,7 +134,7 @@ Search Console 已记录以下旧 URL 的展示：
 ### P0：立即处理
 
 - [x] **步骤 1：修复 sitemap 博客路径生成逻辑。** 2026-10-23 已修复、部署并通过本地与线上验收：sitemap 的 1485 个 URL 全部唯一且对应生成页面，canonical 全部一致；9 个博客详情 URL 与 Markdown frontmatter 完全一致、线上均返回 `200`，不再出现重复语言目录。
-- [x] **步骤 2：加入 sitemap 自动验收。** 2026-10-23 已将 `scripts/validate-sitemap.mjs` 接入生产构建：所有 `<loc>` 必须唯一、使用正式域名、不含 query/fragment、对应 `dist` 中的生成文件；HTML 页面必须只有一个与 `<loc>` 一致的 canonical，且不得声明 `noindex`。4 个自动测试覆盖正常页面、重复 URL、缺少生成文件、canonical 不一致和 `noindex`；Node.js 24.22.1 下的完整构建已验证 1485/1485 个 URL。代码待推送后还需确认 GitHub Actions 实际运行成功。
+- [x] **步骤 2：加入 sitemap 自动验收。** 2026-10-23 已将 `scripts/validate-sitemap.mjs` 接入生产构建：所有 `<loc>` 必须唯一、使用正式域名、不含 query/fragment、对应 `dist` 中的生成文件；HTML 页面必须只有一个与 `<loc>` 一致的 canonical，且不得声明 `noindex`。4 个自动测试覆盖正常页面、重复 URL、缺少生成文件、canonical 不一致和 `noindex`。本地 Node.js 24.22.1 完整构建已验证 1485/1485 个 URL；GitHub Actions workflow `39963643402` 使用 Node.js 24.21.0 再次通过 4 个测试、1485 项验收、artifact 上传和 Pages 部署，正式站复查同样通过。
 - [ ] **步骤 3：处理两个英文博客旧 URL。** 恢复原 URL，或配置旧 URL 到新 URL 的 `301`；同步 canonical、sitemap 和内部链接。
 - [ ] **步骤 4：定义课程索引门槛。** 只有正式发布、没有 TBD/placeholder、具有真实课程材料且能满足独立搜索意图的课程和课次才进入 sitemap。
 - [ ] **步骤 5：为共享 SEO head 增加可配置 robots。** 建设中课程与课次输出 `noindex, follow` 并从 sitemap 移除；不要用 robots.txt 阻止 Google 读取 `noindex`。
