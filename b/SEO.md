@@ -13,7 +13,7 @@
 - **主题权威尚未建立**：目前唯一得到充分验证的查询需求是 `Qiang Liu` 相关个人姓名词，而不是实验室品牌词或系统安全主题词。
 - **索引供给失衡**：线上 sitemap 约 98% 是尚在建设中的课程和课次页面，它们取得了大量展示但没有点击。
 - **首个发布回归已经修复**：2026-10-23 发现线上 sitemap 中 9 个博客详情 URL 重复包含语言目录并返回 `404`；同日已修复、部署并完成线上验收。
-- **旧博客 URL 仍待处理**：两个已在 Search Console 获得展示的英文博客旧 URL 仍返回 `404`，需要恢复或配置真正的 `301`。
+- **旧博客 URL 已明确弃用**：两个曾在 Search Console 获得展示的英文博客旧 URL 没有外链，也不需要兼容；保持 `404`，不恢复页面、不配置 `301`，并只在 canonical、sitemap 和内部链接中使用新 URL。
 - **首页标题层级发生回归**：2026-10-23 线上检查确认 `/en/` 和 `/zh/` 都没有 `<h1>`，页面标题层级从多个 `<h2>` 开始。
 
 ## 首月 Search Console 基线
@@ -80,7 +80,7 @@
 
 同日已通过 commit `a90954d` 修复并由 GitHub Pages workflow `39960040584` 部署。线上复查确认：标准 `/sitemap.xml` 返回 `200` 和 `application/xml`，内容与构建产物完全一致；1485 个 URL 全部唯一，不再包含重复语言目录；9 个正确博客详情页全部返回 `200`，canonical 指向自身并输出 `index, follow`。原错误路径仍返回 `404`，但已不再被 sitemap 引用。
 
-### P0-2：两个已有展示的英文博客旧 URL 失效
+### P0-2：两个已有展示的英文博客旧 URL 已弃用
 
 Search Console 已记录以下旧 URL 的展示：
 
@@ -89,7 +89,7 @@ Search Console 已记录以下旧 URL 的展示：
 /en/blog/55aa-research-project-process-management-en/
 ```
 
-它们目前返回 `404`；新的无 `-en` URL 返回 `200`。必须恢复旧 URL，或将旧 URL 以真正的 `301` 重定向至新 URL。以后公开 URL 一旦被搜索引擎发现，不得在没有重定向的情况下改名。
+它们目前返回 `404`；新的无 `-en` URL 返回 `200`。2026-10-23 已确认旧 URL 没有外链，且不考虑旧地址兼容，因此决定永久弃用旧 URL：不恢复页面、不配置 `301`，继续返回 `404`，由搜索引擎自然移除。canonical、sitemap 和内部链接只使用新 URL。以后只有旧 URL 已获得外链、真实用户访问或稳定搜索价值时，才将 URL 改名作为迁移处理并配置 `301`。
 
 ### P0-3：课程页面数量与成熟度不匹配
 
@@ -135,7 +135,7 @@ Search Console 已记录以下旧 URL 的展示：
 
 - [x] **步骤 1：修复 sitemap 博客路径生成逻辑。** 2026-10-23 已修复、部署并通过本地与线上验收：sitemap 的 1485 个 URL 全部唯一且对应生成页面，canonical 全部一致；9 个博客详情 URL 与 Markdown frontmatter 完全一致、线上均返回 `200`，不再出现重复语言目录。
 - [x] **步骤 2：加入 sitemap 自动验收。** 2026-10-23 已将 `scripts/validate-sitemap.mjs` 接入生产构建：所有 `<loc>` 必须唯一、使用正式域名、不含 query/fragment、对应 `dist` 中的生成文件；HTML 页面必须只有一个与 `<loc>` 一致的 canonical，且不得声明 `noindex`。4 个自动测试覆盖正常页面、重复 URL、缺少生成文件、canonical 不一致和 `noindex`。本地 Node.js 24.22.1 完整构建已验证 1485/1485 个 URL；GitHub Actions workflow `39963643402` 使用 Node.js 24.21.0 再次通过 4 个测试、1485 项验收、artifact 上传和 Pages 部署，正式站复查同样通过。
-- [ ] **步骤 3：处理两个英文博客旧 URL。** 恢复原 URL，或配置旧 URL 到新 URL 的 `301`；同步 canonical、sitemap 和内部链接。
+- [x] **步骤 3：明确两个英文博客旧 URL 的弃用策略。** 2026-10-23 已确认旧 URL 没有外链，且不考虑兼容：旧 URL 保持 `404`，不恢复、不做 `301`；新 URL 均返回 `200`，canonical、sitemap 和内部链接只使用新 URL。
 - [ ] **步骤 4：定义课程索引门槛。** 只有正式发布、没有 TBD/placeholder、具有真实课程材料且能满足独立搜索意图的课程和课次才进入 sitemap。
 - [ ] **步骤 5：为共享 SEO head 增加可配置 robots。** 建设中课程与课次输出 `noindex, follow` 并从 sitemap 移除；不要用 robots.txt 阻止 Google 读取 `noindex`。
 - [ ] **步骤 6：把双语 Qiang Liu 个人详情页加入 sitemap。** 优化个人页 title、description、`Person` JSON-LD、内部链接和 CV 元数据；姓名中文写法、当前/未来机构身份必须由本人确认。
@@ -416,7 +416,7 @@ https://www.55aaseclab.com/zh/publications/
 
 除裸域 DNS 外，本次只读审计没有发现状态码、canonical、robots、sitemap 或页面 head 的系统性问题。
 
-这是一个时间点审计，不代表这些结论永久有效。2026-10-23 已发现后续发布引入的 sitemap 博客 `404`、英文博客旧 URL 失效和首页缺少 `<h1>` 等回归；其中 sitemap 回归已在同日修复并上线，其余问题详见文档开头。
+这是一个时间点审计，不代表这些结论永久有效。2026-10-23 已发现后续发布引入的 sitemap 博客 `404`、两个英文博客旧 URL 仍被 Search Console 记录，以及首页缺少 `<h1>` 等情况；其中 sitemap 回归已在同日修复并上线，两个旧 URL 已确认永久弃用并保持 `404`，其余问题详见文档开头。
 
 ## 十、执行与复查规则
 
