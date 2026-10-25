@@ -23,7 +23,7 @@ const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
     </a>
   </div>
 </header>
-<nav class="tabs" aria-label="Sections">{homeData.sections.map((tab) => { const href = `/${lang}/${tab.key === 'home' ? '' : `${tab.key}/`}`; const active = currentPath === href.replace(/\/+$/, '') || (tab.key === 'blog' && currentPath.startsWith(`/${lang}/blog`)); return <a class={active ? 'active' : undefined} href={href} aria-current={active ? 'page' : undefined}>{tab.label[lang]}</a> })}{tabActionHref && tabActionLabel && <a class="tab-action" href={tabActionHref}>{tabActionLabel}</a>}</nav>
+<nav class="tabs" aria-label="Sections">{homeData.sections.map((tab) => { const href = `/${lang}/${tab.key === 'home' ? '' : `${tab.key}/`}`; const sectionPath = href.replace(/\/+$/, ''); const active = currentPath === sectionPath || (tab.key !== 'home' && currentPath.startsWith(`${sectionPath}/`)); return <a class={active ? 'active' : undefined} href={href} aria-current={active ? 'page' : undefined}>{tab.label[lang]}</a> })}{tabActionHref && tabActionLabel && <a class="tab-action" href={tabActionHref}>{tabActionLabel}</a>}</nav>
 <script>
 const languageLink=document.querySelector<HTMLAnchorElement>('[data-language-link]');
 const syncLanguageLink=()=>{

@@ -1,0 +1,104 @@
+---
+import startups from '../../../data/startups.json';
+import contact from '../../../data/contact.json';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import SeoHead from '../../../components/SeoHead.astro';
+
+export function getStaticPaths() {
+  return ['en', 'zh'].flatMap((lang) =>
+    startups.items
+      .filter((startup) => startup.indexable)
+      .map((startup) => ({ params: { lang, slug: startup.slug }, props: { lang, startup } }))
+  );
+}
+
+const lang = Astro.props.lang === 'zh' ? 'zh' : 'en';
+const startup = Astro.props.startup;
+const text = (value) => typeof value === 'string' ? value : value?.[lang] ?? value?.en ?? '';
+const canonicalUrl = `https://www.55aaseclab.com/${lang}/startups/${startup.slug}/`;
+const labels = {
+  en: {
+    back: 'Back to Startups',
+    demo: 'Demo',
+    ask: 'Current ask',
+    askContact: 'get in touch',
+    askPunctuation: '.'
+  },
+  zh: {
+    back: '返回创业项目',
+    demo: 'Demo',
+    ask: '当前诉求',
+    askContact: '联系我们',
+    askPunctuation: '。'
+  }
+}[lang];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': startup.schemaType,
+  name: text(startup.title),
+  description: text(startup.summary),
+  url: canonicalUrl,
+  inLanguage: lang === 'zh' ? 'zh-CN' : 'en',
+  dateModified: startup.updated,
+  isPartOf: {
+    '@type': 'CollectionPage',
+    name: text(startups.meta.title),
+    url: `https://www.55aaseclab.com/${lang}/startups/`
+  }
+};
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <SeoHead lang={lang} path={`startups/${startup.slug}`} title={text(startup.seo.title)} description={text(startup.seo.description)} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <SiteHeader lang={lang} />
+    <main data-startup-detail={startup.slug}>
+      <p class="breadcrumb"><a href={`/${lang}/startups/`}>← {labels.back}</a></p>
+
+      <header class="startup-hero">
+        {text(startup.kind) && <p class="hero-meta">{text(startup.kind)}</p>}
+        <h1>{text(startup.title)}</h1>
+        <p class="descriptor">{text(startup.descriptor)}</p>
+        <p class="summary">{text(startup.summary)}</p>
+      </header>
+
+      {startup.venture?.demo && (
+        <section id="demo" class="demo-section venture-section" aria-labelledby="demo-title">
+          <h2 id="demo-title">{labels.demo}</h2>
+          <p>{text(startup.venture.demo)}</p>
+        </section>
+      )}
+
+      {startup.venture?.ask && (
+        <section class="venture-section" aria-labelledby="ask-title">
+          <h2 id="ask-title">{labels.ask}</h2>
+          <p>{text(startup.venture.ask)}<a href={contact.form.url} target="_blank" rel="noreferrer">{labels.askContact}</a>{labels.askPunctuation}</p>
+        </section>
+      )}
+    </main>
+    <SiteFooter lang={lang} />
+  </body>
+</html>
+
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(html) { overflow-y: scroll; scroll-behavior: smooth; }
+  :global(body) { min-height: 100vh; display: flex; flex-direction: column; margin: 0; background: #fff; color: #000; font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  main { flex: 1; width: min(960px, calc(100% - 2rem)); margin: 0 auto; padding: 1.5rem 0 2rem; }
+  a { color: #06c; }
+  .breadcrumb { margin: 0 0 1.25rem; font-size: .9rem; }
+  .startup-hero { max-width: 56rem; }
+  .hero-meta { margin: 0; color: #777; font-size: .85rem; }
+  h1 { margin: .35rem 0 .7rem; font-size: 1.5rem; font-weight: 600; }
+  .descriptor { margin: 0; font-weight: 600; }
+  .summary { margin: .45rem 0 0; }
+  main > section { max-width: 56rem; margin-top: 2.75rem; }
+  h2 { margin: 0 0 .55rem; font-size: 1.1rem; font-weight: 600; }
+  .demo-section { scroll-margin-top: 1rem; }
+  .venture-section p { margin: 0; }
+</style>

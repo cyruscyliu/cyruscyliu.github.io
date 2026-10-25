@@ -1,31 +1,43 @@
 {
   "meta": {
-    "title": { "en": "Tools", "zh": "工具" },
-    "description": {
-      "en": "Tools from 55AA Security Lab",
-      "zh": "55AA Security Lab 工具与基础设施"
-    }
+    "title": { "en": "Open-source tools", "zh": "开源工具" }
   },
   "tools": [
     {
       "repo": "cyruscyliu/firmguide",
-      "fallbackTitle": "firmguide",
-      "fallbackDescription": "FirmGuide: Boosting the Capability of Rehosting Embedded Linux Kernels through Model-Guided Kernel Execution"
+      "title": "FirmGuide",
+      "category": { "en": "Embedded systems", "zh": "嵌入式系统" },
+      "summary": {
+        "en": "Build a QEMU virtual machine from a device tree, then debug and test an embedded Linux kernel in the virtual execution environment.",
+        "zh": "根据设备树构建 QEMU 虚拟机，并在虚拟执行环境中调试和测试嵌入式 Linux 内核。"
+      }
     },
     {
       "repo": "HexHive/HyperPill",
-      "fallbackTitle": "HyperPill",
-      "fallbackDescription": ""
+      "title": "HyperPill",
+      "category": { "en": "Hypervisor security", "zh": "虚拟化安全" },
+      "summary": {
+        "en": "A snapshot-based framework for fuzzing hypervisors across x86 and Arm targets.",
+        "zh": "基于快照的 Hypervisor 模糊测试框架，支持 x86 与 Arm 目标。"
+      }
     },
     {
       "repo": "HexHive/ViDeZZo",
-      "fallbackTitle": "ViDeZZo",
-      "fallbackDescription": "ViDeZZo source code."
+      "title": "ViDeZZo",
+      "category": { "en": "Virtual device security", "zh": "虚拟设备安全" },
+      "summary": {
+        "en": "Dependency-aware virtual-device fuzzing for QEMU and VirtualBox.",
+        "zh": "面向 QEMU 与 VirtualBox 的依赖感知虚拟设备模糊测试框架。"
+      }
     },
     {
       "repo": "cyruscyliu/computing-genealogy-project",
-      "fallbackTitle": "Computing Genealogy Project",
-      "fallbackDescription": "Explore computer science academic genealogy: PhD advisors, students, institutions, and lineage networks."
+      "title": "Computing Genealogy Explorer",
+      "category": { "en": "Research infrastructure", "zh": "科研基础设施" },
+      "summary": {
+        "en": "Explore PhD advisor relationships, researcher profiles, institutions, and academic lineages in computer science and security.",
+        "zh": "浏览计算机与安全领域的博士师承关系、研究者档案、机构与学术谱系。"
+      }
     }
   ]
 }

@@ -49,28 +49,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/projects/" />
   </url>
   <url>
-    <loc>https://www.55aaseclab.com/en/tools/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/tools/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/tools/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/tools/" />
+    <loc>https://www.55aaseclab.com/en/startups/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/startups/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/startups/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/startups/" />
   </url>
   <url>
-    <loc>https://www.55aaseclab.com/zh/tools/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/tools/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/tools/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/tools/" />
-  </url>
-  <url>
-    <loc>https://www.55aaseclab.com/en/consultation/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/consultation/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/consultation/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/consultation/" />
-  </url>
-  <url>
-    <loc>https://www.55aaseclab.com/zh/consultation/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/consultation/" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/consultation/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/consultation/" />
+    <loc>https://www.55aaseclab.com/zh/startups/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/startups/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/startups/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/startups/" />
   </url>
   <url>
     <loc>https://www.55aaseclab.com/en/publications/</loc>
@@ -131,6 +119,42 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/projects/aero-space-security/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/projects/aero-space-security/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/projects/aero-space-security/" />
+  </url>
+  <url>
+    <loc>https://www.55aaseclab.com/en/startups/cyber-autoresearch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/startups/cyber-autoresearch/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/startups/cyber-autoresearch/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/startups/cyber-autoresearch/" />
+  </url>
+  <url>
+    <loc>https://www.55aaseclab.com/zh/startups/cyber-autoresearch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/startups/cyber-autoresearch/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/startups/cyber-autoresearch/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/startups/cyber-autoresearch/" />
+  </url>
+  <url>
+    <loc>https://www.55aaseclab.com/en/startups/cyber-simulation-sandbox/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/startups/cyber-simulation-sandbox/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/startups/cyber-simulation-sandbox/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/startups/cyber-simulation-sandbox/" />
+  </url>
+  <url>
+    <loc>https://www.55aaseclab.com/zh/startups/cyber-simulation-sandbox/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/startups/cyber-simulation-sandbox/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/startups/cyber-simulation-sandbox/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/startups/cyber-simulation-sandbox/" />
+  </url>
+  <url>
+    <loc>https://www.55aaseclab.com/en/startups/system-security-handbook/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/startups/system-security-handbook/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/startups/system-security-handbook/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/startups/system-security-handbook/" />
+  </url>
+  <url>
+    <loc>https://www.55aaseclab.com/zh/startups/system-security-handbook/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/startups/system-security-handbook/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/startups/system-security-handbook/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/startups/system-security-handbook/" />
   </url>
   <url>
     <loc>https://www.55aaseclab.com/en/people/qiang-liu/</loc>

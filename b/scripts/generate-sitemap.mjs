@@ -26,7 +26,7 @@ const blogEntries = await Promise.all(blogIndex.entries.map(async (entryKey) => 
 }));
 const teaching = JSON.parse(await readFile(new URL('../src/data/courses.json', import.meta.url), 'utf8'));
 const coursesByCode = new Map(teaching.courses.map((course) => [course.code, course]));
-const sections = ['', 'news', 'people', 'projects', 'tools', 'consultation', 'publications', 'blog', 'sponsorship'];
+const sections = ['', 'news', 'people', 'projects', 'startups', 'publications', 'blog', 'sponsorship'];
 if (isCourseIndexPageIndexable(teaching)) sections.splice(3, 0, 'courses');
 const coursePaths = teaching.courses
   .filter(isCourseIndexable)
@@ -40,6 +40,10 @@ const projects = JSON.parse(await readFile(new URL('../src/data/projects.json', 
 const projectPaths = projects.projects
   .filter((project) => project.detailSlug)
   .map((project) => `projects/${project.detailSlug}`);
+const startups = JSON.parse(await readFile(new URL('../src/data/startups.json', import.meta.url), 'utf8'));
+const startupPaths = startups.items
+  .filter((startup) => startup.indexable)
+  .map((startup) => `startups/${startup.slug}`);
 const people = JSON.parse(await readFile(new URL('../src/data/people.json', import.meta.url), 'utf8'));
 const peoplePaths = people.people
   .filter((person) => person.profile?.slug)
@@ -47,6 +51,7 @@ const peoplePaths = people.people
 const paths = [
   ...sections,
   ...projectPaths,
+  ...startupPaths,
   ...peoplePaths,
   ...coursePaths,
   ...lessonPaths,

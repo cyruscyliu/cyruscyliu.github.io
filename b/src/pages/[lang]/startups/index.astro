@@ -1,0 +1,124 @@
+---
+import startups from '../../../data/startups.json';
+import tools from '../../../data/tools.json';
+import collaboration from '../../../data/collaboration.json';
+import contact from '../../../data/contact.json';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import SeoHead from '../../../components/SeoHead.astro';
+
+export function getStaticPaths() {
+  return ['en', 'zh'].map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const lang = Astro.props.lang === 'zh' ? 'zh' : 'en';
+const text = (value) => typeof value === 'string' ? value : value?.[lang] ?? value?.en ?? '';
+const items = [...startups.items].filter((startup) => startup.indexable).sort((a, b) => a.order - b.order);
+const canonicalUrl = `https://www.55aaseclab.com/${lang}/startups/`;
+const labels = {
+  en: {
+    github: 'GitHub',
+    contact: 'get in touch'
+  },
+  zh: {
+    github: 'GitHub',
+    contact: '联系我们'
+  }
+}[lang];
+const collaborationDescription = text(collaboration.meta.description);
+const [collaborationLead, collaborationTail] = collaborationDescription.split(labels.contact);
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <SeoHead lang={lang} path="startups" title={`${text(startups.meta.title)} | 55AA Security Lab`} description={text(startups.meta.description)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: text(startups.meta.title),
+      description: text(startups.meta.description),
+      url: canonicalUrl,
+      inLanguage: lang === 'zh' ? 'zh-CN' : 'en',
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: items.map((startup, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: text(startup.title),
+          url: `https://www.55aaseclab.com/${lang}/startups/${startup.slug}/`
+        }))
+      }
+    })} />
+  </head>
+  <body>
+    <SiteHeader lang={lang} />
+    <main>
+      <h1 class="page-title">{text(startups.meta.title)}</h1>
+      <section id="products" class="content-section" aria-label={text(startups.meta.title)}>
+        <div class="item-list">
+          {items.map((startup) => (
+            <article>
+              <div class="item-heading">
+                <h2><a href={`/${lang}/startups/${startup.slug}/`}>{text(startup.title)}</a></h2>
+                {text(startup.kind) && <span class="item-meta">{text(startup.kind)}</span>}
+              </div>
+              <p>{text(startup.descriptor)}</p>
+              <p class="item-detail">{text(startup.summary)}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="tools" class="content-section" aria-labelledby="tools-title">
+        <h2 id="tools-title">{text(tools.meta.title)}</h2>
+        <div class="item-list">
+          {tools.tools.map((tool) => (
+            <article>
+              <div class="item-heading">
+                <h3><a href={`https://github.com/${tool.repo}`} target="_blank" rel="noreferrer">{tool.title}</a></h3>
+                <span class="item-meta">{text(tool.category)} · {labels.github}</span>
+              </div>
+              <p>{text(tool.summary)}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="work-with-us" class="content-section" aria-labelledby="work-title">
+        <h2 id="work-title">{text(collaboration.meta.title)}</h2>
+        <p class="section-description">{collaborationLead}<a href={contact.form.url} target="_blank" rel="noreferrer">{labels.contact}</a>{collaborationTail}</p>
+        <div class="item-list">
+          {collaboration.services.map((service) => (
+            <article>
+              <div class="item-heading">
+                <h3>{text(service.title)}</h3>
+              </div>
+              <p>{text(service.description)}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+    <SiteFooter lang={lang} />
+  </body>
+</html>
+
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(html) { overflow-y: scroll; scroll-behavior: smooth; }
+  :global(body) { min-height: 100vh; display: flex; flex-direction: column; margin: 0; background: #fff; color: #000; font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  main { flex: 1; width: min(960px, calc(100% - 2rem)); margin: 0 auto; padding: 1.5rem 0 2rem; }
+  .page-title { display: none; }
+  a { color: #06c; }
+  .content-section { scroll-margin-top: 1rem; margin-top: 2.75rem; }
+  #products { margin-top: 0; }
+  .content-section h2 { margin: 0; font-size: 1.05rem; font-weight: 600; }
+  .section-description { max-width: 52rem; margin: .25rem 0 1.2rem; }
+  #tools > .item-list { margin-top: 1rem; }
+  .item-list article { max-width: 56rem; margin: 0 0 1.35rem; }
+  .item-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .55rem; }
+  .item-heading h2, .item-heading h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+  .item-meta { color: #777; font-size: .85rem; }
+  .item-list p { margin: .25rem 0 0; }
+  .item-detail { color: #555; font-size: .9rem; }
+</style>

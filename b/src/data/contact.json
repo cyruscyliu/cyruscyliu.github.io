@@ -6,12 +6,11 @@
       "zh": "联系 55AA Security Lab"
     }
   },
+  "form": {
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLScy2h5vwjSw6sRBQks8m0xfBdFsZQAOtp-Z3zD2cQJ58l_pRg/viewform?usp=dialog",
+    "label": { "en": "Contact us", "zh": "联系我们" }
+  },
   "entries": [
-    {
-      "label": { "en": "Email", "zh": "邮件" },
-      "value": "cyruscyliu@gmail.com",
-      "href": "mailto:cyruscyliu@gmail.com"
-    },
     {
       "label": { "en": "Code and artifacts", "zh": "代码与研究资产" },
       "value": "github.com/cyruscyliu",

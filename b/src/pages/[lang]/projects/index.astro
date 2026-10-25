@@ -10,7 +10,7 @@ export function getStaticPaths(){return ['en','zh'].map(lang=>({params:{lang},pr
 <body>
 <SiteHeader lang={lang} blogHref="projects/"/>
 <main>
-<h1>{text(data.meta.title)}</h1>
+<h1 class="page-title">{text(data.meta.title)}</h1>
 <div class="filters" aria-label={lang === 'zh' ? '按标签筛选项目' : 'Filter projects by tag'}>
 <button type="button" class="tag filter-button active" data-project-filter="all" aria-pressed="true">{lang === 'zh' ? '全部' : 'All'}</button>
 {filterOptions.map(option=><button type="button" class="tag filter-button" data-project-filter={option.key} aria-pressed="false">{option.label}</button>)}
@@ -39,4 +39,4 @@ window.addEventListener('popstate',()=>applyFilter(new URLSearchParams(window.lo
 </script>
 </body>
 </html>
-<style>:global(*){box-sizing:border-box}:global(html){overflow-y:scroll}:global(body){min-height:100vh;display:flex;flex-direction:column;margin:0;background:#fff;color:#000;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}:global(main){flex:1;width:min(960px,calc(100% - 2rem));margin:0 auto;padding:1.5rem 0 2rem}h1{display:none;font-size:1.45rem;margin:0 0 1.2rem}.filters{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin:0 0 1.25rem;padding-bottom:.75rem;border-bottom:1px solid #eee}.filters .tag+.tag{margin-left:0}.filter-button{padding:.15rem 0;border:0;border-bottom:1px solid transparent;background:none;cursor:pointer}.filter-button:hover{color:#333}.filter-button.active{border-bottom-color:#333;color:#000}.title{margin:0;font-weight:600}.title a{color:#06c}article{margin:0 0 1.35rem}p{margin:.25rem 0 .65rem}main>h1+p{margin-top:0}</style>
+<style>:global(*){box-sizing:border-box}:global(html){overflow-y:scroll}:global(body){min-height:100vh;display:flex;flex-direction:column;margin:0;background:#fff;color:#000;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}:global(main){flex:1;width:min(960px,calc(100% - 2rem));margin:0 auto;padding:1.5rem 0 2rem}.page-title{display:none;font-size:1.45rem;margin:0 0 1.2rem}.filters{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin:0 0 1.25rem;padding-bottom:.75rem;border-bottom:1px solid #eee}.filters .tag+.tag{margin-left:0}.filter-button{padding:.15rem 0;border:0;border-bottom:1px solid transparent;background:none;cursor:pointer}.filter-button:hover{color:#333}.filter-button.active{border-bottom-color:#333;color:#000}.title{margin:0;font-weight:600}.title a{color:#06c}article{margin:0 0 1.35rem}p{margin:.25rem 0 .65rem}main>h1+p{margin-top:0}</style>

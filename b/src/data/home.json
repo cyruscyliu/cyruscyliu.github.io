@@ -85,34 +85,23 @@
     {
       "key": "projects",
       "label": {
-        "en": "Projects",
-        "zh": "项目"
+        "en": "Student Projects",
+        "zh": "学生项目"
       },
       "description": {
-        "en": "Research and engineering in progress.",
-        "zh": "正在推进的研究与工程项目。"
+        "en": "Student research and engineering projects in progress.",
+        "zh": "正在推进的学生科研与工程项目。"
       }
     },
     {
-      "key": "tools",
+      "key": "startups",
       "label": {
-        "en": "Tools",
-        "zh": "工具"
+        "en": "Startups",
+        "zh": "创业项目"
       },
       "description": {
-        "en": "Tools, datasets, and infrastructure.",
-        "zh": "工具、数据集与基础设施。"
-      }
-    },
-    {
-      "key": "consultation",
-      "label": {
-        "en": "Consultation",
-        "zh": "咨询"
-      },
-      "description": {
-        "en": "Consultation and collaboration.",
-        "zh": "咨询与合作。"
+        "en": "Products, open-source tools, and ways to work with us.",
+        "zh": "产品、开源工具与合作方式。"
       }
     },
     {
@@ -227,13 +216,5 @@
         }
       }
     ]
-  },
-  "contact": {
-    "label": {
-      "en": "Contact",
-      "zh": "联系"
-    },
-    "email": "cyruscyliu@gmail.com",
-    "github": "https://github.com/cyruscyliu"
   }
 }

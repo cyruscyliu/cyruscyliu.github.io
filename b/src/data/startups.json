@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "title": {
+      "en": "Startups",
+      "zh": "创业项目"
+    },
+    "description": {
+      "en": "Security products, open-source tools, and collaboration from 55AA Security Lab.",
+      "zh": "55AA 安全实验室的安全产品、开源工具与合作方式。"
+    }
+  },
+  "items": [
+    {
+      "id": "cyber-autoresearch",
+      "slug": "cyber-autoresearch",
+      "order": 1,
+      "featured": true,
+      "indexable": true,
+      "schemaType": "WebPage",
+      "title": {
+        "en": "Cyber AutoResearch",
+        "zh": "Cyber AutoResearch"
+      },
+      "kind": {
+        "en": "",
+        "zh": ""
+      },
+      "descriptor": {
+        "en": "Rebuild security products for the AI era with Autoresearch",
+        "zh": "用 Autoresearch 重构 AI 时代的安全产品"
+      },
+      "summary": {
+        "en": "Cyber AutoResearch turns the working methods of security experts into a shared engine for four product areas: environments, offense, defense, and vulnerability management.",
+        "zh": "Cyber AutoResearch 把安全专家的研究过程转化为共同 Engine，支撑环境、攻、防、漏洞治理四类安全产品。"
+      },
+      "seo": {
+        "title": {
+          "en": "Cyber AutoResearch | Autoresearch-native Security Products | 55AA",
+          "zh": "Cyber AutoResearch：Autoresearch 原生安全产品｜55AA"
+        },
+        "description": {
+          "en": "A shared Autoresearch engine for four security product areas: environment reconstruction, autonomous fuzzing, continuous agent isolation assurance, and PoC generation.",
+          "zh": "以共同 Autoresearch Engine 支撑环境重建、自动化 Fuzzing、持续 Agent 隔离保障与 PoC 生成四类安全产品。"
+        }
+      },
+      "venture": {
+        "demo": {
+          "en": "In preparation.",
+          "zh": "准备中。"
+        },
+        "ask": {
+          "en": "We are looking for early customers interested in exploring Cyber AutoResearch use cases with us. Please ",
+          "zh": "正在寻找愿意共同探索 Cyber AutoResearch 应用场景的早期客户，欢迎"
+        }
+      },
+      "updated": "2026-10-25"
+    },
+    {
+      "id": "cyber-simulation-sandbox",
+      "slug": "cyber-simulation-sandbox",
+      "order": 2,
+      "featured": true,
+      "indexable": true,
+      "schemaType": "WebPage",
+      "title": {
+        "en": "Cyber Range",
+        "zh": "Cyber Range"
+      },
+      "kind": {
+        "en": "",
+        "zh": ""
+      },
+      "descriptor": {
+        "en": "Test different security governance approaches in synthetic scenarios",
+        "zh": "在合成场景中检验不同的安全治理方案"
+      },
+      "summary": {
+        "en": "Cyber Range tests different security governance approaches in synthetic scenarios, so teams can compare how well they control risk and what unintended effects they may cause before real-world use.",
+        "zh": "Cyber Range 在合成场景中检验安全治理方案，让团队在实际应用前比较各方案控制风险的效果，以及可能带来的意外影响。"
+      },
+      "seo": {
+        "title": {
+          "en": "Cyber Range | Cyber-risk Experiments | 55AA",
+          "zh": "Cyber Range：可回放的网络风险实验｜55AA"
+        },
+        "description": {
+          "en": "An early cyber-risk simulation product for comparing governance rules, replaying causal chains, and examining tradeoffs in synthetic scenarios.",
+          "zh": "早期网络风险推演产品，用于比较治理规则、回放因果链，并观察合成场景中的风险与代价。"
+        }
+      },
+      "venture": {
+        "demo": {
+          "en": "In preparation.",
+          "zh": "准备中。"
+        }
+      },
+      "updated": "2026-10-25"
+    },
+    {
+      "id": "system-security-handbook",
+      "slug": "system-security-handbook",
+      "order": 3,
+      "featured": true,
+      "indexable": true,
+      "schemaType": "LearningResource",
+      "title": {
+        "en": "Cyber Handbook",
+        "zh": "Cyber Handbook"
+      },
+      "kind": {
+        "en": "",
+        "zh": ""
+      },
+      "descriptor": {
+        "en": "Cybersecurity from fundamentals to mastery, with a knowledge base for AI",
+        "zh": "网络空间安全从入门到精通，也是一套面向 AI 的知识库"
+      },
+      "summary": {
+        "en": "Cyber Handbook brings together systems knowledge, security topics, research methods, and interview preparation. It is a learning and reference resource for people, and a cybersecurity knowledge base for AI.",
+        "zh": "Cyber Handbook 汇集系统知识、安全主题、科研方法和面试准备，既供人学习和查阅，也可作为 AI 的网络空间安全知识库。"
+      },
+      "seo": {
+        "title": {
+          "en": "Cyber Handbook | Learning and Research | 55AA",
+          "zh": "Cyber Handbook：学习路线、科研方法与面试｜55AA"
+        },
+        "description": {
+          "en": "An open system-security handbook covering systems foundations, research methods, advanced security topics, and interview preparation.",
+          "zh": "开放的 Cyber Handbook，覆盖系统基础、科研方法、高级安全主题与面试准备。"
+        }
+      },
+      "venture": {
+        "demo": {
+          "en": "In preparation.",
+          "zh": "准备中。"
+        }
+      },
+      "updated": "2026-10-25"
+    }
+  ]
+}

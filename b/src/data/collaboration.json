@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": { "en": "Work with us", "zh": "与我们合作" },
+    "description": {
+      "en": "If you are an investor, business leader, or founder, get in touch.",
+      "zh": "如果你是投资人、企业负责人或创业者，欢迎联系我们。"
+    }
+  },
+  "services": [
+    {
+      "title": { "en": "Conversation", "zh": "交流" },
+      "description": {
+        "en": "Exchange views on industries, technologies, and projects.",
+        "zh": "围绕行业、技术和项目交换看法。"
+      }
+    },
+    {
+      "title": { "en": "Advisory", "zh": "咨询" },
+      "description": {
+        "en": "Research and advice for an investment decision, business need, or product question.",
+        "zh": "针对投资判断、企业需求或产品问题提供研究与建议。"
+      }
+    },
+    {
+      "title": { "en": "Ongoing support", "zh": "陪跑" },
+      "description": {
+        "en": "Stay involved over time as you set direction, design an approach, and move the project forward.",
+        "zh": "在一段时间内持续参与方向判断、方案设计和项目推进。"
+      }
+    },
+    {
+      "title": { "en": "Collaboration", "zh": "合作" },
+      "description": {
+        "en": "Work together toward a defined goal in research, development, or technology transfer.",
+        "zh": "围绕明确目标共同开展研究、开发或科技转化。"
+      }
+    }
+  ]
+}

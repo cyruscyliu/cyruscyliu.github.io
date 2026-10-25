@@ -4,8 +4,7 @@ import research from '../../data/research.json';
 import people from '../../data/people.json';
 import dblp from '../../data/dblp.json';
 import projects from '../../data/projects.json';
-import tools from '../../data/tools.json';
-import toolsCache from '../../data/tools-cache.json';
+import startups from '../../data/startups.json';
 import teaching from '../../data/courses.json';
 import news from '../../data/news.json';
 import { getBlogPosts } from '../../lib/blog';
@@ -14,8 +13,8 @@ import SocialIcon from '../../components/SocialIcon.astro';
 import CourseGraph from '../../components/CourseGraph.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
-import consultation from '../../data/consultation.json';
 import sponsorship from '../../data/sponsorship.json';
+import contact from '../../data/contact.json';
 import SeoHead from '../../components/SeoHead.astro';
 import PublicationList from '../../components/PublicationList.astro';
 
@@ -36,18 +35,15 @@ const today = new Date().toISOString().slice(0, 10);
 const publishedNews = news.entries.filter((entry) => entry.date <= today);
 const blogPosts = (await getBlogPosts()).filter((post) => post.data.language === lang);
 const hiringProjects = projects.projects.filter((project) => project.tags.some((tag) => tag.en.startsWith('Hiring for')));
+const featuredStartups = [...startups.items].filter((startup) => startup.featured && startup.indexable).sort((a, b) => a.order - b.order);
+const startupLabels = {
+  en: { title: 'Startups', readMore: 'Explore products and tools' },
+  zh: { title: '创业项目', readMore: '查看更多' }
+}[lang];
 const researchAreaTitle = (id: string) => text(research.areas.find((area) => area.id === id)?.title);
 const projectTags = (project: typeof projects.projects[number]) => [researchAreaTitle(project.researchArea), ...project.tags.map(text)].filter(Boolean);
 const publishedCourses = teaching.courses.filter((course) => !['Under development', 'Placeholder'].includes(course.status?.en));
 const noPublishedCoursesText = lang === 'zh' ? '暂无已发布课程。' : 'No published courses yet.';
-const displayTools = tools.tools.map((tool) => {
-  const cached = toolsCache.tools[tool.repo];
-  return {
-    ...tool,
-    fallbackTitle: cached?.title || tool.fallbackTitle,
-    fallbackDescription: cached?.description || tool.fallbackDescription,
-  };
-});
 ---
 <!doctype html>
 <html lang={lang}>
@@ -66,18 +62,27 @@ const displayTools = tools.tools.map((tool) => {
   </head>
   <body>
     <SiteHeader lang={lang} />
-    <section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><h1 id="hero-title" class="hero-title">{lang === 'zh' ? '55AA 安全实验室' : '55AA Security Lab'}</h1><p class="hero-intro">{lang === 'zh' ? `我们围绕${researchSummary}开展研究，并将成果转化为课程、工具和服务。` : `We work on ${researchSummary}, turning our findings into courses, tools, and services.`}</p></div><div class="hero-visual" aria-hidden="true"><svg class="hero-map" viewBox="0 0 360 220" role="presentation" focusable="false"><defs><filter id="hero-map-shadow" x="-14%" y="-18%" width="128%" height="136%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#0b3a63" flood-opacity=".11"/></filter></defs><rect x="18" y="24" width="324" height="172" rx="16" fill="#fff" opacity=".78"/><g filter="url(#hero-map-shadow)"><path d="M38 76 82 50 126 58 144 106 112 152 58 144 30 110Z" fill="#eef6fc" stroke="#9cc5e6" stroke-width="2"/><path d="M126 60 206 44 264 86 246 148 164 160 136 112Z" fill="#f7fbff" stroke="#b8d3ea" stroke-width="2"/><path d="M238 72 312 84 334 124 306 168 238 176 214 126Z" fill="#edf7f4" stroke="#a9d4c9" stroke-width="2"/></g><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M64 110 C108 92 132 104 170 112 S234 102 292 122" stroke="#8ab5d9" stroke-width="3"/><path d="M108 142 C150 130 188 146 236 130" stroke="#b3cce3" stroke-width="2.2"/><path d="M68 78 C100 100 126 116 170 112 S250 112 292 122" stroke="#d93025" stroke-width="3.2" stroke-dasharray="8 8"/></g><g><circle cx="64" cy="110" r="6" fill="#06c"/><circle cx="108" cy="142" r="4.5" fill="#06c"/><circle cx="170" cy="112" r="8" fill="#fff" stroke="#06c" stroke-width="3"/><circle cx="236" cy="130" r="5" fill="#06c"/><circle cx="292" cy="122" r="12" fill="#111"/><circle cx="68" cy="78" r="5.5" fill="#d93025"/><circle cx="126" cy="106" r="4" fill="#d93025"/><path d="m208 82 9 9-9 9-9-9z" fill="#fff" stroke="#f4b400" stroke-width="2.4"/><path d="M286 116h12v12h-12z" fill="#fff"/></g><g fill="none" stroke="#0b3155" stroke-opacity=".14" stroke-width="1.3"><path d="M48 132c26 12 54 14 84 6"/><path d="M154 76c30-8 58-4 84 12"/><path d="M250 154c22 2 42-2 60-14"/></g></svg></div></section>
+    <section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><h1 id="hero-title" class="hero-title">{lang === 'zh' ? '55AA 安全实验室' : '55AA Security Lab'}</h1><p class="hero-intro">{lang === 'zh' ? `我们围绕${researchSummary}开展研究，并推动相关成果的科技转化。` : `We work on ${researchSummary} and translate related research into practical applications.`}</p><p class="hero-contact"><a href={contact.form.url} target="_blank" rel="noreferrer">{text(contact.form.label)} <span aria-hidden="true">→</span></a></p></div><div class="hero-visual" aria-hidden="true"><svg class="hero-map" viewBox="0 0 360 220" role="presentation" focusable="false"><defs><filter id="hero-map-shadow" x="-14%" y="-18%" width="128%" height="136%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#0b3a63" flood-opacity=".11"/></filter></defs><rect x="18" y="24" width="324" height="172" rx="16" fill="#fff" opacity=".78"/><g filter="url(#hero-map-shadow)"><path d="M38 76 82 50 126 58 144 106 112 152 58 144 30 110Z" fill="#eef6fc" stroke="#9cc5e6" stroke-width="2"/><path d="M126 60 206 44 264 86 246 148 164 160 136 112Z" fill="#f7fbff" stroke="#b8d3ea" stroke-width="2"/><path d="M238 72 312 84 334 124 306 168 238 176 214 126Z" fill="#edf7f4" stroke="#a9d4c9" stroke-width="2"/></g><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M64 110 C108 92 132 104 170 112 S234 102 292 122" stroke="#8ab5d9" stroke-width="3"/><path d="M108 142 C150 130 188 146 236 130" stroke="#b3cce3" stroke-width="2.2"/><path d="M68 78 C100 100 126 116 170 112 S250 112 292 122" stroke="#d93025" stroke-width="3.2" stroke-dasharray="8 8"/></g><g><circle cx="64" cy="110" r="6" fill="#06c"/><circle cx="108" cy="142" r="4.5" fill="#06c"/><circle cx="170" cy="112" r="8" fill="#fff" stroke="#06c" stroke-width="3"/><circle cx="236" cy="130" r="5" fill="#06c"/><circle cx="292" cy="122" r="12" fill="#111"/><circle cx="68" cy="78" r="5.5" fill="#d93025"/><circle cx="126" cy="106" r="4" fill="#d93025"/><path d="m208 82 9 9-9 9-9-9z" fill="#fff" stroke="#f4b400" stroke-width="2.4"/><path d="M286 116h12v12h-12z" fill="#fff"/></g><g fill="none" stroke="#0b3155" stroke-opacity=".14" stroke-width="1.3"><path d="M48 132c26 12 54 14 84 6"/><path d="M154 76c30-8 58-4 84 12"/><path d="M250 154c22 2 42-2 60-14"/></g></svg></div></section>
     <main>
       <section class="panel active" data-panel="home">
         <h2>News</h2>
-        {publishedNews.length ? publishedNews.slice(0, 3).map((entry) => <article class="news-item"><time class="meta" datetime={entry.date}>{entry.date}</time><h2>{entry.href ? <a href={entry.href}>{text(entry.title)}</a> : text(entry.title)}</h2></article>) : <p class="meta">{lang === 'zh' ? '暂无新闻。' : 'No news yet.'}</p>}
-        <Preview title={text(teaching.meta.title)} keyName="courses" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{publishedCourses.length ? publishedCourses.slice(0, 3).map((course) => <article><div class="course-heading"><h2>{text(course.name)}</h2><span class="tag">{text(course.level)}</span><span class="tag">{course.code}</span><span class="tag">{text(course.status)}</span><span class="tag">{lang === 'zh' ? '开班时间：待定' : 'Course start: TBD'}</span></div></article>) : <p class="meta">{noPublishedCoursesText}</p>}</Preview>
-        <Preview title={text(projects.meta.title)} keyName="projects" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{hiringProjects.slice(0, 3).map((project) => <article><div class="item-heading"><h2><a href={project.detailSlug ? `/${lang}/projects/${project.detailSlug}/` : text(project.href)}>{text(project.title)}</a></h2>{projectTags(project).map((tag) => <span class="tag">{tag}</span>)}</div><p>{text(project.introduction) || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</Preview>
-        <Preview title={text(tools.meta.title)} keyName="tools" readMore={lang === 'zh' ? '查看更多' : 'Read more'}><div>{displayTools.slice(0, 3).map((tool) => <article><p class="tool-title"><a href={`https://github.com/${tool.repo}`} target="_blank" rel="noreferrer">{tool.fallbackTitle}</a> <span class="tag">GitHub</span><span class="tag">{lang === 'zh' ? '适用入口：GitHub' : 'Access: GitHub'}</span></p><p>{tool.fallbackDescription || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</div></Preview>
-        <Preview title={text(consultation.meta.title)} keyName="consultation" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>
-          <p>{text(consultation.body)}</p>
-          {consultation.services.map((service) => <article><div class="item-heading"><h2>{text(service.title)}</h2><span class="tag">{text(service.duration)}</span><span class="tag">{lang === 'zh' ? '预约方式：联系实验室' : 'Booking: contact us'}</span></div></article>)}
-        </Preview>
+        {publishedNews.length ? publishedNews.slice(0, 3).map((entry) => <article class="news-item"><time class="meta" datetime={entry.date}>{entry.date}</time><h3>{entry.href ? <a href={entry.href}>{text(entry.title)}</a> : text(entry.title)}</h3></article>) : <p class="meta">{lang === 'zh' ? '暂无新闻。' : 'No news yet.'}</p>}
+        <Preview title={text(projects.meta.title)} keyName="projects" readMore={lang === 'zh' ? '查看更多' : 'Read more'}>{hiringProjects.slice(0, 3).map((project) => <article><div class="item-heading"><h3><a href={project.detailSlug ? `/${lang}/projects/${project.detailSlug}/` : text(project.href)}>{text(project.title)}</a></h3>{projectTags(project).map((tag) => <span class="tag">{tag}</span>)}</div><p>{text(project.introduction) || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</Preview>
+        <section class="startup-preview" aria-labelledby="startup-preview-title">
+          <div class="startup-preview-heading">
+            <h2 id="startup-preview-title">{startupLabels.title}</h2>
+            <a href={`/${lang}/startups/`}>{startupLabels.readMore} <span aria-hidden="true">→</span></a>
+          </div>
+          {featuredStartups.map((startup) => (
+            <article class="startup-preview-item">
+              <div class="item-heading">
+                <h3><a href={`/${lang}/startups/${startup.slug}/`}>{text(startup.title)}</a></h3>
+                {text(startup.kind) && <span class="tag">{text(startup.kind)}</span>}
+              </div>
+              <p>{text(startup.descriptor)}</p>
+            </article>
+          ))}
+        </section>
       </section>
       <section class="panel" data-panel="people">
         <div class="people-grid">{people.people.map((person) => <article class="person-card">{person.profile ? <a class="person-image-link" href={`/${lang}/people/${person.profile.slug}/`}><img class="person-image" src={person.profileImage} alt={text(person.alt)} /></a> : <img class="person-image" src={person.profileImage} alt={text(person.alt)} />}<div class="person-info"><div>{person.profile ? <h2><a class="person-name" href={`/${lang}/people/${person.profile.slug}/`}>{personName(person)}</a></h2> : <h2>{personName(person)}</h2>}<p class="person-role">{text(person.role)}</p></div><p class="person-interests">{person.interests[lang].join(' · ')}</p><div class="socials">{person.cv && <a class="cv-link" href={person.cv} target="_blank" rel="noreferrer">{lang === 'zh' ? '个人简历（PDF）' : 'Curriculum vitae (PDF)'}</a>}{person.links.map((link) => <a href={link.url} aria-label={text(link.label)} title={text(link.label)}><SocialIcon kind={link.kind} /></a>)}</div></div></article>)}</div>
@@ -86,9 +91,7 @@ const displayTools = tools.tools.map((tool) => {
         <PublicationList lang={lang} publications={dblp.publications} />
       </section>
       <section class="panel" data-panel="projects">{hiringProjects.map((project) => <article><div class="item-heading"><h2><a href={project.detailSlug ? `/${lang}/projects/${project.detailSlug}/` : text(project.href)}>{text(project.title)}</a></h2>{projectTags(project).map((tag) => <span class="tag">{tag}</span>)}</div><p>{text(project.introduction) || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</section>
-      <section class="panel" data-panel="tools"><div>{displayTools.map((tool) => <article><p class="tool-title"><a href={`https://github.com/${tool.repo}`} target="_blank" rel="noreferrer">{tool.fallbackTitle}</a> <span class="tag">GitHub</span></p><p>{tool.fallbackDescription || (lang === 'zh' ? '待定' : 'TBD')}</p></article>)}</div></section>
       <section class="panel" data-panel="courses">{publishedCourses.length ? <><CourseGraph lang={lang} includeDraft={false} />{[...publishedCourses].sort((a, b) => (a.level.en === 'Undergraduate' ? 0 : 1) - (b.level.en === 'Undergraduate' ? 0 : 1)).map((course) => <article><div class="course-heading"><h2>{text(course.name)}</h2><span class="tag">{text(course.level)}</span><span class="tag">{course.code}</span><span class="tag">{text(course.status)}</span></div></article>)}</> : <p class="meta">{noPublishedCoursesText}</p>}</section>
-      <section class="panel" data-panel="consultation"><p>{text(consultation.body)}</p>{consultation.services.map((service) => <article><div class="item-heading"><h2>{text(service.title)}</h2><span class="tag">{text(service.duration)}</span></div></article>)}</section>
       <section class="panel" data-panel="blog">{blogPosts.length ? blogPosts.map((post) => <article><p class="meta">{post.data.date}{post.data.tags.map((tag) => <> <span class="tag">{tag}</span></>)}</p><h2><a href={`/${lang}/blog/${post.data.slug}/`}>{post.data.title}</a></h2><p>{post.data.description}</p></article>) : <p class="meta">{lang === 'zh' ? '暂无博客。' : 'No blog yet.'}</p>}</section>
       <section class="panel" data-panel="sponsorship"><p>{text(sponsorship.body)}</p><h2>{lang === 'zh' ? '赞助者列表' : 'Sponsors'}</h2>{sponsorship.sponsors.length ? sponsorship.sponsors.map((sponsor) => <p>{sponsor}</p>) : <p class="meta">{lang === 'zh' ? '暂无赞助者。' : 'No sponsors yet.'}</p>}</section>
     </main>
@@ -124,7 +127,19 @@ const displayTools = tools.tools.map((tool) => {
   </body>
 </html>
 <style>
-.hero{position:relative;isolation:isolate;display:flex;justify-content:space-between;align-items:center;gap:2rem;width:min(960px,calc(100% - 2rem));margin:2rem auto 3rem;padding:2.5rem 1.5rem;border-bottom:1px solid #eee;background:url('/hero-background.svg') center/cover no-repeat;overflow:hidden}.hero:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.92),rgba(255,255,255,.56) 52%,rgba(255,255,255,0))}.hero-copy{flex:1 1 40rem;max-width:40rem;min-width:0}.hero-title{margin:0 0 .6rem;font-size:clamp(1.5rem,4vw,2rem);line-height:1.2;overflow-wrap:break-word}.hero-intro{margin:0;line-height:1.7;overflow-wrap:break-word}.hero-visual{position:relative;width:16rem;height:auto;flex:0 0 16rem}.hero-map{display:block;width:100%;height:auto;aspect-ratio:18/11}@media(max-width:600px){.hero{flex-direction:column;align-items:flex-start;margin-top:1rem;padding:1.5rem 0;gap:1.15rem}.hero-copy{width:100%;max-width:none;min-width:0;flex:none}.hero-visual{width:100%;max-width:22rem;flex:none}.hero-map{aspect-ratio:18/11}}
+.hero{position:relative;isolation:isolate;display:flex;justify-content:space-between;align-items:center;gap:2rem;width:min(960px,calc(100% - 2rem));margin:2rem auto 3rem;padding:2.5rem 1.5rem;border-bottom:1px solid #eee;background:url('/hero-background.svg') center/cover no-repeat;overflow:hidden}.hero:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.92),rgba(255,255,255,.56) 52%,rgba(255,255,255,0))}.hero-copy{flex:1 1 40rem;max-width:40rem;min-width:0}.hero-title{margin:0 0 .6rem;font-size:clamp(1.5rem,4vw,2rem);line-height:1.2;overflow-wrap:break-word}.hero-intro{margin:0;line-height:1.7;overflow-wrap:break-word}.hero-contact{margin:.65rem 0 0}.hero-contact a{text-decoration:none}.hero-contact a:hover{text-decoration:underline}.hero-visual{position:relative;width:16rem;height:auto;flex:0 0 16rem}.hero-map{display:block;width:100%;height:auto;aspect-ratio:18/11}@media(max-width:600px){.hero{flex-direction:column;align-items:flex-start;margin-top:1rem;padding:1.5rem 0;gap:1.15rem}.hero-copy{width:100%;max-width:none;min-width:0;flex:none}.hero-visual{width:100%;max-width:22rem;flex:none}.hero-map{aspect-ratio:18/11}}
+</style>
+
+<style>
+  .startup-preview { margin-top: 2.75rem; }
+  .startup-preview-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .startup-preview-heading h2 { margin: 0; }
+  .startup-preview-heading a { flex: 0 0 auto; color: #06c; text-decoration: none; }
+  .startup-preview-heading a:hover { text-decoration: underline; }
+  .startup-preview-item { margin-bottom: 1.15rem; }
+  .startup-preview-item h3 { margin: 0; font-size: 1.05rem; font-weight: 600; }
+  .startup-preview-item p { margin: .25rem 0 0; }
+  @media(max-width:680px){.startup-preview-heading{align-items:flex-start;flex-direction:column;gap:.25rem}}
 </style>
 
 <style>
@@ -156,8 +171,8 @@ const displayTools = tools.tools.map((tool) => {
   .research-item p { margin: 0; }
   article { margin: 0 0 1.35rem; }
   .news-item { margin-bottom: .9rem; }
-  .news-item time, .news-item h2 { display: block; }
-  .news-item h2 { margin: .15rem 0 0; font-weight: 400; }
+  .news-item time, .news-item h3 { display: block; }
+  .news-item h3 { margin: .15rem 0 0; font-size: 1.05rem; font-weight: 400; }
   .panel[data-panel="home"] > h2 { margin-top: 2.75rem; }
   .panel[data-panel="home"] > h2:first-child { margin-top: 0; }
   .preview { margin-top: 2.75rem; }
@@ -167,12 +182,8 @@ const displayTools = tools.tools.map((tool) => {
   .course-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; }
   .course-heading h2 { margin: 0; }
   .item-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; }
-  .item-heading h2 { margin: 0; }
+  .item-heading h2, .item-heading h3 { margin: 0; font-size: 1.05rem; }
   .course-description { white-space: nowrap; }
-  :global(.tool-title) { margin: 0; padding: 0; font-size: 1rem; line-height: 1.55; font-weight: 600; }
-  :global(.tool-title a) { color: #06c; }
-  :global([data-github-tools] article) { margin: 0 0 1.35rem; }
-  :global([data-github-tools] article > p) { margin: 0; padding: 0; font-size: 1rem; line-height: 1.55; }
   .people-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
   .person-card { display: flex; align-items: flex-start; gap: 1rem; min-width: 0; margin: 0; padding: 1rem; background: rgba(255,255,255,.86); }
   .person-image-link { display: block; flex: 0 0 auto; }
