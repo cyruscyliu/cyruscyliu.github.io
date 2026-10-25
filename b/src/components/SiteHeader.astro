@@ -2,7 +2,13 @@
 import '../styles/global.css';
 import homeData from '../data/home.json';
 import languagesIcon from 'lucide-static/icons/languages.svg?url';
-const { lang: propLang = 'en', blogHref = null, tabActionHref = null, tabActionLabel = null } = Astro.props;
+const {
+  lang: propLang = 'en',
+  blogHref = null,
+  tabActionHref = null,
+  tabActionLabel = null,
+  showLanguageSwitch = true,
+} = Astro.props;
 const lang = Astro.params?.lang === 'zh' ? 'zh' : (Astro.params?.lang === 'en' ? 'en' : propLang);
 const home = `/${lang}/`;
 const language = lang === 'en' ? '中文' : 'English';
@@ -18,9 +24,9 @@ const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
     <a class="site-name" href={home}><img src="/logo-lockup.svg" width="125" height="40" loading="eager" decoding="sync" alt="55AA Security Lab" /></a>
   </div>
   <div class="header-actions">
-    <a class="header-action" href={languageHref} aria-label={language} title={language} data-language-link>
+    {showLanguageSwitch && <a class="header-action" href={languageHref} aria-label={language} title={language} data-language-link>
       <img src={languagesIcon} width="22" height="22" alt="" loading="eager" decoding="sync" aria-hidden="true" />
-    </a>
+    </a>}
   </div>
 </header>
 <nav class="tabs" aria-label="Sections">{homeData.sections.map((tab) => { const href = `/${lang}/${tab.key === 'home' ? '' : `${tab.key}/`}`; const sectionPath = href.replace(/\/+$/, ''); const active = currentPath === sectionPath || (tab.key !== 'home' && currentPath.startsWith(`${sectionPath}/`)); return <a class={active ? 'active' : undefined} href={href} aria-current={active ? 'page' : undefined}>{tab.label[lang]}</a> })}{tabActionHref && tabActionLabel && <a class="tab-action" href={tabActionHref}>{tabActionLabel}</a>}</nav>

@@ -170,15 +170,27 @@
   </url>
   <url>
     <loc>https://www.55aaseclab.com/zh/blog/55aa-member-process-management/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/blog/55aa-member-process-management/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/blog/55aa-member-process-management/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/blog/55aa-member-process-management/" />
   </url>
   <url>
     <loc>https://www.55aaseclab.com/en/blog/55aa-member-process-management/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/blog/55aa-member-process-management/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/blog/55aa-member-process-management/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/blog/55aa-member-process-management/" />
   </url>
   <url>
     <loc>https://www.55aaseclab.com/zh/blog/55aa-research-project-process-management/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/blog/55aa-research-project-process-management/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/blog/55aa-research-project-process-management/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/blog/55aa-research-project-process-management/" />
   </url>
   <url>
     <loc>https://www.55aaseclab.com/en/blog/55aa-research-project-process-management/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/blog/55aa-research-project-process-management/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/blog/55aa-research-project-process-management/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/blog/55aa-research-project-process-management/" />
   </url>
   <url>
     <loc>https://www.55aaseclab.com/zh/blog/55aa-technology-readiness-levels/</loc>
@@ -191,8 +203,14 @@
   </url>
   <url>
     <loc>https://www.55aaseclab.com/zh/blog/syssec-not-hard-anymore/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/blog/syssec-not-hard-anymore/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/blog/syssec-not-hard-anymore/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/blog/syssec-not-hard-anymore/" />
   </url>
   <url>
     <loc>https://www.55aaseclab.com/en/blog/syssec-not-hard-anymore/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.55aaseclab.com/en/blog/syssec-not-hard-anymore/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.55aaseclab.com/zh/blog/syssec-not-hard-anymore/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.55aaseclab.com/en/blog/syssec-not-hard-anymore/" />
   </url>
 </urlset>

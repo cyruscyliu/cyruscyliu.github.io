@@ -253,6 +253,10 @@
         "en": "This PhD research project studies defense-in-depth architectures for process-based and VM-based sandboxes. The project investigates how sandbox escapes and policy bypasses emerge across system-call interfaces, shared resources, runtime services, and hardware boundaries, then develops layered defenses that combine behavioral monitoring at security-relevant interfaces, exploit prevention, and compartmentalization. It further explores techniques such as pattern matching, hardware-assisted enforcement, and hardware-software co-design to make sandboxed execution more resilient against both known attack patterns and previously unseen exploitation strategies.",
         "zh": "本博士科研项目研究面向进程级沙箱和虚拟机级沙箱的纵深防御体系。项目关注沙箱逃逸和策略绕过如何在系统调用接口、共享资源、运行时服务和硬件边界处产生，并设计结合安全接口行为监测、漏洞利用预防和分舱隔离的多层防护机制。项目进一步探索模式匹配、硬件辅助执行保护以及软硬件协同设计等技术，使沙箱执行环境能够同时抵御已知攻击模式和未见过的利用策略。"
       },
+      "seoDescription": {
+        "en": "Research on layered defenses for process and virtual-machine sandboxes, spanning behavioral monitoring, exploit prevention, and compartmentalization.",
+        "zh": "面向进程级与虚拟机级沙箱，研究结合行为监测、漏洞利用预防和分舱隔离的纵深防御体系。"
+      },
       "references": [
         {
           "title": {
@@ -318,6 +322,10 @@
       "introduction": {
         "en": "Today’s aero-space systems connect satellites, aircraft, drones, base stations, and cloud control planes without a shared trust floor. A fault or compromise at one layer can cascade across the stack, while GPS spoofing, jamming, avionics intrusion, and weak cross-domain authentication threaten safety and mission continuity. This project builds a layered security survey and reference architecture: map representative targets across altitudes, organize attacks and mitigations at hardware, protocol, and system layers, and make cascading paths from cloud and base stations to aircraft, satellites, and end devices explicit. The study connects trusted execution, integrity verification, and secure orchestration, and examines whether defenses compose end to end.",
         "zh": "当今全空域系统将卫星、飞机、无人机、基站和云端控制平面连接起来，却缺少共享的信任底座。单层故障或入侵可能沿系统级联；GPS 欺骗、信号干扰、航电入侵，以及跨域链路上的薄弱认证和密钥管理，都可能迅速危及安全与任务连续性。本项目构建分层安全综述与参考架构：梳理不同高度的代表性目标，按硬件、协议和系统层组织攻击与防护，并明确展示从云端和基站到飞机、卫星及终端的级联路径。项目进一步联系可信执行、完整性验证和安全编排，分析防御措施能否在端到端链路上协同生效。"
+      },
+      "seoDescription": {
+        "en": "A layered security survey and reference architecture for satellites, aircraft, drones, base stations, and cloud control planes.",
+        "zh": "面向卫星、飞机、无人机、基站和云端控制平面，构建全空域系统的分层安全综述与参考架构。"
       },
       "references": [
         {

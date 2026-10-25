@@ -16,7 +16,7 @@ const {
   title,
   description,
   type = 'website',
-  image = '/logo-lockup.png',
+  image = '/social-card.png',
   alternates = true,
   indexable = true
 } = Astro.props;
@@ -47,6 +47,8 @@ const imageAlt = lang === 'zh' ? '55AA 安全实验室标志' : '55AA Security L
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={imageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content={imageAlt} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />

@@ -23,13 +23,14 @@ const researchAreaTitle = text(research.areas.find((area) => area.id === project
 const projectTags = [researchAreaTitle, ...project.tags.map(text)].filter(Boolean);
 const title = text(project.title);
 const description = text(project.introduction);
+const seoDescription = text(project.seoDescription) || description;
 const references = project.references ?? [];
 const slug = project.detailSlug;
 ---
 <!doctype html>
 <html lang={lang}>
 <head>
-  <SeoHead lang={lang} path={`projects/${slug}`} title={`${title} · 55AA Security Lab`} description={description}/>
+  <SeoHead lang={lang} path={`projects/${slug}`} title={`${title} · 55AA Security Lab`} description={seoDescription}/>
 </head>
 <body>
 <SiteHeader lang={lang} blogHref="projects/"/>

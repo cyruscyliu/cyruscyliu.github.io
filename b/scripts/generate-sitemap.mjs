@@ -24,6 +24,12 @@ const blogEntries = await Promise.all(blogIndex.entries.map(async (entryKey) => 
   }
   return { language, path: `blog/${slug}` };
 }));
+const blogLanguagesByPath = new Map();
+for (const entry of blogEntries) {
+  const entryLanguages = blogLanguagesByPath.get(entry.path) ?? new Set();
+  entryLanguages.add(entry.language);
+  blogLanguagesByPath.set(entry.path, entryLanguages);
+}
 const teaching = JSON.parse(await readFile(new URL('../src/data/courses.json', import.meta.url), 'utf8'));
 const coursesByCode = new Map(teaching.courses.map((course) => [course.code, course]));
 const sections = ['', 'news', 'people', 'projects', 'startups', 'publications', 'blog', 'sponsorship'];
@@ -65,9 +71,16 @@ const entries = [
     <xhtml:link rel="alternate" hreflang="zh" href="${escapeXml(url('zh', path))}" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(url('en', path))}" />
   </url>`)),
-  ...blogEntries.map((entry) => `  <url>
-    <loc>${escapeXml(url(entry.language, entry.path))}</loc>
-  </url>`),
+  ...blogEntries.map((entry) => {
+    const entryLanguages = blogLanguagesByPath.get(entry.path);
+    const hasTranslations = languages.every((language) => entryLanguages?.has(language));
+    return `  <url>
+    <loc>${escapeXml(url(entry.language, entry.path))}</loc>${hasTranslations ? `
+    <xhtml:link rel="alternate" hreflang="en" href="${escapeXml(url('en', entry.path))}" />
+    <xhtml:link rel="alternate" hreflang="zh" href="${escapeXml(url('zh', entry.path))}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(url('en', entry.path))}" />` : ''}
+  </url>`;
+  }),
 ];
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
