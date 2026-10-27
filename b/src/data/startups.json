@@ -112,12 +112,12 @@
         "zh": ""
       },
       "descriptor": {
-        "en": "Cybersecurity from fundamentals to mastery, with a knowledge base for AI",
-        "zh": "网络空间安全从入门到精通，也是一套面向 AI 的知识库"
+        "en": "Cybersecurity from fundamentals to mastery — consolidating existing knowledge, collecting security intelligence, and improving signal-to-noise, for humans and AI",
+        "zh": "网络空间安全从入门到精通：沉淀已有知识、收集安全情报、提升信噪比，面向人与 AI 的知识库"
       },
       "summary": {
-        "en": "Cyber Handbook brings together systems knowledge, security topics, research methods, and interview preparation. It is a learning and reference resource for people, and a cybersecurity knowledge base for AI.",
-        "zh": "Cyber Handbook 汇集系统知识、安全主题、科研方法和面试准备，既供人学习和查阅，也可作为 AI 的网络空间安全知识库。"
+        "en": "Cyber Handbook consolidates existing systems knowledge, security topics, research methods, and interview preparation, while continuously collecting security intelligence and improving signal-to-noise. It serves both people and AI.",
+        "zh": "Cyber Handbook 沉淀已有知识（系统知识、安全主题、科研方法、面试准备），持续收集安全情报并提升信噪比；既供人学习和查阅，也可作为 AI 的网络空间安全知识库。"
       },
       "seo": {
         "title": {
@@ -125,8 +125,8 @@
           "zh": "Cyber Handbook：学习路线、科研方法与面试｜55AA"
         },
         "description": {
-          "en": "An open system-security handbook covering systems foundations, research methods, advanced security topics, and interview preparation.",
-          "zh": "开放的 Cyber Handbook，覆盖系统基础、科研方法、高级安全主题与面试准备。"
+          "en": "An open system-security handbook consolidating existing knowledge, collecting security intelligence, and improving signal-to-noise.",
+          "zh": "开放的 Cyber Handbook：沉淀已有知识、收集安全情报、提升信噪比。"
         }
       },
       "venture": {
@@ -135,7 +135,7 @@
           "zh": "准备中。"
         }
       },
-      "updated": "2026-10-25"
+      "updated": "2026-10-26"
     }
   ]
 }
