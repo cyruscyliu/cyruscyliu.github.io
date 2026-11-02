@@ -9,3 +9,7 @@ __pycache__/
 
 # platform API keys - NEVER commit
 seo/keys.env
+
+# NOTE: public/<indexnow-key>.txt MUST be committed and deployed -
+# it is a public ownership-proof file required by the IndexNow protocol (contains no secret).
+# Secrets (gsc-service-account.json, seo/keys.env) are ignored above.
