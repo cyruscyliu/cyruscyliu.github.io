@@ -6,3 +6,6 @@ public/55AA-Security-Lab-*.pdf
 # GCP service account key - NEVER commit
 gsc-service-account.json
 __pycache__/
+
+# platform API keys - NEVER commit
+seo/keys.env
