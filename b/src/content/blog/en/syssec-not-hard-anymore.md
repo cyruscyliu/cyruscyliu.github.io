@@ -1,6 +1,6 @@
 ---
 title: "System Security Research in the AI Era | Morpheus in Practice"
-description: "How coding agents lower the barrier to system security research."
+description: "Doing system security research with coding agents: what gets easier, what breaks, and the Morpheus workflow framework built to keep results stable."
 date: "2026-09-27"
 language: "en"
 slug: "syssec-not-hard-anymore"

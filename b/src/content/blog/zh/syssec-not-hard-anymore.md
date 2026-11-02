@@ -1,6 +1,6 @@
 ---
 title: "AI 时代系统安全研究｜Morpheus 实践"
-description: "分享 coding agent 如何降低系统安全研究门槛。"
+description: "用 coding agent 做系统安全研究的实践：什么变得更容易、什么仍然容易出错，以及为保持结果稳定而构建的 Morpheus 工作流框架。"
 date: "2026-09-27"
 language: "zh"
 slug: "syssec-not-hard-anymore"
