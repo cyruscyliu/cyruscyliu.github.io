@@ -2,3 +2,7 @@ node_modules/
 dist/
 .astro/
 public/55AA-Security-Lab-*.pdf
+
+# GCP service account key - NEVER commit
+gsc-service-account.json
+__pycache__/
