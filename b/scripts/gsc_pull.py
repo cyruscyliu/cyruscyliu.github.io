@@ -125,6 +125,54 @@ def main():
     for r in opp[:15]:
         print(f"  impr={r.get('impressions',0):6.0f}  pos={r.get('position',0):5.1f}  ctr={r.get('ctr',0)*100:5.2f}%  {r['keys'][0][:60]}")
 
+    # 6) snapshot save + diff vs previous
+    data_dir = HERE / "seo" / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    snap = {
+        "generated_at": dt.datetime.now().isoformat(timespec="seconds"),
+        "site": target,
+        "start": start.isoformat(),
+        "end": end.isoformat(),
+        "daily": daily,
+        "queries": queries,
+        "pages": pages,
+    }
+    prev_files = sorted(data_dir.glob("gsc-*.json"))
+    prev = None
+    if prev_files:
+        try:
+            prev = json.loads(prev_files[-1].read_text())
+        except Exception:
+            prev = None
+    snap_path = data_dir / f"gsc-{dt.date.today().isoformat()}.json"
+    snap_path.write_text(json.dumps(snap, ensure_ascii=False, indent=1))
+    print(f"\n== Snapshot saved: {snap_path.name} ==")
+
+    if prev:
+        def idx(rows):
+            return {r["keys"][0]: r for r in rows if r.get("impressions", 0) or r.get("clicks", 0)}
+        cq, pq = idx(queries), idx(prev.get("queries", []))
+        new = [q for q in cq if q not in pq]
+        gone = [q for q in pq if q not in cq]
+        moved = []
+        for q in cq:
+            if q in pq:
+                dp = pq[q].get("position", 0) - cq[q].get("position", 0)
+                di = cq[q].get("impressions", 0) - pq[q].get("impressions", 0)
+                if abs(dp) >= 3 or abs(di) >= 10:
+                    moved.append((q, cq[q], pq[q], dp, di))
+        print(f"== Diff vs {prev_files[-1].name} ==")
+        for q in new[:10]:
+            r = cq[q]
+            print(f"  NEW   impr={r.get('impressions',0):6.0f} pos={r.get('position',0):5.1f}  {q[:60]}")
+        for q in gone[:10]:
+            r = pq[q]
+            print(f"  GONE  impr={r.get('impressions',0):6.0f} pos={r.get('position',0):5.1f}  {q[:60]}")
+        for q, c, p, dp, di in sorted(moved, key=lambda x: -abs(x[4]))[:10]:
+            print(f"  MOVE  pos {p.get('position',0):5.1f}->{c.get('position',0):5.1f}  impr {p.get('impressions',0):6.0f}->{c.get('impressions',0):6.0f}  {q[:50]}")
+        if not (new or gone or moved):
+            print("  (no significant changes)")
+
 
 if __name__ == "__main__":
     main()
