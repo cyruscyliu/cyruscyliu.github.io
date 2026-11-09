@@ -21,7 +21,7 @@ export async function getStaticPaths() {
 
 const { post, hasTranslation } = Astro.props;
 const { Content } = await render(post);
-const { title, description, date, language: lang, slug, tags, draft } = post.data;
+const { title, description, date, language: lang, slug, tags, draft, notice } = post.data;
 const canonical = `https://www.55aaseclab.com/${lang}/blog/${slug}/`;
 const draftNotice = lang === 'zh' ? '草稿：未发布，仅本地预览。' : 'Draft: unpublished, local preview only.';
 ---
@@ -35,6 +35,7 @@ const draftNotice = lang === 'zh' ? '草稿：未发布，仅本地预览。' : 
     <SiteHeader lang={lang} blogHref="blog/" showLanguageSwitch={hasTranslation} />
     <main>
       <p><a href={`/${lang}/blog/`}>{lang === 'zh' ? '返回博客' : 'Back to blog'}</a></p>
+      {notice && <p class="notice" set:html={notice} />}
       {draft && <p class="notice">{draftNotice}</p>}
       <article>
         <p class="meta"><time datetime={date}>{date}</time>{tags.map((tag) => <> <span class="tag">{tag}</span></>)}</p>
