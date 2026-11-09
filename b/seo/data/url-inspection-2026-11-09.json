@@ -1,0 +1,35 @@
+{
+ "generated_at": "2026-11-09T09:10:08",
+ "results": [
+  {
+   "url": "https://www.55aaseclab.com/zh/blog/gbu-hit-2027-joint-phd-admissions/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "lastCrawl": "2026-10-08T23:10:50Z",
+   "sitemapHit": null
+  },
+  {
+   "url": "https://www.55aaseclab.com/zh/blog/syssec-not-hard-anymore/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "lastCrawl": "2026-10-30T00:07:27Z",
+   "sitemapHit": null
+  },
+  {
+   "url": "https://www.55aaseclab.com/en/blog/syssec-not-hard-anymore/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "lastCrawl": "2026-11-09T05:15:39Z",
+   "sitemapHit": [
+    "https://www.55aaseclab.com/sitemap.xml"
+   ]
+  },
+  {
+   "url": "https://www.55aaseclab.com/en/people/qiang-liu/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "lastCrawl": "2026-11-09T05:12:50Z",
+   "sitemapHit": null
+  }
+ ]
+}
