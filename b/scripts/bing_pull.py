@@ -42,18 +42,24 @@ def main():
         "startDate": start.isoformat(), "endDate": end.isoformat(),
     }, timeout=60)
     r.raise_for_status()
-    data = r.json().get("d", {})
+    data = r.json().get("d", [])
+    if isinstance(data, dict):
+        data = data.get("DailyStats", [])
 
     daily = []
-    for day in data.get("DailyStats", []):
-        for q in day.get("QueryStats", []):
-            daily.append({
-                "date": day["Date"].replace("/Date(", "").replace(")/", "")[:8],
-                "query": q.get("Query"),
-                "clicks": q.get("Clicks", 0),
-                "impressions": q.get("Impressions", 0),
-                "position": round(q.get("Position", 0), 1),
-            })
+    for q in data:
+        ms = int(str(q.get("Date", "/Date(0)/")).replace("/Date(", "").replace(")/", "").split("-")[0])
+        day = dt.datetime.fromtimestamp(ms / 1000, dt.timezone.utc).date().isoformat()
+        click_pos = q.get("AvgClickPosition", -1)
+        impr_pos = q.get("AvgImpressionPosition", -1)
+        pos = click_pos if click_pos and click_pos > 0 else (impr_pos if impr_pos and impr_pos > 0 else 0)
+        daily.append({
+            "date": day,
+            "query": q.get("Query"),
+            "clicks": q.get("Clicks", 0),
+            "impressions": q.get("Impressions", 0),
+            "position": round(pos, 1),
+        })
     # aggregate by query
     agg = {}
     for row in daily:
