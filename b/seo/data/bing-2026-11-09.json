@@ -1,0 +1,25 @@
+{
+ "generated_at": "2026-11-09T09:06:40",
+ "platform": "bing",
+ "site": "https://www.55aaseclab.com/",
+ "start": "2026-10-12",
+ "end": "2026-11-09",
+ "queries": [
+  {
+   "keys": [
+    "morpheus 系统"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6.0
+  },
+  {
+   "keys": [
+    "55aa{{qundlvbtsu5wltiwmjmtmdiymtq=}}99bb"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5.0
+  }
+ ]
+}
