@@ -11,6 +11,7 @@
 - `../scripts/gsc_pull.py` — GSC 拉取工具（`--days N --site auto`；快照自动存 `data/`，与上一份自动对比）
 - `../scripts/bing_pull.py` — Bing QueryStats 拉取（快照 `data/bing-*.json`）
 - `../scripts/bing_push.py` — IndexNow 推送（部署后把 sitemap/变更 URL 推给 Bing 等）
+- `../scripts/url_inspect.py` — URL Inspection 快照（默认查关键页，快照 `data/url-inspection-*.json`）
 - `../seo/keys.env` — 各平台 key（**gitignore**，绝不入库）
 
 ## 周循环（每次执行）
