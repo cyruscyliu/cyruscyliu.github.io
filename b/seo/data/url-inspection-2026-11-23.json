@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T09:03:56",
+ "generated_at": "2026-11-23T09:10:43",
  "results": [
   {
    "url": "https://www.55aaseclab.com/zh/blog/syssec-not-hard-anymore/",
@@ -41,6 +41,13 @@
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "lastCrawl": "2026-11-15T15:58:54Z",
+   "robotsTxtState": "ALLOWED"
+  },
+  {
+   "url": "https://www.55aaseclab.com/en/publications/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "lastCrawl": "2026-11-09T11:37:33Z",
    "robotsTxtState": "ALLOWED"
   },
   {
