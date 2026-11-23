@@ -1,0 +1,54 @@
+{
+ "generated_at": "2026-11-23T09:03:56",
+ "results": [
+  {
+   "url": "https://www.55aaseclab.com/zh/blog/syssec-not-hard-anymore/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "lastCrawl": "2026-11-16T16:15:42Z",
+   "robotsTxtState": "ALLOWED"
+  },
+  {
+   "url": "https://www.55aaseclab.com/en/blog/syssec-not-hard-anymore/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "lastCrawl": "2026-11-09T05:15:39Z",
+   "robotsTxtState": "ALLOWED"
+  },
+  {
+   "url": "https://www.55aaseclab.com/zh/blog/gbu-hit-2027-joint-phd-admissions/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "lastCrawl": "2026-11-15T16:04:14Z",
+   "robotsTxtState": "ALLOWED"
+  },
+  {
+   "url": "https://www.55aaseclab.com/zh/blog/gbu-sustech-2027-joint-master-admissions/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "lastCrawl": "2026-11-16T06:38:39Z",
+   "robotsTxtState": "ALLOWED"
+  },
+  {
+   "url": "https://www.55aaseclab.com/en/people/qiang-liu/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "lastCrawl": "2026-11-17T14:15:18Z",
+   "robotsTxtState": "ALLOWED"
+  },
+  {
+   "url": "https://www.55aaseclab.com/zh/publications/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "lastCrawl": "2026-11-15T15:58:54Z",
+   "robotsTxtState": "ALLOWED"
+  },
+  {
+   "url": "https://www.55aaseclab.com/en/startups/",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "lastCrawl": "2026-11-09T04:39:38Z",
+   "robotsTxtState": "ALLOWED"
+  }
+ ]
+}

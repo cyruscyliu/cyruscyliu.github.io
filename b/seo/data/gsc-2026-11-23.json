@@ -1,0 +1,6798 @@
+{
+ "generated_at": "2026-11-23T09:00:48",
+ "site": "https://www.55aaseclab.com/",
+ "start": "2026-10-23",
+ "end": "2026-11-20",
+ "daily": [
+  {
+   "keys": [
+    "2026-10-23"
+   ],
+   "clicks": 1,
+   "impressions": 17,
+   "ctr": 0.058823529411764705,
+   "position": 5.470588235294118
+  },
+  {
+   "keys": [
+    "2026-10-24"
+   ],
+   "clicks": 0,
+   "impressions": 19,
+   "ctr": 0,
+   "position": 10.842105263157896
+  },
+  {
+   "keys": [
+    "2026-10-25"
+   ],
+   "clicks": 0,
+   "impressions": 13,
+   "ctr": 0,
+   "position": 5.846153846153846
+  },
+  {
+   "keys": [
+    "2026-10-26"
+   ],
+   "clicks": 6,
+   "impressions": 63,
+   "ctr": 0.09523809523809523,
+   "position": 5.714285714285714
+  },
+  {
+   "keys": [
+    "2026-10-27"
+   ],
+   "clicks": 0,
+   "impressions": 38,
+   "ctr": 0,
+   "position": 9.605263157894736
+  },
+  {
+   "keys": [
+    "2026-10-28"
+   ],
+   "clicks": 0,
+   "impressions": 31,
+   "ctr": 0,
+   "position": 6.451612903225806
+  },
+  {
+   "keys": [
+    "2026-10-29"
+   ],
+   "clicks": 1,
+   "impressions": 26,
+   "ctr": 0.038461538461538464,
+   "position": 7.153846153846154
+  },
+  {
+   "keys": [
+    "2026-10-30"
+   ],
+   "clicks": 0,
+   "impressions": 32,
+   "ctr": 0,
+   "position": 5.375
+  },
+  {
+   "keys": [
+    "2026-10-31"
+   ],
+   "clicks": 0,
+   "impressions": 19,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "2026-11-01"
+   ],
+   "clicks": 0,
+   "impressions": 9,
+   "ctr": 0,
+   "position": 7.555555555555555
+  },
+  {
+   "keys": [
+    "2026-11-02"
+   ],
+   "clicks": 3,
+   "impressions": 27,
+   "ctr": 0.1111111111111111,
+   "position": 7.518518518518518
+  },
+  {
+   "keys": [
+    "2026-11-03"
+   ],
+   "clicks": 0,
+   "impressions": 28,
+   "ctr": 0,
+   "position": 11.178571428571429
+  },
+  {
+   "keys": [
+    "2026-11-04"
+   ],
+   "clicks": 0,
+   "impressions": 21,
+   "ctr": 0,
+   "position": 7.809523809523809
+  },
+  {
+   "keys": [
+    "2026-11-05"
+   ],
+   "clicks": 0,
+   "impressions": 23,
+   "ctr": 0,
+   "position": 6.130434782608695
+  },
+  {
+   "keys": [
+    "2026-11-06"
+   ],
+   "clicks": 0,
+   "impressions": 41,
+   "ctr": 0,
+   "position": 8.365853658536587
+  },
+  {
+   "keys": [
+    "2026-11-07"
+   ],
+   "clicks": 0,
+   "impressions": 12,
+   "ctr": 0,
+   "position": 7.166666666666667
+  },
+  {
+   "keys": [
+    "2026-11-08"
+   ],
+   "clicks": 0,
+   "impressions": 11,
+   "ctr": 0,
+   "position": 16.272727272727273
+  },
+  {
+   "keys": [
+    "2026-11-09"
+   ],
+   "clicks": 0,
+   "impressions": 22,
+   "ctr": 0,
+   "position": 18.90909090909091
+  },
+  {
+   "keys": [
+    "2026-11-10"
+   ],
+   "clicks": 0,
+   "impressions": 32,
+   "ctr": 0,
+   "position": 11.3125
+  },
+  {
+   "keys": [
+    "2026-11-11"
+   ],
+   "clicks": 0,
+   "impressions": 22,
+   "ctr": 0,
+   "position": 8.227272727272727
+  },
+  {
+   "keys": [
+    "2026-11-12"
+   ],
+   "clicks": 0,
+   "impressions": 16,
+   "ctr": 0,
+   "position": 5.125
+  },
+  {
+   "keys": [
+    "2026-11-13"
+   ],
+   "clicks": 0,
+   "impressions": 39,
+   "ctr": 0,
+   "position": 7.538461538461538
+  },
+  {
+   "keys": [
+    "2026-11-14"
+   ],
+   "clicks": 0,
+   "impressions": 25,
+   "ctr": 0,
+   "position": 8.84
+  },
+  {
+   "keys": [
+    "2026-11-15"
+   ],
+   "clicks": 1,
+   "impressions": 26,
+   "ctr": 0.038461538461538464,
+   "position": 5.846153846153846
+  },
+  {
+   "keys": [
+    "2026-11-16"
+   ],
+   "clicks": 0,
+   "impressions": 46,
+   "ctr": 0,
+   "position": 8.130434782608695
+  },
+  {
+   "keys": [
+    "2026-11-17"
+   ],
+   "clicks": 0,
+   "impressions": 163,
+   "ctr": 0,
+   "position": 7.429447852760736
+  },
+  {
+   "keys": [
+    "2026-11-18"
+   ],
+   "clicks": 0,
+   "impressions": 37,
+   "ctr": 0,
+   "position": 7.027027027027027
+  },
+  {
+   "keys": [
+    "2026-11-19"
+   ],
+   "clicks": 1,
+   "impressions": 29,
+   "ctr": 0.034482758620689655,
+   "position": 7.275862068965517
+  },
+  {
+   "keys": [
+    "2026-11-20"
+   ],
+   "clicks": 0,
+   "impressions": 45,
+   "ctr": 0,
+   "position": 5.177777777777778
+  }
+ ],
+ "queries": [
+  {
+   "keys": [
+    "qiang liu epfl"
+   ],
+   "clicks": 4,
+   "impressions": 40,
+   "ctr": 0.1,
+   "position": 4.4
+  },
+  {
+   "keys": [
+    "55 aa"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "55aa"
+   ],
+   "clicks": 0,
+   "impressions": 16,
+   "ctr": 0,
+   "position": 3.5625
+  },
+  {
+   "keys": [
+    "architectural security research learning path firmware platform security"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 8.333333333333332
+  },
+  {
+   "keys": [
+    "hackphyr"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 64
+  },
+  {
+   "keys": [
+    "liu zhijiang"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "qiang liu meta"
+   ],
+   "clicks": 0,
+   "impressions": 14,
+   "ctr": 0,
+   "position": 6.571428571428571
+  },
+  {
+   "keys": [
+    "reasoning-based code security scanners"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 51.25
+  },
+  {
+   "keys": [
+    "x-safe: an x-ray security detection method based on incremental kernel aggregation, hierarchical co-optimization and task-aligned labeling"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 47
+  },
+  {
+   "keys": [
+    "增根校验"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "安全实验室"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "实验记录安全存储"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 39.333333333333336
+  }
+ ],
+ "pages": [
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/people/qiang-liu/"
+   ],
+   "clicks": 8,
+   "impressions": 86,
+   "ctr": 0.09302325581395349,
+   "position": 6.034883720930233
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/"
+   ],
+   "clicks": 3,
+   "impressions": 112,
+   "ctr": 0.026785714285714284,
+   "position": 7.098214285714286
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/publications/"
+   ],
+   "clicks": 2,
+   "impressions": 108,
+   "ctr": 0.018518518518518517,
+   "position": 9.324074074074074
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/Qiang_s_CV.pdf"
+   ],
+   "clicks": 0,
+   "impressions": 60,
+   "ctr": 0,
+   "position": 8.7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/blog/"
+   ],
+   "clicks": 0,
+   "impressions": 21,
+   "ctr": 0,
+   "position": 5.714285714285714
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/blog/55aa-member-process-management/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/blog/55aa-research-project-process-management-en/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/blog/55aa-research-project-process-management/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 10.333333333333334
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/blog/syssec-not-hard-anymore/"
+   ],
+   "clicks": 0,
+   "impressions": 53,
+   "ctr": 0,
+   "position": 11.735849056603774
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/consultation/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 8.75
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-001/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 5.25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-001/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-001/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-002/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 21.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 14.333333333333334
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-003/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 15.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-004/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-005/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 12.333333333333334
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-006b/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-007/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-008/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-009/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-009/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-010/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-010/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-011/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-011/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-011/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 9.333333333333334
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-012/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-013/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 8.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 6.333333333333333
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 7.25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-014/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 9.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 12.666666666666666
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-015/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 13.333333333333334
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-016/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-017/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 16.666666666666664
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 15.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-018/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 11.333333333333334
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 16.666666666666664
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-019/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 5.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-020/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 8.333333333333332
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/courses/55aa-021/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/news/"
+   ],
+   "clicks": 0,
+   "impressions": 20,
+   "ctr": 0,
+   "position": 6.9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/people/"
+   ],
+   "clicks": 0,
+   "impressions": 8,
+   "ctr": 0,
+   "position": 37.125
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/projects/"
+   ],
+   "clicks": 0,
+   "impressions": 19,
+   "ctr": 0,
+   "position": 5.842105263157895
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/projects/aero-space-security/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 8.666666666666668
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/projects/sandbox-defense/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/sponsorship/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 5.4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/startups/"
+   ],
+   "clicks": 0,
+   "impressions": 11,
+   "ctr": 0,
+   "position": 13.909090909090908
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/startups/cyber-autoresearch/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 7.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/startups/cyber-simulation-sandbox/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 15.6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/startups/system-security-handbook/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 6.8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/en/tools/"
+   ],
+   "clicks": 0,
+   "impressions": 11,
+   "ctr": 0,
+   "position": 7.454545454545454
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/"
+   ],
+   "clicks": 0,
+   "impressions": 12,
+   "ctr": 0,
+   "position": 4.916666666666666
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/blog/"
+   ],
+   "clicks": 0,
+   "impressions": 8,
+   "ctr": 0,
+   "position": 6.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/blog/55aa-member-process-management/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 14.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/blog/55aa-research-project-process-management/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 11.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/blog/55aa-technology-readiness-levels/"
+   ],
+   "clicks": 0,
+   "impressions": 7,
+   "ctr": 0,
+   "position": 10.285714285714286
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/blog/gbu-hit-2027-joint-phd-admissions/"
+   ],
+   "clicks": 0,
+   "impressions": 12,
+   "ctr": 0,
+   "position": 6.666666666666667
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/blog/gbu-sustech-2027-joint-master-admissions/"
+   ],
+   "clicks": 0,
+   "impressions": 29,
+   "ctr": 0,
+   "position": 6.413793103448276
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/blog/syssec-not-hard-anymore/"
+   ],
+   "clicks": 0,
+   "impressions": 110,
+   "ctr": 0,
+   "position": 7.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/consultation/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 6.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/"
+   ],
+   "clicks": 0,
+   "impressions": 7,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-001/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-001/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-001/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 16,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 26
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 9.666666666666666
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-002/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-005/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 7.333333333333333
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-005/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 8.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-005/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-006b/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-007/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/"
+   ],
+   "clicks": 0,
+   "impressions": 7,
+   "ctr": 0,
+   "position": 7.571428571428571
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 6.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 6,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 10.6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 26
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 27
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 19.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 28
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-010/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 7.2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 7.666666666666667
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 12.666666666666666
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 8.75
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 10.666666666666666
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-011/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 21
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 14.333333333333334
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 17.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 22
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 23
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 8.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-013/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 9.666666666666666
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 6.333333333333333
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 27
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-014/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/"
+   ],
+   "clicks": 0,
+   "impressions": 6,
+   "ctr": 0,
+   "position": 8.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 6.333333333333333
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/lessons/week-14-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 6.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-015/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-06-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 8.6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 5.666666666666667
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-016/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/"
+   ],
+   "clicks": 0,
+   "impressions": 10,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 4.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-06-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-08-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-10-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 8.666666666666668
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-017/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 7.2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 8,
+   "ctr": 0,
+   "position": 4.75
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 6.333333333333333
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 29,
+   "ctr": 0,
+   "position": 6.551724137931035
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 22,
+   "ctr": 0,
+   "position": 8.90909090909091
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-07-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 24.8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 5.25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 3.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 15.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-018/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 11,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-03-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 17
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-04-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 14
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-08-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-09-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-10-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-11-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-019/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 10.4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/lessons/week-04-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/lessons/week-05-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 9.333333333333334
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/lessons/week-11-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 13.666666666666666
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/lessons/week-12-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 14,
+   "ctr": 0,
+   "position": 8.357142857142858
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 12
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 12.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/lessons/week-16-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-020/lessons/week-16-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-01-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-01-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 7,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-02-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 5.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-02-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 10.666666666666666
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-03-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-05-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-07-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 8.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-09-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-12-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-13-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-13-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-14-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-15-session-01/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 13
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/courses/55aa-021/lessons/week-15-session-02/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 9.8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/news/"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 6.6
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/people/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/people/qiang-liu/"
+   ],
+   "clicks": 0,
+   "impressions": 7,
+   "ctr": 0,
+   "position": 24.142857142857142
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/projects/"
+   ],
+   "clicks": 0,
+   "impressions": 9,
+   "ctr": 0,
+   "position": 5.111111111111111
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/projects/aero-space-security/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 8.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/projects/sandbox-defense/"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 16
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/publications/"
+   ],
+   "clicks": 0,
+   "impressions": 100,
+   "ctr": 0,
+   "position": 8.25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/sponsorship/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 6.75
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/startups/"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 5.25
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/startups/cyber-autoresearch/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/startups/cyber-simulation-sandbox/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 13.5
+  },
+  {
+   "keys": [
+    "https://www.55aaseclab.com/zh/startups/system-security-handbook/"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 12.5
+  }
+ ]
+}
