@@ -2,8 +2,8 @@
   "meta": {
     "title": { "en": "Publications", "zh": "论文" },
     "description": {
-      "en": "Publications from 55AA Security Lab",
-      "zh": "55AA Security Lab 论文与成果"
+      "en": "Papers on kernel, hypervisor, virtual-device and browser fuzzing, embedded Linux rehosting, and security bug fixes — published at USENIX Security, NDSS, CCS, IEEE S&P, RAID, ASE and more.",
+      "zh": "内核、hypervisor、虚拟设备与浏览器模糊测试，嵌入式 Linux 内核重托管，以及安全缺陷修复分析——发表于 USENIX Security、NDSS、CCS、IEEE S&P、RAID、ASE 等会议。"
     }
   },
   "manual": [],
